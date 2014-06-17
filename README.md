@@ -1,14 +1,14 @@
-OX Documentation
-================
+Gluu Server Documentation
+=========================
 
-OX uses Mkdocs to generate documentation. For more information
+The Gluu Server uses Mkdocs to generate documentation. For more information
 see their website: http://www.mkdocs.org 
 
 To generate the documentation:
 
      $ mkdocs build
 
-This will create a directory called `site` which has the index.html
+This will create a directory called `site` which has the `index.html`
 for viewing in your browser.
 
 The home repository for this project is:
@@ -17,8 +17,6 @@ The home repository for this project is:
 
 If you would like to contribute documentation please post a message on 
  http://support.gluu.org
-
-
 
 
 > License
