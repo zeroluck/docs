@@ -9,23 +9,22 @@ theme: spacelab
 pages:
 - ['index.md', 'Home']
 
-- ['reference/configuraion/index.md', 'Reference', 'Configuration']
-- ['reference/ldap/index.md', 'Reference', 'LDAP Schema']
-- ['reference/api/index.md', 'Reference', 'API']
-- ['reference/interception/index.md', 'Reference', 'Interception Scripts']
-- ['reference/lib/index.md', 'Reference', 'Libraries']
-
 - ['admin-guide/installation/index.md', 'Admin Guide', 'Installation']
-- ['admin-guide/certificates/index.md', 'Admin Guide', 'Certificates']
-- ['admin-guide/interception-scripts/index.md', 'Admin Guide', 'Interception Scripts']
-- ['admin-guide/authentication/index.md', 'Admin Guide', 'Authentication']
 - ['admin-guide/configuration/index.md', 'Admin Guide', 'Configuration']
+- ['admin-guide/certificates/index.md', 'Admin Guide', 'Certificates']
 - ['admin-guide/user-management/index.md', 'Admin Guide', 'User Management']
-- ['admin-guide/device-management/index.md', 'Admin Guide', 'Device Management']
+- ['admin-guide/authentication/index.md', 'Admin Guide', 'Authentication']
 - ['admin-guide/saml/index.md', 'Admin Guide', 'SAML']
 - ['admin-guide/openid-connect/index.md', 'Admin Guide', 'OpenID Connect']
 - ['admin-guide/uma/index.md', 'Admin Guide', 'UMA']
+- ['admin-guide/interception-scripts/index.md', 'Admin Guide', 'Interception Scripts']
 - ['admin-guide/multiparty-federation/index.md', 'Admin Guide', 'MultiParty Federation']
+- ['admin-guide/oxPush/index.md', 'Admin Guide', 'oxPush']
+
+- ['reference/configuration/index.md', 'Reference', 'Configuration']
+- ['reference/ldap/index.md', 'Reference', 'LDAP Schema']
+- ['reference/interception/index.md', 'Reference', 'Interception Scripts']
+- ['reference/lib/index.md', 'Reference', 'Libraries']
 
 - ['articles/apache-saml/index.md', 'Articles', 'Apache SAML']
 - ['articles/apache-oauth2/index.md', 'Articles', 'Apache OAuth2']
@@ -35,19 +34,31 @@ pages:
 - ['articles/js-connect/index.md', 'Articles', 'Javascript OpenID Connect']
 - ['articles/scim-client/index.md', 'Articles', 'SCIM client']
 
+# Sub Pages of Configuration
+- ['admin-guide/configuration/asimba.md', '', '']
+- ['admin-guide/configuration/oxAuth.md', '', '']
+- ['admin-guide/configuration/oxPush.md', '', '']
+- ['admin-guide/configuration/oxTrust.md', '', '']
+- ['admin-guide/configuration/shibIDP.md', '', '']
+- ['admin-guide/configuration/oxProx.md', '', '']
+
 # Sub pages of User-Management
-- ['admin-guide/user-management/scim/index.md', '', '']
-- ['admin-guide/user-management/ldap-sync/index.md', '', '']
-- ['admin-guide/user-management/local-admin/index.md', '', '']
+- ['admin-guide/user-management/scim.md', '', '']
+- ['admin-guide/user-management/ldap-sync.md', '', '']
+- ['admin-guide/user-management/local-admin.md', '', '']
+- ['admin-guide/user-management/registration.md', '', '']
+- ['admin-guide/user-management/self-service.md', '', '']
 
 # Sub pages of SAML
-- ['admin-guide/saml/outbound-saml/index.md', '', '']
-- ['admin-guide/saml/inbound-saml/index.md', '', '']
+- ['admin-guide/saml/outbound-saml.md', '', '']
+- ['admin-guide/saml/inbound-saml.md', '', '']
+- ['admin-guide/saml/saml-registration.md', '', '']
+- ['admin-guide/saml/saml-sp-configuration.md', '', '']
 
 # Sub Pages of OpenID Connect
-- ['admin-guide/openid-connect/registration/index.md', '', '']
-- ['admin-guide/openid-connect/discovery/index.md', '', '']
-- ['admin-guide/openid-connect/scopes/index.md', '', '']
-- ['admin-guide/openid-connect/client-config/index.md', '', '']
+- ['admin-guide/openid-connect/registration.md', '', '']
+- ['admin-guide/openid-connect/discovery.md', '', '']
+- ['admin-guide/openid-connect/scopes.md', '', '']
+- ['admin-guide/openid-connect/client-config.md', '', '']
 
- 
+

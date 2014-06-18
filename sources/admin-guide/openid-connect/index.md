@@ -1,6 +1,11 @@
-# Sum puer Helles prolem fidelem
+# OpenID Connect 
 
-## Non nox Hypaepis misit
+## Contents
+
+- [Discovery](./discovery.md)
+- [OpenID Scopes](./scopes.md)
+- [Client Registration](./registration.md)
+- [Client Configuration](./client-config.md)
 
 Lorem markdownum, herbis urbesque arripit argento concipit, os nullo, vellet
 instructamque fuit potentibus adest. Et duro ferant priores factaque cessant,

@@ -1,6 +1,13 @@
-# Exululatque vecors gemuere ausis belli ferrumque
+# Configuration
 
-## Montis hoc deplangitur sanguis feras
+## Contents
+
+- [Asimba](./asimba.md)
+- [oxAuth](./oxAuth.md)
+- [oxProx](./oxProx.md)
+- [oxPush](./oxPush.md)
+- [oxTrust](./oxTrust.md)
+- [Shibboleth IDP](./shibIDP.md)
 
 Lorem markdownum potuit aquis clamato Panaque sonantes aristis mihi, cornua,
 sed? Non non regnumque caret de qui inpune devoveas et adspexit ipsa
