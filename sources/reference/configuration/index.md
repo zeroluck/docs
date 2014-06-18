@@ -1,6 +1,19 @@
-# Tamen frigore
+# Configuratoin 
 
-## Pavetque spumantia conducat navita nascentur solvi graditur
+## Contents
+
+- [General System Requirements](./system.md)
+- [oxTrust](./oxTrust.md)
+- [oxAuth](./oxAuth.md)
+- [Asimba](./asimba.md)
+- [Shibboleth IDP](./shibIDP.md)
+- [OpenDJ](./opendj.md)
+- [OpenLDAP](./openldap.md)
+- [oxPush](./oxPush.md)
+- [memcached](./memcached.md)
+- [MySQL](./mysql.md)
+- [Jagger](./jagger.md)
+- [oxProx](./oxProx.md)
 
 Lorem markdownum regnum dum aeraque removit ipsaque facta adorat freti, Iri
 adflat ultoresque. Abest peragit, abundet conscia! [Vetuere

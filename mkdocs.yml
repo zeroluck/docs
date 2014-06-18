@@ -23,7 +23,6 @@ pages:
 
 - ['reference/configuration/index.md', 'Reference', 'Configuration']
 - ['reference/ldap/index.md', 'Reference', 'LDAP Schema']
-- ['reference/interception/index.md', 'Reference', 'Interception Scripts']
 - ['reference/lib/index.md', 'Reference', 'Libraries']
 
 - ['articles/apache-saml/index.md', 'Articles', 'Apache SAML']
@@ -34,7 +33,34 @@ pages:
 - ['articles/js-connect/index.md', 'Articles', 'Javascript OpenID Connect']
 - ['articles/scim-client/index.md', 'Articles', 'SCIM client']
 
-# Sub Pages of installation
+# Sub pages of Reference / Library
+- ['reference/lib/openid-connect.md', '', '']
+- ['reference/lib/uma.md', '', '']
+- ['reference/lib/scim.md', '', '']
+- ['reference/lib/saml.md', '', '']
+- ['reference/lib/user-management.md', '', '']
+
+# Sub pages of Reference / LDAP 
+- ['reference/ldap/schema.md', '', '']
+- ['reference/ldap/namespace.md', '', '']
+- ['reference/ldap/indexing.md', '', '']
+- ['reference/ldap/replication.md', '', '']
+
+# Sub pages of Reference / Configuration 
+- ['reference/configuration/system.md', '', '']
+- ['reference/configuration/oxAuth.md', '', '']
+- ['reference/configuration/oxTrust.md', '', '']
+- ['reference/configuration/shibIDP.md', '', '']
+- ['reference/configuration/asimba.md', '', '']
+- ['reference/configuration/opendj.md', '', '']
+- ['reference/configuration/openldap.md', '', '']
+- ['reference/configuration/jagger.md', '', '']
+- ['reference/configuration/oxPush.md', '', '']
+- ['reference/configuration/oxProx.md', '', '']
+- ['reference/configuration/mysql.md', '', '']
+- ['reference/configuration/memcached.md', '', '']
+
+# Sub Pages of Admin Guide / installation
 - ['admin-guide/installation/redhat.md', '', '']
 - ['admin-guide/installation/ubuntu.md', '', '']
 - ['admin-guide/installation/centos.md', '', '']
@@ -44,7 +70,7 @@ pages:
 - ['admin-guide/installation/juju.md', '', '']
 - ['admin-guide/installation/build.md', '', '']
 
-# Sub Pages of Configuration
+# Sub Pages of Admin Guide / Configuration
 - ['admin-guide/configuration/asimba.md', '', '']
 - ['admin-guide/configuration/oxAuth.md', '', '']
 - ['admin-guide/configuration/oxPush.md', '', '']
@@ -52,21 +78,21 @@ pages:
 - ['admin-guide/configuration/shibIDP.md', '', '']
 - ['admin-guide/configuration/oxProx.md', '', '']
 
-# Sub Pages of Certificates 
+# Sub Pages of Admin Guide / Certificates 
 - ['admin-guide/certificates/https.md', '', '']
 - ['admin-guide/certificates/saml.md', '', '']
 - ['admin-guide/certificates/openid.md', '', '']
 - ['admin-guide/certificates/federation.md', '', '']
 - ['admin-guide/certificates/ldap.md', '', '']
 
-# Sub pages of User-Management
+# Sub pages of Admin Guide / User-Management
 - ['admin-guide/user-management/scim.md', '', '']
 - ['admin-guide/user-management/ldap-sync.md', '', '']
 - ['admin-guide/user-management/local-admin.md', '', '']
 - ['admin-guide/user-management/registration.md', '', '']
 - ['admin-guide/user-management/self-service.md', '', '']
 
-# Sub pages of Authentication
+# Sub pages of Admin Guide / Authentication
 - ['admin-guide/authentication/ldap.md', '', '']
 - ['admin-guide/authentication/custom.md', '', '']
 - ['admin-guide/authentication/oxPush.md', '', '']
@@ -76,26 +102,26 @@ pages:
 - ['admin-guide/authentication/duo.md', '', '']
 - ['admin-guide/authentication/toopher.md', '', '']
 
-# Sub pages of SAML
+# Sub pages of Admin Guide / SAML
 - ['admin-guide/saml/outbound-saml.md', '', '']
 - ['admin-guide/saml/inbound-saml.md', '', '']
 - ['admin-guide/saml/saml-registration.md', '', '']
 - ['admin-guide/saml/saml-sp-configuration.md', '', '']
 
-# Sub Pages of OpenID Connect
+# Sub Pages of Admin Guide / OpenID Connect
 - ['admin-guide/openid-connect/registration.md', '', '']
 - ['admin-guide/openid-connect/discovery.md', '', '']
 - ['admin-guide/openid-connect/scopes.md', '', '']
 - ['admin-guide/openid-connect/client-config.md', '', '']
 
-# Sub pages of UMA 
+# Sub pages of Admin Guide / UMA 
 - ['admin-guide/uma/discovery.md', '', '']
 - ['admin-guide/uma/resource-registration.md', '', '']
 - ['admin-guide/uma/policy.md', '', '']
 - ['admin-guide/uma/uma-scopes.md', '', '']
 - ['admin-guide/uma/mod_ox.md', '', '']
 
-# Sub pages of Interception Scripts 
+# Sub pages of Admin Guide / Interception Scripts 
 - ['admin-guide/interception-scripts/authentication.md', '', '']
 - ['admin-guide/interception-scripts/authorization.md', '', '']
 - ['admin-guide/interception-scripts/id-generation.md', '', '']
@@ -105,7 +131,7 @@ pages:
 - ['admin-guide/interception-scripts/logout.md', '', '']
 - ['admin-guide/interception-scripts/saml-discovery.md', '', '']
 
-# Sub pages of oxPush
+# Sub pages of Admin Guide / oxPush
 - ['admin-guide/oxPush/cordova-app.md', '', '']
 - ['admin-guide/oxPush/oxPush-server.md', '', '']
 - ['admin-guide/oxPush/oxPush-crypto.md', '', '']
@@ -114,4 +140,5 @@ pages:
 - ['admin-guide/multiparty-federation/saml-federation.md', '', '']
 - ['admin-guide/multiparty-federation/oauth2-federation.md', '', '']
 - ['admin-guide/multiparty-federation/federation-public-website.md', '', '']
+
 
