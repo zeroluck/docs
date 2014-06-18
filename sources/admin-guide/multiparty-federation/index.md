@@ -1,6 +1,10 @@
-# Avulsa habitantque cibis adloquitur
+# Multiparty Federation 
 
-## Celadontis et potentior flere fontes quanto et
+## Contents
+
+- [SAML Federation](./saml-federation.md)
+- [OAuth2 Federation](./oauth2-federation.md)
+- [Federation Public Website](./federation-public-website.md)
 
 Lorem *markdownum* cessant hostilia fieretque illos, sic in quoque at coronam o
 ad Pana, [amplectitur](http://kimjongunlookingatthings.tumblr.com/)! Manus

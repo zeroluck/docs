@@ -1,6 +1,11 @@
-# Tamen deos amorem dederit
+# UMA 
 
-## Pars dicentem suam
+## Contents
+- [Discovery](./discovery.md)
+- [Resource Registration](./resource-registration.md)
+- [Policy Management](./policy.md)
+- [Scopes](./uma-scopes.md )
+- [Apache2 Plugin](./mod_ox.md)
 
 Lorem *markdownum Neptunus* liceat pererrant ortu quid, est est est placent Sic,
 me erit. Cedere Gigantas terras sata. Luce orat molem Hesperio durum in terque
