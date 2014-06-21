@@ -1,4 +1,4 @@
-site_name: Gluu Server Cookbook 
+site_name: Gluu Server
 site_description: An SSO, Federation and API Access Management suite
 site_favicon: '/img/gluu_favicon.ico'
 copyright: Copyright &copy; 2014, Gluu, Inc.
@@ -7,8 +7,6 @@ repo_url: https://github.com/GluuFederation/docs
 theme: spacelab 
 
 pages:
-- ['index.md', 'Home']
-
 - ['admin-guide/installation/index.md', 'Admin Guide', 'Installation']
 - ['admin-guide/configuration/index.md', 'Admin Guide', 'Configuration']
 - ['admin-guide/certificates/index.md', 'Admin Guide', 'Certificates']
@@ -141,4 +139,6 @@ pages:
 - ['admin-guide/multiparty-federation/oauth2-federation.md', '', '']
 - ['admin-guide/multiparty-federation/federation-public-website.md', '', '']
 
+# Home Page
+- ['index.md', '', '']
 
