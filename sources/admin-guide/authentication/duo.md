@@ -1,6 +1,6 @@
-# Pectora volucrem fuit muneris ratis corpus interritus
+# Duo Authentication
 
-## Thyneius deducentia rerum
+## Signing up for Duo, and obtaining Duo client authentication keys
 
 Lorem markdownum possit *vestro loquuntur* audire, nocens alii talia in fit, se.
 Poterat soceri adhaerent. Alta inquit in quod inprudens nec posset ebrietas in
@@ -14,12 +14,7 @@ factum amplexaque tuti gemellos, neve pars sudore.
 - Et arma
 - Eris formae in penates facundia Troezena huius
 
-## Illa passim sis quamvis illa sub quoque
-
-Humi se quas laetoque, precor bucera, enim apta *debita*, me fratri. Labori
-*primum*, partim, nec non deos non solebat compressit populante misit, tibi.
-
-## Amplexo egreditur multum
+## Duo Custom Authentication Script
 
 Inhonestaque filia, tantummodo suo vietum regis maestisque instar sui veloci
 parum nova bracchia. Suum diu demisi ora cultu cur, auro certa, excubias
@@ -47,20 +42,7 @@ dixerunt, mihi auditi proxima servat, paterque quaque.
     }
     fios_and_word += 5;
 
-## Ter sed datis
+## Configuring OX for duo authentication
 
-Vagitus fragiles lintea; capulo Dictys iterum e veste proxima ex obliquos
-**inania** adhuc. Auraeque ex caput tu pedesque **natorum simillimus o**
-comitatur Lami, media indignatur. Verus haut modo adflatuque aditus saecula
-nostras.
-
-> Lacrimas sic precor ipsa me terras amnemque lapidem consitaque numina. Te me
-> mutat mei quoque sistitur terras. Angue pater urbem inobservatus: vestem petit
-> fregit, nivosos orbem admonita, canis! Tamen sanguine tuearis Beroe cornua
-> legar subiere, vimque aequoris!
-
-Levis restabat iurasse priori! Gemma [quae et](http://www.wedrinkwater.com/)
-quodsi, latrare ad quoque Orithyia, effugit promissaque Phoce demersus,
-quamquam.
-
-[quae et]: http://www.wedrinkwater.com/
+Humi se quas laetoque, precor bucera, enim apta *debita*, me fratri. Labori
+*primum*, partim, nec non deos non solebat compressit populante misit, tibi.

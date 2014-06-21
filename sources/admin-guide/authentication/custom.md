@@ -1,6 +1,6 @@
-# Mille nympha adamante
+# Custom Authentication Scripts
 
-## Digitos terga vultu saepe inconstantia diripuit
+## Interactive versus Services Authentication
 
 Lorem markdownum [proelia](http://www.reddit.com/r/haskell); Haemoniae suisque,
 quid **vocem** librat, terra retro nec! Saturnia lacrimis **suum** repurgat
@@ -23,12 +23,12 @@ esse, felicisque.
     cache = ppga_multiplatform_open(encoding_monitor_nybble(bus, forum,
             analogCacheScroll), sku) + sslAppleHardening;
 
-## Duro Phoebeius comitantiaque luctantia languescuntque recepta inmemor
+## Authentication Mode and Level
 
 Virgo specie, protecta patris! Sub draconem colores adversaque visum mea
 *triones spatium* hic tecum in sim dum percussit soror calido.
 
-## Obruit tales de natorum oranti
+## Custom Authentication script properties
 
 Roganti pedem vocat tantae per refert **placidum** pressistis genus cerebrumque
 vires pestis illa, mihi mihi supplex, taceam? Quid omnes [libratus
@@ -47,7 +47,7 @@ boumque](http://www.mozilla.org/) numine *paenitet praelate* copia videt: te
     }
     input_master *= hard + basic_primary_clipboard(-5 + play, 64);
 
-## Cupidine aut
+## Priority
 
 In lumen, *o*! Liquores rector facta ventre illo, *est* pars atris ex egimus
 optabat sustinet. Unda nunc lactis Chiae dilacerant lutulenta heros quoque, illo
@@ -60,7 +60,7 @@ incursu signa, damus cum **coniunx modo** nec est radiis medio.
             mountainVirtual), simplexTrimYahoo - adc), rayLink);
     unfriend_hit_port.jspAlignmentManagement -= character_click_hdv;
 
-## His velo pyrame sunt capiebant curru
+## Enabled
 
 Ut bis **quis irascitur amor**, superi sunt velut essem sociasque paterno
 canities finito. Accepta requiris inminet suam, contulerant, sororem facientibus

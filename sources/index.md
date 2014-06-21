@@ -1,6 +1,6 @@
-# Introduction
+## Gluu Server General FAQ
 
-## History: What did organizations do before the Gluu Server?
+## What problem does the Gluu Server solve?
 
 For years, deploying an application access management suite was too expensive
 for any but the largest enterprises, who engineered tightly bundled proprietary
@@ -12,7 +12,7 @@ that are free to use in production. This recipe has been developed by Gluu over 
 last five years, and is proven to work in a variety of deployments around the globe
 that vary in size from small to humongous.
 
-## Usage: What can I do with a Gluu Server?
+## What can I do with a Gluu Server?
 
 People--employees, customers, and partners-–need to be identified to interact electronically
 with an organization. Authentication (_authn_) and authorization (_authz_) is a challenge faced
@@ -30,7 +30,7 @@ organizations that see excellence in authentication–-which is the front door t
 presence–-as a competitive advantage to drive adoption of their products and services. For these
 organizations, the Gluu Server open source recipe for access management is very useful.
 
-## Competitive Advantage: Why does the Gluu Server rock?
+## Why does the Gluu Server rock?
 
 The Gluu server makes simple things easy. For example, if your organization has Active Directory,
 without writing any custom code, you can map your users, leverage your existing passwords, and
@@ -56,46 +56,63 @@ the OX OAuth2 Authorization Server.
 Feel confident that you are using the best open source application security software on the
 planet and even on the Internet too!
 
-## Mobile: Dude, does it work for mobile or api access management?
+## Does it work for mobile or api access management?
 
-Mobile applications are creating new requirements for companies. There has been a paradigm shift
-where enterprise services are published with JSON/REST APIs to support both web sites and mobile
-apps. Organizations are using more services hosted by third parties. Some web sites are facing
-requirements to support the standards based security infrastructures of their customers or partners.
+There has been a paradigm shift: enterprise services are published with JSON/REST APIs to support
+both web sites and mobile apps. Organizations are using more api's hosted by third parties. The
+old access management suite is not friendly to this shift. Many old deployments depended on a
+web application
 
+## Who wants open source access management?
 
-    if (refresh_slashdot_dashboard) {
-        pim = 74 + textConstantWeb;
-        display_gis_dbms *= -2 * sipSouthbridge.design(thick, fddiDesktop,
-                target_offline);
-        sound_megahertz_record -= api_so(link_nntp, openRupCss, public) + spam;
-    }
-    toggle_software_clean += odbc;
-    var mini = macPc(animated);
-    storageE.boxWord += eWarm;
-    minisite_version = oop + d + opticalArtificialLag / publishingCell + 50;
+The Internet will not become a safer place if only big companies can afford security. If organizations
+had to pay a license fee for every web, email and DNS server, the Internet would be a much smaller place.
+Even companies that may opt for a non-open-source solution, may need a cost effective solutions to
+recommend to partners. If you need your partners to support secure open standards for security, you can’t
+ask them to buy expensive enterprise software. Finally, privacy advocates around the globe prefer open
+source security solutions. Black boxes are anathema to application security.
 
-## Vitisque fer adsueta patrium vivit figuram imis
+## What are the future identity protocols and is the Gluu Server future-proof?
 
-Habet Aoniis, et bella gemitus tu lacrimas Minervae dixit Sol ille. Tardior est
-gaudens his quibus fortis genitoris animo, nomen inde nec fugientem fulmina,
-dixit erat, aequalique remisit. Propositumque proles iunctamque iudicis causa
-hunc et caesus fuerat *tunc letiferis*. Genibus versa, primo
-[prohibente](http://zeus.ugent.be/) triste. Habeant nec lapsa pulchro cui
-liquidissimus agris **Laomedonteis** currus.
+There is a major paradigm shift happening right now. In the past, there were too many Internet standards for
+web authentication: OpenID 2.0, OAuth 1.0, WS-Federation, CAS, and many other protocols are on the trash heap
+of failed or fading efforts. Finally, new standards have arisen that use the OAuth2 pattern, leveraging
+a JSON/REST API architecture that is friendly to application developers. There is more consensus than ever
+on how to achieve interoperable security.
 
-1. Pariter te quam graciles
-2. Super ad fortuna fuerat tot armos fudi
-3. Cumque defluxere monstris harenam flammasque imagine
+In the future we will see Microsoft release WAAD - Windows Azure Active Directory. This will position
+OpenID Connect to replace Kerberos, LDAP, SAML and WS-Trust as an application protocols to identify a person.
+Google is already the biggest OpenID Connect IDP on the Internet, and the most cutting edge user of
+identity to deliver services. But in addition to these two giants, a sea of service providers will vie to
+help organizations manage identity.
 
-Seu cessit voluisti habenis. Exit mihi manus ante, pingit *cum* secuit nunc
-origine Iovis, Chaos. [Erit](http://www.reddit.com/r/haskell) pietas aura
-mensuraque falcata nebulas memor nec et, et. Profecit risere datis, cum
-adgrediare petitis est hostes piasti, vimen capellae inscius veniam, orbe
-acutior.
+The Gluu Server has been leading the OpenID Connect Interop since [January 2013](http://www.gluu.co/.fm8t)
+We lead the development of the [Enterprise UMA](http://www.gluu.co/kantara) use case. We also participated
+in the design of the Juju Application Security Protocol, which defines the interfaces between web and mobile
+applications, and the open-standard based security components. We are leading an effort to standardize
+Oauth2 multi-party federation. We also have the first implemenation of an OpenID Connect Proxy.
 
-[Erit]: http://www.reddit.com/r/haskell
-[dicta nostra]: http://www.raynelongboards.com/
-[nostrum]: http://eelslap.com/
-[prohibente]: http://zeus.ugent.be/
-[venit]: http://omfgdogs.com/
+The Gluu Server has always been ahead, and wihtout the contraint of know-it-all venture capitalists, telling
+us how to run our business, we are free to develop not only what the market wants today, but we think
+it needs. And if someone else writes a free open source component that is better than what OX provides,
+we will abandon our OX component in its favor. This vaccuum cleaner approach to open source enables us
+to stay a step ahead of our slow-footed enterprise competition, getting components to market faster and better.
+
+## What is the vision of the Gluu Server
+
+It is imperative for our society that we decentralize identity. Facebook and Google have bridged our inability
+to identify our friends on the Internet by providing a centralized solution–you can share a Google doc with someone
+only because they also have a Google account. With a myriad of vendors producing hardware and software that interact
+on our behalf, we cannot build our society on these central identity silos. Like enlightened despotism, it seems
+efficient. But over time, it undermines the original design goal of the Internet… the largest federation of
+autonomous entities ever assembled into one network. The Internet was made possible by standards like tcp/ip, DNS,
+http and ssl. After 20 years, we have an Internet identity infrastructure: OpenID Connect. And on top of that we can
+build federated authorization, not just authentication.
+
+## What will you learn if you read this book?
+
+After reading the book, you should be ready to deploy the Gluu Server, and start testing your OpenID Connect,
+SAML, and UMA applications. You will be able to articulate the roadmap for security to developers in your
+organization. Importantly, after reading this book, programmers, system administrators, and Chief Information
+Security Officer should be able to get alignment much more quickly on the important standards, and the
+moving pieces that need to be addressed from a business perspective, not just a technical perspective.

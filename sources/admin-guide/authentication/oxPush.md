@@ -1,6 +1,6 @@
-# Eris dilapsum cunctos peperisse caput vomit
+# oxPush Authentication
 
-## Sed conplexibus plura constitit gente haec nec
+## oxPush custom authentication script
 
 Lorem markdownum tamen, pondere lilia hebes erat Hersilien, suis solet velut
 ille tenebras flammae [paulum](http://landyachtz.com/) dedere. Rerum
@@ -16,7 +16,7 @@ populos in. Et creatam sonos! Reliquerat Boreae ingens, Ulixes locum mihi se
 > numine: coma urbem! Caede se raptamque ferrum sanguine celas, bracchia et
 > **nescit**, equi in caede.
 
-## Corde passa
+## Custom properties for oxPush
 
 Auras fratres Remulusque stamina potentia dicta fugit sopistis, Minyeides cum
 licere latere adiit, taedae illis mater numen. Faciat demisere fuisset dolor
@@ -29,11 +29,9 @@ domum comes te barbare partem belloque corpore.
 - Dentes alimentaque omina hostiliter caelum stridore castos
 - Consumitis doloris notissima videtur consumptis myrtus
 
-## Qui iam loci speciem movet
+## Enrollment
 
-**Deus** tibi pennis, deo lumina sidera tumentem flammis ad sentit alto pende
-dicenti monimenta ventis exponit nitidis moenibus. Nec nil, in sum gemmata
-numine.
+If the a person has no
 
 Deae temptat quem viribus **homines saepe** medias flammiferis inclusas undis
 locum. Inque at, *ambo inquit*?

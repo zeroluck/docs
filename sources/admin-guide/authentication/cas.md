@@ -1,4 +1,4 @@
-# Sequuntur ire mecum in quare
+# CAS Authentication
 
 ## Quas quos potentes talibus credens
 
