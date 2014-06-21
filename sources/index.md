@@ -1,36 +1,68 @@
-# Avem ubi raptae tempore non
+# Introduction
 
-## Dicentem Thracum foedumque vincere potentia
+## History: What did organizations do before the Gluu Server?
 
-Lorem markdownum Mopsopios tam; lacerare pondere, virtus nec montis
-[venit](http://omfgdogs.com/), veniat. Legebant sensit tumere profecto ereptas.
-Fronti haec donec inmiti nec taceam Telamone Titan; nostraque penetrat ebur
-Rhodopeius tremescere armat referens emittite. Iuvencum legit intremuere ipso,
-Nasamoniaci pariter illuc dolebat repercussae montes; quater.
+For years, deploying an application access management suite was too expensive
+for any but the largest enterprises, who engineered tightly bundled proprietary
+application security solutions like Oracle Access Manager, IBM Tivoli Access Manager
+or CA SiteMinder. These security suites used proprietary protocols and resulted in
+“vendor lock-in.” This book documents how to leverage open source software to build
+an enterprise class access management system using 100% open source components
+that are free to use in production. This recipe has been developed by Gluu over the
+last five years, and is proven to work in a variety of deployments around the globe
+that vary in size from small to humongous.
 
-## Haec arcet nec terga totumque vincirem
+## Usage: What can I do with a Gluu Server?
 
-Modo Parnasia abdidit maneas dum natam cum terretur, pellite ullas virga. Dixit
-virgineas paratis pollentibus spumis longe Perseus, hospitibus nec atra esset,
-hanc crescunt tangentia. Longis in litore ne aequora, missus remi posceret
-Medusae grata conplecti. Troiana totidem vincere praeferri capientur ferrum
-dedit ex vestigia pericla, nervosus in *fuerant*.
+People--employees, customers, and partners-–need to be identified to interact electronically
+with an organization. Authentication (_authn_) and authorization (_authz_) is a challenge faced
+by almost every organization large enough to register an Internet domain. And it’s not just
+people that need to be authenticated and authorized. “Clients” are online agents that can
+interact with services on your behalf. With the emergence of the IoT and the API economy,
+developers and system administrators are urgently searching for standards based solutions and
+best practices to improve the security of web and mobile applications.
 
-## Coercet sanguine
+While commercial solutions exist, there are many organizations that prefer the do-it-yourself
+approach. Authentication impacts the integrity of every transaction performed by a person or
+client on the network. In some cases, digital authentication is the organization’s keys to the
+kingdom. There are many organizations that will never outsource this function. And there are many
+organizations that see excellence in authentication–-which is the front door to their Internet
+presence–-as a competitive advantage to drive adoption of their products and services. For these
+organizations, the Gluu Server open source recipe for access management is very useful.
 
-Peto dracones! Undas tura crines et aconita reducet! Velamina qui in certatimque
-prunaque est orbum et [nostrum](http://eelslap.com/) caede sedem et stant.
+## Competitive Advantage: Why does the Gluu Server rock?
 
-> Laudatae sustinet audeat addidici formosius arce decrescunt quoniam faciemque;
-> positi lapidosas, in tenentis aquilone. Quod inque Copia partes: lacertis
-> pudore, strenua.
+The Gluu server makes simple things easy. For example, if your organization has Active Directory,
+without writing any custom code, you can map your users, leverage your existing passwords, and
+configure SSO with SAML or OpenID Connect websites. Voila!
 
-## Fuit credere in freta cum orbem et
+But for complex deployments, the Gluu Server is both scalable and flexible.  Gluu offers
+"interception scripts" which enable you to use Jython to specify custom business logic at
+several critical integration points. You can call other APIs (for example fraud detection
+or strong authentication) to tie together the components of your security and identity
+infrastructure. Interception scripts are the glue of the Gluu Server. You can implement
+any crazy plan you can code to define the workflow for authentication, authorization, and
+more.
 
-Incendia si Veneris Aeoliis inque. At auctor albentes me ligno viriles soror
-templa [dicta nostra](http://www.raynelongboards.com/): mille adlevat tellure
-aevo. Dictis alma dubitavit referentem duos viribus possim heu socii induruit
-vincite turba sex suo quae novi obscuraque!
+Jython was chosen to make the code easier to change on the fly--no need to compile, build,
+and deploy a war file. A savvy system administrator can even do it. Also, interpreted business
+logic is easier to replicate in a clustered deployment.
+
+This Gluu Server has more features and is easier to manage than commercial alternatives. This
+recipe includes some of the most widely deployed federation components: like the Shibboleth SAML
+Identity Provider, and some of the most cutting edge security solutions available anywhere: like
+the OX OAuth2 Authorization Server.
+
+Feel confident that you are using the best open source application security software on the
+planet and even on the Internet too!
+
+## Mobile: Dude, does it work for mobile or api access management?
+
+Mobile applications are creating new requirements for companies. There has been a paradigm shift
+where enterprise services are published with JSON/REST APIs to support both web sites and mobile
+apps. Organizations are using more services hosted by third parties. Some web sites are facing
+requirements to support the standards based security infrastructures of their customers or partners.
+
 
     if (refresh_slashdot_dashboard) {
         pim = 74 + textConstantWeb;

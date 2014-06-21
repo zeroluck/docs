@@ -7,22 +7,8 @@ repo_url: https://github.com/GluuFederation/docs
 theme: spacelab 
 
 pages:
-- ['admin-guide/installation/index.md', 'Admin Guide', 'Installation']
-- ['admin-guide/configuration/index.md', 'Admin Guide', 'Configuration']
-- ['admin-guide/certificates/index.md', 'Admin Guide', 'Certificates']
-- ['admin-guide/user-management/index.md', 'Admin Guide', 'User Management']
-- ['admin-guide/authentication/index.md', 'Admin Guide', 'Authentication']
-- ['admin-guide/saml/index.md', 'Admin Guide', 'SAML']
-- ['admin-guide/openid-connect/index.md', 'Admin Guide', 'OpenID Connect']
-- ['admin-guide/uma/index.md', 'Admin Guide', 'UMA']
-- ['admin-guide/interception-scripts/index.md', 'Admin Guide', 'Interception Scripts']
-- ['admin-guide/multiparty-federation/index.md', 'Admin Guide', 'MultiParty Federation']
-- ['admin-guide/oxPush/index.md', 'Admin Guide', 'oxPush']
 
-- ['reference/configuration/index.md', 'Reference', 'Configuration']
-- ['reference/ldap/index.md', 'Reference', 'LDAP Schema']
-- ['reference/lib/index.md', 'Reference', 'Libraries']
-
+# Articles
 - ['articles/apache-saml/index.md', 'Articles', 'Apache SAML']
 - ['articles/apache-oauth2/index.md', 'Articles', 'Apache OAuth2']
 - ['articles/nginx-oauth2/index.md', 'Articles', 'nginx OAuth2']
@@ -31,6 +17,12 @@ pages:
 - ['articles/js-connect/index.md', 'Articles', 'Javascript OpenID Connect']
 - ['articles/scim-client/index.md', 'Articles', 'SCIM client']
 
+# Reference sections
+- ['reference/configuration/index.md', 'Reference', 'Configuration']
+- ['reference/ldap/index.md', 'Reference', 'LDAP Schema']
+- ['reference/lib/index.md', 'Reference', 'Libraries']
+- ['reference/api/index.md', 'Reference', 'APIs']
+
 # Sub pages of Reference / Library
 - ['reference/lib/openid-connect.md', '', '']
 - ['reference/lib/uma.md', '', '']
@@ -38,13 +30,13 @@ pages:
 - ['reference/lib/saml.md', '', '']
 - ['reference/lib/user-management.md', '', '']
 
-# Sub pages of Reference / LDAP 
+# Sub pages of Reference / LDAP
 - ['reference/ldap/schema.md', '', '']
 - ['reference/ldap/namespace.md', '', '']
 - ['reference/ldap/indexing.md', '', '']
 - ['reference/ldap/replication.md', '', '']
 
-# Sub pages of Reference / Configuration 
+# Sub pages of Reference / Configuration
 - ['reference/configuration/system.md', '', '']
 - ['reference/configuration/oxAuth.md', '', '']
 - ['reference/configuration/oxTrust.md', '', '']
@@ -57,6 +49,19 @@ pages:
 - ['reference/configuration/oxProx.md', '', '']
 - ['reference/configuration/mysql.md', '', '']
 - ['reference/configuration/memcached.md', '', '']
+
+# Admin Guide Sections
+- ['admin-guide/installation/index.md', 'Admin Guide', 'Installation']
+- ['admin-guide/configuration/index.md', 'Admin Guide', 'Configuration']
+- ['admin-guide/certificates/index.md', 'Admin Guide', 'Certificates']
+- ['admin-guide/user-management/index.md', 'Admin Guide', 'User Management']
+- ['admin-guide/authentication/index.md', 'Admin Guide', 'Authentication']
+- ['admin-guide/saml/index.md', 'Admin Guide', 'SAML']
+- ['admin-guide/openid-connect/index.md', 'Admin Guide', 'OpenID Connect']
+- ['admin-guide/uma/index.md', 'Admin Guide', 'UMA']
+- ['admin-guide/interception-scripts/index.md', 'Admin Guide', 'Interception Scripts']
+- ['admin-guide/multiparty-federation/index.md', 'Admin Guide', 'MultiParty Federation']
+- ['admin-guide/oxPush/index.md', 'Admin Guide', 'oxPush']
 
 # Sub Pages of Admin Guide / installation
 - ['admin-guide/installation/redhat.md', '', '']
