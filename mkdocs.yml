@@ -8,14 +8,18 @@ theme: spacelab
 
 pages:
 
+# Home Page
+- ['index.md', 'Home']
+
 # Articles
-- ['articles/apache-saml/index.md', 'Articles', 'Apache SAML']
-- ['articles/apache-oauth2/index.md', 'Articles', 'Apache OAuth2']
-- ['articles/nginx-oauth2/index.md', 'Articles', 'nginx OAuth2']
-- ['articles/java-connect/index.md', 'Articles', 'Java OpenID Connect']
+- ['./articles/apache-saml/index.md', 'Articles', 'Apache SAML']
 - ['articles/java-saml/index.md', 'Articles', 'Java SAML']
-- ['articles/js-connect/index.md', 'Articles', 'Javascript OpenID Connect']
-- ['articles/scim-client/index.md', 'Articles', 'SCIM client']
+- ['articles/apache-oauth2/index.md', 'Articles', 'Apache OpenID Connect / UMA']
+- ['articles/nginx-oauth2/index.md', 'Articles', 'nginx OpenID Connect / UMA']
+- ['articles/js-connect/index.md', 'Articles', 'JavaScript OpenID Connect RP']
+- ['articles/java-connect/index.md', 'Articles', 'Java OpenID Connect RP']
+- ['articles/scim-client/index.md', 'Articles', 'Java SCIM client']
+- ['articles/mobile-api/index.md', 'Articles', 'Mobile - Headless API : Connect / UMA']
 
 # Reference sections
 - ['reference/configuration/index.md', 'Reference', 'Configuration']
@@ -53,6 +57,7 @@ pages:
 # Admin Guide Sections
 - ['admin-guide/installation/index.md', 'Admin Guide', 'Installation']
 - ['admin-guide/configuration/index.md', 'Admin Guide', 'Configuration']
+- ['admin-guide/custom-look/index.md', 'Admin Guide', 'Customizing Look and Feel']
 - ['admin-guide/certificates/index.md', 'Admin Guide', 'Certificates']
 - ['admin-guide/user-management/index.md', 'Admin Guide', 'User Management']
 - ['admin-guide/authentication/index.md', 'Admin Guide', 'Authentication']
@@ -81,6 +86,14 @@ pages:
 - ['admin-guide/configuration/shibIDP.md', '', '']
 - ['admin-guide/configuration/oxProx.md', '', '']
 
+# Sub Pages of Customizing Look and Feel
+- ['admin-guide/custom-look/authentication.md', '', '']
+- ['admin-guide/custom-look/defaults.md', '', '']
+- ['admin-guide/custom-look/registration.md', '', '']
+- ['admin-guide/custom-look/saml-discovery.md', '', '']
+- ['admin-guide/custom-look/user-profile.md', '', '']
+- ['admin-guide/custom-look/xhtml.md', '', '']
+
 # Sub Pages of Admin Guide / Certificates 
 - ['admin-guide/certificates/https.md', '', '']
 - ['admin-guide/certificates/saml.md', '', '']
@@ -94,6 +107,7 @@ pages:
 - ['admin-guide/user-management/local-admin.md', '', '']
 - ['admin-guide/user-management/registration.md', '', '']
 - ['admin-guide/user-management/self-service.md', '', '']
+- ['admin-guide/user-management/invitation-code-registration.md', '', '']
 
 # Sub pages of Admin Guide / Authentication
 - ['admin-guide/authentication/ldap.md', '', '']
@@ -143,7 +157,4 @@ pages:
 - ['admin-guide/multiparty-federation/saml-federation.md', '', '']
 - ['admin-guide/multiparty-federation/oauth2-federation.md', '', '']
 - ['admin-guide/multiparty-federation/federation-public-website.md', '', '']
-
-# Home Page
-- ['index.md', '', '']
 
