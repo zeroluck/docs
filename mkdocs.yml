@@ -11,49 +11,6 @@ pages:
 # Home Page
 - ['index.md', 'Home']
 
-# Articles
-- ['./articles/apache-saml/index.md', 'Articles', 'Apache SAML']
-- ['articles/java-saml/index.md', 'Articles', 'Java SAML']
-- ['articles/apache-oauth2/index.md', 'Articles', 'Apache OpenID Connect / UMA']
-- ['articles/nginx-oauth2/index.md', 'Articles', 'nginx OpenID Connect / UMA']
-- ['articles/js-connect/index.md', 'Articles', 'JavaScript OpenID Connect RP']
-- ['articles/java-connect/index.md', 'Articles', 'Java OpenID Connect RP']
-- ['articles/scim-client/index.md', 'Articles', 'Java SCIM client']
-- ['articles/mobile-api/index.md', 'Articles', 'Mobile - Headless API : Connect / UMA']
-
-# Reference sections
-- ['reference/configuration/index.md', 'Reference', 'Configuration']
-- ['reference/ldap/index.md', 'Reference', 'LDAP Schema']
-- ['reference/lib/index.md', 'Reference', 'Libraries']
-- ['reference/api/index.md', 'Reference', 'APIs']
-
-# Sub pages of Reference / Library
-- ['reference/lib/openid-connect.md', '', '']
-- ['reference/lib/uma.md', '', '']
-- ['reference/lib/scim.md', '', '']
-- ['reference/lib/saml.md', '', '']
-- ['reference/lib/user-management.md', '', '']
-
-# Sub pages of Reference / LDAP
-- ['reference/ldap/schema.md', '', '']
-- ['reference/ldap/namespace.md', '', '']
-- ['reference/ldap/indexing.md', '', '']
-- ['reference/ldap/replication.md', '', '']
-
-# Sub pages of Reference / Configuration
-- ['reference/configuration/system.md', '', '']
-- ['reference/configuration/oxAuth.md', '', '']
-- ['reference/configuration/oxTrust.md', '', '']
-- ['reference/configuration/shibIDP.md', '', '']
-- ['reference/configuration/asimba.md', '', '']
-- ['reference/configuration/opendj.md', '', '']
-- ['reference/configuration/openldap.md', '', '']
-- ['reference/configuration/jagger.md', '', '']
-- ['reference/configuration/oxPush.md', '', '']
-- ['reference/configuration/oxProx.md', '', '']
-- ['reference/configuration/mysql.md', '', '']
-- ['reference/configuration/memcached.md', '', '']
-
 # Admin Guide Sections
 - ['admin-guide/introduction/index.md', 'Admin Guide', 'introduction']
 - ['admin-guide/installation/index.md', 'Admin Guide', 'Installation']
@@ -68,6 +25,22 @@ pages:
 - ['admin-guide/interception-scripts/index.md', 'Admin Guide', 'Interception Scripts']
 - ['admin-guide/multiparty-federation/index.md', 'Admin Guide', 'MultiParty Federation']
 - ['admin-guide/oxPush/index.md', 'Admin Guide', 'oxPush']
+
+# Reference sections
+- ['reference/configuration/index.md', 'Reference', 'Configuration']
+- ['reference/ldap/index.md', 'Reference', 'LDAP Schema']
+- ['reference/lib/index.md', 'Reference', 'Libraries']
+- ['reference/api/index.md', 'Reference', 'APIs']
+
+# Articles
+- ['./articles/apache-saml/index.md', 'Articles', 'Apache SAML']
+- ['articles/java-saml/index.md', 'Articles', 'Java SAML']
+- ['articles/apache-oauth2/index.md', 'Articles', 'Apache OpenID Connect / UMA']
+- ['articles/nginx-oauth2/index.md', 'Articles', 'nginx OpenID Connect / UMA']
+- ['articles/js-connect/index.md', 'Articles', 'JavaScript OpenID Connect RP']
+- ['articles/java-connect/index.md', 'Articles', 'Java OpenID Connect RP']
+- ['articles/scim-client/index.md', 'Articles', 'Java SCIM client']
+- ['articles/mobile-api/index.md', 'Articles', 'Mobile - Headless API : Connect / UMA']
 
 # Sub Pages of introduction 
 - ['admin-guide/introduction/architecture.md', '', '']
@@ -165,4 +138,31 @@ pages:
 - ['admin-guide/multiparty-federation/saml-federation.md', '', '']
 - ['admin-guide/multiparty-federation/oauth2-federation.md', '', '']
 - ['admin-guide/multiparty-federation/federation-public-website.md', '', '']
+
+- ['reference/lib/openid-connect.md', '', '']
+- ['reference/lib/uma.md', '', '']
+- ['reference/lib/scim.md', '', '']
+- ['reference/lib/saml.md', '', '']
+- ['reference/lib/user-management.md', '', '']
+
+# Sub pages of Reference / LDAP
+- ['reference/ldap/schema.md', '', '']
+- ['reference/ldap/namespace.md', '', '']
+- ['reference/ldap/indexing.md', '', '']
+- ['reference/ldap/replication.md', '', '']
+
+# Sub pages of Reference / Configuration
+- ['reference/configuration/system.md', '', '']
+- ['reference/configuration/oxAuth.md', '', '']
+- ['reference/configuration/oxTrust.md', '', '']
+- ['reference/configuration/shibIDP.md', '', '']
+- ['reference/configuration/asimba.md', '', '']
+- ['reference/configuration/opendj.md', '', '']
+- ['reference/configuration/openldap.md', '', '']
+- ['reference/configuration/jagger.md', '', '']
+- ['reference/configuration/oxPush.md', '', '']
+- ['reference/configuration/oxProx.md', '', '']
+- ['reference/configuration/mysql.md', '', '']
+- ['reference/configuration/memcached.md', '', '']
+
 
