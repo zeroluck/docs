@@ -28,6 +28,7 @@ pages:
 
 # Reference sections
 - ['reference/configuration/index.md', 'Reference', 'Configuration']
+- ['reference/oxTrust/index.md', 'Reference', 'oxTrust User Interface']
 - ['reference/ldap/index.md', 'Reference', 'LDAP Schema']
 - ['reference/lib/index.md', 'Reference', 'Libraries']
 - ['reference/api/index.md', 'Reference', 'APIs']
@@ -165,4 +166,10 @@ pages:
 - ['reference/configuration/mysql.md', '', '']
 - ['reference/configuration/memcached.md', '', '']
 
+# Sub pages of Reference / Configuration
+- ['reference/oxTrust/configuration.md', '', '']
+- ['reference/oxTrust/oauth2.md', '', '']
+- ['reference/oxTrust/personal.md', '', '']
+- ['reference/oxTrust/saml.md', '', '']
+- ['reference/oxTrust/users.md', '', '']
 
