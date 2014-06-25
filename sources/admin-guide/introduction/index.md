@@ -3,6 +3,7 @@
 ## Contents
 
 - [Gluu Server Mission](./gluu-server-mission.md)
+- [History](./history.md)
 - [Design Goals](./design-goals.md)
 - [Architecture](./architecture.md)
 - [Licenses](./licenses.md)

@@ -73,6 +73,7 @@ pages:
 - ['admin-guide/introduction/architecture.md', '', '']
 - ['admin-guide/introduction/design-goals.md', '', '']
 - ['admin-guide/introduction/gluu-server-mission.md', '', '']
+- ['admin-guide/introduction/history.md', '', '']
 - ['admin-guide/introduction/licenses.md', '', '']
 
 # Sub Pages of Admin Guide / installation
