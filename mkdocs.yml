@@ -55,6 +55,7 @@ pages:
 - ['reference/configuration/memcached.md', '', '']
 
 # Admin Guide Sections
+- ['admin-guide/introduction/index.md', 'Admin Guide', 'introduction']
 - ['admin-guide/installation/index.md', 'Admin Guide', 'Installation']
 - ['admin-guide/configuration/index.md', 'Admin Guide', 'Configuration']
 - ['admin-guide/custom-look/index.md', 'Admin Guide', 'Customizing Look and Feel']
@@ -67,6 +68,12 @@ pages:
 - ['admin-guide/interception-scripts/index.md', 'Admin Guide', 'Interception Scripts']
 - ['admin-guide/multiparty-federation/index.md', 'Admin Guide', 'MultiParty Federation']
 - ['admin-guide/oxPush/index.md', 'Admin Guide', 'oxPush']
+
+# Sub Pages of introduction 
+- ['admin-guide/introduction/architecture.md', '', '']
+- ['admin-guide/introduction/design-goals.md', '', '']
+- ['admin-guide/introduction/gluu-server-mission.md', '', '']
+- ['admin-guide/introduction/licenses.md', '', '']
 
 # Sub Pages of Admin Guide / installation
 - ['admin-guide/installation/redhat.md', '', '']

@@ -1,6 +1,8 @@
-# Faciemque aut album nec refert nitebat animosque
+# SAML SP Configuration
 
-## Cerealia scelerate totis
+## Shibboleth SP 
+
+## Simple Java SP
 
 [Lorem](http://gifctrl.com/) markdownum enim, **hunc** mente quos sonus pariter
 genuere lacertis. Tuti seminaque matris; aere sine tendens, Acheloia rubore
