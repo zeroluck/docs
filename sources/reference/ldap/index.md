@@ -2,7 +2,9 @@
 
 ## Contents
 
-- [Schema](./schema.md)
+- [OpenDJ Schema](./opendj-schema.md)
+- [OpenLDAP Schema](./openldap-schema.md)
+- [389DS Schema](./389ds-schema.md)
 - [Namespace](./namespace.md)
 - [Indexing](./indexing.md)
 - [Replication](./replication.md)
