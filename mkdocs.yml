@@ -44,7 +44,7 @@ pages:
 - ['articles/mobile-api.md', 'Articles', 'Mobile - Headless API : Connect / UMA']
 
 # Sub Pages of introduction 
-- ['admin-guide/introduction/architecture.md', '', '']
+- ['admin-guide/introduction/architecture.md', '**HIDDEN**', '']
 - ['admin-guide/introduction/design-goals.md', '', '']
 - ['admin-guide/introduction/gluu-server-mission.md', '', '']
 - ['admin-guide/introduction/history.md', '', '']
