@@ -2,14 +2,14 @@
 
 ## Contents
 
-- [](./apache-oauth2.md)
-- [](./java-connect.md)
-- [](./mobile-api.md)
-- [](./apache-saml.md)
-- [](./java-saml.md)
-- [](./nginx-oauth2.md)
-- [](./js-connect.md)
-- [](./scim-client.md)
+- [](apache-oauth2.md)
+- [](java-connect.md)
+- [](mobile-api.md)
+- [](apache-saml.md)
+- [](java-saml.md)
+- [](nginx-oauth2.md)
+- [](js-connect.md)
+- [](scim-client.md)
 
 *Lorem markdownum* insula, licet et blanditiasque [Titani
 virginibusque](http://omgcatsinspace.tumblr.com/) famulis amplexa opem, dei
