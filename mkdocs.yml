@@ -43,10 +43,10 @@ pages:
 - ['admin-guide/oxPush/index.md', 'Admin Guide', 'oxPush']
 
 # Sub Pages of introduction 
-- ['admin-guide/introduction/architecture.md', '', '']
-- ['admin-guide/introduction/design-goals.md', '', '']
-- ['admin-guide/introduction/gluu-server-mission.md', '', '']
-- ['admin-guide/introduction/licenses.md', '', '']
+- ['admin-guide/introduction/architecture.md', 'Admin Guide']
+- ['admin-guide/introduction/design-goals.md', 'Admin Guide']
+- ['admin-guide/introduction/gluu-server-mission.md', 'Admin Guide']
+- ['admin-guide/introduction/licenses.md', 'Admin Guide']
 
 # Sub Pages of Admin Guide / installation
 - ['admin-guide/installation/redhat.md', '', '']
