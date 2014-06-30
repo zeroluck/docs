@@ -49,11 +49,11 @@ pages:
 - ['admin-guide/introduction/licenses.md', 'Admin Guide']
 
 # Sub Pages of Admin Guide / installation
-- ['admin-guide/installation/redhat.md', 'Admin Guide']
-- ['admin-guide/installation/ubuntu.md', 'Admin Guide']
-- ['admin-guide/installation/centos.md', 'Admin Guide']
-- ['admin-guide/installation/debian.md', 'Admin Guide']
-- ['admin-guide/installation/windows.md', 'Admin Guide']
+- ['admin-guide/installation/redhat.md', 'Admin Guide','**HIDDEN**']
+- ['admin-guide/installation/ubuntu.md', 'Admin Guide', '**HIDDEN**']
+- ['admin-guide/installation/centos.md', 'Admin Guide', '**HIDDEN**']
+- ['admin-guide/installation/debian.md', 'Admin Guide', '**HIDDEN**']
+- ['admin-guide/installation/windows.md', 'Admin Guide', '**HIDDEN**']
 - ['admin-guide/installation/mac.md', 'Admin Guide']
 - ['admin-guide/installation/juju.md', 'Admin Guide']
 - ['admin-guide/installation/build.md', 'Admin Guide']
