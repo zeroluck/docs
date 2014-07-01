@@ -2,7 +2,7 @@
 
 ## Introduction
 
-User-Managed Access (UMA) is an OAuth-based web-based access management protocol. The protocol is defined in a draft version 1.0 specification. A corresponding specification defines obligations of legally responsible parties that engage in UMA-conforming interactions. Gluu Server implements UMA protocol and use it actively for protecting resources. It's possible to hook up authorization interception script which may contain logic when to grand (or forbid) access. All terminology used by this page is borrowed from UMA and Connect specs.
+User-Managed Access ([UMA]) is an OAuth-based web-based access management protocol. The protocol is defined in a draft version 1.0 specification. A corresponding specification defines obligations of legally responsible parties that engage in UMA-conforming interactions. Gluu Server implements UMA protocol and use it actively for protecting resources. It's possible to hook up authorization interception script which may contain logic when to grand (or forbid) access. All terminology used by this page is borrowed from UMA and Connect specs.
 
 ## Algorithm
 
