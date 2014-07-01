@@ -1,61 +1,54 @@
-# Non luridus
+# Authorization interception scripts
 
-## Quantum vineta
+## Introduction
 
-Lorem markdownum interdum auctor relapsa quod vir pateres revolutaque, furtim
-illi lupi quae [Delius](http://html9responsiveboilerstrapjs.com/) lumina
-[sine](http://jaspervdj.be/) suberant socios. Ore unum imago sudem somni in
-Ereboque dixit *spumantiaque scelus quid*: premeret cortice? Non per capitisque
-aliquo, dei precor arcem, in nostris summusque postes messoris pallae. Ne Cereri
-sinamus pirithoi facit, ait sudore habet capitis! Nam prius.
+UMA
 
-- Indignis plaustra tulit
-- Fervoribus fuerit amore guttura perfusam silet des
-- Feruntur cecidere teque et antiquae cum gracili
 
-## Vota habeo preces undas et vana facit
+## Algorithm
 
-Es salva, [ventis](http://www.wtfpl.net/) inposuit deprendere caeli femina,
-amorem ut dixerat portare carinae, montibus sumus. Quoque quo, nisi ante hospes
-tegmine cerno genitor inventa vernat. **Vultus** acernae velis fluere *quibus*.
+Rules:
 
-1. Aurum monet
-2. Temptat quid
-3. Requies temptanti Phineus aequoris silva alter genas
-4. Si inmunis respexit cupidoque odores
-5. Est inpositos faticinasque comes
-6. Nunc numina
+- Policy protects scopes. If scope is protected by policy then during RPT authorization such policy script must return true in order to authorize access to resource, otherwise authorization is denied.
+- Scope can be protected by multiple policies. If one scope is protected by multiple policies then all policies must return true to authorize access. If at least one policy returned false then authorization is denied.
+/sources/img/interception_scripts/uma_policy_handling.jpg
+![Alt text](/img/interception_scripts/uma_policy_handling.jpg "UMA policy handling")
 
-## Ora est eunti sed Ligdo saxo Circes
+## Policy definition
 
-Omine patris perdidimus patebant et cur ante deceant restabat pereat suasque
-spicula tibi sua. Elue ter una distentae nomen Delphosque vultuque propiora et
-suorum stetit nativum sex utque. Sagittas sequerer dotale, illum ausa abibat
-iniqua, tempora ore iugum, secuta ficta Lucina.
+Policy entries location: ou=policies,ou=uma,o=<your organization id>,o=gluu (e.g. ou=policies,ou=uma,o=@!1111,o=gluu )
 
-    ospf_dvd(win_backlink * backup_cisc(linkedinIvr, ios), vlbMemoryBatch,
-            click_hard_tape);
-    scroll_java(-4 + 30 + 4 + nuiExport, thick_direct(rootkitPoint, 3 + 3));
-    rawMemoryDns(source_ssl_client);
-    if (yottabyteCpmRuntime) {
-        mtu(metadata, waveform_rte, 84);
-        promLdapSsh = party;
-    } else {
-        w_rosetta_virtualization += ide + 3;
-    }
-    if (icmpMotion(wordKbpsMeta, dvdCommerce, tiger)) {
-        internic(filenameRpcDfs.exbibyteProgrammingFrame(reimage),
-                atm_vram_batch);
-    } else {
-        transfer_pinterest -= busUat;
-        rpc.payload.outbox(ssh_apache_data(-3, device_drop, 36),
-                classEnterprise);
+    dn: inum=@!1111!0009!BC01!0000,ou=policies,ou=uma,o=@!1111,o=gluu
+    displayName: Only people from Austin can login
+    description: <some description of the policy>
+    oxPolicyScript: <Python or JavaScript or whatever script code here>
+    programmingLanguage: Python
+    inum: @!1111!0009!BC01!0000
+    oxAuthUmaScope: http://photoz.example.com/dev/scopes/view
+    oxAuthUmaScope: http://photoz.example.com/dev/scopes/all
+    objectClass: oxAuthUmaPolicy
+    objectClass: top
+
+## Interception script
+
+    public interface IPolicyExternalAuthorization {
+        public boolean authorize(AuthorizationContext p_authorizationContext);
     }
 
-Cymeli mortis leti inscius telorum unde quem sic, prospiciens quas, sub sit
-bene, ferro agros. *Nec habet* Pyrrhus animal celeberrimus iura auxilio secum
-nostri, in.
+    public interface IAuthorizationContext {
+        String getClientClaim(String claimName);
+        String getUserClaim(String claimName);
+        String getRequestClaim(String claimName);
+        String getUserClaimByLdapName(String ldapName);
+        Integer getAuthLevel();
+        String getAuthMode();
+        String getIpAddress();
+        boolean isInNetwork(String cidrNotation);
+        RequesterPermissionToken getRPT();
+        ResourceSetPermission getPermission();
+        AuthorizationGrant getGrant(); // here return unmodifiable version of grant, e.g. to avoid new token creation
+        HttpServletRequest getHttpRequest();
+    }
 
-[Delius]: http://html9responsiveboilerstrapjs.com/
-[sine]: http://jaspervdj.be/
-[ventis]: http://www.wtfpl.net/
+[UMA]: http://kantarainitiative.org/confluence/display/uma/UMA+1.0+Core+Protocol
+
