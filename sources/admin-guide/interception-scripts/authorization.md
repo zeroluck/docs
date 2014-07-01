@@ -101,5 +101,44 @@ Python sample authorization script (authorize only if user location claim equals
 
     programmingLanguage: python
 
+## Sample of RPT LDAP entry
+
+    dn: uniqueIdentifier=2f7600e4-e463-4bae-a76e-de14e74ba98f,ou=uma_requester_permission_token,inum=@!1111!0008!FF81!2D39,ou=clients,o=@!1111,o=gluu
+    objectClass: oxAuthUmaRPT
+    objectClass: top
+    oxAmHost: localhost
+    oxAuthClientId: @!1111!0008!FF81!2D39
+    oxAuthCreation: 20130221152208.888Z
+    oxAuthExpiration: 20130221162208.674Z
+    oxAuthTokenCode: 462e2e91-af7f-42cd-94ad-e9c70ca908c9/34E7.FE4E.3FBF.AA26.A4FA.70CF.986A.8E35
+    oxAuthUserId: mike
+    oxUmaPermission: oxTicket=b3e731a5-c3f0-4bc7-b8f6-d67e34bdb78c,ou=uma_resource_set_permission,inum=@!1111!0008!FF81!2D39,ou=clients,o=@!1111,o=gluu
+    uniqueIdentifier: 2f7600e4-e463-4bae-a76e-de14e74ba98f
+
+## Sample of Permission LDAP entry
+    dn: oxTicket=b3e731a5-c3f0-4bc7-b8f6-d67e34bdb78c,ou=uma_resource_set_permission,inum=@!1111!0008!FF81!2D39,ou=clients,o=@!1111,o=gluu
+    objectClass: top
+    objectClass: oxAuthUmaResourceSetPermission
+    oxAmHost: localhost
+    oxAuthExpiration: 20130221152315.692Z
+    oxAuthUmaScope: http://photoz.example.com/dev/scopes/view
+    oxConfigurationCode: 9541.39E1.8A64.6366.9F6D.8DC9.318C.CBF9.1361460135693
+    oxHost: photoz.example.com
+    oxResourceSetId: 1361460127791
+    oxTicket: b3e731a5-c3f0-4bc7-b8f6-d67e34bdb78c
+
+## Sample of Resource Set LDAP entry
+
+    dn: oxId=1361460127791,ou=uma_resource_sets,inum=@!1111!0008!FF81!2D39,ou=clients,o=@!1111,o=gluu
+    displayName: Photo Album
+    objectClass: oxAuthUmaResourceSet
+    objectClass: top
+    owner: inum=@!1111!0000!D4E7,ou=people,o=@!1111,o=gluu
+    oxAuthUmaScope: http://photoz.example.com/dev/scopes/view
+    oxAuthUmaScope: http://photoz.example.com/dev/scopes/all
+    oxFaviconImage: http://www.example.com/icons/flower.png
+    oxId: 1361460127791
+    oxRevision: 1
+
 [UMA]: http://kantarainitiative.org/confluence/display/uma/UMA+1.0+Core+Protocol
 
