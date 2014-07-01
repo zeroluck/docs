@@ -5,6 +5,7 @@ copyright: Copyright &copy; 2014, Gluu, Inc.
 docs_dir: sources
 repo_url: https://github.com/GluuFederation/docs
 theme: spacelab 
+theme_dir: ./theme/mkdocs/
 
 pages:
 
