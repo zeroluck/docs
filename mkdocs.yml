@@ -12,14 +12,14 @@ pages:
 - ['index.md', 'Home']
 
 # Articles
-- ['./articles/apache-saml/index.md', 'Articles', 'Apache SAML']
-- ['articles/java-saml/index.md', 'Articles', 'Java SAML']
-- ['articles/apache-oauth2/index.md', 'Articles', 'Apache OpenID Connect / UMA']
-- ['articles/nginx-oauth2/index.md', 'Articles', 'nginx OpenID Connect / UMA']
-- ['articles/js-connect/index.md', 'Articles', 'JavaScript OpenID Connect RP']
-- ['articles/java-connect/index.md', 'Articles', 'Java OpenID Connect RP']
-- ['articles/scim-client/index.md', 'Articles', 'Java SCIM client']
-- ['articles/mobile-api/index.md', 'Articles', 'Mobile - Headless API : Connect / UMA']
+- ['./articles/apache-saml.md', 'Articles', 'Apache SAML']
+- ['articles/java-saml.md', 'Articles', 'Java SAML']
+- ['articles/apache-oauth2.md', 'Articles', 'Apache OpenID Connect / UMA']
+- ['articles/nginx-oauth2.md', 'Articles', 'nginx OpenID Connect / UMA']
+- ['articles/js-connect.md', 'Articles', 'JavaScript OpenID Connect RP']
+- ['articles/java-connect.md', 'Articles', 'Java OpenID Connect RP']
+- ['articles/scim-client.md', 'Articles', 'Java SCIM client']
+- ['articles/mobile-api.md', 'Articles', 'Mobile - Headless API : Connect / UMA']
 
 # Reference sections
 - ['reference/configuration/index.md', 'Reference', 'Configuration']
@@ -46,6 +46,7 @@ pages:
 - ['admin-guide/introduction/architecture.md', '**HIDDEN**']
 - ['admin-guide/introduction/design-goals.md', '**HIDDEN**']
 - ['admin-guide/introduction/gluu-server-mission.md', '**HIDDEN**']
+- ['admin-guide/introduction/history.md', '**HIDDEN**']
 - ['admin-guide/introduction/licenses.md', '**HIDDEN**']
 
 # Sub Pages of Admin Guide / installation
@@ -151,6 +152,9 @@ pages:
 - ['reference/ldap/namespace.md', '**HIDDEN**']
 - ['reference/ldap/indexing.md', '**HIDDEN**']
 - ['reference/ldap/replication.md', '**HIDDEN**']
+- ['reference/ldap/opendj-schema.md', '**HIDDEN**']
+- ['reference/ldap/openldap-schema.md', '**HIDDEN**']
+- ['reference/ldap/389ds-schema.md', '**HIDDEN**']
 
 # Sub pages of Reference / Configuration
 - ['reference/configuration/system.md', '**HIDDEN**']
