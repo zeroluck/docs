@@ -6,18 +6,14 @@ User-Managed Access ([UMA]) is an OAuth-based web-based access management protoc
 
 ## UMA in Action
 
-
+![Alt text](/img/uma/uma_parts.png "UMA Parts")
 
 ## References
 - [UMA Specifications](http://kantarainitiative.org/confluence/display/uma/UMA+1.0+Core+Protocol)
-
-
-  * [[https://svn.gluu.info/repository/openxdi/oxUmaDemo/RP/|oxuma-rp]] - UMA Requestion Party Sample implementation
-  * [[https://svn.gluu.info/repository/openxdi/oxUmaDemo/RS/|oxuma-rs]] - UMA Resource Server Sample implementation
-  * [[http://ox.gluu.org/doku.php?id=oxauth:home|oxAuth Authorization Server]] - open source OpenID and UMA Provider.
-  * [[http://gluu.org|Gluu Server]]
-  * [[http://www.gluu.co/juju-draft-overview|Juju Application Security Framework (JASF) Overview]]
+- [UMA Requestion Party Sample implementation](https://svn.gluu.info/repository/openxdi/oxUmaDemo/RP/)
+- [UMA Resource Server Sample implementation](https://svn.gluu.info/repository/openxdi/oxUmaDemo/RS/)
+- [Gluu Server](http://gluu.org)
+- [Juju Application Security Framework (JASF) Overview](http://www.gluu.co/juju-draft-overview)
 
 [UMA]: http://kantarainitiative.org/confluence/display/uma/UMA+1.0+Core+Protocol
 
-This is [an example](http://example.com/ "Title") inline link.
