@@ -2,6 +2,13 @@
 
 ## Performance Tuning
 
+Gluu Server has stateless architecture, it scales quite easy. However to get high-performant server it must be tuned accordingly.
+
+Tuning consists of:
+- LDAP Server
+- Web Application Container
+- Gluu Server configuration Tuning
+
 ### LDAP Server
 
 Here we describe most important configuration based on OpenDJ LDAP Server:
@@ -38,8 +45,13 @@ Benchmarking based on Authentication Implicit Flow: http://openid.net/specs/open
   <tr>
     <td>1000</td>
     <td>200</td>
-    <td> 2 minutes 3 seconds </td>
+    <td> - seconds -</td>
   </tr>
+   <tr>
+      <td>10000</td>
+      <td>300</td>
+      <td> 1 hours 2 seconds -</td>
+    </tr>
 </table>
 
 ## Useful Links
