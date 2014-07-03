@@ -5,6 +5,7 @@
 Gluu Server has stateless architecture, it scales quite easy. However to get high-performant server it must be tuned accordingly.
 
 Tuning consists of:
+
 - LDAP Server (OpenDJ, OpenLDAP)
 - Web Application Container (Tomcat, Jetty, JBoss)
 - Gluu Server configuration Tuning
@@ -28,7 +29,9 @@ For example OpenDJ use JVM for running, for high performance it's recommended to
 ### Tomcat
 
 1. Set maxmimum for parallel requests.
-Connector parameters in server.xml
+
+Connector parameters in server.xml:
+
 - maxThreads="10000"
 - maxConnections="10000"
 
@@ -36,7 +39,7 @@ Connector parameters in server.xml
 
 Benchmarking based on Authentication Implicit Flow: http://openid.net/specs/openid-connect-core-1_0.html#ImplicitFlowAuth
 
-Measures were made on single machine.
+Measures were made on single machine with Gluu Server, LDAP Server and test runner (clients). Therefore here is quite <b>subjective</b> results
 
 <table>
   <tr>
@@ -73,6 +76,6 @@ Measures were made on single machine.
 
 ## Useful Links
 
-[OpenDJ Performance Tuning](http://opendj.forgerock.org/opendj-server/doc/admin-guide/index/chap-tuning.html)
-[OpenDJ Global configuration](http://opendj.forgerock.org/opendj-server/configref/global.html#max-allowed-client-connections)
+- [OpenDJ Performance Tuning](http://opendj.forgerock.org/opendj-server/doc/admin-guide/index/chap-tuning.html)
+- [OpenDJ Global configuration](http://opendj.forgerock.org/opendj-server/configref/global.html#max-allowed-client-connections)
 
