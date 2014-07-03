@@ -16,13 +16,14 @@ pages:
 - ['index.md', 'Home']
 
 # Articles
-- ['./articles/apache-saml/index.md', 'Articles', 'Apache SAML']
+- ['./articles/apache-saml.md', 'Articles', 'Apache SAML']
 - ['articles/java-saml.md', 'Articles', 'Java SAML']
 - ['articles/apache-oauth2.md', 'Articles', 'Apache OpenID Connect / UMA']
 - ['articles/nginx-oauth2.md', 'Articles', 'nginx OpenID Connect / UMA']
 - ['articles/js-connect.md', 'Articles', 'JavaScript OpenID Connect RP']
 - ['articles/java-connect.md', 'Articles', 'Java OpenID Connect RP']
 - ['articles/scim-client.md', 'Articles', 'Java SCIM client']
+- ['articles/benchmarking.md', 'Articles', 'Java SCIM client']
 - ['articles/mobile-api.md', 'Articles', 'Mobile - Headless API : Connect / UMA']
 
 # Reference sections
