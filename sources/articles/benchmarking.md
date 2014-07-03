@@ -56,6 +56,11 @@ Measures were made on single machine.
   </tr>
   <tr>
     <td>2000</td>
+    <td>100</td>
+    <td>12 minutes 21 seconds</td>
+  </tr>
+  <tr>
+    <td>2000</td>
     <td>200</td>
     <td>10 minutes 42 seconds</td>
   </tr>
