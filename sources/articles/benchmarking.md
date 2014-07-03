@@ -9,18 +9,38 @@ Here we describe most important configuration based on OpenDJ LDAP Server:
 
  max-allowed-client-connections
 
+### Tomcat
+
+Connector parameters in server.xml
+- maxThreads="10000"
+- maxConnections="10000"
+
 ## Gluu Server Benchmark
 
 Benchmarking based on Authentication Implicit Flow: http://openid.net/specs/openid-connect-core-1_0.html#ImplicitFlowAuth
 
-| Invocations         |      Time in seconds      |  Cool |
-|----------|:-------------:|------:|
-| 100 |  8 | $1600 |
-| col 2 is |    centered   |   $12 |
-| col 3 is | right-aligned |    $1 |
-
-100 invocations  8 seconds
-
+<table>
+  <tr>
+    <td><b>Invocations &nbsp;&nbsp;</b></td>
+    <td><b>Parallel threads &nbsp;&nbsp;</b></td>
+    <td><b>Time</b></td>
+  </tr>
+  <tr>
+    <td>100</td>
+    <td>100</td>
+    <td>8 seconds </td>
+  </tr>
+  <tr>
+    <td>1000</td>
+    <td>200</td>
+    <td> 2 minutes 3 seconds </td>
+  </tr>
+  <tr>
+    <td>1000</td>
+    <td>200</td>
+    <td> 2 minutes 3 seconds </td>
+  </tr>
+</table>
 
 ## Useful Links
 
