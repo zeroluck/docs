@@ -15,7 +15,7 @@ pages:
 - ['index.md', 'Home']
 
 # Articles
-- ['./articles/apache-saml.md', 'Articles', 'Apache SAML']
+- ['articles/apache-saml.md', 'Articles', 'Apache SAML']
 - ['articles/java-saml.md', 'Articles', 'Java SAML']
 - ['articles/apache-oauth2.md', 'Articles', 'Apache OpenID Connect / UMA']
 - ['articles/nginx-oauth2.md', 'Articles', 'nginx OpenID Connect / UMA']
