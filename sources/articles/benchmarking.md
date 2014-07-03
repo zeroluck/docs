@@ -5,19 +5,29 @@
 Gluu Server has stateless architecture, it scales quite easy. However to get high-performant server it must be tuned accordingly.
 
 Tuning consists of:
-- LDAP Server
-- Web Application Container
+- LDAP Server (OpenDJ, OpenLDAP)
+- Web Application Container (Tomcat, Jetty, JBoss)
 - Gluu Server configuration Tuning
 
 ### LDAP Server
 
-Here we describe most important configuration based on OpenDJ LDAP Server:
-1.
+(For convenience all samples sticks to OpenDJ however general recommendations are the same for other LDAP Servers)
 
- max-allowed-client-connections
+1. Maximum allowed connections
+
+If there is not enough connections to serve the client, connection is put "on hold" and waits. To avoid delays it's recommended to provide expected maximum allowed connections.
+
+```
+ max-allowed-client-connections=1000
+ ```
+
+2. Provide enough resources to LDAP Server
+
+For example OpenDJ use JVM for running, for high performance it's recommended to give enough memory via JVM system properties.
 
 ### Tomcat
 
+1. Set maxmimum for parallel requests.
 Connector parameters in server.xml
 - maxThreads="10000"
 - maxConnections="10000"
@@ -25,6 +35,8 @@ Connector parameters in server.xml
 ## Gluu Server Benchmark
 
 Benchmarking based on Authentication Implicit Flow: http://openid.net/specs/openid-connect-core-1_0.html#ImplicitFlowAuth
+
+Measures were made on single machine.
 
 <table>
   <tr>
@@ -43,14 +55,14 @@ Benchmarking based on Authentication Implicit Flow: http://openid.net/specs/open
     <td> 2 minutes 3 seconds </td>
   </tr>
   <tr>
-    <td>1000</td>
+    <td>2000</td>
     <td>200</td>
-    <td> - seconds -</td>
+    <td>10 minutes 42 seconds</td>
   </tr>
    <tr>
       <td>10000</td>
       <td>300</td>
-      <td> 1 hours 2 seconds -</td>
+      <td>2 hours 2 seconds -</td>
     </tr>
 </table>
 
