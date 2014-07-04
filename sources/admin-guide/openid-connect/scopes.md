@@ -1,4 +1,8 @@
-# Scopes
+# OpenID Connect Scopes
+
+## Default Scopes
+
+## Custom Scopes
 
 ## Quo fata
 
