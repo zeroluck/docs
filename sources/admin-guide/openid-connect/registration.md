@@ -1,4 +1,8 @@
-# Canum non Melampus satis Helops telluris si
+# OpenID Connect Dynamic Client Registration
+
+## Client Registration
+
+## Client Read
 
 ## Parente in sero surgit
 
