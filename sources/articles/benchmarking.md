@@ -55,22 +55,22 @@ Measures were made on single machine with Gluu Server, LDAP Server and test runn
   <tr>
     <td>1000</td>
     <td>200</td>
-    <td> 2 minutes 3 seconds </td>
+    <td> todo </td>
   </tr>
   <tr>
     <td>2000</td>
     <td>100</td>
-    <td>12 minutes 21 seconds</td>
+    <td>todo</td>
   </tr>
   <tr>
     <td>2000</td>
     <td>200</td>
-    <td>10 minutes 42 seconds</td>
+    <td>todo</td>
   </tr>
    <tr>
       <td>10000</td>
       <td>300</td>
-      <td>2 hours 2 seconds -</td>
+      <td>2todo</td>
     </tr>
 </table>
 
