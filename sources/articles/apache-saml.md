@@ -1,6 +1,6 @@
 # Poterat terram in si nostri fugias
 
-## SAML Coming soon for apache...
+## SAML2 Coming soon for apache...
 
 Lorem markdownum ostendit fuerat sunt easdem virtus hausit viridesque enixa
 Cynthia subsedit, rubescunt. Rursusque muneris, pars imagine latebramque medios
