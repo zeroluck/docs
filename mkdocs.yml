@@ -16,23 +16,6 @@ pages:
 # Home Page
 - ['index.md', 'Home']
 
-# Articles
-- ['./articles/apache-saml.md', 'Articles', 'Apache SAML']
-- ['articles/java-saml.md', 'Articles', 'Java SAML']
-- ['articles/apache-oauth2.md', 'Articles', 'Apache OpenID Connect / UMA']
-- ['articles/nginx-oauth2.md', 'Articles', 'nginx OpenID Connect / UMA']
-- ['articles/js-connect.md', 'Articles', 'JavaScript OpenID Connect RP']
-- ['articles/java-connect.md', 'Articles', 'Java OpenID Connect RP']
-- ['articles/scim-client.md', 'Articles', 'Java SCIM client']
-- ['articles/mobile-api.md', 'Articles', 'Mobile - Headless API : Connect / UMA']
-- ['articles/benchmarking.md', 'Articles', 'Gluu Server Benchmark']
-
-# Reference sections
-- ['reference/configuration/index.md', 'Reference', 'Configuration']
-- ['reference/ldap/index.md', 'Reference', 'LDAP Schema']
-- ['reference/lib/index.md', 'Reference', 'Libraries']
-- ['reference/api/index.md', 'Reference', 'APIs']
-
 # Admin Guide Sections
 - ['admin-guide/introduction/index.md', 'Admin Guide', 'introduction']
 - ['admin-guide/installation/index.md', 'Admin Guide', 'Installation']
@@ -47,6 +30,23 @@ pages:
 - ['admin-guide/interception-scripts/index.md', 'Admin Guide', 'Interception Scripts']
 - ['admin-guide/multiparty-federation/index.md', 'Admin Guide', 'MultiParty Federation']
 - ['admin-guide/oxPush/index.md', 'Admin Guide', 'oxPush']
+
+# Reference sections
+- ['reference/configuration/index.md', 'Reference', 'Configuration']
+- ['reference/ldap/index.md', 'Reference', 'LDAP Schema']
+- ['reference/lib/index.md', 'Reference', 'Libraries']
+- ['reference/api/index.md', 'Reference', 'APIs']
+
+# Articles
+- ['./articles/apache-saml.md', 'Articles', 'Apache SAML']
+- ['articles/java-saml.md', 'Articles', 'Java SAML']
+- ['articles/apache-oauth2.md', 'Articles', 'Apache OpenID Connect / UMA']
+- ['articles/nginx-oauth2.md', 'Articles', 'nginx OpenID Connect / UMA']
+- ['articles/js-connect.md', 'Articles', 'JavaScript OpenID Connect RP']
+- ['articles/java-connect.md', 'Articles', 'Java OpenID Connect RP']
+- ['articles/scim-client.md', 'Articles', 'Java SCIM client']
+- ['articles/mobile-api.md', 'Articles', 'Mobile - Headless API : Connect / UMA']
+- ['articles/benchmarking.md', 'Articles', 'Gluu Server Benchmark']
 
 # Sub Pages of introduction 
 - ['admin-guide/introduction/architecture.md', '**HIDDEN**']
