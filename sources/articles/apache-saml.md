@@ -1,7 +1,5 @@
 # Apache SAML
 
-## Contents Contents
-
 
 ## Configuring Apache Shibboleth SP in CentOS
 
@@ -50,15 +48,28 @@ Macareu. Monte sub et aera seu libertas saepe si pectore in oris saeva.
 * Create a directory named "secure" under /var/www/
 * Change permission for directory "secure" to www-data:www-data
 * httpd.conf:
-* * ServerName <hostname_of_server>
-* * Set Location
+    * ServerName `<hostname_of_server>`
+    * Set Location:
 
-` <Location /secure>
-    AuthType shibboleth
-    ShibRequestSetting requireSession 1
-    ShibUseHeaders on
-    Require valid-user
-</Location>`
+                <Location /secure>
+                    AuthType shibboleth
+                    ShibRequestSetting requireSession 1
+                    ShibUseHeaders on
+                    Require valid-user
+                </Location>
+
+
+* shibboleth2.xml configuration:
+    * EntityID of SP: `ApplicationDefaults entityID="http://hostname/secure"`
+    * Provide EntityID of IDP: `SSO entityID="https://idp.gluu.org/idp/shibboleth"`
+    * Metadata Provider, IDP: `MetadataProvider type="XML" uri="https://idp.gluu.org/idp/shibboleth"`
+
+
+* Restart shibd and apache2
+* Create Trust Relationship for this SP in your desired IDP. 
+
+
+
 
 ## Configuring Apache Shibboleth SP in Windows
 
