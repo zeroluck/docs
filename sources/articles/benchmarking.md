@@ -46,36 +46,43 @@ Measures were made on single machine with Gluu Server, LDAP Server and test runn
     <td><b>Invocations &nbsp;&nbsp;</b></td>
     <td><b>Parallel threads &nbsp;&nbsp;</b></td>
     <td><b>Time</b></td>
+    <td><b>Comments</b></td>
   </tr>
   <tr>
     <td>100</td>
     <td>100</td>
     <td>8 seconds </td>
+    <td></td>
   </tr>
   <tr>
     <td>1000</td>
     <td>100</td>
     <td> 2 minutes 12 seconds (132 seconds) </td>
+    <td></td>
   </tr>
   <tr>
     <td>1000</td>
     <td>200</td>
     <td> 1 minute 40 seconds (102 seconds)</td>
+    <td>Not representable: CPU 100%</td>
+  </tr>
+  <tr>
+    <td>2000</td>
+    <td>100</td>
+    <td>todo</td>
+    <td>Not representable: CPU 100%</td>
   </tr>
   <tr>
     <td>2000</td>
     <td>200</td>
     <td>todo</td>
-  </tr>
-  <tr>
-    <td>2000</td>
-    <td>200</td>
-    <td>todo</td>
+    <td>Not representable: CPU 100%</td>
   </tr>
    <tr>
       <td>10000</td>
       <td>300</td>
       <td>2todo</td>
+      <td>Not representable: CPU 100%</td>
     </tr>
 </table>
 
