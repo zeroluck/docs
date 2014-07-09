@@ -1,4 +1,19 @@
-## Gluu Server General FAQ
+## Gluu Server FAQ
+
+## What can I do with a Gluu Server?
+
+People--employees, customers, and partners-–need to be identified to interact electronically
+with an organization. Authentication (_authn_) and authorization (_authz_) is a challenge faced
+by almost every organization large enough to register an Internet domain. And it’s not just
+people that need to be authenticated and authorized. “Clients” are online agents that can
+interact with services on your behalf. With the emergence of the IoT and the API economy,
+developers and system administrators are urgently searching for standards based solutions and
+best practices to improve the security of web and mobile applications.
+
+The Gluu Server is like a router for authentication and authorization. It speaks multiple dialects
+of SSO, and can help an organization manage both inbound and outbound authentication and authorization 
+requirements.  The Gluu Server is very flexible. Through the use of "interception scripts", 
+system administrators can mold the Gluu Server to solve the exact access management task at hand.
 
 ## How can the Gluu Server make the Internet a safer place? 
 
@@ -16,7 +31,7 @@ Free open source tools like the Gluu Server make these new identity standards
 accessible to the masses. Now any domain can authenticate like Google (or at
 least using the same API's and conventions).
 
-## Why do companies need the Gluu Server?
+## Why do organizations need the Gluu Server?
 
 For years, deploying an application access management suite was too expensive
 for any but the largest enterprises, who engineered tightly bundled proprietary
@@ -27,21 +42,6 @@ enterprise class access management, using 100% open source components
 that are free to use in production. This recipe has been developed by Gluu over the
 last five years, and is proven to work in a variety of deployments around the globe
 that vary in size from small to humongous.
-
-## What can I do with a Gluu Server?
-
-People--employees, customers, and partners-–need to be identified to interact electronically
-with an organization. Authentication (_authn_) and authorization (_authz_) is a challenge faced
-by almost every organization large enough to register an Internet domain. And it’s not just
-people that need to be authenticated and authorized. “Clients” are online agents that can
-interact with services on your behalf. With the emergence of the IoT and the API economy,
-developers and system administrators are urgently searching for standards based solutions and
-best practices to improve the security of web and mobile applications.
-
-The Gluu Server is like a router for authentication and authorization. It speaks multiple dialects
-of SSO, and can help an organization manage both inbound and outbound authentication and authorization 
-requirements.  The Gluu Server is very flexible. Through the use of "interception scripts", 
-system administrators can mold the Gluu Server to solve the exact access management task at hand.
 
 ## Why does the Gluu Server rock?
 

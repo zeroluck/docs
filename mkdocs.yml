@@ -72,6 +72,7 @@ pages:
 - ['admin-guide/configuration/oxTrust.md', '**HIDDEN**']
 - ['admin-guide/configuration/shibIDP.md', '**HIDDEN**']
 - ['admin-guide/configuration/oxProx.md', '**HIDDEN**']
+- ['admin-guide/configuration/jagger.md', '**HIDDEN**']
 
 # Sub Pages of Customizing Look and Feel
 - ['admin-guide/custom-look/authentication.md', '**HIDDEN**']
