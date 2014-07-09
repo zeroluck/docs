@@ -28,26 +28,24 @@ For example OpenDJ use JVM for running, for high performance it's recommended to
 
 ### Tomcat
 
-1. Set maxmimum for parallel requests.
+  1. Set maxmimum for parallel requests.
 
 Connector parameters in server.xml:
 
 - maxThreads="10000"
 - maxConnections="10000"
 
-2. Set memory settings via JAVA_OPTS
+  2. Set memory settings via JAVA_OPTS
 
 set "JAVA_OPTS=-Xms1456m -Xmx7512m -XX:MaxPermSize=256m -XX:+DisableExplicitGC"
 
-![Alt text](/img/benchmark/tomcatStatus.png "Tomcat status")
-
-3. Operating time
+  3. Operating time
 
 Check via Tomcat monitor whether requests are handled or just "hangs" because there no enough resources
 
 Here is sample when processing time increase due to lack of resources:
 
-
+![Alt text](/img/benchmark/tomcatStatus.png "Tomcat status")
 
 ## Gluu Server Benchmark
 
