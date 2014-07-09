@@ -35,6 +35,20 @@ Connector parameters in server.xml:
 - maxThreads="10000"
 - maxConnections="10000"
 
+2. Set memory settings via JAVA_OPTS
+
+set "JAVA_OPTS=-Xms1456m -Xmx7512m -XX:MaxPermSize=256m -XX:+DisableExplicitGC"
+
+![Alt text](/img/benchmark/tomcatStatus.png "Tomcat status")
+
+3. Operating time
+
+Check via Tomcat monitor whether requests are handled or just "hangs" because there no enough resources
+
+Here is sample when processing time increase due to lack of resources:
+
+
+
 ## Gluu Server Benchmark
 
 Benchmarking based on Authentication Implicit Flow: http://openid.net/specs/openid-connect-core-1_0.html#ImplicitFlowAuth
@@ -69,21 +83,27 @@ Measures were made on single machine with Gluu Server, LDAP Server and test runn
   <tr>
     <td>2000</td>
     <td>100</td>
-    <td>todo</td>
+    <td>2 minutes 14 seconds (174 seconds)</td>
     <td>Not representable: CPU 100%</td>
   </tr>
   <tr>
     <td>2000</td>
     <td>200</td>
-    <td>todo</td>
+    <td>-</td>
     <td>Not representable: CPU 100%</td>
   </tr>
-   <tr>
-      <td>10000</td>
-      <td>300</td>
-      <td>2todo</td>
-      <td>Not representable: CPU 100%</td>
-    </tr>
+  <tr>
+    <td>10000</td>
+    <td>300</td>
+    <td>-</td>
+    <td>Not representable: CPU 100%</td>
+  </tr>
+  <tr>
+    <td>1000000</td>
+    <td>300</td>
+    <td>-</td>
+    <td>Not representable: CPU 100%</td>
+  </tr>
 </table>
 
 ## Useful Links
