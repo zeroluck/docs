@@ -47,6 +47,13 @@ Here is sample when processing time increase due to lack of resources:
 
 ![Alt text](/img/benchmark/tomcatStatus.png "Tomcat status")
 
+## Gluu Server
+
+- oxauth-ldap.properties - Increase ldap connection pool size
+
+    maxconnections: 1000
+
+
 ## Gluu Server Benchmark
 
 Benchmarking based on Authentication Implicit Flow: http://openid.net/specs/openid-connect-core-1_0.html#ImplicitFlowAuth
