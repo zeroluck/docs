@@ -54,12 +54,17 @@ Measures were made on single machine with Gluu Server, LDAP Server and test runn
   </tr>
   <tr>
     <td>1000</td>
+    <td>100</td>
+    <td> 2 minutes 12 seconds (132 seconds) </td>
+  </tr>
+  <tr>
+    <td>1000</td>
     <td>200</td>
-    <td> todo </td>
+    <td> 1 minute 40 seconds (102 seconds)</td>
   </tr>
   <tr>
     <td>2000</td>
-    <td>100</td>
+    <td>200</td>
     <td>todo</td>
   </tr>
   <tr>
