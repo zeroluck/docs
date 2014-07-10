@@ -1,42 +1,33 @@
-# Verba scire utrumque ut et ut solacia
+# LDAP Namespace 
 
-## Quod signa et hac tibi Limyren
+The LDAP Namespace, or Directory Information Tree (DIT) structure, is the convention for naming
+entries in LDAP so that they form a hierarchical tree structure.
 
-Lorem markdownum de, et amore aethere. Facit anguicomae peti namque capillis
-**carmina superare** viam calore fulmen sermone. Eurus dea alma trepidos ferit
-antri orbem, mea vertice. Ostendit tu voce, tinxit ait similemque Gyaroque.
+In general, the Gluu Server tries to keep the data pretty flat. But at times, we use the 
+namespace to store information that is relative to a certain entry. 
 
-> Sine ille et iniqua, et arcuit, exemplum si longum procorum insania? Certe te
-> manus mens, possis voce, uti intravit vellere; nam sedes et socer memorabat.
-> Utque laqueoque [investigata virgine nova](http://gifctrl.com/) errat sustinet
-> victor repagula spectatam, nefas locus.
+There are two root namespaces in the Gluu Server: `o=gluu` and `o=site`. The `o=gluu` namespace
+is used to store all the important configuration and entity data. The `o=site` DIT is used
+only when identities are being synchronized from an external LDAP server using the Gluu
+Server Cache Refresh feature.
 
-Imagine erat. Egi nescius Ceyca.
+The following table has a list of all the major branches of the tree under `o=gluu`:
 
-Erat inpia cui dignum est quam lymphata currendo et deus, utinamque. Gratus
-**quam mediam Erysicthonis** servitura iugalia, ad ut per te fisso Antigonen
-solvere valuit. Potest de a sponte nuntia frater, in [leto
-templorum](http://zombo.com/) deus, magis crimine madidus. Sole primus.
+| base DN                                  | Description                                               |
+| ---------------------------------------- | --------------------------------------------------------- |
+| ou=appliances,o=gluu                     | oxTrust configuration information for the instance        |
+| o=<org>,o=gluu                           | organization entry, ipV6 style id by default              | 
+| ou=people,o=<org>,o=gluu                 | User entities                                             |
+| ou=groups,o=<org>,o=gluu                 | Group entities                                            |
+| ou=clients,o=<org>,o=gluu                | OAuth2 client entities                                    |
+| ou=attributes,o=<org>,o=gluu             | Attribute or user claim metadata                          |
+| ou=scopes,o=<org>,o=gluu                 | Oauth2 scope entities                                     |
+| ou=session,o=<org>,o=gluu                | oxAuth Session data (if persistent sessions are enabled   |
+| ou=uma,o=<org>,o=gluu                    | UMA policies, scopes, and resource sets                   |
+| ou=push,o=<org>,o=gluu                   | Mobile device metadata used by oxPush                     |
+| ou=federation,o=<org>,o=gluu             | OAuth2 federation metadata                                |
+| ou=oxProx,o=<org>,o=gluu                 | oxProx configuration data                                 |
+| 
 
-## Philomela venti coniugiumne
 
-Ipsa pedibusque gaudia et odium! Distendens corpus vobis dixisse! Caecis sine
-inmissusque furoris utque gratare *Orionis* auditur vidit, citharae. Sim fuit,
-superinposita sertaque, est oraque venti, Calydonia flumina ipsum si gelidos
-freto pars Calydona iuvenci caligine.
 
-Ara *quantum*, perpetuumque mutare superare. Officiumque iamque muneribusque et
-siccis colla in comites *origine*.
-
-> Neve nec, **in Lernae** saevique vagus, arvo lugent nobis; virum nec? Nova per
-> haec, cur iussa nympharum natus nisi et cetera unus forti quo edaci
-> iugulumque. Rumpitque *marem Taygetenque* alumnae quod, nisi postquam cortice
-> superare nomine, modo, est quae Proteaque vacat.
-
-Scelus supplex felicia crescit ferrum, in pericla quoque, lux. **Suis arbore**
-lata recordor teli rite facinus egentes, violari meminisse placent harundine
-terra: duobus tuos. Veni inque cedentique electus cum miserata quanto. Inlaesos
-tristis. Cuncta tempus tectis, quam biformis.
-
-[investigata virgine nova]: http://gifctrl.com/
-[leto templorum]: http://zombo.com/
