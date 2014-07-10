@@ -2,6 +2,7 @@
 
 ## Contents
 
+- [Config](./config.md)
 - [Schema](./schema.md)
 - [Namespace](./namespace.md)
 - [Indexing](./indexing.md)
