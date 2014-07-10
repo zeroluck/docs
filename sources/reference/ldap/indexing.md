@@ -9,7 +9,14 @@ and custom authentication and authorization requirements.
 
 ## OpenDJ Indexing
 
+[Indexing Attribute Values](http://opendj.forgerock.org/opendj-server/doc/admin-guide/index/chap-indexing.html)
+
+
 ## 389DS Indexing
+
+[Indexing Architecture](http://directory.fedoraproject.org/wiki/Database_Architecture#Indexing)
 
 ## OpenLDAP Indexing configuration
 
+
+[OpenLDAP Tuning](http://www.openldap.org/doc/admin24/tuning.html)
