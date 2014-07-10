@@ -1,63 +1,50 @@
-# Fluctus vitat tantum inpediit verbaque portabat saecula
+# Asimba configuration with Gluu Server
 
-## Tardarunt chordas etiam
 
-Lorem markdownum ipsa fuerit a separat videt ad illi domum ignoto, coetum
-discusso. Apis Dauno aera *claro dextra*, auras quem, es quondam Minyeia.
+## Base installation of Asimba package
 
-## Iuncis sequuntur niveis
+* Get the war for asimba from Gluu
+* Send the war file in ~/tomcat/webapps/
+* Restart tomcat, it will extract the asimba
+* Get the asimba.conf template from Gluu
+* Generate the keystore for your Asimba server:
+    * Command: `keytool -genkeypair -keyalg RSA -alias "<ALIAS_OF_KEYSTORE>"
+    * -keypass <PASSWORD> -keystore <NAME_OF_JKS>.jks -storepass <PASSWORD>`
+        * What is your first and last name?: Provide the hostname of Asimba
+        * server
+        * What is the name of your organizational unit?: IT
+        * What is the name of your organization?: Provide name
+        * What is the name of your City or Locality?: city name
+        * What is the name of your State or Province?: State name
+        * What is the two-letter country code for this unit?: US
+* Adding IDP / ADFS in Asimba:
+    * Gather metadata of IDP / ADFS and keep them in some place under
+    * /tomcat/webapps/asimba-saml-proxy/WEB-INF/
+    * Collect certificate of IDP / ADFS and import them in Asimba truststore JKS
 
-Totumque ius hastilia arcum conterit, et dracones novis; turba tempore quidem;
-dextris rudis tacito violentus. Cecidit vulnere Phasis e nodus induitur
-discutiunt Fames, nequiquam Solis nova fatebor lentus noviens. Multis
-celebratior tibi; dicenti artem dixit esse tenet nentes poterat arma, *bella
-mitia*?
+* Adding SP in Asimba:
+    * Gather metadata of SP and keep them in some place under
+    * /tomcat/webapps/asimba-saml-proxy/WEB-INF/
+    * Collect certificate of SP and import them in Asimba truststore JKS
 
-- Celeberrima sonis virga latus cibis cruores
-- Vultus Othryn arcana erroribus
-- Adurat tamen
+* Restart tomcat
 
-## Adnuit sub Carmina inertes fer
+## Apache configuration
 
-Gradus hastile nodosaque [infestus nec](http://twitter.com/search?q=haskell)
-totidem Phoebo protinus duroque Phlegyis vibrantia munera, orbe geniti mirata,
-**tenet**. Iuvet quamvis, **area dextra** natae sine memor rubentem umeris. Bene
-verum id longis furiosior flos consultaque poma structis tonitribus ilice
-premeretur. Aventi somnoque cornua sororia remorata, hortus, defendit quo
-[vimque aratro](http://omgcatsinspace.tumblr.com/) sub est substitit.
+* Configure "idp.conf":
 
-Ixion Parnasos tenebat harundine adverso, inquit vates stetit stillabant. Lumina
-Capitolia, Telamone dixit sed pectore verba, *motaque Seditioque ulvaeque*
-volucrem mater vices, Pheretiade. Ingenti tuum repetiti pro vulnere medium in
-*constitit in faveant* Thetidi **etiamnum**?
+            <Location /asimba-saml-proxy>
+                ProxyPass ajp://<ASIMBA_HOSTNAME>:8009/asimba-saml-proxy retry=5
+disablereuse=On
+                ProxyPassReverse ajp://<ASIMBA_HOSTNAME>:8009/asimba-saml-proxy
 
-## Ait utque
+                Order allow,deny
+                Allow from all
+            </Location>
 
-Premunt madefacta [canibus](http://www.reddit.com/r/haskell). Motae progenies
-**ut cineres viribus** est et ficti, nubes eques, si. Est costumque parantem
-pervidet tamen crudele inquit dum et bibit, verique: caesae: prius **huic**.
-Medio admonitu haud aversum mihi blandas mentior infecerat orantem, fatiferum.
-Cognoscere sacra consequiturque currant remissis genetrix dum aqua Cereris
-umbra, illa, ceu nocuit.
+* Restart httpd
 
-## Et cetera
+## Test Asimba setup
 
-Et quod acta aquis pestifero templum docta excusare; iamque quod. *Proxima*
-mediusque obstitit imagine **lorisque** sum dant mens vestra nymphas diu, et
-quae equo temptant. *Ut calamos* honoris, et et data. Mortale Proca illic
-molimine sanguine amplexus barbara quid castae: sumus parenti precatur roganti.
-Si ora spectemur dixit plumae obest, campus est inque?
-
-> Triones surgunt, non Threiciis est e reddunt vides fixus vulnere! Per ne
-> *huic*.
-
-Axis inguina pectore celeberrima **monte alba**.
-[Solum](http://www.metafilter.com/) timenda propiore exsecrantia me tandem,
-inornatos iusta ensis cornibus latus quam esset. Et **ponti autem** congestis
-videre exstantibus belli duces ferrea Nyctimene petunt cupidine fila tyranni ave
-hominis sustineat auras.
-
-[Solum]: http://www.metafilter.com/
-[canibus]: http://www.reddit.com/r/haskell
-[infestus nec]: http://twitter.com/search?q=haskell
-[vimque aratro]: http://omgcatsinspace.tumblr.com/
+* Try to download the metadata of Asimba server with: `wget -c
+* https://<HOSTNAME>/asimba-saml-proxy/profiles/saml2`
