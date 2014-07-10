@@ -34,8 +34,7 @@
 * Configure "idp.conf":
 
             <Location /asimba-saml-proxy>
-                ProxyPass ajp://<ASIMBA_HOSTNAME>:8009/asimba-saml-proxy retry=5
-disablereuse=On
+                ProxyPass ajp://<ASIMBA_HOSTNAME>:8009/asimba-saml-proxy retry=5 disablereuse=On
                 ProxyPassReverse ajp://<ASIMBA_HOSTNAME>:8009/asimba-saml-proxy
 
                 Order allow,deny
