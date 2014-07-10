@@ -16,17 +16,17 @@ The following table has a list of all the major branches of the tree under `o=gl
 | base DN                                  | Description                                               |
 | ---------------------------------------- | --------------------------------------------------------- |
 | ou=appliances,o=gluu                     | oxTrust configuration information for the instance        |
-| o=<org>,o=gluu                           | organization entry, ipV6 style id by default              | 
-| ou=people,o=<org>,o=gluu                 | User entities                                             |
-| ou=groups,o=<org>,o=gluu                 | Group entities                                            |
-| ou=clients,o=<org>,o=gluu                | OAuth2 client entities                                    |
-| ou=attributes,o=<org>,o=gluu             | Attribute or user claim metadata                          |
-| ou=scopes,o=<org>,o=gluu                 | Oauth2 scope entities                                     |
-| ou=session,o=<org>,o=gluu                | oxAuth Session data (if persistent sessions are enabled   |
-| ou=uma,o=<org>,o=gluu                    | UMA policies, scopes, and resource sets                   |
-| ou=push,o=<org>,o=gluu                   | Mobile device metadata used by oxPush                     |
-| ou=federation,o=<org>,o=gluu             | OAuth2 federation metadata                                |
-| ou=oxProx,o=<org>,o=gluu                 | oxProx configuration data                                 |
+| o=1234,o=gluu                            | organization entry, ipV6 style id by default              | 
+| ou=people,o=1234,o=gluu                  | User entities                                             |
+| ou=groups,o=1234,o=gluu                  | Group entities                                            |
+| ou=clients,o=1234,o=gluu                 | OAuth2 client entities                                    |
+| ou=attributes,o=1234,o=gluu              | Attribute or user claim metadata                          |
+| ou=scopes,o=1234,o=gluu                  | Oauth2 scope entities                                     |
+| ou=session,o=1234,o=gluu                 | oxAuth Session data (if persistent sessions are enabled   |
+| ou=uma,o=1234,o=gluu                     | UMA policies, scopes, and resource sets                   |
+| ou=push,o=1234,o=gluu                    | Mobile device metadata used by oxPush                     |
+| ou=federation,o=1234,o=gluu              | OAuth2 federation metadata                                |
+| ou=oxProx,o=1234,o=gluu                  | oxProx configuration data                                 |
 | 
 
 
