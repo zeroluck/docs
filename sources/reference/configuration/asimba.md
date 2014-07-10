@@ -45,5 +45,4 @@
 
 ## Test Asimba setup
 
-* Try to download the metadata of Asimba server with: `wget -c
-* https://<HOSTNAME>/asimba-saml-proxy/profiles/saml2`
+* Try to download the metadata of Asimba server with: `wget -c https://<HOSTNAME>/asimba-saml-proxy/profiles/saml2`
