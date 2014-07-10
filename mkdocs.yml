@@ -33,7 +33,7 @@ pages:
 
 # Reference sections
 - ['reference/configuration/index.md', 'Reference', 'Configuration']
-- ['reference/ldap/index.md', 'Reference', 'LDAP Schema']
+- ['reference/ldap/index.md', 'Reference', 'LDAP']
 - ['reference/lib/index.md', 'Reference', 'Libraries']
 - ['reference/api/index.md', 'Reference', 'APIs']
 
@@ -159,9 +159,6 @@ pages:
 - ['reference/ldap/namespace.md', '**HIDDEN**']
 - ['reference/ldap/indexing.md', '**HIDDEN**']
 - ['reference/ldap/replication.md', '**HIDDEN**']
-- ['reference/ldap/opendj-schema.md', '**HIDDEN**']
-- ['reference/ldap/openldap-schema.md', '**HIDDEN**']
-- ['reference/ldap/389ds-schema.md', '**HIDDEN**']
 
 # Sub pages of Reference / Configuration
 - ['reference/configuration/system.md', '**HIDDEN**']
@@ -171,6 +168,7 @@ pages:
 - ['reference/configuration/asimba.md', '**HIDDEN**']
 - ['reference/configuration/opendj.md', '**HIDDEN**']
 - ['reference/configuration/openldap.md', '**HIDDEN**']
+- ['reference/configuration/389ds.md', '**HIDDEN**']
 - ['reference/configuration/jagger.md', '**HIDDEN**']
 - ['reference/configuration/oxPush.md', '**HIDDEN**']
 - ['reference/configuration/oxProx.md', '**HIDDEN**']
