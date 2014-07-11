@@ -1,53 +1,68 @@
-# Cererem suique in terram his
+# Attribute Transformation Script
 
-## Dextroque humano eripis
+Interfaces:
 
-**Lorem markdownum atque** congestaque hoc insidiosa alienae. Nec nymphae et ad,
-supplex **et patris**, vultuque comitemque summo horrida inanem cum, valent, ut.
-Mihi sed fugam nullaque cornua forma teretem, populi sis coniunx silvis et
-antiquas, est. Sol Actorides saepe cognitius nubimus dixit ab fere, crater
-ardere ferox sed modo nec.
 
-## Cumque forma solam curvamine
+        public interface EntryInterceptorType {
 
-Orchamus inde de corpora figuras, ore modo vacantem tegi e petis fluminis o
-favet nepoti meruisse moras. Coniunx latratibus! Esse quaerenti damus, velox
-insignis auxilium videbar furtum; exacta.
+                public boolean updateAttributes(GluuCustomPerson person);
 
-Opus suo agitati damnosa parentem tuetur! Arcus sunt forem diversorum Hymenaeus
-pluma ignibus super cuius alios si.
+        }
 
-## Ante duo quae truncos somnus ingeminat aequales
 
-Axem ultor nebulas capillos saxa cives *in erraverit* sublimia nate hos, et
-unicus carnes. Praecordia hanc profitemur, fieri hunc furtique patrique
-adsensere volentem vicit. Tibi trium saltus dedit residentem tamen amplexa
-spumis priscosque nate mundi.
+Sample Attribute Transformation Script
 
-## Demens quae Phoebe tum formasque
 
-Evitabile factus, vires de prioris carina, primum alteriusque monstri aequorque
-arcus cura reportat animos color nec. Terris forte. Nisi gratia ventos septem
-colo et esset trifida poenam quos
-[inter](http://www.thesecretofinvisibility.com/), miseri, vitae partes
-**feremur**, At. Obruit mollit mutavit quod mihi vestra, cum Delius at ensis
-tempora.
+        # Import of Java classes
+        from org.gluu.site.ldap.cache.service.intercept.interfaces import EntryInterceptorType
+        from org.gluu.site.util import StringHelper
+        from org.gluu.site.model import GluuCustomPerson
+        from org.gluu.site.model import GluuCustomAttribute
 
-## Vestis iam animo capillos fugienti
+        import java
 
-Idas ferrum gravitate conponere. Aut utrimque odit aut litus carmine capere
-victor nec patentes eluditque Canentis.
+        class EntryInterceptor(EntryInterceptorType):
+            def __init__(self, currentTimeMillis):
+                self.currentTimeMillis = currentTimeMillis
 
-1. Felix poenaededidit quam ire arcet Romuleae frigus
-2. Digitis rumpunt ripae gravis habebat dementia motasse
-3. Proxima ad nisi aeris lacrimis luridus undis
+            def updateAttributes(self, person):
 
-Ducere loqui fatemur vincere sederat motura nube repetita Siculis annis in
-missus, poenam fratrem est. Lacertis a aquae, non creat ea [parvo subsedit
-polypus](http://seenly.com/) figentem in. Omnibus manibus procos dumque mortalia
-innumeris reddidit atra. Inclusit penates operum quod concita facinus te hoc
-recentis, Priamidas breve cavatur velit. **Haud diro** procul caput carmine
-regis domos.
+                # Assign the current entry's attributes to an array
+                attributes = person.getCustomAttributes()
 
-[inter]: http://www.thesecretofinvisibility.com/
-[parvo subsedit polypus]: http://seenly.com/
+                # Create and set the attribute eduPersonPrincipalName
+                uidValue = person.getAttribute('uid')
+                attrEPPN = GluuCustomAttribute('edupersonprincipalname', uidValue + '@example.edu')
+                attributes.add(attrEPPN)
+
+                # Loop through each attribute in the current entry
+                for attribute in attributes:
+                    attrName = attribute.getName()
+
+                    # The mapping in the Cache Refresh configuration page set employeeType to
+                    # eduPersonScopedAffiliation(EPSA). This means that EPSA currently has an
+                    # integer value instead of the value expected by Educause. It needs to be
+                    # set to the correct value.
+                    if ("edupersonscopedaffiliation" == StringHelper.toLowerCase(attrName)):
+                        attrValue = attribute.getValue()
+                        newEPSAValue = []
+
+                        if (attrValue==1):
+                            newEPSAValue.append('student@example.edu')
+                        elif (attrValue==2):
+                            newEPSAValue.append('faculty@example.edu')
+                        elif (attrValue==3):
+                            newEPSAValue.append('student@example.edu')
+                            newEPSAValue.append('faculty@example.edu')
+                        elif (attrValue==4):
+                            newEPSAValue.append('staff@example.edu')
+                        elif (attrValue==5):
+                            newEPSAValue.append('staff@example.edu')
+                            newEPSAValue.append('faculty@example.edu')
+
+                        # Remove current attribute which is EPSA with an integer value
+                        attributes.remove(attribute)
+                        epsa = GluuAttribute('eduPersonScopedAffiliation', newEPSAValue)
+                        attributes.add(epsa)
+                return True
+
