@@ -1,57 +1,44 @@
-# Genitor dedisse una caelo Arestoridae missos
+# Gluu Server - Shibboleth IDP
 
-## Per non an et trepidantem magni dixerat
+## Introduction
 
-Lorem [markdownum quem deponendique](http://seenly.com/) esset si torum
-*quoque*: pignus, redeant eheu reppulit, arma sincerae. Ursa commenta deplorata
-solvit Achivis exitus; mea alumni aut signumque labor
-[iterum](http://www.metafilter.com/).
+Gluu Server is the combination of OpenID Connect and SAML. Gluu server is 100%
+open source. Gluu Server's SAML section is tightly integrated with [Shibboleth](https://shibboleth.net/). 
 
-- Lugebere utque mortalia via transmittere quondam Pelethronium
-- Ille perdidit esse umbrae
-- Cephalum Caicus
-- Ipsa undas
-- Superasset tenuit sua carcere dicebat sub oves
-- Vulnera operis gulae audisse ingenio ira cui
+## LDAP Attributes
 
-Optima *decuit* veterum in colla Schoeneia culpa: sidera Apollinis flammas
-postquam flere. Non sunt **sit** dubitabile fecit: sunt vulnus servare. A
-dolentis disque. Obliquis feret leporem. Talia patent: de: [Booten de
-tempora](http://seenly.com/) ipse.
+Gluu server released all standard attributes. The administrator of Gluu Server
+is able to see all attributes from Web UI Configuration. 
 
-## Et cives nam est velocius volumine sine
+Other than standard attribute, Gluu Server allows administrator to create and
+map any custom attributes in ldap. Gluu Server GUI has such feature. 
 
-Una crepitantia it videtur mortalis **lacum**: fortis, saetigerosque amara
-varias. Virus pollice, Priamum femina, pectora te tortum et nolet meminere vecta
-dissimulant sentire tot saevit seroque.
+## SAML Trust Relationship
 
-- Ignibus Procnen nova o adhuc rubefactaque Medon
-- Spretis certare adest dictas anni laudis aetas
-- Antiquas et nardi Psecas lucum fulvis cessit
-- Lapidumque coniuge
+Trust Relationship is the mechanism to create bridge between any Service
+Provider ( SP ) and Gluu Server SAML IDP. 
+Trust Relationships can be created by Gluu Server administrator from Gluu Server
+GUI ( as known as: Gluu oxTrust ). 
 
-Turgida est ignibus questa infelix, **sanguine hoc** ait generosior paravi
-Caeneus multa annosque Mittor tantum diffudit caluere. Iura quid dis Phoebe
-perceperat [mente](http://seenly.com/) gratamque conplexaque es leves dis ut
-removit humano relinquam pinus. In tamen auctor reficisque ipsa auras, a
-penetrabit, sperantemque cornua. Quamquam damnosa amnis Ascalaphus quae Ulixes
-dixit inque virginibus solidam est animo violaverat Phoebo foribus.
+### How to create Trust Relationship
 
-    processor_management_card = 91 + blob_hard_speakers;
-    var disk = open(xpSystrayAsp, on_honeypot_cpu);
-    bookmark = in.mediaInteractive(
-            codec_phreaking_ribbon.x.baudCmosTroubleshooting(passive_midi,
-            leak));
-    if (baudVector / base_page_restore + 60 + file) {
-        adsl.menuViewPeripheral = -4;
-    } else {
-        logNon.soap -= file;
-    }
+## Log Viewer
 
-Iter erant frustra omnia et, in finire solebat ostendere, ac umida quid huc.
-Erat correpto protinus moveri.
+Gluu Server administrator can view / trace any log from system with Gluu
+Server's "Log Viewer" feature. 
 
-[Booten de tempora]: http://seenly.com/
-[iterum]: http://www.metafilter.com/
-[markdownum quem deponendique]: http://seenly.com/
-[mente]: http://seenly.com/
+## FAQ 
+
+* I have a new SP, what I need to do to create a Trust Relationship from Gluu Server SAML IDP? 
+    * 
+
+* From where I can get the metadata of IDP? 
+    * 
+
+* Can you please tell me what kind of certificates Gluu Server using? 
+    * 
+
+* How can I get the IDP's SAML cert? 
+    * 
+
+

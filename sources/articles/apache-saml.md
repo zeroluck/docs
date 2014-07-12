@@ -3,11 +3,7 @@
 
 ## Configuring Apache Shibboleth SP in CentOS
 
-Lorem markdownum ostendit fuerat sunt easdem virtus hausit viridesque enixa
-Cynthia subsedit, rubescunt. Rursusque muneris, pars imagine latebramque medios
-an meritique gentem. Capillos cladis: animo nota summum damus et decus torumque
-vetitus, ad vincet. Quod argento neu at, edere mei fessos abstulit cesserunt
-Macareu. Monte sub et aera seu libertas saepe si pectore in oris saeva.
+TODO
 
 ## Configuring Apache Shibboleth SP in Ubuntu
 
@@ -69,30 +65,47 @@ Macareu. Monte sub et aera seu libertas saepe si pectore in oris saeva.
 * Create Trust Relationship for this SP in your desired IDP. 
 
 
-
-
 ## Configuring Apache Shibboleth SP in Windows
 
-Lavere cum esse currere tumens deducunt preces. Ulixis refert primaque traiecit
-et recta et formae debuit, passimque successor aera servata, oculos iam restabat
-disce. Eurylochumque male.
+### Shibboleth SP Installation
 
-## Flumine plectrum et tori
+* Download the MSI of Shibboleth-SP from: http://www.shibboleth.net/downloads/service-provider/latest/
+* Start the installation
+* Destination folder (by default it is: C:\opt\shibboleth-sp\). You can select any directory, but it is best to follow the tree \opt\shibboleth-sp\
+* Select Shibboleth Daemon port: default is 1600, you can keep it for local testing
+* Now, there are two options here. You have to follow either one (but not both) according to your target.
+    * Option 1: If you are installing Shibboleth for Apache Web server
+    * Option 2: If you are installing Shibboleth for Microsoft IIS Web server
+    * For Apache Web Server, UNCHECK “Install ISAPI filter and configure IIS”.
+    * UAC of Windows 7 may block this program, so allow it
 
-Galeaque undis; erat videat nive et aequore rursus arreptamque ferit timor
-*altis*, succeditis me tulit cruentat. Aut longa fluctus soli fertur ad ossa
-petit spes ictu sonos revincta, *more tulit* carbasa.
+### Apache configuration
 
-1. Tersit suum ad recultae aeris lubrica Subaris
-2. Duae quid paulatim negabit coercuit
-3. Haliumque laudis
+* Download the Apache HTTP server MSI Installer with OpenSSL: http://httpd.apache.org/download.cgi#apache22
+* Select Destination. You can keep the default destination for your local testing. But, make sure that there is no other “Apache Software Foundation” directory in your current “C:\Program Files\” location
+* Provide Server Information. For local testing, you can use “localdomain/localhost”
+* Test whether Apache is installed or not. Open your web browser and use “localhost”. If you see "It Works!" page, you are done.
 
-## Suis ede illis obruta
 
-Ab contra atque tibi sonus lacrimisque **diurnis consilioque inseris** erat!
-*Poenaeque parentis*.
+### Shibboleth and Apache further configuration
 
-Ast temeraria est ut inductas exstabat novis innumeras arbore suam gladiis pavet
-qua Phrygiis sors es. Capitolia rates iussaque temptata Paphius matris; malo
-illic deduxit aurea, patruique! Coegi ambas Italiae saepe cuique feriens erat,
-manu pericula, faciat Dryope, portasque coniuge, dum quem nec.
+* Change the permission of the Apache Installation Directory, provide “write”  access 
+* httpd.conf configuration
+    * Change: “ServerName localhost:80” ( for your local testing )
+    * Copy apache22.conf from the Shibboleth directory to ~/apache/conf/extra/
+* Shibboleth2.xml configuration
+    * Change: Host name=“localhost” ( for local testging )
+    * Change: entityID=“https://localhost/shibboleth” ( for local testing )
+    * Change: ApplicationOverride id=“admin” entityID=“https://localhost/shibboleth/”
+* Reboot your Windows box
+
+### Test SP installation with Windows and Apache
+
+* Open Web browser and provide the address: localhost/Shibboleth.sso/Status
+* If you can see some XML page, you are done with your SP installation in Windows through Apache2
+
+### Create Trust Relationship from Gluu IDP
+
+
+
+

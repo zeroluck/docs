@@ -28,12 +28,31 @@ For example OpenDJ use JVM for running, for high performance it's recommended to
 
 ### Tomcat
 
-1. Set maxmimum for parallel requests.
+  1. Set maxmimum for parallel requests.
 
 Connector parameters in server.xml:
 
 - maxThreads="10000"
 - maxConnections="10000"
+
+  2. Set memory settings via JAVA_OPTS
+
+set "JAVA_OPTS=-Xms1456m -Xmx7512m -XX:MaxPermSize=256m -XX:+DisableExplicitGC"
+
+  3. Operating time
+
+Check via Tomcat monitor whether requests are handled or just "hangs" because there no enough resources
+
+Here is sample when processing time increase due to lack of resources:
+
+![Alt text](/img/benchmark/tomcatStatus.png "Tomcat status")
+
+## Gluu Server
+
+- oxauth-ldap.properties - Increase ldap connection pool size
+
+    maxconnections: 1000
+
 
 ## Gluu Server Benchmark
 
@@ -46,32 +65,50 @@ Measures were made on single machine with Gluu Server, LDAP Server and test runn
     <td><b>Invocations &nbsp;&nbsp;</b></td>
     <td><b>Parallel threads &nbsp;&nbsp;</b></td>
     <td><b>Time</b></td>
+    <td><b>Comments</b></td>
   </tr>
   <tr>
     <td>100</td>
     <td>100</td>
     <td>8 seconds </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1000</td>
+    <td>100</td>
+    <td> 2 minutes 12 seconds (132 seconds) </td>
+    <td></td>
   </tr>
   <tr>
     <td>1000</td>
     <td>200</td>
-    <td> todo </td>
+    <td> 1 minute 40 seconds (102 seconds)</td>
+    <td>Not representable: CPU 100%</td>
   </tr>
   <tr>
     <td>2000</td>
     <td>100</td>
-    <td>todo</td>
+    <td>2 minutes 14 seconds (174 seconds)</td>
+    <td>Not representable: CPU 100%</td>
   </tr>
   <tr>
     <td>2000</td>
     <td>200</td>
-    <td>todo</td>
+    <td>-</td>
+    <td>Not representable: CPU 100%</td>
   </tr>
-   <tr>
-      <td>10000</td>
-      <td>300</td>
-      <td>2todo</td>
-    </tr>
+  <tr>
+    <td>10000</td>
+    <td>300</td>
+    <td>-</td>
+    <td>Not representable: CPU 100%</td>
+  </tr>
+  <tr>
+    <td>1000000</td>
+    <td>300</td>
+    <td>-</td>
+    <td>Not representable: CPU 100%</td>
+  </tr>
 </table>
 
 ## Useful Links
