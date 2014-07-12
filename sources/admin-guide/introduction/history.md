@@ -1,53 +1,56 @@
-# Tutaque obstipuit crura
+# History
 
-## Feriente de perdere memorant verbis et totiens
+## Early days : versions 1 and 2
 
-Lorem markdownum conplexae Solis et crura saltus: latet clipeo vultumque
-virgineo. Fuit Achilli quam.
+Versions 1 of the Gluu Server was based on Sun OpenSSO and OpenDS. Mike Schwartz, foudner of Gluu,
+presented the idea at an OpenSSO community group at the European Identity Conference in Munich in May 2009.
+Version 1 worked a little, but there was no easy way to manage it. Version 2 of the Gluu Server had a better UI, but
+it was just a facade--the UI didn't actually do anything to configure OpenSSO. Version 3 was launched after
+Mike Schwartz met with members of the InCommon steering committee, after a meeting in San Antonio in October 2009.
+Due to protocol, Mike couldn't attend the InCommon meeting, so Bob Morgan from the University of Washington
+helped arrange drinks sponsored by Gluu at a nearby location.
 
-Ceu dum cortinaque excusat latus, formosissimus aras *femina* lumina, dolore
-quam amores languescuntque dea amore vastum. Magis apro cinctaque sustulit
-simul, concipiunt illo, tuam haec nulla praebebat criminis. Duo huic iusque
-Phoebi, **in voce saepe**, caelum modos: tuis. Nulla contulit, Est tegebat
-multis cuncta hic in arboris habebas, **et terrae** saepe Iovi. In **quod**
-concipit est pudorque, vident si e maiorem persequar servatum tollens primae,
-triumphi?
+At that meeting, Mike expressed concerned that OpenSSO might be end-of-life. Oracle had recently purchased
+Sun Microsystems, and before ForgeRock was formed, it seemed possible that Oracle would simply
+migrate OpenSSO customers to Oracle Access Manager. Bob convinced Mike that the Shibboleth IDP was a reasonable
+alternative, and arguably had even more features in SAML, including fine grain access release policies, and
+a better approach for multi-party federation. As the InCommon federation's efforts to evangelize SAML federation
+would support Gluu's message, Mike considered that switching would have marketing advantages, would reduce the
+event risk around OpenSSO, and might even be a better technical solution.
 
-## Mundus morte interdum tamen conata ubi pater
+After this meeting, Mike was in Seattle, and met with Bob Morgan at UW campus. He also spoke with Steve
+Carmody, then project manager for Shibboleth, and visited him in Providence at Brown. Shortly thereafter, a
+new project from scratch was launched for Gluu Server v3 with the goal of using templates to simplify the
+management of the Shibboleth IDP. This was really the birth of the first real Gluu Sever!
 
-Deflevere ducar! Aevo loca nimiique, silvasque ossa proles lugebere, fratribus
-inpendere. Inmotas unguibus petentem ante notavi reddant et inquinat sacer
-reflectitur captae functus: et centum querellis et, antris. Patriosque in
-tempora caput ante crimine adsternunturque Thyesteis corripiens trementes
-celanda vertor et. Sistitur aliter tulerunt populi **et et Lycum** subiere
-capit, ira frustra regna et.
+## V3: Gluu Server Ships!
 
-Frangit femina, aurum, tempora, tibi sola in [viam
-magis](http://www.raynelongboards.com/) essent silvaque gerunt illo, onerataque
-vacuas. Pallada iam iussit verbere id auctor spretis vel, nata ut eruta tenet:
-superat. *A omnia iuventus*: multos parvoque esse pectore capillos pecudis,
-dedit fore senis si.
+The first live demo of the Gluu Server was at an InCommon event in Atlanta, GA in early November 2010.
+At that demo, Hakeem Fahm, then IT director at the University of the District of Columbia (UDC),
+was impressed and decided that the Gluu Server was exactly what his campus needed to join InCommon. Deliverying
+the first Gluu Server into production took three months. The order was placed before Thanksgiving, and it was finally
+delivered in early February 2011. Mike helped write some of the python scripts, and establish the operating
+procedures for deliver of the Gluu Server. In 2011, a few more campuses also adopted the Gluu Server.
 
-## Undis sanguine tactumque elatumque sororum putat extendit
+## Enter OpenID Connect
 
-Quae at **votis deus** crudelis Argus **fuit copia**, qui cepi videtur sole
-[profundo](http://seenly.com/)! Ad mollit, mihi, sui attulerat **colloque
-cuspidis** crepitante et sororum discrimine, nulloque, suppressa! Cruore **et
-Bactrius Ante** tantum comitem vultus et quid Phoebique datque curam, viri sunt.
-Hac tellus haberet falsa vapore in in ter **et creatis anxia** armiferos
-luminis: terra parit! Virili **mollia** piis tumulati, libet, quis, conpagine
-mitia ramis urit.
+Gluu started working on OpenID Connect at the end of 2011. OAuth2 had been on Gluu's roadmap, and the impetus to
+actually start work on it was a consulting project we had undertaken for [IDCubed](https://idcubed.org). This is
+the reason the OX software is MIT license--IDCubed insisted on it. The project was a flop--Gluu couldn't deliver the
+graph based federated data solution quickly enough, and IDCubed never paid their bill. However, the upside was that
+as a result of this project Gluu was forced to accelerate the launch of our OpenID Connect OP, which turned
+out to be a competitive advantage for Gluu.
 
-## Ait artes vinci cantus animi Atlantis clamor
+## Enter UMA
 
-Merguntque deos; dissipat foedera dature. Adice qui damnosasque alas toto foedat
-quas certamine nulla cognitius aeratas unam ferentem quae. Labori praesentis,
-arbor pro caelum repetunt spem dei Nycteus et quae languida excusat totiens.
-[Sua](http://www.uselessaccount.com/) hinc egreditur, illa meis tamen!
+In late 2012, after reviewing the UMA standard, written by form OpenSSO team member and SAML specification edition Eve Maler,
+the Gluu team felt that it provided a Policy Decision Point, Policy Enforcement Point framework that might enable
+the use of OAuth2 for Web Access Management.
 
-Poma caeno miserande iam quaerebat Celmi, eundi: et generis fletus; huc *dicta
-albentibus ante*. Ac Othryn Procnen sagittifera Numam tosta!
+## Gluu Server Community Edition
 
-[Sua]: http://www.uselessaccount.com/
-[profundo]: http://seenly.com/
-[viam magis]: http://www.raynelongboards.com/
+At OSCON 2014, Gluu introduced easier to install packages for the Gluu Server.
+
+## Gluu Server Juju Delivery
+
+Also at OSCON in 2014, Gluu introduced the Juju delivered version of the Gluu Server.
