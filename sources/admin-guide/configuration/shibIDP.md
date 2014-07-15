@@ -105,11 +105,9 @@ kind of SSO it is.
     * Gluu Server IDP metadata is available online with the link: `https://<hostname>/idp/shibboleth`
 
 * Can you please tell me what kind of certificates Gluu Server using? 
-    * There are basically three types of certificates here in Gluu Server. 
-        * Apache SSL certificate: 
-             
+    * [Certificates](http://www.gluu.org/docs/admin-guide/certificates/) in Gluu Server             
 
 * How can I get the IDP's SAML cert? 
-    * 
+    * SAML certificate is available in your IDP's metadata. Metadata can be collected in [this](https://support.gluu.org/questions/36/idp-certificate-entityid-location-http-redirect-location-etc/) way. 
 
 
