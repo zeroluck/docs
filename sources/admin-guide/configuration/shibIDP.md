@@ -44,9 +44,27 @@ If the organization needs more attributes or has custom attributes, they can be 
 Trust Relationship is the mechanism to create bridge between any Service
 Provider ( SP ) and Gluu Server SAML IDP. 
 Trust Relationships can be created by Gluu Server administrator from Gluu Server
-GUI ( as known as: Gluu oxTrust ). 
+GUI ( as known as: Gluu oxTrust ).  
 
 ### How to create Trust Relationship
+
+In order to create a trust relationship with any SP: 
+
+* Go to SAML → Trust Relationships
+* Click on “Add Relationship”
+* IMAGE
+* A new page will appear. Here, Gluu Server Administrator need to provide all informations regarding SP to establish Trust Relationship from Gluu Server. 
+* IMAGE
+    * _Display Name_: Name of the Trust Relationship ( it should be unique for every trust relationship ) 
+    * _Description_: Little description. Purpose and SSO link can be added here.
+    * _Metadata Type_: Depending on trusted party’s metadata (SP), there are four available types in Gluu Server
+        * IMAGE
+            If SP has uploadable metadata in XML format, this option works best.
+        * IMAGE
+            If the metadata of SP has url link and accessible from internet, Gluu Server Administrator need to use this option. 
+        * _Generate_: Using Gluu Server to generate configuration files for SP is another big option when the SP is inhouse application or “Shibboleth SP” is installed or going to be installed in target application site (SP).  [How to install Shibboleth SP](http://www.gluu.org/docs/articles/apache-saml/) will help user to  configure and install Shibboleth SP on their own area.
+
+
 
 ## Log Viewer
 
