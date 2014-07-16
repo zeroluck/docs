@@ -71,6 +71,8 @@ TODO
 
 * Download the MSI of Shibboleth-SP from: http://www.shibboleth.net/downloads/service-provider/latest/
 * Start the installation
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/windows_sp_2_4.png?raw=true)
+
 * Destination folder (by default it is: C:\opt\shibboleth-sp\). You can select any directory, but it is best to follow the tree \opt\shibboleth-sp\
 * Select Shibboleth Daemon port: default is 1600, you can keep it for local testing
 * Now, there are two options here. You have to follow either one (but not both) according to your target.
