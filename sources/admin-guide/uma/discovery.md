@@ -6,7 +6,9 @@ Gluu Server provides configuration data as JSON document under:
 https://gluuserver.org/.well-known/uma-configuration
 ```
 
-Typical response look as following:
+Gluu Server response for UMA configuration MAY contain standard properties (defined by UMA specification) as well as custom properties (extension that is out of scope of this document). Gluu Server guarantees property name uniqueness within response.
+
+Typical response looks as following:
 
 ``` json
 {
