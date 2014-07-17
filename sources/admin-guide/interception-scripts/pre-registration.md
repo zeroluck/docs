@@ -10,7 +10,6 @@ Pre-Registration Script can be used to
 
 ## Script interface 
 Pre-Registration script implement a Registration Script interface:
-
 ```
 package org.gluu.oxtrust.service.python.interfaces;
 
@@ -28,8 +27,14 @@ public interface RegistrationScript {
 	public boolean execute(List<SimpleCustomProperty> list, GluuCustomPerson person);
 }
 ```
+Class name MUST be "RegistrationScriptClass"
 
 ## Script example
+This script verifies that specified attributes are unique and that email is not from a forbidden list of domains. 
+It requires two attributes to be specified:
+uniqueAttributes - comma-separated list of attributes. (mail,uid)
+forbiddenDomains - comma-separated list of domains. (gmail.com,yahoo.com)
+
 ```
 from org.gluu.oxtrust.service.python.interfaces import RegistrationScript
 from org.gluu.oxtrust.ldap.service import PersonService
