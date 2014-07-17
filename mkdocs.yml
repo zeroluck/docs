@@ -6,6 +6,7 @@ docs_dir: sources
 repo_url: https://github.com/GluuFederation/docs
 theme: spacelab 
 
+# theme: docker
 theme_dir: ./theme/mkdocs/
 theme_center_lead: false
 include_search: true
