@@ -11,7 +11,7 @@ Pre-Registration Script can be used to
 ## Script interface 
 Pre-Registration script implement a Registration Script interface:
 
-'''java
+```
 package org.gluu.oxtrust.service.python.interfaces;
 
 import java.util.List;
@@ -27,10 +27,10 @@ import org.xdi.model.SimpleCustomProperty;
 public interface RegistrationScript {
 	public boolean execute(List<SimpleCustomProperty> list, GluuCustomPerson person);
 }
-'''
+```
 
 ## Script example
-'''
+```
 from org.gluu.oxtrust.service.python.interfaces import RegistrationScript
 from org.gluu.oxtrust.ldap.service import PersonService
 from org.gluu.oxtrust.model import User
@@ -83,4 +83,4 @@ class RegistrationScriptClass(RegistrationScript):
                                 return False
 
         return True
-'''
+```
