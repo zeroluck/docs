@@ -120,6 +120,7 @@ pages:
 - ['admin-guide/openid-connect/client-config.md', '**HIDDEN**']
 
 # Sub pages of Admin Guide / UMA 
+- ['admin-guide/uma/introduction.md', '**HIDDEN**']
 - ['admin-guide/uma/discovery.md', '**HIDDEN**']
 - ['admin-guide/uma/resource-registration.md', '**HIDDEN**']
 - ['admin-guide/uma/policy.md', '**HIDDEN**']

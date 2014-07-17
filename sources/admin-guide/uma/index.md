@@ -1,6 +1,7 @@
 # UMA 
 
 ## Contents
+- [Introduction](./introduction.md)
 - [Discovery](./discovery.md)
 - [Resource Registration](./resource-registration.md)
 - [Policy Management](./policy.md)
