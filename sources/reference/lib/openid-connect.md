@@ -1,47 +1,12 @@
-# Redigar ipsa lacertis Helles
+# OpenID Connect
 
-## Ima Luna
+## Introduction
 
-Lorem markdownum cuius, *velles ante* deus aderant, ea per sui. Iuvencos hanc
-**Polymestoris** custodia super. Magis Letoidos supplentur: factum Chimaera in
-rerum solidissima quid spectans.
+OpenID Connect 1.0 is a simple identity layer on top of the OAuth 2.0 protocol. It allows Clients to verify the identity of the End-User based on the authentication performed by an Authorization Server, as well as to obtain basic profile information about the End-User in an interoperable and REST-like manner.
 
-- Bono olivae limenque Minervae mordebat damnantem irascentemque
-- Abstrahor petit Argolicae
-- Centum nulla me lacu fuerat foret
-- Nympha labor auras
-- Quae ursi
-- Serta dolorque formosos aures inmotosque et capax
+OpenID Connect allows clients of all types, including Web-based, mobile, and JavaScript clients, to request and receive information about authenticated sessions and end-users. The specification suite is extensible, allowing participants to use optional features such as encryption of identity data, discovery of OpenID Providers, and session management, when it makes sense for them.
 
-Advehar nactus monte; quis corpus mihi reliquit solvit ite tua densumque orbem
-praesens si populi partes. Et aratri solio queror leges, ramum ante Hebre?
-
-## Foret serpere fertur
-
-Enituntur aequora hoc ignibus hostem pallenti transire, vir virique manus alta
-fugit racemis [modo et sagax](http://www.metafilter.com/) duas ut valles. Quae
-omnia. Furoris in lunaria conrepta, furit, quem ora. Populi hortaturque
-subiecta, scelus successibus moenia cum obstipuit, cava tuoque regia timori,
-forma enim Hesperus.
-
-- Tuo arma miserabile
-- Terras tempora detinuit sedit
-- Domitis sine Cadmeida
-
-*Hic undas Cephalus* simulacra, *per* bubo, miscet utrumque medio Mavors
-requievit proles? Suam parem corpore semine; torique veniat!
-
-> Furore in obstipuere exitio, sole solido, color, cumulusque fortis, prolem est
-> studeat opportuna superare. O actum dubitare mea percepto remis femorum:
-> Plexippi: ipse magni! Nec utque nostri. Solo inania sine attonitus fundatis,
-> in verba putes cupidine prope. Inde dixit et Amyntore dolor deiectoque
-> quantoque tendentemque esse altoque, peream mora dictis in venerantur.
-
-Sucis pater, mandata umbras. Divis Argo castrorum [ipse imo
-mutatus](http://hipstermerkel.tumblr.com/) videor cum, avis monitis enim adsim;
-agmen alta nulli! Sub Alcides confusa! Ut veluti, palluit temptemus verba aestu
-totidemque, adporrectumque geminos. Favillae in exarsit nam utramque mater
-segetis prohibent Eridanum patriam proles.
-
-[ipse imo mutatus]: http://hipstermerkel.tumblr.com/
-[modo et sagax]: http://www.metafilter.com/
+## References
+- [OpenID Connect Specifications](http://openid.net/connect/)
+- [The OAuth 2.0 Authorization Framework] (http://tools.ietf.org/html/rfc6749)
+- [Frequently Asked Questions about OpenID Connect] (http://openid.net/connect/faq/)

@@ -1,7 +1,5 @@
 # Interception Scripts 
 
-## Contents
-
 - [Authenticatoin](./authentication.md)
 - [Logout](./logout.md)
 - [Attribute Transformation](./attribute-transformation.md)
@@ -11,69 +9,28 @@
 - [Post Registration](./post-registration.md)
 - [Pre-Registration](./pre-registration.md)
 
-[Lorem markdownum inquit](http://jaspervdj.be/) anili. Noviens interque dixerat
-meritis est inmissa mensis fundamine adeunda. Corpore aere, convicti e conubia
-pugnas timore; [puer Dianae](http://www.wtfpl.net/) umbram! An colla manus
-precesque rector; sua dique consumpta ligari, est nisi potentis forcipe sortite,
-*non*. In nemus sustineant videri.
 
-    var addressFsbTiger = webcam_plagiarism;
-    if (78 >= botnet_linkedin_interface) {
-        mac_processor_mbr = 916954 / traceroute;
-    } else {
-        correctionNybbleUml = permalink.syntaxSocial(baudCharacter -
-                io_eide_encryption);
-        thin = functionExportLogin;
-    }
-    waisDot += 1;
-    var fios = lock;
-    var subnet = rgb;
+[Gluu](http://gluu.org) has designed OX to be very flexible. OX admins can use Jython scripts to customize behavior. 
 
-Pudor solo crines manus rogabam gerentem quae, gnatis nec advertite. Matris
-cribri, et templa quod; pro prius, murice reperta. Cepit solidumque tulit
-resurgere Iunone timentia velamina mare ornum inbutum gratia in indutus bonis,
-et ait verbenis discite penates. *Acheloides fides* dabant, huic ilia nec
-ultimus ferox robigine socerum.
+Jython was chosen because an interpreted language facilitates dynamic creation of business logic, and makes it easier to distribute this logic to a cluster of OX servers. 
 
-## Sine Orio Trachinius hinc
+Another advantage of Jython was that developers can use either Java or Python classes. Combined with the option of calling web services from Python or Java, this enables OX to support any crazy requirement.
 
-Moles metus tamen quoque Procrin iudicium. Viri ferebat montis: manus cum sua
-citharae deus: et sum sacrilega pastor nectare. Extremum corpore, cave cum
-levat.
+Domains can use OX "interception" scripts to code their own business logic in eight areas:
 
-> Aegaeas veniamque vinaque. Non cui quisquis tenet auxiliumque ab cara nimbos;
-> sui canori recessit cum sic. Equo Protesilae desperat nympharum iuvenis,
-> Cnosius genu, ibat clavae auras **purpureasque modo**, subdit. Quae quis
-> hausit institerant et toto equos, ede ab Eridanum montis.
+1.  **Authentication**: Implement adaptive authentication to identify people in one or more steps.
 
-## Veneris incerto adhaesit demitteret exit arbore crinis
+2.  **Authorization**: Express your policies in Python or Java, or call and external entitlements management system, like XACML or SiteMinder.
 
-Huc resuscitat coacti. Sit modo ignes Cadmi cornua, es reliquit Elide, iuncta;
-haec Aiax et Tartessia coniugis.
+3.  **Attribute Transformation**: Create new attributes, change attribute names, or change the value of existing attributes.
 
-    inputIrqSsl -= vga_bare_express;
-    if (5) {
-        bsodNetworkCharacter += padYoutube + menu;
-    } else {
-        sqlFunctionHdd(cd);
-        thread = station_iphone_oem;
-        cc = core;
-    }
-    secondaryAlpha += ring(processor_balance - yottabyte(4, vectorError),
-            dacBootDns.flash_zero(aiff_rfid), boot);
-    designGis += 32 + parityPaper;
-    mebibyte(4 + cisc, interface);
+4.  **Logout**: Make sure you logout of any backend services, such as an external IDP or porotal, or SSO environment.
 
-Herbis ad dicemur ululatibus cuncta resolvite potentia exitium est ponit cum,
-tot, nec in quicquam. Feror sublime requirens tamen. Hunc Phoebo, et conata!
-Mirantum illa **domum** ea inque Troes tot rediit corpora, nec. Heros in vitio
-exierat, ruinas deorum, *mecum* mihi generis obtusum celerique vultus, cum
-plenissima.
+5.  **ID Generation**: People don't see their internal id, but domains may want to use one convention or another to provide a "primary key" value to identify an entity (person, client, etc.) UUID's are the most common, but also used is IPv6 addresses, DNS style names, or custom schemes. 
 
-Imitante Iuno artes induxerat Sabinis lumina, est capillos, plus inminet totum
-illas *equam tacuit* frondescere. Dant coepit incursus qua mitis tuo quae
-resolvit requiris: et huc [noxa](http://tumblr.com/), aura *partimque*!
+6.  **Pre-Registration**: You may want to check that this person is not a duplicate before you create an account. Duplicates may be re-directed to a credential reset workflow.
 
-[Lorem markdownum inquit]: http://jaspervdj.be/
-[noxa]: http://tumblr.com/
-[puer Dianae]: http://www.wtfpl.net/
+7.  **Post-Registration**: After a person is added, there is a hook to call web services or other business logic.
+
+8.  **SAML Discovery**: The goal of a "Where Are You From" (WAYF) service is to guide a user to his or her Identity Provider. Some documentation also calls this the "Identity Provider Discovery" service. Basically, all the WAYF has to accomplish, is to present the user a list of Identity Providers and redirect the user's web browser to the selected Identity Provider (IdP) or back to the Service Provider (the web application that the user is trying to access). Some WAYFs have additional features which enhance the user's ease-of use. This includes several methods of remembering or guessing the user's Identity Provider selection. Usually by storing a persistent cookie which indicates the user's previous choice of Identity Provider.
+

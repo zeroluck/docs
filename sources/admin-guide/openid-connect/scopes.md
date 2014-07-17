@@ -1,4 +1,8 @@
-# Conbibit effigiem acres vocavit luminibus Syringa nam
+# OpenID Connect Scopes
+
+## Default Scopes
+
+## Custom Scopes
 
 ## Quo fata
 

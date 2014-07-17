@@ -1,57 +1,113 @@
-# Genitor dedisse una caelo Arestoridae missos
+# Gluu Server - Shibboleth IDP
 
-## Per non an et trepidantem magni dixerat
+## Introduction
 
-Lorem [markdownum quem deponendique](http://seenly.com/) esset si torum
-*quoque*: pignus, redeant eheu reppulit, arma sincerae. Ursa commenta deplorata
-solvit Achivis exitus; mea alumni aut signumque labor
-[iterum](http://www.metafilter.com/).
+Gluu Server is the combination of OpenID Connect and SAML. This chapter is
+basically coverinig the SAML section of Gluu Server.  Gluu Server's SAML section is tightly integrated with [Shibboleth](https://shibboleth.net/). 
 
-- Lugebere utque mortalia via transmittere quondam Pelethronium
-- Ille perdidit esse umbrae
-- Cephalum Caicus
-- Ipsa undas
-- Superasset tenuit sua carcere dicebat sub oves
-- Vulnera operis gulae audisse ingenio ira cui
+## LDAP Attributes
 
-Optima *decuit* veterum in colla Schoeneia culpa: sidera Apollinis flammas
-postquam flere. Non sunt **sit** dubitabile fecit: sunt vulnus servare. A
-dolentis disque. Obliquis feret leporem. Talia patent: de: [Booten de
-tempora](http://seenly.com/) ipse.
+Gluu server released all standard attributes. The administrator of Gluu Server
+is able to see all attributes from Web UI Configuration. 
 
-## Et cives nam est velocius volumine sine
+Other than standard attribute, Gluu Server allows administrator to create and
+map any custom attributes in ldap. Gluu Server GUI has such feature.
 
-Una crepitantia it videtur mortalis **lacum**: fortis, saetigerosque amara
-varias. Virus pollice, Priamum femina, pectora te tortum et nolet meminere vecta
-dissimulant sentire tot saevit seroque.
+An “Active” attribute list can be seen from the Configuration → Attributes section. 
+The Gluu Server has a large ldap tree which includes all standard attributes. Not all are necessarily “Active”. Active Attributes can be sorted by clicking “Show only Active Attributes.”
 
-- Ignibus Procnen nova o adhuc rubefactaque Medon
-- Spretis certare adest dictas anni laudis aetas
-- Antiquas et nardi Psecas lucum fulvis cessit
-- Lapidumque coniuge
+After clicking an attribute, the server Administrator can make edits as needed,
+such as changing an attribute from Inactive to Active, as shown below.
 
-Turgida est ignibus questa infelix, **sanguine hoc** ait generosior paravi
-Caeneus multa annosque Mittor tantum diffudit caluere. Iura quid dis Phoebe
-perceperat [mente](http://seenly.com/) gratamque conplexaque es leves dis ut
-removit humano relinquam pinus. In tamen auctor reficisque ipsa auras, a
-penetrabit, sperantemque cornua. Quamquam damnosa amnis Ascalaphus quae Ulixes
-dixit inque virginibus solidam est animo violaverat Phoebo foribus.
+* IMAGE
 
-    processor_management_card = 91 + blob_hard_speakers;
-    var disk = open(xpSystrayAsp, on_honeypot_cpu);
-    bookmark = in.mediaInteractive(
-            codec_phreaking_ribbon.x.baudCmosTroubleshooting(passive_midi,
-            leak));
-    if (baudVector / base_page_restore + 60 + file) {
-        adsl.menuViewPeripheral = -4;
-    } else {
-        logNon.soap -= file;
-    }
+If the organization needs more attributes or has custom attributes, they can be added from the Gluu Server GUI. Click on “Add attribute” and a page like this will appear:
 
-Iter erant frustra omnia et, in finire solebat ostendere, ac umida quid huc.
-Erat correpto protinus moveri.
+* IMAGE
 
-[Booten de tempora]: http://seenly.com/
-[iterum]: http://www.metafilter.com/
-[markdownum quem deponendique]: http://seenly.com/
-[mente]: http://seenly.com/
+* _Name_: Name of this custom attribute. It must be unique in Gluu Server LDAP tree.
+* _SAML1 URI_: SAML1 URI value for custom attribute.
+* _SAML2 URI_: SAML2 URI value for custom attribute
+* _Display Name_: Any name which is human readable.
+* _Type_: Attribute type. There are four types supported by Gluu Server: (i) Text (ii) Numeric (iii) Photo and (iv) Date.
+* _Edit Type_: User who can edit this attribute definition.
+* _View Type_:  User who can view this attribute.
+* _Privacy Level_: From 1 to 5. Select the desired one.
+* _Multivalued_: Is this attribute has multi values? If yes, True. Otherwise, false. 
+* _SCIM Attributes_: Is this attribute in SCIM architecture? True or False.
+* _Description_: Little description of this attribute
+* _Status_: “Active” will release and publish the attribute in IdP. 
+ 
+
+## SAML Trust Relationship
+
+Trust Relationship is the mechanism to create bridge between any Service
+Provider ( SP ) and Gluu Server SAML IDP. 
+Trust Relationships can be created by Gluu Server administrator from Gluu Server
+GUI ( as known as: Gluu oxTrust ).  
+
+### How to create Trust Relationship
+
+In order to create a trust relationship with any SP: 
+
+* Go to SAML → Trust Relationships
+* Click on “Add Relationship”
+* IMAGE
+* A new page will appear. Here, Gluu Server Administrator need to provide all informations regarding SP to establish Trust Relationship from Gluu Server. 
+* IMAGE
+    * _Display Name_: Name of the Trust Relationship ( it should be unique for every trust relationship ) 
+    * _Description_: Little description. Purpose and SSO link can be added here.
+    * _Metadata Type_: Depending on trusted party’s metadata (SP), there are four available types in Gluu Server
+        * IMAGE
+            If SP has uploadable metadata in XML format, this option works best.
+        * IMAGE
+            If the metadata of SP has url link and accessible from internet, Gluu Server Administrator need to use this option. 
+        * _Generate_: Using Gluu Server to generate configuration files for SP is another big option when the SP is inhouse application or “Shibboleth SP” is installed or going to be installed in target application site (SP).  [How to install Shibboleth SP](http://www.gluu.org/docs/articles/apache-saml/) will help user to  configure and install Shibboleth SP on their own area.
+
+
+
+## Log Viewer
+
+Gluu Server administrator can view / trace any log from system with Gluu
+Server's "Log Viewer" feature.  Any log can be displayed from Web UI with few clicks. To enable this feature click on “Configuration” → “Configure log viewer”
+
+* IMAGE
+
+Click on “Add log template”, two new boxes will appear. Left box is the name/description of the log and right box require the real path of this log file. As for example in the below image,  we are going to configure two logs: 1. oxTrust log and 2. oxAuth log
+
+* IMAGE
+
+Log files which were configured in previous section can be viewed with this “View log file” feature. Click “Configuration” → “View Log File”
+
+* IMAGE
+
+Now, select / click on desired allowed log file and insert a value for “Display last lines count”. Gluu Server will show last 400 ( or, any selected value lines ) in GUI like below:
+
+* IMAGE
+## FAQ 
+
+* I have a new SP, what I need to do to create a Trust Relationship from Gluu Server SAML IDP? 
+    * Different type of SPs allowed different types of SSO. Basically there are
+two types of SPs. IDP-inititate SSO and SP-initiated SSO. You need to know what
+kind of SSO it is. 
+        * For SP-initiated SSO, you need to know: 
+            * Required attributes by SP.  
+            * Metadata of SP. 
+            * SSO endpoint / testing endpoint which end user will use to log
+            into SP.   
+
+        * For IDP-initiated SSO, you need to know: 
+            * Required attribute by SP. 
+            * Metadata of SP ( if possible )
+            * SSO endpoint ( if possible )
+
+* From where I can get the metadata of IDP? 
+    * Gluu Server IDP metadata is available online with the link: `https://<hostname>/idp/shibboleth`
+
+* Can you please tell me what kind of certificates Gluu Server using? 
+    * [Certificates](http://www.gluu.org/docs/admin-guide/certificates/) in Gluu Server             
+
+* How can I get the IDP's SAML cert? 
+    * SAML certificate is available in your IDP's metadata. Metadata can be collected in [this](https://support.gluu.org/questions/36/idp-certificate-entityid-location-http-redirect-location-etc/) way. 
+
+

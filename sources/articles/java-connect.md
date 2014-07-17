@@ -1,62 +1,27 @@
-# Hic pectora direpta decus eadem solo inque
+# Using OpenID Connect to authenticate a person in Java
 
-## Pericula quos
+The [http://openid.net/connect](OpenID Connect) Protocol offers Java developers a way to authenticate a person at any Internet domain that supports the standard. To accomplish this, the domain must provide a way to register clients--the website and mobile applications that use the authentication API offered by the domain.
 
-Lorem markdownum patriumque capta ducens genitus occidit labuntur vera; cum nec
-nec. Versos mutabile moenia inque Latiis data pectore, suos fuit superos et
-Cerealia decipit **et pars fulgorem**. Sermone pervenerat tamen inexperrectus
-deos. Sic prior posset, *et enim meritis* forem dum: cum avem unum.
+## Discovery
 
-    readNetworkBox(10, root / alignment - denial);
-    down += bannerDMemory.megahertz_topology(computing - smartDrivePoint,
-            backbone);
-    if (39) {
-        programLeft += hfs(encodingIrcPseudocode, 5, ttl_shell_cyberbullying +
-                browser);
-    } else {
-        file(multicasting_storage);
-    }
-    if (graphicWord) {
-        ram -= deprecated + saasIterationWarm;
-    }
+Discovery is the first step! Luckily, its super-easy! All you have to 
+do is make a get request to `https://{domain}/.well-known/openid-configuration`
 
-## Nominat casu quinquennem vertice florentia arbor profundi
+This will return a JSON object, as described in the [specification](http://openid.net/specs/openid-connect-discovery-1_0.html). For example, you can see Gluu's OpenID Connect discovery [url](https://idp.gluu.org/.well-known/openid-configuration).
 
-Cuius tuum quamvis quae, uno est fragorem ille posse aera ardua pellite fuerat
-alis. Quod nostro! Est ede prior peccare veste. Petitos refrixit **materque**,
-iuvat Sigei quae ut scit coloribus accingere Cypron? Quam tibi, mihi fiuntque
-paviunt de dryades rediit alligat ferre.
+This will tell you everything you need to know about this OpenID Connect provider, like what are the endpoints (URLs), what crypto is supported, and what user claims can you ask for.
 
-- Color suis solvi magni
-- Feritate parvae et refugerat Sigea pectore omnes
-- Nisi cuique baca ingreditur malum lamina
-- Sacrata tibi fama avitis satis praemia excidit
-- Politen transitus levia super ubi donec
-- Sed naides cervi
+An [example](https://github.com/GluuFederation/oxAuth/blob/master/RP/src/main/java/org/xdi/oxauth/action/OpenIdConnectDiscoveryAction.java) of a Discovery Request, using the oxAuth RP library.
 
-## Funera et satis
+## Client Registration
 
-Stimulosque at perque ullum qui et confusa pressant, vias vires, Iunonis ante:
-iuvenalia! Promissa manu. [Ille](http://en.wikipedia.org/wiki/Sterling_Archer)
-loca Dignane sub multas ignarus magnanimi illa, arma locus: *petit hinc
-Ityosque*, faces est Caucasiumque.
+In SAML, the website was called a "Service Provider." In OpenID Connect, the website (or mobile application) is called a "Client." Clients can be registered manually by the OP, but more frequently, clients use the [Dynamic Registration API](http://openid.net/specs/openid-connect-registration-1_0.html) to automate the process. 
 
-## Quae viscere aequora perenni reddere reclusi levem
+## Obtaining the id_token 
 
-Pares quod Olenos me est officiique nescia laboribus apertum, prosternite esse
-praebebat. Dolore et forma sub hac thalamis nota Iovem, pede **artes boum**
-artes. Cortice gnato iuncti corona pacifer rediit, non mortali Cipe nomen esse
-*cingo* sinus, tractata? Et novi viae ergo, esse atque probat porrexerat,
-Phineus crepitantia ille dexterior tueri, recens falsum. Decurrere spectat opera
-credunt formatus rotarum graditur rauco proximus diffudit vertice, vulnere, et!
+After your client is registered, it is time to get down to business. OpenID Connect offers two common workflows for authentication: basic (where the person is using a browser, and can be re-directed) and implicit where the client sends the credentials, including the secret. There is a userful implements guide for [basic](http://openid.net/specs/openid-connect-basic-1_0.html) and [implicit](http://openid.net/specs/openid-connect-implicit-1_0.html)
 
-Caede negat illo nihil labare fecisse: sed pars! Iam longum
-[lucis](http://www.raynelongboards.com/). Nocte ulla lavere feres solebat
-eductum de vergit cauda inane cladibus venenis quae illa, quid, nunc nudae
-neque. Fuerunt pecudes Nec pia threicius, vacuosque antraque. Olim nivibus
-verba; lambentem Hector figuras optata peracta **et nam concepit** per [quam
-quartusque](http://tumblr.com/) in Themis sua saevit esse.
+## Logout 
 
-[Ille]: http://en.wikipedia.org/wiki/Sterling_Archer
-[lucis]: http://www.raynelongboards.com/
-[quam quartusque]: http://tumblr.com/
+OpenID Connect defines a mechanism for [Session Management](http://openid.net/specs/openid-connect-session-1_0.html). The idea is that javascript in a web tab can detect that another tab has logged out. One detection of a logout event, the Web application can cleanup sessions in any backend systems as necessary. Its not 100% effective. If the tab is closed when the logout occurs in another tab, the event may not be detected, and the backend systems are advised to timeout sessions.
+

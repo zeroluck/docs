@@ -1,57 +1,100 @@
-# Si breve relevare post
+# UMA Policies
 
-## Longius non donec
+## Algorithm
 
-Lorem markdownum sonumque. Cura qui quoque me vidit Delum utque trementem urbes.
-Suco quam terrena longique inplicet.
+Rules:
 
-> Loqui timido in tot canis gregesque numina inmisit diro. In manu, animos pes
-> esses egredior! In hinc et equo ore equus, quae peto Erebi moenibus? Cupidine
-> Minervae **subit**. Scitaris moriens praesignis cum Herculis Rhesi vestes me
-> capillis esset matertera.
+- Policy protects scopes. If scope is protected by policy then during RPT authorization such policy script must return true in order to authorize access to resource, otherwise authorization is denied.
+- Scope can be protected by multiple policies. If one scope is protected by multiple policies then all policies must return true to authorize access. If at least one policy returned false then authorization is denied.
+/sources/img/interception_scripts/uma_policy_handling.jpg
+![Alt text](/img/interception_scripts/uma_policy_handling.jpg "UMA policy handling")
 
-## Uterque freti
+## Policy definition in LDAP
 
-Fundamina sic Orionis parte magna parvo frondente. Illius audit devertor; dea
-adfer in nefas consequitur tibi fitque: nisi. Magnis non cuncta viri equos
-vulnere muta nomen, saxa capit tellus advena erat multa gurges [aera
-fit](http://reddit.com/r/thathappened).
+Gluu Server uses LDAP for storing information, therefore here we consider Policy definition in LDAP format. Policy may contain authorization interception script coded in Python.
 
-    formatName.nybble -= graphic(software, viral / cookie_compact) -
-            wrap.nybbleOptical.bus_clipboard_number(icmp_digital.keywords_gis_p(
-            56, microcomputerUtilityNode, joystickExbibyteMarketing), vfatSnmp,
-            website_copy_javascript(jspFreeware));
-    if (modem_isdn(whitelistBox, menu_linkedin_paper, express_signature)) {
-        dnsSequenceRadcab(3, 2, 4 + lock);
-    } else {
-        direct = usb;
+Language support:
+
+- Python - supported
+- JavaScript - not supported (Right now we support only Python interception scripts however it's possible to plug-in any interpreter language, e.g. JS, please check Gluu Server release notes for more information).
+
+Policy entries location: ou=policies,ou=uma,o=<your organization id>,o=gluu (e.g. ou=policies,ou=uma,o=@!1111,o=gluu )
+
+    dn: inum=@!1111!0009!BC01!0000,ou=policies,ou=uma,o=@!1111,o=gluu
+    displayName: Only people from Austin can login
+    description: <some description of the policy>
+    oxPolicyScript: <Python or JavaScript or whatever script code here>
+    programmingLanguage: Python
+    inum: @!1111!0009!BC01!0000
+    oxAuthUmaScope: http://photoz.example.com/dev/scopes/view
+    oxAuthUmaScope: http://photoz.example.com/dev/scopes/all
+    objectClass: oxAuthUmaPolicy
+    objectClass: top
+
+## Interception script Java interface
+
+    public interface IPolicyExternalAuthorization {
+        public boolean authorize(AuthorizationContext p_authorizationContext);
     }
-    impressionBsod = number(monitor_friendly);
-    tweak(hyper_device.pixel_delete.pda_format(-4, sink_ide_dac +
-            directxDiskVaporware, -3), mirrorVeronica);
-    image_browser.repeaterMegapixelIp(sector_address.biosMpegReader(search,
-            json));
 
-## Dea est rorantia unda Ceyca ducit haerentia
+    public interface IAuthorizationContext {
+        String getClientClaim(String claimName);
+        String getUserClaim(String claimName);
+        String getRequestClaim(String claimName);
+        String getUserClaimByLdapName(String ldapName);
+        Integer getAuthLevel();
+        String getAuthMode();
+        String getIpAddress();
+        boolean isInNetwork(String cidrNotation);
+        RequesterPermissionToken getRPT();
+        ResourceSetPermission getPermission();
+        AuthorizationGrant getGrant(); // here return unmodifiable version of grant, e.g. to avoid new token creation
+        HttpServletRequest getHttpRequest();
+    }
 
-Medicamina superest sinum et iuvenis vosne; non illa iuvenes! Dantque angues non
-naufraga, nactus intempestiva ceditis nomen genu ad Clymeneia truncoque heros
-quibus! Causam pressit dapes ut *manus*.
+## Sample (Python)
 
-- Mirantur sed adeo male te
-- Pars in ut inbutam nymphis adspicit praeter
-- Est sed fabula tigris ara iter
-- Deos in nurusque ignibus quies quam fossa
-- Currusque maerenti victa occupat meas
-- Dat tempore magicaeque quam
+Python sample authorization script (authorize only if user location claim equals to Austin)
 
-Cui pius freta ferro parte bracchia albenti, tollere iam memini amore vix et,
-dari. Agat Lyciae postponere animi saevam de paenitet, aperire non positis
-viriles. Vipereos Andraemon [ludit](http://www.youtube.com/watch?v=MghiBW3r65M),
-summa: Venus est adhuc quae, cui, tot. Eodem dedere scopulum os rivus pinum
-lentos olivae deprendit et illa ver amantes in Clytie ut [et
-non](http://www.billmays.net/) et avidaeque.
+    from org.xdi.oxauth.service.uma.authorization import IPolicyExternalAuthorization
+    from org.xdi.util import StringHelper
 
-[aera fit]: http://reddit.com/r/thathappened
-[et non]: http://www.billmays.net/
-[ludit]: http://www.youtube.com/watch?v=MghiBW3r65M
+    class PythonExternalAuthorization(IPolicyExternalAuthorization):
+
+        def authorize(self, authorizationContext):
+
+            print "authorizing..."
+
+            if StringHelper.equalsIgnoreCase(authorizationContext.getUserClaim("locality"), "Austin"):
+                print "authorized"
+                return True
+
+            return False
+
+## Sample LDIF of policy LDAP entry
+
+    dn: inum=@!1111!0008!B0DA.6413,ou=policies,ou=uma,o=@!1111,o=gluu
+    description: Sample policy
+    displayName: Sample policy
+    inum: @!1111!0008!B0DA.6413
+    objectClass: oxAuthUmaPolicy
+    objectClass: top
+    oxAuthUmaScope: http://photoz.example.com/dev/scopes/view
+    oxPolicyScript: from org.xdi.oxauth.service.uma.authorization import IPolicyExternalAuthorization
+    from org.xdi.util import StringHelper
+
+    class PythonExternalAuthorization(IPolicyExternalAuthorization):
+
+        def authorize(self, authorizationContext):
+
+            print "authorizing..."
+
+            if StringHelper.equalsIgnoreCase(authorizationContext.getUserClaim("locality"), "Austin"):
+                print "authorized"
+                return True
+
+            return False
+
+    programmingLanguage: python
+
+[UMA]: http://kantarainitiative.org/confluence/display/uma/UMA+1.0+Core+Protocol
