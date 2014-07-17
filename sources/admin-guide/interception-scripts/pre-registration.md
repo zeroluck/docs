@@ -32,8 +32,8 @@ Class name MUST be "RegistrationScriptClass"
 ## Script example
 This script verifies that specified attributes are unique and that email is not from a forbidden list of domains. 
 It requires two attributes to be specified:
-uniqueAttributes - comma-separated list of attributes. (mail,uid)
-forbiddenDomains - comma-separated list of domains. (gmail.com,yahoo.com)
+  * uniqueAttributes - comma-separated list of attributes. (mail,uid)
+  * forbiddenDomains - comma-separated list of domains. (gmail.com,yahoo.com)
 
 ```
 from org.gluu.oxtrust.service.python.interfaces import RegistrationScript
