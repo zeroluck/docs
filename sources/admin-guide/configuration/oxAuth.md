@@ -1,4 +1,4 @@
-# Sub corpore magis
+# oxAuth Configuration
 
 ## Est libido manus
 

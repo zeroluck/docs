@@ -1,47 +1,59 @@
-# Ibi aures succiduo quoniam
+# Design Goals
 
-## Saepe ora modo erat
+## Free Open Source Identity Suite
 
-Lorem markdownum ambit! Qualia per et latentia, mutat eram qui tractu vultus.
-Gaudeat et diurnis mille precantem recurvam, **in actis**, facies et ferar: ait
-femina, causa. Manes Delos volucris Graium iam iterum pavit natus, vox tulit
-manibus ritus, intempestiva. Habere et elisa e mundi Cadmo **cornua miserrima**
-alas: in.
+One of the things that has made access management difficult for
+organizations is that there is no one tool you can deploy to solve
+even average requirements.  The Gluu Server provides a recipe to 
+deploy a combination of the best free open source tools, working 
+together.
 
-Quod nepotes tempusque [absistit oscula](http://www.uselessaccount.com/) aures
-et carmina indagine in prima liquidissimus oculis. Doloris esse corpus solent;
-turba pone lunae erat fluminea, ad [putes](http://hipstermerkel.tumblr.com/)?
+## Support most promising open standards
 
-- Promptum in traxit quondam peremi onus sublimia
-- Multis volucrum pacalibus carmina
-- Muneris poteramus concipe manus
+The goal of the Gluu Server is to support the minimum number
+of standards necessary to authenticate people, and to authorize them
+to access the resources they need to do business for the domain.
+The Gluu Server should be practical about supporting older protocols, 
+but always strive to be the first implementer of the most promising 
+new protocols. 
 
-## Venisses cava aede
+## Leverage existing business processes
 
-Abdita ut ero *bracchia insistit*, in nequiquam calcavere fecerat nescit
-*temptamenta doluit* de *usus* inque natae genus? Aere inania senectae quoque
-incurva et atque discite diffugiunt qui quoque **pallor** regnumque. Et chori:
-tecti in stagnumque dixit frondator summa contenta fremida mensis curvarique.
+Where possible, the Gluu Server goes to work with a minimal amount 
+of changes to existing business processes. Don't "rip and replace",
+but for new applications, use new protocols wherever possible to 
+avoid the creation of future upgrade work.
 
-Cervos adoleret [bacchae crinalem poscenti](http://www.wtfpl.net/) arsit Naides
-manu; plangere tui duplicataque eundo: silendo constitit at. Sacra ibi silvas
-nescit tertius pietas? Nec posuit tangit flamma habuisse, procumbere laudem.
+## Free license
 
-    white.printPRj = operatingPpga;
-    var opacityStandalone = cybercrimeDv(4 + wordart + service_regular);
-    if (pitch(drive(animated, vlb_core_matrix, 2), 3, bus_spoofing_koffice) !=
-            sshAlgorithm(leaf, agp - end_type_cluster, cut_component_log)) {
-        insertion(8, dotBarLink);
-        kvmDigitalJoystick.malwarePort = websitePortArtificial;
-    }
-    boot_software(67, username.language(
-            resources.characterTracerouteReader.bezel_native_lamp(
-            t_unc_kilohertz, switchCameraPrimary), -3, -4), cdma);
+The components of the Gluu Server should be free to use in production.
+This license strategy will produce the best software at the lowest 
+total cost of ownership for the organization.
 
-Orchomenosque quae hinc pressit Daedalon potiere. Robore hoc sortes cur coegi
-proelia, cum non aquas suos morer cineri optat; dignatus Phoebus praefoderat
-fuit; altera!
+## Write as a last resort 
 
-[absistit oscula]: http://www.uselessaccount.com/
-[bacchae crinalem poscenti]: http://www.wtfpl.net/
-[putes]: http://hipstermerkel.tumblr.com/
+Use the best software that exists. If something the Gluu Server needs
+doesn't exist, it may become an OX project. If some group comes along and
+writes software better than an existing OX component, use it!
+
+## Not just comprehensive, but easy to use
+
+The Gluu Server should make it easy for domain system administrators
+to control access to Web and network resources. Usability is more
+important than features.
+
+## Horizontal scalability
+
+System administrators should be able to add more servers to make the 
+Gluu Server scale as much as needed.
+
+## Extreme flexibility
+
+As Kent Beck says, "Embrace Change". The key to the Gluu Server's succes
+has been its ability to handle all sorts of crazy requirements--quickly.
+Sometimes raw speed is needed, but equally important is the ability for
+the access managment framework to be really smart.
+
+
+
+

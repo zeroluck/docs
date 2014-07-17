@@ -1,67 +1,388 @@
-# Advertite orbi
+# Schema
 
-## Ilice meis mea ullus probabit cacumine mediam
+## Objectclasses
 
-Lorem markdownum a longo adoratis procul audit quotiens litora Marathon, et. Est
-et auditque viscera sopore vestris nomenque siqua te bracchia lacrimis aere,
-dato inimica. Adspergine bene quidem sarcina ferret nectareis sine vertice, si
-verba, non Caicus? In loca, miseri? Sed per et pectore qua iuvencos actis,
-cultumque, dicens volat supremum detrahis?
+| Objectclass                    | Description                               | Used by Applications |
+| ------------------------------ | ----------------------------------------- | -------------------- |
+| gluuPerson                     | Basic person attributes                   | oxAuth, oxTrust      | 
+| gluuGroup                      | Group attributes                          | oxAuth, oxTrust      |
+| gluuOrganization               | Organization attributes                   | oxTrust              |
+| gluuAppliance                  | Configuration of Gluu Server Instance     | oxAuth, oxTrust      |
+| gluuAttribute                  | Metadata about user claims (attributes)   | oxTrust, oxAuth      |
+| gluuSAMLconfig                 | SAML Trust relationship data              | oxTrust              |
+| gluuInumMap                    |                                           |                      |
+| gluuInvoice                    |                                           |                      |
+| gluuPasswordResetRequest       |                                           |                      |
+| oxLink                         |                                           |                      |
+| vdapcontainer                  | Deprecated                                |                      |
+| vdDirectoryView                | Deprecated                                |                      |
+| vdlabel                        | Deprecated                                |                      |
+| oxEntry                        |                                           |                      |
+| oxNode                         |                                           |                      |
+| oxAuthClient                   |                                           |                      |
+| oxAuthCustomScope              |                                           |                      |
+| oxAuthFederationRP             |                                           |                      |
+| oxAuthFederationOP             |                                           |                      |
+| oxAuthFederationMetadata       |                                           |                      |
+| oxAuthFederationRequest        |                                           |                      |
+| oxAuthFederationTrust          |                                           |                      |
+| oxAuthSessionId                |                                           |                      |
+| oxAuthConfiguration            |                                           |                      |
+| oxTrustConfiguration           |                                           |                      |
+| oxAuthUmaResourceSet           |                                           |                      |
+| oxAuthUmaScopeDescription      |                                           |                      |
+| oxAuthUmaResourceSetPermission |                                           |                      |
+| oxAuthToken                    |                                           |                      |
+| oxAuthUmaRPT                   |                                           |                      |
+| oxAuthUmaPolicy                |                                           |                      |
+| oxLiteralNode                  |                                           |                      |
+| oxProxConfiguration            |                                           |                      |
+| oxProxOp                       |                                           |                      |
+| oxProxClient                   |                                           |                      |
+| oxProxAccessToken              |                                           |                      |
+| oxScript                       |                                           |                      |
 
-1. Vidit vidisti
-2. Comites maturuit flagrat videri movere sparserat culpa
-3. Unoque signa et male Echo coeptis quaeque
+## Attributes
 
-Asper videt. In Erinys Sole iam, tolluntur sumus tibi [obruta si
-aut](http://textfromdog.tumblr.com/) sulcat? Ignis fata est dixit venti loqui
-retemptat heres; arces illa semine, viri parte saltus orat. Putas est: peremit,
-horrentia cum est, a iubenti feres: ire.
+These are the ldap attribute in use by the Gluu Server
 
-## Essent id pariter digna
+| Attribute Name                     | Description                                  | Used By                  |
+| ---------------------------------- | -------------------------------------------- | ------------------------ |
+| associatedClient                   | Reference to the DN of a client object       | oxAuth, oxTrust          |
+| associatedPerson                   |                                              |                          |
+| blowfishPassword                   |                                              |                          |
+| county                             |                                              |                          |
+| creationDate                       |                                              |                          |
+| defaultScope                       |                                              |                          |
+| deployedAppliances                 |                                              |                          |
+| federationRules                    |                                              |                          |
+| gluuAddPersonCapability            |                                              |                          |
+| gluuAdditionalBandwidth            |                                              |                          |
+| gluuAdditionalMemory               |                                              |                          |
+| gluuAdditionalUsers                |                                              |                          |
+| gluuApplianceDnsServer             |                                              |                          |
+| gluuAppliancePollingInterval       |                                              |                          |
+| gluuApplianceUpdateReuestList      |                                              |                          |
+| gluuAttributeEditType              |                                              |                          |
+| gluuAttributeName                  |                                              |                          |
+| gluuAttributeOrigin                |                                              |                          |
+| gluuAttributePrivacyLevel          |                                              |                          |
+| gluuAttributeSystemEditType        |                                              |                          |
+| gluuAttributeType                  |                                              |                          |
+| gluuAttributeUsageType             |                                              |                          |
+| gluuAttributeViewType              |                                              |                          |
+| gluuBandwidthRX                    |                                              |                          |
+| gluuBandwidthTX                    |                                              |                          |
+| gluuBillingEmail                   |                                              |                          |
+| gluuCategory                       |                                              |                          |
+| gluuCentreonEmail                  |                                              |                          |
+| gluuContainerFederation            |                                              |                          |
+| gluuCustomMessage                  |                                              |                          |
+| gluuDSstatus                       |                                              |                          |
+| gluuEntityId                       |                                              |                          |
+| gluuFaviconImage                   |                                              |                          |
+| gluuFederationHostingEnabled       |                                              |                          |
+| gluuFreeDiskSpace                  |                                              |                          |
+| gluuFreeMemory                     |                                              |                          |
+| gluuFreeSwap                       |                                              |                          |
+| gluuGroupCount                     |                                              |                          |
+| gluuGroupType                      |                                              |                          |
+| gluuGroupVisibility                |                                              |                          |
+| gluuHTTPstatus                     |                                              |                          |
+| gluuHostname                       |                                              |                          |
+| gluuInvoiceAmount                  |                                              |                          |
+| gluuInvoiceDate                    |                                              |                          |
+| gluuInvoiceLineItemName            |                                              |                          |
+| gluuInvoiceNo                      |                                              |                          |
+| gluuInvoiceNumber                  |                                              |                          |
+| gluuInvoiceProductNumber           |                                              |                          |
+| gluuInvoiceQuantity                |                                              |                          |
+| gluuInvoiceStatus                  |                                              |                          |
+| gluuIpAddress                      |                                              |                          |
+| gluuIsFederation                   |                                              |                          |
+| gluuJiraEmail                      |                                              |                          |
+| gluuLastUpdate                     |                                              |                          |
+| gluuLifeRay                        |                                              |                          |
+| gluuLoadAvg                        |                                              |                          |
+| gluuLogoImage                      |                                              |                          |
+| gluuManageIdentityPermission       |                                              |                          |
+| gluuManagedOrganizations           |                                              |                          |
+| gluuManager                        |                                              |                          |
+| gluuManagerGroup                   |                                              |                          |
+| gluuMaxLogSize                     |                                              |                          |
+| gluuOptOuts                        |                                              |                          |
+| gluuOrgProfileMgt                  |                                              |                          |
+| gluuOrgShortName                   |                                              |                          |
+| gluuOwnerGroup                     |                                              |                          |
+| gluuPaidUntil                      |                                              |                          |
+| gluuPaymentProcessorTimestamp      |                                              |                          |
+| gluuPersonCount                    |                                              |                          |
+| gluuPrivacyEmail                   |                                              |                          |
+| gluuPrivate                        |                                              |                          |
+| gluuProStoresUser                  |                                              |                          |
+| gluuProfileConfiguration           |                                              |                          |
+| gluuPublishIdpMetadata             |                                              |                          |
+| gluuReleasedAttribute              |                                              |                          |
+| gluuResizeInitiated                |                                              |                          |
+| gluuRulesAccepted                  |                                              |                          |
+| gluuSAML1URI                       |                                              |                          |
+| gluuSAML2URI                       |                                              |                          |
+| gluuSAMLMetaDataFilter             |                                              |                          |
+| gluuSAMLTrustEngine                |                                              |                          |
+| gluuSAMLmaxRefreshDelay            |                                              |                          |
+| gluuSAMLspMetaDataFN               |                                              |                          |
+| gluuSAMLspMetaDataSourceType       |                                              |                          |
+| gluuSAMLspMetaDataURL              |                                              |                          |
+| gluuSLAManager                     |                                              |                          |
+| gluuSPTR                           |                                              |                          |
+| gluuScimEnabled                    |                                              |                          |
+| gluuShibAssertionsIssued           |                                              |                          |
+| gluuShibFailedAuth                 |                                              |                          |
+| gluuShibSecurityEvents             |                                              |                          |
+| gluuShibSuccessfulAuths            |                                              |                          |
+| gluuSmtpFromEmailAddress           |                                              |                          |
+| gluuSmtpFromName                   |                                              |                          |
+| gluuSmtpHost                       |                                              |                          |
+| gluuSmtpPassword                   |                                              |                          |
+| gluuSmtpPort                       |                                              |                          |
+| gluuSmtpRequiresAuthentication     |                                              |                          |
+| gluuSmtpRequiresSsl                |                                              |                          |
+| gluuSmtpUserName                   |                                              |                          |
+| gluuSpecificRelyingPartyConfig     |                                              |                          |
+| gluuSslExpiry                      |                                              |                          |
+| gluuStatus                         |                                              |                          |
+| gluuSvnEmail                       |                                              |                          |
+| gluuSystemUptime                   |                                              |                          |
+| gluuTargetRAM                      |                                              |                          |
+| gluuTempFaviconImage               |                                              |                          |
+| gluuThemeColor                     |                                              |                          |
+| gluuTrustContact                   |                                              |                          |
+| gluuTrustDeconstruction            |                                              |                          |
+| gluuUrl                            |                                              |                          |
+| gluuVDSenabled                     |                                              |                          |
+| gluuVDSstatus                      |                                              |                          |
+| gluuValidationLog                  |                                              |                          |
+| gluuValidationStatus               |                                              |                          |
+| gluuVdsCacheRefreshEnabled         |                                              |                          |
+| gluuVdsCacheRefreshLastUpdate      |                                              |                          |
+| gluuVdsCacheRefreshLastUpdateCount |                                              |                          |
+| gluuVdsCacheRefreshPollingInterval |                                              |                          |
+| gluuVdsCacheRefreshProblemCount    |                                              |                          |
+| gluuWhitePagesEnabled              |                                              |                          |
+| gluuWhitePagesListed               |                                              |                          |
+| iname                              |                                              |                          |
+| inum                               |                                              |                          |
+| inumFN                             |                                              |                          |
+| literalBinaryValue                 |                                              |                          |
+| literalValue                       |                                              |                          |
+| memberOf                           |                                              |                          |
+| myCustomAttr1                      |                                              |                          |
+| myCustomAttr2                      |                                              |                          |
+| nonProfit                          |                                              |                          |
+| organizationalOwner                |                                              |                          |
+| oxAmHost                           |                                              |                          |
+| oxAssociatedClient                 |                                              |                          |
+| oxAttributeType                    |                                              |                          |
+| oxAuthAppType                      |                                              |                          |
+| oxAuthAuthenticationTime           |                                              |                          |
+| oxAuthAuthorizationCode            |                                              |                          |
+| oxAuthClaim                        |                                              |                          |
+| oxAuthClientId                     |                                              |                          |
+| oxAuthClientIdIssuedAt             |                                              |                          |
+| oxAuthClientSecret                 |                                              |                          |
+| oxAuthClientSecretExpiresAt        |                                              |                          |
+| oxAuthClientURI                    |                                              |                          |
+| oxAuthClientUserGroup              |                                              |                          |
+| oxAuthConfCustomAuthMethod         |                                              |                          |
+| oxAuthConfDynamic                  |                                              |                          |
+| oxAuthConfErrors                   |                                              |                          |
+| oxAuthConfIdPythonScript           |                                              |                          |
+| oxAuthConfLdapAuth                 |                                              |                          |
+| oxAuthConfStatic                   |                                              |                          |
+| oxAuthConfWebKeys                  |                                              |                          |
+| oxAuthContact                      |                                              |                          |
+| oxAuthCreation                     |                                              |                          |
+| oxAuthDefaultAcrValues             |                                              |                          |
+| oxAuthDefaultMaxAge                |                                              |                          |
+| oxAuthExpiration                   |                                              |                          |
+| oxAuthFederationId                 |                                              |                          |
+| oxAuthFederationMetadata           |                                              |                          |
+| oxAuthFederationMetadataIntervalCheck |                                              |                          |
+| oxAuthFederationMetadataURI        |                                              |                          |
+| oxAuthFederationOP                 |                                              |                          |
+| oxAuthFederationOpDomain           |                                              |                          |
+| oxAuthFederationOpId               |                                              |                          |
+| oxAuthFederationRP                 |                                              |                          |
+| oxAuthFederationRequestType        |                                              |                          |
+| oxAuthFederationTrustStatus        |                                              |                          |
+| oxAuthGrantId                      |                                              |                          |
+| oxAuthGrantType                    |                                              |                          |
+| oxAuthIdTokenEncryptedResponseAlg  |                                              |                          |
+| oxAuthIdTokenEncryptedResponseEnc  |                                              |                          |
+| oxAuthIdTokenSignedResponseAlg     |                                              |                          |
+| oxAuthInitiateLoginURI             |                                              |                          |
+| oxAuthJwksURI                      |                                              |                          |
+| oxAuthJwtRequest                   |                                              |                          |
+| oxAuthLogoURI                      |                                              |                          |
+| oxAuthNonce                        |                                              |                          |
+| oxAuthPermissionGranted            |                                              |                          |
+| oxAuthPermissionGrantedMap         |                                              |                          |
+| oxAuthPersistentJWT                |                                              |                          |
+| oxAuthPolicyURI                    |                                              |                          |
+| oxAuthPostLogoutRedirectURI        |                                              |                          |
+| oxAuthRedirectURI                  |                                              |                          |
+| oxAuthRegistrationAccessToken      |                                              |                          |
+| oxAuthReleasedScope                |                                              |                          |
+| oxAuthRequestObjectSigningAlg      |                                              |                          |
+| oxAuthRequestURI                   |                                              |                          |
+| oxAuthRequireAuthTime              |                                              |                          |
+| oxAuthResponseType                 |                                              |                          |
+| oxAuthScope                        |                                              |                          |
+| oxAuthSectorIdentifierURI          |                                              |                          |
+| oxAuthSignedResponseAlg            |                                              |                          |
+| oxAuthSkipAuthorization            |                                              |                          |
+| oxAuthSubjectType                  |                                              |                          |
+| oxAuthTokenCode                    |                                              |                          |
+| oxAuthTokenEndpointAuthMethod      |                                              |                          |
+| oxAuthTokenType                    |                                              |                          |
+| oxAuthTosURI                       |                                              |                          |
+| oxAuthTrustedClient                |                                              |                          |
+| oxAuthUmaScope                     |                                              |                          |
+| oxAuthUserDN                       |                                              |                          |
+| oxAuthUserId                       |                                              |                          |
+| oxAuthUserInfoEncryptedResponseAlg |                                              |                          |
+| oxAuthUserInfoEncryptedResponseEnc |                                              |                          |
+| oxAuthX509PEM                      |                                              |                          |
+| oxAuthX509URL                      |                                              |                          |
+| oxAuthenticationLevel              |                                              |                          |
+| oxAuthenticationMode               |                                              |                          |
+| oxClusterType                      |                                              |                          |
+| oxClusteredServers                 |                                              |                          |
+| oxConfigurationCode                |                                              |                          |
+| oxCreationTimestamp                |                                              |                          |
+| oxDomain                           |                                              |                          |
+| oxExternalUid                      |                                              |                          |
+| oxFaviconImage                     |                                              |                          |
+| oxGroup                            |                                              |                          |
+| oxGuid                             |                                              |                          |
+| oxHost                             |                                              |                          |
+| oxIDPAuthentication                |                                              |                          |
+| oxIconUrl                          |                                              |                          |
+| oxId                               |                                              |                          |
+| oxInviteCode                       |                                              |                          |
+| oxLastAccessTime                   |                                              |                          |
+| oxLastLogonTime                    |                                              |                          |
+| oxLinkCreator                      |                                              |                          |
+| oxLinkExpirationDate               |                                              |                          |
+| oxLinkLinktrack                    |                                              |                          |
+| oxLinkModerated                    |                                              |                          |
+| oxLinkModerators                   |                                              |                          |
+| oxLinkPending                      |                                              |                          |
+| oxLinktrackEnabled                 |                                              |                          |
+| oxLinktrackLogin                   |                                              |                          |
+| oxLinktrackPassword                |                                              |                          |
+| oxLogViewerConfig                  |                                              |                          |
+| oxMemcachedServerAddress           |                                              |                          |
+| oxMultivaluedAttribute             |                                              |                          |
+| oxName                             |                                              |                          |
+| oxNameIdType                       |                                              |                          |
+| oxPolicyRule                       |                                              |                          |
+| oxPolicyScript                     |                                              |                          |
+| oxProxConf                         |                                              |                          |
+| oxProxyAccessToken                 |                                              |                          |
+| oxProxyClaimMapping                |                                              |                          |
+| oxProxyClientId                    |                                              |                          |
+| oxProxyScope                       |                                              |                          |
+| oxProxyToOpClientMapping           |                                              |                          |
+| oxPushApplication                  |                                              |                          |
+| oxPushApplicationConf              |                                              |                          |
+| oxPushDeviceConf                   |                                              |                          |
+| oxRegistrationConfiguration        |                                              |                          |
+| oxResource                         |                                              |                          |
+| oxResourceSetId                    |                                              |                          |
+| oxRevision                         |                                              |                          |
+| oxSCIMCustomAttribute              |                                              |                          |
+| oxScript                           |                                              |                          |
+| oxScriptDn                         |                                              |                          |
+| oxScriptType                       |                                              |                          |
+| oxSmtpConfiguration                |                                              |                          |
+| oxSourceAttribute                  |                                              |                          |
+| oxTicket                           |                                              |                          |
+| oxTrustActive                      |                                              |                          |
+| oxTrustAddresses                   |                                              |                          |
+| oxTrustConfApplication             |                                              |                          |
+| oxTrustCustAttrB                   |                                              |                          |
+| oxTrustEmail                       |                                              |                          |
+| oxTrustEntitlements                |                                              |                          |
+| oxTrustExternalId                  |                                              |                          |
+| oxTrustImsValue                    |                                              |                          |
+| oxTrustLocale                      |                                              |                          |
+| oxTrustMetaCreated                 |                                              |                          |
+| oxTrustMetaLastModified            |                                              |                          |
+| oxTrustMetaLocation                |                                              |                          |
+| oxTrustMetaVersion                 |                                              |                          |
+| oxTrustMiddleName                  |                                              |                          |
+| oxTrustNameFormatted               |                                              |                          |
+| oxTrustNickName                    |                                              |                          |
+| oxTrustPhoneValue                  |                                              |                          |
+| oxTrustPhotos                      |                                              |                          |
+| oxTrustProfileURL                  |                                              |                          |
+| oxTrustRole                        |                                              |                          |
+| oxTrustStoreCert                   |                                              |                          |
+| oxTrustStoreConf                   |                                              |                          |
+| oxTrustTitle                       |                                              |                          |
+| oxTrustUserType                    |                                              |                          |
+| oxTrusthonorificPrefix             |                                              |                          |
+| oxTrusthonorificSuffix             |                                              |                          |
+| oxTrustx509Certificate             |                                              |                          |
+| oxType                             |                                              |                          |
+| oxUmaPermission                    |                                              |                          |
+| oxUrl                              |                                              |                          |
+| oxX509PEM                          |                                              |                          |
+| oxX509URL                          |                                              |                          |
+| passwordResetAllowed               |                                              |                          |
+| persistentId                       |                                              |                          |
+| personInum                         |                                              |                          |
+| photo1                             |                                              |                          |
+| primaryKeyAttrName                 |                                              |                          |
+| primaryKeyValue                    |                                              |                          |
+| proStoresToken                     |                                              |                          |
+| programmingLanguage                |                                              |                          |
+| prostoresTimestamp                 |                                              |                          |
+| registrationDate                   |                                              |                          |
+| role                               |                                              |                          |
+| scimAuthMode                       |                                              |                          |
+| scimGroup                          |                                              |                          |
+| scimStatus                         |                                              |                          |
+| secondaryKeyAttrName               |                                              |                          |
+| secondaryKeyValue                  |                                              |                          |
+| secretAnswer                       |                                              |                          |
+| secretQuestion                     |                                              |                          |
+| softwareVersion                    |                                              |                          |
+| sourceRelationalXdiStatement       |                                              |                          |
+| targetRelationalXdiStatement       |                                              |                          |
+| tertiaryKeyAttrName                |                                              |                          |
+| tertiaryKeyValue                   |                                              |                          |
+| timezone                           |                                              |                          |
+| transientId                        |                                              |                          |
+| url                                |                                              |                          |
+| urn                                |                                              |                          |
+| x                                  |                                              |                          |
+| xdiStatement                       |                                              |                          |
+| xri                                |                                              |                          |
 
-Arva vel facti huic rursus: vertitur terga hic. Reque metues dextramque signis
-hunc marmore, turba acer coniunx proturbat dominoque ferrum. Est os barbarus
-territa [numine paulatimque contrahitur](http://textfromdog.tumblr.com/)
-lanigerosque erat, Di ad quoque arbor tetigere. Mandato Phoebeius ut, tantum e
-tanti soror.
 
-Inquinat egentes ruunt temptat, damus cui, [non tamen](http://seenly.com/) Aiax
-non remis. Vento pulsat eram [mercede longa
-sanguine](http://en.wikipedia.org/wiki/Sterling_Archer) et primo dimittit
-temptabat quorum delphines a castique, est. Flamma sic Adoni vultibus aeraque
-falsae contemptrix pervia; traxere lemnius nubes laturus! Fretumque [et vultu
-Tritonida](http://en.wikipedia.org/wiki/Sterling_Archer) nobis iactanti sit
-Dixerat neque bellum medio arma illa oppositas rura.
+## OpenDJ Schema
 
-- Non concretam adeunt virorum sine
-- Et invitum vultus
-- Annorum liliaque arbore quoque forti
-- Scelerata thalamoque finge Cythereiadasque nitidae
+[101ox.ldif](http://todo.github.com)
 
-## Arce blanditias spumantis instar
+## 389DS
 
-[Non](http://seenly.com/) est corripuit favillae eurus, ignes tristitiam, inque
-te! Inmunibus revelli, per et color huic cum te radios? Pelagi properamus
-Minervam, en latebant dixerat terribiles ambiguo, pascas [aura vultus
-iaculatur](http://news.ycombinator.com/) auctor nullos. Nubila placet conbibit
-in fumante dentes desierim Hylonome viriles nostris ego
-[verum](http://example.com/) in videndi?
+[99ox.ldif](http://todo.github.com)
 
-1. Si socios Lelex Saturnia iamque
-2. Solet tinguit
-3. Relinquam salici comites novissima gauderet ramos ille
-4. Saeva qua cum pugnabant
-5. Postquam tardus
-6. Tersis summo
+## OpenLDAP 
 
-Quidem refert mihi sentes ferat. Respicit conscia, novoque ea Seriphi quanta
-nullique quoniam. Non saevit venit, veni adversas vixisti vocem ad tamen.
+[ox.schema](http://todo.github.com)
 
-[Non]: http://seenly.com/
-[aura vultus iaculatur]: http://news.ycombinator.com/
-[et vultu Tritonida]: http://en.wikipedia.org/wiki/Sterling_Archer
-[mercede longa sanguine]: http://en.wikipedia.org/wiki/Sterling_Archer
-[non tamen]: http://seenly.com/
-[numine paulatimque contrahitur]: http://textfromdog.tumblr.com/
-[obruta si aut]: http://textfromdog.tumblr.com/
-[verum]: http://example.com/
+
+

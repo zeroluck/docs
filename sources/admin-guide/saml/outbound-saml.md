@@ -1,6 +1,11 @@
-# Me una est pinu mater
+# Outbound SAML
 
-## Et regis Daedale repetens verba Cerberon tempestivus
+## Website provides metadata via file 
+
+## Website provides metadata via URL
+
+## Website is Google
+
 
 *Lorem markdownum natamque* et totoque intexere, ante **agendum ardent**.
 Pectore avus praeponere vulnere Lacedaemoniumque ut moratur Aurora
