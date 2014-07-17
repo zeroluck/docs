@@ -1,8 +1,4 @@
-# OpenID Connect Dynamic Client Registration
-
-## Client Registration
-
-## Client Read
+# Canum non Melampus satis Helops telluris si
 
 ## Parente in sero surgit
 

@@ -1,8 +1,6 @@
-# OpenID Connect Client Configuration
+# Coniecit avem pede Diomede solane
 
-## Dynamic Registration
-
-## Manual Registration by Admin
+## Clamat infelix et Arabas alii habet cedere
 
 Lorem markdownum iam facta modo volubilitas domum extentam et probat. Parvos
 sparsit, vacca nympharum tamen. Nata novae matri Peleus, Cerastae urbem [et

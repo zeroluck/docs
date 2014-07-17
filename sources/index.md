@@ -1,4 +1,16 @@
-## Gluu Server FAQ
+## Gluu Server General FAQ
+
+## What problem does the Gluu Server solve?
+
+For years, deploying an application access management suite was too expensive
+for any but the largest enterprises, who engineered tightly bundled proprietary
+application security solutions like Oracle Access Manager, IBM Tivoli Access Manager
+or CA SiteMinder. These security suites used proprietary protocols and resulted in
+“vendor lock-in.” This book documents how to leverage open source software to build
+an enterprise class access management system using 100% open source components
+that are free to use in production. This recipe has been developed by Gluu over the
+last five years, and is proven to work in a variety of deployments around the globe
+that vary in size from small to humongous.
 
 ## What can I do with a Gluu Server?
 
@@ -10,38 +22,13 @@ interact with services on your behalf. With the emergence of the IoT and the API
 developers and system administrators are urgently searching for standards based solutions and
 best practices to improve the security of web and mobile applications.
 
-The Gluu Server is like a router for authentication and authorization. It speaks multiple dialects
-of SSO, and can help an organization manage both inbound and outbound authentication and authorization 
-requirements.  The Gluu Server is very flexible. Through the use of "interception scripts", 
-system administrators can mold the Gluu Server to solve the exact access management task at hand.
-
-## How can the Gluu Server make the Internet a safer place? 
-
-It is imperative for our society that we decentralize identity. Facebook and 
-Google have bridged our inability to identify our friends on the Internet by 
-providing a central identity hub-–you can share a Google doc with someone
-only if they have a Google account. With a myriad of vendors producing 
-hardware and software that interact on our behalf, we cannot build our society on 
-central identity silos. Like enlightened despotism, it seems efficient. But 
-over time, it undermines the design goal of the Internet--the resiliancy
-of autonomous entities cooperating to form one network.  The Internet 
-was made possible by standards like tcp/ip, DNS, http and ssl. After 20 years, 
-we have the standards on which to build the Internet's identity infrastructure.
-Free open source tools like the Gluu Server make these new identity standards
-accessible to the masses. Now any domain can authenticate like Google (or at
-least using the same API's and conventions).
-
-## Why do organizations need the Gluu Server?
-
-For years, deploying an application access management suite was too expensive
-for any but the largest enterprises, who engineered tightly bundled proprietary
-application security solutions like Oracle Access Manager, IBM Tivoli Access Manager
-or CA SiteMinder. These security suites used proprietary protocols and resulted in
-“vendor lock-in.” The Gluu server offers an alternative: 
-enterprise class access management, using 100% open source components
-that are free to use in production. This recipe has been developed by Gluu over the
-last five years, and is proven to work in a variety of deployments around the globe
-that vary in size from small to humongous.
+While commercial solutions exist, there are many organizations that prefer the do-it-yourself
+approach. Authentication impacts the integrity of every transaction performed by a person or
+client on the network. In some cases, digital authentication is the organization’s keys to the
+kingdom. There are many organizations that will never outsource this function. And there are many
+organizations that see excellence in authentication–-which is the front door to their Internet
+presence–-as a competitive advantage to drive adoption of their products and services. For these
+organizations, the Gluu Server open source recipe for access management is very useful.
 
 ## Why does the Gluu Server rock?
 
@@ -49,20 +36,22 @@ The Gluu server makes simple things easy. For example, if your organization has 
 without writing any custom code, you can map your users, leverage your existing passwords, and
 configure SSO with SAML or OpenID Connect websites. Voila!
 
-But for complex deployments, the Gluu Server is both scalable and flexible.  
-
-As mentioned above, the Gluu offers "interception scripts" which enable system administrators to use 
-Jython to specify custom business logic at
-several critical integration points. The Gluu Server can call other APIs (for example fraud detection
-or strong authentication) to tie together the components of your domain's security and identity
+But for complex deployments, the Gluu Server is both scalable and flexible.  Gluu offers
+"interception scripts" which enable you to use Jython to specify custom business logic at
+several critical integration points. You can call other APIs (for example fraud detection
+or strong authentication) to tie together the components of your security and identity
 infrastructure. Interception scripts are the glue of the Gluu Server. You can implement
-any crazy plan you can code to define the workflow for authentication, authorization, logout and
+any crazy plan you can code to define the workflow for authentication, authorization, and
 more.
+
+Jython was chosen to make the code easier to change on the fly--no need to compile, build,
+and deploy a war file. A savvy system administrator can even do it. Also, interpreted business
+logic is easier to replicate in a clustered deployment.
 
 This Gluu Server has more features and is easier to manage than commercial alternatives. This
 recipe includes some of the most widely deployed federation components: like the Shibboleth SAML
 Identity Provider, and some of the most cutting edge security solutions available anywhere: like
-the OX UMA Authorization Server.
+the OX OAuth2 Authorization Server.
 
 Feel confident that you are using the best open source application security software on the
 planet and even on the Internet too!
@@ -109,12 +98,21 @@ it needs. And if someone else writes a free open source component that is better
 we will abandon our OX component in its favor. This vaccuum cleaner approach to open source enables us
 to stay a step ahead of our slow-footed enterprise competition, getting components to market faster and better.
 
-## What will you learn if you read all the docs?
+## What is the vision of the Gluu Server
 
-After reading the docs, you should be ready to deploy the Gluu Server, and start testing your OpenID Connect,
+It is imperative for our society that we decentralize identity. Facebook and Google have bridged our inability
+to identify our friends on the Internet by providing a centralized solution–you can share a Google doc with someone
+only because they also have a Google account. With a myriad of vendors producing hardware and software that interact
+on our behalf, we cannot build our society on these central identity silos. Like enlightened despotism, it seems
+efficient. But over time, it undermines the original design goal of the Internet… the largest federation of
+autonomous entities ever assembled into one network. The Internet was made possible by standards like tcp/ip, DNS,
+http and ssl. After 20 years, we have an Internet identity infrastructure: OpenID Connect. And on top of that we can
+build federated authorization, not just authentication.
+
+## What will you learn if you read this book?
+
+After reading the book, you should be ready to deploy the Gluu Server, and start testing your OpenID Connect,
 SAML, and UMA applications. You will be able to articulate the roadmap for security to developers in your
-organization. Importantly, after reading these docs, programmers, system administrators, and Chief Information
+organization. Importantly, after reading this book, programmers, system administrators, and Chief Information
 Security Officer should be able to get alignment much more quickly on the important standards, and the
 moving pieces that need to be addressed from a business perspective, not just a technical perspective.
-
-

@@ -1,8 +1,6 @@
-# OpenID Connect Discovery
+# Aetatem Aulide confusura cuspide
 
-## OpenID Provider Issuer Discovery
-
-## Obtaining OpenID Provider Configuration Information
+## His nil rex me feret ut parent
 
 Lorem markdownum et tuo superi leaenae caput, Danaen fore, est urbis illi
 cognovit et lucis equam proles est! Unus pars ipsa vertet feremur exclamat;

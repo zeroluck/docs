@@ -1,15 +1,10 @@
-site_name: Gluu Servers
+site_name: Gluu Server
 site_description: An SSO, Federation and API Access Management suite
 site_favicon: '/img/gluu_favicon.ico'
 copyright: Copyright &copy; 2014, Gluu, Inc.
 docs_dir: sources
 repo_url: https://github.com/GluuFederation/docs
 theme: spacelab 
-
-# theme: docker
-theme_dir: ./theme/mkdocs/
-theme_center_lead: false
-include_search: true
 
 pages:
 
@@ -33,7 +28,8 @@ pages:
 
 # Reference sections
 - ['reference/configuration/index.md', 'Reference', 'Configuration']
-- ['reference/ldap/index.md', 'Reference', 'LDAP']
+- ['reference/oxTrust/index.md', 'Reference', 'oxTrust User Interface']
+- ['reference/ldap/index.md', 'Reference', 'LDAP Schema']
 - ['reference/lib/index.md', 'Reference', 'Libraries']
 - ['reference/api/index.md', 'Reference', 'APIs']
 
@@ -46,133 +42,134 @@ pages:
 - ['articles/java-connect.md', 'Articles', 'Java OpenID Connect RP']
 - ['articles/scim-client.md', 'Articles', 'Java SCIM client']
 - ['articles/mobile-api.md', 'Articles', 'Mobile - Headless API : Connect / UMA']
-- ['articles/benchmarking.md', 'Articles', 'Gluu Server Benchmark']
 
 # Sub Pages of introduction 
-- ['admin-guide/introduction/architecture.md', '**HIDDEN**']
-- ['admin-guide/introduction/design-goals.md', '**HIDDEN**']
-- ['admin-guide/introduction/gluu-server-mission.md', '**HIDDEN**']
-- ['admin-guide/introduction/history.md', '**HIDDEN**']
-- ['admin-guide/introduction/licenses.md', '**HIDDEN**']
+- ['admin-guide/introduction/architecture.md', '', '']
+- ['admin-guide/introduction/design-goals.md', '', '']
+- ['admin-guide/introduction/gluu-server-mission.md', '', '']
+- ['admin-guide/introduction/history.md', '', '']
+- ['admin-guide/introduction/licenses.md', '', '']
 
 # Sub Pages of Admin Guide / installation
-- ['admin-guide/installation/redhat.md', '**HIDDEN**']
-- ['admin-guide/installation/ubuntu.md', '**HIDDEN**']
-- ['admin-guide/installation/centos.md', '**HIDDEN**']
-- ['admin-guide/installation/debian.md', '**HIDDEN**']
-- ['admin-guide/installation/windows.md', '**HIDDEN**']
-- ['admin-guide/installation/mac.md', '**HIDDEN**']
-- ['admin-guide/installation/juju.md', '**HIDDEN**']
-- ['admin-guide/installation/build.md', '**HIDDEN**']
+- ['admin-guide/installation/redhat.md', '', '']
+- ['admin-guide/installation/ubuntu.md', '', '']
+- ['admin-guide/installation/centos.md', '', '']
+- ['admin-guide/installation/debian.md', '', '']
+- ['admin-guide/installation/windows.md', '', '']
+- ['admin-guide/installation/mac.md', '', '']
+- ['admin-guide/installation/juju.md', '', '']
+- ['admin-guide/installation/build.md', '', '']
 
 # Sub Pages of Admin Guide / Configuration
-- ['admin-guide/configuration/asimba.md', '**HIDDEN**']
-- ['admin-guide/configuration/oxAuth.md', '**HIDDEN**']
-- ['admin-guide/configuration/oxPush.md', '**HIDDEN**']
-- ['admin-guide/configuration/oxTrust.md', '**HIDDEN**']
-- ['admin-guide/configuration/shibIDP.md', '**HIDDEN**']
-- ['admin-guide/configuration/oxProx.md', '**HIDDEN**']
-- ['admin-guide/configuration/jagger.md', '**HIDDEN**']
+- ['admin-guide/configuration/asimba.md', '', '']
+- ['admin-guide/configuration/oxAuth.md', '', '']
+- ['admin-guide/configuration/oxPush.md', '', '']
+- ['admin-guide/configuration/oxTrust.md', '', '']
+- ['admin-guide/configuration/shibIDP.md', '', '']
+- ['admin-guide/configuration/oxProx.md', '', '']
 
 # Sub Pages of Customizing Look and Feel
-- ['admin-guide/custom-look/authentication.md', '**HIDDEN**']
-- ['admin-guide/custom-look/defaults.md', '**HIDDEN**']
-- ['admin-guide/custom-look/registration.md', '**HIDDEN**']
-- ['admin-guide/custom-look/saml-discovery.md', '**HIDDEN**']
-- ['admin-guide/custom-look/user-profile.md', '**HIDDEN**']
-- ['admin-guide/custom-look/xhtml.md', '**HIDDEN**']
+- ['admin-guide/custom-look/authentication.md', '', '']
+- ['admin-guide/custom-look/defaults.md', '', '']
+- ['admin-guide/custom-look/registration.md', '', '']
+- ['admin-guide/custom-look/saml-discovery.md', '', '']
+- ['admin-guide/custom-look/user-profile.md', '', '']
+- ['admin-guide/custom-look/xhtml.md', '', '']
 
 # Sub Pages of Admin Guide / Certificates 
-- ['admin-guide/certificates/https.md', '**HIDDEN**']
-- ['admin-guide/certificates/saml.md', '**HIDDEN**']
-- ['admin-guide/certificates/openid.md', '**HIDDEN**']
-- ['admin-guide/certificates/federation.md', '**HIDDEN**']
-- ['admin-guide/certificates/ldap.md', '**HIDDEN**']
+- ['admin-guide/certificates/https.md', '', '']
+- ['admin-guide/certificates/saml.md', '', '']
+- ['admin-guide/certificates/openid.md', '', '']
+- ['admin-guide/certificates/federation.md', '', '']
+- ['admin-guide/certificates/ldap.md', '', '']
 
 # Sub pages of Admin Guide / User-Management
-- ['admin-guide/user-management/scim.md', '**HIDDEN**']
-- ['admin-guide/user-management/ldap-sync.md', '**HIDDEN**']
-- ['admin-guide/user-management/local-admin.md', '**HIDDEN**']
-- ['admin-guide/user-management/registration.md', '**HIDDEN**']
-- ['admin-guide/user-management/self-service.md', '**HIDDEN**']
-- ['admin-guide/user-management/invitation-code-registration.md', '**HIDDEN**']
+- ['admin-guide/user-management/scim.md', '', '']
+- ['admin-guide/user-management/ldap-sync.md', '', '']
+- ['admin-guide/user-management/local-admin.md', '', '']
+- ['admin-guide/user-management/registration.md', '', '']
+- ['admin-guide/user-management/self-service.md', '', '']
+- ['admin-guide/user-management/invitation-code-registration.md', '', '']
 
 # Sub pages of Admin Guide / Authentication
-- ['admin-guide/authentication/ldap.md', '**HIDDEN**']
-- ['admin-guide/authentication/custom.md', '**HIDDEN**']
-- ['admin-guide/authentication/oxPush.md', '**HIDDEN**']
-- ['admin-guide/authentication/saml.md', '**HIDDEN**']
-- ['admin-guide/authentication/cas.md', '**HIDDEN**']
-- ['admin-guide/authentication/google.md', '**HIDDEN**']
-- ['admin-guide/authentication/duo.md', '**HIDDEN**']
-- ['admin-guide/authentication/toopher.md', '**HIDDEN**']
+- ['admin-guide/authentication/ldap.md', '', '']
+- ['admin-guide/authentication/custom.md', '', '']
+- ['admin-guide/authentication/oxPush.md', '', '']
+- ['admin-guide/authentication/saml.md', '', '']
+- ['admin-guide/authentication/cas.md', '', '']
+- ['admin-guide/authentication/google.md', '', '']
+- ['admin-guide/authentication/duo.md', '', '']
+- ['admin-guide/authentication/toopher.md', '', '']
 
 # Sub pages of Admin Guide / SAML
-- ['admin-guide/saml/outbound-saml.md', '**HIDDEN**']
-- ['admin-guide/saml/inbound-saml.md', '**HIDDEN**']
-- ['admin-guide/saml/saml-registration.md', '**HIDDEN**']
-- ['admin-guide/saml/saml-sp-configuration.md', '**HIDDEN**']
+- ['admin-guide/saml/outbound-saml.md', '', '']
+- ['admin-guide/saml/inbound-saml.md', '', '']
+- ['admin-guide/saml/saml-registration.md', '', '']
+- ['admin-guide/saml/saml-sp-configuration.md', '', '']
 
 # Sub Pages of Admin Guide / OpenID Connect
-- ['admin-guide/openid-connect/registration.md', '**HIDDEN**']
-- ['admin-guide/openid-connect/discovery.md', '**HIDDEN**']
-- ['admin-guide/openid-connect/scopes.md', '**HIDDEN**']
-- ['admin-guide/openid-connect/client-config.md', '**HIDDEN**']
+- ['admin-guide/openid-connect/registration.md', '', '']
+- ['admin-guide/openid-connect/discovery.md', '', '']
+- ['admin-guide/openid-connect/scopes.md', '', '']
+- ['admin-guide/openid-connect/client-config.md', '', '']
 
 # Sub pages of Admin Guide / UMA 
-- ['admin-guide/uma/introduction.md', '**HIDDEN**']
-- ['admin-guide/uma/discovery.md', '**HIDDEN**']
-- ['admin-guide/uma/resource-registration.md', '**HIDDEN**']
-- ['admin-guide/uma/policy.md', '**HIDDEN**']
-- ['admin-guide/uma/uma-scopes.md', '**HIDDEN**']
-- ['admin-guide/uma/mod_ox.md', '**HIDDEN**']
+- ['admin-guide/uma/discovery.md', '', '']
+- ['admin-guide/uma/resource-registration.md', '', '']
+- ['admin-guide/uma/policy.md', '', '']
+- ['admin-guide/uma/uma-scopes.md', '', '']
+- ['admin-guide/uma/mod_ox.md', '', '']
 
 # Sub pages of Admin Guide / Interception Scripts 
-- ['admin-guide/interception-scripts/authentication.md', '**HIDDEN**']
-- ['admin-guide/interception-scripts/authorization.md', '**HIDDEN**']
-- ['admin-guide/interception-scripts/id-generation.md', '**HIDDEN**']
-- ['admin-guide/interception-scripts/attribute-transformation.md', '**HIDDEN**']
-- ['admin-guide/interception-scripts/post-registration.md', '**HIDDEN**']
-- ['admin-guide/interception-scripts/pre-registration.md', '**HIDDEN**']
-- ['admin-guide/interception-scripts/logout.md', '**HIDDEN**']
-- ['admin-guide/interception-scripts/saml-discovery.md', '**HIDDEN**']
+- ['admin-guide/interception-scripts/authentication.md', '', '']
+- ['admin-guide/interception-scripts/authorization.md', '', '']
+- ['admin-guide/interception-scripts/id-generation.md', '', '']
+- ['admin-guide/interception-scripts/attribute-transformation.md', '', '']
+- ['admin-guide/interception-scripts/post-registration.md', '', '']
+- ['admin-guide/interception-scripts/pre-registration.md', '', '']
+- ['admin-guide/interception-scripts/logout.md', '', '']
+- ['admin-guide/interception-scripts/saml-discovery.md', '', '']
 
 # Sub pages of Admin Guide / oxPush
-- ['admin-guide/oxPush/cordova-app.md', '**HIDDEN**']
-- ['admin-guide/oxPush/oxPush-server.md', '**HIDDEN**']
-- ['admin-guide/oxPush/oxPush-crypto.md', '**HIDDEN**']
+- ['admin-guide/oxPush/cordova-app.md', '', '']
+- ['admin-guide/oxPush/oxPush-server.md', '', '']
+- ['admin-guide/oxPush/oxPush-crypto.md', '', '']
 
 # Sub pages of Multiparty Federation 
-- ['admin-guide/multiparty-federation/saml-federation.md', '**HIDDEN**']
-- ['admin-guide/multiparty-federation/oauth2-federation.md', '**HIDDEN**']
-- ['admin-guide/multiparty-federation/federation-public-website.md', '**HIDDEN**']
+- ['admin-guide/multiparty-federation/saml-federation.md', '', '']
+- ['admin-guide/multiparty-federation/oauth2-federation.md', '', '']
+- ['admin-guide/multiparty-federation/federation-public-website.md', '', '']
 
-
-# Sub pages of Reference / Library
-- ['reference/lib/openid-connect.md', '**HIDDEN**']
-- ['reference/lib/uma.md', '**HIDDEN**']
-- ['reference/lib/scim.md', '**HIDDEN**']
-- ['reference/lib/saml.md', '**HIDDEN**']
-- ['reference/lib/user-management.md', '**HIDDEN**']
+- ['reference/lib/openid-connect.md', '', '']
+- ['reference/lib/uma.md', '', '']
+- ['reference/lib/scim.md', '', '']
+- ['reference/lib/saml.md', '', '']
+- ['reference/lib/user-management.md', '', '']
 
 # Sub pages of Reference / LDAP
-- ['reference/ldap/schema.md', '**HIDDEN**']
-- ['reference/ldap/namespace.md', '**HIDDEN**']
-- ['reference/ldap/indexing.md', '**HIDDEN**']
-- ['reference/ldap/replication.md', '**HIDDEN**']
-- ['reference/ldap/config.md', '**HIDDEN**']
+- ['reference/ldap/schema.md', '', '']
+- ['reference/ldap/namespace.md', '', '']
+- ['reference/ldap/indexing.md', '', '']
+- ['reference/ldap/replication.md', '', '']
 
 # Sub pages of Reference / Configuration
-- ['reference/configuration/system.md', '**HIDDEN**']
-- ['reference/configuration/oxAuth.md', '**HIDDEN**']
-- ['reference/configuration/oxTrust.md', '**HIDDEN**']
-- ['reference/configuration/shibIDP.md', '**HIDDEN**']
-- ['reference/configuration/asimba.md', '**HIDDEN**']
-- ['reference/configuration/opendj.md', '**HIDDEN**']
-- ['reference/configuration/openldap.md', '**HIDDEN**']
-- ['reference/configuration/389ds.md', '**HIDDEN**']
-- ['reference/configuration/jagger.md', '**HIDDEN**']
-- ['reference/configuration/oxPush.md', '**HIDDEN**']
-- ['reference/configuration/oxProx.md', '**HIDDEN**']
-- ['reference/configuration/mysql.md', '**HIDDEN**']
-- ['reference/configuration/memcached.md', '**HIDDEN**']
+- ['reference/configuration/system.md', '', '']
+- ['reference/configuration/oxAuth.md', '', '']
+- ['reference/configuration/oxTrust.md', '', '']
+- ['reference/configuration/shibIDP.md', '', '']
+- ['reference/configuration/asimba.md', '', '']
+- ['reference/configuration/opendj.md', '', '']
+- ['reference/configuration/openldap.md', '', '']
+- ['reference/configuration/jagger.md', '', '']
+- ['reference/configuration/oxPush.md', '', '']
+- ['reference/configuration/oxProx.md', '', '']
+- ['reference/configuration/mysql.md', '', '']
+- ['reference/configuration/memcached.md', '', '']
+
+# Sub pages of Reference / Configuration
+- ['reference/oxTrust/configuration.md', '', '']
+- ['reference/oxTrust/oauth2.md', '', '']
+- ['reference/oxTrust/personal.md', '', '']
+- ['reference/oxTrust/saml.md', '', '']
+- ['reference/oxTrust/users.md', '', '']
+

@@ -1,14 +1,6 @@
-# oxAuth Configuration
+# Ab debemur fateri herba
 
-## General Configuration
-
-## Ldap Configuration
-
-## Static Configuration (Claims to LDAP mapping)
-
-## Web Keys
-
-## Error Messages
+## Retinere auctaque ingreditur agit mensuraque prius inscius
 
 Lorem markdownum dummodo conterit; triste currus iam in omnia rogatus, dubites,
 similesque. Adit os pater explevit denegat mortis tanta reminiscitur despectus
