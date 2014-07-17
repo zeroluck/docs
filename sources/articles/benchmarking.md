@@ -76,19 +76,19 @@ Measures were made on single machine with Gluu Server, LDAP Server and test runn
   <tr>
     <td>1000</td>
     <td>100</td>
-    <td> 2 minutes 12 seconds (132 seconds) </td>
+    <td>-</td>
     <td></td>
   </tr>
   <tr>
     <td>1000</td>
     <td>200</td>
-    <td> 1 minute 40 seconds (102 seconds)</td>
+    <td>-</td>
     <td>Not representable: CPU 100%</td>
   </tr>
   <tr>
     <td>2000</td>
     <td>100</td>
-    <td>2 minutes 14 seconds (174 seconds)</td>
+    <td>-</td>
     <td>Not representable: CPU 100%</td>
   </tr>
   <tr>
