@@ -1,12 +1,11 @@
-site_name: Gluu Servers
+site_name: Gluu Server
 site_description: An SSO, Federation and API Access Management suite
 site_favicon: '/img/gluu_favicon.ico'
 copyright: Copyright &copy; 2014, Gluu, Inc.
 docs_dir: sources
 repo_url: https://github.com/GluuFederation/docs
-theme: spacelab
+theme: spacelab 
 
-# theme: docker
 theme_dir: ./theme/mkdocs/
 theme_center_lead: false
 include_search: true
@@ -33,7 +32,8 @@ pages:
 
 # Reference sections
 - ['reference/configuration/index.md', 'Reference', 'Configuration']
-- ['reference/ldap/index.md', 'Reference', 'LDAP']
+- ['reference/oxTrust/index.md', 'Reference', 'oxTrust User Interface']
+- ['reference/ldap/index.md', 'Reference', 'LDAP Schema']
 - ['reference/lib/index.md', 'Reference', 'Libraries']
 - ['reference/api/index.md', 'Reference', 'APIs']
 
@@ -46,9 +46,8 @@ pages:
 - ['articles/java-connect.md', 'Articles', 'Java OpenID Connect RP']
 - ['articles/scim-client.md', 'Articles', 'Java SCIM client']
 - ['articles/mobile-api.md', 'Articles', 'Mobile - Headless API : Connect / UMA']
-- ['articles/benchmarking.md', 'Articles', 'Gluu Server Benchmark']
 
-# Sub Pages of introduction
+# Sub Pages of introduction 
 - ['admin-guide/introduction/architecture.md', '**HIDDEN**']
 - ['admin-guide/introduction/design-goals.md', '**HIDDEN**']
 - ['admin-guide/introduction/gluu-server-mission.md', '**HIDDEN**']
@@ -72,7 +71,6 @@ pages:
 - ['admin-guide/configuration/oxTrust.md', '**HIDDEN**']
 - ['admin-guide/configuration/shibIDP.md', '**HIDDEN**']
 - ['admin-guide/configuration/oxProx.md', '**HIDDEN**']
-- ['admin-guide/configuration/jagger.md', '**HIDDEN**']
 
 # Sub Pages of Customizing Look and Feel
 - ['admin-guide/custom-look/authentication.md', '**HIDDEN**']
@@ -82,7 +80,7 @@ pages:
 - ['admin-guide/custom-look/user-profile.md', '**HIDDEN**']
 - ['admin-guide/custom-look/xhtml.md', '**HIDDEN**']
 
-# Sub Pages of Admin Guide / Certificates
+# Sub Pages of Admin Guide / Certificates 
 - ['admin-guide/certificates/https.md', '**HIDDEN**']
 - ['admin-guide/certificates/saml.md', '**HIDDEN**']
 - ['admin-guide/certificates/openid.md', '**HIDDEN**']
@@ -119,15 +117,14 @@ pages:
 - ['admin-guide/openid-connect/scopes.md', '**HIDDEN**']
 - ['admin-guide/openid-connect/client-config.md', '**HIDDEN**']
 
-# Sub pages of Admin Guide / UMA
-- ['admin-guide/uma/introduction.md', '**HIDDEN**']
+# Sub pages of Admin Guide / UMA 
 - ['admin-guide/uma/discovery.md', '**HIDDEN**']
 - ['admin-guide/uma/resource-registration.md', '**HIDDEN**']
 - ['admin-guide/uma/policy.md', '**HIDDEN**']
 - ['admin-guide/uma/uma-scopes.md', '**HIDDEN**']
 - ['admin-guide/uma/mod_ox.md', '**HIDDEN**']
 
-# Sub pages of Admin Guide / Interception Scripts
+# Sub pages of Admin Guide / Interception Scripts 
 - ['admin-guide/interception-scripts/authentication.md', '**HIDDEN**']
 - ['admin-guide/interception-scripts/authorization.md', '**HIDDEN**']
 - ['admin-guide/interception-scripts/id-generation.md', '**HIDDEN**']
@@ -142,13 +139,11 @@ pages:
 - ['admin-guide/oxPush/oxPush-server.md', '**HIDDEN**']
 - ['admin-guide/oxPush/oxPush-crypto.md', '**HIDDEN**']
 
-# Sub pages of Multiparty Federation
+# Sub pages of Multiparty Federation 
 - ['admin-guide/multiparty-federation/saml-federation.md', '**HIDDEN**']
 - ['admin-guide/multiparty-federation/oauth2-federation.md', '**HIDDEN**']
 - ['admin-guide/multiparty-federation/federation-public-website.md', '**HIDDEN**']
 
-
-# Sub pages of Reference / Library
 - ['reference/lib/openid-connect.md', '**HIDDEN**']
 - ['reference/lib/uma.md', '**HIDDEN**']
 - ['reference/lib/scim.md', '**HIDDEN**']
@@ -160,7 +155,6 @@ pages:
 - ['reference/ldap/namespace.md', '**HIDDEN**']
 - ['reference/ldap/indexing.md', '**HIDDEN**']
 - ['reference/ldap/replication.md', '**HIDDEN**']
-- ['reference/ldap/config.md', '**HIDDEN**']
 
 # Sub pages of Reference / Configuration
 - ['reference/configuration/system.md', '**HIDDEN**']
@@ -170,9 +164,15 @@ pages:
 - ['reference/configuration/asimba.md', '**HIDDEN**']
 - ['reference/configuration/opendj.md', '**HIDDEN**']
 - ['reference/configuration/openldap.md', '**HIDDEN**']
-- ['reference/configuration/389ds.md', '**HIDDEN**']
 - ['reference/configuration/jagger.md', '**HIDDEN**']
 - ['reference/configuration/oxPush.md', '**HIDDEN**']
 - ['reference/configuration/oxProx.md', '**HIDDEN**']
 - ['reference/configuration/mysql.md', '**HIDDEN**']
 - ['reference/configuration/memcached.md', '**HIDDEN**']
+
+# Sub pages of Reference / Configuration
+- ['reference/oxTrust/configuration.md', '**HIDDEN**']
+- ['reference/oxTrust/oauth2.md', '**HIDDEN**']
+- ['reference/oxTrust/personal.md', '**HIDDEN**']
+- ['reference/oxTrust/saml.md', '**HIDDEN**']
+- ['reference/oxTrust/users.md', '**HIDDEN**']
