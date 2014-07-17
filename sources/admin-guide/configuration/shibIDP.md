@@ -16,8 +16,11 @@ map any custom attributes in ldap. Gluu Server GUI has such feature.
 An “Active” attribute list can be seen from the Configuration → Attributes section. 
 The Gluu Server has a large ldap tree which includes all standard attributes. Not all are necessarily “Active”. Active Attributes can be sorted by clicking “Show only Active Attributes.”
 
-After clicking an attribute, the server Administrator can make edits as needed,
-such as changing an attribute from Inactive to Active, as shown below.
+* IMAGE
+
+Organization can manage their required attribute from this big LDAP tree. Just
+select the attribute and make that active / inactive from Gluu Server oxTrust GUI. 
+
 
 * IMAGE
 
