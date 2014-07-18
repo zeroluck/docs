@@ -2,7 +2,8 @@
 
 The Gluu Server is a suite of free open source software.
 
-## Gluu Software  http://ox.gluu.org/doku.php?id=legal:license
+## Gluu OX Project Software
+[MIT](http://ox.gluu.org/doku.php?id=legal:license)
 
 Any software published by Gluu in the OX Project is MIT license.
 
