@@ -8,5 +8,5 @@ OpenID Connect allows clients of all types, including Web-based, mobile, and Jav
 
 ## References
 - [OpenID Connect Specifications](http://openid.net/connect/)
-- [The OAuth 2.0 Authorization Framework] (http://tools.ietf.org/html/rfc6749)
-- [Frequently Asked Questions about OpenID Connect] (http://openid.net/connect/faq/)
+- [The OAuth 2.0 Authorization Framework](http://tools.ietf.org/html/rfc6749)
+- [Frequently Asked Questions about OpenID Connect](http://openid.net/connect/faq/)
