@@ -1,55 +1,38 @@
 # Outbound SAML
 
-## Website provides metadata via file 
+## Requirement for Outbound SAML from Gluu Server
 
-## Website provides metadata via URL
+Outbound SAML setup from Gluu Server is pretty easy with Gluu Server oxTrust GUI.
+Gluu Server require couple of points from that website which will create the
+SAML connection with Gluu Server. Here are some points stated below: 
 
-## Website is Google
+* Metadata of website. 
+* Required attributes of website.  
+* SSO testing endpoint of website. 
+
+Above three points are described briefly below. 
+
+### Metadata of website: 
+
+Metadata is a XML file which has configuration data used to provision any
+website ( SP ) or IDP ( Gluu Server ) to communicate with each other. It's
+interchangeable between IDP and SP. 
+
+Websites ( SP ) can provide metadata via URL or as a standalone separate file.
+If SP provide an XML separate file, Gluu Server can check the integrity of that
+metadata with it's own mechanism, which can be shown and tested from Gluu Server
+oxTrust GUI. 
+
+### Required attribute of website: 
+
+Every organization has their own policy to release / share attributes with any
+IDP or SP. Gluu Server support and can be configured for standard or custom
+attribute. All can be done from Gluu Server oxTrust GUI. 
+
+### SSO testing endpoint of website: 
+
+Every website ( SP ) should have staging and production URL endpoint which can
+be checked for SSO, where user will hit to log into that SP. 
 
 
-*Lorem markdownum natamque* et totoque intexere, ante **agendum ardent**.
-Pectore avus praeponere vulnere Lacedaemoniumque ut moratur Aurora
-[omnes](http://www.wtfpl.net/). Veri rogantem vitis subibis praemia quatit,
-viris fuit virgo mutata erunt sacrilegos plumbo prius ante ille patruelibus.
 
-> Cava et caede. Honoratos pedis; pennis arsuro: vos erat ramisque, induit.
-
-Cornua **mare matre** deserere arto? Virtutis per, infans choro, corpore
-institerat auctor ad neque, [vectus](http://omfgdogs.com/) silentia **umbras**,
-reducto!
-
-## Mille Iapygiam usquam et subsedit
-
-Requies et minimos vocor non, aut di *agitur* vacuosque unum? Minimae nurus,
-leve in alta Cyllaron rerum magna, patrem tribuitque missis inopem formam ab.
-Credit hac loco [harenas titulis
-praetendat](http://kimjongunlookingatthings.tumblr.com/) humilis vulneribus
-pluma sua hordea blandis monstraverat furto. Qua omnia et placandam, et voce
-intrasse udaeque Orpheus dixit auctor accipit habitantque simul est maestis.
-Questus terras, Bacchi!
-
-1. Cum cum aras
-2. Placido gerentem ab requiris
-3. Rogant longa torvis tamen alta qualia cannae
-
-## Nomine auras
-
-Pars amatos tamen. Ultor det multiplicique perfida faticinasque [arbore Eurotan
-quadrupedes](http://html9responsiveboilerstrapjs.com/), data.
-
-Caput et fugiens vestigia Pandion, qui illa Anguem antro cadendum. Ut ipsis
-fuisset!
-
-- Facit iam faciat quo occursu
-- Misero patiere
-- Ingreditur spiro pennisque sua umida laetabere coniunx
-- Ille fortis credar quaecumque latus
-- Sinuataque blandaque et sonum umquam pariterque abdit
-
-Namque licent. Fide dominum prehendit solvere: quam narrat: ire insula serpentem
-manebit tingui fateor, quae avemque fecit dilapsa quoque.
-
-[arbore Eurotan quadrupedes]: http://html9responsiveboilerstrapjs.com/
-[harenas titulis praetendat]: http://kimjongunlookingatthings.tumblr.com/
-[omnes]: http://www.wtfpl.net/
-[vectus]: http://omfgdogs.com/
