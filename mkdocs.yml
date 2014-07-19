@@ -6,7 +6,6 @@ docs_dir: sources
 repo_url: https://github.com/GluuFederation/docs
 theme: spacelab 
 
-# theme: docker
 theme_dir: ./theme/mkdocs/
 theme_center_lead: false
 include_search: true
@@ -33,7 +32,8 @@ pages:
 
 # Reference sections
 - ['reference/configuration/index.md', 'Reference', 'Configuration']
-- ['reference/ldap/index.md', 'Reference', 'LDAP']
+- ['reference/oxTrust/index.md', 'Reference', 'oxTrust User Interface']
+- ['reference/ldap/index.md', 'Reference', 'LDAP Schema']
 - ['reference/lib/index.md', 'Reference', 'Libraries']
 - ['reference/api/index.md', 'Reference', 'APIs']
 
@@ -119,8 +119,10 @@ pages:
 - ['admin-guide/openid-connect/scopes.md', '**HIDDEN**']
 - ['admin-guide/openid-connect/client-config.md', '**HIDDEN**']
 
-# Sub pages of Admin Guide / UMA 
+# Sub pages of Admin Guide / UMA
 - ['admin-guide/uma/introduction.md', '**HIDDEN**']
+
+# Sub pages of Admin Guide / UMA 
 - ['admin-guide/uma/discovery.md', '**HIDDEN**']
 - ['admin-guide/uma/resource-registration.md', '**HIDDEN**']
 - ['admin-guide/uma/policy.md', '**HIDDEN**']
@@ -147,8 +149,6 @@ pages:
 - ['admin-guide/multiparty-federation/oauth2-federation.md', '**HIDDEN**']
 - ['admin-guide/multiparty-federation/federation-public-website.md', '**HIDDEN**']
 
-
-# Sub pages of Reference / Library
 - ['reference/lib/openid-connect.md', '**HIDDEN**']
 - ['reference/lib/uma.md', '**HIDDEN**']
 - ['reference/lib/scim.md', '**HIDDEN**']
@@ -170,9 +170,16 @@ pages:
 - ['reference/configuration/asimba.md', '**HIDDEN**']
 - ['reference/configuration/opendj.md', '**HIDDEN**']
 - ['reference/configuration/openldap.md', '**HIDDEN**']
-- ['reference/configuration/389ds.md', '**HIDDEN**']
 - ['reference/configuration/jagger.md', '**HIDDEN**']
+- ['reference/configuration/389ds.md', '**HIDDEN**']
 - ['reference/configuration/oxPush.md', '**HIDDEN**']
 - ['reference/configuration/oxProx.md', '**HIDDEN**']
 - ['reference/configuration/mysql.md', '**HIDDEN**']
 - ['reference/configuration/memcached.md', '**HIDDEN**']
+
+# Sub pages of Reference / Configuration
+- ['reference/oxTrust/configuration.md', '**HIDDEN**']
+- ['reference/oxTrust/oauth2.md', '**HIDDEN**']
+- ['reference/oxTrust/personal.md', '**HIDDEN**']
+- ['reference/oxTrust/saml.md', '**HIDDEN**']
+- ['reference/oxTrust/users.md', '**HIDDEN**']
