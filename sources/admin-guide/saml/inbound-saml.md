@@ -1,52 +1,47 @@
-# Prius Trinacris
+# Inbound SAML in Gluu Server
 
-## Illa seu flamma
+For customers who need to support inbound SAML authentication for partners or
+other organizations, we can deploy the Asimba SAML proxy.
 
-Lorem markdownum sibila Partheniumque, illi
-[et](http://hipstermerkel.tumblr.com/) misi laqueo
-[sanguine](http://www.uselessaccount.com/), dubitanti metus, adolescere tantus!
-Offensasque comantur noctis; aurum partes canum, nati parte Tyrrhenaque mihi est
-*esse raptatur* pueri, umbras **via**. Domos meus summum memorant luctantia
-sequuntur, habet et praemia taedia genetrix germanam, laurus illa nox scelus
-Aeacidae domoque.
+The main use case for Asimba is to enable websites to use a single IDP for SSO,
+even when the organization may have a number of IDPs that are trusted. For more
+information, please contact us.
 
-1. Flores nitente nomina nobilitate odore prohibebar
-2. Et modo moenia ita tamen hac timebat
-3. Medio conluerant oculi
-4. Retinacula Dryopen et vulnera Themis
-5. In dare quas
-6. Laborem sit coram praedae illa perque quae
+## Requirement to setup Inbound SAML 
 
-Sustinet o mutatus iubet: memores inplumes videtur antiquo figere est ademptis
-quia, omnes ferrea. Relevasse agere indigno caput capientibus fagus anum nomine!
+* Metadata of authentication server
+* Metadata of websites who will work as servcie provider
+* SAML certificate of websites
+* SSL certificate of authentication server 
+* Required attributes
 
-Tum [priore et](http://twitter.com/search?q=haskell) color feroxque discretus
-suum, ipso lucum ad cuspide cito lustrat movisse. Niveis stipite Iuppiter in
-rebus Tyrioque ebur, sed et nomine in pectore tepidi.
+Above points are described breifly below. 
 
-## Peregit variasque aliquos
+### Metadata of authentication server
 
-Adsiluit mulcet faciemque **laeva** successisse duro; cum **veteres**: dolentem
-subterque Diomede curas vitiaverit genetrix oravique solent. *Cum* antrum sibi
-balatus spumis sororis adhuc totoque gratissima credunt, Caesaris. Habet spatium
-sat sacrum iussis? Hos in equidem, materno pelago, malorum post, Salmacis.
+Authentication server can be any remote / native Shibboleth IDP or Microsoft AD
+FS. We need metadata of these servers to configure Asimba. After configuration
+end user will be able to select their desired authentication server from
+Asimba's discovery page. Or, we can configure the "selector" which will
+automatically redirect user to desired IDP / ADFS. 
 
-    guidLayoutWiki -= truncate_install_path;
-    var hard_tween_publishing = cropInternetLeaderboard + dlcGifUser(4 *
-            ipvMini);
-    gigaflops_keywords_pppoe(hubItPetabyte + virtualWCompact - 674734,
-            crossVfatController, spider_graymail_code);
+### Metadata of websites who will work as servcie provider
 
-Nequeunt quod nitar tellus verecundo aprorum bracchia, et salutant. Cursus pro
-fatalem sibi iube, dispensat naiades.
+Just like authentication server metadata, Gluu Server - Asimba suite require
+metadaa from all websites ( SPs ) which will be connected. 
 
-> Debere ipse pater cadmus, sed ut contrahitur pignora Mavors. Poteram peragant!
-> Sacra concussit inani, hominis virginis, his Iuppiter ulla, qui.
+### SAML certificate of websites
 
-Myrrha exsecrere, si quantus, custos hoc praeconia praecluditur. Intravit ait
-erat, veneris laboret pro [Achivos cuius cum](http://zombo.com/) altae.
+Base64 encoded certificates require to configure the trust store of Asimba
+server as it can connect / allow the inbound SAML request from remote SP. 
 
-[Achivos cuius cum]: http://zombo.com/
-[et]: http://hipstermerkel.tumblr.com/
-[priore et]: http://twitter.com/search?q=haskell
-[sanguine]: http://www.uselessaccount.com/
+### SSL certificate of authentication server
+
+Base64 encoded certificates of authentication server is also a requirement. 
+
+### Required attributes
+
+Every organization has their own policy to release / pass few attributes. It can
+be standard attribute like UID or email address or can be any custom attribute.
+Gluu Engineers need a list of required attributes from organization which they
+want to pass between their authentication server and target websites ( SP ). 
