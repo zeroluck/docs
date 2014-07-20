@@ -76,19 +76,21 @@ In order to create a trust relationship with any SP:
 Gluu Server administrator can view / trace any log from system with Gluu
 Server's "Log Viewer" feature.  Any log can be displayed from Web UI with few clicks. To enable this feature click on “Configuration” → “Configure log viewer”
 
-* IMAGE
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/LogViewer/Click_log_viewer.png?raw=true)
 
 Click on “Add log template”, two new boxes will appear. Left box is the name/description of the log and right box require the real path of this log file. As for example in the below image,  we are going to configure two logs: 1. oxTrust log and 2. oxAuth log
 
-* IMAGE
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/LogViewer/Log_template.png?raw=true)
 
 Log files which were configured in previous section can be viewed with this “View log file” feature. Click “Configuration” → “View Log File”
 
-* IMAGE
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/LogViewer/View_Log_file.png?raw=true)
 
 Now, select / click on desired allowed log file and insert a value for “Display last lines count”. Gluu Server will show last 400 ( or, any selected value lines ) in GUI like below:
 
-* IMAGE
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/LogViewer/Final_log_viewer.png?raw=true)
+
+
 ## FAQ 
 
 * I have a new SP, what I need to do to create a Trust Relationship from Gluu Server SAML IDP? 
