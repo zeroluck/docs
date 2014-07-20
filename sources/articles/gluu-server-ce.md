@@ -4,9 +4,8 @@
 
 For the purpose of using the Gluu Community Edition aka Gluu CE, we recommend using a VM with:
 
-* CentOS 6.5
-* CPU: 2 
-* RAM: 2 GB
+* CentOS 6.5 
+* Physical Memory: 2 GB
 
 In short more is good.
 
