@@ -13,20 +13,22 @@ is able to see all attributes from Web UI Configuration.
 Other than standard attribute, Gluu Server allows administrator to create and
 map any custom attributes in ldap. Gluu Server GUI has such feature.
 
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SamlIDPAdminGuide/Base_attributes.png?raw=true)
+
 An “Active” attribute list can be seen from the Configuration → Attributes section. 
 The Gluu Server has a large ldap tree which includes all standard attributes. Not all are necessarily “Active”. Active Attributes can be sorted by clicking “Show only Active Attributes.”
 
-* IMAGE
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SamlIDPAdminGuide/LDAP_tree_Gluu_server.png?raw=true)
 
 Organization can manage their required attribute from this big LDAP tree. Just
 select the attribute and make that active / inactive from Gluu Server oxTrust GUI. 
 
 
-* IMAGE
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SamlIDPAdminGuide/Active_inactive.png?raw=true)
 
 If the organization needs more attributes or has custom attributes, they can be added from the Gluu Server GUI. Click on “Add attribute” and a page like this will appear:
 
-* IMAGE
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SamlIDPAdminGuide/Add_new_attribute.png?raw=true)
 
 * _Name_: Name of this custom attribute. It must be unique in Gluu Server LDAP tree.
 * _SAML1 URI_: SAML1 URI value for custom attribute.
