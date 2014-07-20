@@ -3,7 +3,57 @@
 
 ## Configuring Apache Shibboleth SP in CentOS
 
-TODO
+### System preparation: 
+
+1. Add Shibboleth repo for CentOS6
+
+* Contents of "shib.repo":
+
+    [security_shibboleth]
+    name=Shibboleth (CentOS_CentOS-6)
+    type=rpm-md
+    baseurl=http://download.opensuse.org/repositories/security:/shibboleth/CentOS_CentOS-6/
+    gpgcheck=1
+    gpgkey=http://download.opensuse.org/repositories/security:/shibboleth/CentOS_CentOS-6/repodata/repomd.xml.key
+    enabled=1
+
+* http://download.opensuse.org/repositories/security:/shibboleth/CentOS_CentOS-6/security:shibboleth.repo
+
+### Shibboleth SP installation
+
+* yum install shibboleth
+* service shibd start
+* chkconfig shibd on
+
+### Install and Configure httpd
+
+
+### Installation: 
+
+* yum install httpd
+* service httpd start
+* Stop firewall
+
+### Configuration: 
+
+* Change ServerName directive to the server name of SP
+* UseCanonicalName = On
+* Restart httpd
+
+### Httpd testing:
+
+* Create a "index.html" inside /var/www/html
+* Restart httpd
+* Check from your browser
+
+### SP key cert
+
+* Create private key and certificate and place those in /etc/shibboleth
+* Change permission
+
+### Shibboleth SP configuration: 
+
+ 
 
 ## Configuring Apache Shibboleth SP in Ubuntu
 
