@@ -63,12 +63,26 @@ In order to create a trust relationship with any SP:
     * _Display Name_: Name of the Trust Relationship ( it should be unique for every trust relationship ) 
     * _Description_: Little description. Purpose and SSO link can be added here.
     * _Metadata Type_: Depending on trusted party’s metadata (SP), there are four available types in Gluu Server
-        * IMAGE
-            If SP has uploadable metadata in XML format, this option works best.
-        * IMAGE
-            If the metadata of SP has url link and accessible from internet, Gluu Server Administrator need to use this option. 
+        * _File_: If SP has uploadable metadata in XML format, this option works best.
+        * _URI_: If the metadata of SP has url link and accessible from internet, Gluu Server Administrator need to use this option. 
         * _Generate_: Using Gluu Server to generate configuration files for SP is another big option when the SP is inhouse application or “Shibboleth SP” is installed or going to be installed in target application site (SP).  [How to install Shibboleth SP](http://www.gluu.org/docs/articles/apache-saml/) will help user to  configure and install Shibboleth SP on their own area.
 
+        * _Federation_: TODO
+
+    * Public certifiate: Upload public certificate for this SP server. Please note that: public certificate’s CN (common name) MUST HAVE TO maintain the hostname of the SP server. If SP has no certificate then keep this option blank and IdP will generate a self signed certificate for SP.
+
+    * Released: Release required attributes. Available attributes can be grabbed from upper left corner. 
+
+    * More configuration: If SP require custom relying party and/or custom MetadataFilter configuration, that can be achieved from options named: 
+        * Configure MetadataFilters: Click on this option and Gluu Server will allow you to configure MetadataFilters with Gluu Server own oxTrust GUI.
+        * IMAGE
+        * Configure specific Relying Party: If Gluu Server administrator “check” this option A new link will appear which allows Gluu Server Administrator to modify various Relying party configurations like SAML2SSO, SAML2AttributeQuery, ShibbolethSSO etc through “Click and Play” way. 
+
+After addition of this new Trust Relationship, Gluu Server Administrator will
+observe a confirmation page like below. Please note that, for testing purpose we
+did not provided any certificate and IdP created those key and cert by itself.
+Message is indicating such operation. Below image is showing a sample Trust
+Relation after a successful creation.
 
 
 ## Log Viewer
