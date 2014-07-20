@@ -53,7 +53,16 @@
 
 ### Shibboleth SP configuration: 
 
- 
+This section is mirroring how to configure "shibboleth2.xml" file. 
+
+* Provide "entityID" of SP in: 
+    * <ApplicationDefaults entityID="http://sp.example.org/Shibboleth" section
+* Provide the "entityID of IDP" in: 
+    * <SSO entityID="https://idp.gluu.org/idp/shibboleth" section 
+* Point the metadata provider, in most cases it's Gluu IDP metadata link: 
+    * <MetadataProvider type="XML" uri="https://idp.gluu.or/id/shibboleth" section
+* Provide the key and cert of SP in: 
+    * <CredentialResolver type="File" key="spkey.key" certificate="spcrt.crt" section
 
 ## Configuring Apache Shibboleth SP in Ubuntu
 
