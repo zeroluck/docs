@@ -48,6 +48,7 @@ pages:
 - ['articles/mobile-api.md', 'Articles', 'Mobile - Headless API : Connect / UMA']
 - ['articles/benchmarking.md', 'Articles', 'Gluu Server Benchmark']
 - ['articles/gluu-server-ce.md', 'Articles', 'Gluu Server Community Edition']
+- ['articles/gluu-server-ce-troubleshooting.md', 'Articles', 'Gluu Server CE Troubleshooting']
 
 # Sub Pages of introduction 
 - ['admin-guide/introduction/architecture.md', '**HIDDEN**']
