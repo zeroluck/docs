@@ -2,6 +2,24 @@
 
 UMA Policy - object that protects UMA Resources. Protection of resources are made via scopes. Gluu server evaluates all policies (identified by scopes) in order to grant access.
 
+UMA Policy main properties are:
+
+  - scopes - policy protects resources by scopes.
+  - authorization script - script that is evaluated in order to grant or deny access (script basically returns true of false to server).
+  - name - it's better to give good name to policy to understand what exactly it protects.
+
+## Define policy in oxTrust
+
+There two ways to define UMA Policy for Gluu Server:
+
+- Define via oxTrust (Gluu Server admin application)
+- Define in LDAP Server directly (advanced users only)
+
+![Alt text](/img/uma/uma_oxtrust_policies.png "UMA Policies")
+
+![Alt text](/img/uma/uma_oxtrust_policy_add.png "UMA Policy Add")
+
+
 ## Algorithm
 
 Rules:
