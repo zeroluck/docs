@@ -26,6 +26,12 @@ If there is not enough connections to serve the client, connection is put "on ho
 
 For example OpenDJ use JVM for running, for high performance it's recommended to give enough memory via JVM system properties.
 
+3. Allow LDAP Server use cache as much as possible.
+
+```
+$ dsconfig -n set-backed-prop --backend-name userRoot --set db-cache-percent:50
+```
+
 ### Tomcat
 
   1. Set maxmimum for parallel requests.
