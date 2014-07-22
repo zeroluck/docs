@@ -20,7 +20,7 @@ If there is not enough connections to serve the client, connection is put "on ho
 
 ```
  max-allowed-client-connections=1000
- ```
+```
 
 2. Provide enough resources to LDAP Server
 
@@ -29,7 +29,7 @@ For example OpenDJ use JVM for running, for high performance it's recommended to
 3. Allow LDAP Server use cache as much as possible.
 
 ```
-$ dsconfig -n set-backed-prop --backend-name userRoot --set db-cache-percent:50
+    dsconfig -n set-backed-prop --backend-name userRoot --set db-cache-percent:50
 ```
 
 ### Tomcat
