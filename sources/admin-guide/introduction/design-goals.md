@@ -52,7 +52,7 @@ Gluu Server scale as much as needed.
 As Kent Beck says, "Embrace Change". The key to the Gluu Server's succes
 has been its ability to handle all sorts of crazy requirements--quickly.
 Sometimes raw speed is needed, but equally important is the ability for
-the access managment framework to be really smart.
+the access management framework to be really smart.
 
 
 
