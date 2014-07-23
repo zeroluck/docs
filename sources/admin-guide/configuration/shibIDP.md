@@ -57,9 +57,9 @@ In order to create a trust relationship with any SP:
 
 * Go to SAML → Trust Relationships
 * Click on “Add Relationship”
-* IMAGE
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/Add_Relationships.png?raw=true)
 * A new page will appear. Here, Gluu Server Administrator need to provide all informations regarding SP to establish Trust Relationship from Gluu Server. 
-* IMAGE
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/TR_new_page.png?raw=true)
     * _Display Name_: Name of the Trust Relationship ( it should be unique for every trust relationship ) 
     * _Description_: Little description. Purpose and SSO link can be added here.
     * _Metadata Type_: Depending on trusted party’s metadata (SP), there are four available types in Gluu Server
@@ -67,7 +67,15 @@ In order to create a trust relationship with any SP:
         * _URI_: If the metadata of SP has url link and accessible from internet, Gluu Server Administrator need to use this option. 
         * _Generate_: Using Gluu Server to generate configuration files for SP is another big option when the SP is inhouse application or “Shibboleth SP” is installed or going to be installed in target application site (SP).  [How to install Shibboleth SP](http://www.gluu.org/docs/articles/apache-saml/) will help user to  configure and install Shibboleth SP on their own area.
 
-        * _Federation_: TODO
+        * _Federation_: If target application ( SP ) is affiliated with any Federation server (i.e: InCommon, NJEdge etc. ), this option of “Metadata Type” is required. 
+        Select “Federation” in Metadata Type and another drop down menu called “Select Federation” will appear. From this drop menu select desired Federation. 
+        In order to create this documentation we took “InCommon” Federation as an example.
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/Federation_1.png?raw=true)
+        After selecting the “Federation Name”, a new link named “Click to select entity id” will appear. From this link Gluu Server Administrator can select all SP’s entityIDs which are InCommon affiliated. Click on this link and another new SP entityID discovery page will appear like below image. 
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/Federation_2.png?raw=true)
+        Gluu Server Administrator can grab any SP’s entityID from “Filter” box. As for example, Gluu Server Administrator is looking for Educause entityID. 
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/Federation_3.png?raw=true)
+
 
     * Public certifiate: Upload public certificate for this SP server. Please note that: public certificate’s CN (common name) MUST HAVE TO maintain the hostname of the SP server. If SP has no certificate then keep this option blank and IdP will generate a self signed certificate for SP.
 
