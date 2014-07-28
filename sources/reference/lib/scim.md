@@ -111,7 +111,7 @@ Content-Type: application/json
 
 ```
 POST https://localhost:8080/oxTrust/seam/resource/restv1/Users/ 
-Accept: application/XML 
+Accept: application/xml 
 Authorization: Bearer 91732a27-fd00-487a-9dde-a6ed2fac6949
 ```
 
@@ -128,7 +128,7 @@ Authorization: Bearer 91732a27-fd00-487a-9dde-a6ed2fac6949
 201 CREATED
 Server: Apache-Coyote/1.1
 Location: https://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7
-Content-Type: application/XML
+Content-Type: application/xml
 ```
 
 * Response Content
@@ -180,7 +180,7 @@ Authorization: Bearer 91732a27-fd00-487a-9dde-a6ed2fac6949
 200 OK
 Server: Apache-Coyote/1.1
 Location: https://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7
-Content-Type: application/XML
+Content-Type: application/xml
 ```
 
 ```
@@ -226,7 +226,7 @@ Content-Type: application/json
 
 ```
 PUT https://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7
-Accept: application/XML 
+Accept: application/xml 
 Authorization: Bearer 91732a27-fd00-487a-9dde-a6ed2fac6949
 ```
 
@@ -243,7 +243,7 @@ Authorization: Bearer 91732a27-fd00-487a-9dde-a6ed2fac6949
 200 OK
 Server: Apache-Coyote/1.1
 Location: https://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7
-Content-Type: application/XML
+Content-Type: application/xml
 ```
 
 * Response Content
@@ -321,7 +321,7 @@ Content-Type: application/json
 
 ```
 POST https://localhost:8080/oxTrust/seam/resource/restv1/Bulk/ 
-Accept: application/XML 
+Accept: application/xml 
 Authorization: Bearer 91732a27-fd00-487a-9dde-a6ed2fac6949
 ```
 
@@ -338,7 +338,7 @@ Authorization: Bearer 91732a27-fd00-487a-9dde-a6ed2fac6949
 200 OK
 Server: Apache-Coyote/1.1
 Location: https://localhost:8080/oxTrust/seam/resource/restv1/Bulk/
-Content-Type: application/XML
+Content-Type: application/xml
 ```
 
 * Response Content
@@ -379,7 +379,7 @@ Content-Type: application/json
 
 ```
 GET https://localhost:8080/oxTrust/seam/resource/restv1/Users/
-Accept: application/XML 
+Accept: application/xml 
 Authorization: Bearer 91732a27-fd00-487a-9dde-a6ed2fac6949
 ```
 
@@ -390,7 +390,7 @@ Authorization: Bearer 91732a27-fd00-487a-9dde-a6ed2fac6949
 200 OK
 Server: Apache-Coyote/1.1
 Location: https://localhost:8080/oxTrust/seam/resource/restv1/Users/
-Content-Type: application/XML
+Content-Type: application/xml
 ```
 
 ```
