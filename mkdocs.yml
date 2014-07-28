@@ -38,6 +38,7 @@ pages:
 - ['reference/api/index.md', 'Reference', 'APIs']
 
 # Articles
+- ['articles/gluu-server-ce.md', 'Articles', 'Try Gluu Server CE - Quickstart']
 - ['./articles/apache-saml.md', 'Articles', 'Apache SAML']
 - ['articles/java-saml.md', 'Articles', 'Java SAML']
 - ['articles/apache-oauth2.md', 'Articles', 'Apache OpenID Connect / UMA']
@@ -47,8 +48,6 @@ pages:
 - ['articles/scim-client.md', 'Articles', 'Java SCIM client']
 - ['articles/mobile-api.md', 'Articles', 'Mobile - Headless API : Connect / UMA']
 - ['articles/benchmarking.md', 'Articles', 'Gluu Server Benchmark']
-- ['articles/gluu-server-ce.md', 'Articles', 'Gluu Server Community Edition']
-- ['articles/gluu-server-ce-troubleshooting.md', 'Articles', 'Gluu Server CE Troubleshooting']
 
 # Sub Pages of introduction 
 - ['admin-guide/introduction/architecture.md', '**HIDDEN**']
