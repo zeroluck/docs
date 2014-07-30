@@ -13,8 +13,7 @@ easiest installation option is
 
 ## Installation of the mod_ox for testing
 
-Apologies in advance, but right now we only have a [MS word doucment](http://www.gluu.co/modox_ms_doc)   It will be converted to markdown asap. The instructions are there for 
-Apache on Windows, Ubuntu, and Centos.
+Right now the instructions can be found in the following [pdf document](http://www.gluu.co/modox-pdf)   It will be converted to markdown asap. Instructions are available for Apache on Windows, Ubuntu, and Centos.
 
 ## Test Use cases
 
