@@ -1,4 +1,4 @@
-# Gluu Server Community Edition (CE) Installation Guide
+# Gluu Server Community Edition (CE) CentOS Installation Guide
 
 ## System Requirements
 
@@ -14,7 +14,7 @@ The Gluu Server Community Edition should be deployed on a VM with:
 
     `rpm -ivh http://repo.gluu.org/GLUU/centos/6.5/base/x86_64/Packages/GLUU-1.0.5-CE.el6.x86_64.rpm`
 
-It will take around 10 minutes to complete the installation on a VM that has 2GB of memory and 2 core processor.
+It will take around 10 minutes to complete the installation on a VM that has 2GB of memory and 2 CPU units.
 
 * We've included a complete chroot environment for this server. So, before moving for the configuration, we have to login to chroot.
 * Login to chroot environment with: 
