@@ -17,8 +17,7 @@ The Gluu Server Community Edition should be deployed on a VM with:
 
 It will take around 10 minutes to complete the installation on a VM that has 2GB of memory and 2 CPU units.
 
-* We've included a complete chroot environment for this server. So, before moving for the configuration, we have to login to chroot.
-* Login to chroot environment with: 
+* We've included a complete chroot environment for this server. So, before moving for the configuration, we have to login to chroot with the following command: 
 
     `chroot /home/my-package/chroot/gluu/ su - root`
 
