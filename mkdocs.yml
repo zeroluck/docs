@@ -41,6 +41,7 @@ pages:
 - ['articles/gluu-server-ce.md', 'Articles', 'Try Gluu Server CE - Quickstart']
 - ['./articles/apache-saml.md', 'Articles', 'Apache SAML']
 - ['articles/java-saml.md', 'Articles', 'Java SAML']
+- ['articles/google-saml.md', 'Articles', 'Google SAML']
 - ['articles/apache-oauth2.md', 'Articles', 'Apache OpenID Connect / UMA']
 - ['articles/nginx-oauth2.md', 'Articles', 'nginx OpenID Connect / UMA']
 - ['articles/js-connect.md', 'Articles', 'JavaScript OpenID Connect RP']
