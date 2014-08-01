@@ -13,6 +13,3 @@ the said jar into arbitary location served by the web server and change the defa
 cssLocation, jsLocation and imgLocation attributes to the new path (possibly even 
 hosted on a different location).
 
-See also:
-
-[Configuration Guide](https://www.google.com)
