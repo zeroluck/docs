@@ -3,6 +3,10 @@
 
 Google Apps will work as Service Provide ( SP ) and we need to "introduce" Gluu Server with Google Apps as Gluu Server can work as Identity Provider ( IDP ).
 
+NOTE: It's highly recommended to use Google staging apps setup before Google
+production migration. If you have any question or confusion, please feel free to
+let us know.
+
 We need to configure both parties ( Google Apps and Gluu Server ) as they can talk to each other.
 
 ## Configuring Google Apps with Google dashboard:
@@ -58,7 +62,6 @@ Got the metadata? Great, we are ready to move forward.
         * encryptAssertions: never
         * encryptNameIds: never 
 
-NOTE: It's highly recommended to use Google staging apps setup before Google production migration. If you have any question or confusion, please feel free to let us know.
 
-</pre>
+
 
