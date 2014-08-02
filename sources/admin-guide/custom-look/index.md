@@ -9,6 +9,8 @@
 - [SAML Discovery](saml-discovery.md)
 -->
 
+## oxAuth Login page customization
+
 We're still working on getting to a point where you can self-service the login
 skin design. For now, the easiest way to do it is send us the html/css files (
 including images and target design ) and we'll get it implemented for you within
@@ -23,4 +25,8 @@ The location of this file is: ~/tomcat/webapps/oxauth/
 * CSS: Location of required CSS are: ~/tomcat/webapps/oxauth/stylesheet/
 
 * img: There is a directory for images. Location: ~/tomcat/webapps/oxauth/
+
+
+## oxTrust customization
+
 
