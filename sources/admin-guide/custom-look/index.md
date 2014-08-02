@@ -1,11 +1,13 @@
 # Customizing the look and feel of the Gluu Server 
 
+<!---
 - [Default Style](defaults.md)
 - [Authentication](authentication.md)
 - [Registration](registration.md)
 - [Other Pages - XHTML howto](xhtml.md)
 - [User Profile Management](user-profile.md)
 - [SAML Discovery](saml-discovery.md)
+-->
 
 In some cases, the Gluu Server works in the background, and people never even know its there.
 However, for certain workflows, the Gluu Server actually presents web pages or messages. Since
