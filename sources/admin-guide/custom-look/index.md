@@ -15,13 +15,13 @@ For example, the default values of the css and js locations are *\<contextPath\>
 *\<contextPath\>/js* in the configuration file.
 
 It is possible to unpack the contents of the said jar into a folder hosted by a web server
-and change the default cssLocation, jsLocation and imgLocation attributes in `oxTrust.properties`
+and change the default cssLocation, jsLocation and imgLocation attributes in `oxTrust.properties` and/or in `oxauth-config.xml`
 
-* CSS: The filesystem location is specified using the property `cssLocation`
+* CSS: The location is specified using the property `cssLocation`
 
-* Javascript: The filesystem location is specified using the property `jsLocation`
+* Javascript: The location is specified using the property `jsLocation`
 
-* Images: The filesystem location is specified using the property `imgLocation`
+* Images: The location is specified using the property `imgLocation`
 
 For example, in `oxTrust.properties`
 
@@ -29,6 +29,15 @@ For example, in `oxTrust.properties`
 cssLocation=https://idp.gluu.org/static/stylesheet
 jsLocation=https://idp.gluu.org/static/js
 imgLocation=https://idp.gluu.org/static/img
+```
+
+in `oxauth-config.xml`
+(as a children of <configuration> node)
+
+```
+<cssLocation>https://idp.gluu.org/static/stylesheet</cssLocation>
+<jsLocation>=https://idp.gluu.org/static/js<jsLocation>
+<imgLocation>=https://idp.gluu.org/static/img<imgLocation>
 ```
 
 ## Built-in oxTrust customization
