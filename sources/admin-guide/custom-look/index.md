@@ -3,12 +3,12 @@
 ## Style customization guide
 
 Static style elements like css, js and images are packaged into separate jar named
-_\<ProjectName\>_ Static- _\<version\>_ .jar and is added to the deployable
+_\<ProjectName\>_ Static- _\<version\>_ .jar (e.g. oxTrustStatic-1.3.0.Final.jar and oxAuthStatic-1.4.0.Final.jar) and is added to the deployable
 war during the build time.
 
 To change the content of the pages, you'll need to edit the xhtml files. Be careful
 not to remove any of the important form elements. But you can add additional html
-elements to meet your needs.
+elements to meet your needs. (.xhtml files inside /opt/tomcat/webapps/identity and /opt/tomcat/webapps/oxauth)
 
 Post deployment, the structure of the jar allows it's context to be accessible from the Web contextroot.
 For example, the default values of the css and js locations are *\<contextPath\>/stylesheet* and
