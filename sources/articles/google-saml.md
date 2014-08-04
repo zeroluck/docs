@@ -22,7 +22,7 @@ We need to configure both parties ( Google Apps and Gluu Server ) as they can ta
 
     * Sign-in Page URL: https://idp_hostname/profile/SAML2/Redirect/SSO
 
-    * Sign-out Page URL: https://idp_hostname/logout.jsp
+    * Sign-out Page URL: https://idp_hostname/idp/logout.jsp
 
     * Change Password URL: Organization should provide this link if they have any link for end users.
 
