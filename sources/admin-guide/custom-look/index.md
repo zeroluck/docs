@@ -32,7 +32,7 @@ imgLocation=https://idp.gluu.org/static/img
 ```
 
 in `oxauth-config.xml`
-(as a children of <configuration> node)
+(as a children of \<configuration\> node)
 
 ```
 <cssLocation>https://idp.gluu.org/static/stylesheet</cssLocation>
