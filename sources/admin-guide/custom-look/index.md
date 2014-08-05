@@ -40,13 +40,14 @@ in `oxauth-config.xml`
 
 To change the content of the pages, you'll need to edit the xhtml files. Be careful
 not to remove any of the important form elements. But you can add additional html
-elements to meet your needs. (.xhtml files inside /opt/tomcat/webapps/identity and /opt/tomcat/webapps/oxauth)
+elements to meet your needs. (.xhtml files inside `/opt/tomcat/webapps/identity` and
+`/opt/tomcat/webapps/oxauth`)
 
-* Common locations to be edited:
-* Default login page: /opt/tomcat/webapps/oxauth/login.xhtml
-* Error page: /opt/tomcat/webapps/oxauth/error.xhtml
-* Authorization page: /opt/tomcat/webapps/oxauth/authorize.xhtml
-* Pages used in custom authentication scripts: xhtml files in /opt/tomcat/webapps/oxauth/auth tree.
+Standard forms:
+* Default login page: `/opt/tomcat/webapps/oxauth/login.xhtml`
+* Error page: `/opt/tomcat/webapps/oxauth/error.xhtml`
+* Authorization page: `/opt/tomcat/webapps/oxauth/authorize.xhtml`
+* Custom authentication scripts: xhtml files in `/opt/tomcat/webapps/oxauth/auth`
 
 ## Built-in oxTrust customization
 
