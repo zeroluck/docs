@@ -4,10 +4,10 @@ User-Managed Access ([UMA]) is an OAuth-based web-based access management protoc
 
 ## UMA in Action
 
-![Alt text](/img/uma/uma_parts.png "UMA Parts")
-![Alt text](/img/uma/uma_flow.png "UMA Parts")
-![Alt text](/img/uma/uma_token_workflow.png "UMA Parts")
-![Alt text](/img/uma/uma_very_detailed_flow.png "UMA Parts")
+![Alt text](http://www.gluu.org/docs/img/uma/uma_parts.png "UMA Parts")
+![Alt text](http://www.gluu.org/docs/img/uma/uma_flow.png "UMA Parts")
+![Alt text](http://www.gluu.org/docs/img/uma/uma_token_workflow.png "UMA Parts")
+![Alt text](http://www.gluu.org/docs/img/uma/uma_very_detailed_flow.png "UMA Parts")
 
 ## References
 - [UMA Specifications](http://kantarainitiative.org/confluence/display/uma/UMA+1.0+Core+Protocol)
