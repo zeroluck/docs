@@ -43,11 +43,14 @@ not to remove any of the important form elements. But you can add additional htm
 elements to meet your needs. (.xhtml files inside `/opt/tomcat/webapps/identity` and
 `/opt/tomcat/webapps/oxauth`)
 
-Standard forms:
+Standard forms in oxAuth:
 * Default login page: `/opt/tomcat/webapps/oxauth/login.xhtml`
 * Error page: `/opt/tomcat/webapps/oxauth/error.xhtml`
 * Authorization page: `/opt/tomcat/webapps/oxauth/authorize.xhtml`
 * Custom authentication scripts: xhtml files in `/opt/tomcat/webapps/oxauth/auth`
+
+Standard forms in oxTrust:
+* Default login page: `/opt/tomcat/webapps/identity/register.xhtml`
 
 ## Built-in oxTrust customization
 
