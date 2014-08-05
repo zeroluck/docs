@@ -8,12 +8,17 @@ certificate MUST follow the HOSTNAME of the Gluu Server.
 
 In order to access this feautre, go to Configuration --> Manage Certificate
 
-This feature of oxTrust allows the Gluu Server Administrator to manage both
-types of certificates. The first box which has “DA….-JAVA.crt” operates the SSL
-/ Apache / HTTPS functionality of Gluu Server. The second box where there are
-“DA…-SHIB.crt” is relevant to the SAML transaction. 
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Manage_SSL_cert.png?raw=true)
 
-In order to update / install Gluu Server certificates, both Private Key and
-Public Certificates are required. Make sure to upload both private and public
-keys whenever there is any kind of update required for the server
 
+To update the Gluu Server's SSL certificate, Server admin need to upload both
+private key and certificate in upper section ( DA….-JAVA.crt ) of the "Manage
+sever SSL certificates" section.
+
+Please note that, private key cannot be password protected and certificate
+should be base64 with "crt" extension.  
+
+Upload private key and certificate with "Upload Key" and "Upload cert"
+respectively. "Update" the configuration and wait for 10 mins. Our configuration
+management system ( Puppet )  will place certificate in corresponding location
+automatically. 
