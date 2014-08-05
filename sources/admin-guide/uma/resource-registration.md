@@ -11,9 +11,9 @@ These properties are standard properties however resource description MAY contai
 
 ## Register resource via oxTrust
 
-![Alt text](/img/uma/uma_oxtrust_resources.png "UMA Resources")
+![oxTrust UMA Resources Interface](http://www.gluu.org/docs/img/uma/uma_oxtrust_resources.png "UMA Resources")
 
-![Alt text](/img/uma/uma_oxtrust_resources_add.png "UMA Resources Add")
+![oxTrust UMA Add Resources Interface](http://www.gluu.org/docs/img/uma/uma_oxtrust_resources_add.png "UMA Resources Add")
 
 ## References
 - [UMA Specifications](http://kantarainitiative.org/confluence/display/uma/UMA+1.0+Core+Protocol)
