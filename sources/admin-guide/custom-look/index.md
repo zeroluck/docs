@@ -55,7 +55,7 @@ Standard forms in oxTrust:
 #### To remove the Gluu Copyright icon from your login page:
 
 The default Gluu Copyright icon can be found under: 
-`template.xhtml under /opt/tomcat/webapps/identity/WEB-INF/incl/layout`
+`template.xhtml` under `/opt/tomcat/webapps/identity/WEB-INF/incl/layout`
 
 Simply remove this snippet:
 
