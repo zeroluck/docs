@@ -57,7 +57,7 @@ Standard forms in oxTrust:
 The default Gluu Copyright icon can be found under: 
 `template.xhtml under /opt/tomcat/webapps/identity/WEB-INF/incl/layout`
 
-Check the snippet:
+Simply remove this snippet:
 
     <s:fragment rendered="#{not isLogin}">
             <div class="footer">
