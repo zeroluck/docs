@@ -18,7 +18,6 @@ pages:
 # Admin Guide Sections
 - ['admin-guide/introduction/index.md', 'Admin Guide', 'Introduction']
 - ['admin-guide/installation/index.md', 'Admin Guide', 'Installation']
-- ['admin-guide/configuration/index.md', 'Admin Guide', 'Configuration']
 - ['admin-guide/custom-look/index.md', 'Admin Guide', 'Customizing Look and Feel']
 - ['admin-guide/certificates/index.md', 'Admin Guide', 'Certificates']
 - ['admin-guide/user-management/index.md', 'Admin Guide', 'User Management']
@@ -67,15 +66,6 @@ pages:
 - ['admin-guide/installation/juju.md', '**HIDDEN**']
 - ['admin-guide/installation/build.md', '**HIDDEN**']
 
-# Sub Pages of Admin Guide / Configuration
-- ['admin-guide/configuration/asimba.md', '**HIDDEN**']
-- ['admin-guide/configuration/oxAuth.md', '**HIDDEN**']
-- ['admin-guide/configuration/oxPush.md', '**HIDDEN**']
-- ['admin-guide/configuration/oxTrust.md', '**HIDDEN**']
-- ['admin-guide/configuration/shibIDP.md', '**HIDDEN**']
-- ['admin-guide/configuration/oxProx.md', '**HIDDEN**']
-- ['admin-guide/configuration/jagger.md', '**HIDDEN**']
-
 # Sub Pages of Admin Guide / Certificates
 - ['admin-guide/certificates/https.md', '**HIDDEN**']
 - ['admin-guide/certificates/saml.md', '**HIDDEN**']
@@ -104,7 +94,6 @@ pages:
 # Sub pages of Admin Guide / SAML
 - ['admin-guide/saml/outbound-saml.md', '**HIDDEN**']
 - ['admin-guide/saml/inbound-saml.md', '**HIDDEN**']
-- ['admin-guide/saml/saml-registration.md', '**HIDDEN**']
 - ['admin-guide/saml/saml-sp-configuration.md', '**HIDDEN**']
 
 # Sub Pages of Admin Guide / OpenID Connect
