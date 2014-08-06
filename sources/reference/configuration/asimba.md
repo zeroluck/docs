@@ -76,3 +76,20 @@ A sample configuration should look like below:
             </idp>
 
 </code>
+
+* Work on keystore: 
+    * Import the SAML certificate of IDP into Asimba's JKS
+        * Convert certificate into DER format
+        * Import this der formatted certificate
+        * Please note that it's a good practice to follow the IDP's 'entityID` as `alias` of this certificate.
+
+Sample command would be: 
+
+<code> 
+
+    keytool -import -trustcacerts -alias https://idp.gluu.org/idp/shibboleth-file idp_gluu_org.der -keystore asimba-keystore.jks
+    
+
+</code>
+
+* Restart tomcat. If everything goes well, your IDP is configured with Asimba
