@@ -44,5 +44,35 @@
 * Try to download the metadata of Asimba server with: `wget -c https://<HOSTNAME>/asimba-saml-proxy/profiles/saml2`
  
 
+## Adding new Service Provider or Identity Provider in Asimba server
 
+### A new IDP / ADFS configuration in Asimba
 
+All our configurations are based on one Asimba configuration file named
+"asimba.xml". It's also possible to configure Asimba with JDBC. For more info
+Asimba [wiki](http://sourceforge.net/p/asimba/wiki/Home/) is availalbe.
+
+* Required tools
+    * Metadata of remote IDP
+    * SAML certificate of remote IDP
+
+* Configuring asimba.xml: 
+    * Grab the metadata of remote IDP and save it in some place. Make sure that user tomcat can read this xml copy. 
+        * Specify this metadata in  `<websso>\<method>\<idps>` section. 
+            * `idp id` must follow the entityID of this metadata.
+            * `scoping` should be "false"
+            * Add the static path of metadata inside `<file>` section. 
+    
+A sample configuration should look like below:
+
+<code>
+
+            <idp id="https://idp.gluu.org/idp/shibboleth" friendlyname="Gluu IDP" scoping="false" 
+                avoid_subjectconfirmation="false">
+                    <nameidpolicy enabled="false" />
+                        <metadata>
+                            <file>${webapp.root}/WEB-INF/metadata/idp/idp_gluu_org.xml</file>
+                        <metadata>
+            </idp>
+
+</code>
