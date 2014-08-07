@@ -52,8 +52,7 @@ before. Please note that a “Failover server” is NOT “A new server".
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/CR/Cache_Refresh_5.png?raw=true)
 
 This section of the application allows the server administrator to connect the
-Gluu Server’s internal LDAP. Gluu engineers can provide values to the server
-administrator
+Gluu Server’s internal LDAP.
 
 * _Name_ : Name of Gluu LDAP server
 * _Bind DN_ : Username to connect.
