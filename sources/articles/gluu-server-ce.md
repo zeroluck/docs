@@ -2,8 +2,7 @@
 
 So you want to try out the Gluu Server. The Community Edition (CE) 
 is a great place to start. This article will provide an overview of
-deployment and testing, so you'll be ready to start integrating 
-more apps in the future. 
+deployment and testing so you'll be ready to start integrating apps ASAP. 
 
 ## Installation
 
