@@ -3,7 +3,7 @@
 
 ## Base installation of Asimba SAML Proxy
 
-* Get the Asimba from [Asimba](http://sourceforge.net/projects/asimba/files/release/) repository
+* Get the Asimba from [Asimba repository](http://sourceforge.net/projects/asimba/files/release/) 
 * Send the war file in ~/tomcat/webapps/
 * Restart tomcat, it will extract the asimba 
 * Generate the keystore for your SAML Proxy Server:
