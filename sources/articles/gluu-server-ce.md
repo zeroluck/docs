@@ -13,7 +13,7 @@ easiest installation option is
 
 ## Installation of the mod_ox for testing
 
-Right now the instructions can be found in the following [pdf document](http://www.gluu.co/modox-pdf)   It will be converted to markdown asap. Instructions are available for Apache on Windows, Ubuntu, and Centos.
+mod_ox is an access control module that enables your app to support OpenID Connect and UMA. It is written in C.  Right now the instructions can be found in the following [pdf document](http://www.gluu.co/modox-pdf) Instructions are available for Apache on Windows, Ubuntu, and CentOS.
 
 ## Test Use cases
 
