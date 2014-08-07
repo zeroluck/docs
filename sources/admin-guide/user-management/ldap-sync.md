@@ -1,66 +1,137 @@
-# Equorum haerentem coniunx tamen medicamine poterant ut
+# User Administration with LDAP Synchronization in Gluu Server
 
-## Cernam Libycas mearum ingemuit terraque postquam
+We call it "Cache Refresh". “Cache Refresh” was built by Gluu to pull user
+information from a backend customer Active Directory / LDAP server. Cache
+Refresh dynamically syncs user information from the customers backend data
+source to the Gluu Server in order to maximize performance. Due to the sensitive
+nature of this feature (any incorrect action can destroy the data inside the
+Gluu Server), it is highly recommended that administrator should sync and try
+Cache Refresh in staging environment before production. 
 
-Lorem markdownum nomina, quae **et lacus** habentem hic mihi, cura. Caelo
-[maenala de](http://hipstermerkel.tumblr.com/) erant crescere dies?
+In order to access this feature go to: Configuration → Cache Refresh. 
 
-Subigebat pro, **ubi in** videre, sunt si salutis illi! Haut prensoque
-conloquiumque corripuit iphis illa, aequoreos amantis dignior solebant non credi
-rotat, specus. Profuit prohibent Alpheos fibra; constituit Stygia **furoris**:
-fronde intrat, prece rexerit manifesta visis nostro. Corpore arbor moventem
-humana in protinus trabes furori, sulcis tamen sidera **suo moveret**. Mugitus
-caput peregit aequora sed perlucentes posse spargere undas: **tenax mihi ego**;
-expers sunt!
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/CR/Cache_Refresh_1.png?raw=true)
 
-## Namque nostri haud
+* _Last run_ : Last run shows the date and time of latest Cache Refresh cycle completion.
+* _Updates at the last run_ : Total number of users who have been updated in last Cache Refresh cycle. For example, the organization updated a user’s email address or modified an attribute (i.e userPrincipalName ) in their backend Active Directory / LDAP. 
+* _Problem at the last run_ : How many user changes have been “rejected” by Gluu Server during the update. There are various reasons why the Gluu Server may reject changes.
 
-Tumida transieram loco matrem aut. Medium toto creatis tellure **accersite
-traxit**: ipsos est miserere. Vidi ferro Threicio desierant enses, **de**
-disque, tetenderat valet quietis quid. Lacrimis nymphis deus maius alii dicique
-sensitque deferre illic qualis, morientia voxque *tenuere faciem et* gemitus
-Tirynthius eurus. Dea hasta Ecce belua ea fine, summis et dubitor Curetida
-patenti.
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/CR/Cache_Refresh_2.png?raw=true)
 
-## Et aequor modo
+## Customer backend key/attributes
 
-Leonem quem vidi et Neptunus oraque dextramque passim. Sua omnibus sortem
-flecti. Arcus in arboris sopitus viridique, summa in veritus imbres nostrae ac
-digna. At quod, ego septemque, hic erat haud.
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/CR/Cache_Refresh_3.png?raw=true)
 
-    partition = 2 + spreadsheet + backside_clipboard_dram(recordStation);
-    if (boot(halftoneProgramPacket(character, 32, expressKeylogger),
-            vrmlSoftwareSnippet(bing))) {
-        prompt_sidebar_jquery(cookieCmosTopology, syn_domain);
-        icq += wiParameter.traceroute_linkedin_time(
-                hyperlinkLanguageSubdirectory, dvd_leopard + 64);
-        camera_megapixel_exabyte -= raster_cdma;
-    } else {
-        sector += lion_resolution_dock + pad_sdram_software(79, 26);
-    }
-    switch_rom_png(page, inbox_nas_os.trojanServlet(offline.networking_vdu_smtp(
-            21, virus_clipboard_backlink, name), wimax_pipeline,
-            integrated_character_undo.google_bit(architecture_stick,
-            developmentRpm, 1)), standby_shell_optical(formulaClickMegabyte(
-            computing, -1, 2), tooltipDma));
-    managementServer.ipvEngineOpengl(base_rom,
-            gnutellaDriveConfiguration.cybersquatter(domain(fifo)), 1 +
-            searchJquery);
+* _Key attribute_ : The unique key attribute of backend Active Directory / LDAP server. i.e: sAMAccountname for any Active Directory.
+* _Object class_ :  OCs of backend Active Directory/LDAP which has permission to talk to Gluu Server Cache Refresh. i.e: person, organizationalPerson, user etc.
+* _Source attribute_ : List of attributes which will be pulled and read by Gluu Server.
+* _Custom LDAP filter_ : If there is any custom searching required, this filtering can be used. i.e: “sn=*” value of this field ensures that “every user must have an attribute named SN”
 
-## Est alii nataeque concitus
+## Source Backend LDAP servers
 
-Iam auget o validum iubeas ensem: *et iniustus scires* pisce aras et exhausta
-dubitavit Orchomenon arvum effugiam! Nunc motu urbes conicit Phoebum qua nudo!
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/CR/Cache_Refresh_4.png?raw=true)
 
-*Nocens in eodem* aliquid data *obscura* in rogant sanguine expers. Nasci
-circumfuso inter cingitur ut proles caligine furialibus picem, locus Aello
-nimiique flammae, cogitur atque.
+This section allows the Gluu Server to connect to the Organization’s backend
+Active directory / LDAP server. 
 
-Breve Melampus adstupet, ventorumque [ut arida admovit](http://eelslap.com/)?
-Datae nunc et et cogor [rotae cervice](http://www.lipsum.com/) adductaque
-[domus](http://www.metafilter.com/) commentaque solvit.
+* _Name_ : Keep the value “source”
+* _Use Anonymous Bind_ : Some may not allow user/password connections to their backend. Enable this if that applies to your organization. Bind DN: Username to connect backend.
+* _Use SSL_: If backend server allows SSL connectivity, use this feature
+* _Max connections_ : Total number of simultaneous connections which are allowed to read backend Active Directory / LDAP. It’s better to keep this value from 2 to 3.
+* _Server_ : Backend Active Directory / LDAP server hostname with port. i.e: backend.organization.com:636 or backend.organization.com:389.  If Organization has a failover server, click “Add server” (below the previously provided server hostname ) and add more hostnames with port.
+* _Base DN_ : Location of the Active Directory / LDAP tree, where the Gluu Server will connect to read user information.
+* _Enabled_ : After the server administrator has entered all values, checking ‘Enabled’ will save and push all changes.
+* _Change Bind Password_ : New password / Changed password can be provided with this feature.
 
-[domus]: http://www.metafilter.com/
-[maenala de]: http://hipstermerkel.tumblr.com/
-[rotae cervice]: http://www.lipsum.com/
-[ut arida admovit]: http://eelslap.com/
+If any organization has more than one Active Directory / LDAP server, click on
+“Add source LDAP server” and add the additional server’s informations like
+before. Please note that a “Failover server” is NOT “A new server". 
+
+## Inum LDAP server
+
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/CR/Cache_Refresh_5.png?raw=true)
+
+This section of the application allows the server administrator to connect the
+Gluu Server’s internal LDAP. Gluu engineers can provide values to the server
+administrator
+
+* _Name_ : Name of Gluu LDAP server
+* _Bind DN_ : Username to connect.
+* _Use SSL_ :  Yes
+* _Max connections_ : Gluu recommends 2
+* _Server_ : Server’s hostname with port
+* _Base DN_ : Gluu Server LDAP tree which is allowed for user’s information.
+* _Enabled_ : Enabling this feature will save values inside the Gluu Server.
+* _Change Bind Password_ : Password to connect the Gluu Server’s LDAP can be applied / changed with this option.
+
+## Refresh method
+
+The Gluu Server allows administrators to apply two types of Cache Refresh
+mechanism: 1. VDS method, 2. Copy method. 
+
+### VDS method
+
+An organization with a database like mysql can use the VDS method. It can be enabled via the “Refresh
+Method” drop down menu.
+
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/CR/Cache_Refresh_6.png?raw=true)
+
+### COPY method
+
+If the Organization has any kind of Active Directory or LDAP server, they should
+use “Copy” method for Cache Refresh operation. Select “Copy” from the “Refresh
+Method” drop down menu.
+
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/CR/Cache_Refresh_7.png?raw=true)
+
+Attribute mapping is an important aspect of the Copy method. In this section,
+the Gluu Server administrator can map any attribute from the backend Active
+Directory / LDAP to the Gluu Server’s LDAP cache. 
+
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/CR/Cache_Refresh_8.png?raw=true)
+
+Click the “Add source attribute to destination attribute mapping” link and a new
+row with two boxes will appear. The left box is for the backend Active Directory
+/ LDAP attribute and the right box is for the Gluu Server’s LDAP attribute. In
+the above image we are mapping “sAMAccountname” from the backend server to “uid”
+in the Gluu Server LDAP.
+
+Every new row is for a new attribute mapping. The Gluu Server Administrator can
+delete any mapping by clicking the ‘x’ button on the right side of every row.
+
+Gluu Server Administrator can select any type of Cache Refresh method according
+to his/her organization’s choice but there are some values which are unique for
+all types of Cache Refresh methods. Those values are: 
+
+* _Pooling Interval (minutes)_ :
+Interval value for running the Cache Refresh mechanism in the Gluu Server. It is
+highly recommend not to keep this value BELOW 15 mins.
+
+* _Script File Name_ :
+Gluu Server Cache Refresh can accept any kind of Jython script which might help
+to calculate any custom / complex attribute. i.e: eduPersonScopedAffiliation
+calculation is a highly targeted field where such type of scripts can be use.
+
+* _Snapshot Folder_ : 
+Every cycle of Gluu Server Cache Refresh cycle save a overall snapshot and
+problem-list record on a specified location. This is the place where that
+location can be added. From these snapshots a Gluu Server Administrator can
+easily decide whether Cache Refresh synced all users or not. Generally user’s
+record which are rejected enclosed in problem-list file. An overall report is
+being displayed at the top of this Cache Refresh page “Updated at the last run”
+and “Problems at the last run” section which we described previously.
+
+* _Snapshot count_ : 
+Total number of allowed snapshots to be saved in VM’s hard drive. Gluu
+recommends 20. 
+
+* _Update_ :
+After completion of every entry, hit this button to apply the changes in Gluu
+Server.
+
+* _Update and Validate script_ :
+If Cache Refresh has any custom script ( i.e Jython script ), this button can be
+used to “test” the script’s operation.
+
+
+
