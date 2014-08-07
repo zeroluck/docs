@@ -22,7 +22,7 @@ It will take around 10 minutes to complete the installation on a VM that has 2GB
     `chroot /home/my-package/chroot/gluu/ su - root`
 
 * Configure the environment in `/etc/gluuce/config`
-* NOTE: whitespace around '=' is not allowed! Use format:
+* NOTE: whitespace around `=` is not allowed! Use format:
     key=value
 * Two properties MUST be set to customize your environment:
 
