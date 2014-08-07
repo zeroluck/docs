@@ -3,10 +3,9 @@
 
 ## Base installation of Asimba SAML Proxy
 
-* Get the Asimba war from Gluu or it can downloaded from [Asimba](http://sourceforge.net/projects/asimba/files/release/) repository
+* Get the Asimba from [Asimba](http://sourceforge.net/projects/asimba/files/release/) repository
 * Send the war file in ~/tomcat/webapps/
 * Restart tomcat, it will extract the asimba 
-* Get the asimba.conf template from Gluu, if you want to configure in Gluu Server. 
 * Generate the keystore for your SAML Proxy Server:
     * Command: `keytool -genkeypair -keyalg RSA -alias "<ALIAS_OF_KEYSTORE>" -keypass <PASSWORD> -keystore <NAME_OF_JKS>.jks -storepass <PASSWORD>`
         * What is your first and last name?: Provide the hostname of Asimba server
@@ -16,7 +15,6 @@
         * What is the name of your State or Province?: State name
         * What is the two-letter country code for this unit?: US
 
-### Restart tomcat
 
 ### Apache configuration
 
@@ -30,16 +28,8 @@
                 Allow from all
             </Location>
 
-### Restart httpd 
 
-### Test Asimba setup
-
-* Try to download the metadata of Asimba server with: `wget -c https://<HOSTNAME>/asimba-saml-proxy/profiles/saml2`
-
-If the metadata of Asimba server can be successfully downloaded / gathered, it
-proves that server is configured. 
  
-
 ## Adding new Service Provider or Identity Provider in Asimba server
 
 ### A new IDP / ADFS configuration in Asimba
