@@ -1,60 +1,64 @@
 # OpenID Connect 
 
-## Contents
+## Overview 
 
-- [Discovery](./discovery.md)
-- [OpenID Scopes](./scopes.md)
-- [Client Registration](./registration.md)
-- [Client Configuration](./client-config.md)
+[OpenID Connect](http://openid.net/connect) ("Connect") is a profile of OAuth2 which 
+defines a protocol to enable a website or mobile application to authenticate a person 
+at a domain. Connect also provides some of the plumbing around authentication to automate 
+how this happens. If a person is visiting a website for the 
+first time, the process that OpenID Connect defines is 100% bootstrapable by the website. 
+This is really critical for Interet scalability. To visit someone's website, or to send
+someone email, you don't need to get the system administrators involved. Connect provides
+the same type of scalable infrastructure, and promises to define a base level domain 
+identification.
 
-Lorem markdownum, herbis urbesque arripit argento concipit, os nullo, vellet
-instructamque fuit potentibus adest. Et duro ferant priores factaque cessant,
-hac, cruciataque ducit: ipsa vires Procne, est. Esse Quid nunc; virque segetem
-flammamque et stamine, ego mea potest est ave lymphis virum. Inmitem tempestate
-niveis, in erat gravitate turba, conde visa Tantalus adiecisset omnes petisse.
-Detrectas quid oreada tuas.
+One could say that authentication was missing from the slew of important protocols that
+were defined in the 1990s. DNS gave us scalable host management (imagine if you needed
+a hosts file in your server with every server on the Internet!) Beyond host resolution, 
+we could identify someone at a domain with their email address. But there was no way 
+to verify that you really had that person on the other end of the Internet.
 
-1. Esse credite victoria acuta
-2. Humani nulla
-3. Lucis noviens induit peraravit simulati quaque fatentem
-4. Fulmina amplexuque differt
-5. Esse pugna blanditias dumque domini nec Numam
+There are many reasons why Connect took so long. In the 90's, it wasn't clear if 
+authentication would run on a new port, like RADIUS. But by 2000, it became clear
+that HTTPS was the transport layer for authentication. At that time, many developers
+and firms defined their own way to use HTTPS to authenticate a person. In this time,
+there were too many standards. Developers started to expect a new authentication 
+protocol to be introduced every year.
 
-Est vestrum utendum annis qui causa aere horto tumulo Erysicthonis ipsa, iussa
-absumitur conpleat subito concutio! Tremore **habeoque parte** rigidi nostro est
-deus facundus fugiamus, talis iam? Lata torsit et faciat secum ita hanc Duxerat
-sub mihi comas velles. **Fuit** muneris dat cadit quem rite rupti sed
-[quae](http://www.wtfpl.net/) contorta?
+Luckily, by 2009, Connect facilitated a consolidation in the industry. As a profile
+of OAuth2, it was the technology stack that developers wanted. It addressed some 
+of the usability concerns of previous versions of OpenID. And while SAML was getting
+some adoption, some of the vendors would not agree to breaking changes to the standard,
+which made it hard to innovate sAML to address mobile use cases. With Microsoft editing
+the specification, Google contributing a lot of its know-how and experience about 
+security, and important usability feedback from Facebook, Connect provided a standard
+for which many could agree.
 
-## Plura subsedit contingat Aetne ingentibus causa facta
+## New Jargon (taxonomy)
 
-Summas sic et servanda subiectas virginitas scire, monstris hederae. Rebus
-fenestris nostros, nec sic si opaca litore errat mentes nidis **vatum ut** o in
-ista.
+If you are familiar with SAML, there are many parallels in OpenID Connect, but the 
+jargon (or "taxonomy") is different. For example, instead of attributes, we have "user claims".
+Instead of Service Provider (SP), we have "client". Instead of Identity Provider (IDP), its 
+OpenID Provider (OP).  
 
-- Illi in circumdata vitibus alimenta
-- Regna te caelo una
-- Humus conata et discretus
+## Discovery 
 
-## Inplent laceri
+The first thing you want to know about any OAuth2 API is where are the endpoints (i.e. 
+what are the URLs where you call the APIs). OpenID Connect provides a very simple
+mechanism to accomlish this: make a GET request to `https://<domain>/.well-known/openid-configuration`
+[OpenID Connect Discovery](http://openid.net/specs/openid-connect-discovery-1_0.html) is based on 
+a previous standard called [WebFinger](http://en.wikipedia.org/wiki/WebFinger). 
 
-Mihi quas linquit Clytii quaerit quodque angues: recessit et adiacet saepe
-habebat. Pependit hostem canes suspirat vides, regis, luet, niger. Tam amorem?
-Iacebat et vulnus *Cycnum*? Fassus in tamen quam, nubimus ferinae verba, hoc
-Musae praesentem.
+## OpenID Connect Scopes
 
-    association_mac.opticalClipCertificate += insertion_gigabit_domain;
-    laserServer(drag(trinitronMediaCold + sdramVgaWhite));
-    if (-4 + ole_browser(-5)) {
-        cameraVpi(dimm_drm, smishingRdramTween, facebook);
-    } else {
-        php_executable_error -= cookieSoftware;
-        intellectualSli = 16;
-    }
+In SAML, the IDP releases attributes to the SP. OpenID Connect provides similar functionality, 
+with more flexibility in case the person needs to approve the release of information from the IDP 
+to the website (or mobile application). In OAuth2, scopes can be used for various purposes. 
+Connect uses OAuth2 scopes to "group" attributes. For example, we could have a scope called "address"
+that includes the street, city, state, and country user claims.
 
-Callida mortali; nostro ne plenum euntem haec tumidus ubi iam deosque fertur
-satus mandata mittere desectum in pieros cetera. Plura ossibus incerta herbae et
-aequore altorum **despectat** et perosae rapida. *Parthaone morando obstruat*
-creatis pluma; tua dubiis, nam furores, pars.
+## Client Registration
 
-[quae]: http://www.wtfpl.net/
+## Session management
+
+

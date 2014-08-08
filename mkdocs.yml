@@ -96,12 +96,6 @@ pages:
 - ['admin-guide/saml/inbound-saml.md', '**HIDDEN**']
 - ['admin-guide/saml/saml-sp-configuration.md', '**HIDDEN**']
 
-# Sub Pages of Admin Guide / OpenID Connect
-- ['admin-guide/openid-connect/registration.md', '**HIDDEN**']
-- ['admin-guide/openid-connect/discovery.md', '**HIDDEN**']
-- ['admin-guide/openid-connect/scopes.md', '**HIDDEN**']
-- ['admin-guide/openid-connect/client-config.md', '**HIDDEN**']
-
 # Sub pages of Admin Guide / UMA
 - ['admin-guide/uma/introduction.md', '**HIDDEN**']
 
