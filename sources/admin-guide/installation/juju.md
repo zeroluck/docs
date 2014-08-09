@@ -51,7 +51,7 @@ To make relation between charms run this commands
     juju add-relation gluuldap:opendjserver gluu:ldapserver
     juju add-relation gluu gluu-apache
 
-## Test installaction
+## Test installation
 
 get gluu charm service ip using command:
 
