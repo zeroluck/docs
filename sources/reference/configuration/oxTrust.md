@@ -30,10 +30,19 @@ system wide.
 
 * _Federation Hosting_ : By default federation hosting is enabled. However, federation creation and operation can be complicated. Gluu offers an additional service called Federation Registry for those organizations interested in our assistance utilizing this feature.
 
-* _Cache Refresh_ : “Cache Refresh” is a Gluu mechanism that pulls and syncs user information from a remote LDAP / Active Directory with the Gluu Server’s local LDAP. The Gluu Server administrator needs to provide sufficient information including username/password in Cache Refresh configuration before enabling this option. The documentation can be found [here](http://www.gluu.org/docs/admin-guide/user-management/ldap-sync/)
+* _Cache Refresh_ : “Cache Refresh” is a Gluu mechanism that pulls and syncs user information from a remote LDAP / Active Directory with the Gluu Server’s local LDAP. The Gluu Server administrator needs to provide sufficient information including username/password in Cache Refresh configuration before enabling this option. The documentation can be found [here](http://www.gluu.org/docs/admin-guide/user-management/ldap-sync/).
 
+* _SCIM Configuration_ : If organization currently has an identity management or provisioning system in place, by using the SCIM protocol your organization can push and sync all relevant identity information to the Gluu Server. Documentation is available [here](http://www.gluu.org/docs/admin-guide/user-management/scim/).
+
+* _DNS Server(s)_ : Organization can add DNS server info here.
+
+* _Maximum Log Size_ : This option can be used to help mitigate space issues within the Gluu Server. The Gluu Server will automatically zip any logs which are greater than defined value of this field. i.e: If Gluu Server Administrator use 200MB for “Maximum Log Size”, Gluu Server will automatically start zipping those files which are / will be more than 200MB.
 
 ### Manage Certificate
+
+There are various types of certificates here in Gluu Server. All can be managed
+from oxTrust GUI. [Here](http://www.gluu.org/docs/admin-guide/certificates/) is
+the documentation which is providing corresponding documentation. 
 
 ### Manage Authentication
 
