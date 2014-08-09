@@ -10,3 +10,61 @@ oxTrust. The projects are separate projects because in a high throughput cluster
 deployment, many oxAuth servers are needed versus a few oxTrust instances.
 
 In this page we are trying to highlight various features of Gluu oxTrust. 
+
+## Configuration
+
+### Organization Configuration
+
+### Manage Certificate
+
+### Manage Authentication
+
+### Manage Registration
+
+### SCIM Configuration
+
+### Import People
+
+### Attributes
+
+### Cache Refresh
+
+### Configurate log viewer
+
+### View log file
+
+### Configure Linktrack API
+
+### Status
+
+## SAML
+
+### Trust Relationships
+
+## OAuth2
+
+### Scopes
+
+### Clients
+
+### UMA
+
+### oxPush Applications
+
+### oxPush Devices
+
+## Users
+
+### Manage Groups
+
+### Manage People
+
+## Personal
+
+### Profile
+
+### Manage Registration Links
+
+### Registration Requests
+
+## Logout
