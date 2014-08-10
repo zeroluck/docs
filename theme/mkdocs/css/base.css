@@ -164,3 +164,24 @@ footer {
         width: 263px;
     }
 }
+/*.search-box{*/
+    /*min-height: 20px;*/
+    /*margin-top: 10px;*/
+/*}*/
+/*.search-tag{*/
+    /*text-indent: -99999em;*/
+    /*background: url(../img/search_button.png) repeat-x;*/
+    /*background-color: #efefef;*/
+    /*width: 32px;*/
+    /*height: 32px;*/
+    /*border: none;*/
+/*}*/
+/*.search-text{*/
+    /*font-size: 1.3rem;*/
+    /*height: 25px;*/
+    /*padding: 0 8px;*/
+/*}*/
+
+.wy-form{
+    margin-top: 15px;
+}
