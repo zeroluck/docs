@@ -2,6 +2,10 @@
 
 ## Overview 
 
+Since [Interop 4](http://www.gluu.co/.fm8t) the Gluu Server has one of the most comprehensive
+implementations of OpenID Connect. The current results from [IntereOp 5](http://www.gluu.co/.iwjk),
+while not final, also put the Gluu Server at the top of the list.
+
 [OpenID Connect](http://openid.net/connect) ("Connect") is a profile of OAuth2 which 
 defines a protocol to enable a website or mobile application to authenticate a person 
 at a domain. Connect also provides some of the plumbing around authentication to automate 
@@ -59,6 +63,38 @@ that includes the street, city, state, and country user claims.
 
 ## Client Registration
 
+A client in OAuth2 could be either a website or mobile application. OpenID Connect has an API 
+for [Dynamic Client Registration](http://openid.net/specs/openid-connect-registration-1_0.html)
+which efficiently pushes the task to the application developer. If you don't want to write an
+application to register your client, there are a few web pages around that can do the job for 
+you. Gluu publishes the [oxAuth-RP](seed.gluu.org/oxauth-rp) and there is also another in
+[PHP RP](http://www.gluu.co/php-sample-rp)
+
 ## Session management
+
+Logout is a catch-22. There is no perfect answer to logout that satisfies all the requirements
+of all the domains on the Internet. For example, large OpenID Providers, like Google, need
+a totally stateless implementation--Google cannot track sessions on the server side for every
+browser on the Internet. But in smaller domains, server side logout functionality can be 
+a convenient solution to cleaning up resources.
+
+The OpenID Connect [Session Management](http://openid.net/specs/openid-connect-session-1_0.html) is
+still market as draft, and new mechanisms for logout are in the works. The current specification 
+requires Javascript to detect that the session has been ended in the browswer. It works... unless
+the tab with the Javascript happens to be closed when the logout event happens on another tab. Also,
+inserting Javascript into every page is not feasible for some applications. A new proposal is under
+discussion where the OpenID Connect logout API would return `IMG` HTML tags to the browser
+with the logout callbacks of the clients. This way, the browser could call the logout URIs (not
+the server). 
+
+The Gluu Server is very flexible, and supports both server side session management, and stateless
+session management. For server side business logout, the domain admin can use Custom Logout scripts. 
+This can be useful to clean up sessions in a legacy SSO system (i.e. SiteMinder), or perhaps
+in a portal.
+
+The key for logout is to understand the limitations of logout, and to test the use cases that
+are important to you, so you will not be surprised by the behavior when you put your application
+into production.
+
 
 
