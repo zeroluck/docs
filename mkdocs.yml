@@ -57,14 +57,9 @@ pages:
 - ['admin-guide/introduction/licenses.md', '**HIDDEN**']
 
 # Sub Pages of Admin Guide / installation
-- ['admin-guide/installation/redhat.md', '**HIDDEN**']
 - ['admin-guide/installation/ubuntu.md', '**HIDDEN**']
 - ['admin-guide/installation/centos.md', '**HIDDEN**']
-- ['admin-guide/installation/debian.md', '**HIDDEN**']
-- ['admin-guide/installation/windows.md', '**HIDDEN**']
-- ['admin-guide/installation/mac.md', '**HIDDEN**']
 - ['admin-guide/installation/juju.md', '**HIDDEN**']
-- ['admin-guide/installation/build.md', '**HIDDEN**']
 
 # Sub Pages of Admin Guide / Certificates
 - ['admin-guide/certificates/https.md', '**HIDDEN**']
