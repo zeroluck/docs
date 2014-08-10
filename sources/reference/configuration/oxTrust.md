@@ -46,6 +46,17 @@ the documentation which is providing corresponding documentation.
 
 ### Manage Authentication
 
+Out of the box, the Gluu Server supports username/password authentication
+against the local LDAP or a remote Active Directory/LDAP. In addition, oxTrust
+provides the interface for inserting Jython code to enable dynamic
+authentication logic, including the use of any strong, multi-step authentication
+process. Gluu can write these scripts for premium customers and typically makes
+the script open source for other organization’s use. Currently supported
+two-factor authentication mechanisms can be found at: http://gluu.org/two-factor 
+
+
+
+
 ### Manage Registration
 
 ### SCIM Configuration
