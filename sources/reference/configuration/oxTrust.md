@@ -54,6 +54,9 @@ process. Gluu can write these scripts for premium customers and typically makes
 the script open source for other organization’s use. Currently supported
 two-factor authentication mechanisms can be found at: http://gluu.org/two-factor 
 
+We have a complete separate section on
+[this](http://www.gluu.org/docs/admin-guide/authentication/) subject. 
+
 ### Manage Registration
 
 This is a new feature in Gluu Server. We are going to publish documentation on
