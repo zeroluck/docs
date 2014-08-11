@@ -76,7 +76,7 @@ https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/jwks
 
 ## Updating Cryptographic keys (JWS)
 
-In order to generate new Cryptographic keys, go to the oxAUth source directory and run:
+In order to generate new Cryptographic keys, go to the oxAuth source directory and run:
 
     $ mvn -Dtest=org.xdi.oxauth.ws.rs.SignatureTest -DfailIfNoTests=false test
 
