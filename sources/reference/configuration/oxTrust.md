@@ -87,11 +87,11 @@ Documentation on LDAP Attribute is available [here](http://www.gluu.org/docs/adm
 
 ### Cache Refresh
 
-Gluu Server Cache Refresh has a detailed documentation available. Can be check
+Gluu Server Cache Refresh has a detailed documentation available. Can be checked
 by [this](http://www.gluu.org/docs/admin-guide/user-management/ldap-sync/).
 
 
-### Configurate log viewer
+### Configure log viewer
 
 Gluu Server has facility to read any log with GUI. Any log can be displayed from
 Web UI with few clicks. To enable this feature click on “Configuration” → “Configure log viewer” 
