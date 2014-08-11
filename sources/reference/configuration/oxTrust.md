@@ -146,30 +146,3 @@ Where:
 Documentation on Trust Relationship is available
 [here](http://www.gluu.org/docs/admin-guide/saml/outbound-saml/#saml-trust-relationship). 
 
-## OAuth2
-
-### Scopes
-
-### Clients
-
-### UMA
-
-### oxPush Applications
-
-### oxPush Devices
-
-## Users
-
-### Manage Groups
-
-### Manage People
-
-## Personal
-
-### Profile
-
-### Manage Registration Links
-
-### Registration Requests
-
-## Logout
