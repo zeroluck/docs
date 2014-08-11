@@ -54,14 +54,31 @@ process. Gluu can write these scripts for premium customers and typically makes
 the script open source for other organization’s use. Currently supported
 two-factor authentication mechanisms can be found at: http://gluu.org/two-factor 
 
-
-
-
 ### Manage Registration
+
+This is a new feature in Gluu Server. We are going to publish documentation on
+this topi very soon. 
 
 ### SCIM Configuration
 
+If organization currently has an identity management or provisioning system in
+place, by using the SCIM protocol your organization can push and sync all
+relevant identity information to the Gluu Server. Documentation is available
+[here](http://www.gluu.org/docs/admin-guide/user-management/scim/).
+
 ### Import People
+
+This feature allows the Gluu Server Administrator to bulk import users. Just
+click on “Add” and upload the xls file. 
+
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Configuration/Import_people.png?raw=true)
+
+Validation checking for the file can be done by using “Validate” button before
+importing. If file is not correctly formatted, the server will reject the file
+with an error as shown in the screenshot below. 
+
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Configuration/Import_people_failed.png?raw=true)
+
 
 ### Attributes
 
