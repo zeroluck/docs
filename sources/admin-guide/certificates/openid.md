@@ -88,5 +88,5 @@ Update or add the desired new Cryptographic keys in the configuration file at:
     
 To force oxAuth to reload the configuration files:
 
-- Delete the LDAP configuration entries at: ou=configuration,o=ORGANIZATION_INUM,o=gluu
-- Restart Tomcat
+ - Delete the LDAP configuration entries at: ou=configuration,o=ORGANIZATION_INUM,o=gluu
+ - Restart Tomcat
