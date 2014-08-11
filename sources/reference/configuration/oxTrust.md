@@ -93,8 +93,29 @@ by [this](http://www.gluu.org/docs/admin-guide/user-management/ldap-sync/).
 
 ### Configurate log viewer
 
+Gluu Server has facility to read any log with GUI. Any log can be displayed from
+Web UI with few clicks. To enable this feature click on “Configuration” → “Configure log viewer” 
+
+Click on “Add log template”, two new boxes will appear. Left box is the
+name/description of the log and right box require the real path of this log
+file. As for example in the below image,  we are going to configure two logs: 1.
+oxTrust log and 2. oxAuth log
+
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Configuration/Configure_Log_Viewer.png?raw=true)
 
 ### View log file
+
+Log files which were configured in previous section can be viewed with this
+“View log file” feature. Click “Configuration” → “View Log File”
+
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Configuration/View_Log_file.png?raw=true)
+
+Now, select / click on desired allowed log file and insert a value for “Display
+last lines count”. Gluu Server will show last 400 ( or, any selected value lines
+) in GUI like below:
+
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Configuration/View_Log_file_2.png?raw=true)
+
 
 ### Configure Linktrack API
 
