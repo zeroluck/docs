@@ -143,6 +143,9 @@ Where:
 
 ### Trust Relationships
 
+Documentation on Trust Relationship is available
+[here](http://www.gluu.org/docs/admin-guide/saml/outbound-saml/#saml-trust-relationship). 
+
 ## OAuth2
 
 ### Scopes
