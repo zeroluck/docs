@@ -82,9 +82,17 @@ with an error as shown in the screenshot below.
 
 ### Attributes
 
+Documentation on LDAP Attribute is available [here](http://www.gluu.org/docs/admin-guide/saml/outbound-saml/#ldap-attributes). 
+
+
 ### Cache Refresh
 
+Gluu Server Cache Refresh has a detailed documentation available. Can be check
+by [this](http://www.gluu.org/docs/admin-guide/user-management/ldap-sync/).
+
+
 ### Configurate log viewer
+
 
 ### View log file
 
