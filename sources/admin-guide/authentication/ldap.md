@@ -27,32 +27,33 @@ Organization uses the Gluu Server’s local LDAP for authentication.
 
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Configuration/Authentication/Default_Auth_method.png?raw=true)
 
-There are two drop down menu here. If you have some custom way to authenticate
+There are two drop down menus here. If you have some custom way to authenticate
 your user, you may check these options. With `Authentication mode`, you can
 select the desired authentication type and with `Authentication level`, you can
 select the `level` of your authentication mode. `Authentication level` for a
 specified mode is provide in it's corresponding section below. 
 
+Otherwise keep them `Default`. 
 
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Configuration/Authentication/Default_Auth_method.png?raw=true)
 
+## Manage Custom Authentication Methods
 
-## Writing a custom authentication script to use the local Gluu LDAP Server
+Out of the box, the Gluu Server supports username/password authentication
+against the local LDAP or a remote Active Directory/LDAP. In addition, oxTrust
+provides the interface for inserting Jython code to enable dynamic
+authentication logic, including the use of any strong, multi-step authentication
+process. Gluu can write these scripts for premium customers and typically makes
+the script open source for other organization’s use. Currently supported
+two-factor authentication mechanisms can be found at: http://gluu.org/two-factor
 
-Sic honore tyranno inperfecta stetit; est duo lumina mater. Erat Troianaque
-paternos, delusum hic **volubilibus** sacro; cum ego inplevit quod. Loco qui
-medios curarum producit alterius obscena Aello, reor Cycnum huius. Omen superi.
-Saepe et **tellus sed mirere** deserti; accensa depressitque genua.
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Configuration/Authentication/Custom_Auth.png?raw=true)
 
-- Cladis amor gelido
-- Aeterna facile
-- Oramus frustraque aera scitabere Cecropide morientem catenis
-- Bacis Neptunum est tantum siquem numen Troiana
-- Trunco punica pace finemque cladibus simul signa
+* _Name_ : A unique name should be defined for every authentication method. For example, in the screenshot above, sections which represent Duo two-factor authentication are appropriately named “Duo.”
+* _Level_ : Here you can specify a domain-relevant security level for each authentication method supported by your organization. 
+* _Usage type_ : `interactive`
+* _Custom property ( key/value)_ : Every 2FA method has it’s own key values. Typically these are provided by the two-factor authentication company. We have our own open source 2FA authentication script, named [oxPush](http://www.gluu.org/press-releases/2013/gluu-developing-oxpush-to-enable-push-notifications-for-two-factor-authentication/). 
 
-## Writing a custom authentiation script to authenticate the person against an external LDAP server
+There are more information on Authentication [here](http://www.gluu.org/docs/admin-guide/authentication/).
 
-Vocibus et quoque vobis gratantur Chromiumque alto ipsamque, Oliaros suos;
-quicquid nostrum offensus illam? Glorior inquit, vixque quem pedis ideoque. Agit
-mea, ait dummodo stellatus vagantur in ipsa membra arte, ista crescere candidus
-Harpyia es fuge.
 
