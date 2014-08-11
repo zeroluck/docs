@@ -64,6 +64,7 @@ pages:
 # Sub Pages of Admin Guide / Certificates
 - ['admin-guide/certificates/https.md', '**HIDDEN**']
 - ['admin-guide/certificates/saml.md', '**HIDDEN**']
+- ['admin-guide/certificates/openid.md', '**HIDDEN**']
 
 # Sub pages of Admin Guide / User-Management
 - ['admin-guide/user-management/scim.md', '**HIDDEN**']
