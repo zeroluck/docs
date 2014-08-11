@@ -119,7 +119,25 @@ last lines count”. Gluu Server will show last 400 ( or, any selected value lin
 
 ### Configure Linktrack API
 
+
 ### Status
+
+Status page shows the overall configuration of Gluu Server. A Gluu Server can
+see the status of this IDP like below image. 
+
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Configuration/Status.png?raw=true)
+
+Where:
+
+* _Host name_ : The hostname of Gluu Server. The value of hostname is an unique identification number ( aka. Inum ) from Gluu Organization. 
+* _IP address_ : The physical address of Gluu Server. 
+* _System uptime_ : How long system has been maintaining it's healthy status. 
+* _Last update_ : Time and date when Gluu Server's services were health checked. 
+* _Polling interval_ : Time interval when Gluu Server reported it's status to Gluu's central LDAP server. 
+* _Person count_ : How many users are here inside Gluu Server. 
+* _Group count_ : How many active groups are here in Gluu Server. 
+* _Free memory_ : Percentage of free memory. 
+* _Free disk space_ : Percentage of free disk space. 
 
 ## SAML
 
