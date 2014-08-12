@@ -16,3 +16,4 @@ if you have the right recipe.
 In the sections listed above you will find some high level information about the
 who, what, where, when, and why of the Gluu Server.
 
+Community support can be found and requested on our [public knowledge base.](http://support.gluu.org)
