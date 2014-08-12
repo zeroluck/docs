@@ -24,8 +24,11 @@ mod_ox is an access control apache module that enables a server to support OpenI
   
 ## Next steps
 
-After you try these, you may want to configure open source software
-that supports OpenID Connect. 
--  Restart
+After you try these use cases, you may want to configure open source software that supports OpenID Connect, such as the [OpenID Conect Wordpress Plugin](http://www.gluu.co/wordpress-connect). 
+
+## Community Support
+
+If you have questions or issues, you can browse our [public knowledge base](http://support.gluu.org) and [register] (https://idp.gluu.org/identity/register?redirectUri=https://support.gluu.org) to create public tickets
+
 
 
