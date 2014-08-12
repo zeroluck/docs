@@ -8,8 +8,8 @@ deployment and testing so you'll be ready to start integrating apps ASAP.
 
 Gluu will publish binaries for as many OS's as possible. Currently, the 
 easiest installation options are:  
-[CentOS](http://www.gluu.org/docs/admin-guide/installation/centos)
-[Ubuntu](http://www.gluu.org/docs/admin-guide/installation/ubuntu)
+    [CentOS](http://www.gluu.org/docs/admin-guide/installation/centos)
+    [Ubuntu](http://www.gluu.org/docs/admin-guide/installation/ubuntu)
 
 ## Installation of mod_ox for testing
 
