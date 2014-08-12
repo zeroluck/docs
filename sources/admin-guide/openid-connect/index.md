@@ -53,6 +53,8 @@ mechanism to accomlish this: make a GET request to `https://<domain>/.well-known
 [OpenID Connect Discovery](http://openid.net/specs/openid-connect-discovery-1_0.html) is based on 
 a previous standard called [WebFinger](http://en.wikipedia.org/wiki/WebFinger). 
 
+If you want to try a sample discovery request, you can see the [Gluu IDP OpenID Connect Discovery Page](https://idp.gluu.org/.well-known/openid-configuration)
+
 ## OpenID Connect Scopes
 
 In SAML, the IDP releases attributes to the SP. OpenID Connect provides similar functionality, 
@@ -60,6 +62,19 @@ with more flexibility in case the person needs to approve the release of informa
 to the website (or mobile application). In OAuth2, scopes can be used for various purposes. 
 Connect uses OAuth2 scopes to "group" attributes. For example, we could have a scope called "address"
 that includes the street, city, state, and country user claims.
+
+The easiest way to manage OpenID Connect scopes in the Gluu Server is to use oxTrust. You can create
+any scopes you want that contain any user claims that you have already defined. Its a pretty 
+self-explanatory interface:
+
+Screenshot of oxTrust OAuth2 Scope View
+![](http://www.gluu.org/docs/img/openid_connect/oxtrust_scope_screenshot.png "Screenshot of oxTrust OAuth2 Scope View")
+
+Default Scope needs some explanation. When a client uses dynamic client registration, the OpenID Connect
+specification says that the `openid` scope should always be released, which contains an identifier
+for that person, normally the username. If you want to release another scope automatically, set
+the Default Scope to `true` for that scope. You can always explicitly release a scope to a certain
+client later on, but this will require some manual intervention by the domain administrator.
 
 ## Client Registration
 
@@ -69,6 +84,17 @@ which efficiently pushes the task to the application developer. If you don't wan
 application to register your client, there are a few web pages around that can do the job for 
 you. Gluu publishes the [oxAuth-RP](seed.gluu.org/oxauth-rp) and there is also another in
 [PHP RP](http://www.gluu.co/php-sample-rp)
+
+If you can't get the developer to help themselves, or if your domain doesn't want to allow
+dynamic client registration, you can use the oxTrust admin GUI to manually
+![add a client:](http://www.gluu.org/docs/img/openid_connect/oxtrust_add_client.png "Screenshot of oxTrust to add a client manually")
+
+In oxTrust, you can also browse or search clients
+![](http://www.gluu.org/docs/img/openid_connect/oxtrust_search_clients.png "Screenshot of oxTrust browse / search clients")
+
+and view a client
+
+![](http://www.gluu.org/docs/img/openid_connect/oxtrust_view_client.png "Screenshot of oxTrust view client")
 
 ## Session management
 

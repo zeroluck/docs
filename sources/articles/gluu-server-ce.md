@@ -13,7 +13,7 @@ easiest installation options are:
 
 ## Installation of mod_ox for testing
 
-mod_ox is an access control apache module that enables a server to support OpenID Connect and UMA endpoints. mod_ox is written in C.  Installation instructions for Apache on Windows, Ubuntu, and CentOS can be found in the following [pdf document](http://www.gluu.co/modox-pdf)
+mod_ox is an access control apache module that enables an application server to support OpenID Connect and UMA endpoints. mod_ox is written in C.  Installation instructions for Apache on Windows, Ubuntu, and CentOS can be found in the following [pdf document](http://www.gluu.co/modox-pdf)
 
 ## Test Use cases
 
@@ -24,8 +24,11 @@ mod_ox is an access control apache module that enables a server to support OpenI
   
 ## Next steps
 
-After you try these, you may want to configure open source software
-that supports OpenID Connect. 
--  Restart
+After you try the above use cases, you may want to configure plugins that supports OpenID Connect, such as the [OpenID Conect Wordpress Plugin](http://www.gluu.co/wordpress-connect). 
+
+## Community Support
+
+If you have questions or issues, you can browse our [public knowledge base](http://support.gluu.org) and [register](https://idp.gluu.org/identity/register?redirectUri=https://support.gluu.org) to create public tickets
+
 
 
