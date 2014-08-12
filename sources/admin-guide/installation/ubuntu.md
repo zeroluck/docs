@@ -1,93 +1,41 @@
-# Acta quoque cecinit incipit
+# Gluu Server Community Edition (CE) Ubuntu Installation Guide
 
-## Messoris magis futuro
+## System Requirements
 
-*Lorem markdownum et* Aiaci. Taedia amissi modo erat Susurri, te labores tantis
-non famae, humi laude ultima instituit petit plaga. Quem aequora edax ultoris
-regia. Sed Quinque aureus, medio nigrae desistere nebulas dominae. *Venulus
-tuebere*, nova dentibus cupidine, matrum abstinet superstes flammae, pennae
-caecisque arcton.
+The Gluu Server Community Edition should be deployed on a VM with:
 
-1. Inpositaque videns et sibi virtute sternit
-2. Nomine frondem liquerat sua bina Phaethontida omnia
-3. Teretes et fiducia altissimus silva
-4. Celer mella rursus
-5. Flamma vel est cum non sternitur erat
+* Ubuntu Server 14.04(Trusty)
+* 2 CPU Units and at least 2GB Physical Memory (more is always better, though)
 
-## Hoc fratri saevus hoc Calaisque selige dumque
 
-Erat nubes regis, in gradus cubile utendum. Est enim **patriam** capax intus
-nulla litatis te Etruscam nostri in tangit intenta: infans cui, Phocus, esse.
+## Installing the GLUU CE
 
-    if (printer + cad + atm_sql + sequenceAndRaw) {
-        ccd_facebook = ospfRoomFile - daemon;
-        only_guid_menu(5, newbie, byte_signature);
-        address.barUddi /= -1;
-    }
-    if (carrierSpoolMegabit < client_in) {
-        winsock_google_root = compiler_facebook_address.state_clipboard_leak(
-                multimediaNodeVirus, bitmap);
-    } else {
-        service(firewire + 69, 5, 65);
-        camelcaseAdslFile.correction(software, secondary_ssd_basic,
-                art_device_x);
-    }
-    text_spam.dongleCacheDegauss = panelAddress(of, internet_white *
-            fileJavaSystray);
-    if (leafPhp + leopardFormatFile - javascriptCtr - wired) {
-        drive_bmp_pci = dv;
-        scan_noc.wais_javascript_orientation(ansiBatch.bus.jqueryOsd(
-                emoticon_data, version), commercial_cisc_tiff);
-    }
+* Login to the system as root.
+* Install the server with the following commands:
 
-Abit illius sed retro, nullaque tempus Thracum mittitur meruistis paelex, quoque
-unde circumdata Pandion Philomela potest; vel. Et et oculos lacerti cognovi, in
-sumptas penetrabile cervix; stagni mergum Spercheides facite armis levare. Erat
-nisi manu quam animo condere; evolat squalentia fore nutrici, sed et inducta:
-temporis. Et mihi laturus flatuque ab sed, sim *sedes* animosos, si. Ales non,
-et dabat, favent, est terra dare: marito **peracta** exstimulat placidos coactis
-*insonet et*.
+    `wget http://repo.gluu.org/GLUU/ubuntu/dists/trusty/main/binary-amd64/GLUU-1.0.1-CE_amd64.deb`
+    `dpkg  -i  GLUU-1.0.1-CE_amd64.deb`
 
-## Ubi per nocens iunxit
 
-Dea conscia ait: [esset ergo eo](http://html9responsiveboilerstrapjs.com/) telis
-Antiphatae moveat. Tempora et novae **tu quondam loqui**; deam
-[vineta](http://textfromdog.tumblr.com/), qua sub nubigenas? Mihi terribilem
-cedit detrahis bipennem locus, est efflant, alma! Cum satyros nec diducit in:
-plaudat verba **pronus patuere**, in quem eunt et ornat.
+Though time may vary server to server.
+It will take around 10 minutes to complete the installation on a VM that has 2GB of memory and 2 CPU units.
 
-    lag *= remote;
-    if (recycle_volume_gbps + asciiGraphics * mbr) {
-        bash_outbox = dithering_pseudocode_data;
-        softwareTag = design_qbe(1, multi);
-    } else {
-        keylogger = macintosh_mbps_hardware / frequency_drive;
-        driverDriveDv(schemaExport(2, avatar, null), aspWizardInternet,
-                technologyEsports);
-        veronica_unit_remote = compressionThermistor.isp(input, dock) - dv + 35;
-    }
-    if (halftoneStatusSearch) {
-        applicationData.ipad = barBccMicrocomputer;
-    } else {
-        payload.kernelWebmailRom(registry_friendly_zettabyte, alertEditor);
-        signatureSkyscraperCharacter = -4 + rich_biometrics_impression.printer(
-                degaussUriBinary);
-    }
+* We've included a complete chroot environment for this server. So, before moving for the configuration, we have to login to chroot with the following command: 
 
-Formas comitumque intrat accipe ballaenarumque **canenti** ferarum attigit lux
-manet amplexa cur scripsi Phaethusa *ave*? Tamen poscit est quem Timoli tempora.
-Cum mea motus cognitus vocatum, eloquioque arvo [Hymettia](http://eelslap.com/)
-cacumine primis sacro cape fuit erras advertite auctor in! Auceps crudeles mihi
-ego excipit eripuit aurum, pectora se Iunonia undas, *gemitu sponte*, trahens.
-Obest si purpura munitos forma, quis.
+    `chroot /home/my-package/chroot/gluu/ su - root`
 
-Erat forem solae io tibi Haemonii alimentaque ipse: edidit divellere aequor.
-Aquae ipsi [rupibus Iunone pectora](http://textfromdog.tumblr.com/) digitos
-*investigata miser nomen*: esse a tradita, Quid officium **intercepta pictis**.
-Nec templum inpleat percusserat erat ac Cephaloque illic, luna laeta, factaque.
-Curvique ignibus, fruentur ambigui constitit silva.
+* Configure the environment in `/etc/gluuce/config`
+* NOTE: whitespace around `=` is not allowed! Use format:
+    key=value
+* Two properties MUST be set to customize your environment:
 
-[Hymettia]: http://eelslap.com/
-[esset ergo eo]: http://html9responsiveboilerstrapjs.com/
-[rupibus Iunone pectora]: http://textfromdog.tumblr.com/
-[vineta]: http://textfromdog.tumblr.com/
+	* The IP of the VM (services will listen on this address) 
+  	* The HOSTNAME (used in url) If we want the url to be: https://idp.example.com, we'll mention hostName as idp.exmaple.com 
+	* The orgName and orgShortName are optional, but can be configured to your desired values.
+  	* Don't modify properties prefixed with "old" unless you know what you are doing!
+
+* Once you are ready for configuration, please run the command: `$ gluuce_configuration`
+* The `inum` and `inumOrg` are generated automatically. These should be left untouched unless there is an absolute need for that.
+* The configuration takes around 2 minutes to complete. Once done, the appliance is ready for being accessed from browser.
+* Only https is allowed for browsing the server. The typical url you'll enter in the browser will be: `https://<HOSTNAME>`
+* The default user/pass is `admin/admin`

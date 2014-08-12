@@ -7,12 +7,13 @@ deployment and testing so you'll be ready to start integrating apps ASAP.
 ## Installation
 
 Gluu will publish binaries for as many OS's as possible. Currently, the 
-easiest installation option is  
-[CENTOS](http://www.gluu.org/docs/admin-guide/installation/centos)
+easiest installation options are:  
+- [CentOS](http://www.gluu.org/docs/admin-guide/installation/centos)
+- [Ubuntu](http://www.gluu.org/docs/admin-guide/installation/ubuntu)
 
-## Installation of the mod_ox for testing
+## Installation of mod_ox for testing
 
-mod_ox is an access control module that enables an app to support OpenID Connect and UMA. It is written in C.  Right now the instructions can be found in the following [pdf document](http://www.gluu.co/modox-pdf) Instructions are available for Apache on Windows, Ubuntu, and CentOS.
+mod_ox is an access control apache module that enables a server to support OpenID Connect and UMA endpoints. mod_ox is written in C.  Installation instructions for Apache on Windows, Ubuntu, and CentOS can be found in the following [pdf document](http://www.gluu.co/modox-pdf)
 
 ## Test Use cases
 
