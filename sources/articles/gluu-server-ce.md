@@ -28,7 +28,7 @@ After you try these use cases, you may want to configure open source software th
 
 ## Community Support
 
-If you have questions or issues, you can browse our [public knowledge base](http://support.gluu.org) and [register] (https://idp.gluu.org/identity/register?redirectUri=https://support.gluu.org) to create public tickets
+If you have questions or issues, you can browse our [public knowledge base](http://support.gluu.org) and [register](https://idp.gluu.org/identity/register?redirectUri=https://support.gluu.org) to create public tickets
 
 
 
