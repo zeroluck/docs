@@ -87,7 +87,40 @@ you. Gluu publishes the [oxAuth-RP](seed.gluu.org/oxauth-rp) and there is also a
 
 If you can't get the developer to help themselves, or if your domain doesn't want to allow
 dynamic client registration, you can use the oxTrust admin GUI to manually
-![add a client:](http://www.gluu.org/docs/img/openid_connect/oxtrust_add_client.png "Screenshot of oxTrust to add a client manually")
+![add a client:](http://www.gluu.org/docs/img/openid_connect/oxtrust_add_client.png "Screenshot of oxTrust to add a client manually")  
+
+* _**Display Name:**_ Recognizable and unique name of new client.
+
+* _**Client Secret:**_ "Client Secret" is a Data Encryption Standard scheme which is being used by Confidential Clients to authenticate the token endpoints. The value for "Client Secret" can be manually inserted but it's highly recommended to use the Dynamic Client Registration Endpoint. oxAuth will provide a random generated "Client Secret" using the Dynamic Client Registration procedure.
+
+* _**Application Type:**_ 
+There are two types of Applications. (i) Web (ii) Native  
+(i) Web:  
+For Dynamic Registration the default type is web. In this type the redirect_uri for implicit grant type must have to be real hostname with HTTPS. No localhost or HTTP is approved here in this type. The Web application type uses the Authorization code flow for Clients which can maintain a Client Secret between these URIs and Authorization server.  
+(ii) Native:   
+Custom URI for Native type application must have to follow HTTP with localhost. This is suitable for mobile app, which cannot maintain the Client Secret between themselves and Authorization server. 
+
+* _**Algorithm:**_ oxAuth supports various types of Signature and Encryption Algorithms for authorizing request parameter passing, ID Token signature and encryption, Signing return responses, Encrypt User Info Endpoints, etc. It’s a good practice to implement ID Token Signatures with the RSA SHA-256 Algorithm ( algorithm value RS256) but oxAuth also supports:
+ * Signature Algorithms:  HS256, HS384, HS512, RS256, RS384, RS512, ES256, ES384, ES512  
+ * For Encryption, Key Encryption Algorithms: RSA1_5, RSA-OAEP, A128KW, A256KW. 
+ * Block Encryption Algorithms: A128CBC+HS256, A256CBC+HS512, A128GCM, A256GCM 
+
+* _**Pre-Authorization:**_ Out of the box this field is marked as “Disabled”. But, according to Gluu Server Administrator and Organization policy, a client can be pre-authorized to access a certain url. 
+
+* _**Redirect URIs:**_ Login and logout redirect URIs for Native or Web applications can be added in these fields.
+
+* _**Scopes:**_ Scopes are groups of attributes that are released to the client. More details about scopes can be found [above](##OpenID-Connect-Scopes).
+
+* _**Response Type:**_ There are three options for Response Type that can be used depending on your requirements:
+ * code
+ * token
+ * id_token  
+  
+Read the [OpenID Connect Spec]( http://openid.net/specs/openid-connect-core-1_0.html) to learn more about when each Response Type should be used. 
+
+* _**Authorized Groups:**_ This setting allows you to restrict client use to members of a certain group ([as created in the Gluu Server.](http://www.gluu.org/docs/admin-guide/user-management/local-user-mgt/))
+
+
 
 In oxTrust, you can also browse or search clients
 ![](http://www.gluu.org/docs/img/openid_connect/oxtrust_search_clients.png "Screenshot of oxTrust browse / search clients")
