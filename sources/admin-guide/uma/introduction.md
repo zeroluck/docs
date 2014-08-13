@@ -13,6 +13,7 @@ The Gluu Server implements UMA in a way that enables the protectection of any we
 [UMA Authorization complete sequence diagram](http://www.gluu.org/docs/img/uma/uma_very_detailed_flow.png "UMA Parts")
 
 ## References
+- [Kantara Enterprise UMA Case Study](http://kantarainitiative.org/confluence/display/uma/Case+Study%3A+Access+Management+2.0+for+the+Enterprise) 
 - [UMA Specifications](http://kantarainitiative.org/confluence/display/uma/UMA+1.0+Core+Protocol)
 - [UMA Requestion Party Sample implementation](https://svn.gluu.info/repository/openxdi/oxUmaDemo/RP/)
 - [UMA Resource Server Sample implementation](https://svn.gluu.info/repository/openxdi/oxUmaDemo/RS/)
