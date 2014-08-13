@@ -70,6 +70,7 @@ pages:
 - ['admin-guide/user-management/scim.md', '**HIDDEN**']
 - ['admin-guide/user-management/ldap-sync.md', '**HIDDEN**']
 - ['admin-guide/user-management/registration.md', '**HIDDEN**']
+- ['admin-guide/user-management/local-user-mgt.md', '**HIDDEN**']
 
 # Sub pages of Admin Guide / Authentication
 - ['admin-guide/authentication/ldap.md', '**HIDDEN**']
