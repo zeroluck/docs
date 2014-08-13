@@ -122,10 +122,10 @@ Read the [OpenID Connect Spec]( http://openid.net/specs/openid-connect-core-1_0.
 
 
 
-In oxTrust, you can also browse or search clients
+####In oxTrust, you can also browse or search clients
 ![](http://www.gluu.org/docs/img/openid_connect/oxtrust_search_clients.png "Screenshot of oxTrust browse / search clients")
 
-and view a client
+####And view a client
 
 ![](http://www.gluu.org/docs/img/openid_connect/oxtrust_view_client.png "Screenshot of oxTrust view client")
 
