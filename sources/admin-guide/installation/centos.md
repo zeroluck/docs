@@ -1,4 +1,4 @@
-# Gluu Server Community Edition (CE) CentOS Installation Guide
+# Gluu Server Community Edition (CE) CentOS Configuration Guide
 
 ## System Requirements
 
@@ -37,3 +37,9 @@ It will take around 10 minutes to complete the installation on a VM that has 2GB
 * The default user/pass is `admin/admin`
 
 
+## Uninstall GLUU CE
+
+* Logout from chroot environment 
+* Put the command below to uninstall the GLUU CE
+
+    `yum remove GLUU`
