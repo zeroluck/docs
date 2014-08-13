@@ -6,8 +6,8 @@ configured in the attributes section of oxTrust
 
 ![](http://www.gluu.org/docs/img/local_user_admin/attr_list.png "Managing Person Attributes")
 
-When you configure the attribute, you can make it viewable or editable by the administrator.
-If you are using cache refresh, you should make sure that the attributes are not editable.
+When you configure the attribute, you can make it viewable or editable by the user.
+If you are using [cache refresh](http://www.gluu.org/docs/admin-guide/user-management/ldap-sync/), you should make sure that the attributes are not editable.
 You wouldn't want a person to change an attribute in the cache, as it will be updated at the
 next cache refresh interval. 
 
