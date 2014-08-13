@@ -111,12 +111,10 @@ Custom URI for Native type application must have to follow HTTP with localhost. 
 
 * _**Scopes:**_ Scopes are groups of attributes that are released to the client. More details about scopes can be found [above](##OpenID-Connect-Scopes).
 
-* _**Response Type:**_ There are three options for Response Type that can be used depending on your requirements:
+* _**Response Type:**_ There are three options for Response Type that can be used depending on your requirements. Read the [OpenID Connect Spec]( http://openid.net/specs/openid-connect-core-1_0.html) to learn more about when each Response Type should be used. 
  * code
  * token
  * id_token  
-  
-Read the [OpenID Connect Spec]( http://openid.net/specs/openid-connect-core-1_0.html) to learn more about when each Response Type should be used. 
 
 * _**Authorized Groups:**_ This setting allows you to restrict client use to members of a certain group ([as created in the Gluu Server.](http://www.gluu.org/docs/admin-guide/user-management/local-user-mgt/))
 
