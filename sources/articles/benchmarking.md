@@ -51,7 +51,7 @@ Check via Tomcat monitor whether requests are handled or just "hangs" because th
 
 Here is sample when processing time increase due to lack of resources:
 
-![Alt text](/img/benchmark/tomcatStatus.png "Tomcat status")
+![Alt text](http://gluu.org/docs/img/benchmark/tomcatStatus.png "Tomcat status")
 
 ## Gluu Server
 
