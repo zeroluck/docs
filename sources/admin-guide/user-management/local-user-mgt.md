@@ -1,6 +1,16 @@
 # Local User Management
+In oxTrust, you can add, edit and manage people, groups and user attributes and claims to ensure the proper information is released about the right people. 
 
-So you want a GUI to view or manage users? No problem. The first thing to consider is what attributes (user claims) the administrator sees.  This is configured in the attributes section of oxTrust
+##Manage People
+To manage people, navigate to User → Manage People, as shown in the screenshot below. From this interface, you can add users, search for specific users, or click 'search' with a blank field to display all. 
+
+![](http://www.gluu.org/docs/img/local_user_admin/manage_people.png)
+
+##Manage Groups
+Out of the box, the Gluu Server includes one group: Gluu Server manager group, named: “gluuManager”. Groups can be added and populated as needed. Available groups can be seen by leaving the search field blank and clicking “Search.”
+
+##Attributes
+An “Active” attribute list can be seen from the Configuration → Attributes section. By default, only active attributes are shown. To see inactive attributes, click the "Show All Attributes" link above the table. To edit an attribute simply click on the Display Name.
 
 ![](http://www.gluu.org/docs/img/local_user_admin/attr_list.png "Managing Person Attributes")
 
@@ -8,12 +18,5 @@ When you configure the attribute, you can make it viewable or editable by the us
 
 ![](http://www.gluu.org/docs/img/local_user_admin/attr_detail.png "View / Edit Attribute")
 
-The user browser can be found under the "Users" menu list.
 
-![](http://www.gluu.org/docs/img/local_user_admin/manage_people.png)
-
-You can add, edit, view or delete a person. To add an attribute, click on the respective 
-objectclass, and then click on the attribute. This will dynamically add it to the form:
-
-![](http://www.gluu.org/docs/img/local_user_admin/add_person_form.png)
 
