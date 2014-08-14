@@ -16,6 +16,7 @@ Inclusion of Shibboleth and Asimba SAML components is in progress. Stay tuned fo
 
 Gluu will publish binaries for as many OS's as possible. Currently, the 
 easiest installation options are:  
+
 - [CentOS](http://www.gluu.org/docs/admin-guide/installation/centos)
 - [Ubuntu](http://www.gluu.org/docs/admin-guide/installation/ubuntu)
 
