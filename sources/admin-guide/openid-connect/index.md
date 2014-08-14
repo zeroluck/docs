@@ -85,6 +85,8 @@ application to register your client, there are a few web pages around that can d
 you. Gluu publishes the [oxAuth-RP](seed.gluu.org/oxauth-rp) and there is also another in
 [PHP RP](http://www.gluu.co/php-sample-rp)
 
+## Nested Ui
+
 If you can't get the developer to help themselves, or if your domain doesn't want to allow
 dynamic client registration, you can use the oxTrust admin GUI to manually
 ![add a client:](http://www.gluu.org/docs/img/openid_connect/oxtrust_add_client.png "Screenshot of oxTrust to add a client manually")  
