@@ -1,8 +1,6 @@
 # Gluu Server CE QuickStart 
 
-So you want to try out the Gluu Server. The Community Edition (CE) 
-is a great place to start. This article will provide an overview of
-deployment and testing so you'll be ready to start integrating apps ASAP. 
+So you want to try out the Gluu Server. The Community Edition (CE) is a great place to start. This article will provide an overview of deployment and testing so you'll be ready to start using your new Gluu Server ASAP. 
 
 ## What's included in CE?
 
