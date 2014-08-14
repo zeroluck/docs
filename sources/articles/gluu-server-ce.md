@@ -6,7 +6,7 @@ So you want to try out the Gluu Server. The Community Edition (CE) is a great pl
 
 Currently CE includes the following components:
 
-* **oxAuth:** an inter-op leading OpenID Connect Provider and a production ready implementation of Enterprise UMA, a new profile of OAuth2 that defines RESTful, JSON-based, standardized flows and constructs for coordinating the protection of any API or web resource.
+* **oxAuth:** an inter-op leading [OpenID Connect](http://www.gluu.org/docs/admin-guide/openid-connect/) Provider and a production ready implementation of Enterprise [UMA](http://www.gluu.org/docs/admin-guide/uma/), a new profile of OAuth2 that defines RESTful, JSON-based, standardized flows and constructs for coordinating the protection of any API or web resource.
 * **oxTrust:** the server management interface.
 * **LDAP:** included for local storage of user information and configuration data.
 
