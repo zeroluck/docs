@@ -101,9 +101,9 @@ For Dynamic Registration the default type is web. In this type the redirect_uri 
 Custom URI for Native type application must have to follow HTTP with localhost. This is suitable for mobile app, which cannot maintain the Client Secret between themselves and Authorization server. 
 
 * _**Algorithm:**_ oxAuth supports various types of Signature and Encryption Algorithms for authorizing request parameter passing, ID Token signature and encryption, Signing return responses, Encrypt User Info Endpoints, etc. It’s a good practice to implement ID Token Signatures with the RSA SHA-256 Algorithm ( algorithm value RS256) but oxAuth also supports:
- * Signature Algorithms:  HS256, HS384, HS512, RS256, RS384, RS512, ES256, ES384, ES512  
- * For Encryption, Key Encryption Algorithms: RSA1_5, RSA-OAEP, A128KW, A256KW. 
- * Block Encryption Algorithms: A128CBC+HS256, A256CBC+HS512, A128GCM, A256GCM 
+	* _Signature Algorithms_:  HS256, HS384, HS512, RS256, RS384, RS512, ES256, ES384, ES512  
+	* _For Encryption, Key Encryption Algorithms_: RSA1_5, RSA-OAEP, A128KW, A256KW. 
+	* _Block Encryption Algorithms_: A128CBC+HS256, A256CBC+HS512, A128GCM, A256GCM 
 
 * _**Pre-Authorization:**_ Out of the box this field is marked as “Disabled”. But, according to Gluu Server Administrator and Organization policy, a client can be pre-authorized to access a certain url. 
 
