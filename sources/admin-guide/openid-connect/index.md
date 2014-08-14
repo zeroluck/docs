@@ -85,8 +85,6 @@ application to register your client, there are a few web pages around that can d
 you. Gluu publishes the [oxAuth-RP](seed.gluu.org/oxauth-rp) and there is also another in
 [PHP RP](http://www.gluu.co/php-sample-rp)
 
-## Nested Ui
-
 If you can't get the developer to help themselves, or if your domain doesn't want to allow
 dynamic client registration, you can use the oxTrust admin GUI to manually
 ![add a client:](http://www.gluu.org/docs/img/openid_connect/oxtrust_add_client.png "Screenshot of oxTrust to add a client manually")  
@@ -114,9 +112,9 @@ Custom URI for Native type application must have to follow HTTP with localhost. 
 * _**Scopes:**_ Scopes are groups of attributes that are released to the client. More details about scopes can be found [above](##OpenID-Connect-Scopes).
 
 * _**Response Type:**_ There are three options for Response Type that can be used depending on your requirements. Read the [OpenID Connect Spec]( http://openid.net/specs/openid-connect-core-1_0.html) to learn more about when each Response Type should be used. 
- * code
- * token
- * id_token  
+	* _code_
+	* _token_
+	* _id_token_
 
 * _**Authorized Groups:**_ This setting allows you to restrict client use to members of a certain group ([as created in the Gluu Server.](http://www.gluu.org/docs/admin-guide/user-management/local-user-mgt/))
 
