@@ -1,12 +1,12 @@
 # Local User Management
 In oxTrust, you can add, edit and manage people, groups and user attributes and claims to ensure the proper information is released about the right people. 
 
-##Manage People
+##People
 To manage people, navigate to User → Manage People, as shown in the screenshot below. From this interface, you can add users, search for specific users, or click 'search' with a blank field to display all. 
 
 ![](http://www.gluu.org/docs/img/local_user_admin/manage_people.png)
 
-##Manage Groups
+##Groups
 Out of the box, the Gluu Server includes one group: Gluu Server manager group, named: “gluuManager”. Groups can be added and populated as needed. Available groups can be seen by leaving the search field blank and clicking “Search.”
 
 ##Attributes
