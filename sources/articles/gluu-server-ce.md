@@ -4,6 +4,16 @@ So you want to try out the Gluu Server. The Community Edition (CE)
 is a great place to start. This article will provide an overview of
 deployment and testing so you'll be ready to start integrating apps ASAP. 
 
+## What's included in CE?
+
+Currently CE includes the following components:
+
+* **oxAuth:** an inter-op leading OpenID Connect Provider and a production ready implementation of Enterprise UMA, a new profile of OAuth2 that defines RESTful, JSON-based, standardized flows and constructs for coordinating the protection of any API or web resource.
+* **oxTrust:** the server management interface.
+* **LDAP:** included for local storage of user information and configuration data.
+
+Inclusion of Shibboleth and Asimba SAML components is in progress. Stay tuned for updated packages. 
+
 ## Installation
 
 Gluu will publish binaries for as many OS's as possible. Currently, the 
