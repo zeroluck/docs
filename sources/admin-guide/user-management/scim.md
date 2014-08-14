@@ -99,16 +99,16 @@ This is step by step guide to configure UMA for oxTrust and SCIM client. High le
  * Add Client which we created in second step.
  * Click “Add” button. Sample result entry:
 
-                    dn: inum=@!1111!C264.D316,ou=resource_sets,ou=uma,o=@!1111,o=gluu
-                    objectClass: oxAuthUmaResourceSet
-                    objectClass: top
-                    displayName: SCIM Resource Set
-                    inum: @!1111!C264.D316
-                    owner: inum=@!1111!0000!D9D9,ou=people,o=@!1111,o=gluu
-                    oxAuthUmaScope: inum=@!1111!D386.9FB1,ou=scopes,ou=uma,o=@!1111,o=gluu
-                    oxFaviconImage: http://example.org/scim_resource_set.jpg
-                    oxId: 1403179695657
-                    oxRevision: 1
+                dn: inum=@!1111!C264.D316,ou=resource_sets,ou=uma,o=@!1111,o=gluu
+                objectClass: oxAuthUmaResourceSet
+                objectClass: top
+                displayName: SCIM Resource Set
+                inum: @!1111!C264.D316
+                owner: inum=@!1111!0000!D9D9,ou=people,o=@!1111,o=gluu
+                oxAuthUmaScope: inum=@!1111!D386.9FB1,ou=scopes,ou=uma,o=@!1111,o=gluu
+                oxFaviconImage: http://example.org/scim_resource_set.jpg
+                oxId: 1403179695657
+                oxRevision: 1
 
 ##oxTrust configuration (Resource Server)
 
