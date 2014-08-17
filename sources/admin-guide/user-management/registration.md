@@ -1,5 +1,5 @@
 # Registration
-There are four ways to add a user in gluu server:
+There are five ways to add a user in gluu server:
 
 * Self-Registration
 * User Management Interface
