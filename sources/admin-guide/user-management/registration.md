@@ -1,11 +1,11 @@
 # Registration
 There are four ways to add a user in gluu server:
 
-  * Self-Registration
-  * User Management Interface
-  * SCIM
-  * Cache Refresh Script
-  * Custom Authentication Script (e.g. Inbound Saml Registration)
+* Self-Registration
+* User Management Interface
+* SCIM
+* Cache Refresh Script
+* Custom Authentication Script (e.g. Inbound Saml Registration)
   
 ## Self-Registration
 
@@ -32,14 +32,14 @@ For default behavior all checkboxes should be unchecked.
 ### Options reference
 
   * Activate Invitation Links Management - Disable public registration. Start using Invitation Links. Required for further configuration of the Invitation Links feature.
-   * Run invite codes expiration process every: - Part of the Invitation Links feature. Allows to configure how often oxTrust will purge expired invitation links from the system. 
-   * Enable registration without invitation - Part of the Invitation Links feature. Allow public registration even when Invitation Links are used.
-   * Enable account expiration - Part of the Invitation Links feature. Registered accounts will be subject to an expiration policy
-    * Accounts expire after: - Part of the Account Expiration feature. Sets account expiration period. After this period registered accounts will be subject to invalidation during the next account expiration process run.
-    * Run accounts expiration process every: - Part of the Account Expiration feature. Allows to configure how often oxTrust will invalidate expired user accounts from the system. 
+    * Run invite codes expiration process every: - Part of the Invitation Links feature. Allows to configure how often oxTrust will purge expired invitation links from the system. 
+    * Enable registration without invitation - Part of the Invitation Links feature. Allow public registration even when Invitation Links are used.
+    * Enable account expiration - Part of the Invitation Links feature. Registered accounts will be subject to an expiration policy
+      * Accounts expire after: - Part of the Account Expiration feature. Sets account expiration period. After this period registered accounts will be subject to invalidation during the next account expiration process run.
+      * Run accounts expiration process every: - Part of the Account Expiration feature. Allows to configure how often oxTrust will invalidate expired user accounts from the system. 
   * Configure Registration Interception Scripts - Configure Pre-Registration and/or Post-Registration interception scripts. 
-  * Configure Registration Form Attributes - Add more attributes to the registration form.
-   Just start typing attribute name in the Attributes Filter and then move desired attributes to the right column. 
+  * Configure Registration Form Attributes - Add more attributes to the registration form. 
+      Just start typing attribute name in the Attributes Filter and then move desired attributes to the right column. 
 
 ### Invitation Link registration
 When active Invitation Links feature allows to control who can register an account by issuing a unique registration link and sending it to the desired new users.
