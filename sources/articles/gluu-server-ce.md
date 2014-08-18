@@ -12,6 +12,9 @@ Currently CE includes the following components:
 
 Inclusion of Shibboleth and Asimba SAML components is in progress. Stay tuned for updated packages. 
 
+##Licenses
+Each component of the Gluu Server is free to use in production. All OX products are MIT License. Learn more  [here](http://www.gluu.org/docs/admin-guide/introduction/licenses/). 
+
 ## Installation
 
 Gluu will publish binaries for as many OS's as possible. Currently, the 
