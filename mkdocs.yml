@@ -43,11 +43,9 @@ pages:
 - ['articles/java-saml.md', 'Articles', 'Java SAML']
 - ['articles/google-saml.md', 'Articles', 'Google SAML']
 - ['articles/apache-oauth2.md', 'Articles', 'Apache OpenID Connect / UMA']
-- ['articles/nginx-oauth2.md', 'Articles', 'nginx OpenID Connect / UMA']
 - ['articles/js-connect.md', 'Articles', 'JavaScript OpenID Connect RP']
 - ['articles/java-connect.md', 'Articles', 'Java OpenID Connect RP']
 - ['articles/scim-client.md', 'Articles', 'Java SCIM client']
-- ['articles/mobile-api.md', 'Articles', 'Mobile - Headless API : Connect / UMA']
 - ['articles/benchmarking.md', 'Articles', 'Gluu Server Benchmark']
 
 # Sub Pages of introduction 
