@@ -28,6 +28,7 @@ pages:
 - ['admin-guide/interception-scripts/index.md', 'Admin Guide', 'Interception Scripts']
 - ['admin-guide/multiparty-federation/index.md', 'Admin Guide', 'MultiParty Federation']
 - ['admin-guide/oxPush/index.md', 'Admin Guide', 'oxPush']
+- ['admin-guide/cluster/index.md', 'Admin Guide', 'Cluster Deployment']
 
 # Reference sections
 - ['reference/configuration/index.md', 'Reference', 'Configuration']
@@ -112,6 +113,9 @@ pages:
 - ['admin-guide/oxPush/cordova-app.md', '**HIDDEN**']
 - ['admin-guide/oxPush/oxPush-server.md', '**HIDDEN**']
 - ['admin-guide/oxPush/oxPush-crypto.md', '**HIDDEN**']
+
+# Sub Pages of Cluster 
+- ['admin-guide/cluster/opendj-replication.md', '**HIDDEN**']
 
 # Sub pages of Multiparty Federation 
 - ['admin-guide/multiparty-federation/saml-federation.md', '**HIDDEN**']
