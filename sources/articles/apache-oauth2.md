@@ -56,3 +56,54 @@ these instructions._
 
         # note that the path to your module might be different
         LoadModule ox_module /usr/lib/apache2/modules/mod_ox.so
+
+
+#### Parameter configuration
+
+* Open up `ox.conf`. This is the main configuration file. Here is a sample configuration attached below with brief description. 
+ 
+
+        <DirectoryMatch "/ox">
+            AuthType Gluu_ox
+            Require valid-user
+
+            # Connect|SAML
+            AuthnType Connect
+
+            # Valid only if AuthnType=Connect
+            AmrValues https://schema.example.com/connect/basic
+
+            # Valid only if AuthnType=SAML
+            SAMLRedirectUrl http://www.myexample.com/secure/redirect.php
+
+            # General
+            OxdHostAddr 127.0.0.1
+            OxdPortNum 8099
+            MemcachedHostAddr 127.0.0.1
+            MemcachedPortNum 11211
+            ClientCredsPath /etc/myCLIENT/client_creds.json
+            SendHeaders on
+
+            # OpenID Connect Required - needed for both UMA and OpenID Connect
+            ConnectDiscoveryUrl https://example.com/.well-known/openid-configuration
+            ConnectRedirectUrl https://www.myexample.com/ox/redirect.html
+            ClientName myCLIENT
+
+            # UMA
+            UmaDiscoveryUrl https://example.com/.well-known/uma-configuration
+            UmaResourceName TestResource
+            UmaRsHost www.myexample.com
+            GETUmaAmHost idp.example.com "https://schema.example.com/uma/readPolicy1;https://schema.example.com/uma/readPolicy2"
+            PUTUmaAmHost idp.example.com "https://schema.example.com/uma/write"
+            POSTUmaAmHost idp.example.com "https://schema.example.com/uma/write"
+            DELETEUmaAmHost idp.example.com "https://schema.example.com/uma/delete"
+        
+            # Logout
+            ApplicationLogoutUrl http://www.myexample.com/ox/logout 
+            ApplicationPostLogoutUrl https://idpdev.mediaocean.com/oxauth/seam/resource/restv1/oxauth/end_session
+            ApplicationLogoutRedirectUrl http://www.myexample.com/ox/
+        </DirectoryMatch>
+
+
+
+        
