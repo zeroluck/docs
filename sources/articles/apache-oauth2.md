@@ -100,7 +100,7 @@ these instructions._
         
             # Logout
             ApplicationLogoutUrl http://www.myexample.com/ox/logout 
-            ApplicationPostLogoutUrl https://idpdev.mediaocean.com/oxauth/seam/resource/restv1/oxauth/end_session
+            ApplicationPostLogoutUrl https://idp.gluu.org/oxauth/seam/resource/restv1/oxauth/end_session
             ApplicationLogoutRedirectUrl http://www.myexample.com/ox/
         </DirectoryMatch>
 
