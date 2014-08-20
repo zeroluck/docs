@@ -1,4 +1,4 @@
-# User Administration with LDAP Synchronization in Gluu Server
+# LDAP Synchronization a.k.a. Cache Refresh
 
 We call it "Cache Refresh". “Cache Refresh” was built by Gluu to pull user
 information from a backend customer Active Directory / LDAP server. Cache

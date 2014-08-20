@@ -1,8 +1,8 @@
 # How to use the SCIM API to manage users
 
-## How to configure oxAuth for SCIM
+## How to enable oxAuth for SCIM user management
  
-Link to admin-guide/user-management/scim.md
+[Gluu Server Admin Guide SCIM docs](http://www.gluu.org/docs/admin-guide/user-management/scim/)
 
 ## How to build the SCIM client
 
@@ -16,4 +16,6 @@ See [Build SCIM Wiki Page](http://ox.gluu.org/doku.php?id=oxtrust:buildscim)
 ## A simple example: Change a person's password
 
 - [OX Wiki Change Password Post](http://ox.gluu.org/doku.php?id=oxtrust:scim)
+
+
 

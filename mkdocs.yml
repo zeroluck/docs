@@ -28,6 +28,7 @@ pages:
 - ['admin-guide/interception-scripts/index.md', 'Admin Guide', 'Interception Scripts']
 - ['admin-guide/multiparty-federation/index.md', 'Admin Guide', 'MultiParty Federation']
 - ['admin-guide/oxPush/index.md', 'Admin Guide', 'oxPush']
+- ['admin-guide/cluster/index.md', 'Admin Guide', 'Cluster Deployment']
 
 # Reference sections
 - ['reference/configuration/index.md', 'Reference', 'Configuration']
@@ -42,11 +43,9 @@ pages:
 - ['articles/java-saml.md', 'Articles', 'Java SAML']
 - ['articles/google-saml.md', 'Articles', 'Google SAML']
 - ['articles/apache-oauth2.md', 'Articles', 'Apache OpenID Connect / UMA']
-- ['articles/nginx-oauth2.md', 'Articles', 'nginx OpenID Connect / UMA']
 - ['articles/js-connect.md', 'Articles', 'JavaScript OpenID Connect RP']
 - ['articles/java-connect.md', 'Articles', 'Java OpenID Connect RP']
 - ['articles/scim-client.md', 'Articles', 'Java SCIM client']
-- ['articles/mobile-api.md', 'Articles', 'Mobile - Headless API : Connect / UMA']
 - ['articles/benchmarking.md', 'Articles', 'Gluu Server Benchmark']
 
 # Sub Pages of introduction 
@@ -70,6 +69,7 @@ pages:
 - ['admin-guide/user-management/scim.md', '**HIDDEN**']
 - ['admin-guide/user-management/ldap-sync.md', '**HIDDEN**']
 - ['admin-guide/user-management/registration.md', '**HIDDEN**']
+- ['admin-guide/user-management/local-user-mgt.md', '**HIDDEN**']
 
 # Sub pages of Admin Guide / Authentication
 - ['admin-guide/authentication/ldap.md', '**HIDDEN**']
@@ -111,6 +111,9 @@ pages:
 - ['admin-guide/oxPush/cordova-app.md', '**HIDDEN**']
 - ['admin-guide/oxPush/oxPush-server.md', '**HIDDEN**']
 - ['admin-guide/oxPush/oxPush-crypto.md', '**HIDDEN**']
+
+# Sub Pages of Cluster 
+- ['admin-guide/cluster/opendj-replication.md', '**HIDDEN**']
 
 # Sub pages of Multiparty Federation 
 - ['admin-guide/multiparty-federation/saml-federation.md', '**HIDDEN**']
