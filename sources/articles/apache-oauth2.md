@@ -110,4 +110,12 @@ these instructions._
 |:------------ |----- | ----------------------------------------------------------------------------------: |
 | _/ox_        |:| Apache directory protected by mod_ox plugin. Could be set any directory in Apache   |
 | _AuthType_   |:|`REQUIRED`. Always must be “Gluu_ox”. |
-|_Require_ |:|`REQUIRED`. Always must be "valid-user" |
+| _Require_ |:|`REQUIRED`. Always must be "valid-user" |
+| _AuthnType_ |:|`REQUIRED`. Always must be one of Connect and SAML |
+| _AcrValues_ |:| OPTIONAL. Requested Authentication Context Class Reference values |
+| _SAMLRedirectUrl_ |:| OPTIONAL. URL specifying Shibboleth SP apache module. (e.g. http://www.example.com/secure/redirect.php) |
+| _OxdHostAddr_ |:| OPTIONAL. Host Name or IP address of oxd server. This could be a host name or a IP address on a different host running oxd server. Default: (e.g. localhost or 127.0.0.1) |
+| _OxdPortNum_ |:| OPTIONAL. Port Number of oxd server. Default: (e.g. 8099) |
+| _MemcachedHostAddr_ |:| OPTIONAL. Host Name or IP address of memcached server. This could be a host name or a IP address on a different host running memcached server. If there is no Memcached, invalid. Default: (e.g. localhost or 127.0.0.1) |
+| _MemcachedPortNum_ |:| OPTIONAL. Port Number of memcached server. If there is no Memcached, invalid. Default: (e.g. 11211) |
+| _ClientCredsPath_ |:| OPTIONAL. Json file name to write user creds info on the file system. (e.g. /etc/myCLIENT/seed.gluu.org-client_creds.json)  In this case, /var/www/html/gluu/ should be writable. `sudo chmod 666 var/www/html/gluu/` |
