@@ -125,3 +125,20 @@ these instructions._
 | _ClientName_ |:| `REQUIRED`. Client Name to be registered with the Authorization Server. Could be ANY name. |
 | _UmaDiscoveryUrl_ |:| OPTIONAL. URL specifying the UMA discovery endpoint. (e.g. https://as.example.com/.well-known/uma-configuration) |
 | _UmaResourceName_ |:| OPTIONAL. Resource name for UMA authentication. (e.g. TestResource). Could be any name.|
+| _UmaRsHost_ |:| OPTIONAL. Resource server (host where apache is loacated e.g. www.example.com) |
+| _GETUmaAmHost_ |:| OPTIONAL. Authorization server and scope for HTTP GET method (e.g. as.example.com "https://schema.example.com/uma/manager") |
+| _PUTUmaAmHost_ |:| OPTIONAL. Authorization server and scope for HTTP PUT method (e.g. as.example.com "https://schema.example.com/uma/manager") |
+| _POSTUmaAmHost_ |:| OPTIONAL. Authorization server and scope for HTTP POST method (e.g. as.example.com "https://schema.example.com/uma/manager") |
+| _DELETEUmaAmHost_ |:| OPTIONAL. Authorization server and scope for HTTP DELETE method (e.g. as.example.com "https://schema.example.com/uma/manager") |
+| _ClientCredsPath_ |:| File system location for client credentials. If blank, a new client will be created and save via Dynamic Client Registration. Sample format:|
+
+        {
+            "status": "ok",
+            "data": {
+                "client_id": "7fe914a5-6605-4372-9801-a78f8ac2d75b",
+                "client_secret": "120fb4f5-ac08-494f-b94c-a2094e18f3c7",
+                "registration_access_token": "86767689-ff3b-45d2-8dbc-6eabf329d3c0",
+                "client_secret_expires_at": 1400920051
+            }
+        }
+
