@@ -119,3 +119,9 @@ these instructions._
 | _MemcachedHostAddr_ |:| OPTIONAL. Host Name or IP address of memcached server. This could be a host name or a IP address on a different host running memcached server. If there is no Memcached, invalid. Default: (e.g. localhost or 127.0.0.1) |
 | _MemcachedPortNum_ |:| OPTIONAL. Port Number of memcached server. If there is no Memcached, invalid. Default: (e.g. 11211) |
 | _ClientCredsPath_ |:| OPTIONAL. Json file name to write user creds info on the file system. (e.g. /etc/myCLIENT/seed.gluu.org-client_creds.json)  In this case, /var/www/html/gluu/ should be writable. `sudo chmod 666 var/www/html/gluu/` |
+| _SendHeaders_ |:| `REQUIRED`. Determine whether sending HTTP headers to oxAuth authorize requrest, or not (e.g. on | off) |
+| _ConnectDiscoveryUrl_ |:| 'REQUIRED`. URL specifying the Authorization Server discovery endpoint. (e.g. https://as.example.com/.well-known/openid-configuration) As UMA uses OpenID Connect for client registration, and mod_ox is always used for either UMA or OpenID Connect, there is no use case where the OpenID Connect URL is not needed. |
+| _ConnectRedirectUrl_ |:| `REQUIRED`. Redirection URL if authentication is succeed. Not really relevant for client authentication only, so if you are in doubt, just point it to the url of the folder you are protecting. This could be placed in any location, but recommended to be placed in the same directory protected by OX. (e.g. https://www.example.com/ox/ox_redirect.html) |
+| _ClientName_ |:| `REQUIRED`. Client Name to be registered with the Authorization Server. Could be ANY name. |
+| _UmaDiscoveryUrl_ |:| OPTIONAL. URL specifying the UMA discovery endpoint. (e.g. https://as.example.com/.well-known/uma-configuration) |
+| _UmaResourceName_ |:| OPTIONAL. Resource name for UMA authentication. (e.g. TestResource). Could be any name.|
