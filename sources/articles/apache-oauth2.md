@@ -38,3 +38,21 @@ Linux and Windows are supported.
 _Note that if you download a development release you will need current versions
 of the autotools installed, and you must run ./autogen.sh first before following
 these instructions._ 
+
+
+
+#### Compilation
+
+* Untar the tarball
+
+* Enter into mod_ox directory and type:
+
+        ./configure (./autogen.sh for development release)
+        make
+        sudo make install
+
+
+* Verify that the module has been enabled in your ”httpd.conf”:
+
+        # note that the path to your module might be different
+        LoadModule ox_module /usr/lib/apache2/modules/mod_ox.so
