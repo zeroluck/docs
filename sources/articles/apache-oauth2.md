@@ -164,3 +164,13 @@ these instructions._
 * In the web browser, try with your hostname and mod_ox protected site. As for example, our sample hostname is "www.myapache.com" and we are protecting "ox" directory. So: 
         
         http://www.myapache.com/ox
+
+## Environment Variable 
+
+| _Variable_     |:     | Notes |
+|:------------ |----- | ----------------------------------------------------------------------------------: |
+| _OIC_SESSION_ID_ |:| Session id assigned to the session associated with the request.  i.e. PHP Environment Access : $_SERVER[“OIC_SESSION_ID”] |
+| _OIC_ID_TOKEN_ |:| ID token assigned to the session associated with the request. i.e. PHP Environment Access : $_SERVER[“OIC_SESSION_ID”] |
+| _OIC_ACCESS_TOKEN_ |:| Access token assigned to the session associated with the request. i.e. PHP Environment Access : $_SERVER[“OIC_ACCESS_TOKEN”] |
+| _OIC_SCOPE_ |:| OIC scope assigned to the session associated with the request. i.e. PHP Environment Access : $_SERVER[“OIC_SCOPE”] |
+| _OIC_STATE_ |:| Oic state assigned to the session associated with the request. i.e. PHP Environment Access : $_SERVER[“OIC_STATE”] |
