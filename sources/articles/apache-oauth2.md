@@ -106,6 +106,8 @@ these instructions._
 
 
 
-Syntax | Description | Priority
-:-------- | :----------- | ---------:
-/ox     | Apache directory protected by mod_ox plugin. Could be set any directory in Apache | Required
+| _Params_     |:     | Notes                                                                               | 
+|:------------ |----- | ----------------------------------------------------------------------------------: |
+| _/ox_        |:| Apache directory protected by mod_ox plugin. Could be set any directory in Apache   |
+| _AuthType_   |:|`REQUIRED`. Always must be “Gluu_ox”. |
+|_Require_ |:|`REQUIRED`. Always must be "valid-user" |
