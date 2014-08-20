@@ -19,8 +19,3 @@ See [Build SCIM Wiki Page](http://ox.gluu.org/doku.php?id=oxtrust:buildscim)
 
 
 
-dog | bird | cat
-----|------|----
-foo | foo  | foo
-bar | bar  | bar
-baz | baz  | baz
