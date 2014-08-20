@@ -1,4 +1,4 @@
-# Apache OAuth2 using mod_ox
+# Apache OAuth2 using mod_ox [ Work in Progress....]
 
 mod_ox is an access control module implementing OIC+UMA and acts as Resource
 Server side.
@@ -106,4 +106,6 @@ these instructions._
 
 
 
-        
+Syntax | Description | Priority
+:-------- | :----------- | ---------:
+/ox     | Apache directory protected by mod_ox plugin. Could be set any directory in Apache | Required
