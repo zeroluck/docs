@@ -165,7 +165,7 @@ these instructions._
         
         http://www.myapache.com/ox
 
-## Environment Variable 
+## Environment Variables
 
 | _Variable_     |:     | Notes |
 |:------------ |----- | ----------------------------------------------------------------------------------: |
