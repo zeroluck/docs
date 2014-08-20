@@ -142,3 +142,25 @@ these instructions._
             }
         }
 
+
+| _Params_     |:     | Notes                                                                               |
+|:------------ |----- | ----------------------------------------------------------------------------------: |
+| _ApplicationLogoutUrl_ |:| OPTIONAL. URL specifying openid logout. if the user hope to logout from openid authentification, just enter ApplicationLogoutUrl on web browser. Could be set any url in protected directory (e.g. http://www.myexample.com/ox/logout) |
+| _ApplicationPostLogoutUrl_ |:| OPTIONAL. URL specifying openid logout processing server. Redirected by mod_ox, if the user enter ApplicationLogoutUrl (e.g. https://idpdev.mediaocean.com/oxauth/seam/resource/restv1/oxauth/end_session) |
+| _ApplicationLogoutRedirectUrl_ |:| OPTIONAL. URL after logout. Could be set any url (e.g. http://www.myexample.com/ox) |
+
+#### Further Configurations
+
+* Copy `ox.conf` into Apache2/HTTPD directory.
+* Apply sufficient permission for `ox.conf` file.
+* Copy module in Apache2/HTTPD
+* Enabled mod in httpd.conf
+
+
+## Test
+
+* Start your [oxd](http://ox.gluu.org/doku.php?id=oxd:home) server. 
+* Restart Apache2/HTTPD
+* In the web browser, try with your hostname and mod_ox protected site. As for example, our sample hostname is "www.myapache.com" and we are protecting "ox" directory. So: 
+        
+        http://www.myapache.com/ox
