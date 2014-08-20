@@ -45,11 +45,11 @@ these instructions._
 
 * Untar the tarball
 
-* Enter into mod_ox directory and type:
+* Enter into mod_ox directory and follow below commands to configure:
 
-        ./configure (./autogen.sh for development release)
-        make
-        sudo make install
+        1. ./configure (./autogen.sh for development release)
+        2. make
+        3. sudo make install
 
 
 * Verify that the module has been enabled in your ”httpd.conf”:
