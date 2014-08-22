@@ -26,7 +26,7 @@ pages:
 - ['admin-guide/openid-connect/index.md', 'Admin Guide', 'OpenID Connect']
 - ['admin-guide/uma/index.md', 'Admin Guide', 'UMA']
 - ['admin-guide/interception-scripts/index.md', 'Admin Guide', 'Interception Scripts']
-- ['admin-guide/multiparty-federation/index.md', 'Admin Guide', 'MultiParty Federation']
+#- ['admin-guide/multiparty-federation/index.md', 'Admin Guide', 'MultiParty Federation']
 - ['admin-guide/oxPush/index.md', 'Admin Guide', 'oxPush']
 - ['admin-guide/cluster/index.md', 'Admin Guide', 'Cluster Deployment']
 
