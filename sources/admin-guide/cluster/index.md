@@ -2,7 +2,7 @@
 
 ## Objectives
 
-The purpose of the technical design is to confirm that the Supplier has identified all the
+The purpose of The technical design is to confirm that the Supplier has identified all the
 technical and technological requirements of the Purchaser and has defined the solutions
 that meet these requirements.
 
