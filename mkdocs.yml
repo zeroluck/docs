@@ -112,9 +112,9 @@ pages:
 - ['admin-guide/oxPush/oxPush-server.md', '**HIDDEN**']
 - ['admin-guide/oxPush/oxPush-crypto.md', '**HIDDEN**']
 
-# Supb pgaes of Admin Guid /Cluster Deployment
-- ['admin-guide/cluster/single_group.md','**HIDDEN**']
-- ['admin-guide/cluster/multi_group.md','**HIDDEN**']
+# Supb pgaes of Admin Guid / Cluster Deployment
+- ['admin-guide/cluster/single_group.md', '**HIDDEN**']
+- ['admin-guide/cluster/multi_group.md', '**HIDDEN**']
 
 # Sub pages of Multiparty Federation 
 - ['admin-guide/multiparty-federation/saml-federation.md', '**HIDDEN**']
