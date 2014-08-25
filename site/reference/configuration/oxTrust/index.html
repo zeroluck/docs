@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../..//img/favicon_ic.ico">
+
+        <title>Configuration - Gluu Servers</title>
+
+        <link href="../../..//css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../..//css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../..//css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../..//css/base.css" rel="stylesheet">
+        
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../../"><img src="../../..//img/logo.png" ></a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    
+                        <li >
+                            <a href="../../../">Home</a>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin Guide <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/introduction/">Introduction</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/installation/">Installation</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/custom-look/">Customizing Look and Feel</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/certificates/">Certificates</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/user-management/">User Management</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/authentication/">Authentication</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/saml/">SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/openid-connect/">OpenID Connect</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/uma/">UMA</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/interception-scripts/">Interception Scripts</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/oxPush/">oxPush</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/cluster/">Cluster Sulution</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../">Configuration</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../oxTrust/">oxTrust User Interface</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../ldap/">LDAP Schema</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../lib/">Libraries</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../api/">APIs</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Articles <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/gluu-server-ce/">Try Gluu Server CE - Quickstart</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/apache-saml/">Apache SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/java-saml/">Java SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/google-saml/">Google SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/apache-oauth2/">Apache OpenID Connect / UMA</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/js-connect/">JavaScript OpenID Connect RP</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/java-connect/">Java OpenID Connect RP</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/scim-client/">Java SCIM client</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/benchmarking/">Gluu Server Benchmark</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                
+                </ul>
+            
+
+            
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li >
+                    <a rel="next" href="../oxAuth/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../shibIDP/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a href="https://github.com/GluuFederation/docs">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                <li>
+                <!--<form action="." method="get" class="form-inline">-->
+                    <!--<div class="search-box">-->
+                        <!--<input type="text" value="" class="search-text" placeholder="Search" />-->
+                        <!--<input type="submit" value="Search" class="search-tag"/>-->
+                    <!--</div>-->
+                <!--</form>-->
+
+                </li>
+                
+            </ul>
+            
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+       
+        <li class="main active"><a href="#gluu-server-ui-oxtrust-configuration">Gluu Server UI ( oxTrust ) configuration</a></li>
+        
+            <li><a href="#configuration">Configuration</a></li>
+        
+            <li><a href="#saml">SAML</a></li>
+        
+       
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="gluu-server-ui-oxtrust-configuration">Gluu Server UI ( oxTrust ) configuration</h1>
+<p>oxTrust is a JBoss Seam application that provides organizational cloud identity
+management services, including REST service endpoints and a user friendly cloud
+identity management console (aka a GUI). </p>
+<p>oxTrust is tightly coupled with oxAuth. oxAuth configuration is stored in LDAP,
+and it would be hard to generate the right configuration entries without
+oxTrust. The projects are separate projects because in a high throughput cluster
+deployment, many oxAuth servers are needed versus a few oxTrust instances.</p>
+<p>In this page we are trying to highlight various features of Gluu oxTrust. </p>
+<h2 id="configuration">Configuration</h2>
+<h3 id="organization-configuration">Organization Configuration</h3>
+<h4 id="system-configuration">System Configuration:</h4>
+<p>System Configuration allows the Gluu Server administrator to choose various
+options like “Authentication Mode” or “SCIM Support” to be enabled or disabled
+system wide.</p>
+<p><img alt="Image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Configuration/System_configuration.png?raw=true" /></p>
+<ul>
+<li>
+<p><em>Authentication Mode</em> : Various types of authentication methods can be chosen from this interface. Out of the box, the Gluu Server allows ‘basic’ username/password authentication against the server’s local LDAP or any remote Active Directory/LDAP. In addition to passwords, various commercial or custom strong authentication mechanisms can be enabled as well.</p>
+</li>
+<li>
+<p><em>Authentication Level</em> : Authentication level is a domain specific value that can be used to rate the relative security level for different authentication mechanisms. </p>
+</li>
+<li>
+<p><em>White Pages</em> : If the Organization wants to use the Gluu Server’s built-in “White Pages” option, it can be enabled from here.</p>
+</li>
+<li>
+<p><em>Federation Hosting</em> : By default federation hosting is enabled. However, federation creation and operation can be complicated. Gluu offers an additional service called Federation Registry for those organizations interested in our assistance utilizing this feature.</p>
+</li>
+<li>
+<p><em>Cache Refresh</em> : “Cache Refresh” is a Gluu mechanism that pulls and syncs user information from a remote LDAP / Active Directory with the Gluu Server’s local LDAP. The Gluu Server administrator needs to provide sufficient information including username/password in Cache Refresh configuration before enabling this option. The documentation can be found <a href="http://www.gluu.org/docs/admin-guide/user-management/ldap-sync/">here</a>.</p>
+</li>
+<li>
+<p><em>SCIM Configuration</em> : If organization currently has an identity management or provisioning system in place, by using the SCIM protocol your organization can push and sync all relevant identity information to the Gluu Server. Documentation is available <a href="http://www.gluu.org/docs/admin-guide/user-management/scim/">here</a>.</p>
+</li>
+<li>
+<p><em>DNS Server(s)</em> : Organization can add DNS server info here.</p>
+</li>
+<li>
+<p><em>Maximum Log Size</em> : This option can be used to help mitigate space issues within the Gluu Server. The Gluu Server will automatically zip any logs which are greater than defined value of this field. i.e: If Gluu Server Administrator use 200MB for “Maximum Log Size”, Gluu Server will automatically start zipping those files which are / will be more than 200MB.</p>
+</li>
+</ul>
+<h3 id="manage-certificate">Manage Certificate</h3>
+<p>There are various types of certificates here in Gluu Server. All can be managed
+from oxTrust GUI. <a href="http://www.gluu.org/docs/admin-guide/certificates/">Here</a> is
+the documentation which is providing corresponding documentation. </p>
+<h3 id="manage-authentication">Manage Authentication</h3>
+<p>Out of the box, the Gluu Server supports username/password authentication
+against the local LDAP or a remote Active Directory/LDAP. In addition, oxTrust
+provides the interface for inserting Jython code to enable dynamic
+authentication logic, including the use of any strong, multi-step authentication
+process. Gluu can write these scripts for premium customers and typically makes
+the script open source for other organization’s use. Currently supported
+two-factor authentication mechanisms can be found at: http://gluu.org/two-factor </p>
+<p>We have a complete separate section on
+<a href="http://www.gluu.org/docs/admin-guide/authentication/">this</a> subject. </p>
+<h3 id="manage-registration">Manage Registration</h3>
+<p>This is a new feature in Gluu Server. We are going to publish documentation on
+this topi very soon. </p>
+<h3 id="scim-configuration">SCIM Configuration</h3>
+<p>If organization currently has an identity management or provisioning system in
+place, by using the SCIM protocol your organization can push and sync all
+relevant identity information to the Gluu Server. Documentation is available
+<a href="http://www.gluu.org/docs/admin-guide/user-management/scim/">here</a>.</p>
+<h3 id="import-people">Import People</h3>
+<p>This feature allows the Gluu Server Administrator to bulk import users. Just
+click on “Add” and upload the xls file. </p>
+<p><img alt="Image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Configuration/Import_people.png?raw=true" /></p>
+<p>Validation checking for the file can be done by using “Validate” button before
+importing. If file is not correctly formatted, the server will reject the file
+with an error as shown in the screenshot below. </p>
+<p><img alt="Image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Configuration/Import_people_failed.png?raw=true" /></p>
+<h3 id="attributes">Attributes</h3>
+<p>Documentation on LDAP Attribute is available <a href="http://www.gluu.org/docs/admin-guide/saml/outbound-saml/#ldap-attributes">here</a>. </p>
+<h3 id="cache-refresh">Cache Refresh</h3>
+<p>Gluu Server Cache Refresh has a detailed documentation available. Can be checked
+by <a href="http://www.gluu.org/docs/admin-guide/user-management/ldap-sync/">this</a>.</p>
+<h3 id="configure-log-viewer">Configure log viewer</h3>
+<p>Gluu Server has facility to read any log with GUI. Any log can be displayed from
+Web UI with few clicks. To enable this feature click on “Configuration” → “Configure log viewer” </p>
+<p>Click on “Add log template”, two new boxes will appear. Left box is the
+name/description of the log and right box require the real path of this log
+file. As for example in the below image,  we are going to configure two logs: 1.
+oxTrust log and 2. oxAuth log</p>
+<p><img alt="Image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Configuration/Configure_Log_Viewer.png?raw=true" /></p>
+<h3 id="view-log-file">View log file</h3>
+<p>Log files which were configured in previous section can be viewed with this
+“View log file” feature. Click “Configuration” → “View Log File”</p>
+<p><img alt="Image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Configuration/View_Log_file.png?raw=true" /></p>
+<p>Now, select / click on desired allowed log file and insert a value for “Display
+last lines count”. Gluu Server will show last 400 ( or, any selected value lines
+) in GUI like below:</p>
+<p><img alt="Image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Configuration/View_Log_file_2.png?raw=true" /></p>
+<h3 id="configure-linktrack-api">Configure Linktrack API</h3>
+<h3 id="status">Status</h3>
+<p>Status page shows the overall configuration of Gluu Server. A Gluu Server can
+see the status of this IDP like below image. </p>
+<p><img alt="Image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Configuration/Status.png?raw=true" /></p>
+<p>Where:</p>
+<ul>
+<li><em>Host name</em> : The hostname of Gluu Server. The value of hostname is an unique identification number ( aka. Inum ) from Gluu Organization. </li>
+<li><em>IP address</em> : The physical address of Gluu Server. </li>
+<li><em>System uptime</em> : How long system has been maintaining it's healthy status. </li>
+<li><em>Last update</em> : Time and date when Gluu Server's services were health checked. </li>
+<li><em>Polling interval</em> : Time interval when Gluu Server reported it's status to Gluu's central LDAP server. </li>
+<li><em>Person count</em> : How many users are here inside Gluu Server. </li>
+<li><em>Group count</em> : How many active groups are here in Gluu Server. </li>
+<li><em>Free memory</em> : Percentage of free memory. </li>
+<li><em>Free disk space</em> : Percentage of free disk space. </li>
+</ul>
+<h2 id="saml">SAML</h2>
+<h3 id="trust-relationships">Trust Relationships</h3>
+<p>Documentation on Trust Relationship is available
+<a href="http://www.gluu.org/docs/admin-guide/saml/outbound-saml/#saml-trust-relationship">here</a>. </p>
+</div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Copyright &copy; 2014, Gluu, Inc.</p>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../..//js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../..//js/prettify-1.0.min.js"></script>
+        <script src="../../..//js/base.js"></script>
+        
+    </body>
+</html>
