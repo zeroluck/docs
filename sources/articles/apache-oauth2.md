@@ -1,11 +1,3 @@
-# Contents
-
-- [Prerequisites](#Prerequisites)
-- [Big Title](#big-title)
-- [Medium Title](#medium-title) 
-- [Small Title](#small-title) 
-
-
 # Apache OAuth2 using mod_ox
 
 mod_ox is an access control module implementing OIC+UMA and acts as Resource
