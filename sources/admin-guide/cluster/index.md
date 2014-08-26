@@ -19,21 +19,20 @@ that meet these requirements.
 The purpose of the Document is to describe cluster solution for GLUU Inc. Cluster solution
 should be cost effective, flexible, should provide geographic redundancy and scalability,
 solution should not impact on main requirements of security in order to it will be
-implemented in datacenters where security requirements are high.
+implemented in data centers where security requirements are high.
 
-## Network And Sceurity Design
+## Network And Security Design
 
-The network HA can be various, it depends on the place of installation and special design. Protecting the internal
+The network HA can be various, it depends on the place of installation and special desi
 network from threats can be implemented by firewalls subsystems and IPS / IDS. The
 connections between data centers can be implemented via the Internet through the
 encrypted or protected connections.
-Some data centers have special security requirements. In case of all in one installation (all
+Some data centers have special security requirements. In case of all in one installation
 components running on single node) it can impact the security requirement “one primary
-function per server” to cover this type of requirement and do not lose cost effectiveness,
+function per server” to cover this type of requirement and do not lose cost effectiveness
 the application components will be installed in one node but under different chroot
 environments. It can be divided in following environments (Apache, Shibboleth, Tomcat,
 Ldap).
-
 
 ## Cluster Description
 
@@ -52,11 +51,11 @@ can be used single Linux distribution package.
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/cluster/cluster.png)
 *Figure 1*
 
-### Technologes
+### Technologies
 
 The following Technologies are used in cluster solutions.
 
-#### Loda Balancer
+#### Load Balancer
 
 * Distributing workloads across multiple Nodes direct to apache servers in top
 of cluster can be used any hardware load balancer.
@@ -102,7 +101,7 @@ TwemProxy detailed connection topology between two nodes for **Cluster** is pres
 
 #### GlusterFS
 
-* To share configuration or static files between nodes must be used GlusterFS
+* To share configuration for static files between nodes must be used GlusterFS
 technology. GlusterFS logical connection topology for **Cluster** is
 presented in [Figure 5](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/cluster/glusterfs.png).
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/cluster/glusterfs.png?raw=true)
@@ -120,7 +119,7 @@ the appropriate place in local node with bind option in mount utility.
 
 ### Health Check Script
 
-Heath check script must check health status of
+Health check script must check health status of
 
 * System components. According checking algorithm appropriate
 service can be stopped or isolated from cluster, using firewall

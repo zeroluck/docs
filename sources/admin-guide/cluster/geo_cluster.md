@@ -13,7 +13,7 @@ Figure 7
 between memcached out of locations will not be effective way. To split requests
 geographically can be used Split-horizon DNS solution.
 
-### Technologes
+### Technologies
 
 * The following Technologies must be used to achieve **Geo Cluster** clustering solution
 in one geographical location.
