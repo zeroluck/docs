@@ -309,7 +309,7 @@
         
             <li><a href="#introduction">Introduction</a></li>
         
-            <li><a href="#network-and-sceurity-design">Network And Sceurity Design</a></li>
+            <li><a href="#network-and-security-design">Network And Security Design</a></li>
         
             <li><a href="#cluster-description">Cluster Description</a></li>
         
@@ -337,15 +337,15 @@ that meet these requirements.</p>
 <p>The purpose of the Document is to describe cluster solution for GLUU Inc. Cluster solution
 should be cost effective, flexible, should provide geographic redundancy and scalability,
 solution should not impact on main requirements of security in order to it will be
-implemented in datacenters where security requirements are high.</p>
-<h2 id="network-and-sceurity-design">Network And Sceurity Design</h2>
-<p>The network HA can be various, it depends on the place of installation and special design. Protecting the internal
+implemented in data centers where security requirements are high.</p>
+<h2 id="network-and-security-design">Network And Security Design</h2>
+<p>The network HA can be various, it depends on the place of installation and special desi
 network from threats can be implemented by firewalls subsystems and IPS / IDS. The
 connections between data centers can be implemented via the Internet through the
 encrypted or protected connections.
-Some data centers have special security requirements. In case of all in one installation (all
+Some data centers have special security requirements. In case of all in one installation
 components running on single node) it can impact the security requirement “one primary
-function per server” to cover this type of requirement and do not lose cost effectiveness,
+function per server” to cover this type of requirement and do not lose cost effectiveness
 the application components will be installed in one node but under different chroot
 environments. It can be divided in following environments (Apache, Shibboleth, Tomcat,
 Ldap).</p>
@@ -368,9 +368,9 @@ can be used single Linux distribution package.</p>
 </ul>
 <p><img alt="Image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/cluster/cluster.png" />
 <em>Figure 1</em></p>
-<h3 id="technologes">Technologes</h3>
+<h3 id="technologies">Technologies</h3>
 <p>The following Technologies are used in cluster solutions.</p>
-<h4 id="loda-balancer">Loda Balancer</h4>
+<h4 id="load-balancer">Load Balancer</h4>
 <ul>
 <li>Distributing workloads across multiple Nodes direct to apache servers in top
 of cluster can be used any hardware load balancer.</li>
@@ -412,7 +412,7 @@ TwemProxy logical connection topology for <strong>Cluster</strong> is presented 
 <h4 id="glusterfs">GlusterFS</h4>
 <ul>
 <li>
-<p>To share configuration or static files between nodes must be used GlusterFS
+<p>To share configuration for static files between nodes must be used GlusterFS
 technology. GlusterFS logical connection topology for <strong>Cluster</strong> is
 presented in <a href="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/cluster/glusterfs.png">Figure 5</a>.
 <img alt="Image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/cluster/glusterfs.png?raw=true" />
@@ -428,7 +428,7 @@ the appropriate place in local node with bind option in mount utility.</p>
 <p><img alt="Image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/cluster/glusterfs2.png" />
 <em>Figure 6</em></p>
 <h3 id="health-check-script">Health Check Script</h3>
-<p>Heath check script must check health status of</p>
+<p>Health check script must check health status of</p>
 <ul>
 <li>
 <p>System components. According checking algorithm appropriate
