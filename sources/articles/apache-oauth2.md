@@ -1,6 +1,6 @@
 # Contents
 
-- [Compilation](#Compilation)
+- [Prerequisites](#Prerequisites)
 - [Big Title](#big-title)
 - [Medium Title](#medium-title) 
 - [Small Title](#small-title) 
