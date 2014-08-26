@@ -45,7 +45,6 @@ Every organization has their own policy to release / pass few attributes. It can
 be standard attribute like UID or email address or can be any custom attribute.
 Gluu Engineers need a list of required attributes from organization which they
 want to pass between their authentication server and target websites ( SP ). 
-# Asimba configuration with Gluu Server
 
 
 # Asimba configuration with Gluu Server
