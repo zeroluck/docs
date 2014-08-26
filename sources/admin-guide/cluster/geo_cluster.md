@@ -1,9 +1,9 @@
 ## Geo Cluster
 
 The **Geo Cluster** solution is approaching to connect more than one **Cluster** together. **Geo Cluster** solution is flexible and scalable for geographically
-dispersed cluster design [Figure 7](../../../img/cluster/multi_group_cluster.png).
+dispersed cluster design [Figure 7](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/cluster/multi_group_cluster.png).
 
-![Image](../../../img/cluster/multi_group_cluster.png)
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/cluster/multi_group_cluster.png)
 Figure 7
 
 
