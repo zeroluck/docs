@@ -350,7 +350,7 @@ the application components will be installed in one node but under different chr
 environments. It can be divided in following environments (Apache, Shibboleth, Tomcat,
 Ldap).</p>
 <h2 id="cluster-description">Cluster Description</h2>
-<p>Logical network diagram of <strong>Cluster</strong> is presented in <a href="../../../img/cluster/cluster.png">Figure 1</a></p>
+<p>Logical network diagram of <strong>Cluster</strong> is presented in <a href="../../img/cluster/cluster.png">Figure 1</a></p>
 <ul>
 <li>
 <p>Inside cluster the quantity of active nodes with all in one installation can
@@ -366,7 +366,7 @@ high.</p>
 can be used single Linux distribution package.</p>
 </li>
 </ul>
-<p><img alt="Image" src="../../../img/cluster/cluster.png" />
+<p><img alt="Image" src="../../img/cluster/cluster.png" />
 <em>Figure 1</em></p>
 <h3 id="technologes">Technologes</h3>
 <p>The following Technologies are used in cluster solutions.</p>
@@ -385,9 +385,9 @@ be used mod_jk connector with load balancing mechanism.</li>
 <li>For OpenDJ - LDAP replication must be used multimaster synchronization
 mechanism. The replication topology and suggestions have been taken from
 official site of Opendj. LDAP Replication Topology for <strong>Cluster</strong> is
-presented in <a href="../../../img/cluster/ldap.png">Figure 2</a>.</li>
+presented in <a href="../../img/cluster/ldap.png">Figure 2</a>.</li>
 </ul>
-<p><img alt="Image" src="../../../img/cluster/ldap.png" />
+<p><img alt="Image" src="../../img/cluster/ldap.png" />
 <em>Figure 2</em></p>
 <h4 id="memcached">Memcached</h4>
 <ul>
@@ -402,28 +402,28 @@ must be used. The information sharing between memcached inside of nodes
 will be distributed using consistent hashing algorithm. (TwemProxy is a
 fast, light-weight proxy for the memcached protocol. Twemproxy was
 primarily developed to reduce open connections to Twitter cache servers.).
-TwemProxy logical connection topology for <strong>Cluster</strong> is presented in <a href="../../../img/cluster/twemproxy.png">Figure 3</a>.</li>
+TwemProxy logical connection topology for <strong>Cluster</strong> is presented in <a href="../../img/cluster/twemproxy.png">Figure 3</a>.</li>
 </ul>
-<p><img alt="Image" src="../../../img/cluster/twemproxy.png" />
+<p><img alt="Image" src="../../img/cluster/twemproxy.png" />
 <em>Figure 3</em></p>
-<p>TwemProxy detailed connection topology between two nodes for <strong>Cluster</strong> is presented <a href="../../../img/cluster/twemproxy2.png">Figure 4</a></p>
-<p><img alt="Image" src="../../../img/cluster/twemproxy2.png" />
+<p>TwemProxy detailed connection topology between two nodes for <strong>Cluster</strong> is presented <a href="../../img/cluster/twemproxy2.png">Figure 4</a></p>
+<p><img alt="Image" src="../../img/cluster/twemproxy2.png" />
 <em>Figure 4</em></p>
 <h4 id="glusterfs">GlusterFS</h4>
 <ul>
 <li>To share configuration or static files between nodes must be used GlusterFS
 technology. GlusterFS logical connection topology for <strong>Cluster</strong> is
-presented in <a href="../../../img/cluster/glusterfs.png">Figure 5</a>.</li>
+presented in <a href="../../img/cluster/glusterfs.png">Figure 5</a>.</li>
 </ul>
-<p><img alt="Image" src="../../../img/cluster/glusterfs.png" />
+<p><img alt="Image" src="../../img/cluster/glusterfs.png" />
 <em>Figure 5</em></p>
 <ul>
 <li>GlusterFS detailed connection topology between two nodes for <strong>Cluster</strong> 
-is presented in <a href="../../../img/cluster/glusterfs.png">Figure 6</a>. 
+is presented in <a href="../../img/cluster/glusterfs.png">Figure 6</a>. 
 The files and directories inside of GlusterFS mount point can be mounted to 
 the appropriate place in local node with bind option in mount utility.</li>
 </ul>
-<p><img alt="Image" src="../../../img/cluster/glusterfs2.png" />
+<p><img alt="Image" src="../../img/cluster/glusterfs2.png" />
 <em>Figure 6</em></p>
 <h3 id="health-check-script">Health Check Script</h3>
 <p>Heath check script must check health status of</p>
@@ -446,7 +446,7 @@ file inside of GlusterFS)</p>
 </li>
 </ul>
 <h4 id="process-flow-chart-chart-inside-of-single-node">Process Flow Chart Chart Inside Of Single Node</h4>
-<p><img alt="Image" src="../../../img/cluster/process_flow.png" />
+<p><img alt="Image" src="../../img/cluster/process_flow.png" />
 Figure 7</p>
 <h2 id="geo-cluster">Geo Cluster</h2>
 <ul>
