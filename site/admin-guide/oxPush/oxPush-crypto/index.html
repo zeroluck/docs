@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../..//img/favicon_ic.ico">
+
+        <title>Oxpush - Gluu Servers</title>
+
+        <link href="../../..//css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../..//css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../..//css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../..//css/base.css" rel="stylesheet">
+        
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../../"><img src="../../..//img/logo.png" ></a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    
+                        <li >
+                            <a href="../../../">Home</a>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin Guide <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../introduction/">Introduction</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../installation/">Installation</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../custom-look/">Customizing Look and Feel</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../certificates/">Certificates</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../user-management/">User Management</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../authentication/">Authentication</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../saml/">SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../openid-connect/">OpenID Connect</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../uma/">UMA</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../interception-scripts/">Interception Scripts</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../">oxPush</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../cluster/">GLUU Cluster</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/configuration/">Configuration</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/oxTrust/">oxTrust User Interface</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/ldap/">LDAP Schema</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/lib/">Libraries</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/api/">APIs</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Articles <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/gluu-server-ce/">Try Gluu Server CE - Quickstart</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/apache-saml/">Apache SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/java-saml/">Java SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/google-saml/">Google SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/apache-oauth2/">Apache OpenID Connect / UMA</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/js-connect/">JavaScript OpenID Connect RP</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/java-connect/">Java OpenID Connect RP</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/scim-client/">Java SCIM client</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/benchmarking/">Gluu Server Benchmark</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                
+                </ul>
+            
+
+            
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li >
+                    <a rel="next" href="../oxPush-server/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../../cluster/geo_cluster/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a href="https://github.com/GluuFederation/docs">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                <li>
+                <!--<form action="." method="get" class="form-inline">-->
+                    <!--<div class="search-box">-->
+                        <!--<input type="text" value="" class="search-text" placeholder="Search" />-->
+                        <!--<input type="submit" value="Search" class="search-tag"/>-->
+                    <!--</div>-->
+                <!--</form>-->
+
+                </li>
+                
+            </ul>
+            
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+       
+        <li class="main active"><a href="#pondere-imitabere-colonos">Pondere imitabere colonos</a></li>
+        
+            <li><a href="#frustra-naturam-sincerae-novis-nebulas-defensamus-visum">Frustra naturam sincerae novis nebulas defensamus visum</a></li>
+        
+            <li><a href="#tamen-hanc-quoque-metu-claro-hyperionis-venit">Tamen hanc quoque metu claro Hyperionis venit</a></li>
+        
+       
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="pondere-imitabere-colonos">Pondere imitabere colonos</h1>
+<h2 id="frustra-naturam-sincerae-novis-nebulas-defensamus-visum">Frustra naturam sincerae novis nebulas defensamus visum</h2>
+<p>Lorem markdownum opemque insignia cognita. Arcton formamque postquam sacra ait
+abdita concolor, cum et falle.</p>
+<ol>
+<li>Palpitat quid paratu materque</li>
+<li>Positasque dextraque tale causamque</li>
+<li>Est nomine admovet torrem moderantur morari</li>
+<li>Cura ignara</li>
+<li>Misceri neve regnum arma dique</li>
+</ol>
+<p>Dicunt fuit Echionides quam <strong>enervet albet</strong>; spatium gratam. Vera ferendam
+nostri dum pendentia aegros, quae <em>quoque</em> tua costas referre ora. Sunt venerat
+Phoebe ipsa inbellemque Armeniae erit, qui dixit solo utque! Super in mihi
+cacuminat finis committere vincis trahunt, durat sed; oculis, et est nudus in
+illa.</p>
+<ul>
+<li>Sua medios adhaesi has carne vestigia</li>
+<li>Non relatu tantum tenebrisque harenis videor cumque</li>
+<li>Genitor et non dixi sit cupiens</li>
+<li>Manusque et atra suo</li>
+</ul>
+<h2 id="tamen-hanc-quoque-metu-claro-hyperionis-venit">Tamen hanc quoque metu claro Hyperionis venit</h2>
+<p>Conripiantque fidesque de fatebor profecto, torvis ego illud cogor fata tamen
+carpant puellae. Detis fortissime nomen est, ad fas coniugis silvis inscribenda
+<strong>causa</strong>. Numen ait concutiens alta Phaethontida quin Iuppiter quattuor suorum
+clauserat; ductor in. Si arva auro populis loca alis, collibus genitor praestem
+umerique velut, intravit. Censuque tepidum inmitibus, fuit in adstitit naidas
+qui advehor matri <em>nec</em> Psecas; saltus.</p>
+<pre class="prettyprint well"><code>if (cd_controller_t(1, 2, vrml_degauss_perl)) {
+    map_bezel_remote.key = 1;
+    responsive_meta_error(functionIsoThunderbolt);
+    bsod += 49 + broadbandPseudocode + memory_cd_raw + 30;
+} else {
+    pop_design_malware.winsock_multimedia_whitelist = cifs_xmp_pptp(video(
+            ttl_widget, waveform, aspCybercrimeMenu), prebindingDegauss);
+    soSystem = nonDriverMemory + memory_plug_backside(upload, bsodBridgeSmb,
+            nameWhitelist);
+    piconetHome += nosql - unc_activex_tag;
+}
+if (linkedinCompilerMashup) {
+    flat_cpa = 56 + 4 + 5;
+    nvram = 54 * 33 + kilobyteWildcardArray;
+    io_boot_station.inboxCommerce = topologySyntax(batch_smartphone) +
+            tunnelingLeft;
+} else {
+    wais -= data_ssd_template(metadataUsernameSocial);
+    plug_domain_heuristic.crm(92);
+}
+if (bigSpreadsheetGraphics) {
+    stationArrayIos *= requirementsSpam(1, drmCifsBot, fifo);
+}
+</code></pre>
+<p>Non sopitus turbavere in modo defluit inquit comitatur baculo mollis, sonantia
+labori neque plectrum. Ecquid Nereia locus unum sed propositum proles ille
+portus abeunt aethere deiectuque auras montanum mollescit.</p>
+<blockquote>
+<p>Te fert <strong>rapida</strong> meorum negat; sub deus mea cum oculi ut mittere. Passim
+iaculum et cognita metu saevis pudore; a inrita mei quantum nisi effodit tum,
+corpora, cuius quae! Funeris obortis divis est ungula rupit commisi progenuit
+quidem iam procul nexuque tauri, is ad, <a href="http://stoneship.org/">infelix</a>. Per
+prolem et, spernit fide fide modo bisque is Phoebus electro declive. Age quam
+petiit seu: est, stringitur illi, solvitur ducit.</p>
+</blockquote>
+<p>Viscera membra; hunc nova supremaque quas animos pietas legar, sit. In in
+nectare?</p>
+</div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Copyright &copy; 2014, Gluu, Inc.</p>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../..//js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../..//js/prettify-1.0.min.js"></script>
+        <script src="../../..//js/base.js"></script>
+        
+    </body>
+</html>

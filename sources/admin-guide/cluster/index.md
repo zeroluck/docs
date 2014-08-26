@@ -37,7 +37,7 @@ Ldap).
 
 ## Cluster Description
 
-Logical network diagram of **Cluster** is presented in [Figure 1](../../img/cluster/cluster.png)
+Logical network diagram of **Cluster** is presented in [Figure 1](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/cluster/cluster.png)
 
 * Inside cluster the quantity of active nodes with all in one installation can
 be no more than 5 nodes. If there will be necessity to increase quantity of nodes,
@@ -49,7 +49,7 @@ high.
 * For easy and fast installation of IDP environment in every node, inside of cluster
 can be used single Linux distribution package.
 
-![Image](../../img/cluster/cluster.png)
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/cluster/cluster.png)
 *Figure 1*
 
 ### Technologes
@@ -71,9 +71,9 @@ be used mod_jk connector with load balancing mechanism.
 * For OpenDJ - LDAP replication must be used multimaster synchronization
 mechanism. The replication topology and suggestions have been taken from
 official site of Opendj. LDAP Replication Topology for **Cluster** is
-presented in [Figure 2](../../img/cluster/ldap.png).
+presented in [Figure 2](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/cluster/ldap.png).
 
-![Image](../../img/cluster/ldap.png)
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/cluster/ldap.png)
 *Figure 2*
 
 #### Memcached
@@ -89,34 +89,33 @@ must be used. The information sharing between memcached inside of nodes
 will be distributed using consistent hashing algorithm. (TwemProxy is a
 fast, light-weight proxy for the memcached protocol. Twemproxy was
 primarily developed to reduce open connections to Twitter cache servers.).
-TwemProxy logical connection topology for **Cluster** is presented in [Figure 3](../../img/cluster/twemproxy.png).
+TwemProxy logical connection topology for **Cluster** is presented in [Figure 3](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/cluster/twemproxy.png).
 
-![Image](../../img/cluster/twemproxy.png)
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/cluster/twemproxy.png)
 *Figure 3*
 
 
-TwemProxy detailed connection topology between two nodes for **Cluster** is presented [Figure 4](../../img/cluster/twemproxy2.png)
+TwemProxy detailed connection topology between two nodes for **Cluster** is presented [Figure 4](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/cluster/twemproxy2.png)
 
-![Image](../../img/cluster/twemproxy2.png)
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/cluster/twemproxy2.png)
 *Figure 4*
 
 #### GlusterFS
 
 * To share configuration or static files between nodes must be used GlusterFS
 technology. GlusterFS logical connection topology for **Cluster** is
-presented in [Figure 5](../../img/cluster/glusterfs.png).
-
-![Image](../../img/cluster/glusterfs.png)
+presented in [Figure 5](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/cluster/glusterfs.png).
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/cluster/glusterfs.png?raw=true)
 *Figure 5*
 
 
 
 * GlusterFS detailed connection topology between two nodes for **Cluster** 
-is presented in [Figure 6](../../img/cluster/glusterfs.png). 
+is presented in [Figure 6](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/cluster/glusterfs.png). 
 The files and directories inside of GlusterFS mount point can be mounted to 
 the appropriate place in local node with bind option in mount utility.
 
-![Image](../../img/cluster/glusterfs2.png)
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/cluster/glusterfs2.png)
 *Figure 6*
 
 ### Health Check Script
@@ -139,7 +138,7 @@ file inside of GlusterFS)
 
 #### Process Flow Chart Chart Inside Of Single Node
 
-![Image](../../img/cluster/process_flow.png)
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/cluster/process_flow.png)
 Figure 7
 
 

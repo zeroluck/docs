@@ -31,9 +31,9 @@ order to decrease total number of replication connections, must be used
 Stand-alone Replication Servers. The replication topology and suggestions
 have been taken from official site of Opendj. LDAP Replication Topology for
 **Geo Cluster** clustering in case of 4 SINGLE GROUP connection is
-presented in [Figure 8](../../../img/cluster/ldap_multimaster.png).
+presented in [Figure 8](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/cluster/ldap_multimaster.png).
 
-![Image](../../../img/cluster/ldap_multimaster.png)
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/cluster/ldap_multimaster.png)
 Figure 8
 
 * Between Directory Servers and Stand Alone LDAP servers can be used
@@ -43,9 +43,9 @@ Hardware Load Balancers.
 
 * In order to decrease total number of memcached connections in single
 TwemProxy server, must be used TwemProxy Topology for **Geo Cluster**
-clustering [Figure 9](../../../img/cluster/twemproxy_multi.png).
+clustering [Figure 9](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/cluster/twemproxy_multi.png).
 
-![Image](../../../img/cluster/twemproxy_multi.png)
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/cluster/twemproxy_multi.png)
 Figure 9
 
 
@@ -53,7 +53,7 @@ Figure 9
 
 * In order to decrease total number of replicated connections can be used
 stand alone GlusterFS servers. The GlusterFS topology for **Geo Cluster**
-clustering [Figure 10](../../../img/cluster/glusterfs_multi.png).
+clustering [Figure 10](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/cluster/glusterfs_multi.png).
 
 * In case if operating system of Node doesn’t support GlusterFS, can be used
 NFS client server connection between Node and GlusterFS server.
@@ -61,5 +61,5 @@ NFS client server connection between Node and GlusterFS server.
 * Between GlusterFS servers in different geo-locations the glusterfs georeplication
 can be used.
 
-![Image](../../../img/cluster/glusterfs_multi.png)
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/cluster/glusterfs_multi.png)
 Figure 10

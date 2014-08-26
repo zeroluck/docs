@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../..//img/favicon_ic.ico">
+
+        <title>Saml - Gluu Servers</title>
+
+        <link href="../../..//css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../..//css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../..//css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../..//css/base.css" rel="stylesheet">
+        
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../../"><img src="../../..//img/logo.png" ></a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    
+                        <li >
+                            <a href="../../../">Home</a>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin Guide <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../introduction/">Introduction</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../installation/">Installation</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../custom-look/">Customizing Look and Feel</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../certificates/">Certificates</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../user-management/">User Management</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../authentication/">Authentication</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../">SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../openid-connect/">OpenID Connect</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../uma/">UMA</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../interception-scripts/">Interception Scripts</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../oxPush/">oxPush</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../cluster/">GLUU Cluster</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/configuration/">Configuration</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/oxTrust/">oxTrust User Interface</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/ldap/">LDAP Schema</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/lib/">Libraries</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/api/">APIs</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Articles <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/gluu-server-ce/">Try Gluu Server CE - Quickstart</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/apache-saml/">Apache SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/java-saml/">Java SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/google-saml/">Google SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/apache-oauth2/">Apache OpenID Connect / UMA</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/js-connect/">JavaScript OpenID Connect RP</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/java-connect/">Java OpenID Connect RP</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/scim-client/">Java SCIM client</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/benchmarking/">Gluu Server Benchmark</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                
+                </ul>
+            
+
+            
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li >
+                    <a rel="next" href="../outbound-saml/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../saml-sp-configuration/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a href="https://github.com/GluuFederation/docs">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                <li>
+                <!--<form action="." method="get" class="form-inline">-->
+                    <!--<div class="search-box">-->
+                        <!--<input type="text" value="" class="search-text" placeholder="Search" />-->
+                        <!--<input type="submit" value="Search" class="search-tag"/>-->
+                    <!--</div>-->
+                <!--</form>-->
+
+                </li>
+                
+            </ul>
+            
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+       
+        <li class="main active"><a href="#inbound-saml-in-gluu-server">Inbound SAML in Gluu Server</a></li>
+        
+            <li><a href="#requirement-to-setup-inbound-saml">Requirement to setup Inbound SAML</a></li>
+        
+       
+    
+       
+        <li class="main "><a href="#asimba-configuration-with-gluu-server">Asimba configuration with Gluu Server</a></li>
+        
+            <li><a href="#base-installation-of-asimba-package">Base installation of Asimba package</a></li>
+        
+            <li><a href="#apache-configuration">Apache configuration</a></li>
+        
+            <li><a href="#test-asimba-setup">Test Asimba setup</a></li>
+        
+            <li><a href="#adding-new-service-provider-or-identity-provider-in-asimba-server">Adding new Service Provider or Identity Provider in Asimba server</a></li>
+        
+       
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="inbound-saml-in-gluu-server">Inbound SAML in Gluu Server</h1>
+<p>For customers who need to support inbound SAML authentication for partners or
+other organizations, we can deploy the Asimba SAML proxy.</p>
+<p>The main use case for Asimba is to enable websites to use a single IDP for SSO,
+even when the organization may have a number of IDPs that are trusted. For more
+information, please contact us.</p>
+<h2 id="requirement-to-setup-inbound-saml">Requirement to setup Inbound SAML</h2>
+<ul>
+<li>Metadata of authentication server</li>
+<li>Metadata of websites who will work as servcie provider</li>
+<li>SAML certificate of websites</li>
+<li>SSL certificate of authentication server </li>
+<li>Required attributes</li>
+</ul>
+<p>Above points are described breifly below. </p>
+<h3 id="metadata-of-authentication-server">Metadata of authentication server</h3>
+<p>Authentication server can be any remote / native Shibboleth IDP or Microsoft AD
+FS. We need metadata of these servers to configure Asimba. After configuration
+end user will be able to select their desired authentication server from
+Asimba's discovery page. Or, we can configure the "selector" which will
+automatically redirect user to desired IDP / ADFS. </p>
+<h3 id="metadata-of-websites-who-will-work-as-servcie-provider">Metadata of websites who will work as servcie provider</h3>
+<p>Just like authentication server metadata, Gluu Server - Asimba suite require
+metadaa from all websites ( SPs ) which will be connected. </p>
+<h3 id="saml-certificate-of-websites">SAML certificate of websites</h3>
+<p>Base64 encoded certificates require to configure the trust store of Asimba
+server as it can connect / allow the inbound SAML request from remote SP. </p>
+<h3 id="ssl-certificate-of-authentication-server">SSL certificate of authentication server</h3>
+<p>Base64 encoded certificates of authentication server is also a requirement. </p>
+<h3 id="required-attributes">Required attributes</h3>
+<p>Every organization has their own policy to release / pass few attributes. It can
+be standard attribute like UID or email address or can be any custom attribute.
+Gluu Engineers need a list of required attributes from organization which they
+want to pass between their authentication server and target websites ( SP ). </p>
+<h1 id="asimba-configuration-with-gluu-server">Asimba configuration with Gluu Server</h1>
+<h2 id="base-installation-of-asimba-package">Base installation of Asimba package</h2>
+<ul>
+<li>Get the war for Asimba from <a href="http://asimba.org">http://asimba.org</a></li>
+<li>Copy the war file in <code>/opt/tomcat/webapps</code></li>
+<li>Restart tomcat, it will extract the Asimba</li>
+<li>Get the asimba.conf template from Gluu</li>
+<li>Generate the keystore for your Asimba server:<ul>
+<li>Command: <code>keytool -genkeypair -keyalg RSA -alias "&lt;ALIAS_OF_KEYSTORE&gt;" -keypass &lt;PASSWORD&gt; -keystore &lt;NAME_OF_JKS&gt;.jks -storepass &lt;PASSWORD&gt;</code><ul>
+<li>What is your first and last name?: Provide the hostname of Asimba server</li>
+<li>What is the name of your organizational unit?: IT</li>
+<li>What is the name of your organization?: Provide name</li>
+<li>What is the name of your City or Locality?: city name</li>
+<li>What is the name of your State or Province?: State name</li>
+<li>What is the two-letter country code for this unit?: US</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Adding IDP / ADFS in Asimba: </p>
+<ul>
+<li>Gather metadata of IDP / ADFS and keep them in some place under /tomcat/webapps/asimba-saml-proxy/WEB-INF/ </li>
+<li>Collect certificate of IDP / ADFS and import them in Asimba truststore JKS</li>
+</ul>
+</li>
+<li>
+<p>Adding SP in Asimba: </p>
+<ul>
+<li>Gather metadata of SP and keep them in some place under /tomcat/webapps/asimba-saml-proxy/WEB-INF/</li>
+<li>Collect certificate of SP and import them in Asimba truststore JKS</li>
+</ul>
+</li>
+<li>
+<p>Restart tomcat</p>
+</li>
+</ul>
+<h2 id="apache-configuration">Apache configuration</h2>
+<ul>
+<li>
+<p>Configure "idp.conf": </p>
+<pre class="prettyprint well"><code>    &lt;Location /asimba-saml-proxy&gt;
+        ProxyPass ajp://&lt;ASIMBA_HOSTNAME&gt;:8009/asimba-saml-proxy retry=5 disablereuse=On
+        ProxyPassReverse ajp://&lt;ASIMBA_HOSTNAME&gt;:8009/asimba-saml-proxy
+
+        Order allow,deny
+        Allow from all
+    &lt;/Location&gt;
+</code></pre>
+</li>
+<li>
+<p>Restart httpd </p>
+</li>
+</ul>
+<h2 id="test-asimba-setup">Test Asimba setup</h2>
+<ul>
+<li>Try to download the metadata of Asimba server with: <code>wget -c https://&lt;HOSTNAME&gt;/asimba-saml-proxy/profiles/saml2</code></li>
+</ul>
+<h2 id="adding-new-service-provider-or-identity-provider-in-asimba-server">Adding new Service Provider or Identity Provider in Asimba server</h2>
+<h3 id="a-new-idp-adfs-configuration-in-asimba">A new IDP / ADFS configuration in Asimba</h3>
+<p>All our configurations are based on one Asimba configuration file named
+"asimba.xml". It's also possible to configure Asimba with JDBC. For more info
+Asimba <a href="http://sourceforge.net/p/asimba/wiki/Home/">wiki</a> is availalbe.</p>
+<ul>
+<li>
+<p>Required tools</p>
+<ul>
+<li>Metadata of remote IDP</li>
+<li>SAML certificate of remote IDP</li>
+</ul>
+</li>
+<li>
+<p>Configuring asimba.xml: </p>
+<ul>
+<li>Grab the metadata of remote IDP and save it in some place. Make sure that user tomcat can read this xml copy. <ul>
+<li>Specify this metadata in  <code>&lt;websso&gt;\&lt;method&gt;\&lt;idps&gt;</code> section. <ul>
+<li><code>idp id</code> must follow the entityID of this metadata.</li>
+<li><code>scoping</code> should be "false"</li>
+<li>Add the static path of metadata inside <code>&lt;file&gt;</code> section. </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>A sample configuration should look like below:</p>
+<p><code></p>
+<pre class="prettyprint well"><code>        &lt;idp id="https://idp.gluu.org/idp/shibboleth" friendlyname="Gluu IDP" scoping="false" 
+            avoid_subjectconfirmation="false"&gt;
+                &lt;nameidpolicy enabled="false" /&gt;
+                    &lt;metadata&gt;
+                        &lt;file&gt;${webapp.root}/WEB-INF/metadata/idp/idp_gluu_org.xml&lt;/file&gt;
+                    &lt;metadata&gt;
+        &lt;/idp&gt;
+</code></pre>
+<p></code></p>
+</div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Copyright &copy; 2014, Gluu, Inc.</p>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../..//js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../..//js/prettify-1.0.min.js"></script>
+        <script src="../../..//js/base.js"></script>
+        
+    </body>
+</html>
