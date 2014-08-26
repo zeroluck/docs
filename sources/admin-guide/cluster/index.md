@@ -37,8 +37,7 @@ Ldap).
 
 ## Cluster Description
 
-Logical network diagram of **Cluster** is presented in [Figure 1](../../../img/cluste
-r/cluster.png)
+Logical network diagram of **Cluster** is presented in [Figure 1](../../../img/cluster/cluster.png)
 
 * Inside cluster the quantity of active nodes with all in one installation can
 be no more than 5 nodes. If there will be necessity to increase quantity of nodes,
@@ -72,7 +71,7 @@ be used mod_jk connector with load balancing mechanism.
 * For OpenDJ - LDAP replication must be used multimaster synchronization
 mechanism. The replication topology and suggestions have been taken from
 official site of Opendj. LDAP Replication Topology for **Cluster** is
-presented in [Figure 2](../../../img/cluster/ldup.png).
+presented in [Figure 2](../../../img/cluster/ldap.png).
 
 ![Image](../../../img/cluster/ldap.png)
 *Figure 2*

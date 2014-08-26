@@ -63,9 +63,3 @@ can be used.
 
 ![Image](../../../img/cluster/glusterfs_multi.png)
 Figure 10
-
-
-#### Process FlowInside Of Sinfle Node
-
-![Image](../../../img/cluster/process_flow.png)
-Figure 11
