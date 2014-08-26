@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../..//img/favicon_ic.ico">
+
+        <title>GLUU Cluster - Gluu Servers</title>
+
+        <link href="../..//css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../..//css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../..//css/prettify-1.0.css" rel="stylesheet">
+        <link href="../..//css/base.css" rel="stylesheet">
+        
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../"><img src="../..//img/logo.png" ></a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    
+                        <li >
+                            <a href="../../">Home</a>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown active">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin Guide <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../introduction/">Introduction</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../installation/">Installation</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../custom-look/">Customizing Look and Feel</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../certificates/">Certificates</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../user-management/">User Management</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../authentication/">Authentication</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../saml/">SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../openid-connect/">OpenID Connect</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../uma/">UMA</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../interception-scripts/">Interception Scripts</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../oxPush/">oxPush</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="active">
+                                        <a href="./">GLUU Cluster</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../reference/configuration/">Configuration</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../reference/oxTrust/">oxTrust User Interface</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../reference/ldap/">LDAP Schema</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../reference/lib/">Libraries</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../reference/api/">APIs</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Articles <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../articles/gluu-server-ce/">Try Gluu Server CE - Quickstart</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../articles/apache-saml/">Apache SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../articles/java-saml/">Java SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../articles/google-saml/">Google SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../articles/apache-oauth2/">Apache OpenID Connect / UMA</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../articles/js-connect/">JavaScript OpenID Connect RP</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../articles/java-connect/">Java OpenID Connect RP</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../articles/scim-client/">Java SCIM client</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../articles/benchmarking/">Gluu Server Benchmark</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                
+                </ul>
+            
+
+            
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li >
+                    <a rel="next" href="../oxPush/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../../reference/configuration/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a href="https://github.com/GluuFederation/docs">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                <li>
+                <!--<form action="." method="get" class="form-inline">-->
+                    <!--<div class="search-box">-->
+                        <!--<input type="text" value="" class="search-text" placeholder="Search" />-->
+                        <!--<input type="submit" value="Search" class="search-tag"/>-->
+                    <!--</div>-->
+                <!--</form>-->
+
+                </li>
+                
+            </ul>
+            
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+       
+        <li class="main active"><a href="#gluu-cluster">GLUU cluster</a></li>
+        
+            <li><a href="#objectives">Objectives</a></li>
+        
+            <li><a href="#glossary">Glossary</a></li>
+        
+            <li><a href="#introduction">Introduction</a></li>
+        
+            <li><a href="#network-and-sceurity-design">Network And Sceurity Design</a></li>
+        
+            <li><a href="#cluster-description">Cluster Description</a></li>
+        
+            <li><a href="#geo-cluster">Geo Cluster</a></li>
+        
+       
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="gluu-cluster">GLUU cluster</h1>
+<h2 id="objectives">Objectives</h2>
+<p>The purpose of the technical design is to confirm that the Supplier has identified all the
+technical and technological requirements of the Purchaser and has defined the solutions
+that meet these requirements.</p>
+<h2 id="glossary">Glossary</h2>
+<ul>
+<li>IDP - Identity Provider</li>
+<li>HA - High Availability</li>
+<li>IDS – Intrusion Detection System</li>
+<li>IPS – Intrusion Prevention System</li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>The purpose of the Document is to describe cluster solution for GLUU Inc. Cluster solution
+should be cost effective, flexible, should provide geographic redundancy and scalability,
+solution should not impact on main requirements of security in order to it will be
+implemented in datacenters where security requirements are high.</p>
+<h2 id="network-and-sceurity-design">Network And Sceurity Design</h2>
+<p>The network HA can be various, it depends on the place of installation and special design. Protecting the internal
+network from threats can be implemented by firewalls subsystems and IPS / IDS. The
+connections between data centers can be implemented via the Internet through the
+encrypted or protected connections.
+Some data centers have special security requirements. In case of all in one installation (all
+components running on single node) it can impact the security requirement “one primary
+function per server” to cover this type of requirement and do not lose cost effectiveness,
+the application components will be installed in one node but under different chroot
+environments. It can be divided in following environments (Apache, Shibboleth, Tomcat,
+Ldap).</p>
+<h2 id="cluster-description">Cluster Description</h2>
+<p>Logical network diagram of <strong>Cluster</strong> is presented in <a href="../../../img/cluste
+r/cluster.png">Figure 1</a></p>
+<ul>
+<li>
+<p>Inside cluster the quantity of active nodes with all in one installation can
+be no more than 5 nodes. If there will be necessity to increase quantity of nodes,
+then must be used <strong>Geo Cluster</strong> approach.</p>
+</li>
+<li>
+<p><strong>Cluster</strong> is better to use inside of one data center or it can be used in different datacenters where quality and HA of network inter connection is
+high.</p>
+</li>
+<li>
+<p>For easy and fast installation of IDP environment in every node, inside of cluster
+can be used single Linux distribution package.</p>
+</li>
+</ul>
+<p><img alt="Image" src="../../../img/cluster/cluster.png" />
+<em>Figure 1</em></p>
+<h3 id="technologes">Technologes</h3>
+<p>The following Technologies are used in cluster solutions.</p>
+<h4 id="loda-balancer">Loda Balancer</h4>
+<ul>
+<li>Distributing workloads across multiple Nodes direct to apache servers in top
+of cluster can be used any hardware load balancer.</li>
+</ul>
+<h4 id="mod_jk">Mod_jk</h4>
+<ul>
+<li>For distributing workloads from apache server between Tomcat servers must
+be used mod_jk connector with load balancing mechanism.</li>
+</ul>
+<h4 id="opendj">OpenDJ</h4>
+<ul>
+<li>For OpenDJ - LDAP replication must be used multimaster synchronization
+mechanism. The replication topology and suggestions have been taken from
+official site of Opendj. LDAP Replication Topology for <strong>Cluster</strong> is
+presented in <a href="../../../img/cluster/ldup.png">Figure 2</a>.</li>
+</ul>
+<p><img alt="Image" src="../../../img/cluster/ldap.png" />
+<em>Figure 2</em></p>
+<h4 id="memcached">Memcached</h4>
+<ul>
+<li>In order to decrease database loads and network requests, following
+technologies must be used to connect memcached.</li>
+</ul>
+<h4 id="twemproxy">Twemproxy</h4>
+<ul>
+<li>To share the keys stored in memcached between clustered nodes and to
+avoid using sticky session sharing mechanism, <strong>TwemProxy</strong> proxy server
+must be used. The information sharing between memcached inside of nodes
+will be distributed using consistent hashing algorithm. (TwemProxy is a
+fast, light-weight proxy for the memcached protocol. Twemproxy was
+primarily developed to reduce open connections to Twitter cache servers.).
+TwemProxy logical connection topology for <strong>Cluster</strong> is presented in <a href="../../../img/cluster/twemproxy.png">Figure 3</a>.</li>
+</ul>
+<p><img alt="Image" src="../../../img/cluster/twemproxy.png" />
+<em>Figure 3</em></p>
+<p>TwemProxy detailed connection topology between two nodes for <strong>Cluster</strong> is presented <a href="../../../img/cluster/twemproxy2.png">Figure 4</a></p>
+<p><img alt="Image" src="../../../img/cluster/twemproxy2.png" />
+<em>Figure 4</em></p>
+<h4 id="glusterfs">GlusterFS</h4>
+<ul>
+<li>To share configuration or static files between nodes must be used GlusterFS
+technology. GlusterFS logical connection topology for <strong>Cluster</strong> is
+presented in <a href="../../../img/cluster/glusterfs.png">Figure 5</a>.</li>
+</ul>
+<p><img alt="Image" src="../../../img/cluster/glusterfs.png" />
+<em>Figure 5</em></p>
+<ul>
+<li>GlusterFS detailed connection topology between two nodes for <strong>Cluster</strong> 
+is presented in <a href="../../../img/cluster/glusterfs.png">Figure 6</a>. 
+The files and directories inside of GlusterFS mount point can be mounted to 
+the appropriate place in local node with bind option in mount utility.</li>
+</ul>
+<p><img alt="Image" src="../../../img/cluster/glusterfs2.png" />
+<em>Figure 6</em></p>
+<h3 id="health-check-script">Health Check Script</h3>
+<p>Heath check script must check health status of</p>
+<ul>
+<li>
+<p>System components. According checking algorithm appropriate
+service can be stopped or isolated from cluster, using firewall
+rules inside of Nodes. (Checking algorithm must be provided in
+other document)</p>
+</li>
+<li>
+<p>Integrity checking of files inside of mount point of GlusterFS.
+Collecting centralized integrity checking information can help to
+monitor and determine the failure of GlusterFS inside of node.</p>
+</li>
+<li>
+<p>The status of component which is responsible for restarting a
+service in current node. (Can be implemented in LDAP or in status
+file inside of GlusterFS)</p>
+</li>
+</ul>
+<h4 id="process-flow-chart-chart-inside-of-single-node">Process Flow Chart Chart Inside Of Single Node</h4>
+<p><img alt="Image" src="../../../img/cluster/process_flow.png" />
+Figure 7</p>
+<h2 id="geo-cluster">Geo Cluster</h2>
+<ul>
+<li><a href="geo_cluster/">Geo Cluster</a></li>
+</ul>
+</div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Copyright &copy; 2014, Gluu, Inc.</p>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../..//js/bootstrap-3.0.3.min.js"></script>
+        <script src="../..//js/prettify-1.0.min.js"></script>
+        <script src="../..//js/base.js"></script>
+        
+    </body>
+</html>
