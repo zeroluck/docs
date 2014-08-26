@@ -62,7 +62,8 @@ pages:
 - ['admin-guide/installation/juju.md', '**HIDDEN**']
 
 # Sub Pages of Admin Guide / Gluu Server Operations
-- ['admin-guide/gluu-server-operations/gluu-server-operations.md', '**HIDDEN**']
+- ['admin-guide/gluu-server-operations/start-stop-chroot.md', '**HIDDEN**']
+- ['admin-guide/gluu-server-operations/restart-services-within-chroot.md', '**HIDDEN**']
 
 # Sub Pages of Admin Guide / Certificates
 - ['admin-guide/certificates/https.md', '**HIDDEN**']
