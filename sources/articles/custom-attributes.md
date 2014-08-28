@@ -36,19 +36,19 @@ the [documentation](http://forgerock.com/opendj)
 
 ``101-acme.ldif``
 
-dn: cn=schema
-objectClass: top
-objectClass: ldapSubentry
-objectClass: subschema
-cn: schema
-attributeTypes: ( acmeCustNumber-oid NAME 'acmeCustNumber' EQUALITY
-  caseIgnoreMatch ORDERING caseIgnoreOrderingMatch SUBSTR caseIgnoreSubstringsMatch
-  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
-attributeTypes: ( acmeStateLicenseNumber-oid NAME 'acmeStateLicenseNumber' EQUALITY
-  caseIgnoreMatch ORDERING caseIgnoreOrderingMatch SUBSTR caseIgnoreSubstringsMatch
-  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15)
-objectClasses:  ( teaperson-oid NAME 'teaPerson' SUP top
-  MAY ( acmeCustNumber $ acmeStateLicenseNumber ) )
+    dn: cn=schema
+    objectClass: top
+    objectClass: ldapSubentry
+    objectClass: subschema
+    cn: schema
+    attributeTypes: ( acmeCustNumber-oid NAME 'acmeCustNumber' EQUALITY
+      caseIgnoreMatch ORDERING caseIgnoreOrderingMatch SUBSTR caseIgnoreSubstringsMatch
+      SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+    attributeTypes: ( acmeStateLicenseNumber-oid NAME 'acmeStateLicenseNumber' EQUALITY
+      caseIgnoreMatch ORDERING caseIgnoreOrderingMatch SUBSTR caseIgnoreSubstringsMatch
+      SYNTAX 1.3.6.1.4.1.1466.115.121.1.15)
+    objectClasses:  ( teaperson-oid NAME 'teaPerson' SUP top
+      MAY ( acmeCustNumber $ acmeStateLicenseNumber ) )
 
 ## Register Attribute in the Gluu Server
 

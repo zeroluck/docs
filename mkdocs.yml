@@ -48,6 +48,7 @@ pages:
 - ['articles/java-connect.md', 'Articles', 'Java OpenID Connect RP']
 - ['articles/scim-client.md', 'Articles', 'Java SCIM client']
 - ['articles/benchmarking.md', 'Articles', 'Gluu Server Benchmark']
+- ['articles/custom-attributes.md', 'Articles', 'Adding Custom User Attributes']
 
 # Sub Pages of introduction 
 - ['admin-guide/introduction/architecture.md', '**HIDDEN**']
