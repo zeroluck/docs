@@ -1,79 +1,140 @@
-# Longo tanta vocari
+# Configuration
 
-## Volucris sol patens evolvere agmen lacrimaeque fertis
+## Configuration Menu
+The configuration menu on the home screen has shortcuts to the different configurations available in the oxTrust by Gluu.
+![Configuration Menu](img/admin_menu_configuration.png)
 
-Lorem markdownum et iam effugit tamen, huc est convicia aquae crescunt? Adfore
-tenebant, horrent deae cacumen, undas, Titania bos decimum nota modo isto
-marmoreis **longoque manum**.
+### Organization Configuration
+The organization congiguration contains a set  of different configurations under it. The configurations are given under their headings in this document.
 
-- Scironis in tibi libera quod rupit
-- Nycteliusque causa
-- Venus virgas natus constitit prohibet diversas adero
-- Tamen coeperunt senex volvere somnique alto nostris
+#### Configure Cluster Partner
+![Configure Cluster Partner](img/admin_config_cluster.png)
+This feature or option is still in the testing phase and you will be notified when it is available.
 
-Et falsam coloni certe aemulus palmis roganti ipse. Animos est opus aper non
-populumque undis, pervenit hic! Reperta velox corpore, membris digitosque undis
-scelerata tamen levem obstem annum: tecta quas.
+#### System Configuration
+This feature allows the Gluu system administrator to choose various options such as *Cache Refresh*, *Federation Hosting*, *SCIM Support* etc. 
+![System Configuration](img/admin_config_system.png)
 
-    user(drive, busExpressionAnalog - gigabyte_html_meta);
-    if (cdfsDithering(zeroVerticalApplication, server * scannerIctLed)) {
-        powerpointOcr(5 + zebibyte_tutorial_toggle, softOpacityPng + 5,
-                font_user_honeypot.vertical(wheel_transistor, intellectualIpv));
-    } else {
-        fat_software(prom, 3);
-    }
-    constant_dynamic += 2;
-    if (ttlUserPoint * -3 > dvr) {
-        shift = standaloneInterpreter.system(excel_display_mbps, scareware +
-                intelligenceMarket);
-        ugc(-5, homeRecordBoot(text, gigo_services_cycle), itunes_market + -4);
-        dfs_myspace += sli_dot.linkBoot.osi(2) * win;
-    } else {
-        multiprocessingStation -= website_server + operation_operating(3, ipv,
-                1);
-        snapshot_intelligence_whois *= lockSpreadsheetQueue *
-                memeOpticalCorrection + standbyUnc(4,
-                managementBrouterPseudocode, drive);
-        terahertz = expansionAlphaReal;
-    }
-    var graymail_floating_rpm = 47;
+**White Pages:** If the user intends to use the built-in White Pages of the Gluu Server, it can be enabled from the menu.
 
-## Vidi est Mareoticaque clipeum pectus caeli subire
+**Federation Hosting:** The Federation hosting is enabled by default. However, the creation and management of federations can be complicated. Gluu offers an additional service called *Federation Registry* that makes the creation and management of identity federations simple and easy. 
 
-Paulumque concitat dicta; regalia iam aduncum, secum quod nec siquidem magico et
-delamentatur ignem foedera. Palmite facto dabis, egi regina *poplite* nam
-praenovimus rubor huius velata foedere. Nulli carmine sub mea vellet Perrhaebum
-denique doluere liquidas eminus, supponere mihi adultera tuaque nec.
+**Cache Refresh:** This is the mechanism which pulls and synchonises user information from a remote LDAP/Active Directory with the local LDAP of Gluu server. The Gluu server administrator needs to provide sufficient information including username and password before enabling this option.
 
-    if (2 == parityCmyk.dot(plug)) {
-        aix_url = firmware_favorites_floppy + -3;
-        flashFat = trackbackPiconetPassive;
-    }
-    if (mac_zone_ethernet) {
-        keyGisPublishing -= responsiveTokenLpi;
-        infringement_bar_mount.leopard -= addressBetaModem;
-    }
-    if (-3 < 37) {
-        controller_plain_bare(backside_text(isdnRingTerminal,
-                donationwareThermistorFloppy, -4));
-    } else {
-        stationPoint = data;
-        mountain_daw_computer(alignment_window, dimmScanBcc);
-    }
+**SCIM Support:** If the organization already has an identity management or provisioning system in place, the SCIM protocol can be used to push and synchronise the existing identity data into the Gluu Server.
 
-Tibi **dextra**; sic domus quietem filius, prima firmo vultus agmen, et vero
-sati ultima dextrae **fama squamis**. Illius nata clamor ereptamque cum, non
-quem meorum Iuppiter.
+**DNS Server:** The address to the DNS Server goes in this field.
 
-1. Debet nec haec paretur rigida
-2. Comitum cautes bellum in quem
-3. Per causa aliisque altis crura vixque fragmina
-4. Peccasse tegmine sola patriam
+**Maximum Log Size:** This option can be used to mitigate the space issues within the Gluu Server. The Gluu Server automatically zips any log file which is bigger than the defined value in this field. 
 
-Carpentem iaculatricemque fabula viderunt in neque ducibusque quoniam
-sinisterior sceleri, posse ligno in [verti omnes ubi](http://zeus.ugent.be/)
-horum vestemque Cycneia. Retinacula nomina in enim sed breve adamante generi
-quam navita! Primus poterant coniugio thalamis numina digitis ego amplexibus,
-nec nonus adhibent, at pete faciemque dixit, aquis fidibusque.
+#### Manage Email Addresses
+This feature allows the Gluu Server Administrator to manage notifications for the IdP.
+![Manage Email Addresses](img/admin_config_email.png)
 
-[verti omnes ubi]: http://zeus.ugent.be/
+**Email for Centreon:** Centreon is the server monitoring system used by Gluu. The email address in this field shall recieve various notifications from Centreon.
+
+**Email for Jira:** The customers are not provided the jira access, and it will be removed from oxTrust soon. Please visit [Gluu Support](https://support.gluu.org) for customer support.
+
+**Email for Billing:** The email address in this field will receive the billing invoices from Gluu.
+
+**Email for Privacy:** This email address will receive news and updates about the privacy related matters of Gluu.
+
+**Email for SVN:** The IdP related configuration files are are saved in the [Gluu SVN](https://svn.gluu.info). Configuration files are generally saved under */opt/* and */etc/httpd/*. The email address will get access to the checked-in files section of the corresponding IdP.
+
+#### SMTP Server Configuration
+The Gluu server can communicate to any SMTP server specified in these fields. All Gluu Server related informats *(cron daemon/logwatch/crash reports etc.)* can be pushed to the desired Gluu Server Administrator using this feature.
+![SMTP Server Configuration](img/admin_config_smtp.png)
+
+**SMTP Host:** Name of the SMTP Host server.
+
+**From Name:** Name of the Gluu Server Administrator.
+
+**From Email Address:** Email Address of the Gluu Server Administrator.
+
+**Required Authentication:** If the SMTP server requires authentication every access, then please enable this option by ticking the checkbox.
+
+**SMTP User Name:** The username for the SMTP server goes in this field.
+
+**SMTP Password:** The password for the username above goes here. The username and password are used to access the SMTP server.
+
+**Requires SSL:** If the SMTP Server has SSL availability, then enable this option by ticking the checkbox.
+
+**SMTP Port:** The SMTP Host server port number must be listed here.
+
+#### Configuration
+This feature provides options to add various changes in the Gluu Server User Interface. Gluu Server Administrator can add Title, Display Name or evern modify the Web User Interface color from this section.
+![Configuration Panel](img/admin_config_config.png)
+
+**Title:** The Web User Interface title can be modified with this link.
+![Web Interface Title](img/admin_config_config_title.png)
+
+**Display Name:** This is the display name for the Gluu Server User Interface. However, this option is yet to be tested properly.
+
+**Short Name:** This feature has not been tested yet.
+
+**Description:** This feature is yet to be tested for any change in the IdP.
+
+**Login Page Message:** The login page now uses oxAuth Web UI and the changes made in this field will not affect the IdP.
+
+**Welcome Title Text:** The Gluu Server Administrator can add custom welcome text tile with this feature.
+![Welcome Title Text](img/admin_config_config_welcome.png)
+
+**Welcome Page Message:** This feature can be used to add various messages and shortcuts in the welcome message.
+![Welcome Page Message](img/admin_config_config_message.png)
+
+**Manager Group:** Gluu server has a single manager group. The users under the manager group can use the Web User Interface to operate the Gluu Server. There is no limit to the users that can be added to the manager group.
+
+**Organization Logo:** The orgaziation logo can be uploaded and activated from the configuration menu.
+
+**Organization Favicon:** This feature can be used to change the organization favicon, if necessary.
+
+** Menu Color:** This is the menu color picker for the Gluu Server User Interface. The color used in the demo screenshots is Green.
+
+### Manage Certificates
+#### Certificate Management
+This allows the users to choose whether to use the JRE public certificates or not.
+![JRE Certificate Management](img/admin_manage_jre.png)
+
+#### Manage Server SSL Certificates
+The Gluu Server has different certificates for Apache and SSO handling. The certificate must be a well known CA certificate for Apache HTTPS and for SSO handling it can either be self-signed or a CA certified certificate. In both the cases, the CN of the certificate must follow the HOSTNAME of the Gluu Server. 
+
+![Manage Certificates](img/admin_manage_cert.png)
+This feature of the oxTrust allows the Gluu Server Administrator to manage both types of certificates. The First box which has **DA...-java.crt** operates the SSL/Apache/HTTPS functions of Gluu Server. The second box is where there is **DA...-shib.cert** is relevant to the SAML transaction.
+
+In order to update/install Gluu Server certificates, both Private key and Public certificates are required. It is essential to update both the public and private keys when updating the server or updating the certificates.
+
+#### Manage Public Certificates
+This allows the addition of custom authentication configuration and changing of public certificates.
+![Manage Public Certificates](img/admin_manage_public.png)
+
+### Manage Authentication
+#### Manage LDAP Authentication
+This feature allows the Gluu Server Administrator to define how and where the server should connect to authenticate users. If it is a remote LDAP/Active Directory server, the values are required. The values can also be used if the organization uses the local LDAP of the Gluu Server for authentication. 
+![Manage LDAP Authentication](img/admin_manage_ldap.png)
+
+**Deactivate:** This button *Deactivates/Activates* the Gluu Server accessibility for authentication.
+
+**Name:** This field contains the name of the authentication server.
+
+**Bind DN:** The *Username* for the authentication server (local LDAP/remote LDAP/remote Active Directory) goes here.
+
+**Use SSL:* If the authentication server requires a secured port (i.e. 636) then this option should be activated using the checkbox.
+
+**Max Connections:** This option can be used to define the total number of simultaneous connections allowed for reading local LDAP/remote Active Directory/remote LDAP.
+
+**Server:** The unique name of the authentication server and port number (i.e. auth.company.org:636) goes here.
+
+** Base DN:** Add base DNs in this field to allow the Gluu Server to connect and search the LDAP server. Every directory tree should be added separately using the *Add Base DN* option.
+
+**Primary Key:** This field contains the primary key to connect to the authentication server (i.e. SAMAccountName/uid/mail etc).
+
+**Local Primary Key:** This field contains the internal LDAP primary key of the Gluu Server. Gererally the key is either the *uid* or the *mail*.
+
+**Enabled:** This checkbos is used to enable the keys that are inserted in their respective fields.
+
+**Change Bind Password:** This button can be used to assign a password to authenticate the *Authentication Server*.
+
+**Test LDAP Connection:** This button checks whether the provided information can connect to the authentication server. The scan is real time and it is advised to use it for the Gluu Server Administrators.
+
+#### Default Authentication Method
+This allows the Gluu Server Administrator to select the authentication mode and level for the persons. The four modes of authentication are *default, basic, duo* and *saml*. The authentication level can be *default, 10*, or *20*. 
