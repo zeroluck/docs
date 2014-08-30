@@ -9,7 +9,7 @@ name and email address. Where possible, we recommend you use these. But what if
 there is an attribute that is just not in any standard schema? This article will
 explain what you need to do to configure the Gluu Server to support your new
 attributes, and give you some advice along the way with regard to best practices.
-For example purposes, we'll use fictional Company Acme Inc., which has requirements
+We'll use fictional Company Acme Inc., which has requirements
 for "acmeCustNumber" and "acmeStateLicenseNumber"
 
 ## LDAP Schema
@@ -64,10 +64,25 @@ can just create an LDIF file with the correct information, and load it in the
 LDAP server that is storing your configuration. If you want to quickly spool
 up new Gluu Servers, this is probably the quickest way to handle it.
 
+    dn: inum=@!1111!0005!2B29,ou=attributes,o=@!1111,o=gluu
+    objectClass: top
+    objectClass: gluuAttribute
+    inum: @!1111!0005!2B29
+    description: How a person would want their name to be presented in writing.
+    displayName: Display Name
+    urn: urn:mace:dir:attribute-def:displayName
+    gluuAttributeName: displayName
+    gluuAttributeOrigin: gluuPerson
+    gluuAttributeType: string
+    gluuStatus: active
+    gluuAttributeEditType: user
+    gluuAttributeEditType: admin
+    gluuAttributeViewType: user
+    gluuAttributeViewType: admin
+
 If you just have a couple of attributes, you can also use the oxTrust Web
 interface to add the attributes. See screenshot below, and refer to the
-oxTrust [documentation](http://gluu.org/docs) for an explanation of all these
-fields.
+oxTrust [documentation](http://www.gluu.org/docs/admin-guide/saml/outbound-saml/#ldap-attributes) for an explanation of all these fields.
 
 ## OpenID Scopes
 
@@ -81,6 +96,10 @@ her address, city, state, and country, and providing a description of each
 attribute, it may be easier to ask the person if its ok to release "mailing
 address information." In situations where the attributes may confuse the person,
 OpenID Scopes are a really good thing.
+
+An example of the default Gluu Server authorization request:
+
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/openid_connect/authz_screenshot.png?raw=true)
 
 So if you have custom attributes, you may need to define a custom OpenID Scope.
 This is pretty easy to do using the oxTrust user interface, and you can just
@@ -106,9 +125,9 @@ a scope by default, go for it!
 Discovery enables clients to discover which attributes are available at an
 OpenID Provider. Ideally, this would be controlled also from oxTrust and this
 information would be persisted in the attribute LDAP data. At some point this
-will happen (see [Jira issue](http://ox.gluu.org/jira)). But in the meantime,
-this is controlled by oxauth.xml. So if you want to publish that a claim is
-available, you'll need to update this section:
+will happen (see [Jira issue](http://ox.gluu.org/jira/browse/OXTRUST-169)). But 
+in the meantime, this is controlled by oxauth.xml. So if you want to publish 
+that a claim is available, you'll need to update this section:
 
     <claims-supported>
         <claim>uid</claim>
@@ -124,6 +143,7 @@ While OpenID Connect Discovery provides one place where you can publish
 information about your claims, and which scopes are must be requested
 to get a certain claim, its meant for computers to read, not people.
 For this reason, its a good idea to publish a schema definition guide
-that people can refer to. Gluu has a sample federation site that
-you may want to look at if you needs some ideas about how to present
+that people can refer to. Gluu has a 
+[sample federation public site](http://www.gluu.co/sample-federation)
+that you may want to look at if you needs some ideas about how to present
 the information.
