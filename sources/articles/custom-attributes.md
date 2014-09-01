@@ -32,7 +32,7 @@ sure the OID is unique. Be careful about defining attributes as single-value
 requiring attributes with `MUST`.
 
 Below is a sample schema file for fictional OpenDJ. For more information see
-the [documentation](http://forgerock.com/opendj)
+the [documentation](http://opendj.forgerock.org/opendj-server/doc/admin-guide/#chap-schema)
 
 ``101-acme.ldif``
 
@@ -99,7 +99,7 @@ OpenID Scopes are a really good thing.
 
 An example of the default Gluu Server authorization request:
 
-![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/openid_connect/authz_screenshot.png?raw=true)
+![OpenID Connect Scope Authorization Screenshot](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/openid_connect/authz_screenshot.png)
 
 So if you have custom attributes, you may need to define a custom OpenID Scope.
 This is pretty easy to do using the oxTrust user interface, and you can just
