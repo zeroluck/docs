@@ -1,5 +1,10 @@
 # Asimba configuration with Gluu Server
 
+## Prepeartion for configuring Asimba SAML Proxy inside Gluu Server
+
+* Collect the metadata of IDP / AD FS which will be connected with your Asimba Server. 
+* Collect SAML certificate of that IDP / AD FS server which will be connected with Asimba Proxy Server. 
+    * _Note_ : Certificate must have to be a base64 encoded ASCII files which contain "-----BEGIN CERTIFICATE-----" and "-----END CERTIFICATE-----". 
 
 ## Base installation of Asimba SAML Proxy
 
