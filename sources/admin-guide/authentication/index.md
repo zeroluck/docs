@@ -9,6 +9,7 @@
 [comment]: <> (- [Google](./google.md))
 - [duo](./duo.md)
 - [toopher](./toopher.md)
+- [Tips](./troubleshooting.md)
 
 <!---
 - [Custom](./custom.md)
