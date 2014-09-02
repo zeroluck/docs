@@ -99,7 +99,7 @@ OpenID Scopes are a really good thing.
 
 An example of the default Gluu Server authorization request:
 
-![OpenID Connect Scope Authorization Screenshot](..img/openid_connect/authz_screenshot.png)
+![OpenID Connect Scope Authorization Screenshot](../img/openid_connect/authz_screenshot.png)
 
 So if you have custom attributes, you may need to define a custom OpenID Scope.
 This is pretty easy to do using the oxTrust user interface, and you can just
