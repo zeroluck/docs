@@ -37,7 +37,7 @@ pages:
 - ['reference/oxTrust/index.md', 'Reference', 'oxTrust User Interface']
 - ['reference/ldap/index.md', 'Reference', 'LDAP Configuration']
 - ['reference/lib/index.md', 'Reference', 'Libraries']
-- ['reference/api/index.md', 'Reference', 'APIs']
+#- ['reference/api/index.md', 'Reference', 'APIs']
 
 # Sub pages of References / API
 - ['reference/api/oic-authorization.md', '**HIDDEN**']
