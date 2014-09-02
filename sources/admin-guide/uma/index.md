@@ -7,6 +7,6 @@
 - [Policy Management](./policy.md)
 - [Scopes](./uma-scopes.md )
 - [Profile](./uma-profile.md )
-- [Apache2 Plugin](.GluuFederation/mod-ox/index.md)
+- [Apache2 Plugin](../mod-ox/index.md)
 
 
