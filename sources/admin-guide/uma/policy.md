@@ -15,10 +15,8 @@ There two ways to define UMA Policy for Gluu Server:
 - Define via oxTrust (Gluu Server admin application)
 - Define in LDAP Server directly (advanced users only)
 
-[UMA Policy](../img/uma/uma_oxtrust_policies.png)
-
-[Add UMA Policy](../uma/uma_oxtrust_policy_add.png)
-
+[UMA Policies](../img/uma/uma_oxtrust_policies.png)
+[Add UMA Policies](../img/uma/uma_oxtrust_policy_add.png)
 
 ## Algorithm
 
@@ -26,8 +24,8 @@ Rules:
 
 - Policy protects resources based on scopes. If scope is protected by policy then during RPT authorization such policy script must return true in order to authorize access to resource, otherwise authorization is denied.
 - Scope can be protected by multiple policies. If one scope is protected by multiple policies then all policies must return true to authorize access. If at least one policy returned false then authorization is denied.
-/sources/img/interception_scripts/uma_policy_handling.jpg
-![Alt text](/img/interception_scripts/uma_policy_handling.jpg "UMA policy handling")
+[UMA Policy Handling](../img/interception_scripts/uma_policy_handling.jpg)
+![Alt text](../img/interception_scripts/uma_policy_handling.jpg)
 
 ## Policy definition in LDAP
 
