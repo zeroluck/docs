@@ -26,6 +26,7 @@ pages:
 - ['admin-guide/saml/index.md', 'Admin Guide', 'SAML']
 - ['admin-guide/openid-connect/index.md', 'Admin Guide', 'OpenID Connect']
 - ['admin-guide/uma/index.md', 'Admin Guide', 'UMA']
+- ['admin-guide/mod-ox/index.md', 'Admin Guide', 'Mod OX']
 - ['admin-guide/interception-scripts/index.md', 'Admin Guide', 'Interception Scripts']
 #- ['admin-guide/multiparty-federation/index.md', 'Admin Guide', 'MultiParty Federation']
 - ['admin-guide/oxPush/index.md', 'Admin Guide', 'oxPush']
