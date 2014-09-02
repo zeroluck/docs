@@ -1,5 +1,7 @@
-Windows 7 (64bit)
-=========
+mod_ox
+=======
+mod_ox is an access control apache module that enables an application server to support OpenID Connect and UMA endpoints. mod_ox is written in C.
+##Windows 7 (64bit)
 ###Memcached Installation
 1. Download Memcached from
 [https://svn.gluu.info/repository/oauth2ApacheHTTPD/ETC/Windows(x64)/memcached
@@ -305,7 +307,7 @@ Find the following three lines, and make sure that they match the extensions bel
 
         # sudo yum install php-pecl-memcache
         # sudo service httpd restart
-
+s
 ###Shibboleth-SP Installation
 1. Install Shibboleth SP via yum
 [https://tuakiri.ac.nz/confluence/display/Tuakiri/Installing+Shibboleth+2.x+SP+on+Red
