@@ -15,9 +15,9 @@ There two ways to define UMA Policy for Gluu Server:
 - Define via oxTrust (Gluu Server admin application)
 - Define in LDAP Server directly (advanced users only)
 
-![Alt text](./img/uma/uma_oxtrust_policies.png "UMA Policies")
+![Alt text](../img/uma/uma_oxtrust_policies.png "UMA Policies")
 
-![Alt text](./img/uma/uma_oxtrust_policy_add.png "UMA Policy Add")
+![Alt text](../img/uma/uma_oxtrust_policy_add.png "UMA Policy Add")
 
 
 ## Algorithm
