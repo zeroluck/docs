@@ -4,7 +4,12 @@
 
 * Collect the metadata of IDP / AD FS which will be connected with your Asimba Server. 
 * Collect SAML certificate of that IDP / AD FS server which will be connected with Asimba Proxy Server. 
-    * _Note_ : Certificate must have to be a base64 encoded ASCII files which contain "-----BEGIN CERTIFICATE-----" and "-----END CERTIFICATE-----". 
+    * Certificate must have to be a base64 encoded ASCII files which contain "-----BEGIN CERTIFICATE-----" and "-----END CERTIFICATE-----". 
+    * Certificate cannot be password protected. 
+* Collect the metadata of SP which will be connected with Asimba SAML Proxy. 
+* Collect the SAML certificate of SP. 
+    * Certificate must have to be a base64 encoded ASCII files which contain "-----BEGIN CERTIFICATE-----" and "-----END CERTIFICATE-----".
+    * Certificate cannot be password protected.
 
 ## Base installation of Asimba SAML Proxy
 
