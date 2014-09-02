@@ -37,6 +37,11 @@ pages:
 - ['reference/lib/index.md', 'Reference', 'Libraries']
 - ['reference/api/index.md', 'Reference', 'APIs']
 
+# Sub pages of References / API
+- ['reference/api/oic-authorization.md', '**HIDDEN**']
+- ['reference/api/id-generation.md', '**HIDDEN**']
+
+
 # Articles
 - ['articles/gluu-server-ce.md', 'Articles', 'Try Gluu Server CE - Quickstart']
 - ['./articles/apache-saml.md', 'Articles', 'Apache SAML']
