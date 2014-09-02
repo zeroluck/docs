@@ -396,4 +396,4 @@ Add :
     "https://schema.example.com/uma/resource"
     </DirectoryMatch>
 
-Please refer http://ox.gluu.org/doku.php?id=oxd:mod_ox
+Please refer [http://ox.gluu.org/doku.php?id=oxd:mod_ox](http://ox.gluu.org/doku.php?id=oxd:mod_ox)
