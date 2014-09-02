@@ -8,7 +8,7 @@
         {% if site_author %}<meta name="author" content="{{ site_author }}">{% endif %}
         {% if canonical_url %}<link rel="canonical" href="{{ canonical_url }}">{% endif %}
         {% if favicon %}<link rel="shortcut icon" href="{{ favicon }}">
-        {% else %}<link rel="shortcut icon" href="{{ base_url }}/img/favicon.ico">{% endif %}
+        {% else %}<link rel="shortcut icon" href="{{ base_url }}/img/favicon_ic.ico">{% endif %}
 
         <title>{{ page_title }}</title>
 
@@ -55,7 +55,7 @@
             <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
-        {% if include_search %}{% include "search.html" %}{% endif %}
+        
 
         <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="{{ base_url }}/js/bootstrap-3.0.3.min.js"></script>

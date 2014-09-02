@@ -16,7 +16,7 @@ to significantly greater number of organizations.
 Versions 1 of the Gluu Server was based on Sun OpenSSO and OpenDS. Mike
 presented the idea at an OpenSSO community group at the European Identity Conference in Munich in May 2009.
 Version 1 worked a little, but there was no easy way to manage it. Version 2 of the Gluu Server had a better UI, but
-it was just a facade--the UI didn't actually do anything to configure OpenSSO. Version 3 was launched after
+it was just a facade--the UI didn't actually do anything to configure OpenSSO. Version 2 was launched after
 Mike Schwartz met with members of the InCommon steering committee in San Antonio in October 2009.
 At that meeting, Mike expressed concern that OpenSSO might be end-of-life. Oracle had recently purchased
 Sun Microsystems, and before ForgeRock was formed, it seemed possible that Oracle would simply

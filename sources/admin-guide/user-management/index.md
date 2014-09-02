@@ -2,10 +2,8 @@
 
 - [LDAP Synchronization](./ldap-sync.md)
 - [SCIM Interface](./scim.md)
-- [Public Registration](./registration.md)
-- [Invitation Code Registration](invitation-code-registration.md)
-- [Local User Administration](./local-admin.md)
-- [Self Service](./self-service.md)
+- [Registration](./registration.md)
+- [Local User Management](./local-user-mgt.md)
 
 To keep the Gluu Server up-to-date with the latest user claims, your organization can either "push" or "pull" identity data. In the "pull" mode, The Gluu Server can use an existing LDAP identity source, like Microsoft Active Directory. If you "push" identies to the Gluu Server, you can use the JSON/REST [SCIM API](http://www.simplecloud.info)
 

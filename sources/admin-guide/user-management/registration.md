@@ -1,62 +1,111 @@
-# Imber resupinus stridente adspicit est carinam
+# Registration
+There are five ways to add a user in gluu server:
 
-## Caeso aures
+* Self-Registration
+* User Management Interface
+* SCIM
+* Cache Refresh Script
+* Custom Authentication Script (e.g. Inbound Saml Registration)
+  
+## Self-Registration
 
-[Lorem markdownum](http://landyachtz.com/) irae quaerit; sic bicorni Amorque
-[circumdata vertice](http://twitter.com/search?q=haskell); socialia posse, bubo
-sedula, bracchiaque. Quae impetus potuisse, ex audit et mecumque paulum quoque
-siquidem.
+Self-Registration is registration done by the users themselves on a self-service basis.
 
-1. Et patria summa quoque
-2. Totumque interius flammae ab illis minitantiaque dedit
-3. Gerere dat accessere accedere volucresque avem
-4. Oscula quid auras corporis fide hospitium metaque
+Self-Registration will only be effective if gluu ldap is used for authentication of users as oxTrust user registration cannot add users to the backing AD if it is present.
 
-## Venti fuit micant communis infelix est merere
+### Default Self-Registration
+By default self-registration view is available at /oxTrust/register url.
 
-Regem vitae iactas Oriens truces Turni consedere, fortia illa Sparserat infames
-dignus et. Est Iuno pectoris dryades in quoque et manus volucrem rigavit sonti,;
-ignarum [in](http://www.metafilter.com/). Funera Haemonio cavas. Inde concidis
-inferre aut inque emi corpora; est infelix Murmura. Matrem **difficile sint**,
-bellum crepuscula pennis causa via volebat flebile.
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/registration/selfregistration.JPG?raw=true)
 
-## Ageret ibi primum invito nec frementes
+Only a limited number of attribute is present in default self-registration form. If more attributes are needed they can be added in Registration Management of Organization Configuration.
 
-Imagine rursus qui totoque *egisse residens*. Est adunca valet vigebat illa omen
-capienda dicentem virides marito, paulatimque legeret. Utendum placet secreta:
-inopes capit cervix ut alebat, [per ullo
-consorte](http://www.reddit.com/r/haskell) illius cuius eripere fuit iaculo!
-Huic nunc: esse sit culpa sociosque perdere *perennis dumque*. Dixerat suae,
-conveniunt pellite adspicit nymphas, tegebat ad Ulixes pulso Prima Apidanosque
-mente.
+### Self-Registration Customization Options
+Default Self-Registration workflow can be altered in a Registration Management view.
 
-## Spumis gemitum antra
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/registration/ManageRegistrationMenu.jpg?raw=true)
 
-Ferunt vox in *data* equas a sonus hoc domum limosi *pedibus aquatica*? Spicis
-certa tantique [solitas](http://omgcatsinspace.tumblr.com/) differt, famam nec
-ambo *reddant* nescit flamina deus, illa. Duobus et
-[longam](http://hipstermerkel.tumblr.com/) sunt huc, et exstat quam quoque
-victus lato, totidem nunc rubebant! Alcandrumque
-[simulantis](http://tumblr.com/) est equos deus curru aspera veteres dedisse
-retegatur, fac mente quo sunt concitat. Et terra, in canis fons neve
-[thalamique](http://zombo.com/), loca dixit magis amissos vetustos ametur
-refugerat inrita collige.
+For default behavior all checkboxes should be unchecked. 
 
-Ambiguo est te non reperire summa non quaerant libratum adsumere liquitur
-potiunda o tenemur dapes. Totidem pater cum volucresque, limitibus primos. In
-roga, nec sed ille, quos iugalia, fluviumque. Canum et tu tam oculos et vestra,
-tibique vulgarunt?
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/registration/ManageRegistrationStart.jpg?raw=true)
 
-Mihi ademptis aquarum oculos Athamas ductor! Decipiat succiduo, signisque
-coeperunt in mitior! Imae paelice non nefas, in terram formae iacebat. Ait forti
-Cepheaque fecerat vulgata rescindere cecidere; Neleius cumque, et sine vidi
-tenebat, adspergine vita.
+### Options reference
 
-[Lorem markdownum]: http://landyachtz.com/
-[circumdata vertice]: http://twitter.com/search?q=haskell
-[in]: http://www.metafilter.com/
-[longam]: http://hipstermerkel.tumblr.com/
-[per ullo consorte]: http://www.reddit.com/r/haskell
-[simulantis]: http://tumblr.com/
-[solitas]: http://omgcatsinspace.tumblr.com/
-[thalamique]: http://zombo.com/
+  * Activate Invitation Links Management - Disable public registration. Start using Invitation Links. Required for further configuration of the Invitation Links feature.
+    * Run invite codes expiration process every: - Part of the Invitation Links feature. Allows to configure how often oxTrust will purge expired invitation links from the system. 
+    * Enable registration without invitation - Part of the Invitation Links feature. Allow public registration even when Invitation Links are used.
+    * Enable account expiration - Part of the Invitation Links feature. Registered accounts will be subject to an expiration policy
+      * Accounts expire after: - Part of the Account Expiration feature. Sets account expiration period. After this period registered accounts will be subject to invalidation during the next account expiration process run.
+      * Run accounts expiration process every: - Part of the Account Expiration feature. Allows to configure how often oxTrust will invalidate expired user accounts from the system. 
+  * Configure Registration Interception Scripts - Configure Pre-Registration and/or Post-Registration interception scripts. 
+  * Configure Registration Form Attributes - Add more attributes to the registration form. 
+      Just start typing attribute name in the Attributes Filter and then move desired attributes to the right column. 
+
+### Invitation Link registration
+When active Invitation Links feature allows to control who can register an account by issuing a unique registration link and sending it to the desired new users.
+
+Any person who knows the link will be able to register an account(if link is not expired). Expired Links are deleted according to "invite codes expiration process" policy, together with any unconfirmed accounts if said link is moderated.
+
+Invitation Links can be optionally made "moderated" and a a number of moderators can be assigned to the link from among registered users. In this case any newly registered users who used this link will not be immediately able to use their account until their registration is approved by the moderator of their link.
+
+#### Management
+
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/registration/RegistrationLinksManagementMenu.jpg?raw=true)
+
+  * "Manage Registration Links" and "Registration Requests" menu items become available only if Invitation Links feature is enabled in "Manage Registration".
+
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/registration/RegistrrationLinksInventory.jpg?raw=true)
+
+  * "Create Invitation Link" - Allows to create new Invitation Links. 
+
+  * "Get new Linktrack link" button becomes available only if Linktrack API has been configured at:
+
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/registration/LinktrackAPIMenu.jpg?raw=true)
+
+   It allows to get new Linktrack shortened link for the Invitation Link. (https://linktrack.info/)
+
+  * Delete - delete the Invitation Link. Any pending requests associated with this link will also be deleted.
+
+  * Share - This button allows to easily email the invitation to desired recipients. 
+
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/registration/ShareRegistrationLinks.jpg?raw=true)
+
+In the "To" field any number of comma-separated emails can be typed, then pressing "Add" will verify those emails and add ones that are valid. 
+
+#### Moderation
+
+Users that were chosen as moderators for any links will be able to approve or decline registration requests associated with those links:
+
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/registration/ModerationMenu.jpg?raw=true)
+
+In a list of pending requests moderator may choose to either "Approve" or "Decline" each user. 
+
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/registration/Moderation.jpg?raw=true)
+
+  * Approve - makes user able to use the system (authenticate successfully)
+  * Decline - removes the user from the system.
+
+## User Management Interface
+
+OxTrust administartors can add, remove or update users using the User Management functionality:
+
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/registration/UserManagementMenu.jpg?raw=true)
+
+On the User Management page administrator can either Add Person to start new user creation or search the desired user (minimum 2 characters required) by name or uid.
+
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/registration/UserManagement.jpg?raw=true)
+
+### User Management Interface - Add user
+
+OxTrust administrator may add any configured attributes to the new user and set those attributes that are "writeable by administrator"(administrator cannot set or change iname, inum, etc...).
+
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/registration/AddUser.png?raw=true)
+
+Note that administrator will either have to change user password right away or add SMTP server configuration in "Organization Configuration" so that user could use "OxTrust Password Recovery System" to change his own password (/oxTrust/person/passwordReminder.htm)
+
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/registration/UserAdded.jpg?raw=true)
+
+## Custom Authentication Scripts
+
+Custom Authentication Script has access to the java backend functionality and can be used to register user during the first access. An example of such script is InboundSaml Script, which recives user data from a thirdparty SAML IDP and for first-time users creates a new account.
+

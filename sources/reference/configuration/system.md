@@ -1,51 +1,33 @@
-# Sed hos delabitur inter fecundior Lycurgum coniuge
+# System Requirements
 
-## Curetida comminus ingrate appellantque ipsum Samon sudore
+## Hardware
 
-Lorem markdownum causas maxima in, et Aiax cum insanis pallae constitit vicisti.
-Linguam adsuerant [fratrisque](http://www.lipsum.com/) mollis, cura sit, annum
-non. Effugere ut est stolidas per lumina, non feracis novem sororem, homo,
-nomina at. Congesta audeat iamque taurum fuimusve deus astu satus repetisse
-illa: ast pectora! Evanescere recepi nudum in deiectam detrahat mirator ultima
-in nunc vocat?
+The Gluu Server is very flexible, and can be used for a wide array
+of authentication requirements. Depending on the size of your data,
+and the number of concurrent authentications you want to be able to 
+support, you may need more or less memory or CPU capacity. 
 
-    osd(codecCorrection.lion(tablet, impactApp, pc_joystick) - null, 3,
-            error_tag_parallel);
-    rdf.staticRiscDrag -= ad * 4 + net * voip_camelcase_grep;
-    rpc(4, internet_driver(graphicsFunctionBrowser(reimage, threading_ram_mamp,
-            cloud)), font(4 - lock_cyberbullying,
-            horizontal_forum.proxy_navigation(ultraPim, matrix_mouse,
-            snmp_waveform_eup)));
+With that said, if you want a place to start to deploy a test server,
+we would recommend at least 2 CPU units, 4 GB of RAM and around 30GB of
+disk space. 
 
-## Aptos totas inminet populus convivia inventa
+From there, you may need to adjust the resources based on the
+requirements.
 
-Coniuge est nunc iussis. Nisi egregius crescit exhortor exhalat. Iovis et,
-praemia devovet, [postquam](http://stoneship.org/) contrarius aquae caesorum
-deduxisse redit, litore in vates, tribuam. Intraverat quid, Iovi pulchra
-studiumque procul, extemplo tento gente fumantia Caesaris.
+## Software
 
-1. Et cruentae mutat venenis
-2. Proiecerat flecti ille conpositum
-3. Sensi Iuppiter echidnis trieterica canis
-4. Procris illa gloria neque ante Error Ianigenam
-5. Feror ante pastor
+You can build the Gluu Server from source for almost any platform, as 
+the components are Java. If you want to use pre-compiled binaries, you'll
+probably want to stick with Centos or Ubuntu. See the 
+[install instructions](http://www.gluu.org/docs/admin-guide/installation/)
+for more information.
 
-## Caesa voce balistave pharetras
+## Java
+The Gluu Server components have been tested with OpenJDK version 1.7 or later.
 
-Profanam sinistra sociis sustinuit Armeniae legendo fuit cum geminas puer,
-utque. Fores flectimur sati monstri quae gentis Eurystheus partim incola ne
-reminiscitur limite Invidiae: sed.
+## LDAP
 
-## Septemfluus collo
+The Gluu Server uses LDAP for persistence. The pre-compiled binaries include an OpenDJ server that Gluu compiled from the nightly community build. However,
+it is possible to use OpenLDAP or 389DS, as long as you update the schema
+and manage the security permissions in those platforms as appropriate. 
 
-Pavet pectoribusque natus virgineos norat. Enim exploratum quoque Tyros!
-
-Et per navalibus vastior utque quid calescit nomenque puppim, pro lurida numina?
-Sola ora ubique vidit corniger ignoto eripuit nomina invenit, depositoque
-telluris infelix nostrasque opera [Perseus](http://gifctrl.com/) iugalia tamen
-Aulidaque leonem? Requiescit o inponique numinis, arcem Caicus iuvenemque,
-demit. Rursusque volenti.
-
-[Perseus]: http://gifctrl.com/
-[fratrisque]: http://www.lipsum.com/
-[postquam]: http://stoneship.org/

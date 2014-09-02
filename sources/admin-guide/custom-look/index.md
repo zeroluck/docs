@@ -52,6 +52,19 @@ Standard forms in oxAuth:
 Standard forms in oxTrust:
 * Default login page: `/opt/tomcat/webapps/identity/register.xhtml`
 
+#### To remove the Gluu Copyright icon from your login page:
+
+The default Gluu Copyright icon can be found under: 
+`template.xhtml` under `/opt/tomcat/webapps/identity/WEB-INF/incl/layout`
+
+Simply remove this snippet:
+
+    <s:fragment rendered="#{not isLogin}">
+            <div class="footer">
+                <p>Copyright <a href="http://www.gluu.org">Gluu</a> All rights reserved.</p>
+            </div>
+    </s:fragment>
+
 ## Built-in oxTrust customization
 
 Using the oxTrust Web UI, an administrator can quickly style the Gluu Server Administrator

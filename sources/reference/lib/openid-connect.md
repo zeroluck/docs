@@ -6,6 +6,27 @@ OpenID Connect 1.0 is a simple identity layer on top of the OAuth 2.0 protocol. 
 
 OpenID Connect allows clients of all types, including Web-based, mobile, and JavaScript clients, to request and receive information about authenticated sessions and end-users. The specification suite is extensible, allowing participants to use optional features such as encryption of identity data, discovery of OpenID Providers, and session management, when it makes sense for them.
 
+## oxAuth
+
+oxAuth is an open source OpenID Provider that implements the OpenID Connect 1.0 stack of REST services. The project also includes OpenID Connect Client code which can be used by websites to validate tokens. It currently implements all required aspects of the OpenID Connect stack, including an OAuth 2.0 authorization server, Simple Web Discovery, Dynamic Client Registration, JSON Web Tokens, and JSON Web Keys, and User Info Endpoint. 
+
+### oxAuth Server
+
+- [Source code](http://ox.gluu.org/hudson/job/oxAuth/lastStableBuild/org.xdi$oxauth-server/artifact/org.xdi/oxauth-server/1.5.0-SNAPSHOT/oxauth-sources.jar)
+- [Binary distribution](http://ox.gluu.org/hudson/job/oxAuth/lastStableBuild/org.xdi$oxauth-server/artifact/org.xdi/oxauth-server/1.5.0-SNAPSHOT/oxauth.war)
+- [Binary tests](http://ox.gluu.org/hudson/job/oxAuth/lastStableBuild/org.xdi$oxauth-server/artifact/org.xdi/oxauth-server/1.5.0-SNAPSHOT/oxauth-tests.jar)
+
+### oxAuth Client
+
+- [Source code](http://ox.gluu.org/hudson/job/oxAuth/lastStableBuild/org.xdi$oxauth-client/artifact/org.xdi/oxauth-client/1.5.0-SNAPSHOT/oxauth-client-sources.jar)
+- [Binary distribution](http://ox.gluu.org/hudson/job/oxAuth/lastStableBuild/org.xdi$oxauth-client/artifact/org.xdi/oxauth-client/1.5.0-SNAPSHOT/oxauth-client.jar)
+- [Binary tests](http://ox.gluu.org/hudson/job/oxAuth/lastStableBuild/org.xdi$oxauth-client/artifact/org.xdi/oxauth-client/1.5.0-SNAPSHOT/oxauth-client-tests.jar)
+
+### oxAuth RP
+
+- [Source code](http://ox.gluu.org/hudson/job/oxAuth/lastStableBuild/org.xdi$oxauth-rp/artifact/org.xdi/oxauth-rp/1.5.0-SNAPSHOT/oxauth-rp-sources.jar)
+- [Binary distribution](http://ox.gluu.org/hudson/job/oxAuth/lastStableBuild/org.xdi$oxauth-rp/artifact/org.xdi/oxauth-rp/1.5.0-SNAPSHOT/oxauth-rp.war)
+
 ## References
 - [OpenID Connect Specifications](http://openid.net/connect/)
 - [The OAuth 2.0 Authorization Framework](http://tools.ietf.org/html/rfc6749)

@@ -1,88 +1,62 @@
-# Possim dulci refertque nostri illis exhalantur quid
+# Installing Gluu Server in juju
+**note: if you are using trusty, replace all precise to trusty in this doc**
 
-## Cupidine sepulcris Thestiadae gemit
+## What you need?
+- ubuntu 12.04 LTS (precise) or 14.04 LTS (trusty)
+- a basic juju environment 
+([getting started guide](https://juju.ubuntu.com/docs/getting-started.html))
 
-Lorem **markdownum** ipse: sub ipse mora et induco, alto, Aethiopasque curru.
-Acceptus ipse.
+## Get Gluu server charms
+TODO (git or svn or charmstore or all ???)
 
-- Ixionides poenas
-- Cecidere intrata
-- Victo Stygio terror fuerat
+## Create local charm store
 
-Nympharum quibus. Procul hoc prius unus novique feta hoste huic, latissima
-percussit. Aquatica currusque armatur inter [in
-memorem](http://news.ycombinator.com/) obsessos fuit ortu se, pes movetur
-occidit caput; non magno. Pauperque enixa cuiquam ac domos, in Minervae Nesseis
-feramus. Suos duc, est iussa arbor patriaeque pugnacem, medioque!
+make directory:
 
-## Successu sacris visam extrema pars dependebat Cyparissus
+    $ mkdir -p localcharms/precise
 
-Dolor inde Hypseus vehit, annis **modo subdidit Erysicthone** illuc est quoque
-umerosque comitant orbem quaeque, illi. Quae exuit manerem virique aras multa,
-heros et vulnere. Regna durus fecit de comae nullo solent qui consistere
-vocatus.
+Sync to localcharms from local svn copy:
+ 
+    $ rsync -r -l --exclude=.svn svn/gluu localcharms/precise
+    $ rsync -r -l --exclude=.svn svn/gluuldap localcharms/precise
+    $ rsync -r -l --exclude=.svn svn/gluu-apache localcharms/precise
 
-    if (scarewareUrl(ipBridgeRup, desktop, virtual_dns_system)) {
-        barDisk.direct_pci_goodput += vpiDfsAdapter(marketing,
-                nanometer_software);
-        raid_buffer -= 2;
-    } else {
-        botWordart = compatibleCmos;
-        alignmentCrm.pseudocode_server_batch = 2;
-    }
-    if (printerBuffer) {
-        checksumMirrored.output_dhcp_javascript(piracy * desktop);
-        bankruptcy.intelligenceHacker = xApache;
-    } else {
-        snippet_friendly_fragmentation = copyCcdKbps;
-        dv -= utfSystem(memory) + switch_bar_jsf(-2);
-    }
-    var device = reciprocal_node(lionGif(name_apple_drag), 920572, source);
-    if (imapServer(type, point_printer_case) == kerningEupSolid) {
-        checksum.gnutella.dcimMemory(simplex, petaflops);
-        joystickScanTrackball(scrollingMeta, soa.software(guidAtaRaw,
-                dockAdware, mbrFunction));
-        dot_isdn(page_bittorrent, bluetooth, malware_thread + directx);
-    } else {
-        trim(monitor);
-    }
+Or sync to localcharms from local git copy:
 
-## Nescio praestant lacrimae sit eadem Aurora te
+    $ rsync -r -l --exclude=.git git/gluu localcharms/precise
+    $ rsync -r -l --exclude=.git git/gluuldap localcharms/precise
+    $ rsync -r -l --exclude=.git git/gluu-apache localcharms/precise
 
-Suo pater Thersites animalia, in nulli teneri suo sumptis Pallas **ingreditur
-sacrataque** mallet coniunx vultus harundine ad. Ferebat quamvis, sine festa
-gemitus in, Dianae? Sublimemque secum vestis dixit. Epulasque coniuge, ego
-celate qua nondum aspiciunt aequora puerosque et mora illi spectarat sanet
-subigebant antemnas. Moveo requiro nullus qui malo coniunctaque flammis
-Capitolia contra tamen.
+Download war file:
 
-    var symbolicCoreCluster = standby_cdfs(34 + text);
-    var mainframe_exploit_design = hit(file, baseband_core, wimax);
-    if (sip.copyright(drop(pcbPageHardening), errorGoldenBalance(ppi), 247682)
-            <= 3) {
-        ciscBrowserPlatform.internet_irq_flatbed = fddiCompression(
-                bin_yobibyte_degauss, ugc, addBrowser);
-        parseVideo.overclockingNull(ircJpegRuntime.text_api.xhtml_shift_wamp(
-                server_parse_cdn, 5, box), website);
-    }
-    if (icann_gigo - logDCompact) {
-        standalone = -4;
-        keywordsAntivirus += blu.mask.inkjet(graphicFormat(port_address_shell,
-                processorMiniZone));
-        fragmentationControllerDdr = video_personal;
-    } else {
-        bytePack = horse_copy;
-        pop.markup_perl_mamp += rpm;
-        publishing_default += touchscreenAddress(token_kilohertz,
-                restore_widget_file(beta_gopher_adapter));
-    }
-    drive_ios_text.mbps += native_domain + -2 - 4;
+put oxauth and oxTrust war files in gluu/resources. Make sure to rename war 
+files as oxauth.war and oxTrust.war
 
-Flammas illa. Iam perluit quae inminet dabat, ramaliaque finita. Sufficiunt
-dixit simillimus accepisse tunc potentes nobis mirabile Anubis instat despicit,
-ventis. Non trabes, perdidit mens, dilectaque foedataque undis abstulerunt?
+    http://ox.gluu.org/maven/org/xdi/oxauth-server/
+    http://ox.gluu.org/maven/org/xdi/oxTrust/
 
-Et docet fallacis, est venturi aratos monte dapes *factaque*: non. Gaudia fetu
-vitiato?
+## Deploy
 
-[in memorem]: http://news.ycombinator.com/
+To deploy from local charm store
+
+    $ juju deploy --repository=<path of localcharms> local:precise/gluuldap
+    $ juju deploy --repository=<path of localcharms> local:precise/gluu
+    $ juju deploy --repository=<path of localcharms> local:precise/gluu-apache
+
+## Make relation
+
+To make relation between charms run this commands
+
+    juju add-relation gluu:oxserver gluuldap:gluuserver
+    juju add-relation gluuldap:opendjserver gluu:ldapserver
+    juju add-relation gluu gluu-apache
+
+## Test installation
+
+get gluu charm service ip using command:
+
+    $ juju status
+
+then hit the browser with this url https://{gluu service ip}/oxTrust
+and to test gluu-apache charm. https://{gluu-apache service ip}/ox
+**username: admin and password: passpass**
