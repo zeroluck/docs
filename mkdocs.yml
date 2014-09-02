@@ -86,6 +86,7 @@ pages:
 - ['admin-guide/authentication/google.md', '**HIDDEN**']
 - ['admin-guide/authentication/duo.md', '**HIDDEN**']
 - ['admin-guide/authentication/toopher.md', '**HIDDEN**']
+- ['admin-guide/authentication/troubleshooting.md', '**HIDDEN**']
 
 # Sub pages of Admin Guide / SAML
 - ['admin-guide/saml/outbound-saml.md', '**HIDDEN**']
