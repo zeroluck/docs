@@ -25,7 +25,7 @@ easiest installation options are:
 
 ## Installation of mod_ox for testing
 
-mod_ox is an access control apache module that enables an application server to support OpenID Connect and UMA endpoints. mod_ox is written in C.  Installation instructions for Apache on Windows, Ubuntu, and CentOS can be found [here](.../mod-ox/index.md)
+mod_ox is an access control apache module that enables an application server to support OpenID Connect and UMA endpoints. mod_ox is written in C.  Installation instructions for Apache on Windows, Ubuntu, and CentOS can be found [here](../admin-guide/mod-ox/index.md)
 
 ## Test Use cases
 
