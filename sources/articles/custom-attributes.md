@@ -82,7 +82,7 @@ up new Gluu Servers, this is probably the quickest way to handle it.
 
 If you just have a couple of attributes, you can also use the oxTrust Web
 interface to add the attributes. See screenshot below, and refer to the
-oxTrust [documentation](../admin-guide/saml/outbound-saml/#ldap-attributes) for an explanation of all these fields.
+oxTrust [documentation](../admin-guide/saml/outbound-saml/#ldap-attributes/) for an explanation of all these fields.
 
 ## OpenID Scopes
 
