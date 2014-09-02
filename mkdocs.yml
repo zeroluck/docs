@@ -102,7 +102,7 @@ pages:
 - ['admin-guide/uma/resource-registration.md', '**HIDDEN**']
 - ['admin-guide/uma/policy.md', '**HIDDEN**']
 - ['admin-guide/uma/uma-scopes.md', '**HIDDEN**']
-- ['admin-guide/uma/mod_ox.md', '**HIDDEN**']
+- ['admin-guide/mod_ox.md', '**HIDDEN**']
 - ['admin-guide/uma/uma-profile.md', '**HIDDEN**']
 
 # Sub pages of Admin Guide / Interception Scripts 
