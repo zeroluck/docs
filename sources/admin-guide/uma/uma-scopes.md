@@ -20,9 +20,9 @@ Scope description json document MAY contains custom properties which is out of s
 
 ## Define UMA Scopes via oxTrust
 
-![Alt text](/img/uma/uma_oxtrust_scopes.png "UMA Scopes")
+![Alt text](../../img/uma/uma_oxtrust_scopes.png "UMA Scopes")
 
-![Alt text](/img/uma/uma_oxtrust_scopes_add.png "UMA Scopes Add")
+![Alt text](../../img/uma/uma_oxtrust_scopes_add.png "UMA Scopes Add")
 
 ## Implementation specificity
 
@@ -73,5 +73,4 @@ oxIconUrl: http://seed.gluu.org/uma/icons/view_scope.png
 - [UMA Resource Server Sample implementation](https://svn.gluu.info/repository/openxdi/oxUmaDemo/RS/)
 - [Gluu Server](http://gluu.org)
 - [Juju Application Security Framework (JASF) Overview](http://www.gluu.co/juju-draft-overview)
-
-[UMA]: http://kantarainitiative.org/confluence/display/uma/UMA+1.0+Core+Protocol
+- [UMA](http://kantarainitiative.org/confluence/display/uma/UMA+1.0+Core+Protocol)
