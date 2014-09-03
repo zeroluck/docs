@@ -45,6 +45,9 @@ pages:
 - ['reference/api/oic-userinfo.md', '**HIDDEN**']
 - ['reference/api/oic-register-client.md', '**HIDDEN**']
 - ['reference/api/oic-end-session.md', '**HIDDEN**']
+
+- ['reference/api/uma-discovery.md', '**HIDDEN**']
+
 - ['reference/api/id-generation.md', '**HIDDEN**']
 
 
