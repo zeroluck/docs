@@ -12,19 +12,19 @@ oxAuth is an open source OpenID Provider that implements the OpenID Connect 1.0 
 
 ### oxAuth Server
 
-- [Source code](http://ox.gluu.org/hudson/job/oxAuth/lastStableBuild/org.xdi$oxauth-server/artifact/org.xdi/oxauth-server/1.5.0-SNAPSHOT/oxauth-sources.jar)
+- [Source code](https://github.com/GluuFederation/oxAuth)
 - [Binary distribution](http://ox.gluu.org/hudson/job/oxAuth/lastStableBuild/org.xdi$oxauth-server/artifact/org.xdi/oxauth-server/1.5.0-SNAPSHOT/oxauth.war)
 - [Binary tests](http://ox.gluu.org/hudson/job/oxAuth/lastStableBuild/org.xdi$oxauth-server/artifact/org.xdi/oxauth-server/1.5.0-SNAPSHOT/oxauth-tests.jar)
 
 ### oxAuth Client
 
-- [Source code](http://ox.gluu.org/hudson/job/oxAuth/lastStableBuild/org.xdi$oxauth-client/artifact/org.xdi/oxauth-client/1.5.0-SNAPSHOT/oxauth-client-sources.jar)
+- [Source code](https://github.com/GluuFederation/oxAuth/tree/master/Client)
 - [Binary distribution](http://ox.gluu.org/hudson/job/oxAuth/lastStableBuild/org.xdi$oxauth-client/artifact/org.xdi/oxauth-client/1.5.0-SNAPSHOT/oxauth-client.jar)
 - [Binary tests](http://ox.gluu.org/hudson/job/oxAuth/lastStableBuild/org.xdi$oxauth-client/artifact/org.xdi/oxauth-client/1.5.0-SNAPSHOT/oxauth-client-tests.jar)
 
 ### oxAuth RP
 
-- [Source code](http://ox.gluu.org/hudson/job/oxAuth/lastStableBuild/org.xdi$oxauth-rp/artifact/org.xdi/oxauth-rp/1.5.0-SNAPSHOT/oxauth-rp-sources.jar)
+- [Source code](https://github.com/GluuFederation/oxAuth/tree/master/RP)
 - [Binary distribution](http://ox.gluu.org/hudson/job/oxAuth/lastStableBuild/org.xdi$oxauth-rp/artifact/org.xdi/oxauth-rp/1.5.0-SNAPSHOT/oxauth-rp.war)
 
 ## References
