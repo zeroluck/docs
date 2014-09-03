@@ -43,6 +43,7 @@ pages:
 - ['reference/api/oic-authorization.md', '**HIDDEN**']
 - ['reference/api/oic-token.md', '**HIDDEN**']
 - ['reference/api/oic-register-client.md', '**HIDDEN**']
+- ['reference/api/oic-end-session.md', '**HIDDEN**']
 - ['reference/api/id-generation.md', '**HIDDEN**']
 
 
