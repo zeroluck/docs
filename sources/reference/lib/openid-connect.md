@@ -10,8 +10,8 @@ OpenID Connect allows clients of all types, including Web-based, mobile, and Jav
 
 oxAuth is an open source OpenID Provider that implements the OpenID Connect 1.0 stack of REST services. The project also includes OpenID Connect Client code which can be used by websites to validate tokens. It currently implements all required aspects of the OpenID Connect stack, including an OAuth 2.0 authorization server, Simple Web Discovery, Dynamic Client Registration, JSON Web Tokens, and JSON Web Keys, and User Info Endpoint. 
 
- - oxAuth Server, Client and RP [Source Code](https://github.com/GluuFederation/oxAuth)
- - oxAuth [OP](https://seed.gluu.org/oxauth), [RP](https://seed.gluu.org/oxauth-rp) and [Configuration Endpoint](https://seed.gluu.org/.well-known/openid-configuration   )
+ - oxAuth Server, Client and RP [Source Code](https://github.com/GluuFederation/oxAuth).
+ - oxAuth [OP](https://seed.gluu.org/oxauth), [RP](https://seed.gluu.org/oxauth-rp) and [Configuration Endpoint](https://seed.gluu.org/.well-known/openid-configuration).
 
 ## References
 - [OpenID Connect Specifications](http://openid.net/connect/)
