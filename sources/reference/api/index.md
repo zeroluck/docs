@@ -10,7 +10,8 @@
 
 ## UMA
 
-TODO
+TODO -> Under construction
+We have full support of UMA, API documentation is on the way...
 
 ## Custom Gluu Endpoints
 
