@@ -10,22 +10,8 @@ OpenID Connect allows clients of all types, including Web-based, mobile, and Jav
 
 oxAuth is an open source OpenID Provider that implements the OpenID Connect 1.0 stack of REST services. The project also includes OpenID Connect Client code which can be used by websites to validate tokens. It currently implements all required aspects of the OpenID Connect stack, including an OAuth 2.0 authorization server, Simple Web Discovery, Dynamic Client Registration, JSON Web Tokens, and JSON Web Keys, and User Info Endpoint. 
 
-### oxAuth Server
-
-- [Source code](https://github.com/GluuFederation/oxAuth)
-- [Binary distribution](http://ox.gluu.org/hudson/job/oxAuth/lastStableBuild/org.xdi$oxauth-server/artifact/org.xdi/oxauth-server/1.5.0-SNAPSHOT/oxauth.war)
-- [Binary tests](http://ox.gluu.org/hudson/job/oxAuth/lastStableBuild/org.xdi$oxauth-server/artifact/org.xdi/oxauth-server/1.5.0-SNAPSHOT/oxauth-tests.jar)
-
-### oxAuth Client
-
-- [Source code](https://github.com/GluuFederation/oxAuth/tree/master/Client)
-- [Binary distribution](http://ox.gluu.org/hudson/job/oxAuth/lastStableBuild/org.xdi$oxauth-client/artifact/org.xdi/oxauth-client/1.5.0-SNAPSHOT/oxauth-client.jar)
-- [Binary tests](http://ox.gluu.org/hudson/job/oxAuth/lastStableBuild/org.xdi$oxauth-client/artifact/org.xdi/oxauth-client/1.5.0-SNAPSHOT/oxauth-client-tests.jar)
-
-### oxAuth RP
-
-- [Source code](https://github.com/GluuFederation/oxAuth/tree/master/RP)
-- [Binary distribution](http://ox.gluu.org/hudson/job/oxAuth/lastStableBuild/org.xdi$oxauth-rp/artifact/org.xdi/oxauth-rp/1.5.0-SNAPSHOT/oxauth-rp.war)
+ - oxAuth Server, Client and RP [Source Code](https://github.com/GluuFederation/oxAuth)
+ - oxAuth [OP](https://seed.gluu.org/oxauth), [RP](https://seed.gluu.org/oxauth-rp) and [Configuration Endpoint](https://seed.gluu.org/.well-known/openid-configuration   )
 
 ## References
 - [OpenID Connect Specifications](http://openid.net/connect/)
