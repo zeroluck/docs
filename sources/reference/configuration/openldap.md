@@ -1,9 +1,0 @@
-# OpenLDAP	
-
-## Schema
-
-## Permissions
-
-## Replication
-
-

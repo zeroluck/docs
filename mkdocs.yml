@@ -153,19 +153,8 @@ pages:
 - ['reference/ldap/config.md', '**HIDDEN**']
 
 # Sub pages of Reference / Configuration
-- ['reference/configuration/system.md', '**HIDDEN**']
-- ['reference/configuration/oxAuth.md', '**HIDDEN**']
 - ['reference/configuration/oxTrust.md', '**HIDDEN**']
-- ['reference/configuration/shibIDP.md', '**HIDDEN**']
 - ['reference/configuration/asimba.md', '**HIDDEN**']
-- ['reference/configuration/opendj.md', '**HIDDEN**']
-- ['reference/configuration/openldap.md', '**HIDDEN**']
-- ['reference/configuration/jagger.md', '**HIDDEN**']
-- ['reference/configuration/389ds.md', '**HIDDEN**']
-- ['reference/configuration/oxPush.md', '**HIDDEN**']
-- ['reference/configuration/oxProx.md', '**HIDDEN**']
-- ['reference/configuration/mysql.md', '**HIDDEN**']
-- ['reference/configuration/memcached.md', '**HIDDEN**']
 
 # Sub pages of Reference / Configuration
 - ['reference/oxTrust/configuration.md', '**HIDDEN**']
