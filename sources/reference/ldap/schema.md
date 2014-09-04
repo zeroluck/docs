@@ -374,7 +374,7 @@ These are the ldap attribute in use by the Gluu Server
 
 ## OpenDJ Schema
 
-[101ox.ldif](http://todo.github.com)
+[Github](https://github.com/GluuFederation/community-edition-setup/tree/master/static)
 
 ## 389DS
 

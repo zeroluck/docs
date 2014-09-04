@@ -143,7 +143,6 @@ pages:
 - ['reference/lib/uma.md', '**HIDDEN**']
 - ['reference/lib/scim.md', '**HIDDEN**']
 - ['reference/lib/saml.md', '**HIDDEN**']
-- ['reference/lib/user-management.md', '**HIDDEN**']
 
 # Sub pages of Reference / LDAP
 - ['reference/ldap/schema.md', '**HIDDEN**']
