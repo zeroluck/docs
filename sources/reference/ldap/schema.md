@@ -1,6 +1,10 @@
 # Schema
 
-These are the attributes and objectclasses needed by oxTrust and oxAuth.
+Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS too:  
+
+ * [OpenDJ](https://github.com/GluuFederation/community-edition-setup/tree/master/static/opendj)
+ * [OpenLDAP](https://github.com/GluuFederation/community-edition-setup/tree/master/static/openldap)
+
 
 ## Attributes
  * __oxAssociatedClient associatedClient__ Associate the dn of an OAuth2 client with a person or UMA Resource Set.
