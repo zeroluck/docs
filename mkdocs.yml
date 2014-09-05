@@ -150,7 +150,9 @@ pages:
 - ['reference/ldap/config.md', '**HIDDEN**']
 
 # Sub pages of Reference / Configuration
+- ['reference/configuration/oxAuth.md', '**HIDDEN**']
 - ['reference/configuration/oxTrust.md', '**HIDDEN**']
+- ['reference/configuration/tomcat.md', '**HIDDEN**']
 - ['reference/configuration/asimba.md', '**HIDDEN**']
 
 # Sub pages of Reference / Configuration

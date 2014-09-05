@@ -1,9 +1,9 @@
 #Home
 Please use these shortcuts to navigate the reference guide.
-[OAuth 2](oauth2.md)
-[Personal](personal.md)
-[SAML](saml.md)
-[Users](users.md)
+ * [OAuth2](./oauth2.md)
+ * [Personal](./personal.md)
+ * [SAML](./saml.md)
+ * [Users](./users.md)
 
 ## oxTrust
 OxTrust an application written in JBoss Seam to provide organizational cloud identiy management service including REST service endpoints and a *user friendly* cloud identity management console (GUI). It is loosely based on the commercial Gluu Trust software by Gluu Inc.
