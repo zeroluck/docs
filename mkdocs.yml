@@ -37,6 +37,7 @@ pages:
 - ['reference/ldap/index.md', 'Reference', 'LDAP Configuration']
 - ['reference/lib/index.md', 'Reference', 'Libraries']
 - ['reference/api/index.md', 'Reference', 'APIs']
+- ['reference/oxTrust/index.md', 'Reference', 'oxTrust User Interface']
 
 # Sub pages of References / API
 - ['reference/api/oic-authorization.md', '**HIDDEN**']
@@ -44,9 +45,7 @@ pages:
 - ['reference/api/oic-userinfo.md', '**HIDDEN**']
 - ['reference/api/oic-register-client.md', '**HIDDEN**']
 - ['reference/api/oic-end-session.md', '**HIDDEN**']
-
 - ['reference/api/uma-discovery.md', '**HIDDEN**']
-
 - ['reference/api/id-generation.md', '**HIDDEN**']
 
 
