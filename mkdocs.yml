@@ -34,7 +34,6 @@ pages:
 
 # Reference sections
 - ['reference/configuration/index.md', 'Reference', 'Configuration']
-- ['reference/oxTrust/index.md', 'Reference', 'oxTrust User Interface']
 - ['reference/ldap/index.md', 'Reference', 'LDAP Configuration']
 - ['reference/lib/index.md', 'Reference', 'Libraries']
 - ['reference/api/index.md', 'Reference', 'APIs']

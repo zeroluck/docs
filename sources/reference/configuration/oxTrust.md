@@ -1,4 +1,4 @@
-# Gluu Server UI ( oxTrust ) configuration 
+# oxTrust Configuration
 
 oxTrust is a JBoss Seam application that provides organizational cloud identity
 management services, including REST service endpoints and a user friendly cloud
@@ -9,143 +9,141 @@ and it would be hard to generate the right configuration entries without
 oxTrust. The projects are separate projects because in a high throughput cluster
 deployment, many oxAuth servers are needed versus a few oxTrust instances.
 
-In this page we are trying to highlight various features of Gluu oxTrust. 
+## oxTrust.properties
 
-## Configuration
+ * __applianceInum__ 
 
-### Organization Configuration
+ * __orgInum__ 
 
-#### System Configuration:
-System Configuration allows the Gluu Server administrator to choose various
-options like “Authentication Mode” or “SCIM Support” to be enabled or disabled
-system wide.
+ * __orgDisplayName__ 
 
-![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Configuration/System_configuration.png?raw=true)
+ * __orgShortName__ 
 
-* _Authentication Mode_ : Various types of authentication methods can be chosen from this interface. Out of the box, the Gluu Server allows ‘basic’ username/password authentication against the server’s local LDAP or any remote Active Directory/LDAP. In addition to passwords, various commercial or custom strong authentication mechanisms can be enabled as well.
+ * __idp.url__ 
 
-* _Authentication Level_ : Authentication level is a domain specific value that can be used to rate the relative security level for different authentication mechanisms. 
+ * __appliance.url__ 
 
-* _White Pages_ : If the Organization wants to use the Gluu Server’s built-in “White Pages” option, it can be enabled from here.
+ * __keystore.path__ 
 
-* _Federation Hosting_ : By default federation hosting is enabled. However, federation creation and operation can be complicated. Gluu offers an additional service called Federation Registry for those organizations interested in our assistance utilizing this feature.
+ * __keystore.password__ 
 
-* _Cache Refresh_ : “Cache Refresh” is a Gluu mechanism that pulls and syncs user information from a remote LDAP / Active Directory with the Gluu Server’s local LDAP. The Gluu Server administrator needs to provide sufficient information including username/password in Cache Refresh configuration before enabling this option. The documentation can be found [here](http://www.gluu.org/docs/admin-guide/user-management/ldap-sync/).
+ * __person-objectClass-types__ `inetOrgPerson, gluuPerson`
 
-* _SCIM Configuration_ : If organization currently has an identity management or provisioning system in place, by using the SCIM protocol your organization can push and sync all relevant identity information to the Gluu Server. Documentation is available [here](http://www.gluu.org/docs/admin-guide/user-management/scim/).
+ * __person-objectClass-displayNames__ `inetOrgPerson, gluuPerson`
 
-* _DNS Server(s)_ : Organization can add DNS server info here.
+ * __svn.configuration-store.root__ 
 
-* _Maximum Log Size_ : This option can be used to help mitigate space issues within the Gluu Server. The Gluu Server will automatically zip any logs which are greater than defined value of this field. i.e: If Gluu Server Administrator use 200MB for “Maximum Log Size”, Gluu Server will automatically start zipping those files which are / will be more than 200MB.
+ * __svn.configuration-store.user__ 
 
-### Manage Certificate
+ * __svn.configuration-store.password__ 
 
-There are various types of certificates here in Gluu Server. All can be managed
-from oxTrust GUI. [Here](http://www.gluu.org/docs/admin-guide/certificates/) is
-the documentation which is providing corresponding documentation. 
+ * __person.allow-modification__ `TRUE | false'
 
-### Manage Authentication
+ * __site.update-appliance-status__ 'true | FALSE`
 
-Out of the box, the Gluu Server supports username/password authentication
-against the local LDAP or a remote Active Directory/LDAP. In addition, oxTrust
-provides the interface for inserting Jython code to enable dynamic
-authentication logic, including the use of any strong, multi-step authentication
-process. Gluu can write these scripts for premium customers and typically makes
-the script open source for other organization’s use. Currently supported
-two-factor authentication mechanisms can be found at: http://gluu.org/two-factor 
+ * __persist-in-svn__ `true | FALSE`
 
-We have a complete separate section on
-[this](http://www.gluu.org/docs/admin-guide/authentication/) subject. 
+ * __baseDN__ `o=gluu`
 
-### Manage Registration
+ * __schema.add.attribute.attributeTypes__ `( %%s-oid NAME '%%s' EQUALITY caseIgnoreMatch ORDERING caseIgnoreOrderingMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 USAGE userApplications X-SCHEMA-FILE '100-user.ldif' X-ORIGIN 'gluu' )`
 
-This is a new feature in Gluu Server. We are going to publish documentation on
-this topi very soon. 
+ * __schema.add-without-attribute-types.objectClass.objectClasses__ `( %%s-oid NAME '%%s' SUP top STRUCTURAL MUST objectClass X-SCHEMA-FILE '100-user.ldif' X-ORIGIN 'gluu' )`
 
-### SCIM Configuration
+ * __schema.add-with-attribute-types.objectClass.objectClasses__ `( %%s-oid NAME '%%s' SUP top STRUCTURAL MUST objectClass MAY ( %%s ) X-SCHEMA-FILE '100-user.ldif' X-ORIGIN 'gluu' )`
 
-If organization currently has an identity management or provisioning system in
-place, by using the SCIM protocol your organization can push and sync all
-relevant identity information to the Gluu Server. Documentation is available
-[here](http://www.gluu.org/docs/admin-guide/user-management/scim/).
+ * __photo.repository.root-dir__ `/var/photos`
 
-### Import People
+ * __photo.repository.thumb-width__ `300`
 
-This feature allows the Gluu Server Administrator to bulk import users. Just
-click on “Add” and upload the xls file. 
+ * __photo.repository.thumb-height__ `300`
 
-![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Configuration/Import_people.png?raw=true)
+ * __photo.repository.count-levels__ `3`
 
-Validation checking for the file can be done by using “Validate” button before
-importing. If file is not correctly formatted, the server will reject the file
-with an error as shown in the screenshot below. 
+ * __photo.repository.count-folders-per-level__ `20`
 
-![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Configuration/Import_people_failed.png?raw=true)
+ * __velocity.log__ `/opt/tomcat/logs/velocity.log`
 
+ * __logo.location__ `/var/photos`
 
-### Attributes
+ * __gluuSP.shared.attributes__ `uid, mail, sn, givenName`
 
-Documentation on LDAP Attribute is available [here](http://www.gluu.org/docs/admin-guide/saml/outbound-saml/#ldap-attributes). 
+ * __gluuSP.metadata__ `/opt/idp/metadata`
 
+ * __shibboleth2.idp.root-dir__ `/opt/idp`
 
-### Cache Refresh
+ * __shibboleth2.federation.root-dir__ `/opt/shibboleth-federation`
 
-Gluu Server Cache Refresh has a detailed documentation available. Can be checked
-by [this](http://www.gluu.org/docs/admin-guide/user-management/ldap-sync/).
+ * __shibboleth2.sp.conf-dir__ `/etc/shibboleth`
 
+ * __configGeneration__ `enabled | DISABLED`
 
-### Configure log viewer
+ * __idp.securityCert__ 
 
-Gluu Server has facility to read any log with GUI. Any log can be displayed from
-Web UI with few clicks. To enable this feature click on “Configuration” → “Configure log viewer” 
+ * __idp.securityKey__ 
 
-Click on “Add log template”, two new boxes will appear. Left box is the
-name/description of the log and right box require the real path of this log
-file. As for example in the below image,  we are going to configure two logs: 1.
-oxTrust log and 2. oxAuth log
+ * __.securityCert__ 
 
-![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Configuration/Configure_Log_Viewer.png?raw=true)
+ * __idp.securityKeyPassword__ 
 
-### View log file
+ * __idp.bindDN__ 
 
-Log files which were configured in previous section can be viewed with this
-“View log file” feature. Click “Configuration” → “View Log File”
+ * __idp.bindPassword__ 
 
-![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Configuration/View_Log_file.png?raw=true)
+ * __idp.useSSL__ `TRUE | false`
 
-Now, select / click on desired allowed log file and insert a value for “Display
-last lines count”. Gluu Server will show last 400 ( or, any selected value lines
-) in GUI like below:
+ * __idp.ldap.server__ 
 
-![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Configuration/View_Log_file_2.png?raw=true)
+ * __mysql.url__ `jdbc:mysql:///localhost`
 
+ * __mysql.user__ `idp`
 
-### Configure Linktrack API
+ * __mysql.password__ 
 
+ * __ldifStoreDir__ `/var/removedldif/`
 
-### Status
+ * __cacertsLocation__ `/usr/java/latest/jre/lib/security/cacerts` This option defines keystore to use for SSL download certificate verification. It is a good idea to have all truster root CA at this keystore Defaults to tomcat SSL keystore (one defined in server.xml)
 
-Status page shows the overall configuration of Gluu Server. A Gluu Server can
-see the status of this IDP like below image. 
+ * __cacertsPassphrase__ If this option is present it will be used as a passphrase to keystore 
+defined in the cacertsLocation. It is only needed if cacertsLocation is 
+defined and is protected by password. For default jre cacerts behavior (empty
+password) - leace commented.  
 
-![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Configuration/Status.png?raw=true)
+ * __certDir__ `/etc/certs/` location of certificates used in configuration files
 
-Where:
+ * __certDirTemp__ `/etc/certs/temp` temporary location for certificates while user performs update procedures 
+ * __servicesRestartTrigger__ `/opt/gluu/trigger_restart_of_services_delete_me_to_do_so` File to 
+be deleted to trigger restart of appliance services.
 
-* _Host name_ : The hostname of Gluu Server. The value of hostname is an unique identification number ( aka. Inum ) from Gluu Organization. 
-* _IP address_ : The physical address of Gluu Server. 
-* _System uptime_ : How long system has been maintaining it's healthy status. 
-* _Last update_ : Time and date when Gluu Server's services were health checked. 
-* _Polling interval_ : Time interval when Gluu Server reported it's status to Gluu's central LDAP server. 
-* _Person count_ : How many users are here inside Gluu Server. 
-* _Group count_ : How many active groups are here in Gluu Server. 
-* _Free memory_ : Percentage of free memory. 
-* _Free disk space_ : Percentage of free disk space. 
+ * __oxtrust.auth.mode__  set this to "basic" without the quotation to use basic authentication or leave it blank to use oxAuth
 
-## SAML
+ * __oxauth.authorize.url__ 
+ * __oxauth.token.url__ 
+ * __oxauth.token.validation.url__ 
+ * __oxauth.checksession.url__ 
+ * __oxauth.userinfo.url__ 
+ * __oxauth.logout.url__ 
 
-### Trust Relationships
+ * __oxauth.client.id__ 
+ * __oxauth.client.credentials__ 
+ * __oxauth.client.password__ 
+ * __oxauth.client.scope__ `openid+profile+address+email`
 
-Documentation on Trust Relationship is available
-[here](http://www.gluu.org/docs/admin-guide/saml/outbound-saml/#saml-trust-relationship). 
+## oxTrustLdap.properties
+
+These are the properties oxTrust uses to connect to LDAP
+
+ * __bindDN__ 
+
+ * __bindPassword__ 
+
+ * __servers__ `localhost:1636`
+
+ * __useSSL__ `TRUE | false`
+
+ * __maxconnections__ `3`
+
+ * __baseConfigurationDN__ 
+
+ * __createLdapConfigurationEntryIfNotExist__ `TRUE | false`
+
 
