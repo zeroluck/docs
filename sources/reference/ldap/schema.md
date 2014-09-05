@@ -382,7 +382,7 @@ These are the ldap attribute in use by the Gluu Server
 
 ## OpenLDAP 
 
-[ox.schema](http://todo.github.com)
+[ox.schema](https://github.com/GluuFederation/community-edition-setup/tree/master/static/openldap)
 
 
 
