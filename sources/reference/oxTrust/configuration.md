@@ -137,4 +137,37 @@ This feature allows the Gluu Server Administrator to define how and where the se
 **Test LDAP Connection:** This button checks whether the provided information can connect to the authentication server. The scan is real time and it is advised to use it for the Gluu Server Administrators.
 
 #### Default Authentication Method
-This allows the Gluu Server Administrator to select the authentication mode and level for the persons. The four modes of authentication are *default, basic, duo* and *saml*. The authentication level can be *default, 10*, or *20*. 
+This allows the Gluu Server Administrator to select the authentication mode and level for the persons. The four modes of authentication are *default, basic, duo* and *saml*. The authentication level can be *default, 10*, or *20*.
+![Default Authentication Method](img/admin_auth_default.png)
+
+#### Manage Custom Authentication Method
+The Gluu Server supports username/password authentication against the local LDAP or a remote LDAP/Active Directory by default. In addition, oxTrust provides the interface for inserting *Jython* code to enable dynamic authentication logic including the use of any strong and multi-step authentication process. Gluu can write the custom scripts for *premium customers* and release them under open source license for others to use. There are two-factor authentication scripts under the open source license available in [Gluu Two Factor](http://gluu.org/two-factor).
+![Custom Authentication Method Screenshot 1](img/admin_auth_custom.png)
+![Custom Authentication Method Screenshot 2](img/admin_auth_custom1.png)
+
+**Name:** A unique name should be defined for every authentication method. For example, the sections representing the *Duo two-factor authentication* are appropriately named **Duo**.
+
+**Level:** This field defines a domain-relevant security level for each supported authentication method.
+
+**Usage Type:** *Interactive*.
+
+**Custom Property (Key/Value):** Every two factor authentication method has its own key values. Typically the keys/values are provided by the two factor authentication company. Gluu Engineers can help the Server Administrators to gain and push the values.
+
+### Manage Registration
+#### Configure Registration Workflow
+This allows the activation of invitation links and has options to allow registration in the IdP without any invitation. There are options to change the expiration of accounts with the option to change the time for account expiration process.
+![Configure Registration Workflow](img/admin_config_workflow.png)
+
+### Import People
+This feature allows the Gluu Server Administrator to bulk import users. The user *xls* file can be added using the **Add** button.
+![Import User](img/admin_config_people.png)
+
+Validation checking for the added *xls* file can be done using the **Validate** button. If the file is not formatted properly, the server will reject the same with an error as shown below in the screenshot.
+![Validation Error Message](img/admin_config_people_validate.png)
+
+### Attributes
+An *Active* attribute list can be seen from the **Configuration --> Attributes** section.
+![Attribute Menu](img/admin_menu_attributes.png)
+![Attribute Menu](img/admin_config_attribute.png)
+
+The Gluu Server has a large LDAP tree which includes all standard attributes. Not all are necessary 
