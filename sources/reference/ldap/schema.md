@@ -5,11 +5,10 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * [OpenDJ](https://github.com/GluuFederation/community-edition-setup/tree/master/static/opendj)
  * [OpenLDAP](https://github.com/GluuFederation/community-edition-setup/tree/master/static/openldap)
 
-
 ### Objectclass gluuAppliance
  * __Description__ 
  * __blowfishPassword__ Blowfish crypted text
- * __c__ 
+ * __c__ Country
  * __description__ 
  * __displayName__ 
  * __gluuAdditionalBandwidth__ Track bandwidth requirements for the Gluu Server instance
@@ -165,7 +164,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __displayName__ 
  * __gluuAddPersonCapability__ Organizational attribute to control whether new users can be added via the oxTrust GUI.
  * __gluuAdditionalUsers__ TODO : use unclear
- * __gluuApplianceUpdateRequestList__ 
+ * __gluuApplianceUpdateRequestList__ Used by the Gluu Server to request an update
  * __gluuCustomMessage__ oxTrust custom welcome message
  * __gluuFaviconImage__ TODO - Stores URL of favicon
  * __gluuFederationHostingEnabled__ oxTrust flag for the federation feature. Values enabled or disabled.
@@ -219,7 +218,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
 
 ### Objectclass gluuPerson
  * __Description__ 
- * __associatedClient__ 
+ * __associatedClient__ Associate the dn of an OAuth2 client with a person or UMA Resource Set.
  * __c__ 
  * __displayName__ 
  * __givenName__ 
@@ -259,17 +258,17 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __oxTrusthonorificSuffix__ None
  * __oxTrustx509Certificate__ None
  * __persistentId__ PersistentId
- * __middleName__ 
- * __nickname__ 
+ * __middleName__ Middle name(s)
+ * __nickname__ Casual name of the End-User
  * __preferredUsername__ Shorthand Name
  * __profile__ Profile page URL of the person
- * __picture__ 
+ * __picture__ Profile picture URL of the person
  * __website__ Web page or blog URL of the person
  * __emailVerified__ True if the e-mail address of the person has been verified; otherwise false
  * __gender__ Gender of the person either female or male
  * __birthdate__ Birthday of the person, represented as an ISO 8601:2004 [ISO8601‑2004] YYYY-MM-DD format
- * __zoneinfo__ 
- * __locale__ 
+ * __zoneinfo__ time zone database representing the End-User
+ * __locale__ Locale of the person, represented as a BCP47 [RFC5646] language tag
  * __phoneNumberVerified__ True if the phone number of the person has been verified, otherwise false
  * __address__ OpenID Connect formatted JSON object representing the address of the person
  * __updatedAt__ Time the information of the person was last updated. Seconds from 1970-01-01T0:0:0Z
@@ -476,7 +475,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __displayName__ 
  * __inum__ XRI i-number
  * __owner__ 
- * __oxAssociatedClient__ 
+ * __oxAssociatedClient__ Associate the dn of an OAuth2 client with a person or UMA Resource Set.
  * __oxAuthUmaScope__ URI reference of scope descriptor
  * __oxFaviconImage__ URI for a graphic icon
  * __oxGroup__ User group
@@ -603,16 +602,3 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __Description__ 
  * __ou__ 
  * __oxTrustConfApplication__ oxTrust Application Configuration
-
-### Objectclass vdDirectoryView
- * __Description__ 
- * __o__ 
-
-### Objectclass vdapcontainer
- * __Description__ 
- * __ou__ 
-
-### Objectclass vdlabel
- * __Description__ 
- * __o__ 
-
