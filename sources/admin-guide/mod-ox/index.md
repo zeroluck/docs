@@ -307,7 +307,7 @@ Find the following three lines, and make sure that they match the extensions bel
 
         # sudo yum install php-pecl-memcache
         # sudo service httpd restart
-s
+
 ###Shibboleth-SP Installation
 1. Install Shibboleth SP via yum
 [https://tuakiri.ac.nz/confluence/display/Tuakiri/Installing+Shibboleth+2.x+SP+on+Red
