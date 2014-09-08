@@ -15,51 +15,51 @@ This feature or option is still in the testing phase and you will be notified wh
 This feature allows the Gluu system administrator to choose various options such as *Cache Refresh*, *Federation Hosting*, *SCIM Support* etc. 
 ![System Configuration](img/admin_config_system.png)
 
-**White Pages:** If the user intends to use the built-in White Pages of the Gluu Server, it can be enabled from the menu.
+* _White Pages:_ If the user intends to use the built-in White Pages of the Gluu Server, it can be enabled from the menu.
 
-**Federation Hosting:** The Federation hosting is enabled by default. However, the creation and management of federations can be complicated. Gluu offers an additional service called *Federation Registry* that makes the creation and management of identity federations simple and easy. 
+* _Federation Hosting:_ The Federation hosting is enabled by default. However, the creation and management of federations can be complicated. Gluu offers an additional service called *Federation Registry* that makes the creation and management of identity federations simple and easy. 
 
-**Cache Refresh:** This is the mechanism which pulls and synchonises user information from a remote LDAP/Active Directory with the local LDAP of Gluu server. The Gluu server administrator needs to provide sufficient information including username and password before enabling this option.
+* _Cache Refresh:_ This is the mechanism which pulls and synchonises user information from a remote LDAP/Active Directory with the local LDAP of Gluu server. The Gluu server administrator needs to provide sufficient information including username and password before enabling this option.
 
-**SCIM Support:** If the organization already has an identity management or provisioning system in place, the SCIM protocol can be used to push and synchronise the existing identity data into the Gluu Server.
+* _SCIM Support:_ If the organization already has an identity management or provisioning system in place, the SCIM protocol can be used to push and synchronise the existing identity data into the Gluu Server.
 
-**DNS Server:** The address to the DNS Server goes in this field.
+* _DNS Server:_ The address to the DNS Server goes in this field.
 
-**Maximum Log Size:** This option can be used to mitigate the space issues within the Gluu Server. The Gluu Server automatically zips any log file which is bigger than the defined value in this field. 
+* _Maximum Log Size:_ This option can be used to mitigate the space issues within the Gluu Server. The Gluu Server automatically zips any log file which is bigger than the defined value in this field. 
 
 #### Manage Email Addresses
 This feature allows the Gluu Server Administrator to manage notifications for the IdP.
 ![Manage Email Addresses](img/admin_config_email.png)
 
-**Email for Centreon:** Centreon is the server monitoring system used by Gluu. The email address in this field shall recieve various notifications from Centreon.
+* _Email for Centreon:_ Centreon is the server monitoring system used by Gluu. The email address in this field shall recieve various notifications from Centreon.
 
-**Email for Jira:** The customers are not provided the jira access, and it will be removed from oxTrust soon. Please visit [Gluu Support](https://support.gluu.org) for customer support.
+* _Email for Jira:_ The customers are not provided the jira access, and it will be removed from oxTrust soon. Please visit [Gluu Support](https://support.gluu.org) for customer support.
 
-**Email for Billing:** The email address in this field will receive the billing invoices from Gluu.
+* _Email for Billing:_ The email address in this field will receive the billing invoices from Gluu.
 
-**Email for Privacy:** This email address will receive news and updates about the privacy related matters of Gluu.
+* _Email for Privacy:_ This email address will receive news and updates about the privacy related matters of Gluu.
 
-**Email for SVN:** The IdP related configuration files are are saved in the [Gluu SVN](https://svn.gluu.info). Configuration files are generally saved under */opt/* and */etc/httpd/*. The email address will get access to the checked-in files section of the corresponding IdP.
+* _Email for SVN:_ The IdP related configuration files are are saved in the [Gluu SVN](https://svn.gluu.info). Configuration files are generally saved under */opt/* and */etc/httpd/*. The email address will get access to the checked-in files section of the corresponding IdP.
 
 #### SMTP Server Configuration
 The Gluu server can communicate to any SMTP server specified in these fields. All Gluu Server related informats *(cron daemon/logwatch/crash reports etc.)* can be pushed to the desired Gluu Server Administrator using this feature.
 ![SMTP Server Configuration](img/admin_config_smtp.png)
 
-**SMTP Host:** Name of the SMTP Host server.
+* _SMTP Host:_ Name of the SMTP Host server.
 
-**From Name:** Name of the Gluu Server Administrator.
+* _From Name:_ Name of the Gluu Server Administrator.
 
-**From Email Address:** Email Address of the Gluu Server Administrator.
+* _From Email Address:_ Email Address of the Gluu Server Administrator.
 
-**Required Authentication:** If the SMTP server requires authentication every access, then please enable this option by ticking the checkbox.
+* _Required Authentication:_ If the SMTP server requires authentication every access, then please enable this option by ticking the checkbox.
 
-**SMTP User Name:** The username for the SMTP server goes in this field.
+* _SMTP User Name:_ The username for the SMTP server goes in this field.
 
-**SMTP Password:** The password for the username above goes here. The username and password are used to access the SMTP server.
+* _SMTP Password:_ The password for the username above goes here. The username and password are used to access the SMTP server.
 
-**Requires SSL:** If the SMTP Server has SSL availability, then enable this option by ticking the checkbox.
+* _Requires SSL:_ If the SMTP Server has SSL availability, then enable this option by ticking the checkbox.
 
-**SMTP Port:** The SMTP Host server port number must be listed here.
+* _SMTP Port:_ The SMTP Host server port number must be listed here.
 
 #### Configuration
 This feature provides options to add various changes in the Gluu Server User Interface. Gluu Server Administrator can add Title, Display Name or evern modify the Web User Interface color from this section.
@@ -68,27 +68,27 @@ This feature provides options to add various changes in the Gluu Server User Int
 **Title:** The Web User Interface title can be modified with this link.
 ![Web Interface Title](img/admin_config_config_title.png)
 
-**Display Name:** This is the display name for the Gluu Server User Interface. However, this option is yet to be tested properly.
+* _Display Name:_ This is the display name for the Gluu Server User Interface. However, this option is yet to be tested properly.
 
-**Short Name:** This feature has not been tested yet.
+* _Short Name:_ This feature has not been tested yet.
 
-**Description:** This feature is yet to be tested for any change in the IdP.
+* _Description:_ This feature is yet to be tested for any change in the IdP.
 
-**Login Page Message:** The login page now uses oxAuth Web UI and the changes made in this field will not affect the IdP.
+* _Login Page Message:_ The login page now uses oxAuth Web UI and the changes made in this field will not affect the IdP.
 
-**Welcome Title Text:** The Gluu Server Administrator can add custom welcome text tile with this feature.
+* _Welcome Title Text:_ The Gluu Server Administrator can add custom welcome text tile with this feature.
 ![Welcome Title Text](img/admin_config_config_welcome.png)
 
 **Welcome Page Message:** This feature can be used to add various messages and shortcuts in the welcome message.
 ![Welcome Page Message](img/admin_config_config_message.png)
 
-**Manager Group:** Gluu server has a single manager group. The users under the manager group can use the Web User Interface to operate the Gluu Server. There is no limit to the users that can be added to the manager group.
+* _Manager Group:_ Gluu server has a single manager group. The users under the manager group can use the Web User Interface to operate the Gluu Server. There is no limit to the users that can be added to the manager group.
 
-**Organization Logo:** The orgaziation logo can be uploaded and activated from the configuration menu.
+* _Organization Logo:_ The orgaziation logo can be uploaded and activated from the configuration menu.
 
-**Organization Favicon:** This feature can be used to change the organization favicon, if necessary.
+* _Organization Favicon:_ This feature can be used to change the organization favicon, if necessary.
 
-** Menu Color:** This is the menu color picker for the Gluu Server User Interface. The color used in the demo screenshots is Green.
+* _Menu Color:_ This is the menu color picker for the Gluu Server User Interface. The color used in the demo screenshots is Green.
 
 ### Manage Certificates
 #### Certificate Management
@@ -112,29 +112,29 @@ This allows the addition of custom authentication configuration and changing of 
 This feature allows the Gluu Server Administrator to define how and where the server should connect to authenticate users. If it is a remote LDAP/Active Directory server, the values are required. The values can also be used if the organization uses the local LDAP of the Gluu Server for authentication. 
 ![Manage LDAP Authentication](img/admin_manage_ldap.png)
 
-**Deactivate:** This button *Deactivates/Activates* the Gluu Server accessibility for authentication.
+* _Deactivate:_ This button *Deactivates/Activates* the Gluu Server accessibility for authentication.
 
-**Name:** This field contains the name of the authentication server.
+* _Name:_ This field contains the name of the authentication server.
 
-**Bind DN:** The *Username* for the authentication server (local LDAP/remote LDAP/remote Active Directory) goes here.
+* _Bind DN:_ The *Username* for the authentication server (local LDAP/remote LDAP/remote Active Directory) goes here.
 
-**Use SSL:* If the authentication server requires a secured port (i.e. 636) then this option should be activated using the checkbox.
+* _Use SSL:_ If the authentication server requires a secured port (i.e. 636) then this option should be activated using the checkbox.
 
-**Max Connections:** This option can be used to define the total number of simultaneous connections allowed for reading local LDAP/remote Active Directory/remote LDAP.
+* _Max Connections:_ This option can be used to define the total number of simultaneous connections allowed for reading local LDAP/remote Active Directory/remote LDAP.
 
-**Server:** The unique name of the authentication server and port number (i.e. auth.company.org:636) goes here.
+* _Server:_ The unique name of the authentication server and port number (i.e. auth.company.org:636) goes here.
 
-** Base DN:** Add base DNs in this field to allow the Gluu Server to connect and search the LDAP server. Every directory tree should be added separately using the *Add Base DN* option.
+* _Base DN:_ Add base DNs in this field to allow the Gluu Server to connect and search the LDAP server. Every directory tree should be added separately using the *Add Base DN* option.
 
-**Primary Key:** This field contains the primary key to connect to the authentication server (i.e. SAMAccountName/uid/mail etc).
+* _Primary Key:_ This field contains the primary key to connect to the authentication server (i.e. SAMAccountName/uid/mail etc).
 
-**Local Primary Key:** This field contains the internal LDAP primary key of the Gluu Server. Gererally the key is either the *uid* or the *mail*.
+* _Local Primary Key:_ This field contains the internal LDAP primary key of the Gluu Server. Gererally the key is either the *uid* or the *mail*.
 
-**Enabled:** This checkbos is used to enable the keys that are inserted in their respective fields.
+* _Enabled:_ This checkbos is used to enable the keys that are inserted in their respective fields.
 
-**Change Bind Password:** This button can be used to assign a password to authenticate the *Authentication Server*.
+* _Change Bind Password:_ This button can be used to assign a password to authenticate the *Authentication Server*.
 
-**Test LDAP Connection:** This button checks whether the provided information can connect to the authentication server. The scan is real time and it is advised to use it for the Gluu Server Administrators.
+* _Test LDAP Connection:_ This button checks whether the provided information can connect to the authentication server. The scan is real time and it is advised to use it for the Gluu Server Administrators.
 
 #### Default Authentication Method
 This allows the Gluu Server Administrator to select the authentication mode and level for the persons. The four modes of authentication are *default, basic, duo* and *saml*. The authentication level can be *default, 10*, or *20*.
@@ -145,13 +145,13 @@ The Gluu Server supports username/password authentication against the local LDAP
 ![Custom Authentication Method Screenshot 1](img/admin_auth_custom.png)
 ![Custom Authentication Method Screenshot 2](img/admin_auth_custom1.png)
 
-**Name:** A unique name should be defined for every authentication method. For example, the sections representing the *Duo two-factor authentication* are appropriately named **Duo**.
+* _Name:_ A unique name should be defined for every authentication method. For example, the sections representing the *Duo two-factor authentication* are appropriately named **Duo**.
 
-**Level:** This field defines a domain-relevant security level for each supported authentication method.
+* _Level:_ This field defines a domain-relevant security level for each supported authentication method.
 
-**Usage Type:** *Interactive*.
+* _Usage Type:_ Interactive.
 
-**Custom Property (Key/Value):** Every two factor authentication method has its own key values. Typically the keys/values are provided by the two factor authentication company. Gluu Engineers can help the Server Administrators to gain and push the values.
+* _Custom Property (Key/Value):_ Every two factor authentication method has its own key values. Typically the keys/values are provided by the two factor authentication company. Gluu Engineers can help the Server Administrators to gain and push the values.
 
 ### Manage Registration
 #### Configure Registration Workflow
