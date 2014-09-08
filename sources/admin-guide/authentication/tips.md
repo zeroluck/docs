@@ -14,7 +14,9 @@
 
 * Backup existing _oxIDPAuthentication_ section, just in case if you require information later on. 
 
-        /opt/opendj/bin/ldapsearch -h localhost -p 1636 -Z -X -D "cn=directory manager" -j /home/tmp/.pw -b 'o=gluu' -T 'oxIDPAuthentication=*' oxIDPAuthentication > backup_oxIDPAuthentication.ldif
+```
+/opt/opendj/bin/ldapsearch -h localhost -p 1636 -Z -X -D "cn=directory manager" -j <password_temp_file_location> -b 'o=gluu' -T 'oxIDPAuthentication=*' oxIDPAuthentication > backup_oxIDPAuthentication.ldif
+```
 
 * Delete current _oxIDPAuthentication_ . Sample ldif:
 
@@ -24,11 +26,12 @@
 
 * Add `basic` method. Sample ldif: 
 
-        dn: inum=.......,ou=appliances,o=gluu
-        changetype: modify
-        add: oxIDPAuthentication
-        oxIDPAuthentication: {"type":"auth","name":"auth_ldap_server","level":0,"priority":0,"enabled":true,"version":10,"fields":[],"config":"{\"configId\":\"auth_ldap_server\",\"bindDN\":\"bindDN_for_your_ldap_server[1]\",\"bindPassword\":\"encrypted_pass_of_your_ldap_server_admin[2]\",\"servers\":[{\"value\":\"localhost:1636\"}],\"maxConnections\":3,\"useSSL\":true,\"baseDNs\":[{\"value\":\"baseDN_location_of_your_ldap_server[3]\"}],\"primaryKey\":\"primaryKey_of_your_ldap_server[4]\",\"localPrimaryKey\":\"uid\",\"useAnonymousBind\":false,\"enabled\":true}"}
-
+```
+dn: inum=.......,ou=appliances,o=gluu
+changetype: modify
+add: oxIDPAuthentication
+oxIDPAuthentication: {"type":"auth","name":"auth_ldap_server","level":0,"priority":0,"enabled":true,"version":10,"fields":[],"config":"{\"configId\":\"auth_ldap_server\",\"bindDN\":\"bindDN_for_your_ldap_server[1]\",\"bindPassword\":\"encrypted_pass_of_your_ldap_server_admin[2]\",\"servers\":[{\"value\":\"localhost:1636\"}],\"maxConnections\":3,\"useSSL\":true,\"baseDNs\":[{\"value\":\"baseDN_location_of_your_ldap_server[3]\"}],\"primaryKey\":\"primaryKey_of_your_ldap_server[4]\",\"localPrimaryKey\":\"uid\",\"useAnonymousBind\":false,\"enabled\":true}"}
+```
 
 ##### Note:
 
