@@ -166,6 +166,8 @@ This section is mirroring how to configure "shibboleth2.xml" file.
 
 ### Create Trust Relationship from Gluu IDP
 
-
+How to create trust relationship with
+[Generate](http://www.gluu.org/docs/admin-guide/saml/outbound-saml/#saml-trust-relationship)
+method. 
 
 
