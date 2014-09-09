@@ -168,6 +168,10 @@ Validation checking for the added *xls* file can be done using the **Validate** 
 ### Attributes
 An *Active* attribute list can be seen from the **Configuration --> Attributes** section.
 ![Attribute Menu](img/admin_menu_attributes.png)
-![Attribute Menu](img/admin_config_attribute.png)
+![Attribute Menu](img/admin_attribute_menu.png)
 
-The Gluu Server has a large LDAP tree which includes all standard attributes. Not all are necessary 
+The Gluu Server has a large LDAP tree which includes all standard attributes. It is not necessary for all of them to be *Active*. The active LDAP trees can be sorted using the *Show only Active Attributes* link.
+![Show Active Attribute](img/admin_attribute_show.png)
+
+The Gluu Server Administrator can make changes, such as changing the status to active/inactive, to an attribute after clicking on it.
+![Attributes](img/admin_attribute_attribute.png)
