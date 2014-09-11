@@ -9,13 +9,13 @@
 
 * Contents of "shib.repo":
 
-    [security_shibboleth]
-    name=Shibboleth (CentOS_CentOS-6)
-    type=rpm-md
-    baseurl=http://download.opensuse.org/repositories/security:/shibboleth/CentOS_CentOS-6/
-    gpgcheck=1
-    gpgkey=http://download.opensuse.org/repositories/security:/shibboleth/CentOS_CentOS-6/repodata/repomd.xml.key
-    enabled=1
+    	[security_shibboleth]
+    	name=Shibboleth (CentOS_CentOS-6)
+    	type=rpm-md
+    	baseurl=http://download.opensuse.org/repositories/security:/shibboleth/CentOS_CentOS-6/
+    	gpgcheck=1
+    	gpgkey=http://download.opensuse.org/repositories/security:/shibboleth/CentOS_CentOS-6/repodata/repomd.xml.key
+    	enabled=1
 
 * http://download.opensuse.org/repositories/security:/shibboleth/CentOS_CentOS-6/security:shibboleth.repo
 
