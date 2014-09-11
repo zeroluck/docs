@@ -35,7 +35,7 @@ To stop Gluu Server chroot environment, we simply issue the command:
 
 `/etc/init.d/gluu-chroot stop`
 
-Sample result of running the command is as follows::
+Sample result of running the command is as follows:
 
 	root@gluu:~# /etc/init.d/gluu-chroot stop
 	Shutting down Gluu Chroot Server: Shutting down OpenDJ: [25/Aug/2014:11:33:13 +0000] category=BACKEND severity=NOTICE msgID=9896306 msg=The backend inumDB is now taken offline
