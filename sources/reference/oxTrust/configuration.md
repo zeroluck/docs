@@ -206,3 +206,15 @@ Additional attributes can be added from the Gluu Server GUI, oxTrust, by clickin
 * _Description:_ This contains a few words to describe the attribute.
 
 * _Status:_ The status, when selected active, will release and publish the attribute in IdPThe status, when selected active, will release and publish the attribute in IdP.
+
+### Cache Refresh
+
+**Cache Refresh** was built by Gluu to pull user information from a backend customer Active Directory/LDAP Server. Cache refresh dynamically synchronises user information from the backend data source of the customer to the Gluu Server in order to maximize performance. This feature is sensitive in nature as any incorrect action may result in the loss of data within the Gluu Server. Therefore it is highly recommended that the server administrator seeks the assistance of Gluu Support for this function.
+![Cache Refresh Menu](img/admin_cache_menu.png)
+
+* _Last Run:_ The date and time of the latest cache refresh cycle completion is shown in the last run.
+
+* _Updates at the Last Run:_ This shows the total number of users who have been updated in the last Cache Refresh cycle. For example an user who has any of his attribute updated will show up here.
+
+* _Problem at the Last Run:_ This shows the number of users who have been rejected by the Gluu Server during the update. If there are any rejections, please contact Gluu Support for clarification and help.
+![Last Run](img/admin_cache_lastrun.png)
