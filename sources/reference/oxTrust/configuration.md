@@ -218,3 +218,27 @@ Additional attributes can be added from the Gluu Server GUI, oxTrust, by clickin
 
 * _Problem at the Last Run:_ This shows the number of users who have been rejected by the Gluu Server during the update. If there are any rejections, please contact Gluu Support for clarification and help.
 ![Last Run](img/admin_cache_lastrun.png)
+
+#### Customer Backend Key/Attributes
+![Customer Backend Key](img/admin_cache_backend.png)
+* _Key Attribute:_ This is the unique key attribute of backend Active Directory/LDAP Server such as sAMAccountname for any Active Directory.
+
+* _Object Class:_ This contains the Object Classes of the backend Active Directory/LDAP which has permission to talk to Gluu Server Cache Refresh such as person, organizationalPerson, user etc.
+
+* _Source Attribute:_ This contains the list of attributes which will be pulled and read by the Gluu Server.
+
+* _Custom LDAP Filter:_ If there is any custom search required, this filtering mechanism can be used such as "sn=*" where the value of this field ensures that every user must contain an attribute named SN.
+
+#### Source Backend LDAP Servers
+![Source Backend](img/admin_cache_sourcebackend.png)
+This section allows the Gluu Server to connect to the backend Active Directory/LDAP server of the organization.
+
+* _Name:_ Please input **source** as the value.
+
+* _Use Anonymous Bind:_ Some customers do now allow username/password connections to their backend server. Enable this option if this applies to your organization.
+
+* _Bind DN:_ This contains the username to connect to the backend server.
+
+* _Use SSL:_ Use this feature if the backend server allows SSL connectivity.
+
+* _Max Connections:_ This value defines the maximum number of connection that are allowed to read the backend Active Directory/LDAP server. It is recommended to keep the value 2 or three.
