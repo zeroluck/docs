@@ -242,3 +242,32 @@ This section allows the Gluu Server to connect to the backend Active Directory/L
 * _Use SSL:_ Use this feature if the backend server allows SSL connectivity.
 
 * _Max Connections:_ This value defines the maximum number of connection that are allowed to read the backend Active Directory/LDAP server. It is recommended to keep the value 2 or three.
+
+* _Server:_ This contains the backend Active Directory/LDAP server hostname with port i.e. backend.organization.com:389. If organization has a failover server, click **Add Server** and more hostnames with port.
+
+* _Base DN:_ This contains the location of the Active Directory/LDAP tree from where the Gluu Server shall read the user informaiton.
+
+* _Enabled:_ This checkbox is to save and push the changes and only to be used when the server administrator has entered all the required values.
+
+* _Change Bind Password:_ This can be used for a new password or to change any existing password.
+
+If any organization has multiple Active Directory/LDAP server, click on **Add source LDAP server** and add the additional server information. Please remember that a *failover server* is not a new server.
+
+#### Inum LDAP Server
+![Inum LDAP Server](img/admin_cache_inum.png)
+
+This section of the application allows the server administrator to connect to the internal LDAP of the Gluu Server. Please contact Gluu Support for the values for this section.
+
+* _Name:_ This contains the name of the Gluu LDAP server.
+
+* _Bind DN:_ This field contains the username to connect to the internal server.
+
+* _Use SSL:_ Please tick the ckeckbox because the SSL must be activated.
+
+* _Max Connections:_ The recommended number of connections is 2.
+
+* _Server:_ The hostname of the server with IP should be put here.
+
+* _Base DN:_ This contains the Gluu Server LDAP tree which is allowed to access the user information.
+
+* _Enabled:_ Enabling this feature saves the values inside the gluu server.
