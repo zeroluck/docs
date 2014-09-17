@@ -271,3 +271,32 @@ This section of the application allows the server administrator to connect to th
 * _Base DN:_ This contains the Gluu Server LDAP tree which is allowed to access the user information.
 
 * _Enabled:_ Enabling this feature saves the values inside the gluu server.
+
+* _Change Bind Password:_ This option can be used to bind/change the password to connect to the internal LDAP of the Gluu Server.
+
+* _Refresh Method:_ The Gluu Server allows the Server Administrator to apply two types of Cache Refresh mechanism (i) VDS Method and (ii) Copy Method.
+
+  1. _VDS Method:_ Any organization with a database like *mysql* can use the VDS method. This option can be enabled via the dropdown menu in Refresh Method option.
+![Refresh VDS](img/admin_cache_refresh_vds.png)
+
+  2. _Copy Method:_ If the organization has any kind of Active Directory/LDAP server, they are strongly recommened to use the *Copy Method* from the dropdown menu.
+![Refresh Copy](img/admin_cache_refresh_copy.png)
+
+#### Attributes Mapping
+
+Attribute mapping is an important aspect of the Copy Method. In this section, the Gluu Server Administrator can map any attribute from the backend Active Directory/LDAP to the LDAP cache of the Gluu Server.
+![Attribute Mapping](img/admin_cache_mapattribute.png)
+
+Gluu Server Administrator can selecy any Cache Refresh Method according to the backend Active Directory/LDAP server, but there are some essential values for both types of cache refresh method. The values are given below.
+
+  * _Pooling Interval (Minutes):_ This is the vnterval value for running the Cache Refresh mechanism in the Gluu Server. It is recommended to be kept higher than 15 Minutes.
+
+  * _Script File Name:_ Gluu Server cache refresh can accept any kind of Jython Script which might help calculate any custom/complex attribute i.e. eduPersonScopedAffiliation calculation is highly targeted field where such scripts can be used. For more information please contact Gluu Support.
+
+  * _Snapshot Folder:_ Every cycle of of Gluu Server Cache Refresh cycle save an overall snapshot and problem-list record on a specified location. This is where the Gluu Server Administrator can specigy the location. A Gluu Server administrator can easily decide whether cache refresh has synchronised all users or not. Generally the rejected users are enclosed in the problem-list file. An overall report is displayed at the top of the cache refresh page with headings **Updated at the last run** and **Problems at the last run.**
+
+  * _Snaphot Count:_ This defines the total number of snapshots that are allowed to be saved in the hard drive of the VM. It is recommended to be kept to 20 shapshots.
+
+  * _Update:_ This button is to push the changes in the Gluu Server and it should be hit only when the values have been entered.
+
+  * _Update and Validate Script:_ This button is used to test the operation and integrity of any custom script such as a Jython Script.
