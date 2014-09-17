@@ -60,7 +60,7 @@ This section is mirroring how to configure "shibboleth2.xml" file.
 * Provide the "entityID of IDP" in: 
     * <SSO entityID="https://idp.gluu.org/idp/shibboleth" section 
 * Point the metadata provider, in most cases it's Gluu IDP metadata link: 
-    * <MetadataProvider type="XML" uri="https://idp.gluu.or/id/shibboleth" section
+    * <MetadataProvider type="XML" uri="https://idp.gluu.org/idp/shibboleth" section
 * Provide the key and cert of SP in: 
     * <CredentialResolver type="File" key="spkey.key" certificate="spcrt.crt" section
 
