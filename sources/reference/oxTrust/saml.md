@@ -1,62 +1,32 @@
-# Ortu erat exosa
+# SAML
 
-## At quidem belloque carmine quidque similis gelida
+## Trust Relationship
 
-Lorem markdownum neutra verum meae, fratre [tergo ab
-corpore](http://reddit.com/r/thathappened) procul amorem effectu, que. Labori
-barbaricoque pulmonis eburno vetusque me naides natumque fluminis exululat arvis
-dixit, aut. Exorata monuit inque oravique, Haemonio vos tamen reperta o fessos
-iaculo. Non moventem tamen Acrisius et ipse incepto ne inpune.
+_Trust Relationship_ is the mechanism of SAML based Single Sign On (SSO) establishment with any trusted party (Service Provider) from IdP. Please follow the succeeding steps to create a trust relationship.
 
-1. Isse cretus Lydos penetravit crevit Herculis
-2. Hoc plus sanguinis a illis cogit cepere
-3. Ad dic aere constabat dicta Achillis ducit
-4. Deum auget
-5. Refert duritiem iactari totidemque inmensum ante
+### Add Relationship
+![Add Trust Relationship](img/admin_saml_create.png)
 
-Albas instat, in nec potest calores forsitan coniunx, tamen Cecrope *per* adhuc
-est tum. Caducas custos. Te ista verticibusque viae miserae primum tectos
-dentibus defendere gremio ignes, **ministris**! Et pectus et magna serpens et
-**natas**, frondes nec faxo.
+Clicking on the Add Relationship button will open a new page. The Gluu Server Administrator must provide all relevant information regarding the Service Provider (SP) to establish Trust Relationship from the server.
+![New TR](img/admin_saml_newTR.png)
 
-Nec gaudet montis loquax fulmine mihi quem hic temporis erat creatis crudelis,
-subduci vivit geminos quid. Parva per fumabant mora placidos primum, furta
-proles mare ora procul, trita. Fuit est, nil tum Phaethusa ignis Graias unam
-Aeaeae, prohibere accipe quodque manifestam dirae nostrum.
+* _Display Name:_ This is the name of the Trust Relationship and this should be unique for every trust relationship.
 
-## Movere aequora canes
+* _Description:_ The Gluu Server administrator can add a little description in this field along with the purpose and the SSO Link.
 
-Quas ferunt equorum nec que, quae *da* parentem cui, famae nos debilitaturum.
-Quoque te visum ab membra lacrimis Nelei; vera pelle resilire simul spolioque
-[fugam](http://twitter.com/search?q=haskell), quaerant proelia. Tibi quaerit
-[Inachus](http://omgcatsinspace.tumblr.com/) depositura [eripitur
-neve](http://imgur.com/) et velles, igne est illis, audit. Cibos inde quid
-tantis ipse care in Aeson dare relicta, superque, vestris concita fuit.
+* _Metadata Type:_ There are four metadata types available in the Gluu Server that depend on the metadata of the trusted party.
 
-Genitor haec lyra modo libratum lacte conposuit iuncta exitio novoque lapidis
-amantes: fuerit alba parvi et autumnos? In verba amor primordia et regna Oceano
-veneno mora feci mutet verba tamen Ismenides faciat invitae tenebat. Terris
-referam, more nurus, Aeacide vix audisse esse. Sub indigenae sunt, recentis
-fugiunt, certa suo: simulac aliud Circaea inrupit.
+  1. _File:_ If the SP has uploadable metadata in XML format, then this option is the recommended.
+![Metadata type File](img/admin_saml_metadatafile.png)
 
-- Cras adhuc
-- Ferebat ipsa pariterque gauderet ante curvavit simul
-- Sparten ut fulva non erat habitantem nemus
-- Fama finge feriens
+  2. _URI:_ If the metadata of SP has url link and it is accessible through internet, then the Gluu Server Administrator is recommended to use this option.
+![Metadata type URI](img/admin_saml_metadatauri.png)
 
-Fecit non memorque, in manebit tamen, [parantem](http://gifctrl.com/) hominum
-crurumque spargitque tibi; non ait Aesoniden. Nisi *lustro lucum fatis*;
-vindicat albente sitque, hac aut, nostri, Byblida primasque! Fiducia puppimque
-*proiecta proceres errans* mihi capacibus in postes in et vetitum vires tua: quo
-cara senectus est visa! *Intra illa futuro* ac infelix regione que turpe imo
-remos coeunt. Non partis petam nec vicinos Niseia inducere domum alis sumptas
-robore rata corpore fallere mirabere nomen Nilus sed procerum Anaphen.
+  4. _Public Certificate:_ This option uploads the public certificate for SP server. Please note that the the CN (common name) of the certificate must maintain the Hostname of the SP server. If the SP does not have any certificate, then the Gluu IdP shall generate a certificate with 10 year validity for the SP.
 
-Vidit introitu et dedere **inamabile effugit** et hunc fertur incerti. Vide
-coniugialia ferox thalamumque nympha, est est oblitus, et.
+  3. _Released:_ This option lists the required attributes that are released to the SP. The attributes can be dragged from the left panel.
 
-[Inachus]: http://omgcatsinspace.tumblr.com/
-[eripitur neve]: http://imgur.com/
-[fugam]: http://twitter.com/search?q=haskell
-[parantem]: http://gifctrl.com/
-[tergo ab corpore]: http://reddit.com/r/thathappened
+  * The Gluu Server administrator will observe a confirmaiton page after the addition of a new TR (trust relationship). The screenshot does not contain any certificate for the demonstration purposes, but they are necessary.
+![Added New Trust Relationship](img/admin_saml_addedTR.png)
+
+If the SP requires custom relying party and/or custom MetadataFilter configuration, they can be achieved from the options provided in the Gluu Server.
