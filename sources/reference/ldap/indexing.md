@@ -42,6 +42,8 @@ Indexed attributes in opends on seed.gluu.org server:
  | lastModifiedTime | ordering            | Gluu    | 
  | oxAuthExpiration | ordering            | Gluu    | 
 
+For o=site cache refresh will search on the 'Primary Key'. So it will not be possible for us to know which attributes need to be indexed until configuration time.
+
 ## Configuring LDAP indexing to improve OX applications performance
 
 In order to keep optimal server load it's necessary to configure indexing for OpenDJ LDAP server. OpenDJ support these index types: approximate, equality, ordering, presence, substring, virtual list view, extensible matching rule. There is more information about index types in [OpenDJ Admin Guide](http://opendj.forgerock.org/opendj-server/doc/admin-guide/#indexes-overview). It's possible to add them for any LDAP attribute. OpenDJ will use them during searching result entries.
