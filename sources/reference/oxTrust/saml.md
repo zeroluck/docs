@@ -44,7 +44,7 @@ Clicking on this option allows the Gluu Server Administrator to modify various R
 ![Config Relying Party](img/admin_saml_relyingparty.png)
 
    _Federation:_ If the target SP is affiliated with any Federation server such as InCommon, NJEdge etc, then please select Federation from the Metadata type.
-![Metadata Type](img/admin_saml_metadatatype.png)z
+![Metadata Type](img/admin_saml_metadatatype.png)
 
 Select *Federation* in the Metadata Type and a drop-down menu  with the tile *Federation Title* shall appear. The desired federation can be selected from the drop-down menu. The screenshot below uses InCommon Federation as an example.
 ![Select Federation](img/admin_saml_federation.png)
