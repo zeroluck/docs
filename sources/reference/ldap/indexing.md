@@ -42,6 +42,7 @@ Indexed attributes in opends on seed.gluu.org server:
  | lastModifiedTime | ordering            | Gluu    | 
  | oxAuthExpiration | ordering            | Gluu    | 
 
+
 For o=site cache refresh will search on the 'Primary Key'. So it will not be possible for us to know which attributes need to be indexed until configuration time.
 
 ## Configuring LDAP indexing to improve OX applications performance
