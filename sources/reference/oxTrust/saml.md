@@ -27,6 +27,32 @@ Clicking on the Add Relationship button will open a new page. The Gluu Server Ad
   3. _Released:_ This option lists the required attributes that are released to the SP. The attributes can be dragged from the left panel.
 
   * The Gluu Server administrator will observe a confirmaiton page after the addition of a new TR (trust relationship). The screenshot does not contain any certificate for the demonstration purposes, but they are necessary.
-![Added New Trust Relationship](img/admin_saml_addedTR.png)
+	![Added New Trust Relationship](img/admin_saml_addedTR.png)
 
 If the SP requires custom relying party and/or custom MetadataFilter configuration, they can be achieved from the options provided in the Gluu Server.
+
+  * _Configure Metadata Filters:_ 
+![Configure Metadata Filter](img/admin_saml_configmetadata.png)
+
+Clicking on this option allows the Gluu Server Administrator to configure MetadataFilters in the Web UI(oxTrust).
+![Metadata Filter](img/admin_saml_metadatafilter.png)
+
+  * _Configure specific Relying Party:_ 
+![Configure Relying Party](img/admin_saml_configrelying.png)
+
+Clicking on this option allows the Gluu Server Administrator to modify various Relying Party Configurations such as SALM2SSO, SAML2AtttributeQuery, ShibbolethSSO etc through oxTrust.
+![Config Relying Party](img/admin_saml_relyingparty.png)
+
+    * _Federation:_ If the target SP is affiliated with any Federation server such as InCommon, NJEdge etc, then please select Federation from the Metadata type.
+![Metadata Type](img/admin_saml_metadatatype.png)z
+
+Select *Federation* in the Metadata Type and a drop-down menu  with the tile *Federation Title* shall appear. The desired federation can be selected from the drop-down menu. The screenshot below uses InCommon Federation as an example.
+![Select Federation](img/admin_saml_federation.png)
+
+After selecting the federation name, a new link titled *Click to select entity id* shall appear. Gluu Server Administrator can select all InCommon affiliated SP entityIDs from this link. THe screenshot below shows a demo SP entityID discovery page that will appear on clicking the link.
+![EntityID discovery page](img/admin_saml_newentityid.png)
+
+Gluu Server administrator can grab any SP entityID from *Filter* box. The screenshot below shows filtering for Educase entityID.
+![Demo Screenshot Educase](img/admin_saml_entityiddemo.png)
+
+Select the desired entityID and click *Done* followed by clocking on *Add* and the Trust Relationship with an InCommon affiliated SP shall be created.
