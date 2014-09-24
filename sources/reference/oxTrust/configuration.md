@@ -1,5 +1,11 @@
 # Configuration
+Please use these shortcuts to navigate the reference guide.
 
+ * [Index](./index.md)
+ * [OAuth 2](./oauth2.md)
+ * [SAML](./saml.md)
+ * [Personal](./personal.md)
+ 
 ## Configuration Menu
 The configuration menu on the home screen has shortcuts to the different configurations available in the oxTrust by Gluu.
 ![Configuration Menu](img/admin_menu_configuration.png)
