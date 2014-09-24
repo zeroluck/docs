@@ -1,7 +1,7 @@
 # Configuration
 Please use these shortcuts to navigate the reference guide.
 
- * [Index](./index.md)
+ * [Home](./index.md)
  * [OAuth 2](./oauth2.md)
  * [SAML](./saml.md)
  * [Personal](./personal.md)
