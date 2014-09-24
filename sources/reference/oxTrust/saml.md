@@ -1,4 +1,11 @@
 # SAML
+Please use these shortcuts to navegate the reference guide.
+
+ * [Home](./index.md)
+ * [OAuth2](./oauth2.md)
+ * [Personal](./personal.md)
+ * [Users](./users.md)
+ * [Configuration](./configuration.md)
 
 ## Trust Relationship
 
