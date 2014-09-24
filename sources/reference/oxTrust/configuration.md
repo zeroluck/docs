@@ -5,6 +5,7 @@ Please use these shortcuts to navigate the reference guide.
  * [OAuth 2](./oauth2.md)
  * [SAML](./saml.md)
  * [Personal](./personal.md)
+ * [Users](./users.md)
  
 ## Configuration Menu
 The configuration menu on the home screen has shortcuts to the different configurations available in the oxTrust by Gluu.
