@@ -1,6 +1,6 @@
 # Interception Scripts 
 
-- [Authenticatoin](./authentication.md)
+- [Authentication](./authentication.md)
 - [Logout](./logout.md)
 - [Attribute Transformation](./attribute-transformation.md)
 - [Authorization](./authorization.md)
