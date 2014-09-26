@@ -14,7 +14,7 @@ Gluu Server has implemented OpenID Connect based on the OAuth 2.0. OAuth 2.0 is 
 ## Scopes
 ![Scope menu](img/admin_oauth2_scopemenu.png)
 
-In comparison to SAML, scopes are equivalent to attributes. Scopes can be called the details which are permitted to be shared by the person who owns them. Scopes can also be related to the access token and defined as the input parameters for the access tokens. One example can be the *Address* scope which as *PO Box*, *City* claims in it. Gluu Server defines six scopes by default.
+The data of a resource owner requested by an application to access the resouece is called Scopes. The resouece owner permits the scopes the application can access and this allows the data owner to decide what details he wishes to share with the application. Claims are more fine grain in nature and they are generally accepted from trusted entity. One example can be the *Address* scope which as *PO Box*, *City* claims in it. Gluu Server defines six scopes by default.
 ![Scopes Screenshot](img/admin_oauth2_scope.png)
 
 The Gluu Server Administrator can easily add more scopes with the GUI. Click on *Add Scope* --> Provide Display Name, Description --> Click on *Add Claim* --> A new window with available claims will appear --> Select desired values --> Click *Ok* --> Click *Add*.
