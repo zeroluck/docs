@@ -20,3 +20,18 @@ The data of a resource owner requested by an application to access the resouece 
 The Gluu Server Administrator can easily add more scopes with the GUI. Click on *Add Scope* --> Provide Display Name, Description --> Click on *Add Claim* --> A new window with available claims will appear --> Select desired values --> Click *Ok* --> Click *Add*.
 ![Add Scopes](img/admin_auth2_scopeadd.png)
 
+## Clients
+
+Client in OAuth is defined as an application making protected resource request on behalf of the owner with the authorization of the same application. This definition does not apply to any particular implementation or profile. In general, we can say that a client is any entity which requests access to protected resources on behalf of the requesting party with the authorization of the resource owner.
+
+_Select Clients:_
+![Client Menu](img/admin_oauth2_clientmenu.png)
+
+Available **Clients** can be seen by hitting the **Search** button leaving the search box empty.
+![Client List](img/admin_oauth2_clientlist.png)
+
+New client can be added easily with the **Add Client** feature.
+![Add Client](admin_oauth2_addclient.png)
+
+Clicking on the _Add Client_ link allows the Gluu Server Administrator to add new client. The search box can be used to look up previously added clients as well. The screenshot below shows the interface to add a new client.
+![Add new client](admin_oauth2_newclient.png)
