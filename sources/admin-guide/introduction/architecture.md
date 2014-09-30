@@ -16,7 +16,7 @@ Although there are pros and cons, we think its best to use the Apache HTTPD
 server as the Internet facing Web server. There are a number of Apache HTTPD
 denial of service plugins. Its easier to handle re-directs for things like
 discovery. And its convenient to have a non-J2EE way to publish static content.
-![Gluu Web Communication](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/design/gluu_http-tomcat_overview.png=250x)
+![Gluu Web Communication](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/design/gluu_http-tomcat_overview.png =250x)
 
 ## LDAP for Persistence
 LDAP was chosen for persistence for a number of reasons: (1) we understood
