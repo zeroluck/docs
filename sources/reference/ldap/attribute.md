@@ -31,3 +31,6 @@ there. So, let's move for calculation.
         * Click on “Add source attribute to destination attribute mapping”
         * Left side box should include customer AD's information and right side box should include Gluu Server's attribute name just like below. 
             ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Attribute_mapping/map_attribute_description.png?raw=true)
+        * Click on “Update” and wait for Cache Refresh to populate this value inside Gluu server.
+* How to check status
+Search for any user with “uid” in Gluu Server and if “Description” is available for this user, mapping is done.
