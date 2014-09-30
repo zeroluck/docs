@@ -67,4 +67,4 @@ and map according to backend AD / LDAP.
         * Now, this new custom attribute should be available in Attribute List
 
 * Calculation and Mapping
-    * Calculation and mapping are same as “Standard LDAP attributes, Step #2”
+    * Calculation and mapping are same as “Standard LDAP attributes”, Section: "How to map a new attribute". 
