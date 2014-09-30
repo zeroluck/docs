@@ -2,8 +2,6 @@ mod_ox
 =======
 mod_ox is an access control apache module that enables an application server to support OpenID Connect and UMA endpoints. mod_ox is written in C.
 
-![mod_ox overview](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxd/oxd_overview.png =250x)
-
 ##Windows 7 (64bit)
 ###Memcached Installation
 1. Download Memcached from
@@ -37,7 +35,7 @@ Fix :
 6.Test if Apache is installed or not. Open your web browser and use 
 ""www.myexample.com"". If you see something like below image; you are done!
 
-###PHP 5.5 Installation
+##PHP 5.5 Installation
 1. Download PHP5.5 from:
 [https://svn.gluu.info/repository/oauth2ApacheHTTPD/ETC/Windows(x64)/php-5.5.9-
 Win32-VC11-x64.zip](https://svn.gluu.info/repository/oauth2ApacheHTTPD/ETC/Windows(x64)/php-5.5.9-Win32-VC11-x64.zip)
@@ -52,7 +50,7 @@ Fix :
 
     :> httpd –k restart
 
-###PHP Memcache Installation
+##PHP Memcache Installation
 1. Download PHP5.5 from:
 [https://svn.gluu.info/repository/oauth2ApacheHTTPD/ETC/Windows(x64)/php_memc
 ache-3.0.8-5.5-ts-vc11-x64.zip](https://svn.gluu.info/repository/oauth2ApacheHTTPD/ETC/Windows(x64)/)
@@ -79,7 +77,7 @@ Add :
 
         :> httpd –k restart
 
-###Shibboleth-SP Installation
+##Shibboleth-SP Installation
 1. Download MSI of Shibboleth-SP from:
 [http://shibboleth.net/downloads/service-provider/latest/win64/shibboleth-sp-2.5.3-
 win64.msi](http://shibboleth.net/downloads/service-provider/latest/win64/shibboleth-sp-2.5.3-win64.msi)
@@ -105,7 +103,7 @@ Add :
 
     :> httpd –k restart
 
-###OX Plugin Installation
+##OX Plugin Installation
 1. Download OX package from:
 [https://svn.gluu.info/repository/oauth2ApacheHTTPD/ETC/Windows(x64)/ox.zip](https://svn.gluu.info/repository/oauth2ApacheHTTPD/ETC/Windows(x64)/ox.zip)
 2. Decompress ox.zip into C:/ox.
@@ -159,8 +157,8 @@ Decompress Oxd.zip into C:/Oxd and run Oxd server.
     :> autorun(win).bat
 12.On web browser, goto www.myexample.com/ox
 
-###Ubuntu 12.04
-####Memcached Installation
+##Ubuntu 12.04
+###Memcached Installation
 1. First, make sure your system is up to date
 
             # sudo apt-get update
@@ -170,7 +168,7 @@ Decompress Oxd.zip into C:/Oxd and run Oxd server.
 
             # sudo apt-get install memcached
 
-###Apache 2 Installation
+##Apache 2 Installation
 1. Install Apache2 via apt-get
 
             # sudo apt-get install apache2
@@ -189,20 +187,20 @@ Decompress Oxd.zip into C:/Oxd and run Oxd server.
 
 4. On web browser, go to https://www.myexample.com
 
-###PHP 5 Installation
+##PHP 5 Installation
 1. Install PHP5 via apt-get
 
         # sudo apt-get install php5
         # sudo apt-get install libapache2-mod-php5
         # sudo service apache2 restart
 
-###PHP Memcache Installation
+##PHP Memcache Installation
 1. Install PHP memcache via apt-get
 
         # sudo apt-get install php5-memcache
         # sudo service apache2 restart
 
-###Shibboleth-SP Installation
+##Shibboleth-SP Installation
 1. Install Shibboleth SP via apt-get
 
         # sudo apt-get install libapache2-mod-shib2
@@ -210,7 +208,7 @@ Decompress Oxd.zip into C:/Oxd and run Oxd server.
         # sudo service apache2 restart
 
 
-###OX Plugin Installation
+##OX Plugin Installation
 1. Install needed packages via apt-get
 
         # sudo apt-get install libtool automake g++ apache2-prefork-dev
@@ -260,8 +258,8 @@ Add :
 
 7.On web browser, goto www.myexample.com/ox
 
-###CentOS 6.4
-####Memcached Installation
+##CentOS 6.4
+###Memcached Installation
 1. First, you make sure your system is up to date
 
         # sudo yum update
@@ -273,7 +271,7 @@ Add :
 
         # sudo yum install memcached
 
-###HTTPD Installation
+##HTTPD Installation
 1. Install HTTPD via yum
 
         # sudo yum install httpd openssl
@@ -299,19 +297,19 @@ Find the following three lines, and make sure that they match the extensions bel
 
         # sudo service httpd restart
 
-###PHP 5 Installation
+##PHP 5 Installation
 1. Install PHP5 via yum
 
         # sudo yum install php
         # sudo service httpd restart
 
-###PHP Memcache Installation
+##PHP Memcache Installation
 1. Install PHP memcache via yum
 
         # sudo yum install php-pecl-memcache
         # sudo service httpd restart
 
-###Shibboleth-SP Installation
+##Shibboleth-SP Installation
 1. Install Shibboleth SP via yum
 [https://tuakiri.ac.nz/confluence/display/Tuakiri/Installing+Shibboleth+2.x+SP+on+Red
 Hat+based+Linux](https://tuakiri.ac.nz/confluence/display/Tuakiri/Installing+Shibboleth+2.x+SP+on+RedHat+based+Linux)
@@ -322,7 +320,7 @@ Hat+based+Linux](https://tuakiri.ac.nz/confluence/display/Tuakiri/Installing+Shi
         # sudo service shibd restart
         # sudo service httpd restart
 
-###OX Plugin Installation
+##OX Plugin Installation
 1. Install needed packages via apt-get
 
         # sudo yum install libtool automake gcc-c++ httpd-devel
@@ -366,8 +364,8 @@ Add :
         # sudo ./autorun.sh
 7.On web browser, goto www.myexample.com/uma
 
-###Appendix
-####ox.conf
+##Appendix
+###ox.conf
 
     <DirectoryMatch "/ox">
     AuthType Gluu_ox
