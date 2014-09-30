@@ -39,11 +39,11 @@ Search for any user with “uid” in Gluu Server and if “Description” is av
 ## Custom attributes
 
 Sometimes we may need to map special attributes which are not in our Gluu
-Server attribute list but very important for customer to operate their SSO for
-any specific SP. As for example, customer who has Blackboard SP might ask us to
+Server attribute list but very important to operate some special SSO for
+any specific SP. As for example, organization who has Blackboard SP might need to
 map few attributes like BbSPUserName or BbSPCustomerNumber etc. In this case, we
 need to create these attributes inside of our Gluu Server and need to calculate
-and map according to customer's backend AD / LDAP.
+and map according to backend AD / LDAP.
 
 * Create new attribute in Gluu Server:
     * Click on “Configuration” → “Attributes”
