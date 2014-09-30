@@ -385,7 +385,7 @@ Add :
     OxdPortNum 8099
     MemcachedHostAddr 127.0.0.1
     MemcachedPortNum 11211
-    ClientCredsPath /var/www/html/providence/seed.gluu.org-client_creds.json
+    ClientCredsPath /var/www/html/example/seed.gluu.org-client_creds.json
     SendHeaders on
 
     # OpenID Connect Required - needed for both UMA and OpenID Connect
