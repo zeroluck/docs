@@ -54,7 +54,7 @@ and map according to backend AD / LDAP.
         * SAML1 URI [ if it's known, we can add that, otherwise keep it blank ]
         * SAML2 URI [ …same as SAML1 URI ]
         * Display Name [ same as “Name” ]
-        * Type [ in general: most of them are “Text”. Take confirmation from customer ]
+        * Type [ in general: most of them are “Text”. Select the desired format ]
         * Edit Type [ admin ]
         * View Type [ admin and user ]
         * Privacy Level [ generally, we keep it 3 ]
