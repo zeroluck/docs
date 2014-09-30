@@ -11,6 +11,13 @@ the Gluu Server, you don't have to be a Java expert. But it does help to have so
 knowledge of how Java applications are deployed and managed in tomcat, or a similar
 servlet container.
 
+## Apache HTTP front end web server
+Although there are pros and cons, we think its best to use the Apache HTTPD
+server as the Internet facing Web server. There are a number of Apache HTTPD
+denial of service plugins. Its easier to handle re-directs for things like
+discovery. And its convenient to have a non-J2EE way to publish static content.
+![Gluu Web Communication](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/design/gluu_http-tomcat_overview.png=250x)
+
 ## LDAP for Persistence
 LDAP was chosen for persistence for a number of reasons: (1) we understood
 how to scale an LDAP directory service horizontally to accommodate a data set
@@ -25,18 +32,18 @@ Memcached is used on both the Gluu Server, and to cache authorization decisions
 for the OX web container plugins. It is easy to configure and there were tools
 to enable memcached clusters (thanks Twitter!).
 
-## Web container plugins
+## Web container plugins: Shibboleth for SAML and OX for OAuth2
 Today, Web access management tools like CA Siteminder predominantly use the web
-filter approach. Many large organizations have hundreds or thousands of "web agents"
+agent approach. Many large organizations have hundreds or thousands of "web agents"
 running on Apache and IIS.
 
-Web filters are a great approach. Programmers don't have to know much about the
+Web agents are a great approach. Programmers don't have to know much about the
 protocols. System administrators can configure the web server to use
 the central authorization server so we don't have to rely on the programmers to get
 security right. The programmers can obtain the user session information in the
 environment variables. In OAuth2 information is serialized using JSON. For example, the
 entire id_token JWT is sent in one environment variable.
 
-If developers want even more control, they can use the OpenID Connect and UMA
-API's directly.
+If developers want even more control, they can use the Gluu Server's API's directly: SAML, 
+OpenID Connect, or UMA.
 
