@@ -148,6 +148,7 @@ pages:
 - ['reference/ldap/indexing.md', '**HIDDEN**']
 - ['reference/ldap/replication.md', '**HIDDEN**']
 - ['reference/ldap/config.md', '**HIDDEN**']
+- ['reference/ldap/attribute.md', '**HIDDEN**']
 
 # Sub pages of Reference / Configuration
 - ['reference/configuration/oxAuth.md', '**HIDDEN**']
