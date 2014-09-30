@@ -25,7 +25,7 @@ there. So, let's move for calculation.
 * Go to “Configuration” → “Cache Refresh”
 * Maximize “Customer Backend key/attributes”
     * “Source attribute”
-        * Add the value of customer backend's attribute which will supply value for our new custom attribute.
+        * Add the value of backend's attribute which will supply value for our new custom attribute.
             ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Attribute_mapping/source_attribute.png?raw=true)
         * Scroll down to “Attribute Mapping”
         * Click on “Add source attribute to destination attribute mapping”
