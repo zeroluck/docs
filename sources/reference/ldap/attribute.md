@@ -18,7 +18,7 @@ Let's say we need to release “Description” for every user. Our first job is 
 “Description” attribute is in Gluu Server list or not. As we can see, it is
 there. So, let's move for calculation.
 
-* Search for “description” in backend active directory/ldap. We need to know how customer is releasing this attribute in their Active Directory / LDAP server. Let's say they are releasing this attribute as “ABCdEsCription=Director of Engineering”. We need to map this “ABCdEsCription” attribute to “Description” of Gluu server.
+* Search for “description” in backend active directory/ldap. We need to know how this attribute in backend Active Directory / LDAP server. Let's say in backend the status of this attribute as “ABCdEsCription=Director of Engineering”. We need to map this “ABCdEsCription” attribute to “Description” of Gluu server.
 
 ### How to map a new attribute:
 
