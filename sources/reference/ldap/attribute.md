@@ -18,7 +18,7 @@ Let's say we need to release “Description” for every user. Our first job is 
 “Description” attribute is in Gluu Server list or not. As we can see, it is
 there. So, let's move for calculation.
 
-* Search for “description” in customer's backend. We need to know how customer is releasing this attribute in their Active Directory / LDAP server. Let's say they are releasing this attribute as “ABCdEsCription=Director of Engineering”. We need to map this “ABCdEsCription” attribute to “Description” of Gluu server.
+* Search for “description” in backend active directory/ldap. We need to know how customer is releasing this attribute in their Active Directory / LDAP server. Let's say they are releasing this attribute as “ABCdEsCription=Director of Engineering”. We need to map this “ABCdEsCription” attribute to “Description” of Gluu server.
 
 ### How to map a new attribute:
 
@@ -62,7 +62,7 @@ and map according to customer's backend AD / LDAP.
         * Description [ a little description of attribute ]
         * Status [ make it Active ]
         * Hit “Add”
-            ![Image)(https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Attribute_mapping/cutom_attribute_creation.png?raw=true)
+            ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Attribute_mapping/cutom_attribute_creation.png?raw=true)
         * Now, this new custom attribute should be available in Attribute List
 
 * Calculation and Mapping
