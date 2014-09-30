@@ -34,3 +34,36 @@ there. So, let's move for calculation.
         * Click on “Update” and wait for Cache Refresh to populate this value inside Gluu server.
 * How to check status
 Search for any user with “uid” in Gluu Server and if “Description” is available for this user, mapping is done.
+
+## Custom attributes
+
+Sometimes we may need to map special attributes which are not in our Gluu
+Server attribute list but very important for customer to operate their SSO for
+any specific SP. As for example, customer who has Blackboard SP might ask us to
+map few attributes like BbSPUserName or BbSPCustomerNumber etc. In this case, we
+need to create these attributes inside of our Gluu Server and need to calculate
+and map according to customer's backend AD / LDAP.
+
+* Create new attribute in Gluu Server:
+    * Click on “Configuration” → “Attributes”
+    * Hit “Add attribute”
+        ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Attribute_mapping/add_new_attribute.png?raw=true)
+    * A new page will appear and fill up the form according to below image.
+        * Name [ it should be the same as customer's backend attribute name ]
+        * SAML1 URI [ if it's known, we can add that, otherwise keep it blank ]
+        * SAML2 URI [ …same as SAML1 URI ]
+        * Display Name [ same as “Name” ]
+        * Type [ in general: most of them are “Text”. Take confirmation from customer ]
+        * Edit Type [ admin ]
+        * View Type [ admin and user ]
+        * Privacy Level [ generally, we keep it 3 ]
+        * Mutivalued [ Yes/No ]
+        * SCIM Attribute [ for now: keep it No ]
+        * Description [ a little description of attribute ]
+        * Status [ make it Active ]
+        * Hit “Add”
+            ![Image)(https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Attribute_mapping/cutom_attribute_creation.png?raw=true)
+        * Now, this new custom attribute should be available in Attribute List
+
+* Calculation and Mapping
+    * Calculation and mapping are just like same as “Standard LDAP attributes, Step #2”
