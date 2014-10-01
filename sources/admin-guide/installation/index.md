@@ -1,6 +1,6 @@
 # Gluu Server Installation
 
-The easiest sway to install the Gluu Server is to use the [Centos binary distribution](/centos.md). 
+The easiest way to install the Gluu Server is to use the [Centos binary distribution](/centos.md). 
 
 ## Hardware Guidance
 
