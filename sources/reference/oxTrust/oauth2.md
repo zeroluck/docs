@@ -45,3 +45,24 @@ Clicking on the _Add Client_ link allows the Gluu Server Administrator to add ne
   * _Web:_ The Dynamic Client Registration is the default for web. In this type the redirect_uri for implicit grant type must be a real hostname with HTTPS. This type is not approved any localhost or HTTP. The Web Application uses the Authorization code flow for Clients which can maintain a Client Secret between the URIs and Authorization server.
 
   * _Native:_ Custom URI for Native type application must follow HTTP with localhost. This is suitable for mobile app which cannot maintain the Client Secret between itself and the Authorization Server.
+
+* _Algorithm:_ oxAuth supports various types of Signature and Encryption Algorithms for authorizing request parameter passing, ID token signature and encryption, Signing return responses, Encrypt User Info Endpoints etc.
+
+It is a good practice to implement ID Token Signatures with the RSA SHA-256 Algorithm (algorithm value RS256). Additionally oxAuth also supports other algorithms that are listed below.
+
+_Signature Algorithms:_ HS256, HS384, HS512, RS256, RS384, RS512, ES256, ES384, ES512.
+
+_Encryption, Key Encryption Algorithms:_ RSA1_5, RSA-OAEP, A128KW, A256KW.
+
+_Block Encryption Algorithms:_ A128CBC+HS256, A256CBC+HS612, A128GCM, A256GCM,
+
+  * _Pre Authorization:_ Gluu server disables this option by default, but it is possible to allow the users to access any URL according to the Organization Policy by the Gluu Server Administrator.
+
+ * _Redirect URI:_ The URI for native or web app can be added using this feature.
+![RedirectURI](img/admin_oauth2_adduri.png)
+The list of available groups can be brought up by hitting the *Search* button keeping the search area empty. The desired group can be selected and added from the list.
+
+Clicking on *Add URI* will open a new box to put the hostname in and it is done.
+
+  * _Add Group:_ This feature can be used to affiliate specific groups.
+![Add Group](img/admin_oauth2_addgroup.png)
