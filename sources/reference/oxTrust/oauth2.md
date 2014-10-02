@@ -56,13 +56,35 @@ _Encryption, Key Encryption Algorithms:_ RSA1_5, RSA-OAEP, A128KW, A256KW.
 
 _Block Encryption Algorithms:_ A128CBC+HS256, A256CBC+HS612, A128GCM, A256GCM,
 
-  * _Pre Authorization:_ Gluu server disables this option by default, but it is possible to allow the users to access any URL according to the Organization Policy by the Gluu Server Administrator.
+* _Pre Authorization:_ Gluu server disables this option by default, but it is possible to allow the users to access any URL according to the Organization Policy by the Gluu Server Administrator.
 
- * _Redirect URI:_ The URI for native or web app can be added using this feature.
+* _Redirect URI:_ The URI for native or web app can be added using this feature.
 ![RedirectURI](img/admin_oauth2_adduri.png)
-The list of available groups can be brought up by hitting the *Search* button keeping the search area empty. The desired group can be selected and added from the list.
 
 Clicking on *Add URI* will open a new box to put the hostname in and it is done.
 
-  * _Add Group:_ This feature can be used to affiliate specific groups.
+* _Add Group:_ This feature can be used to affiliate specific groups.
 ![Add Group](img/admin_oauth2_addgroup.png)
+
+The existing groups can be listed by hitting the *Search* button keeping the search phrease blank.
+
+* _Add Scopes:_ This option can be used to add the required scopes in the Gluu Server.
+![Add Scopes](img/admin_oauth2_addscope.png)
+
+The available scopes can be listed by hitting the *Search* button keeping the search phrase black and from this the Gluu Server Administrator can select the required scopes.
+
+* _Add Response Type:_ There are three types of responses in the Gluu Server and they are Code, Token and ID Token. The Gluu Server Administrator can select all of them for testing purposes.
+![Response Type](img/admin_oauth2_response.png)
+
+## User-Managed Access
+
+The User-Managed Access (UMA) is an OAuth based protocol designed to give a web user a unified control point for authorizing who and what can get access to their personal data.
+![UMA Menu](img/admin_oauth2_umamenu.png)
+
+The UMA page screenshot is given below.
+![UMA Page](img/admin_oauth2_umascreen.png)
+The UMA can be searched clicking the *Search* button. There are three tabs in this page; Resources, Policies and Scopes.
+
+* _Add Resource Set in Resources tab:_ The following page will open up on clicking the *Add Resource Set* button.
+![Resource Set](img/admin_oauth2_resourceset.png)
+The fields marked with astericks, Name and Icon URL, are mandatory. The Gluu Server Administrator can add previously created Resource, Scope and Client using the add buttons.
