@@ -1,6 +1,8 @@
 # Gluu Server Installation
 
-The easiest way to install the Gluu Server is to use the [Centos binary distribution](./centos.md). 
+The easiest way to install on of the Gluu Server binary distributions for Linux. 
+We just release the .rpm for [Centos](./centos.md). Ubuntu .deb will be out 
+very soon.
 
 ## Hardware Guidance
 
@@ -22,6 +24,9 @@ The Gluu Server components have been tested with OpenJDK version 1.7 or later.
 ## LDAP
 
 The Gluu Server uses LDAP for persistence. The pre-compiled binaries include 
-an the Gluu LDAP, which is based on the OpenDJ open source LDAP distribution.
-However, it is possible to use OpenLDAP or 389DS, as long as you update the schema
-and manage the security permissions in those platforms as appropriate. 
+"Gluu OpenDJ", which is our fork of the OpenDJ open source LDAP distribution (which 
+we try to keep very closely aligned with the current updates of the main project).
+However, it is possible to use OpenLDAP or 389DS. The Gluu Server setup.py installation 
+script assumes OpenDJ, so you'd also have to take a close look at that script to make 
+sure the same things happen. For example, installing the right schema, index creation, 
+read/write permissions, and other configuration is needed.
