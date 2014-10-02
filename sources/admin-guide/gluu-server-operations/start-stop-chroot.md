@@ -6,7 +6,7 @@ The commands work pretty well on centos and ubuntu both.
 
 ### Starting Gluu Server chroot environment
 
-To start the Gluu Server chroot environment, use the command:
+To start the Gluu Server chroot environment, use the command (as root):
 
 `/etc/init.d/gluu-chroot start` 
 
@@ -31,7 +31,7 @@ Sample result of running the command is as follows:
 
 ### Stopping Gluu Server chroot environment
 
-To stop Gluu Server chroot environment, we simply issue the command:
+To stop Gluu Server chroot environment, we simply issue the command (as root):
 
 `/etc/init.d/gluu-chroot stop`
 
