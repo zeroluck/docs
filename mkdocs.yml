@@ -61,8 +61,6 @@ pages:
 - ['articles/benchmarking.md', 'Articles', 'Gluu Server Benchmark']
 - ['articles/custom-attributes.md', 'Articles', 'Adding Custom User Attributes']
 
-# Website
-- ['../../', 'Website']
 
 # Sub Pages of introduction 
 - ['admin-guide/introduction/architecture.md', '**HIDDEN**']
