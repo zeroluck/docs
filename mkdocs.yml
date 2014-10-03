@@ -62,7 +62,7 @@ pages:
 - ['articles/custom-attributes.md', 'Articles', 'Adding Custom User Attributes']
 
 # Website
-- ['gluu.org', 'Website']
+- ['', 'Website']
 
 # Sub Pages of introduction 
 - ['admin-guide/introduction/architecture.md', '**HIDDEN**']
