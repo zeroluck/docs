@@ -4,7 +4,7 @@
 
 This strategy has its pluses and minuses. In certain circumstances, there are ways for a hacker to “break out of the jail”, and escalate to the host file system. (You don't want to make any file system links from the chroot'd server to the Main host!) The benefit from our perspective was ease of deployment, and loose bundling to the IAAS services needed to support the Gluu Server.
 
-Note: we are almost done with a Docker version of the Gluu Server.
+Note: to report issues or provide feedback, please use [GitHub](https://github.com/GluuFederation/community-edition-setup/issues) or register for an account on [https://support.gluu.org](https://support.gluu.org).
 
 ## System Requirements
 
