@@ -88,3 +88,9 @@ The UMA can be searched clicking the *Search* button. There are three tabs in th
 * _Add Resource Set in Resources tab:_ The following page will open up on clicking the *Add Resource Set* button.
 ![Resource Set](img/admin_oauth2_resourceset.png)
 The fields marked with astericks, Name and Icon URL, are mandatory. The Gluu Server Administrator can add previously created Resource, Scope and Client using the add buttons.
+
+* _Add Polocies in Policies tab:_ The name of the policy is mandatory along with the language. The language can be selected from the drop-down menu. The policy script written in python and javascript can be inserted in the Policy Script field. The *Add Scope* button allows the Gluu Server Administrator to add previously created scope to the policy.
+![Add Policy](img/admin_oauth2_addpolicy.png)
+
+* _Add Scope Description in scopus tab:_ Please provide the name in the respective field and select the type (internal or external) from the drop-down menu and add the previously defined clients.
+![Scope description](img/admin_oauth2_scopedescription.png)
