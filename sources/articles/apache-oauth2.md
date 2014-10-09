@@ -1,22 +1,18 @@
 # Apache OAuth2 using mod_ox
 
-mod_ox is an access control module implementing OIC+UMA and acts as Resource
-Server side.
+
 
 * OIC is implementing Implicit Flow of OpenID Connect specifications.
 * UMA is implementing an User-Managed Access (UMA)
 
 ## Big picture
 
-The web server plugin consists of two parts:
+The solution consists of two parts:
 
-* mod_ox - new apache module written in C which is loaded by httpd.
-* oxd - mediator between mod_ox and UMA Authorization server. oxd is java application.
+* oxd - a standalone Java application that acts as a mediator between the web server plugins, and the OAuth2 Authorization Servers (either OpenID Connect or UMA) 
+* mod_ox - Apache module
 
-mod_ox defines set of custom directives for correct module configuration.
-
-Communication between mod_ox and oxd is made via sockets on port 8099 (Port
-should be configurable, 8099 should be used as default and fallback port).
+mod_ox defines set of custom directives for correct module configuration. Communication between mod_ox and oxd is made via sockets on port 8099 (Port should be configurable, 8099 should be used as default and fallback port).
 
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/openid_connect/oxd_overview.png?raw=true)
 
@@ -32,13 +28,16 @@ Linux and Windows are supported.
 
 ### Source collection
 
-`mod_ox` development release can be found on [Github](https://github.com/GluuFederation/mod_ox) 
+`mod_ox` development release can be collected from Gluu SVN
+[link](https://svn.gluu.info/repository/oauth2ApacheHTTPD/MOD_OX/Package/mod_ox-0.1.tar.gz). 
 
 _Note that if you download a development release you will need current versions
 of the autotools installed, and you must run ./autogen.sh first before following
 these instructions._ 
 
-#### Building mod_ox from source
+
+
+#### Compilation
 
 * Untar the tarball
 
@@ -97,7 +96,7 @@ these instructions._
         
             # Logout
             ApplicationLogoutUrl http://www.myexample.com/ox/logout 
-            ApplicationPostLogoutUrl https://idp.gluu.org/oxauth/seam/resource/restv1/oxauth/end_session
+            ApplicationPostLogoutUrl https://idp.example.com/oxauth/seam/resource/restv1/oxauth/end_session
             ApplicationLogoutRedirectUrl http://www.myexample.com/ox/
         </DirectoryMatch>
 
@@ -153,9 +152,10 @@ these instructions._
 * Copy module in Apache2/HTTPD
 * Enabled mod in httpd.conf
 
+
 ## Test
 
-* Start your [oxd](http://ox.gluu.org/doku.php?id=oxd:home) server. 
+* Start your oxd server. 
 * Restart Apache2/HTTPD
 * In the web browser, try with your hostname and mod_ox protected site. As for example, our sample hostname is "www.myapache.com" and we are protecting "ox" directory. So: 
         

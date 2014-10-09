@@ -78,9 +78,6 @@ Add :
         :> httpd –k restart
 
 ##Shibboleth-SP Installation
-
-If you are using SAML for authentication, you will need to install and configure the Shibboleth SP.
-
 1. Download MSI of Shibboleth-SP from:
 [http://shibboleth.net/downloads/service-provider/latest/win64/shibboleth-sp-2.5.3-
 win64.msi](http://shibboleth.net/downloads/service-provider/latest/win64/shibboleth-sp-2.5.3-win64.msi)
@@ -204,9 +201,6 @@ Decompress Oxd.zip into C:/Oxd and run Oxd server.
         # sudo service apache2 restart
 
 ##Shibboleth-SP Installation
-
-If you are using SAML for authenitcation, you will need to install and configure the Shibboleth SP apache plugin.
-
 1. Install Shibboleth SP via apt-get
 
         # sudo apt-get install libapache2-mod-shib2
@@ -316,9 +310,6 @@ Find the following three lines, and make sure that they match the extensions bel
         # sudo service httpd restart
 
 ##Shibboleth-SP Installation
-
-If you are using SAML for authenitcation, you will need to install and configure the Shibboleth SP apache plugin.
-
 1. Install Shibboleth SP via yum
 [https://tuakiri.ac.nz/confluence/display/Tuakiri/Installing+Shibboleth+2.x+SP+on+Red
 Hat+based+Linux](https://tuakiri.ac.nz/confluence/display/Tuakiri/Installing+Shibboleth+2.x+SP+on+RedHat+based+Linux)
@@ -371,4 +362,41 @@ Add :
         # sudo yum install java7
         # sudo chmod 755 autorun.sh
         # sudo ./autorun.sh
-        
+7.On web browser, goto www.myexample.com/uma
+
+##Appendix
+###ox.conf
+
+    <DirectoryMatch "/ox">
+    AuthType Gluu_ox
+    Require valid-user
+    # Connect|SAML
+    AuthnType Connect
+    # Trusted_RP | RS_ONLY
+    AuthzType Trusted_RP
+    # Needed only if AuthnType=Connect
+    AcrValues https://schema.example.com/connect/basic
+    # Needed only if AuthnType=SAML
+    SAMLRedirectUrl http://www.myexample.com/secure/redirect.php
+    # General
+    OxdHostAddr 127.0.0.1
+    OxdPortNum 8099
+    MemcachedHostAddr 127.0.0.1
+    MemcachedPortNum 11211
+    ClientCredsPath /var/www/html/example/seed.gluu.org-client_creds.json
+    SendHeaders on
+
+    # OpenID Connect Required - needed for both UMA and OpenID Connect
+    ConnectDiscoveryUrl https://sso-dev.example.com/.well-known/openid-configuration
+    ConnectRedirectUrl https://www.myexample.com/ox/ox_redirect.html
+    ClientName myCLIENT
+
+    # UMA
+    UmaDiscoveryUrl https://sso-dev.example.com/.well-known/uma-configuration
+    UmaResourceName TestResource
+    UmaRsHost www.myexample.com
+    UmaAmHost sso-dev.example.com 
+    "https://schema.example.com/uma/resource"
+    </DirectoryMatch>
+
+Please refer [http://ox.gluu.org/doku.php?id=oxd:mod_ox](http://ox.gluu.org/doku.php?id=oxd:mod_ox)
