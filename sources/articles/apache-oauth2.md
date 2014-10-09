@@ -42,7 +42,7 @@ these instructions._
 
 #### Configuration
 
-See [mod_ox configuration page](../reference/oxd)
+See [mod_ox configuration page](../../reference/oxd)
 
 ## Test
 
