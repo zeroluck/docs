@@ -18,6 +18,7 @@ pages:
 # Admin Guide Sections
 - ['admin-guide/introduction/index.md', 'Admin Guide', 'Introduction']
 - ['admin-guide/installation/index.md', 'Admin Guide', 'Installation']
+- ['admin-guide/oxTrust/index.md', 'Admin Guide', 'oxTrust User Interface']
 - ['admin-guide/gluu-server-operations/index.md', 'Admin Guide', 'Gluu Server Operations']
 - ['admin-guide/custom-look/index.md', 'Admin Guide', 'Customizing Look and Feel']
 - ['admin-guide/certificates/index.md', 'Admin Guide', 'Certificates']
@@ -37,7 +38,7 @@ pages:
 - ['reference/ldap/index.md', 'Reference', 'LDAP Configuration']
 - ['reference/lib/index.md', 'Reference', 'Libraries']
 - ['reference/api/index.md', 'Reference', 'APIs']
-- ['reference/oxTrust/index.md', 'Reference', 'oxTrust User Interface']
+- ['reference/oxd/index.md', 'Reference', 'OXD']
 
 # Sub pages of References / API
 - ['reference/api/oic-authorization.md', '**HIDDEN**']
@@ -73,6 +74,13 @@ pages:
 - ['admin-guide/installation/ubuntu.md', '**HIDDEN**']
 - ['admin-guide/installation/centos.md', '**HIDDEN**']
 - ['admin-guide/installation/juju.md', '**HIDDEN**']
+
+# Sub pages of Reference / Configuration
+- ['admin-guide/oxTrust/configuration.md', '**HIDDEN**']
+- ['admin-guide/oxTrust/oauth2.md', '**HIDDEN**']
+- ['admin-guide/oxTrust/personal.md', '**HIDDEN**']
+- ['admin-guide/oxTrust/saml.md', '**HIDDEN**']
+- ['admin-guide/oxTrust/users.md', '**HIDDEN**']
 
 # Sub Pages of Admin Guide / Gluu Server Operations
 - ['admin-guide/gluu-server-operations/start-stop-chroot.md', '**HIDDEN**']
@@ -154,12 +162,7 @@ pages:
 # Sub pages of Reference / Configuration
 - ['reference/configuration/oxAuth.md', '**HIDDEN**']
 - ['reference/configuration/oxTrust.md', '**HIDDEN**']
-- ['reference/configuration/tomcat.md', '**HIDDEN**']
-- ['reference/configuration/asimba.md', '**HIDDEN**']
 
-# Sub pages of Reference / Configuration
-- ['reference/oxTrust/configuration.md', '**HIDDEN**']
-- ['reference/oxTrust/oauth2.md', '**HIDDEN**']
-- ['reference/oxTrust/personal.md', '**HIDDEN**']
-- ['reference/oxTrust/saml.md', '**HIDDEN**']
-- ['reference/oxTrust/users.md', '**HIDDEN**']
+# Sub pages of Reference / OXD
+- ['reference/oxd/oxd-protocol.md', '**HIDDEN**']
+- ['reference/oxd/mod_ox.md', '**HIDDEN**']

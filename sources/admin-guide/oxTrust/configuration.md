@@ -9,18 +9,18 @@ Please use these shortcuts to navigate the reference guide.
  
 ## Configuration Menu
 The configuration menu on the home screen has shortcuts to the different configurations available in the oxTrust by Gluu.
-![Configuration Menu](img/admin_menu_configuration.png)
+![Configuration Menu](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_menu_configuration.png)
 
 ## Organization Configuration
 The organization congiguration contains a set  of different configurations under it. The configurations are given under their headings in this document.
 
 ### Configure Cluster Partner
-![Configure Cluster Partner](img/admin_config_cluster.png)
+![Configure Cluster Partner](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_cluster.png)
 This feature or option is still in the testing phase and you will be notified when it is available.
 
 ### System Configuration
 This feature allows the Gluu system administrator to choose various options such as *Cache Refresh*, *Federation Hosting*, *SCIM Support* etc. 
-![System Configuration](img/admin_config_system.png)
+![System Configuration](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_system.png)
 
 * _White Pages:_ If the user intends to use the built-in White Pages of the Gluu Server, it can be enabled from the menu.
 
@@ -36,7 +36,7 @@ This feature allows the Gluu system administrator to choose various options such
 
 ### Manage Email Addresses
 This feature allows the Gluu Server Administrator to manage notifications for the IdP.
-![Manage Email Addresses](img/admin_config_email.png)
+![Manage Email Addresses](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_email.png)
 
 * _Email for Centreon:_ Centreon is the server monitoring system used by Gluu. The email address in this field shall recieve various notifications from Centreon.
 
@@ -50,7 +50,7 @@ This feature allows the Gluu Server Administrator to manage notifications for th
 
 ### SMTP Server Configuration
 The Gluu server can communicate to any SMTP server specified in these fields. All Gluu Server related informats *(cron daemon/logwatch/crash reports etc.)* can be pushed to the desired Gluu Server Administrator using this feature.
-![SMTP Server Configuration](img/admin_config_smtp.png)
+![SMTP Server Configuration](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_smtp.png)
 
 * _SMTP Host:_ Name of the SMTP Host server.
 
@@ -70,10 +70,10 @@ The Gluu server can communicate to any SMTP server specified in these fields. Al
 
 ### Configuration
 This feature provides options to add various changes in the Gluu Server User Interface. Gluu Server Administrator can add Title, Display Name or evern modify the Web User Interface color from this section.
-![Configuration Panel](img/admin_config_config.png)
+![Configuration Panel](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_config.png)
 
 * _Title:_ The Web User Interface title can be modified with this link.
-![Web Interface Title](img/admin_config_config_title.png)
+![Web Interface Title](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_config_title.png)
 
 * _Display Name:_ This is the display name for the Gluu Server User Interface. However, this option is yet to be tested properly.
 
@@ -84,10 +84,10 @@ This feature provides options to add various changes in the Gluu Server User Int
 * _Login Page Message:_ The login page now uses oxAuth Web UI and the changes made in this field will not affect the IdP.
 
 * _Welcome Title Text:_ The Gluu Server Administrator can add custom welcome text tile with this feature.
-![Welcome Title Text](img/admin_config_config_welcome.png)
+![Welcome Title Text](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_config_welcome.png)
 
 **Welcome Page Message:** This feature can be used to add various messages and shortcuts in the welcome message.
-![Welcome Page Message](img/admin_config_config_message.png)
+![Welcome Page Message](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_config_message.png)
 
 * _Manager Group:_ Gluu server has a single manager group. The users under the manager group can use the Web User Interface to operate the Gluu Server. There is no limit to the users that can be added to the manager group.
 
@@ -100,24 +100,24 @@ This feature provides options to add various changes in the Gluu Server User Int
 ## Manage Certificates
 ### Certificate Management
 This allows the users to choose whether to use the JRE public certificates or not.
-![JRE Certificate Management](img/admin_manage_jre.png)
+![JRE Certificate Management](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_manage_jre.png)
 
 ### Manage Server SSL Certificates
 The Gluu Server has different certificates for Apache and SSO handling. The certificate must be a well known CA certificate for Apache HTTPS and for SSO handling it can either be self-signed or a CA certified certificate. In both the cases, the CN of the certificate must follow the HOSTNAME of the Gluu Server. 
 
-![Manage Certificates](img/admin_manage_cert.png)
+![Manage Certificates](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_manage_cert.png)
 This feature of the oxTrust allows the Gluu Server Administrator to manage both types of certificates. The First box which has **DA...-java.crt** operates the SSL/Apache/HTTPS functions of Gluu Server. The second box is where there is **DA...-shib.cert** is relevant to the SAML transaction.
 
 In order to update/install Gluu Server certificates, both Private key and Public certificates are required. It is essential to update both the public and private keys when updating the server or updating the certificates.
 
 ### Manage Public Certificates
 This allows the addition of custom authentication configuration and changing of public certificates.
-![Manage Public Certificates](img/admin_manage_public.png)
+![Manage Public Certificates](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_manage_public.png)
 
 ## Manage Authentication
 ### Manage LDAP Authentication
 This feature allows the Gluu Server Administrator to define how and where the server should connect to authenticate users. If it is a remote LDAP/Active Directory server, the values are required. The values can also be used if the organization uses the local LDAP of the Gluu Server for authentication. 
-![Manage LDAP Authentication](img/admin_manage_ldap.png)
+![Manage LDAP Authentication](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_manage_ldap.png)
 
 * _Deactivate:_ This button *Deactivates/Activates* the Gluu Server accessibility for authentication.
 
@@ -145,12 +145,12 @@ This feature allows the Gluu Server Administrator to define how and where the se
 
 ### Default Authentication Method
 This allows the Gluu Server Administrator to select the authentication mode and level for the persons. The four modes of authentication are *default, basic, duo* and *saml*. The authentication level can be *default, 10*, or *20*.
-![Default Authentication Method](img/admin_auth_default.png)
+![Default Authentication Method](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_auth_default.png)
 
 ### Manage Custom Authentication Method
 The Gluu Server supports username/password authentication against the local LDAP or a remote LDAP/Active Directory by default. In addition, oxTrust provides the interface for inserting *Jython* code to enable dynamic authentication logic including the use of any strong and multi-step authentication process. Gluu can write the custom scripts for *premium customers* and release them under open source license for others to use. There are two-factor authentication scripts under the open source license available in [Gluu Two Factor](http://gluu.org/two-factor).
-![Custom Authentication Method Screenshot 1](img/admin_auth_custom.png)
-![Custom Authentication Method Screenshot 2](img/admin_auth_custom1.png)
+![Custom Authentication Method Screenshot 1](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_auth_custom.png)
+![Custom Authentication Method Screenshot 2](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_auth_custom1.png)
 
 * _Name:_ A unique name should be defined for every authentication method. For example, the sections representing the *Duo two-factor authentication* are appropriately named **Duo**.
 
@@ -163,28 +163,28 @@ The Gluu Server supports username/password authentication against the local LDAP
 ## Manage Registration
 ### Configure Registration Workflow
 This allows the activation of invitation links and has options to allow registration in the IdP without any invitation. There are options to change the expiration of accounts with the option to change the time for account expiration process.
-![Configure Registration Workflow](img/admin_config_workflow.png)
+![Configure Registration Workflow](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_workflow.png)
 
 ## Import People
 This feature allows the Gluu Server Administrator to bulk import users. The user *xls* file can be added using the **Add** button.
-![Import User](img/admin_config_people.png)
+![Import User](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_people.png)
 
 Validation checking for the added *xls* file can be done using the **Validate** button. If the file is not formatted properly, the server will reject the same with an error as shown below in the screenshot.
-![Validation Error Message](img/admin_config_people_validate.png)
+![Validation Error Message](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_people_validate.png)
 
 ## Attributes
 An *Active* attribute list can be seen from the **Configuration --> Attributes** section.
-![Attribute Menu](img/admin_menu_attributes.png)
-![Attribute Menu](img/admin_attribute_menu.png)
+![Attribute Menu](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_menu_attributes.png)
+![Attribute Menu](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_attribute_menu.png)
 
 The Gluu Server has a large LDAP tree which includes all standard attributes. It is not necessary for all of them to be *Active*. The active LDAP trees can be sorted using the *Show only Active Attributes* link.
-![Show Active Attribute](img/admin_attribute_show.png)
+![Show Active Attribute](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_attribute_show.png)
 
 The Gluu Server Administrator can make changes, such as changing the status to active/inactive, to an attribute after clicking on it.
-![Attributes](img/admin_attribute_attribute.png)
+![Attributes](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_attribute_attribute.png)
 
 Additional attributes can be added from the Gluu Server GUI, oxTrust, by clicking the **Add Attribute** button. On clicking the **Add Attribute** button, the following screen shall appear.
-![Add Attriute Screen](img/admin_attribute_add.png)
+![Add Attriute Screen](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_attribute_add.png)
 
 * _Name:_ This field defines the name of the custom attribute which must be unique in the Gluu Server LDAP tree.
 
@@ -217,17 +217,17 @@ Additional attributes can be added from the Gluu Server GUI, oxTrust, by clickin
 ## Cache Refresh
 
 **Cache Refresh** was built by Gluu to pull user information from a backend customer Active Directory/LDAP Server. Cache refresh dynamically synchronises user information from the backend data source of the customer to the Gluu Server in order to maximize performance. This feature is sensitive in nature as any incorrect action may result in the loss of data within the Gluu Server. Therefore it is highly recommended that the server administrator seeks the assistance of Gluu Support for this function.
-![Cache Refresh Menu](img/admin_cache_menu.png)
+![Cache Refresh Menu](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_menu.png)
 
 * _Last Run:_ The date and time of the latest cache refresh cycle completion is shown in the last run.
 
 * _Updates at the Last Run:_ This shows the total number of users who have been updated in the last Cache Refresh cycle. For example an user who has any of his attribute updated will show up here.
 
 * _Problem at the Last Run:_ This shows the number of users who have been rejected by the Gluu Server during the update. If there are any rejections, please contact Gluu Support for clarification and help.
-![Last Run](img/admin_cache_lastrun.png)
+![Last Run](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_lastrun.png)
 
 ### Customer Backend Key/Attributes
-![Customer Backend Key](img/admin_cache_backend.png)
+![Customer Backend Key](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_backend.png)
 * _Key Attribute:_ This is the unique key attribute of backend Active Directory/LDAP Server such as sAMAccountname for any Active Directory.
 
 * _Object Class:_ This contains the Object Classes of the backend Active Directory/LDAP which has permission to talk to Gluu Server Cache Refresh such as person, organizationalPerson, user etc.
@@ -237,7 +237,7 @@ Additional attributes can be added from the Gluu Server GUI, oxTrust, by clickin
 * _Custom LDAP Filter:_ If there is any custom search required, this filtering mechanism can be used such as "sn=*" where the value of this field ensures that every user must contain an attribute named SN.
 
 ### Source Backend LDAP Servers
-![Source Backend](img/admin_cache_sourcebackend.png)
+![Source Backend](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_sourcebackend.png)
 This section allows the Gluu Server to connect to the backend Active Directory/LDAP server of the organization.
 
 * _Name:_ Please input **source** as the value.
@@ -261,7 +261,7 @@ This section allows the Gluu Server to connect to the backend Active Directory/L
 If any organization has multiple Active Directory/LDAP server, click on **Add source LDAP server** and add the additional server information. Please remember that a *failover server* is not a new server.
 
 ### Inum LDAP Server
-![Inum LDAP Server](img/admin_cache_inum.png)
+![Inum LDAP Server](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_inum.png)
 
 This section of the application allows the server administrator to connect to the internal LDAP of the Gluu Server. Please contact Gluu Support for the values for this section.
 
@@ -284,15 +284,15 @@ This section of the application allows the server administrator to connect to th
 * _Refresh Method:_ The Gluu Server allows the Server Administrator to apply two types of Cache Refresh mechanism (i) VDS Method and (ii) Copy Method.
 
   1. _VDS Method:_ Any organization with a database like *mysql* can use the VDS method. This option can be enabled via the dropdown menu in Refresh Method option.
-![Refresh VDS](img/admin_cache_refresh_vds.png)
+![Refresh VDS](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_refresh_vds.png)
 
   2. _Copy Method:_ If the organization has any kind of Active Directory/LDAP server, they are strongly recommened to use the *Copy Method* from the dropdown menu.
-![Refresh Copy](img/admin_cache_refresh_copy.png)
+![Refresh Copy](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_refresh_copy.png)
 
 ### Attributes Mapping
 
 Attribute mapping is an important aspect of the Copy Method. In this section, the Gluu Server Administrator can map any attribute from the backend Active Directory/LDAP to the LDAP cache of the Gluu Server.
-![Attribute Mapping](img/admin_cache_mapattribute.png)
+![Attribute Mapping](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_mapattribute.png)
 
 Gluu Server Administrator can selecy any Cache Refresh Method according to the backend Active Directory/LDAP server, but there are some essential values for both types of cache refresh method. The values are given below.
 
@@ -311,16 +311,16 @@ Gluu Server Administrator can selecy any Cache Refresh Method according to the b
 ## Configure Log Viewer
 
 Gluu Server has the facility to read log files using the GUI. The log file can be displayed from the Web UI with a few clicks of the mouse. This feature can be enabled from the configuration menu clicking **Configuration --> Configure Log Viewer.**
-![Configure Log Viewer](img/admin_config_logviewer.png)
+![Configure Log Viewer](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_logviewer.png)
 
 Clicking on **Add log template** will bring two boxes. The boxes on the left contains the name/description of the log file, and the right boxes contain the path of the log file such as _/opt/tomcat/logs/demo.log._
 
 ## View Log File
 
 The log files configured in the earlier section can be viewed using the **View log file** feature. This feature can be accessed through the configuration menu using **Configuration --> View Log File.**
-![View Log File](img/admin_view_log.png)
+![View Log File](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_view_log.png)
 
 The **Display last lines count** field contains the lines that will be displayed in the Web GUI. If the field contains the value **400**, then the Gluu Server will show the last 400 lines of the log in the GUI. The screenshot below shows an example.
-![Log file tail](img/admin_view_logtail.png)
+![Log file tail](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_view_logtail.png)
 
 

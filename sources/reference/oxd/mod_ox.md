@@ -1,58 +1,4 @@
-# Apache OAuth2 using mod_ox
-
-
-
-* OIC is implementing Implicit Flow of OpenID Connect specifications.
-* UMA is implementing an User-Managed Access (UMA)
-
-## Big picture
-
-The solution consists of two parts:
-
-* oxd - a standalone Java application that acts as a mediator between the web server plugins, and the OAuth2 Authorization Servers (either OpenID Connect or UMA) 
-* mod_ox - Apache module
-
-mod_ox defines set of custom directives for correct module configuration. Communication between mod_ox and oxd is made via sockets on port 8099 (Port should be configurable, 8099 should be used as default and fallback port).
-
-![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/openid_connect/oxd_overview.png?raw=true)
-
-## Installation
-
-These docs assume that you have Apache2/HTTPD installed and running already. Both of
-Linux and Windows are supported.
-
-### Prerequisites
-
-* [memcached](http://memcached.org/) - An in-memory key-value store for small chunks of arbitrary data (strings, objects)
-* oxd - It's a mediator betweenApache plugins (mod_ox, mod_uma) and OIC/UMA Authorization server. If you are interested to know more, a full documentation is available [here](http://ox.gluu.org/doku.php?id=oxd:home)
-
-### Source collection
-
-`mod_ox` development release can be collected from Gluu SVN
-[link](https://svn.gluu.info/repository/oauth2ApacheHTTPD/MOD_OX/Package/mod_ox-0.1.tar.gz). 
-
-_Note that if you download a development release you will need current versions
-of the autotools installed, and you must run ./autogen.sh first before following
-these instructions._ 
-
-
-
-#### Compilation
-
-* Untar the tarball
-
-* Enter into mod_ox directory and follow below commands to configure:
-
-        1. ./configure (./autogen.sh for development release)
-        2. make
-        3. sudo make install
-
-
-* Verify that the module has been enabled in your ”httpd.conf”:
-
-        # note that the path to your module might be different
-        LoadModule ox_module /usr/lib/apache2/modules/mod_ox.so
-
+# mod_ox Configuration
 
 #### Parameter configuration
 
@@ -96,7 +42,7 @@ these instructions._
         
             # Logout
             ApplicationLogoutUrl http://www.myexample.com/ox/logout 
-            ApplicationPostLogoutUrl https://idp.example.com/oxauth/seam/resource/restv1/oxauth/end_session
+            ApplicationPostLogoutUrl https://idp.gluu.org/oxauth/seam/resource/restv1/oxauth/end_session
             ApplicationLogoutRedirectUrl http://www.myexample.com/ox/
         </DirectoryMatch>
 
@@ -145,22 +91,6 @@ these instructions._
 | _ApplicationPostLogoutUrl_ |:| OPTIONAL. URL specifying openid logout processing server. Redirected by mod_ox, if the user enter ApplicationLogoutUrl (e.g. https://idpdev.mediaocean.com/oxauth/seam/resource/restv1/oxauth/end_session) |
 | _ApplicationLogoutRedirectUrl_ |:| OPTIONAL. URL after logout. Could be set any url (e.g. http://www.myexample.com/ox) |
 
-#### Further Configurations
-
-* Copy `ox.conf` into Apache2/HTTPD directory.
-* Apply sufficient permission for `ox.conf` file.
-* Copy module in Apache2/HTTPD
-* Enabled mod in httpd.conf
-
-
-## Test
-
-* Start your oxd server. 
-* Restart Apache2/HTTPD
-* In the web browser, try with your hostname and mod_ox protected site. As for example, our sample hostname is "www.myapache.com" and we are protecting "ox" directory. So: 
-        
-        http://www.myapache.com/ox
-
 ## Environment Variables
 
 | _Variable_     |:     | Notes |
@@ -170,3 +100,4 @@ these instructions._
 | _OIC_ACCESS_TOKEN_ |:| Access token assigned to the session associated with the request. i.e. PHP Environment Access : $_SERVER[“OIC_ACCESS_TOKEN”] |
 | _OIC_SCOPE_ |:| OIC scope assigned to the session associated with the request. i.e. PHP Environment Access : $_SERVER[“OIC_SCOPE”] |
 | _OIC_STATE_ |:| Oic state assigned to the session associated with the request. i.e. PHP Environment Access : $_SERVER[“OIC_STATE”] |
+
