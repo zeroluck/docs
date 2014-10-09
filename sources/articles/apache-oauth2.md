@@ -8,7 +8,7 @@ Server side.
 
 ## Big picture
 
-Solution consists of two parts:
+The web server plugin consists of two parts:
 
 * mod_ox - new apache module written in C which is loaded by httpd.
 * oxd - mediator between mod_ox and UMA Authorization server. oxd is java application.
@@ -32,16 +32,13 @@ Linux and Windows are supported.
 
 ### Source collection
 
-`mod_ox` development release can be collected from Gluu SVN
-[link](https://svn.gluu.info/repository/oauth2ApacheHTTPD/MOD_OX/Package/mod_ox-0.1.tar.gz). 
+`mod_ox` development release can be found on [Github](https://github.com/GluuFederation/mod_ox) 
 
 _Note that if you download a development release you will need current versions
 of the autotools installed, and you must run ./autogen.sh first before following
 these instructions._ 
 
-
-
-#### Compilation
+#### Building mod_ox from source
 
 * Untar the tarball
 
@@ -155,7 +152,6 @@ these instructions._
 * Apply sufficient permission for `ox.conf` file.
 * Copy module in Apache2/HTTPD
 * Enabled mod in httpd.conf
-
 
 ## Test
 
