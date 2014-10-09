@@ -38,6 +38,7 @@ pages:
 - ['reference/ldap/index.md', 'Reference', 'LDAP Configuration']
 - ['reference/lib/index.md', 'Reference', 'Libraries']
 - ['reference/api/index.md', 'Reference', 'APIs']
+- ['reference/oxd/index.md', 'Reference', 'OXD']
 
 # Sub pages of References / API
 - ['reference/api/oic-authorization.md', '**HIDDEN**']
@@ -162,3 +163,6 @@ pages:
 - ['reference/configuration/oxAuth.md', '**HIDDEN**']
 - ['reference/configuration/oxTrust.md', '**HIDDEN**']
 
+# Sub pages of Reference / OXD
+- ['reference/oxd/oxd-protocol.md', '**HIDDEN**']
+- ['reference/oxd/mod_ox.md', '**HIDDEN**']
