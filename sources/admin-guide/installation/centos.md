@@ -71,7 +71,7 @@ then remove the Gluu yum repository
 
 `# /etc/init.d/gluu-server stop`
 
-`# yum remove gluu-server`
+`# yum remove Gluu-Server`
 
 `# rm -rf /home/gluu-server`
 
