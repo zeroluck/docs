@@ -14,19 +14,17 @@ The configuration menu on the home screen has shortcuts to the different configu
 
 The following links are placed for convenience in browsing the guide.
 
- # [Manage Certificates](https://github.com/GluuFederation/docs/blob/master/sources/admin-guide/oxTrust/configuration.md#manage-certificates)
+ * [Manage Certificates](https://github.com/GluuFederation/docs/blob/master/sources/admin-guide/oxTrust/configuration.md#manage-certificates)
 
- # [Manage Authentication](https://github.com/GluuFederation/docs/blob/master/sources/admin-guide/oxTrust/configuration.md#manage-authentication)
+ * [Manage Authentication](https://github.com/GluuFederation/docs/blob/master/sources/admin-guide/oxTrust/configuration.md#manage-authentication)
 
- # [Manage Registration](https://github.com/GluuFederation/docs/blob/master/sources/admin-guide/oxTrust/configuration.md#manage-registration)
+ * [Manage Registration](https://github.com/GluuFederation/docs/blob/master/sources/admin-guide/oxTrust/configuration.md#manage-registration)
 
- # SCIM Configuration
+ * [Import People](https://github.com/GluuFederation/docs/blob/master/sources/admin-guide/oxTrust/configuration.md#import-people)
 
- # [Import People](https://github.com/GluuFederation/docs/blob/master/sources/admin-guide/oxTrust/configuration.md#import-people)
+ * [Attributes](https://github.com/GluuFederation/docs/blob/master/sources/admin-guide/oxTrust/configuration.md#attributes)
 
- # [Attributes](https://github.com/GluuFederation/docs/blob/master/sources/admin-guide/oxTrust/configuration.md#attributes)
-
- # [Cache Refresh](https://github.com/GluuFederation/docs/blob/master/sources/admin-guide/oxTrust/configuration.md#cache-refresh)
+ * [Cache Refresh](https://github.com/GluuFederation/docs/blob/master/sources/admin-guide/oxTrust/configuration.md#cache-refresh)
 
 ## Organization Configuration
 The organization congiguration contains a set  of different configurations under it. The configurations are given under their headings in this document.
