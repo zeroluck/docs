@@ -36,7 +36,7 @@ Use the .deb installation to perform a base chroot installation with following G
 <code> ./setup.py </code>
 
 
-====== Starting | Stopping the Gluu Server ======
+### Starting | Stopping the Gluu Server
 
 
 <code> /etc/init.d/gluu-server start </code>
@@ -44,7 +44,7 @@ Use the .deb installation to perform a base chroot installation with following G
 <code> /etc/init.d/gluu-server stop </code>
 
 
-====== Login to chroot environment ======
+### ogin to chroot environment
 
 
 <code> chroot /home/gluu-server/ su - </code>
@@ -73,7 +73,7 @@ If you want to script the installation of the Gluu Server, user the -f option or
 <code> ./setup.py -n -f setup.properties.last </code>
 
 
-====== Gluu Server .deb uninstallation ======
+### Gluu Server .deb uninstallation
 
 
 Exit from chroot environment to main linux.
