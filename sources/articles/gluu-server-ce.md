@@ -22,6 +22,7 @@ Gluu will publish binaries for as many OS's as possible. Currently, the
 easiest installation option is:  
 
 - [CentOS](../admin-guide/installation/centos.md)
+- [Ubuntu](../admin-guide/installation/ubuntu.md)
 
 
 ## Installation of mod_ox for testing
