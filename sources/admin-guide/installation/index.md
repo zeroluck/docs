@@ -2,7 +2,7 @@
 
 The easiest way to install on of the Gluu Server binary distributions for Linux. 
 You can use our `yum` repository for [Centos](./centos.md) or `apt-get` for 
-[Ubuntu][./ubuntu.md]
+[Ubuntu](./ubuntu.md)
 
 ## Hardware Guidance
 
