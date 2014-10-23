@@ -1,6 +1,6 @@
 # Gluu Server Installation
 
-The easiest way to install on of the Gluu Server binary distributions for Linux. 
+The easiest way to install the Gluu Server is via one of our binary distributions for Linux. 
 You can use our `yum` repository for [Centos](./centos.md) or `apt-get` for 
 [Ubuntu](./ubuntu.md)
 
