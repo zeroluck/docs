@@ -10,3 +10,10 @@ The Gluu Server Administrator can modify information such as Diplay Name, Group 
 
 If any member of the Organization is required to be added in any specific group, this can be achieved be clicking on the Add Member button. The flow is _Add Member --> Search the name/email of the user --> Select the user --> Click OK --> Update._
 ![Add Member](img/admin_users_addmember.png)
+
+### Manage People
+This feature works like a charm if the organization uses the internal LDAP of the Gluu Server as a data source. A new user can be added with the *Add Person* button. The Gluu Server Administrator needs to provide _UID, First Name, Last Name, Email_ etc and hit *Add.*
+![Manage People](img/admin_users_managepeople.png)
+
+This feature also allows the Gluu Server Administrator to search the informaiton of any user. As an example, the screenshot below shows the result of a search. Please note that the feature is only available to the Gluu Server Administrator/ User belonging to the *gluuManager* group.
+![Search Result](img/admin_users_search.png)
