@@ -8,7 +8,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
 ### Objectclass gluuAppliance
  * __Description__ 
  * __blowfishPassword__ Blowfish crypted text
- * __c__ Country
+ * __c__ 
  * __description__ 
  * __displayName__ 
  * __gluuAdditionalBandwidth__ Track bandwidth requirements for the Gluu Server instance
@@ -89,6 +89,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __passwordResetAllowed__ Is password reset mechanics allowed
  * __softwareVersion__ None
  * __userPassword__ 
+ * __oxTrustCacheRefreshServerIpAddress__ None
 
 ### Objectclass gluuAttribute
  * __Description__ 
@@ -218,7 +219,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
 
 ### Objectclass gluuPerson
  * __Description__ 
- * __associatedClient__ Associate the dn of an OAuth2 client with a person or UMA Resource Set.
+ * __associatedClient__ 
  * __c__ 
  * __displayName__ 
  * __givenName__ 
@@ -242,7 +243,6 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __oxTrustEntitlements__ None
  * __oxTrustExternalId__ None
  * __oxTrustImsValue__ None
- * ____ 
  * __oxTrustMetaCreated__ None
  * __oxTrustMetaLastModified__ None
  * __oxTrustMetaLocation__ None
@@ -266,7 +266,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __website__ Web page or blog URL of the person
  * __emailVerified__ True if the e-mail address of the person has been verified; otherwise false
  * __gender__ Gender of the person either female or male
- * __birthdate__ Birthday of the person, represented as an ISO 8601:2004 [ISO8601‑2004] YYYY-MM-DD format
+ * __birthdate__ Birthday of the person, represented as an ISO 8601:2004 [ISO8601â€‘2004] YYYY-MM-DD format
  * __zoneinfo__ time zone database representing the End-User
  * __locale__ Locale of the person, represented as a BCP47 [RFC5646] language tag
  * __phoneNumberVerified__ True if the phone number of the person has been verified, otherwise false
@@ -278,7 +278,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __secretQuestion__ Secret Question
  * __seeAlso__ 
  * __sn__ 
- * ____ 
+ * __cn__ 
  * __transientId__ TransientId
  * __uid__ 
  * __userPassword__ 
@@ -602,3 +602,17 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __Description__ 
  * __ou__ 
  * __oxTrustConfApplication__ oxTrust Application Configuration
+
+### Objectclass vdDirectoryView
+ * __Description__ 
+ * __o__ 
+
+### Objectclass vdapcontainer
+ * __Description__ 
+ * __ou__ 
+
+### Objectclass vdlabel
+ * __Description__ 
+ * __o__ 
+
+
