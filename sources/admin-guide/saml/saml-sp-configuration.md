@@ -12,7 +12,7 @@ The *Add Relationship button will open a new screen as shown below. From this sc
 
 ### Trust Relationship
 The Gluu Server administrator can add new Trust Relationship from the menu by selecting the *Trust Relationship* button from the *SAML* menu. The following screen shall appear.
-![Add TR](img/admin_saml_newTR.png)
+![Add TR](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/admin_saml_newTR.png)
 
 ## 
 
