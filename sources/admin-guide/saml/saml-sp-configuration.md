@@ -14,5 +14,16 @@ The *Add Relationship button will open a new screen as shown below. From this sc
 The Gluu Server administrator can add new Trust Relationship from the menu by selecting the *Trust Relationship* button from the *SAML* menu. The following screen shall appear.
 ![Add TR](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/admin_saml_newTR.png)
 
-## 
+## Shibboleth SP Configuration
 
+### Install Shibolleth SP Package
+The Shibboleth Service Provider(SP) software runs a system service, and it is configured via an apache module. For CentOS it is necessary to add shib.repo to /etc/yum/repos.d and install with yum.
+'''
+# yum install shibboleth
+
+# service shibd start
+
+# chkconfig shibd on
+'''
+
+For other systems, please follow the instructions on the [Shibboleth SP Installation](https://spaces.internet2.edu/display/SHIB2/NativeSPLinuxInstall) page.
