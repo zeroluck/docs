@@ -21,6 +21,7 @@ pages:
 - ['admin-guide/oxTrust/index.md', 'Admin Guide', 'oxTrust User Interface']
 - ['admin-guide/gluu-server-operations/index.md', 'Admin Guide', 'Gluu Server Operations']
 - ['admin-guide/custom-look/index.md', 'Admin Guide', 'Customizing Look and Feel']
+- ['admin-guide/registration/index.md', 'Registration Workflow', 'Customizing Registration Workflow']
 - ['admin-guide/certificates/index.md', 'Admin Guide', 'Certificates']
 - ['admin-guide/user-management/index.md', 'Admin Guide', 'User Management']
 - ['admin-guide/authentication/index.md', 'Admin Guide', 'Authentication']
