@@ -14,16 +14,46 @@ The *Add Relationship button will open a new screen as shown below. From this sc
 The Gluu Server administrator can add new Trust Relationship from the menu by selecting the *Trust Relationship* button from the *SAML* menu. The following screen shall appear.
 ![Add TR](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/admin_saml_newTR.png)
 
-## Shibboleth SP Configuration
-
-### Install Shibolleth SP Package
+## Install Shibolleth SP Package
 The Shibboleth Service Provider(SP) software runs a system service, and it is configured via an apache module. For CentOS it is necessary to add shib.repo to /etc/yum/repos.d and install with yum.
-'''
-# yum install shibboleth
 
-# service shibd start
+*$ yum install shibboleth*
 
-# chkconfig shibd on
-'''
+*$ service shibd start*
+
+*$ chkconfig shibd on*
 
 For other systems, please follow the instructions on the [Shibboleth SP Installation](https://spaces.internet2.edu/display/SHIB2/NativeSPLinuxInstall) page.
+
+## Copy Files From Archive
+
+Please copy the following files to the */etc/shibboleth* folder.
+
+*$ cp attribute-map.xml /etc/shibboleth/attribute-map.xml*
+
+*$ cp shibboleth2.xml /etc/shibboleth/shibboleth2.xml*
+
+*$ cp idp-metadata.xml /etc/shibboleth/idp-metadata.xml*
+
+*$ cp sp-metadata.xml /etc/shibboleth/sp-metadata.xml*
+
+> **Note**
+
+> IdP and SP metadata filenames are unique for each IdP and SP. The SP metadata is based on the i-number for the trust relationship.
+> The IdP metadata is based on the i-number for the organization.
+
+## Add Server Certificate to Metadata
+
+Please update the server certificate in shibboleth2.xml at the following location.
+
+*$ vi /etc/shibboleth/shibboleth2.xml*
+
+> < ds:X509Certificate >
+
+> * * * * * * * * * * * * * * * 
+
+> Insert pem format of the key 
+
+> * * * * * * * * * * * * * * * 
+
+> < / ds: X509Certificate >
