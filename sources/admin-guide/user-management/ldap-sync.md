@@ -133,4 +133,6 @@ If Cache Refresh has any custom script ( i.e Jython script ), this button can be
 used to “test” the script’s operation.
 
 
+#FAQ
 
+* _Is there any way to force Cache Refresh run?_
