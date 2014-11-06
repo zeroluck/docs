@@ -48,12 +48,58 @@ Please update the server certificate in shibboleth2.xml at the following locatio
 
 *$ vi /etc/shibboleth/shibboleth2.xml*
 
-> < ds:X509Certificate >
+	< ds:X509Certificate >
 
-> * * * * * * * * * * * * * * * 
+	* * * * * * * * * * * * * * * 
 
-> Insert pem format of the key 
+	Insert pem format of the key 
 
-> * * * * * * * * * * * * * * * 
+	* * * * * * * * * * * * * * * 
 
-> < / ds: X509Certificate >
+	< / ds: X509Certificate >
+
+## Update Hostnames and Ports in Configuration File
+
+Please edit the hostname in secure session section in _shibboleth2.xml_ file.
+
+*$ vi /etc/shibboleth/shibboleth2.xml*
+
+	< Host Name="hostname" >
+
+	< Path name="secure" authType="shibboleth" requireSession="true"/ >
+
+	< /Host >
+
+> **Note**
+
+> Hostname and port should match the Apache's ServerName and Port directives.
+
+Edit the _httpd.conf_ file to set UseCanonicalName On:
+
+	UseCanonicalName: On
+
+## Protect Folder with Shibboleth SSO
+
+Add the following to _httpsd.conf_ file to protect directories.
+
+*$ vi /etc/httpd/conf/httpd.conf*
+
+	< Directory "_path to directories_" >
+
+	 AuthType shibboleth
+
+	 ShibRequestSetting requireSession 1
+
+	 ShibUseHeaders On
+
+	 require valid-user
+
+	< / Directory >
+
+## Restart shibd and apache httpd
+
+*$ service httd restart*
+
+*$ service shibd restart*
+
+Try to access _https://hostname/Shibboleth.sso/Status_
