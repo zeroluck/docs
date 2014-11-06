@@ -138,5 +138,6 @@ used to “test” the script’s operation.
 * _Is there any way to force Cache Refresh run?_
 
 Yes, By default Gluu Server is saving reports from every Cache Refresh cycle inside
-'/var/gluu/vds-snapshots/'. If we want to force Cache Refresh cycle to run,
-let's just delete those snapshots. 
+'/var/gluu/vds-snapshots/' location. If we want to force Cache Refresh cycle to run,
+let's just delete those snapshots and wait for some time. Gluu Server will
+initiate a brand new Cache Refresh cycle from scratch!  
