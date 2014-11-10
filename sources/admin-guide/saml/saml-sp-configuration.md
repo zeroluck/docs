@@ -103,3 +103,48 @@ Add the following to _httpsd.conf_ file to protect directories.
 *$ service shibd restart*
 
 Try to access _https://hostname/Shibboleth.sso/Status_
+
+# Shibboleth SP for Windows
+
+## Install Shibboleth SP
+
+1. Download the MSI of [Shibboleth-SP](http://www.shibboleth.net/downloads/service-provider/latest)
+
+2. Start installation by double clicking the MSI.
+![Click Screen](img/admin_saml_click.png)
+
+3.Agree the License Agreement
+
+4. Select the destination folder; by default it is **c:\opt\shibboleth-sp\.** A different directory can be selected from this screen, but it is recommended to follow the tree **\opt\shibboleth-sp\.**
+![Destination](img/admin_saml_destination.png).
+
+5. Select Shibboleth Daemon port: default is **1600**, you can keep it for local testing.
+![Port](img/admin_saml_port.png)
+
+6. Now, there are two options here, and you have to follow any one (not both) for your existing infrastructure.
+
+  1. Option 1: Installaiton for Microsoft IIS Web Server.
+![Microsoft IIS Server](img/admin_saml_microsoft.png)
+> For Microsoft IIS Web Server, you have to Check "Install ISAPI filter and configure IIS", and remember to put the file Extension ".sso". This is very important.
+
+ 2. Option 2: Installation for Apache Web Server.
+![Apache Server](img/admin_saml_apachesetup.png)
+> For Apache Web Server, you have to Uncheck "Install ISAPI filter and configure IIS".
+UAC of Windows 7 may block the program, so accept it.
+![UAC](img/admin_saml_uac.png)
+
+## Apache2 Installation
+
+1. Download [Apache HTTP Server](http://httpd.apache.org/download.cgi#apache22) MSI with OpenSSL.
+
+2. Start installation by double clicking the MSI.
+![Apache Click](img/admin_saml_apacheclick.png)
+
+3. Select Destination. You can keep the default destination for your local testing. But, please make sure that there is no other "Apache Software Foundation" directory in your current "C:\Program Files\" location.
+![Apache Location](img/admin_saml_apachelocation.png)
+
+4. Insert Server Informations. For local testing, **localdomain/localhost** can be used.
+![Server info](img/admin_saml_serverinfo.png)
+
+5. Test if Apache is installed or not. Open your web browser and use **localhost** as the address. If the screen resembles the screenshot below, then you are done.
+![Apache test](img/admin_saml_apachetest.png)
