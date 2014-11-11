@@ -148,3 +148,30 @@ UAC of Windows 7 may block the program, so accept it.
 
 5. Test if Apache is installed or not. Open your web browser and use **localhost** as the address. If the screen resembles the screenshot below, then you are done.
 ![Apache test](img/admin_saml_apachetest.png)
+
+## Shibboleth and Apache Configuration
+
+1. Change the permission of Apache Installation Directory, provide **write** access.
+
+2. httpd.conf configuration
+
+  1. Change: **"ServerName localhost:80"** (for your local testing)
+
+  2. Copy apache22.conf from Shibboleth directory to **~/apache/conf/extra/**
+
+3. Shibboleth2.xml configuration
+
+  1. Change: Host name = **"localhost"** (for local testing)
+
+  2. Change: entityID = **"https://localhost/shibboleth"** (for local testing)
+
+  3. Change: ApplicationOverride id = **"admin"**
+
+4. Reboot your Windows box
+
+Test SP installation with Windows and Apache.
+
+Open Web browser and insert the address : _localhost/Shibboleth.sso/Status_
+
+If the screen below resembles the screen on your browser, then you are done with your SP installation in Windows through Apache2
+![SP Apache](img/admin_saml_spapache.png)
