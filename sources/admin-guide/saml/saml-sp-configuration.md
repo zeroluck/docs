@@ -175,3 +175,24 @@ Open Web browser and insert the address : _localhost/Shibboleth.sso/Status_
 
 If the screen below resembles the screen on your browser, then you are done with your SP installation in Windows through Apache2
 ![SP Apache](img/admin_saml_spapache.png)
+
+## IIS7 Installation
+
+1. Start --> Control Panel --> Programs --> **"Turn Windows Features on or off"**
+
+Select (i) IIS, (ii) Web Management Tools, (iii) II6 Management Compatiability, (iv) IIS Management Console, (v) IIS Management Scripts and Tools, (vi) IIS Management Service
+
+Select (i) World Wide Web Service, (ii) CGI, (iii) ISAPI Filters, (iv) ISAPI Extenstions and press **OK**.
+![IIS Setup](img/admin_saml_iis7setup.png)
+
+2. Test if IIS7 is installed in your system with **127.0.0.1** in the web browser.
+![IIS7 test](img/admin_saml_iis7test.png)
+
+3. Reboot the system.
+
+## ISAPI Filter Configuration
+
+1. Open IIS Manager [Start --> Administrative Tools --> Internet Information Service (IIS) Manager]
+
+2. Double click on **"ISAPI and CGI Restrictions"**
+![ISAPI CGI](img/admin_saml_isapicgi.png)
