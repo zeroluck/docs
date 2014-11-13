@@ -25,7 +25,7 @@ Use the .deb installation to perform a base chroot installation with following G
 
 <code> # service gluu-server login </code> 
 
-<code> # cd /install/community-edition-setup/ </code>
+<code> # cd /install/community-edition-setup-master/ </code>
 
 <code> ./setup.py </code>
 
