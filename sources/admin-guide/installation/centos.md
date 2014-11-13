@@ -33,7 +33,7 @@ an X.509 certificate. After successful Gluu Server rpm installation, run the Glu
 
 `# chroot /home/gluu-server/ su -`
 
-`# cd /install/community-edition-setup/`
+`# cd /install/community-edition-setup-master/`
 
 `# ./setup.py`
 
