@@ -72,7 +72,7 @@ Please edit the hostname in secure session section in _shibboleth2.xml_ file.
 
 > **Note**
 
-> Hostname and port should match the Apache's ServerName and Port directives.
+> Hostname and port should match the ServerName and Port directives of Apache
 
 Edit the _httpd.conf_ file to set UseCanonicalName On:
 
@@ -196,3 +196,31 @@ Select (i) World Wide Web Service, (ii) CGI, (iii) ISAPI Filters, (iv) ISAPI Ext
 
 2. Double click on **"ISAPI and CGI Restrictions"**
 ![ISAPI CGI](img/admin_saml_isapicgi.png)
+
+3. Add New Filter
+
+	a.  	1.Click Actions --> Add (upper right corner)
+		2.Select **\opt\shibboleth-sp\lib\shibboleth\isapi_shib.dll**
+		3.Description: **"Shibboleth"**
+		4.Click **"Allow"** (from right hand side)
+		![Apache ISAPI filter](img/apache_saml_isapipath.png)
+
+	b.  Back to IIS Manager --> ISAPI Filters.
+
+	Click **"Add"** (upper right corner)
+
+	Filter name: Shibboleth
+
+	Executable: **\opt\shibboleth-sp\lib\shibboleth\isapi_shib.dll**
+	![ISAPI Edit](img/apache_saml_isapiedit.png)
+
+4. SSO file extension mapping
+  a. Click on **"Handling Mapping"** from main page
+![Handler Mapping](img/admin_saml_handlermapping.png)
+  b. Click **"Add Script Map"** from Action
+![Add Script Map](img/admin_saml_addscriptmap.png)
+  c. Request Path **"*.sso"**
+  d. Executable should be pointed to **"isapi_shib.dll"**
+![Executable Path](admin_saml_executable.png)
+
+5. Restart IIS
