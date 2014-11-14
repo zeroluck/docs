@@ -16,6 +16,9 @@ All kind of SP can be configured for SSO from Gluu Server.
 
 * _For `Federated SP`_ : It's pretty straight forward. Create a new trust relationship; Select "Federation", search for your SP's metadata with Gluu Server's in-built feature. Check out: _Federation_ type [here](http://www.gluu.org/docs/admin-guide/saml/outbound-saml/#saml-trust-relationship)
 
+Whatever you have just read are just the into, detailed informations are
+available in below links. 
+
 
 ## Contents
 
