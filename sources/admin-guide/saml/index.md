@@ -6,7 +6,7 @@ There are basically three types of Service Providers:
 * `Non-Federated SP`: That means the SP is *not* associated with a federation like InCommon or NJEdge. 
 * `Federated SP`: Those which are associated with a federation. For example, Educause is such SP which is included in the InCommon federation. 
 
-All kinds of SP's can be configured for SSO from Gluu Server. 
+All kinds of SP can be configured for SSO from the Gluu Server. 
 
 * _For `In-house SP`_ : 
        * First, the target application needs to have installed and configured the Shibboleth SP software. Instructions for completing a base installation of the Shibboleth SP can be found [here](http://www.gluu.org/docs/articles/apache-saml/). 
@@ -16,7 +16,7 @@ All kinds of SP's can be configured for SSO from Gluu Server.
 
 * _For `Federated SP`_ : Once you have established trust with a Federation, this method is the most straight forward. Navigate to the Trust Relationship GUI, create a new trust relationship; Select _Metadata Type: "Federation"_, and then search for the correct SP metadata. Check out more instructions  [here](http://www.gluu.org/docs/admin-guide/saml/outbound-saml/#saml-trust-relationship)
 
-What you have just read is an intoduction. More detailed informations can be found in below links. 
+These contents are just for introduction, please see the links below for more details.
 
 
 ## Contents
