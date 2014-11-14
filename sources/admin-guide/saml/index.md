@@ -9,7 +9,7 @@ There are basically three types of Service Providers there:
 All kind of SP can be configured for SSO from Gluu Server. 
 
 * For _In-house SP_ : 
-   * First, orgnization need to install and configure Shibboleth SP. The base installation of Shibboleth SP can be done by [this](http://www.gluu.org/docs/articles/apache-saml/) way. 
+       * First, orgnization need to install and configure Shibboleth SP. The base installation of Shibboleth SP can be done by [this](http://www.gluu.org/docs/articles/apache-saml/) way. 
    * Then login to your Gluu IDP and use _Metadata Type: Generate_ . Gluu Server will generate important configuration files which you can place inside of your SP to mostly automate the Trust Relationship with your Gluu Server. Documentation available [here](http://www.gluu.org/docs/admin-guide/saml/outbound-saml/#saml-trust-relationship) [ check out: "Generate" Metadata Type ] 
 
 * For _Non-Federated SP_ : SP will provide you metadata and other requirements (i.e: attributes, SSO link etc.) . Such as Desire2Learn. You need to use "File" or "URI" metadata method (to provide SP metdata link / upload ) to create trust relationship from Gluu IDP server. 
