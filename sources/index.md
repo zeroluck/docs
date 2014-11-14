@@ -17,7 +17,7 @@ system administrators can mold the Gluu Server to solve the exact access managem
 
 ## How do I install the Gluu Server?
 
-Instructions for installation can be found [here](./admin-guide-installation/)
+Instructions for installation can be found [here](./admin-guide/installation/)
 
 ## Can I contribute to the Gluu Server? 
 
