@@ -12,8 +12,28 @@ best practices to improve the security of web and mobile applications.
 
 The Gluu Server is like a router for authentication and authorization. It speaks multiple dialects
 of SSO, and can help an organization manage both inbound and outbound authentication and authorization 
-requirements.  The Gluu Server is very flexible. Through the use of "interception scripts", 
+requirements.  The Gluu Server is very flexible. Through the use of ["interception scripts"](./admin-guide/interception-scripts/), 
 system administrators can mold the Gluu Server to solve the exact access management task at hand.
+
+## How do I install the Gluu Server?
+
+Instructions for installation can be found [here](./admin-guide-installation/)
+
+## Can I contribute to the Gluu Server? 
+
+Yes, please! Only with community involvement can the Gluu Server become the best free open source access management tool. You can fork the code on [GitHub](http://github.com/gluufederation) and push us changes. Your input is greatly appreciated!
+
+## Where can I report issues or feedback?
+
+Please feel free to either open issues on [GitHub](https://github.com/GluuFederation/docs/issues) or you can register for a free account on our [support portal](https://support.gluu.org). For more Enterprise support, training, and consultations, [VIP Support](http://gluu.org/pricing) can be purchased.
+
+## Do you offer Enterprise Support?
+
+Yes! You can find more information on our [website](http://gluu.org/pricing).
+
+## Does it work for mobile or api access management?
+
+Yes! The Gluu Server provides interfaces for UMA, a new standardized profile of OAuth2. [Using UMA](./admin-guide/uma/) you can protect web URLs like APIs and folders and enforce authorization policies for access. 
 
 ## How can the Gluu Server make the Internet a safer place? 
 
@@ -66,13 +86,6 @@ the OX UMA Authorization Server.
 
 Feel confident that you are using the best open source application security software on the
 planet and even on the Internet too!
-
-## Does it work for mobile or api access management?
-
-There has been a paradigm shift: enterprise services are published with JSON/REST APIs to support
-both web sites and mobile apps. Organizations are using more api's hosted by third parties. The
-old access management suite is not friendly to this shift. Many old deployments depended on a
-web application
 
 ## Who wants open source access management?
 
