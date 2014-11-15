@@ -15,13 +15,13 @@ The Gluu Server Community Edition should be deployed on a VM with:
 
 ## Installing the GLUU Server
 
-`# rpm -ivh http://repo.gluu.org/GLUU/centos/latest/base/x86_64/Packages/Gluu-Server-Repo-1.9-0.el6.x86_64.rpm`
+`# rpm -ivh http://repo.gluu.org/GLUU/centos/latest/base/x86_64/Packages/gluu-server-Repo-1.9-0.el6.x86_64.rpm`
 
 `# yum install gluu-server.x86_64 -y`
 
 `# service gluu-server start`
 
-Note, if you don't want to use yum, you can also download the [RPM](http://repo.gluu.org/GLUU/centos/latest/base/x86_64/Packages/Gluu-Server-1.9-0.el6.x86_64.rpm
+Note, if you don't want to use yum, you can also download the [RPM](http://repo.gluu.org/GLUU/centos/latest/base/x86_64/Packages/gluu-server-1.9-0.el6.x86_64.rpm
 )
 
 ## Gluu Server Configuratioin
@@ -74,9 +74,9 @@ then remove the Gluu yum repository
 
 `# /etc/init.d/gluu-server stop`
 
-`# yum remove Gluu-Server`
+`# yum remove gluu-server`
 
 `# rm -rf /home/gluu-server`
 
-`# rpm -e http://repo.gluu.org/GLUU/centos/latest/base/x86_64/Packages/Gluu-Server-Repo-1.9-0.el6.x86_64`
+`# rpm -e http://repo.gluu.org/GLUU/centos/latest/base/x86_64/Packages/gluu-server-repo-1.9-0.el6.x86_64`
 
