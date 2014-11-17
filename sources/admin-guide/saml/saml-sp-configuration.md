@@ -111,43 +111,43 @@ Try to access _https://hostname/Shibboleth.sso/Status_
 1. Download the MSI of [Shibboleth-SP](http://www.shibboleth.net/downloads/service-provider/latest)
 
 2. Start installation by double clicking the MSI.
-![Click Screen](img/admin_saml_click.png)
+![Click Screen](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_click.png)
 
 3.Agree the License Agreement
 
 4. Select the destination folder; by default it is **c:\opt\shibboleth-sp\.** A different directory can be selected from this screen, but it is recommended to follow the tree **\opt\shibboleth-sp\.**
-![Destination](img/admin_saml_destination.png).
+![Destination](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_destination.png).
 
 5. Select Shibboleth Daemon port: default is **1600**, you can keep it for local testing.
-![Port](img/admin_saml_port.png)
+![Port](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_port.png)
 
 6. Now, there are two options here, and you have to follow any one (not both) for your existing infrastructure.
 
   1. Option 1: Installaiton for Microsoft IIS Web Server.
-![Microsoft IIS Server](img/admin_saml_microsoft.png)
+![Microsoft IIS Server](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_microsoft.png)
 > For Microsoft IIS Web Server, you have to Check "Install ISAPI filter and configure IIS", and remember to put the file Extension ".sso". This is very important.
 
  2. Option 2: Installation for Apache Web Server.
-![Apache Server](img/admin_saml_apachesetup.png)
+![Apache Server](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_apachesetup.png)
 > For Apache Web Server, you have to Uncheck "Install ISAPI filter and configure IIS".
 UAC of Windows 7 may block the program, so accept it.
-![UAC](img/admin_saml_uac.png)
+![UAC](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_uac.png)
 
 ## Apache2 Installation
 
 1. Download [Apache HTTP Server](http://httpd.apache.org/download.cgi#apache22) MSI with OpenSSL.
 
 2. Start installation by double clicking the MSI.
-![Apache Click](img/admin_saml_apacheclick.png)
+![Apache Click](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_apacheclick.png)
 
 3. Select Destination. You can keep the default destination for your local testing. But, please make sure that there is no other "Apache Software Foundation" directory in your current "C:\Program Files\" location.
-![Apache Location](img/admin_saml_apachelocation.png)
+![Apache Location](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_apachedestination.png)
 
 4. Insert Server Informations. For local testing, **localdomain/localhost** can be used.
-![Server info](img/admin_saml_serverinfo.png)
+![Server info](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_serverinfo.png)
 
 5. Test if Apache is installed or not. Open your web browser and use **localhost** as the address. If the screen resembles the screenshot below, then you are done.
-![Apache test](img/admin_saml_apachetest.png)
+![Apache test](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_apachetest.png)
 
 ## Shibboleth and Apache Configuration
 
@@ -174,7 +174,7 @@ Test SP installation with Windows and Apache.
 Open Web browser and insert the address : _localhost/Shibboleth.sso/Status_
 
 If the screen below resembles the screen on your browser, then you are done with your SP installation in Windows through Apache2
-![SP Apache](img/admin_saml_spapache.png)
+![SP Apache](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_spapache.png)
 
 ## IIS7 Installation
 
@@ -183,10 +183,10 @@ If the screen below resembles the screen on your browser, then you are done with
 Select (i) IIS, (ii) Web Management Tools, (iii) II6 Management Compatiability, (iv) IIS Management Console, (v) IIS Management Scripts and Tools, (vi) IIS Management Service
 
 Select (i) World Wide Web Service, (ii) CGI, (iii) ISAPI Filters, (iv) ISAPI Extenstions and press **OK**.
-![IIS Setup](img/admin_saml_iis7setup.png)
+![IIS Setup](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_iis7setup.png)
 
 2. Test if IIS7 is installed in your system with **127.0.0.1** in the web browser.
-![IIS7 test](img/admin_saml_iis7test.png)
+![IIS7 test](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_iis7test.png)
 
 3. Reboot the system.
 
@@ -195,7 +195,7 @@ Select (i) World Wide Web Service, (ii) CGI, (iii) ISAPI Filters, (iv) ISAPI Ext
 1. Open IIS Manager [Start --> Administrative Tools --> Internet Information Service (IIS) Manager]
 
 2. Double click on **"ISAPI and CGI Restrictions"**
-![ISAPI CGI](img/admin_saml_isapicgi.png)
+![ISAPI CGI](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_isapicgi.png)
 
 3. Add New Filter
 
@@ -203,24 +203,32 @@ Select (i) World Wide Web Service, (ii) CGI, (iii) ISAPI Filters, (iv) ISAPI Ext
 		2.Select **\opt\shibboleth-sp\lib\shibboleth\isapi_shib.dll**
 		3.Description: **"Shibboleth"**
 		4.Click **"Allow"** (from right hand side)
-		![Apache ISAPI filter](img/apache_saml_isapipath.png)
+		![Apache ISAPI filter](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/apache_sp_isapipath.png)
 
 	b.  Back to IIS Manager --> ISAPI Filters.
-
+	![ISAPI Filter](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/apache_sp_isapifilter.png)
 	Click **"Add"** (upper right corner)
 
 	Filter name: Shibboleth
 
 	Executable: **\opt\shibboleth-sp\lib\shibboleth\isapi_shib.dll**
-	![ISAPI Edit](img/apache_saml_isapiedit.png)
+	![ISAPI Edit](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/apache_sp_isapiedit.png)
 
 4. SSO file extension mapping
   a. Click on **"Handling Mapping"** from main page
-![Handler Mapping](img/admin_saml_handlermapping.png)
+![Handler Mapping](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_handlermapping.png)
+  1.  1.Click Actions --> Add (upper right corner)
   b. Click **"Add Script Map"** from Action
-![Add Script Map](img/admin_saml_addscriptmap.png)
+![Add Script Map](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_addscriptmap.png)
   c. Request Path **"*.sso"**
   d. Executable should be pointed to **"isapi_shib.dll"**
-![Executable Path](admin_saml_executable.png)
+![Executable Path](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_executable.png)
 
 5. Restart IIS
+
+6. Check Status
+
+Check your status by typing **"http://127.0.0.1/Shibboleth.sso/Status"** in the Web Browser. If it diplays an XML document, then the Shibboleth SP Installation in Windows IIS7 is complete.
+![Check Status](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_checkstatus.png)
+
+> If you want to establish SSO with your site, then you need an Identity Provider, their metadata and certificates.
