@@ -147,3 +147,5 @@ After adding a new Trust Relationship, the server administrator will observe a c
     * SAML certificate is available in your IDP's metadata. Metadata can be collected in [this](https://support.gluu.org/questions/36/idp-certificate-entityid-location-http-redirect-location-etc/) way. 
 
 
+* I need to update metadata for one Service Provider. How is it possible? 
+    This is pretty easy. Here is the [solution](https://support.gluu.org/view/maintenance/update-metadata-for-service-provider/1446). 
