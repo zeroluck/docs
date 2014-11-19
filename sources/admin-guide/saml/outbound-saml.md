@@ -148,4 +148,4 @@ After adding a new Trust Relationship, the server administrator will observe a c
 
 
 * I need to update metadata for one Service Provider. How is it possible? 
-    This is pretty easy. Here is the [solution](https://support.gluu.org/view/maintenance/update-metadata-for-service-provider/1446). 
+    * This is pretty easy. Here is the [solution](https://support.gluu.org/view/maintenance/update-metadata-for-service-provider/1446). 
