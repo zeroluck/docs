@@ -130,6 +130,7 @@ Try to access _https://hostname/Shibboleth.sso/Status_
  2. Option 2: Installation for Apache Web Server.
 ![Apache Server](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_apachesetup.png)
 > For Apache Web Server, you have to Uncheck "Install ISAPI filter and configure IIS".
+
 UAC of Windows 7 may block the program, so accept it.
 ![UAC](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_uac.png)
 
