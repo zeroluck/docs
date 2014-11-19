@@ -59,7 +59,7 @@ This section is mirroring how to configure "shibboleth2.xml" file.
     * <ApplicationDefaults entityID="http://sp.example.org/Shibboleth" section
 * Provide the "entityID of IDP" in: 
     * <SSO entityID="https://idp.gluu.org/idp/shibboleth" section 
-* Point the metadata provider, in most cases it's Gluu IDP metadata link: 
+* Point the metadata provider, in most cases it is Gluu IDP metadata link: 
     * <MetadataProvider type="XML" uri="https://idp.gluu.org/idp/shibboleth" section
 * Provide the key and cert of SP in: 
     * <CredentialResolver type="File" key="spkey.key" certificate="spcrt.crt" section
@@ -168,6 +168,65 @@ This section is mirroring how to configure "shibboleth2.xml" file.
 
 How to create trust relationship with
 [Generate](http://www.gluu.org/docs/admin-guide/saml/outbound-saml/#saml-trust-relationship)
-method. 
+method.
 
+## Shibboleth SP Configuration for Gluu Server in Windows
 
+### Shibboleth SP Installation
+
+1. Download the [Shibboleth SP MSI](http://shibboleth.net/downloads/service-provider/latest/).
+
+2. Start the installation.
+
+3. Select the destination folder. The default destination is (C:\opt\shibboleth-sp) and it is recommended to use it although you can selet any other folder of your choice.
+![Shibboleth SP Destination](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_destination.png)
+
+4. Select the Shibboleth Daemon Port: the default is _1600_. You can keep it for local testing.
+![SP Port](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_port.png)
+
+5. There are two options to follow here and you can choose either one depending on your requirement.
+
+  a. Option 1: If you are installing Shibboleth for Apache Web Server.
+
+	1. For Apache Web Server, **check "Install ISAPI filter and configure"**.
+![Apache Setup for IIS7](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_apachesetup.png)
+
+  b. Option 2: If you are installing Shibboleth for Microsoft IIS Web Server.
+
+	1. For Microsoft IIS Web Server, **check "Install ISAPI filter and configure IIS"**. Please remember to put the file extension **".sso"**; this is necessary.
+![Microsoft IIS Server](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_microsoft.png)
+
+>UAC of Windows 7 may block this program, so allow it.![UAC](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_uac.png)
+
+### Apache Configuration
+
+1. Download the [Apache HTTP Server MSI Installer](http://httpd.apache.org/download.cgi#apache22) with OpenSSL.
+
+2. Selet destination folder. The default destination folder can be kept for loal testing, but make sure there is no other "Apache Software Foundation" directory in your current "C:\Program Files\" location.
+![Apache Destination](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_apachedestination.png)
+
+3. Provide Server Information. For local testing, you can use "localdomain/localhost".
+![Server Information](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_serverinfo.png)
+
+4. Test whether Apache is installed or not. Open your web browser and use"localhost". If you see something that resembles the image below, you are done!
+![Test](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_apachetest.png)
+
+### Shibboleth and Apache Configuration
+
+1. Change the permission of Apache Installation Directory to provide "write" access.
+
+2. httpd.conf configuration
+
+  a. Change: "ServerName localhost:80" (for your local testing)
+
+  b. Copy **apache22.conf** from the _Shibboleth_ directory _~/apache/conf/extra/_
+
+3. Shibboleth2.xml configuration
+
+  a. Change: Host name = "localhost" (for local testing)
+
+  b. Change: entityID = "https://localhost/shibboleth" (for local testing)
+
+  c. Change: ApplicationOverride id = "admin" entityID = "https://localhost/shibboleth/"
+
+4. Reboot your windows box.
