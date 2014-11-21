@@ -230,3 +230,22 @@ method.
   c. Change: ApplicationOverride id = "admin" entityID = "https://localhost/shibboleth/"
 
 4. Reboot your windows box.
+
+#### Test SP Installation with Windows and Apache
+
+1. Open the Web Browser and provide the address _localhost/Shibboleth.sso/Status_ in the address bar.
+
+2. If you can see an XML page like the one below, you have successfully installed the SP in Windows through Apache2.
+![Apache Test](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_spapache.png)
+
+## IIS Configuration
+
+1. Start --> Control Panel --> Programs --> "Turn Windows features on or off"
+
+2. Select (i) IIS (ii) Web Management Tools (iii) II6 Management Compatiability (iv) IIS Management Console (v) IIS Management Scripts and Tools (vi) IIS Management Service
+
+3. Select (i) World Wide Web Services (ii) CGI (iii) ISAPI Filters (iv) ISAPI Extensions --> Press OK.
+![IIS 7 Setup](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_iis7setup.png)
+
+4. Test IIS to see if it is installed in your system with "127.0.0.1" in the web browser. For our test case, we used IIS7.
+![Test IIS](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_iis7test.png)
