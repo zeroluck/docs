@@ -13,9 +13,9 @@ Download and install Gluu-Server by following commands
 
 Use the .deb installation to perform a base chroot installation with following Gluu Server Base Ubuntu requirements
 
-<code> # wget http://repo.gluu.org/GLUU/ubuntu/pool/gluu/Gluu-CE-Repo-1.9-0.amd64.deb </code>
+<code> # wget http://deb-repo.gluu.org/GLUU/ubuntu/pool/gluu/gluu-ce-repo-1.9-0.amd64.deb </code>
 
-<code> # dpkg -i Gluu-CE-Repo-1.9-0.amd64.deb </code>
+<code> # dpkg -i gluu-ce-repo-1.9-0.amd64.deb </code>
 
 <code> # apt-get update </code>
 
