@@ -19,6 +19,8 @@ Use the .deb installation to perform a base chroot installation with following G
 
 <code> # apt-get update </code>
 
+<code> # apt-key adv --keyserver keyserver.ubuntu.com --recv-keys AB6E65FC </code>
+
 <code> # apt-get install gluu-server </code>
 
 <code> # service gluu-server start </code>
