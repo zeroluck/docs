@@ -258,28 +258,69 @@ method.
 
 3. Add a new Filter
 
-	a. Click Actions --> Add (upper right corner)
+  a. Click Actions --> Add (upper right corner)
 
-	b. Select "\opt\shibboleth-sp\lib\shibboleth\isapi_shib.dll"
+  b. Select "\opt\shibboleth-sp\lib\shibboleth\isapi_shib.dll"
 
-	c. Description: "Shibboleth"
+  c. Description: "Shibboleth"
 
-	d. Click "Allow" (from the right hand side)
-	![ISAPI Path](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/apache_sp_isapipath.png)
+  d. Click "Allow" (from the right hand side)
 
-	e. Back to IIS Manager --> ISAPI Filters
-	![ISAPI Filters](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/apache_sp_isapifilter.png)
+![ISAPI Path](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/apache_sp_isapipath.png)
 
-		1. Click "Add" (upper right corner)
+  e. Back to IIS Manager --> ISAPI Filters
 
-		2. Filter Name: Shibboleth
+![ISAPI Filters](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/apache_sp_isapifilter.png)
 
-		3. Executable: "\opt\shibboleth-sp\lib\shibboleth\isapi_shib.dll"
-		![ISAPI Edit](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/apache_sp_isapiedit.png)
+	1. Click "Add" (upper right corner)
 
-	f. SSO file extension mapping
+	2. Filter Name: Shibboleth
 
-		1. Click on "Handler Mapping" from main page
-		![SP Handler](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_handlermapping.png)
+	3. Executable: "\opt\shibboleth-sp\lib\shibboleth\isapi_shib.dll"
 
-		2. Click "Add Script Map" from Action
+![ISAPI Edit](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/apache_sp_isapiedit.png)
+
+  f. SSO file extension mapping
+
+	1. Click on "Handler Mapping" from main page
+
+![SP Handler](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_handlermapping.png)
+
+	2. Click "Add Script Map" from Action
+![Script Map](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_addscriptmap.png)
+
+	3. Request Path :".sso"
+
+	4. Executable should be pointed to "isapi_shib.dll"
+![Executable](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_executable.png)
+
+  g. Restart IIS
+
+  h. Check Status
+
+  Check Status by typing in "http://127.0.0.1/Shibboleth.sso/Status" in the web browser. If it displays an XML document, then the Shibboleth SP Installation in Windows IIS7 in complete.
+![Status Check](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_checkstatus.png)
+
+## Trust Relationship in IdP
+
+1. Log into the IdP as the administrator/admin user.
+
+2. Select: SAML --> Trust Relationship
+![Trust Relationship](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/admin_saml_menu.png)
+
+3. Click "Add Relationship"
+
+4. Configuration
+
+  a. Display Name: No mandatory rule. Any name is fine.
+
+  b. Description: Description of this trust relationship.
+
+  c. Metadata Type: Select "Generate" from the drop-down menu.
+
+  d. URL: Hostname of the SP.
+
+  e. Public Certificate: Public certificate of Shibboleth SP site i.e. "sp-cert.pem" which was created during the Shibboleth SP Installation.
+
+  f. Attributes: Release required attributes from the left panel. Released attributes will be shown under the "New Trust Relationship" box.
+![New TR](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/admin_saml_newTR.png)
