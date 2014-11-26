@@ -328,7 +328,7 @@ method.
   g. Click "Add"
 
   h. After successful completion, a newtrust relationship will be shown in the Trust Relationship list.
-![Trust Relationship Status](https://github.com/GluuFederation/docs/tree/master/sources/img/SAMLTrustRelationships/TR_status.png)
+![Trust Relationship Status](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/TR_status.png)
 
 5. Collect configuration files for Shibboleth SP from Trust Relationship. This can be done by clicking on the "Download Shibboleth2 Configuration file" link.
 ![SP Config](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_saml_newTR.png)
