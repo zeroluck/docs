@@ -324,3 +324,22 @@ method.
 
   f. Attributes: Release required attributes from the left panel. Released attributes will be shown under the "New Trust Relationship" box.
 ![New TR](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/admin_saml_newTR.png)
+
+  g. Click "Add"
+
+  h. After successful completion, a newtrust relationship will be shown in the Trust Relationship list.
+![Trust Relationship Status](https://github.com/GluuFederation/docs/tree/master/sources/img/SAMLTrustRelationships/TR_status.png)
+
+5. Collect configuration files for Shibboleth SP from Trust Relationship. This can be done by clicking on the "Download Shibboleth2 Configuration file" link.
+![SP Config](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_saml_newTR.png)
+
+## Shibboleth SP Configuration
+
+1. There are four XML files in the Download Package; (i) attribute-map.xml (ii) idp-metadata.xml (iii) shibboleth2.xml and (iv) sp-metadata.xml. Place all the files inside the Shibboleth SP Configuration in the Shibboleth SP Server.
+
+  a. Please make the required modification in the "shibboleth2.xml" file. A sample is given below.
+
+  b. Check permission of these files in the Shibboleth SP Server. For our testing server, we granted full access to Administrator and System.
+![Permisison Grant](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/Permission_grant.png)
+
+  c. Restart Shibd Daemon and IIS.
