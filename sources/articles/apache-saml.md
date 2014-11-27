@@ -340,6 +340,7 @@ method.
   a. Please make the required modification in the "shibboleth2.xml" file. A sample is given below.
 
   b. Check permission of these files in the Shibboleth SP Server. For our testing server, we granted full access to Administrator and System.
+
 ![Admin Grant](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/Admin_grant.png)
 ![Permisison Grant](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/Permission_grant.png)
  
