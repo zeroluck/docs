@@ -340,6 +340,19 @@ method.
   a. Please make the required modification in the "shibboleth2.xml" file. A sample is given below.
 
   b. Check permission of these files in the Shibboleth SP Server. For our testing server, we granted full access to Administrator and System.
+![Admin Grant](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/Admin_grant.png)
 ![Permisison Grant](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/Permission_grant.png)
+ 
+   c. Restart Shibd Daemon and IIS.
 
-  c. Restart Shibd Daemon and IIS.
+## Test SSO
+
+Insert the name of the SP site in the web browser and if the configurations are correct, then the SP will redirect the user to the IdP for authentication. After a successful authentication, the user will come back to the SP site as "logged-in user".
+
+In one word: if the SP hostname is "https://testSPsite.com" and the IdP hostname is "https://testIdPsite.com" then the flow is
+
+https://testSPsite.com --> https://testIdPsite.com --> htts://testSPsite.com as a logged-in user.
+
+### Sample shibboleth2.xml file
+
+
