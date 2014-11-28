@@ -24,14 +24,14 @@ The Gluu Server Community Edition should be deployed on a VM with:
 Note, if you don't want to use yum, you can also download the [RPM](http://repo.gluu.org/GLUU/centos/latest/base/x86_64/Packages/gluu-server-1.9-0.el6.x86_64.rpm
 )
 
-## Gluu Server Configuratioin
+## Gluu Server Configuration
 
 To perform the final configuration of the Gluu Server you need to provide some instance
 specific information, like the DNS hostname, and the information required for 
 an X.509 certificate. After successful Gluu Server rpm installation, run the Gluu Server 
 `setup.py` to complete the installation. You can get the latest setup scripts:
 
-`# chroot /home/gluu-server/ su -`
+`# service gluu-server login`
 
 `# cd /install/community-edition-setup-master/`
 
@@ -65,7 +65,7 @@ to suppress the interactive confirmation to proceed. For example, to re-run the 
 
 ## Login to chroot environment
 
-`# chroot /home/gluu-server/ su -`
+`# service gluu-server login`
 
 ## Gluu Server Uninstallation
 
