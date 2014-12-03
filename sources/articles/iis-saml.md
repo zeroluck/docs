@@ -64,4 +64,50 @@
   Check Status by typing in "http://127.0.0.1/Shibboleth.sso/Status" in the web browser. If it displays an XML document, then the Shibboleth SP Installation in Windows IIS7 in complete.
 ![Status Check](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_checkstatus.png)
 
-## Shibboleth SP Setup in Windows 2008 R2 with IIS7	
+## Shibboleth SP Setup in Windows 2008 R2 with IIS7
+
+1. Open up "Server Manager", scroll down and click on "Add Roles".
+
+![Add Role](img/iis_setup_addrole.png)
+
+2. Hit "Next"
+
+![Next](img/iis_setup_next.png)
+
+3. Select "Web Server (IIS)", hit "Next"
+
+![Web Server](img/iis_setup.png)
+
+4. Select (i) CGI
+
+(ii) ISAPI Extensions
+
+(iii) ISAPI Filters
+
+(iv) Management Tools
+
+  (a) IIS Management Console
+
+  (b) IIS Management Scripts and Tools
+
+  (c) Management Service
+
+(v) All IIS6 Management Compatibility
+
+![Selection](img/iis_setup_selection.png)
+
+![Selection](img/iis_setup_selection1.png)
+
+5. Hit "Next", for the confirmation, check the list of plugins.
+
+![Plugin](img/iis_setup_plugin.png)
+
+![Management Tools](img/iis_setup_managementtools.png)
+
+6. Hit "Install" and Windows 2008 will complete the installation. A confirmation window shall appear which resembles the screenshot below.
+
+![Confirmation](img/iis_setup_confirmation.png)
+
+7.Test IIS7 setup from the Internet.
+
+![Test](img/iis_setup_test.png)
