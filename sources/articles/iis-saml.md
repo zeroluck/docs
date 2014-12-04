@@ -111,3 +111,31 @@
 7.Test IIS7 setup from the Internet.
 
 ![Test](img/iis_setup_test.png)
+
+### Shibboleth SP 2.5.x Setup
+
+1. Down the [Shibboleth SP 2.5.x](http://www.shibboleth.net/downloads/service-provider/latest/)
+
+2. Start the installation, keep the default path, Select "Install ISAPI modules into IIS", IIS Script Extension must be ".sso" and Hit "Next".
+
+![Shib Setup](img/iis_setup_shibsetup.png)
+
+3. After the completion of the installation, the system will ask to reboot the system; hit "Yes".
+
+![Restart](img/iis_setup_restart.png)
+
+4. Test the Shibboleth SP installation from the SP VM using the URL "localhost/Shibboleth.sso/Status" in the address bar of the Web Browser.
+
+![Status](img/iis_setup_status.png)
+
+### Trust Relationship in IdP
+
+1. Create a Trust Relationship for the new SP in the IdP. It is necessary to upload the Public Certificate of the new SP in teh IdP. Please note that the CN of the public certificate MUST BE the same as _Hostname_ of the SP. Hit "Add".
+
+![Add TR](img/iis_setup_addtr.png)
+
+2. Download the IdP generated configuration files for Shib SP modification.
+
+![Download](img/iis_setup_download.png)
+
+### SP Configuration
