@@ -139,3 +139,27 @@
 ![Download](img/iis_setup_download.png)
 
 ### SP Configuration
+
+1. The files from the IdP must be placed in the SP Configuration.
+
+2. Before placing them inside the SP Configuration please check
+
+  (a) The "spcert.crt" file has the CN same as the SP hostname.
+
+  (b) The "spcert.crt" and "spkey.key" has the same _md5sum_ value.
+
+  (c) The IdP-metadata is perfectly placed inside the SP Configuration.
+
+  (d) The downloaded "shibboleth2.xml" file has values resembling the file content below.
+
+3. For testing purpose, we are going to protect a directory named "secure" with the IdP.  Create a folder/directory in the IIS Root Directory and restart Shibd and IIS.
+
+![Secure](img/iis_setup_secure.png)
+
+### SSO Testing
+
+1. Place the following URL in the web browser: "https://SP_Name/secure"
+
+2. It will redirect the user to the IdP for authentication.
+
+3. After the authentication is complete, the user will be shown the protected page. For this case, the page is the IIS7 index page.
