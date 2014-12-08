@@ -76,7 +76,7 @@
 
 3. Select "Web Server (IIS)", hit "Next"
 
-![Web Server](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/iis_setup.png)
+![Web Server](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/iis_setup_webserver.png)
 
 4. Select (i) CGI
 
