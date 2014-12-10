@@ -164,6 +164,7 @@
 
 3. After the authentication is complete, the user will be shown the protected page. For this case, the page is the IIS7 index page.
 
+
 	<SPConfig xmlns="urn:mace:shibboleth:2.0:native:sp:config"
     	  xmlns:conf="urn:mace:shibboleth:2.0:native:sp:config"
     	  xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"
