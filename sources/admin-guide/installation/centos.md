@@ -21,7 +21,8 @@ The Gluu Server Community Edition should be deployed on a VM with:
 
 `# service gluu-server start`
 
-Note, if you don't want to use yum, you can also download the [RPM](http://repo.gluu.org/GLUU/centos/latest/base/x86_64/Packages/gluu-server-1.9-0.el6.x86_64.rpm
+You can also download the latest Gluu Server build using the [RPM](
+http://repo.gluu.org/GLUU/centos/latest/base/x86_64/Packages/gluu-server-beta3-1.7-0.el6.x86_64.rpm
 )
 
 ## Gluu Server Configuration
