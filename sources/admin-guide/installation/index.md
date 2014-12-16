@@ -30,3 +30,7 @@ However, it is possible to use OpenLDAP or 389DS. The Gluu Server setup.py insta
 script assumes OpenDJ, so you'd also have to take a close look at that script to make 
 sure the same things happen. For example, installing the right schema, index creation, 
 read/write permissions, and other configuration is needed.
+
+## Licenses
+
+All software used in the Gluu Server is free to use in production. The core components published by Gluu, oxAuth and oxTrust, are held under an MIT License. Visit [licenses](.introduction/licenses/) to learn more about the various licenses in use. 
