@@ -17,7 +17,8 @@ The data of a resource owner requested by an application to access the resouece 
 ![Scopes Screenshot](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_scope.png)
 
 The Gluu Server Administrator can easily add more scopes with the GUI. Click on *Add Scope* --> Provide Display Name, Description --> Click on *Add Claim* --> A new window with available claims will appear --> Select desired values --> Click *Ok* --> Click *Add*.
-![Add Scopes](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_auth2_scopeadd.png)
+![Add Scopes](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_scopeadd.png)
+
 
 ## Clients
 
@@ -30,10 +31,10 @@ Available **Clients** can be seen by hitting the **Search** button leaving the s
 ![Client List](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_clientlist.png)
 
 New client can be added easily with the **Add Client** feature.
-![Add Client](admin_oauth2_addclient.png)
+![Add Client](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_addclient.png)
 
 Clicking on the _Add Client_ link allows the Gluu Server Administrator to add new client. The search box can be used to look up previously added clients as well. The screenshot below shows the interface to add a new client.
-![Add new client](admin_oauth2_newclient.png)
+![Add new client](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_newclient.png)
 
 * _Display Name:_ This contains the recognizable and unique display name of the client.
 
