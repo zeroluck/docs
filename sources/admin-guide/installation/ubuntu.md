@@ -39,7 +39,8 @@ Use the .deb installation to perform a base chroot installation with following G
 
 <!---
 <code> # chroot /home/gluu-server su - root </code> 
-
+-->
+<!---
 <code> # cd /install/community-edition-setup-master/ </code>
 -->
 
