@@ -28,7 +28,7 @@ Domains can use "interception" scripts to code their own business logic in eight
 
 5.  **ID Generation**: People don't see their internal ID, but domains may want to use one convention or another to provide a "primary key" value to identify an entity (person, client, etc.) UUID's are the most common, but also IPv6 addresses, DNS style names, or custom schemes can be used. 
 
-6.  **Pre-Registration**: You may want to check that a new registrant is not a duplicate before you create an account. Duplicates may be re-directed to a credential reset workflow.
+6.  **Pre-Registration**: You may want to check that a new registrant is not a duplicate before you create an account. Duplicates may be re-directed to a credential reset workflow. Any action that needs to be executed before the registrant's information is added to the database should be defined here.
 
 7.  **Post-Registration**: After a person is added, there is a hook to call web services or other business logic.
 
