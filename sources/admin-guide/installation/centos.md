@@ -1,10 +1,10 @@
 # Gluu Server Community Edition (CE) CentOS Configuration Guide
 
-`chroot` is an OS level virtualization technique, such as Solaris Zones or FreeBsd jail. You can view it as a complete, independent Linux system which is being run on another Main Linux host. For example, the `/` directory in the Gluu Server is actually `/home/gluu-server` on the Main host. 
+`chroot` is a pre-Docker OS level container technology. Like Docker, the `chroot` distribution includes a full linux distribution. As a file system based "jail", when you login to the Gluu Server from the host linux system, the `/` directory in the Gluu Server is actually `/home/gluu-server` on the host. 
 
-This strategy has its pluses and minuses. In certain circumstances, there are ways for a hacker to “break out of the jail”, and escalate to the host file system. (You don't want to make any file system links from the chroot'd server to the Main host!) The benefit from our perspective was ease of deployment, and loose bundling to the IAAS services needed to support the Gluu Server.
+This strategy has its pluses and minuses. In certain circumstances, there are ways for a hacker to “break out of the jail”, and escalate to the host file system. (You don't want to make any file system links from the chroot'd server to the main host!) The benefit is ease of deployment (Docker not required...). We wanted a simple package that people could install and uninstall quickly.
 
-Note: to report issues or provide feedback, please use [GitHub](https://github.com/GluuFederation/community-edition-setup/issues) or register for an account on [https://support.gluu.org](https://support.gluu.org).
+To report issues or provide feedback about the installation process, please use [GitHub](https://github.com/GluuFederation/community-edition-setup/issues) or register for an account on [https://support.gluu.org](https://support.gluu.org).
 
 ## System Requirements
 
@@ -27,23 +27,23 @@ http://repo.gluu.org/GLUU/centos/latest/base/x86_64/Packages/gluu-server-beta3-1
 
 ## Gluu Server Configuration
 
-To perform the final configuration of the Gluu Server you need to provide some instance
-specific information, like the DNS hostname, and the information required for 
-an X.509 certificate. After successful Gluu Server rpm installation, run the Gluu Server 
-`setup.py` to complete the installation. You can get the latest setup scripts:
+To perform the final configuration of the Gluu Server you need to provide some instance specific information, like the DNS hostname, and the information required to generate certificates. Post rpm installation, run the Gluu Server `setup.py` to complete the installation.  See [setup.py help](./setup_py.md) or run `./setup.py -h` to see the latest installation options.  
 
-`# service gluu-server login`
+```
+# service gluu-server login`
 
-`# cd /install/community-edition-setup-master/`
+# cd /install/community-edition-setup-master/`
 
-`# ./setup.py`
+# ./setup.py
+
+```
 
 To get an updated Community Edition Setup script, download the latest zip file:
 
 `# wget https://github.com/GluuFederation/community-edition-setup/archive/master.zip`
 
 After setup.py script successful execution, point your browser to `https://hostname` Login with the 
-default user name “admin” and the password printed back in the confirmation (also 
+default user name “admin” and the LDAP password printed back in the confirmation (also 
 conatained in `setup.properties.last`). If you want to see the full LDIF for the admin user, 
 it is contained in `/opt/opendj/ldif/people.ldif`
 
@@ -77,7 +77,9 @@ then remove the Gluu yum repository
 
 `# yum remove gluu-server`
 
-`# rm -rf /home/gluu-server`
+`# rm -rf /home/gluu-server.saved`
+
+or 
 
 `# rpm -e Gluu-Server-Repo-1.9-0.el6.x86_64`
 

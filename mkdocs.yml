@@ -73,6 +73,7 @@ pages:
 # Sub Pages of Admin Guide / installation
 - ['admin-guide/installation/ubuntu.md', '**HIDDEN**']
 - ['admin-guide/installation/centos.md', '**HIDDEN**']
+- ['admin-guide/installation/setup_py.md', '**HIDDEN**']
 - ['admin-guide/installation/juju.md', '**HIDDEN**']
 
 # Sub pages of Reference / Configuration

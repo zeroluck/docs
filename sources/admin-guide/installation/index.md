@@ -1,35 +1,23 @@
 # Gluu Server Installation
 
-The easiest way to install the Gluu Server is via one of our binary distributions for Linux. 
-You can use our `yum` repository for [Centos](./centos.md) or `apt-get` for 
-[Ubuntu](./ubuntu.md)
+For a one server deployment, the easiest way to install the Gluu Server is via one of our [Centos](./centos.md) or [Ubuntu](./ubuntu.md) packages.
 
 ## Hardware Guidance
 
-The Gluu Server is very flexible, and can be used for a wide array
-of authentication requirements. Depending on the size of your data,
-and the number of concurrent authentications you want to be able to 
-support, you may need more or less memory or CPU capacity. 
+The Gluu Server is very flexible, and can be used for a wide array of access management requirements. Depending on the size of your data, and the number of concurrent transactions you want to support, you may need more or less memory or CPU capacity. 
 
-With that said, if you want a place to start to deploy a test server,
-we would recommend at least 2 CPU units, 4 GB of RAM and around 30GB of
-disk space. 
+With that said, if you are running all the Gluu Server services on one server (i.e. SAML, OAuth2, LDAP), we would recommend at least 2 CPU units, 4 GB of RAM and around 30GB of disk space. Not enough memory may produce some really weird bugs. 
 
-From there, you may need to adjust the resources based on the
-requirements.
+From there, you may need to adjust the resources based on the requirements.  For an overview of Gluu performance considerations, see this [Gluu blog](http://www.gluu.co/so-fast).  
 
 ## Java
 The Gluu Server components have been tested with OpenJDK version 1.7 or later.
 
 ## LDAP
 
-The Gluu Server uses LDAP for persistence. The pre-compiled binaries include 
-"Gluu OpenDJ", which is our fork of the OpenDJ open source LDAP distribution (which 
-we try to keep very closely aligned with the current updates of the main project).
-However, it is possible to use OpenLDAP or 389DS. The Gluu Server setup.py installation 
-script assumes OpenDJ, so you'd also have to take a close look at that script to make 
-sure the same things happen. For example, installing the right schema, index creation, 
-read/write permissions, and other configuration is needed.
+The Gluu Server uses LDAP for persistence to store oxTrust and oxAuth data, and to cache user entries.  The Gluu Server packages include "Gluu OpenDJ", which is our [fork](https://github.com/GluuFederation/gluu-opendj) of OpenDJ 2.6.0, the last open source release by Forgerock.  It is possible to use any LDAP server, as long as you have the schema and security under control. 
+
+We publish the [latest schema](https://github.com/GluuFederation/community-edition-setup/tree/master/static) in our community-edition-setup project. The schema that we publish for Gluu OpenDJ should also work for Forgerock OpenDJ, UnboundID LDAP server, and Oracle Directory Server Enterprise Edition (ODSEE). 
 
 ## Licenses
 
