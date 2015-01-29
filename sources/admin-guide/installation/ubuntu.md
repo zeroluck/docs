@@ -1,5 +1,11 @@
 # Gluu Server Ubuntu Installation Guide
 
+***
+
+** Gluu Server 2.0 update will be released for Ubuntu on Feb 6! **
+
+***
+
 ## System Requirements
 
 The Gluu Server Community Edition should be deployed on a VM with:

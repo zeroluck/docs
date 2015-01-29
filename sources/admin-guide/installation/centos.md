@@ -17,13 +17,12 @@ The Gluu Server Community Edition should be deployed on a VM with:
 
 `# rpm -ivh http://repo.gluu.org/GLUU/centos/latest/base/x86_64/Packages/Gluu-Server-Repo-1.9-0.el6.x86_64.rpm`
 
-`# yum install gluu-server.x86_64 -y`
+`# yum install gluu-server -y`
 
 `# service gluu-server start`
 
-You can also download the latest Gluu Server build using the [RPM](
-http://repo.gluu.org/GLUU/centos/latest/base/x86_64/Packages/gluu-server-beta3-1.7-0.el6.x86_64.rpm
-)
+You can also download the latest rpm:
+`$ wget http://repo.gluu.org/GLUU/centos/latest/base/x86_64/Packages/gluu-server-2.0-0.el6.x86_64.rpm`
 
 ## Gluu Server Configuration
 
@@ -32,19 +31,15 @@ To perform the final configuration of the Gluu Server you need to provide some i
 ```
 # service gluu-server login`
 
-# cd /install/community-edition-setup-master/`
+# cd /install/community-edition-setup`
 
 # ./setup.py
 
 ```
 
-To get an updated Community Edition Setup script, download the latest zip file:
-
-`# wget https://github.com/GluuFederation/community-edition-setup/archive/master.zip`
-
-After setup.py script successful execution, point your browser to `https://hostname` Login with the 
+After setup.py script successful execution, point your browser to `https://hostname` Login with the
 default user name “admin” and the LDAP password printed back in the confirmation (also 
-conatained in `setup.properties.last`). If you want to see the full LDIF for the admin user, 
+contained in `setup.properties.last`). If you want to see the full LDIF for the admin user,
 it is contained in `/opt/opendj/ldif/people.ldif`
 
 Make sure you remove or encrypt `setup.properties.last` It has the clear text passwords for everything: LDAP, admin user, keystores, and 3DES salt.
@@ -81,5 +76,5 @@ then remove the Gluu yum repository
 
 or 
 
-`# rpm -e Gluu-Server-Repo-1.9-0.el6.x86_64`
+`# rpm -e Gluu-Server-Repo-2.0-0.el6.x86_64`
 
