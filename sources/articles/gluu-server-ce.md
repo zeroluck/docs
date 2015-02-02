@@ -6,11 +6,13 @@ So you want to try out the Gluu Server. The Community Edition (CE) is a great pl
 
 Currently CE includes the following components:
 
+* **CAS** is an enterprise Single Sign-On solution for web services. CAS should only be used to connect legacy applications. OpenID Connect and SAML are preferred for new application integrations.
+* **Shibboleth** one of the most dependable and heavily tested open source SAML single sign-on servers available. Shibboleth is used in production environments at more than 5,000 organization’s worldwide.
 * **oxAuth:** an inter-op leading [OpenID Connect](http://www.gluu.org/docs/admin-guide/openid-connect/) Provider and a production ready implementation of [UMA](http://www.gluu.org/docs/admin-guide/uma/), a new profile of OAuth2 that defines RESTful, JSON-based, standardized flows and constructs for coordinating the protection of any API or web resource.
 * **oxTrust:** the server management interface.
 * **LDAP:** included for local storage of user information and configuration data.
 
-Inclusion of Shibboleth and Asimba SAML components is in progress. Stay tuned for updated packages. 
+Inclusion of the Asimba SAML proxy is in progress. 
 
 ##Licenses
 
