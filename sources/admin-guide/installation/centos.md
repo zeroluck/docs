@@ -15,9 +15,13 @@ The Gluu Server Community Edition should be deployed on a VM with:
 
 ## Installing the GLUU Server
 
-`rpm -ivh http://repo.gluu.org/GLUU/centos/latest/base/x86_64/Packages/gluu-server-2.0-0.el6.x86_64.rpm`
+* Install Gluu Server Community Edition rpm: 
 
-`service gluu-server start`
+`# rpm -ivh http://repo.gluu.org/GLUU/centos/latest/base/x86_64/Packages/gluu-server-2.0-0.el6.x86_64.rpm`
+
+* Start Gluu-Server: 
+
+`# service gluu-server start`
 
 <!-- `# rpm -ivh http://repo.gluu.org/GLUU/centos/latest/base/x86_64/Packages/Gluu-Server-Repo-1.9-0.el6.x86_64.rpm` -->
 
@@ -35,11 +39,15 @@ You can also download the latest rpm:
 
 To perform the final configuration of the Gluu Server you need to provide some instance specific information, like the DNS hostname, and the information required to generate certificates. Post rpm installation, run the Gluu Server `setup.py` to complete the installation.  See [setup.py help](./setup_py.md) or run `./setup.py -h` to see the latest installation options.  
 
-`service gluu-server login`
+* Login to Gluu Server container: 
 
-`cd /install/community-edition-setup/`
+`# service gluu-server login`
 
-`./setup.py`
+* Run "setup" script to perform the final installation: 
+
+`# cd /install/community-edition-setup/`
+
+`# ./setup.py`
 
 
 After setup.py script successful execution, point your browser to `https://hostname` Login with the
