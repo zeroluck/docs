@@ -15,27 +15,32 @@ The Gluu Server Community Edition should be deployed on a VM with:
 
 ## Installing the GLUU Server
 
-`# rpm -ivh http://repo.gluu.org/GLUU/centos/latest/base/x86_64/Packages/Gluu-Server-Repo-1.9-0.el6.x86_64.rpm`
+`rpm -ivh http://repo.gluu.org/GLUU/centos/latest/base/x86_64/Packages/gluu-server-2.0-0.el6.x86_64.rpm`
 
+`service gluu-server start`
+
+<!-- `# rpm -ivh http://repo.gluu.org/GLUU/centos/latest/base/x86_64/Packages/Gluu-Server-Repo-1.9-0.el6.x86_64.rpm` -->
+
+<!--
 `# yum install gluu-server -y`
 
 `# service gluu-server start`
 
+
 You can also download the latest rpm:
 `$ wget http://repo.gluu.org/GLUU/centos/latest/base/x86_64/Packages/gluu-server-2.0-0.el6.x86_64.rpm`
+-->
 
 ## Gluu Server Configuration
 
 To perform the final configuration of the Gluu Server you need to provide some instance specific information, like the DNS hostname, and the information required to generate certificates. Post rpm installation, run the Gluu Server `setup.py` to complete the installation.  See [setup.py help](./setup_py.md) or run `./setup.py -h` to see the latest installation options.  
 
-```
-# service gluu-server login`
+`service gluu-server login`
 
-# cd /install/community-edition-setup`
+`cd /install/community-edition-setup/`
 
-# ./setup.py
+`./setup.py`
 
-```
 
 After setup.py script successful execution, point your browser to `https://hostname` Login with the
 default user name “admin” and the LDAP password printed back in the confirmation (also 
@@ -47,11 +52,13 @@ Make sure you remove or encrypt `setup.properties.last` It has the clear text pa
 If something goes wrong, check `setup.log` for a detailed step-by-step of the installation. Or check 
 `setup_errors.log` to just see the errors (or stderr output from the scripts).
 
+<!--
 If you want to script the installation of the Gluu Server, user the `-f` option or just save the 
 properties file as `setup.properties` and it will be automatically detected. Also use the `-n` option 
 to suppress the interactive confirmation to proceed. For example, to re-run the last installation:
 
 `./setup.py -n -f setup.properties.last`
+-->
 
 ## Starting | Stopping the Gluu Server
 
