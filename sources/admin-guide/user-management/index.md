@@ -1,7 +1,8 @@
 # User Administration 
 
 - [LDAP Synchronization](./ldap-sync.md)
-- [SCIM Interface](./scim.md)
+- [SCIM oxAuth Interface](./scim_oxauth.md)
+- [SCIM UNA Interface](./scim_uma.md)
 - [Registration](./registration.md)
 - [Local User Management](./local-user-mgt.md)
 
