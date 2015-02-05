@@ -111,7 +111,7 @@ Note: There is sample UMA Authorization Policy in CE. You can modify it instead 
             oxRevision: 1
             oxType: internal
 
-5. Register UMA resource set. It's possible to do that via Rest API or via oxTrust GUI. Sample code: [https://svn.gluu.info/repository/openxdi/oxAuth/trunk/Client/src/test/java/org/xdi/oxauth/ws/rs/uma/RegisterResourceSetFlowHttpTest.java.](https://svn.gluu.info/repository/openxdi/oxAuth/trunk/Client/src/test/java/org/xdi/oxauth/ws/rs/uma/RegisterResourceSetFlowHttpTest.java) These are list of steps which allows to add new resource set.
+5. Register UMA resource set. It's possible to do that via Rest API or via oxTrust GUI. Sample code: [https://github.com/GluuFederation/oxAuth/blob/master/Client/src/test/java/org/xdi/oxauth/ws/rs/uma/RegisterResourceSetFlowHttpTest.java) These are list of steps which allows to add new resource set.
  * Log with administrative privileges into oxTrust.
  * Open menu “OAuth2→UMA”.
  * Select “Resources” tab and click “Add Resource Set”.
