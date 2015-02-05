@@ -66,16 +66,17 @@ This is step by step guide to configure UMA for oxTrust and SCIM client. High le
             def getApiVersion(self):
                 return 1
 
-            # Update user entry before persistent it
-            #   user is org.gluu.oxtrust.model.GluuCustomPerson
-            #   persisted is boolean value to specify if operation type: add/modify
+            # Authorizae access to resource
+            #   authorizationContext is org.xdi.oxauth.service.uma.authorization.AuthorizationContext
             #   configurationAttributes is java.util.Map<String, SimpleCustomProperty>
             def authorize(self, authorizationContext, configurationAttributes):
                 print "UMA Authorization policy. Attempting to authorize client"
                 client_id = authorizationContext.getGrant().getClientId()
+                user_id = authorizationContext.getGrant().getUserId()
 
                 print "UMA Authorization policy. Client: ", client_id
-                if (StringHelper.equalsIgnoreCase("@!1111!0008!F781.80AF", client_id)):
+                print "UMA Authorization policy. User: ", user_id
+                if (StringHelper.equalsIgnoreCase("@!1111!0008!FDC0.0FF5", client_id)):
                     print "UMA Authorization policy. Authorizing client"
                     return True
                 else:
@@ -84,7 +85,7 @@ This is step by step guide to configure UMA for oxTrust and SCIM client. High le
 
                 print "UMA Authorization policy. Authorizing client"
                 return True
- * Replace in script above client inum "@!1111!0008!F781.80AF" with client inum which were added in step 2
+ * Replace in script above client inum "@!1111!0008!FDC0.0FF5" with client inum which were added in step 3
  * Click "Enabled" check box
  * Click "Update" button
 
