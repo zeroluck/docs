@@ -1,5 +1,7 @@
 ## Authentication Script
 
+You can find some of our pre-generated authentication scripts [here](../authentication/index.md)
+
 Interfaces:
 
 
