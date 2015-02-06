@@ -34,23 +34,23 @@ This is step by step guide to configure UMA for oxTrust and SCIM client. High le
         oxAuthTokenEndpointAuthMethod: client_secret_basic
 
 3. Create UMA policy. These are list of steps which allows to add new policy.
- * Log with administrative privileges into oxTrust.
- * Open menu “Configuration→Manage Custom Scripts”.
- * Select “UMA Authorization Policies” tab and click “Add custom script configuration”.
- * Select language “Python”.
- * Paste this base policy script:
+ - Log with administrative privileges into oxTrust.
+ - Open menu “Configuration→Manage Custom Scripts”.
+ - Select “UMA Authorization Policies” tab and click “Add custom script configuration”.
+ - Select language “Python”.
+ - Paste this base policy script:
 
 
-        from org.xdi.model.custom.script.type.uma import AuthorizationPolicyType
-        from org.xdi.util import StringHelper, ArrayHelper
-        from java.util import Arrays, ArrayList
-        from org.xdi.oxauth.service.uma.authorization import AuthorizationContext
+            from org.xdi.model.custom.script.type.uma import AuthorizationPolicyType
+            from org.xdi.util import StringHelper, ArrayHelper
+            from java.util import Arrays, ArrayList
+            from org.xdi.oxauth.service.uma.authorization import AuthorizationContext
 
-        import java
+            import java
 
-        class AuthorizationPolicy(AuthorizationPolicyType):
-            def __init__(self, currentTimeMillis):
-                self.currentTimeMillis = currentTimeMillis
+            class AuthorizationPolicy(AuthorizationPolicyType):
+                def __init__(self, currentTimeMillis):
+                    self.currentTimeMillis = currentTimeMillis
 
             def init(self, configurationAttributes):
                 print "UMA authorization policy. Initialization"
@@ -85,20 +85,20 @@ This is step by step guide to configure UMA for oxTrust and SCIM client. High le
 
                 print "UMA Authorization policy. Authorizing client"
                 return True
- * Replace in script above client inum "@!1111!0008!FDC0.0FF5" with client inum which were added in step 3
- * Click "Enabled" check box
- * Click "Update" button
+ - Replace in script above client inum "@!1111!0008!FDC0.0FF5" with client inum which were added in step 3
+ - Click "Enabled" check box
+ - Click "Update" button
 
 Note: There is sample UMA Authorization Policy in CE. You can modify it instead of adding new one.
 
 4. Add UMA scope. These are list of steps which allows to add new scope.
- * Log with administrative privileges into oxTrust.
- * Open menu “OAuth2→UMA”.
- * Select “Scopes” tab and click “Add Scope Description”.
- * Select “Internal” type.
- * Fill the form.
- * Select policy which we aded in previous step.
- * Click “Add” button. Sample result entry:
+ - Log with administrative privileges into oxTrust.
+ - Open menu “OAuth2→UMA”.
+ - Select “Scopes” tab and click “Add Scope Description”.
+ - Select “Internal” type.
+ - Fill the form.
+ - Select policy which we aded in previous step.
+ - Click “Add” button. Sample result entry:
 
             dn: inum=@!1111!D386.9FB1,ou=scopes,ou=uma,o=@!1111,o=gluu
             objectClass: oxAuthUmaScopeDescription
@@ -112,13 +112,13 @@ Note: There is sample UMA Authorization Policy in CE. You can modify it instead 
             oxType: internal
 
 5. Register UMA resource set. It's possible to do that via Rest API or via oxTrust GUI. Sample code: [https://github.com/GluuFederation/oxAuth/blob/master/Client/src/test/java/org/xdi/oxauth/ws/rs/uma/RegisterResourceSetFlowHttpTest.java) These are list of steps which allows to add new resource set.
- * Log with administrative privileges into oxTrust.
- * Open menu “OAuth2→UMA”.
- * Select “Resources” tab and click “Add Resource Set”.
- * Fill the form.
- * Add UMA Scope which we created in previous steps.
- * Add Client which we created in second step.
- * Click “Add” button. Sample result entry:
+ - Log with administrative privileges into oxTrust.
+ - Open menu “OAuth2→UMA”.
+ - Select “Resources” tab and click “Add Resource Set”.
+ - Fill the form.
+ - Add UMA Scope which we created in previous steps.
+ - Add Client which we created in second step.
+ - Click “Add” button. Sample result entry:
 
                 dn: inum=@!1111!C264.D316,ou=resource_sets,ou=uma,o=@!1111,o=gluu
                 objectClass: oxAuthUmaResourceSet
