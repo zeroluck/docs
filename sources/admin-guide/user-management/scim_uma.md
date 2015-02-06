@@ -34,8 +34,8 @@ This is step by step guide to configure UMA for oxTrust and SCIM client. High le
         oxAuthTokenEndpointAuthMethod: client_secret_basic
 
 3. Create UMA policy. These are list of steps which allows to add new policy.
- - Log with administrative privileges into oxTrust.
- - Open menu “Configuration→Manage Custom Scripts”.
+ + Log with administrative privileges into oxTrust.
+ + Open menu “Configuration→Manage Custom Scripts”.
  - Select “UMA Authorization Policies” tab and click “Add custom script configuration”.
  - Select language “Python”.
  - Paste this base policy script:
