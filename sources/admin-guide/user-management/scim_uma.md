@@ -164,7 +164,7 @@ This is sample SCIM Client code which request user information from server.
 				    "@!1111!0008!FDC0.0FF5", "secret");
 
 		    try {
-			    ScimResponse response1 = scimClient.retrievePerson("@!9BCF.396B.14EB.1974!0001!CA0D.1918!0000!A8F2.DE1E.D7FB", MediaType.APPLICATION_JSON);
+			    ScimResponse response1 = scimClient.retrievePerson("@!1111!0008!FDC0.0FF5", MediaType.APPLICATION_JSON);
 			    System.out.println(response1.getResponseBodyString());
 		    } catch (Exception ex) {
 			    ex.printStackTrace();
