@@ -19,6 +19,10 @@ system administrators can mold the Gluu Server to solve the exact access managem
 
 Instructions for installation can be found [here](./admin-guide/installation/)
 
+## Where can I find license information for the components of the Gluu Server?
+
+Licenses for the various components of the Gluu Server can be found [here](./admin-guide/introduction/licenses.md)
+
 ## Can I contribute to the Gluu Server? 
 
 Yes, please! Only with community involvement can the Gluu Server become the best free open source access management tool. You can fork the code on [GitHub](http://github.com/gluufederation) and push us changes. Your input is greatly appreciated!
