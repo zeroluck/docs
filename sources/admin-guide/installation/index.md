@@ -21,4 +21,4 @@ We publish the [latest schema](https://github.com/GluuFederation/community-editi
 
 ## Licenses
 
-All software used in the Gluu Server is free to use in production. The core components published by Gluu, oxAuth and oxTrust, are held under an MIT License. Visit [licenses](../introduction/licenses.md/) to learn more about the various licenses in use. 
+All software used in the Gluu Server is free to use in production. The core components published by Gluu, oxAuth and oxTrust, are held under an MIT License. Visit [licenses](../../admin-guide/introduction/licenses.md) to learn more about the various licenses in use. 
