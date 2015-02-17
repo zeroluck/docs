@@ -98,7 +98,6 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __gluuAttributeEditType__ Specify in oxTrust who can update an attribute, admin or user
  * __gluuAttributeName__ Specify an identifier for an attribute. May be multi-value where an attribute has two names, like givenName and first-name.
  * __gluuAttributeOrigin__ Specify the person objectclass associated with the attribute, used for display purposes in oxTrust.
- * __gluuAttributePrivacyLevel__ Not used, but displayed by oxTrust. Could be used to tag sensitivity of attributes for release.
  * __gluuAttributeSystemEditType__ TODO - still required?
  * __gluuAttributeType__ Data type of attribute. Values can be string, photo, numeric, date
  * __gluuAttributeUsageType__ TODO - Usage? Value can be OpenID
