@@ -4,7 +4,7 @@ So you want to try out the Gluu Server. The Community Edition (CE) is a great pl
 
 ## What's included in CE?
 
-Currently CE includes the following components:
+When you deploy CE, you have the option to include the following components:
 
 * **CAS** is an enterprise Single Sign-On solution for web services. CAS should only be used to connect legacy applications. OpenID Connect and SAML are preferred for new application integrations.
 * **Shibboleth** one of the most dependable and heavily tested open source SAML single sign-on servers available. Shibboleth is used in production environments at more than 5,000 organization’s worldwide.
@@ -29,13 +29,6 @@ easiest installation option is:
 ## OpenID Connect RP Libraries
 
 In order to protect your app with OpenID Connect, you will need to call the OpenID Connect APIs from within your application. Depending on what language your using, you'll need to implement those [client libraries](http://openid.net/developers/libraries/). Here's Gluu's [java libraries](https://github.com/GluuFederation/oxAuth).
-
-## Test Use cases
-
--  Login to oxTrust: test SSO to protected apache folder
--  Login to apache folder: test SSO to oxTrust
--  Logout from apache folder: test logout of oxTrust
--  Logout from oxTrust: test logout of index.html
   
 
 ## Support
