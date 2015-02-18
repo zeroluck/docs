@@ -1,5 +1,7 @@
 mod_ox
 =======
+***mod_ox is still under development, and is not currently shipping as a supported gluu software.***
+
 mod_ox is an access control apache module that enables an application server to support OpenID Connect and UMA endpoints. mod_ox is written in C.
 
 ##Windows 7 (64bit)
