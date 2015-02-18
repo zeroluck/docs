@@ -26,10 +26,9 @@ easiest installation option is:
 - [CentOS](../admin-guide/installation/centos.md)
 - [Ubuntu](../admin-guide/installation/ubuntu.md)
 
+## OpenID Connect RP Libraries
 
-## Installation of mod_ox for testing
-
-mod_ox is an access control apache module that enables an application server to support OpenID Connect and UMA endpoints. mod_ox is written in C.  Installation instructions for Apache on Windows, Ubuntu, and CentOS can be found [here](../reference/oxd/index.md)
+In order to protect your app with OpenID Connect, you will need to call the OpenID Connect APIs from within your application. Depending on what language your using, you'll need to implement those [client libraries](http://openid.net/developers/libraries/). Here's Gluu's [java libraries](https://github.com/GluuFederation/oxAuth).
 
 ## Test Use cases
 
