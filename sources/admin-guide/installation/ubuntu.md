@@ -23,13 +23,9 @@ Use the .deb installation to perform a base chroot installation with following G
 <code> # wget http://deb-repo.gluu.org/GLUU/ubuntu/pool/gluu/gluu-ce-repo-1.9-0.amd64.deb </code>
 -->
 
-<code> # wget -c http://deb-repo.gluu.org/GLUU/ubuntu/pool/gluu/gluu-server-1.7-0-beta2.amd64.deb </code>
+<code> # wget -c http://deb-repo.gluu.org/GLUU/ubuntu/pool/gluu/gluu-server_2.0-0_amd64.deb </code>
 
-<!---
-<code> # dpkg -i gluu-ce-repo-1.9-0.amd64.deb </code>
--->
-
-<code> # dpkg -i gluu-server-1.7-0-beta2.amd64.deb </code> 
+<code> # dpkg -i gluu-server_2.0-0_amd64.deb </code> 
 
 <code> # apt-get update </code>
 
@@ -43,14 +39,7 @@ Use the .deb installation to perform a base chroot installation with following G
 
 <code> # service gluu-server login </code> 
 
-<!---
-<code> # chroot /home/gluu-server su - root </code> 
--->
-<!---
-<code> # cd /install/community-edition-setup-master/ </code>
--->
-
-<code> # cd /install/community-edition-setup-version_1.7/ </code>
+<code> # cd /install/community-edition-setup/ </code>
 
 <code> ./setup.py </code>
 
@@ -66,9 +55,9 @@ and look for the LDAP password which is the same as the admin password.
 
 ### Starting | Stopping the Gluu Server
 
-<code> /etc/init.d/gluu-server start </code>
+<code> service gluu-server start </code>
  
-<code> /etc/init.d/gluu-server stop </code>
+<code> service gluu-server stop </code>
 
 ### Login to chroot environment
 
@@ -108,7 +97,7 @@ Exit from chroot environment to main linux.
 
 Stop the chroot environment, which will unmount all chroot directories and after delete rpm. Please look at following commands.
 
-<code> # /etc/init.d/gluu-server stop </code>
+<code> # service gluu-server stop </code>
 
 <code> # apt-get remove gluu-server </code>
 
