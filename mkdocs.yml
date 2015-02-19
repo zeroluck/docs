@@ -37,7 +37,6 @@ pages:
 - ['reference/configuration/index.md', 'Reference', 'Configuration']
 - ['reference/ldap/index.md', 'Reference', 'LDAP Configuration']
 - ['reference/lib/index.md', 'Reference', 'Libraries']
-- ['reference/api/index.md', 'Reference', 'APIs']
 - ['reference/oxd/index.md', 'Reference', 'OXD']
 
 # Sub pages of References / API
@@ -55,7 +54,6 @@ pages:
 - ['./articles/apache-saml.md', 'Articles', 'Apache SAML']
 - ['articles/java-saml.md', 'Articles', 'Java SAML']
 - ['articles/google-saml.md', 'Articles', 'Google SAML']
-- ['articles/apache-oauth2.md', 'Articles', 'Apache OpenID Connect / UMA']
 - ['articles/js-connect.md', 'Articles', 'JavaScript OpenID Connect RP']
 - ['articles/java-connect.md', 'Articles', 'Java OpenID Connect RP']
 - ['articles/scim-client.md', 'Articles', 'Java SCIM client']
@@ -166,6 +164,4 @@ pages:
 - ['reference/configuration/oxTrust.md', '**HIDDEN**']
 
 # Sub pages of Reference / OXD
-- ['reference/oxd/oxd-protocol.md', '**HIDDEN**']
-- ['reference/oxd/apache-ox-config.md', '**HIDDEN**']
 - ['reference/oxd/apache-ox-install.md', '**HIDDEN**']
