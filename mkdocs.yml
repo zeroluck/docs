@@ -163,5 +163,3 @@ pages:
 - ['reference/configuration/oxAuth.md', '**HIDDEN**']
 - ['reference/configuration/oxTrust.md', '**HIDDEN**']
 
-# Sub pages of Reference / OXD
-- ['reference/oxd/apache-ox-install.md', '**HIDDEN**']
