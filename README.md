@@ -1,12 +1,9 @@
 Gluu Server Documentation
 =========================
 
-Install virtualenv
+Install virtualenv if necessary:
 
 ```
-$ sudo wget -q -O- https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py | python -
-$ sudo wget -q -O- https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python -
-$ sudo export PATH="/usr/local/bin:$PATH"
 $ sudo pip install virtualenv
 ```
 
