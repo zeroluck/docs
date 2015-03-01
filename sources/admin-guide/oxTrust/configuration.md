@@ -191,6 +191,19 @@ The Gluu Server supports username/password authentication against the local LDAP
 
 * _Custom Property (Key/Value):_ Every two factor authentication method has its own key values. Typically the keys/values are provided by the two factor authentication company. Gluu Engineers can help the Server Administrators to gain and push the values.
 
+## Manage Custom Scripts  
+  
+Latest Gluu Server Edition ( includeing Community Edition ) introduced a new section named _Manage Custom Scripts_. This is a single place from where Gluu Server Administrator can manager and administer all kind of custom / default / standard authentication scripts. 
+
+![Manage Scripts](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/CR/Authention_Script_location.png)
+
+As for example, Managing custom script to pull and populate custom attribute in Gluu Server's internal LDAP. We can perform this by adding custom script in _Cache Refresh_ tab. 
+
+![CR Tab](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/CR/CR_script.png)
+
+
+
+
 ## Manage Registration
 ### Configure Registration Workflow
 This allows the activation of invitation links and has options to allow registration in the IdP without any invitation. There are options to change the expiration of accounts with the option to change the time for account expiration process.
