@@ -363,6 +363,14 @@ Gluu Server Administrator can selecy any Cache Refresh Method according to the b
   * _Snapshot Folder:_ Every cycle of of Gluu Server Cache Refresh cycle save an overall snapshot and problem-list record on a specified location. This is where the Gluu Server Administrator can specigy the location. A Gluu Server administrator can easily decide whether cache refresh has synchronised all users or not. Generally the rejected users are enclosed in the problem-list file. An overall report is displayed at the top of the cache refresh page with headings **Updated at the last run** and **Problems at the last run.**
 
   * _Snaphot Count:_ This defines the total number of snapshots that are allowed to be saved in the hard drive of the VM. It is recommended to be kept to 20 shapshots.
+  
+Latest Gluu Servers ( including Community Edition ) introduced two updgraded sections here. 
+
+![New CR method](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/CR/change.png)
+
+  * _Server IP Address:_ Include the IP of your Gluu Server here. This feature basically added to run Cache Refresh mechanism perfectly in clustered environment.
+  
+  * _Snapshot Folder:_ Better to use some temporary location to store shapshots from Cache Refresh operation.  
 
   * _Update:_ This button is to push the changes in the Gluu Server and it should be hit only when the values have been entered.
 
