@@ -83,9 +83,10 @@ then remove the Gluu yum repository
 
 `# yum remove gluu-server`
 
-`# rm -rf /home/gluu-server.saved`
+`# rm -f -r /home/gluu-server.rpm.saved`
 
+<!--
 or 
 
 `# rpm -e Gluu-Server-Repo-2.0-0.el6.x86_64`
-
+-->
