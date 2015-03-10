@@ -1,9 +1,9 @@
 # Certificates 
 
-If you're using the Gluu Server CE binaries, you need to manually update certificates and keys from `/etc/certs/`. The `httpd.crt` and `httpd.key` are SSL keys for your Gluu Server CE. Here is how you can update the SSL httpd key and cert in Gluu CE:
+If you're using the Gluu Server CE binaries, you need to manually update certificates and keys from `/etc/certs/`. The `httpd.crt` and `httpd.key` are respectively SSL cert and key for your Gluu Server CE. Here is how you can update the SSL httpd key and cert in Gluu CE:
 
 - Push latest SSL httpd key and cert in `/etc/certs`.
-- Rename them to `httpd.crt` and `httpd.key` respectively.
+- Rename them to `httpd.key` and `httpd.crt` respectively.
 - Import the DER format of your cert in "cacert" ( location: `/etc/pki/java/` ).
 - Restart your Gluu-server from outside the chroot container.
 
