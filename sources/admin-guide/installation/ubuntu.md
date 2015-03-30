@@ -25,9 +25,15 @@ Use the .deb installation to perform a base chroot installation with following G
 
 <code> # apt-key adv --keyserver keyserver.ubuntu.com --recv-keys AB6E65FC </code>
 
-<!---
+New alternative using our Gluu repo for ubuntu trusty:
+
+<code> # echo "deb http://deb-repo.gluu.org/ubuntu-repo/ trusty main" >> /etc/apt/source.list </code>
+
+<code> # curl http://deb-repo.gluu.org/ubuntu-repo/gluu-apt.key | apt-key add - </code>
+
+<code> # apt-get update </code>
+
 <code> # apt-get install gluu-server </code>
---> 
 
 <code> # service gluu-server start </code>
 
