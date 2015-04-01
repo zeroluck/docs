@@ -1,11 +1,3 @@
-**Table of Contents** 
-
-- [Gluu Server Installation](#gluu-server-installation)
-	- [Hardware Guidance](#hardware-guidance)
-	- [Java](#java)
-	- [LDAP](#ldap)
-	- [Licenses](#licenses)
-
 # Gluu Server Installation
 
 For a one server deployment, the easiest way to install the Gluu Server is via one of our [Centos](./centos.md) or [Ubuntu](./ubuntu.md) packages.
