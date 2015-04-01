@@ -4,7 +4,7 @@
 	- [Hardware Guidance](#hardware-guidance)
 	- [Java](#java)
 	- [LDAP](#ldap)
-	- [Licenses](#license)
+	- [Licenses](#licenses)
 
 # Gluu Server Installation
 
