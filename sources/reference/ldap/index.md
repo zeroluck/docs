@@ -2,12 +2,10 @@
 
 ## Contents
 
-- [Config](./config.md)
 - [Schema](./schema.md)
 - [Namespace](./namespace.md)
 - [Indexing](./indexing.md)
 - [Replication](./replication.md)
-- [Attribute Creation](./attribute.md)
 
 This section has information about how the Gluu Server uses LDAP, and other LDAP recommendations.
 
