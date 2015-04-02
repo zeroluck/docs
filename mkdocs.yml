@@ -28,7 +28,6 @@ pages:
 - ['admin-guide/saml/index.md', 'Admin Guide', 'SAML']
 - ['admin-guide/openid-connect/index.md', 'Admin Guide', 'OpenID Connect']
 - ['admin-guide/uma/index.md', 'Admin Guide', 'UMA']
-- ['admin-guide/interception-scripts/index.md', 'Admin Guide', 'Interception Scripts']
 #- ['admin-guide/multiparty-federation/index.md', 'Admin Guide', 'MultiParty Federation']
 - ['admin-guide/oxPush/index.md', 'Admin Guide', 'oxPush']
 - ['admin-guide/cluster/index.md', 'Admin Guide', 'HA Clusters']
@@ -36,6 +35,7 @@ pages:
 # Reference sections
 - ['reference/configuration/index.md', 'Reference', 'Configuration']
 - ['reference/ldap/index.md', 'Reference', 'LDAP Configuration']
+- ['reference/interception-scripts/index.md', 'Reference', 'Interception Scripts'] 
 - ['reference/lib/index.md', 'Reference', 'Libraries']
 - ['reference/oxd/index.md', 'Reference', 'OXD']
 - ['reference/api/index.md', 'Reference', 'API']
