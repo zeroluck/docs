@@ -12,7 +12,7 @@ The Gluu Server Community Edition should be deployed on a VM with:
 
 * CentOS 6.5 
 * 2 CPU Units and at least 2GB Physical Memory (more is always better, though)
-
+<!--
 ### Installing the GLUU Server with yum:
 
 
@@ -21,11 +21,11 @@ The Gluu Server Community Edition should be deployed on a VM with:
 `# yum clean all`
 
 `# yum install gluu-server`
-
+-->
 
 ### Install Gluu Server using the rpm:
 
-`# rpm -ivh http://repo.gluu.org/GLUU/centos/beta/latest/base/x86_64/Packages/gluu-server-2.1.beta-0.el6.x86_64.rpm`
+`# rpm -ivh http://repo.gluu.org/GLUU/centos/6.5/base/x86_64/Packages/gluu-server-2.1.0-0.el6.src.rpm`
 
 * Start Gluu-Server: 
 
