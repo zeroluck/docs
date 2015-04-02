@@ -124,23 +124,8 @@ This feature provides options to add various changes in the Gluu Server User Int
 
 ## Manage Certificates
 ### Certificate Management
-This allows the users to choose whether to use the JRE public certificates or not.
 
-![JRE Certificate Management](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_manage_jre.png)
-
-### Manage Server SSL Certificates
-The Gluu Server has different certificates for Apache and SSO handling. The certificate must be a well known CA certificate for Apache HTTPS and for SSO handling it can either be self-signed or a CA certified certificate. In both the cases, the CN of the certificate must follow the HOSTNAME of the Gluu Server. 
-
-![Manage Certificates](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_manage_cert.png)
-
-This feature of the oxTrust allows the Gluu Server Administrator to manage both types of certificates. The First box which has **DA...-java.crt** operates the SSL/Apache/HTTPS functions of Gluu Server. The second box is where there is **DA...-shib.cert** is relevant to the SAML transaction.
-
-In order to update/install Gluu Server certificates, both Private key and Public certificates are required. It is essential to update both the public and private keys when updating the server or updating the certificates.
-
-### Manage Public Certificates
-This allows the addition of custom authentication configuration and changing of public certificates.
-
-![Manage Public Certificates](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_manage_public.png)
+Detail information of Certificate Management is available [here](http://www.gluu.org/docs/admin-guide/certificates/).
 
 ## Manage Authentication
 ### Manage LDAP Authentication
