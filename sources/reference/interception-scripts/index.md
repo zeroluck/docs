@@ -1,3 +1,5 @@
+# Interception Scripts
+
 The Gluu Server was designed to be very flexible. Gluu Server admins can use Jython interception scripts to customize behavior.
 
 Jython was chosen because an interpreted language facilitates dynamic creation of business logic, and makes it easier to distribute this logic to a cluster of Gluu servers.
