@@ -89,8 +89,6 @@ Stop the chroot environment, which will unmount all chroot directories and after
 
 <code> # apt-get remove gluu-server </code>
 
-<code> # rm -rf /home/gluu-server </code>
-
 On installation, any modified files are saved in `/home/gluu-server.save`
 If you want to blow away all remnants of the install, `rm -rf /home/gluu-server.save'
 
