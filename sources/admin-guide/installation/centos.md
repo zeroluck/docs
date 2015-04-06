@@ -15,7 +15,7 @@ The Gluu Server Community Edition should be deployed on a VM with:
 
 ### Installing the GLUU Server with yum:
 
-`# wget http://repo.gluu.org/GLUU/Gluu.repo -o /etc/yu.repos.d/Gluu.repo`
+`# wget http://repo.gluu.org/GLUU/Gluu.repo -o /etc/yum.repos.d/Gluu.repo`
 
 `# wget http://repo.gluu.org/GLUU/Gluu-RPM-GPG-KEY -o /etc/pki/rpm-gpg/Gluu-RPM-GPG-KEY`
 
