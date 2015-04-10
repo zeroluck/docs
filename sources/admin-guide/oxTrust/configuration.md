@@ -10,7 +10,7 @@ Please use these shortcuts to navigate the reference guide.
 ## Configuration Menu
 The configuration menu on the home screen has shortcuts to the different configurations available in the oxTrust by Gluu.
 
-![Configuration Menu](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_menu_configuration.png)
+![Configuration Menu](https://raw.githubusercontecant.com/GluuFederation/docs/master/sources/img/oxTrust/admin_menu_configuration.png)
 
 The following links are placed for convenience in browsing the guide.
 
@@ -337,9 +337,9 @@ This section of the application allows the server administrator to connect to th
 
 Attribute mapping is an important aspect of the Copy Method. In this section, the Gluu Server Administrator can map any attribute from the backend Active Directory/LDAP to the LDAP cache of the Gluu Server.
 
-![Attribute Mapping](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_mapattribute.png)
+![Attribute Mapping](https://cloud.githubusercontent.com/assets/5271048/7093434/b8a04996-df7e-11e4-977d-b8fcdf5381d7.png)
 
-Gluu Server Administrator can selecy any Cache Refresh Method according to the backend Active Directory/LDAP server, but there are some essential values for both types of cache refresh method. The values are given below.
+In the source attribute to destination attribute mapping field, you can enter the source attribute value on the left, and the destination attribute on the right. In other words, you can specify what the attribute is on the backend in the left field, and what it should be rendered as when it comes through the Gluu Server in the right field. Gluu Server Administrator can selecy any Cache Refresh Method according to the backend Active Directory/LDAP server, but there are some essential values for both types of cache refresh method. The values are given below.
 
   * _Pooling Interval (Minutes):_ This is the vnterval value for running the Cache Refresh mechanism in the Gluu Server. It is recommended to be kept higher than 15 Minutes.
 
