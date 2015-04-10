@@ -1,12 +1,16 @@
 Enable SCIM oxAuth Authentication
 ============
 
-This is step by step guide to configure oxTrust and SCIM client for oxAuth authentication. 
+This is a step by step guide to configure oxTrust and SCIM client for oxAuth authentication. 
 
 ##Base configuration: create oxAuth client
 
-In order to use access SCIM enpoint new oxAuth should be registered  with scopes "openid" and "user_name". Property “oxAuthTokenEndpointAuthMethod” of this client should has value “client_secret_basic”. It's possible to do that using few methods: [Client Registration](http://ox.gluu.org/doku.php?id=oxauth:clientregistration), using [oxTrust](http://ox.gluu.org/doku.php?id=oxtrust:home) GUI, manually add entry to LDAP. Sample result entry:
+In order to access SCIM endpoints, an oxAuth client should be registered with scopes "openid" and "user_name".
+Authentication method (or LDAP Property “oxAuthTokenEndpointAuthMethod”) of this client should have value “client_secret_basic”.
 
+A new client can be created through various methods: [Client Registration](http://ox.gluu.org/doku.php?id=oxauth:clientregistration), using [oxTrust](http://ox.gluu.org/doku.php?id=oxtrust:home) GUI, or manually adding an entry to LDAP. 
+
+Sample result entry:
 
         dn: inum=@!1111!0008!F781.80AF,ou=clients,o=@!1111,o=gluu
         objectClass: oxAuthClient
@@ -22,11 +26,11 @@ In order to use access SCIM enpoint new oxAuth should be registered  with scopes
 
 ##oxTrust configuration (Resource Server)
 
-oxTrust allows to enable/disable SCIM endpoints. It's possible to change current state in oxTrust on "Oragnization Configuration" page.
+It's possible to enable/disable SCIM endpoints in oxTrust under "Organization Configuration" page.
 
 ##SCIM Client (Requesting Party) sample code
 
-This is sample SCIM Client code which request user information from server.
+This is a sample SCIM Client code which requests user information from server.
 
     package gluu.scim.client.dev.local;
     
