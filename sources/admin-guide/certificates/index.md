@@ -14,7 +14,7 @@ As for example, in order to update Apache SSL cert:
 
 - Push latest SSL httpd key and cert in `/etc/certs`.
 - Rename them to `httpd.key` and `httpd.crt` respectively.
-- Import the DER format of your cert in "cacert" ( location: `/etc/pki/java/` ).
+- Import the DER format of your cert in "cacert" ( location in CentOS/RHEL CE: `/etc/pki/java/`; location in Ubuntu CE: `/etc/ssl/certs/java`).
 - Restart your Gluu-server from outside the chroot container.
 
 Many of the components of the Gluu Server have cyrpto keys and 
@@ -26,3 +26,5 @@ each of the Gluu Server components.
 - [HTTPS](./https.md)
 - [SAML](./saml.md)
 - [OpenID Connect](./openid.md)
+
+
