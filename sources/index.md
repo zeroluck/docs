@@ -120,7 +120,7 @@ in the design of the Juju Application Security Protocol, which defines the inter
 applications, and the open-standard based security components. We are leading an effort to standardize
 Oauth2 multi-party federation. We also have the first implemenation of an OpenID Connect Proxy.
 
-The Gluu Server has always been ahead, and wihtout the contraint of know-it-all venture capitalists, telling
+The Gluu Server has always been ahead, and without the constraint of know-it-all venture capitalists, telling
 us how to run our business, we are free to develop not only what the market wants today, but we think
 it needs. And if someone else writes a free open source component that is better than what OX provides,
 we will abandon our OX component in its favor. This vaccuum cleaner approach to open source enables us
