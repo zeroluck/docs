@@ -10,7 +10,7 @@ Please use these shortcuts to navigate the reference guide.
 ## Configuration Menu
 The configuration menu on the home screen has shortcuts to the different configurations available in the oxTrust by Gluu.
 
-![Configuration Menu](https://raw.githubusercontecant.com/GluuFederation/docs/master/sources/img/oxTrust/admin_menu_configuration.png)
+![Configuration Menu](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_menu_configuration.png)
 
 The following links are placed for convenience in browsing the guide.
 
