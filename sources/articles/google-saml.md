@@ -39,10 +39,10 @@ If you want to know more about Google SSO. [This](https://support.google.com/a/a
 
 ## Configuration in Gluu Server:
 
-Now we need to create a Trust Relationship in Gluu Server as IDP can start it's
+Now we need to create a Trust Relationship in Gluu Server as IDP can start its
 SAML transaction with SP ( in this case: Google Apps ). 
 
-In order to create a Trust Relationship, we need to grab the metdata of Google
+In order to create a Trust Relationship, we need to grab the metadata of Google
 Apps. This metadata can be collected from Google. It's generally specific to
 organization account. 
 
