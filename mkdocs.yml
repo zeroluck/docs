@@ -49,6 +49,8 @@ pages:
 - ['reference/api/uma-discovery.md', '**HIDDEN**']
 - ['reference/api/uma-resource-registration.md', '**HIDDEN**']
 - ['reference/api/uma-permission-registration.md', '**HIDDEN**']
+- ['reference/api/uma-create-rpt.md', '**HIDDEN**']
+- ['reference/api/uma-rpt-status.md', '**HIDDEN**']
 - ['reference/api/id-generation.md', '**HIDDEN**']
 
 

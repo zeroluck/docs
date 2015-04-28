@@ -206,7 +206,6 @@ Updates a previously registered resource set description using the PUT method. I
 ##### getResourceSetList
 **GET** `/host/rsrc/resource_set`
 
-Lists all previously registered resource set identifiers for this user using the GET method.
 Lists all previously registered resource set identifiers for this user using the GET method. The authorization server MUST return the list in the form of a JSON array of {rsid} string values.
 
 The resource server uses this method as a first step in checking whether its understanding of protected resources is in full synchronization with the authorization server's understanding.

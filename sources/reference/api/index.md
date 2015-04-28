@@ -12,7 +12,9 @@
 
 - [UMA Discovery](./uma-discovery.md)
 - [UMA Resource Registration Endpoint (Create/Update/Delete/Get)](./uma-resource-registration.md)
-- [UMA Permission Registration Endpoint (Create/Update/Delete/Get)](./uma-permission-registration.md)
+- [UMA Permission Registration Endpoint](./uma-permission-registration.md)
+- [UMA Create RPT Endpoint](./uma-create-rpt.md)
+- [UMA RPT Introspection Endpoint](./uma-rpt-status.md)
 
 
 ## Custom Gluu Endpoints
