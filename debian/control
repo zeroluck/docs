@@ -1,0 +1,15 @@
+Source: gluu-docs
+Section: unknown
+Priority: optional
+Maintainer: Adrian Alves <adrian@gluu.org>
+Build-Depends: debhelper (>= 8.0.0),
+Standards-Version: 3.9.4
+Homepage: http://www.gluu.org
+#Vcs-Git: git://git.debian.org/collab-maint/gluu-docs.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/gluu-docs.git;a=summary
+
+Package: gluu-docs
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, apache2
+Description: Gluu documentation
+ Gluu documents like install procedures
