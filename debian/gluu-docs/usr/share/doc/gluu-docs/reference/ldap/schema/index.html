@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon_ic.ico">
+
+        <title>Ldap - Gluu Servers</title>
+
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../../css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../.."><img src="../../../img/logo.png" ></a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    
+                        <li >
+                            <a href="../../..">Home</a>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin Guide <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/introduction/">Introduction</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/installation/">Installation</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/oxTrust/">oxTrust User Interface</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/gluu-server-operations/">Gluu Server Operations</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/custom-look/">Customizing Look and Feel</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/registration/">Registration Workflow</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/certificates/">Certificates</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/user-management/">User Management</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/authentication/">Authentication</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/saml/">SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/openid-connect/">OpenID Connect</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/uma/">UMA</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/oxPush/">oxPush</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/cluster/">HA Clusters</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../configuration/">Configuration</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../">LDAP Configuration</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../interception-scripts/">Interception Scripts</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../lib/">Libraries</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../oxd/">OXD</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../api/">API</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Articles <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/gluu-server-ce/">Try Gluu Server CE - Quickstart</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/apache-saml/">Apache SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/java-saml/">Java SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/google-saml/">Google SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/js-connect/">JavaScript OpenID Connect RP</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/java-connect/">Java OpenID Connect RP</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/scim-client/">Java SCIM client</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/benchmarking/">Gluu Server Benchmark</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/custom-attributes/">Adding Custom User Attributes</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                
+                </ul>
+            
+
+            
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li >
+                    <a rel="next" href="../../lib/saml/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../namespace/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a href="https://github.com/GluuFederation/docs">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                <li>
+                <!--<form action="." method="get" class="form-inline">-->
+                    <!--<div class="search-box">-->
+                        <!--<input type="text" value="" class="search-text" placeholder="Search" />-->
+                        <!--<input type="submit" value="Search" class="search-tag"/>-->
+                    <!--</div>-->
+                <!--</form>-->
+
+                </li>
+                
+            </ul>
+            
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+       
+        <li class="main active"><a href="#schema">Schema</a></li>
+        
+            <li><a href="#objectclass-gluuappliance">Objectclass gluuAppliance</a></li>
+        
+            <li><a href="#objectclass-gluuattribute">Objectclass gluuAttribute</a></li>
+        
+            <li><a href="#objectclass-gluugroup">Objectclass gluuGroup</a></li>
+        
+            <li><a href="#objectclass-gluuinummap">Objectclass gluuInumMap</a></li>
+        
+            <li><a href="#objectclass-gluuinvoice">Objectclass gluuInvoice</a></li>
+        
+            <li><a href="#objectclass-gluuorganization">Objectclass gluuOrganization</a></li>
+        
+            <li><a href="#objectclass-gluupasswordresetrequest">Objectclass gluuPasswordResetRequest</a></li>
+        
+            <li><a href="#objectclass-gluuperson">Objectclass gluuPerson</a></li>
+        
+            <li><a href="#objectclass-gluusamlconfig">Objectclass gluuSAMLconfig</a></li>
+        
+            <li><a href="#objectclass-oxauthclient">Objectclass oxAuthClient</a></li>
+        
+            <li><a href="#objectclass-oxauthconfiguration">Objectclass oxAuthConfiguration</a></li>
+        
+            <li><a href="#objectclass-oxauthcustomscope">Objectclass oxAuthCustomScope</a></li>
+        
+            <li><a href="#objectclass-oxauthfederationmetadata">Objectclass oxAuthFederationMetadata</a></li>
+        
+            <li><a href="#objectclass-oxauthfederationop">Objectclass oxAuthFederationOP</a></li>
+        
+            <li><a href="#objectclass-oxauthfederationrp">Objectclass oxAuthFederationRP</a></li>
+        
+            <li><a href="#objectclass-oxauthfederationrequest">Objectclass oxAuthFederationRequest</a></li>
+        
+            <li><a href="#objectclass-oxauthfederationtrust">Objectclass oxAuthFederationTrust</a></li>
+        
+            <li><a href="#objectclass-oxauthsessionid">Objectclass oxAuthSessionId</a></li>
+        
+            <li><a href="#objectclass-oxauthtoken">Objectclass oxAuthToken</a></li>
+        
+            <li><a href="#objectclass-oxauthumapolicy">Objectclass oxAuthUmaPolicy</a></li>
+        
+            <li><a href="#objectclass-oxauthumarpt">Objectclass oxAuthUmaRPT</a></li>
+        
+            <li><a href="#objectclass-oxauthumaresourceset">Objectclass oxAuthUmaResourceSet</a></li>
+        
+            <li><a href="#objectclass-oxauthumaresourcesetpermission">Objectclass oxAuthUmaResourceSetPermission</a></li>
+        
+            <li><a href="#objectclass-oxauthumascopedescription">Objectclass oxAuthUmaScopeDescription</a></li>
+        
+            <li><a href="#objectclass-oxentry">Objectclass oxEntry</a></li>
+        
+            <li><a href="#objectclass-oxlink">Objectclass oxLink</a></li>
+        
+            <li><a href="#objectclass-oxliteralnode">Objectclass oxLiteralNode</a></li>
+        
+            <li><a href="#objectclass-oxnode">Objectclass oxNode</a></li>
+        
+            <li><a href="#objectclass-oxproxaccesstoken">Objectclass oxProxAccessToken</a></li>
+        
+            <li><a href="#objectclass-oxproxclient">Objectclass oxProxClient</a></li>
+        
+            <li><a href="#objectclass-oxproxconfiguration">Objectclass oxProxConfiguration</a></li>
+        
+            <li><a href="#objectclass-oxproxop">Objectclass oxProxOp</a></li>
+        
+            <li><a href="#objectclass-oxpushapplication">Objectclass oxPushApplication</a></li>
+        
+            <li><a href="#objectclass-oxpushdevice">Objectclass oxPushDevice</a></li>
+        
+            <li><a href="#objectclass-oxscript">Objectclass oxScript</a></li>
+        
+            <li><a href="#objectclass-oxtrustconfiguration">Objectclass oxTrustConfiguration</a></li>
+        
+            <li><a href="#objectclass-vddirectoryview">Objectclass vdDirectoryView</a></li>
+        
+            <li><a href="#objectclass-vdapcontainer">Objectclass vdapcontainer</a></li>
+        
+            <li><a href="#objectclass-vdlabel">Objectclass vdlabel</a></li>
+        
+       
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="schema">Schema</h1>
+<p>Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS too:  </p>
+<ul>
+<li><a href="https://github.com/GluuFederation/community-edition-setup/tree/master/static/opendj">OpenDJ</a></li>
+<li><a href="https://github.com/GluuFederation/community-edition-setup/tree/master/static/openldap">OpenLDAP</a></li>
+</ul>
+<h3 id="objectclass-gluuappliance">Objectclass gluuAppliance</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>blowfishPassword</strong> Blowfish crypted text</li>
+<li><strong>c</strong> </li>
+<li><strong>description</strong> </li>
+<li><strong>displayName</strong> </li>
+<li><strong>gluuAdditionalBandwidth</strong> Track bandwidth requirements for the Gluu Server instance</li>
+<li><strong>gluuAdditionalMemory</strong> Track additional memory requirements for the Gluu Server instance.</li>
+<li><strong>gluuApplianceDnsServer</strong> Persist the DNS server that should be used for the Gluu Server instance.</li>
+<li><strong>gluuAppliancePollingInterval</strong> Set the frequency of the health status update of the Gluu Server</li>
+<li><strong>gluuBandwidthRX</strong> Track data received by the Gluu Server</li>
+<li><strong>gluuBandwidthTX</strong> Track data sent by the Gluu Server</li>
+<li><strong>gluuBillingEmail</strong> Billing Alert Email Address</li>
+<li><strong>gluuCentreonEmail</strong> TODO - in use? Email Address to send monitoring alerts</li>
+<li><strong>gluuDSstatus</strong> Monitor health of the instance LDAP server.</li>
+<li><strong>gluuFederationHostingEnabled</strong> oxTrust flag for the federation feature. Values enabled or disabled.</li>
+<li><strong>gluuFreeDiskSpace</strong> Monitor free disk space on the Gluu Server instance</li>
+<li><strong>gluuFreeMemory</strong> Monitor free memory on the Gluu Server instance</li>
+<li><strong>gluuFreeSwap</strong> Monitor swap space on the Gluu Server instance</li>
+<li><strong>gluuGroupCount</strong> Monitor the number of groups. TODO - Remove?</li>
+<li><strong>gluuHTTPstatus</strong> Monitor HTTP availability of the Gluu Server instance</li>
+<li><strong>gluuHostname</strong> The hostname of the Gluu Server instance</li>
+<li><strong>gluuInvoiceNo</strong> TODO - in use?</li>
+<li><strong>gluuIpAddress</strong> IP address of the Gluu Server instance</li>
+<li><strong>gluuJiraEmail</strong> TODO - in use? Jira Alert Email Address</li>
+<li><strong>gluuLastUpdate</strong> Monitors last time the server was able to connect to the monitoring system.</li>
+<li><strong>gluuLifeRay</strong> None</li>
+<li><strong>gluuLoadAvg</strong> Montior the average CPU load for a Gluu Server instance.</li>
+<li><strong>gluuManageIdentityPermission</strong> TODO - in use?</li>
+<li><strong>gluuManager</strong> Used to specify if a person has the manager role</li>
+<li><strong>gluuMaxLogSize</strong> Maximum Log File Size</li>
+<li><strong>gluuOrgProfileMgt</strong> enable or disable profile management feature in oxTrust</li>
+<li><strong>gluuPaidUntil</strong> TODO - in use?</li>
+<li><strong>gluuPaymentProcessorTimestamp</strong> TODO - in use?</li>
+<li><strong>gluuPersonCount</strong> Monitor the number of people in the LDAP severs for a Gluu Server instance</li>
+<li><strong>gluuPrivacyEmail</strong> Privacy Alert Email Address used by oxTrust.</li>
+<li><strong>gluuPrivate</strong> TODO - in use?</li>
+<li><strong>gluuPublishIdpMetadata</strong> Gluu Server flag to publish the IDP metadata via the web server</li>
+<li><strong>gluuResizeInitiated</strong> TODO - in use?</li>
+<li><strong>gluuSPTR</strong> TODO - in use?</li>
+<li><strong>gluuScimEnabled</strong> oxTrust SCIM feature - enabled or disabled</li>
+<li><strong>gluuShibAssertionsIssued</strong> Monitors activity of Gluu Server Shibboleth IDP</li>
+<li><strong>gluuShibFailedAuth</strong> Monitors failed login attempts on Gluu Server Shibboleth IDP</li>
+<li><strong>gluuShibSecurityEvents</strong> Monitors security events on Gluu Server Shibboleth IDP</li>
+<li><strong>gluuShibSuccessfulAuths</strong> Monitors login attempts on Gluu Server Shibboleth IDP</li>
+<li><strong>gluuSmtpFromEmailAddress</strong> SMTP From Email Address</li>
+<li><strong>gluuSmtpFromName</strong> SMTP From Name</li>
+<li><strong>gluuSmtpHost</strong> SMTP Host</li>
+<li><strong>gluuSmtpPassword</strong> SMTP User Password</li>
+<li><strong>gluuSmtpPort</strong> SMTP Port</li>
+<li><strong>gluuSmtpRequiresAuthentication</strong> SMTP Requires Authentication</li>
+<li><strong>gluuSmtpRequiresSsl</strong> SMTP Requires SSL</li>
+<li><strong>gluuSmtpUserName</strong> SMTP User Name</li>
+<li><strong>gluuSslExpiry</strong> SAML Trust Relationship configuration</li>
+<li><strong>gluuStatus</strong> Status of the entry, used by many objectclasses</li>
+<li><strong>gluuSvnEmail</strong> SVN Alert Email Address</li>
+<li><strong>gluuSystemUptime</strong> Monitors how long the Gluu Server instance has been running.</li>
+<li><strong>gluuTargetRAM</strong> Monitors total available RAM on Gluu Server instance</li>
+<li><strong>gluuUrl</strong> Gluu instance URL</li>
+<li><strong>gluuVDSenabled</strong> oxTrust VDS enabled or disabled</li>
+<li><strong>gluuVDSstatus</strong> Gluu VDS configuration</li>
+<li><strong>gluuVdsCacheRefreshEnabled</strong> None</li>
+<li><strong>gluuVdsCacheRefreshLastUpdate</strong> None</li>
+<li><strong>gluuVdsCacheRefreshLastUpdateCount</strong> None</li>
+<li><strong>gluuVdsCacheRefreshPollingInterval</strong> None</li>
+<li><strong>gluuVdsCacheRefreshProblemCount</strong> None</li>
+<li><strong>gluuWhitePagesEnabled</strong> None</li>
+<li><strong>iname</strong> None</li>
+<li><strong>inum</strong> XRI i-number</li>
+<li><strong>inumFN</strong> XRI i-number sans punctuation</li>
+<li><strong>o</strong> </li>
+<li><strong>oxAuthenticationLevel</strong> None</li>
+<li><strong>oxAuthenticationMode</strong> None</li>
+<li><strong>oxClusterType</strong> Type of the underlying clustering mechanism</li>
+<li><strong>oxClusteredServers</strong> List of the clustering partners of this server</li>
+<li><strong>oxIDPAuthentication</strong> Custom IDP authentication configuration</li>
+<li><strong>oxLogViewerConfig</strong> Log viewer configuration</li>
+<li><strong>oxMemcachedServerAddress</strong> Initialization string for memcached client</li>
+<li><strong>oxSmtpConfiguration</strong> SMTP configuration</li>
+<li><strong>oxTrustStoreCert</strong> oxPush device configuration</li>
+<li><strong>oxTrustStoreConf</strong> oxPush application configuration</li>
+<li><strong>passwordResetAllowed</strong> Is password reset mechanics allowed</li>
+<li><strong>softwareVersion</strong> None</li>
+<li><strong>userPassword</strong> </li>
+<li><strong>oxTrustCacheRefreshServerIpAddress</strong> None</li>
+</ul>
+<h3 id="objectclass-gluuattribute">Objectclass gluuAttribute</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>description</strong> </li>
+<li><strong>displayName</strong> </li>
+<li><strong>gluuAttributeEditType</strong> Specify in oxTrust who can update an attribute, admin or user</li>
+<li><strong>gluuAttributeName</strong> Specify an identifier for an attribute. May be multi-value where an attribute has two names, like givenName and first-name.</li>
+<li><strong>gluuAttributeOrigin</strong> Specify the person objectclass associated with the attribute, used for display purposes in oxTrust.</li>
+<li><strong>gluuAttributeSystemEditType</strong> TODO - still required?</li>
+<li><strong>gluuAttributeType</strong> Data type of attribute. Values can be string, photo, numeric, date</li>
+<li><strong>gluuAttributeUsageType</strong> TODO - Usage? Value can be OpenID</li>
+<li><strong>gluuAttributeViewType</strong> Specify in oxTrust who can view an attribute, admin or user</li>
+<li><strong>gluuCategory</strong> TODO - in use? Used to group attributes together.</li>
+<li><strong>gluuSAML1URI</strong> SAML 1 uri of attribute</li>
+<li><strong>gluuSAML2URI</strong> SAML 2 uri of attribute</li>
+<li><strong>gluuStatus</strong> Status of the entry, used by many objectclasses</li>
+<li><strong>iname</strong> None</li>
+<li><strong>inum</strong> XRI i-number</li>
+<li><strong>objectClass</strong> </li>
+<li><strong>oxAttributeType</strong> NameId or attribute</li>
+<li><strong>oxMultivaluedAttribute</strong> None</li>
+<li><strong>oxNameIdType</strong> NameId Type</li>
+<li><strong>oxSCIMCustomAttribute</strong> None</li>
+<li><strong>oxSourceAttribute</strong> Source Attribute for this Attribute</li>
+<li><strong>seeAlso</strong> </li>
+<li><strong>urn</strong> None</li>
+<li><strong>gluuLdapAttributeName</strong> Used by oxAuth and oxTrust to specify the LDAP attribute of the name.</li>
+<li><strong>oxAuthClaimName</strong> Used by oxAuth in conjunction with gluuLdapAttributeName to map claims to attributes in LDAP.</li>
+</ul>
+<h3 id="objectclass-gluugroup">Objectclass gluuGroup</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>c</strong> </li>
+<li><strong>description</strong> </li>
+<li><strong>displayName</strong> </li>
+<li><strong>gluuGroupType</strong> Type of Group. Not used.</li>
+<li><strong>gluuGroupVisibility</strong> Group visibility. Not used.</li>
+<li><strong>gluuStatus</strong> Status of the entry, used by many objectclasses</li>
+<li><strong>iname</strong> None</li>
+<li><strong>inum</strong> XRI i-number</li>
+<li><strong>member</strong> </li>
+<li><strong>o</strong> </li>
+<li><strong>owner</strong> </li>
+<li><strong>seeAlso</strong> </li>
+</ul>
+<h3 id="objectclass-gluuinummap">Objectclass gluuInumMap</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>gluuStatus</strong> Status of the entry, used by many objectclasses</li>
+<li><strong>inum</strong> XRI i-number</li>
+<li><strong>primaryKeyAttrName</strong> Primary Key Attribute Name</li>
+<li><strong>primaryKeyValue</strong> Primary Key Value</li>
+<li><strong>secondaryKeyAttrName</strong> Secondary Key Attribute Name</li>
+<li><strong>secondaryKeyValue</strong> Secondary Key Value</li>
+<li><strong>tertiaryKeyAttrName</strong> Tertiary Key Attribute Name</li>
+<li><strong>tertiaryKeyValue</strong> Tertiary Key Value</li>
+</ul>
+<h3 id="objectclass-gluuinvoice">Objectclass gluuInvoice</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>gluuInvoiceAmount</strong> TODO - in use?</li>
+<li><strong>gluuInvoiceDate</strong> TODO - in use?</li>
+<li><strong>gluuInvoiceLineItemName</strong> TODO - in use?</li>
+<li><strong>gluuInvoiceNumber</strong> TODO - in use?</li>
+<li><strong>gluuInvoiceProductNumber</strong> TODO - in use?</li>
+<li><strong>gluuInvoiceQuantity</strong> TODO - in use?</li>
+<li><strong>gluuInvoiceStatus</strong> TODO - in use?</li>
+<li><strong>inum</strong> XRI i-number</li>
+</ul>
+<h3 id="objectclass-gluuorganization">Objectclass gluuOrganization</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>c</strong> </li>
+<li><strong>county</strong> ISO 3166-1 Alpha-2 Country Code</li>
+<li><strong>deployedAppliances</strong> Track which appliances are deployed at an organization.</li>
+<li><strong>description</strong> </li>
+<li><strong>displayName</strong> </li>
+<li><strong>gluuAddPersonCapability</strong> Organizational attribute to control whether new users can be added via the oxTrust GUI.</li>
+<li><strong>gluuAdditionalUsers</strong> TODO : use unclear</li>
+<li><strong>gluuApplianceUpdateRequestList</strong> Used by the Gluu Server to request an update</li>
+<li><strong>gluuCustomMessage</strong> oxTrust custom welcome message</li>
+<li><strong>gluuFaviconImage</strong> TODO - Stores URL of favicon</li>
+<li><strong>gluuFederationHostingEnabled</strong> oxTrust flag for the federation feature. Values enabled or disabled.</li>
+<li><strong>gluuInvoiceNo</strong> TODO - in use?</li>
+<li><strong>gluuLogoImage</strong> Logo used by oxTrust for default look and feel.</li>
+<li><strong>gluuManageIdentityPermission</strong> TODO - in use?</li>
+<li><strong>gluuManager</strong> Used to specify if a person has the manager role</li>
+<li><strong>gluuManagerGroup</strong> Used in organizatoin entry to specifies the dn of the group that has admin priviledges in oxTrust.</li>
+<li><strong>gluuOrgProfileMgt</strong> enable or disable profile management feature in oxTrust</li>
+<li><strong>gluuOrgShortName</strong> Short description, as few letters as possible, no spaces.</li>
+<li><strong>gluuOwnerGroup</strong> Deprecated. Use gluuManagerGroup</li>
+<li><strong>gluuPaidUntil</strong> TODO - in use?</li>
+<li><strong>gluuPaymentProcessorTimestamp</strong> TODO - in use?</li>
+<li><strong>gluuProStoresUser</strong> TODO - remove</li>
+<li><strong>gluuStatus</strong> Status of the entry, used by many objectclasses</li>
+<li><strong>gluuTempFaviconImage</strong> Store location for upload of Favicon</li>
+<li><strong>gluuThemeColor</strong> oxTrust login page configuration</li>
+<li><strong>gluuWhitePagesEnabled</strong> None</li>
+<li><strong>iname</strong> None</li>
+<li><strong>inum</strong> XRI i-number</li>
+<li><strong>l</strong> </li>
+<li><strong>mail</strong> </li>
+<li><strong>memberOf</strong> None</li>
+<li><strong>nonProfit</strong> TODO - in use?</li>
+<li><strong>o</strong> </li>
+<li><strong>objectClass</strong> </li>
+<li><strong>oxCreationTimestamp</strong> Registration time</li>
+<li><strong>oxLinkLinktrack</strong> Linktrack link</li>
+<li><strong>oxLinktrackEnabled</strong> Is Linktrack API configured</li>
+<li><strong>oxLinktrackLogin</strong> Linktrack API login</li>
+<li><strong>oxLinktrackPassword</strong> Linktrack API password</li>
+<li><strong>oxRegistrationConfiguration</strong> Registration Configuration</li>
+<li><strong>postalCode</strong> </li>
+<li><strong>proStoresToken</strong> None</li>
+<li><strong>prostoresTimestamp</strong> None</li>
+<li><strong>scimAuthMode</strong> SCIM Authorization mode</li>
+<li><strong>scimGroup</strong> scim Group</li>
+<li><strong>scimStatus</strong> scim status</li>
+<li><strong>st</strong> </li>
+<li><strong>street</strong> </li>
+<li><strong>telephoneNumber</strong> </li>
+<li><strong>title</strong> </li>
+<li><strong>uid</strong> </li>
+<li><strong>userPassword</strong> </li>
+</ul>
+<h3 id="objectclass-gluupasswordresetrequest">Objectclass gluuPasswordResetRequest</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>creationDate</strong> Creation Date used for password reset requests</li>
+<li><strong>oxGuid</strong> A random string to mark temporary tokens</li>
+<li><strong>personInum</strong> Inum of a person</li>
+</ul>
+<h3 id="objectclass-gluuperson">Objectclass gluuPerson</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>associatedClient</strong> </li>
+<li><strong>c</strong> </li>
+<li><strong>displayName</strong> </li>
+<li><strong>givenName</strong> </li>
+<li><strong>gluuManagedOrganizations</strong> Used to track with which organizations a person is associated</li>
+<li><strong>gluuOptOuts</strong> White pages attributes restricted by person in oxTrust profile management</li>
+<li><strong>gluuStatus</strong> Status of the entry, used by many objectclasses</li>
+<li><strong>gluuWhitePagesListed</strong> Allow Publication</li>
+<li><strong>iname</strong> None</li>
+<li><strong>inum</strong> XRI i-number</li>
+<li><strong>mail</strong> </li>
+<li><strong>memberOf</strong> None</li>
+<li><strong>o</strong> </li>
+<li><strong>oxAuthPersistentJWT</strong> oxAuth Persistent JWT</li>
+<li><strong>oxCreationTimestamp</strong> Registration time</li>
+<li><strong>oxExternalUid</strong> None</li>
+<li><strong>oxInviteCode</strong> Invite Code</li>
+<li><strong>oxLastLogonTime</strong> Last logon time</li>
+<li><strong>oxTrustActive</strong> None</li>
+<li><strong>oxTrustAddresses</strong> None</li>
+<li><strong>oxTrustEmail</strong> None</li>
+<li><strong>oxTrustEntitlements</strong> None</li>
+<li><strong>oxTrustExternalId</strong> None</li>
+<li><strong>oxTrustImsValue</strong> None</li>
+<li><strong>oxTrustMetaCreated</strong> None</li>
+<li><strong>oxTrustMetaLastModified</strong> None</li>
+<li><strong>oxTrustMetaLocation</strong> None</li>
+<li><strong>oxTrustMetaVersion</strong> None</li>
+<li><strong>oxTrustNameFormatted</strong> None</li>
+<li><strong>oxTrustPhoneValue</strong> None</li>
+<li><strong>oxTrustPhotos</strong> None</li>
+<li><strong>oxTrustProfileURL</strong> None</li>
+<li><strong>oxTrustRole</strong> None</li>
+<li><strong>oxTrustTitle</strong> None</li>
+<li><strong>oxTrustUserType</strong> None</li>
+<li><strong>oxTrusthonorificPrefix</strong> None</li>
+<li><strong>oxTrusthonorificSuffix</strong> None</li>
+<li><strong>oxTrustx509Certificate</strong> None</li>
+<li><strong>persistentId</strong> PersistentId</li>
+<li><strong>middleName</strong> Middle name(s)</li>
+<li><strong>nickname</strong> Casual name of the End-User</li>
+<li><strong>preferredUsername</strong> Shorthand Name</li>
+<li><strong>profile</strong> Profile page URL of the person</li>
+<li><strong>picture</strong> Profile picture URL of the person</li>
+<li><strong>website</strong> Web page or blog URL of the person</li>
+<li><strong>emailVerified</strong> True if the e-mail address of the person has been verified; otherwise false</li>
+<li><strong>gender</strong> Gender of the person either female or male</li>
+<li><strong>birthdate</strong> Birthday of the person, represented as an ISO 8601:2004 [ISO8601â€‘2004] YYYY-MM-DD format</li>
+<li><strong>zoneinfo</strong> time zone database representing the End-User</li>
+<li><strong>locale</strong> Locale of the person, represented as a BCP47 [RFC5646] language tag</li>
+<li><strong>phoneNumberVerified</strong> True if the phone number of the person has been verified, otherwise false</li>
+<li><strong>address</strong> OpenID Connect formatted JSON object representing the address of the person</li>
+<li><strong>updatedAt</strong> Time the information of the person was last updated. Seconds from 1970-01-01T0:0:0Z</li>
+<li><strong>preferredLanguage</strong> </li>
+<li><strong>role</strong> Role</li>
+<li><strong>secretAnswer</strong> Secret Answer</li>
+<li><strong>secretQuestion</strong> Secret Question</li>
+<li><strong>seeAlso</strong> </li>
+<li><strong>sn</strong> </li>
+<li><strong>cn</strong> </li>
+<li><strong>transientId</strong> TransientId</li>
+<li><strong>uid</strong> </li>
+<li><strong>userPassword</strong> </li>
+</ul>
+<h3 id="objectclass-gluusamlconfig">Objectclass gluuSAMLconfig</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>description</strong> </li>
+<li><strong>displayName</strong> </li>
+<li><strong>federationRules</strong> Track rules for the federation in Gluu SAML config. Deprecated as multi-party federation management should move to Jagger.</li>
+<li><strong>gluuContainerFederation</strong> SAML Trust Relationship federation info</li>
+<li><strong>gluuEntityId</strong> Specifies SAML trust relationship entity ID</li>
+<li><strong>gluuIsFederation</strong> Used in oxTrust to specify if a SAML Trust Relationship is a federation. It could also be a website</li>
+<li><strong>gluuProfileConfiguration</strong> SAML Trust Relationship attribute</li>
+<li><strong>gluuReleasedAttribute</strong> oxTrust reference for the dn of the released attribute</li>
+<li><strong>gluuRulesAccepted</strong> TODO - use unknown for Gluu SAML config</li>
+<li><strong>gluuSAMLMetaDataFilter</strong> Metadata filter in SAML trust relationship</li>
+<li><strong>gluuSAMLTrustEngine</strong> SAML trust relationship configuration</li>
+<li><strong>gluuSAMLmaxRefreshDelay</strong> SAML trust relationship refresh time</li>
+<li><strong>gluuSAMLspMetaDataFN</strong> SAML Trust Relationship file location of metadata</li>
+<li><strong>gluuSAMLspMetaDataSourceType</strong> SAML Trust Relationship SP metadata type - file, URI, federation</li>
+<li><strong>gluuSAMLspMetaDataURL</strong> SAML Trust Relationship URI location of metadata</li>
+<li><strong>gluuSpecificRelyingPartyConfig</strong> SAML Trust Relationship configuration</li>
+<li><strong>gluuStatus</strong> Status of the entry, used by many objectclasses</li>
+<li><strong>gluuTrustContact</strong> oxTrust login page configuration</li>
+<li><strong>gluuTrustDeconstruction</strong> TODO - in use?</li>
+<li><strong>gluuValidationLog</strong> None</li>
+<li><strong>gluuValidationStatus</strong> None</li>
+<li><strong>iname</strong> None</li>
+<li><strong>inum</strong> XRI i-number</li>
+<li><strong>o</strong> </li>
+<li><strong>objectClass</strong> </li>
+<li><strong>oxAuthPostLogoutRedirectURI</strong> oxAuth Post Logout Redirect URI</li>
+<li><strong>url</strong> None</li>
+</ul>
+<h3 id="objectclass-oxauthclient">Objectclass oxAuthClient</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>associatedPerson</strong> Reference the dn of a person.</li>
+<li><strong>displayName</strong> </li>
+<li><strong>inum</strong> XRI i-number</li>
+<li><strong>oxAuthAppType</strong> oxAuth App Type</li>
+<li><strong>oxAuthClientIdIssuedAt</strong> oxAuth Client Issued At</li>
+<li><strong>oxAuthClientSecret</strong> oxAuth Client Secret</li>
+<li><strong>oxAuthClientSecretExpiresAt</strong> Date client expires</li>
+<li><strong>oxAuthClientURI</strong> oxAuth Client URI</li>
+<li><strong>oxAuthClientUserGroup</strong> oxAuth Client User group</li>
+<li><strong>oxAuthContact</strong> oxAuth Contact</li>
+<li><strong>oxAuthDefaultAcrValues</strong> oxAuth Default Acr Values</li>
+<li><strong>oxAuthDefaultMaxAge</strong> oxAuth Default Max Age</li>
+<li><strong>oxAuthFederationId</strong> oxAuth Federation ID attribute</li>
+<li><strong>oxAuthFederationMetadataURI</strong> oxAuth Federation metadata URI attribute</li>
+<li><strong>oxAuthGrantType</strong> oxAuth Grant Type</li>
+<li><strong>oxAuthIdTokenEncryptedResponseAlg</strong> oxAuth ID Token Encrypted Response Alg</li>
+<li><strong>oxAuthIdTokenEncryptedResponseEnc</strong> oxAuth ID Token Encrypted Response Enc</li>
+<li><strong>oxAuthIdTokenSignedResponseAlg</strong> oxAuth ID Token Signed Response Alg</li>
+<li><strong>oxAuthInitiateLoginURI</strong> oxAuth Initiate Login URI</li>
+<li><strong>oxAuthJwksURI</strong> oxAuth JWKs URI</li>
+<li><strong>oxAuthLogoURI</strong> oxAuth Logo URI</li>
+<li><strong>oxAuthPolicyURI</strong> oxAuth Policy URI</li>
+<li><strong>oxAuthPostLogoutRedirectURI</strong> oxAuth Post Logout Redirect URI</li>
+<li><strong>oxAuthRedirectURI</strong> oxAuth Redirect URI</li>
+<li><strong>oxAuthRegistrationAccessToken</strong> oxAuth Registration Access Token</li>
+<li><strong>oxAuthRequestObjectSigningAlg</strong> oxAuth Request Object Signing Alg</li>
+<li><strong>oxAuthRequestURI</strong> oxAuth Request URI</li>
+<li><strong>oxAuthRequireAuthTime</strong> oxAuth Require Authentication Time</li>
+<li><strong>oxAuthResponseType</strong> oxAuth Response Type</li>
+<li><strong>oxAuthScope</strong> oxAuth Attribute Scope</li>
+<li><strong>oxAuthSectorIdentifierURI</strong> oxAuth Sector Identifier URI</li>
+<li><strong>oxAuthSignedResponseAlg</strong> oxAuth Signed Response Alg</li>
+<li><strong>oxAuthSubjectType</strong> oxAuth Subject Type</li>
+<li><strong>oxAuthTokenEndpointAuthMethod</strong> oxAuth Token Endpoint Auth Method</li>
+<li><strong>oxAuthTosURI</strong> oxAuth TOS URI</li>
+<li><strong>oxAuthTrustedClient</strong> oxAuth Trusted Client</li>
+<li><strong>oxAuthUserInfoEncryptedResponseAlg</strong> oxAuth User Info Encrypted Response Alg</li>
+<li><strong>oxAuthUserInfoEncryptedResponseEnc</strong> oxAuth User Info Encrypted Response Enc</li>
+<li><strong>oxLastAccessTime</strong> Last access time</li>
+<li><strong>oxLastLogonTime</strong> Last logon time</li>
+</ul>
+<h3 id="objectclass-oxauthconfiguration">Objectclass oxAuthConfiguration</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>ou</strong> </li>
+<li><strong>oxAuthConfCustomAuthMethod</strong> Custom authentication method</li>
+<li><strong>oxAuthConfDynamic</strong> oxAuth Dynamic Configuration</li>
+<li><strong>oxAuthConfErrors</strong> oxAuth Errors Configuration</li>
+<li><strong>oxAuthConfIdPythonScript</strong> Custom id generation</li>
+<li><strong>oxAuthConfLdapAuth</strong> LDAP authentication configuration</li>
+<li><strong>oxAuthConfStatic</strong> oxAuth Static Configuration</li>
+<li><strong>oxAuthConfWebKeys</strong> oxAuth Web Keys Configuration</li>
+</ul>
+<h3 id="objectclass-oxauthcustomscope">Objectclass oxAuthCustomScope</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>defaultScope</strong> Track the default scope for an custom OAuth2 Scope.</li>
+<li><strong>description</strong> </li>
+<li><strong>displayName</strong> </li>
+<li><strong>inum</strong> XRI i-number</li>
+<li><strong>oxAuthClaim</strong> oxAuth Attribute Claim</li>
+</ul>
+<h3 id="objectclass-oxauthfederationmetadata">Objectclass oxAuthFederationMetadata</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>displayName</strong> </li>
+<li><strong>inum</strong> XRI i-number</li>
+<li><strong>oxAuthFederationMetadataIntervalCheck</strong> oxAuth Federation metadata interval check attribute</li>
+<li><strong>oxAuthFederationOP</strong> oxAuth Federation OP attribute</li>
+<li><strong>oxAuthFederationRP</strong> oxAuth Federation RP attribute</li>
+<li><strong>oxAuthRedirectURI</strong> oxAuth Redirect URI</li>
+</ul>
+<h3 id="objectclass-oxauthfederationop">Objectclass oxAuthFederationOP</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>displayName</strong> </li>
+<li><strong>inum</strong> XRI i-number</li>
+<li><strong>oxAuthFederationOpDomain</strong> oxAuth Federation OP domain attribute</li>
+<li><strong>oxAuthFederationOpId</strong> oxAuth Federation OP ID attribute</li>
+<li><strong>oxAuthX509PEM</strong> oxAuth x509 in PEM format</li>
+<li><strong>oxAuthX509URL</strong> oxAuth x509 URL</li>
+</ul>
+<h3 id="objectclass-oxauthfederationrp">Objectclass oxAuthFederationRP</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>displayName</strong> </li>
+<li><strong>inum</strong> XRI i-number</li>
+<li><strong>oxAuthRedirectURI</strong> oxAuth Redirect URI</li>
+<li><strong>oxAuthX509PEM</strong> oxAuth x509 in PEM format</li>
+<li><strong>oxAuthX509URL</strong> oxAuth x509 URL</li>
+</ul>
+<h3 id="objectclass-oxauthfederationrequest">Objectclass oxAuthFederationRequest</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>displayName</strong> </li>
+<li><strong>inum</strong> XRI i-number</li>
+<li><strong>oxAuthFederationOpDomain</strong> oxAuth Federation OP domain attribute</li>
+<li><strong>oxAuthFederationOpId</strong> oxAuth Federation OP ID attribute</li>
+<li><strong>oxAuthFederationRequestType</strong> oxAuth Federation request type attribute</li>
+<li><strong>oxAuthRedirectURI</strong> oxAuth Redirect URI</li>
+</ul>
+<h3 id="objectclass-oxauthfederationtrust">Objectclass oxAuthFederationTrust</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>displayName</strong> </li>
+<li><strong>inum</strong> XRI i-number</li>
+<li><strong>oxAuthFederationId</strong> oxAuth Federation ID attribute</li>
+<li><strong>oxAuthFederationMetadataURI</strong> oxAuth Federation metadata URI attribute</li>
+<li><strong>oxAuthFederationTrustStatus</strong> oxAuth Federation Trust Status attribute</li>
+<li><strong>oxAuthRedirectURI</strong> oxAuth Redirect URI</li>
+<li><strong>oxAuthReleasedScope</strong> oxAuth released scope attribute</li>
+<li><strong>oxAuthSkipAuthorization</strong> oxAuth skip authorization attribute</li>
+</ul>
+<h3 id="objectclass-oxauthsessionid">Objectclass oxAuthSessionId</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>lastModifiedTime</strong> </li>
+<li><strong>oxAuthAuthenticationTime</strong> oxAuth Authentication Time</li>
+<li><strong>oxAuthPermissionGranted</strong> oxAuth Permission Granted</li>
+<li><strong>oxAuthPermissionGrantedMap</strong> oxAuth Permission Granted Map</li>
+<li><strong>oxAuthUserDN</strong> oxAuth User DN</li>
+<li><strong>uniqueIdentifier</strong> </li>
+</ul>
+<h3 id="objectclass-oxauthtoken">Objectclass oxAuthToken</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>createTimestamp</strong> </li>
+<li><strong>oxAuthAuthenticationTime</strong> oxAuth Authentication Time</li>
+<li><strong>oxAuthAuthorizationCode</strong> oxAuth authorization code</li>
+<li><strong>oxAuthCreation</strong> oxAuth Creation</li>
+<li><strong>oxAuthExpiration</strong> oxAuth Expiration</li>
+<li><strong>oxAuthGrantId</strong> oxAuth grant id</li>
+<li><strong>oxAuthGrantType</strong> oxAuth Grant Type</li>
+<li><strong>oxAuthJwtRequest</strong> oxAuth JWT Request</li>
+<li><strong>oxAuthNonce</strong> oxAuth nonce</li>
+<li><strong>oxAuthScope</strong> oxAuth Attribute Scope</li>
+<li><strong>oxAuthTokenCode</strong> oxAuth Token Code</li>
+<li><strong>oxAuthTokenType</strong> oxAuth Token Type</li>
+<li><strong>oxAuthUserId</strong> oxAuth user id</li>
+<li><strong>oxAuthenticationLevel</strong> None</li>
+<li><strong>oxAuthenticationMode</strong> None</li>
+<li><strong>uniqueIdentifier</strong> </li>
+</ul>
+<h3 id="objectclass-oxauthumapolicy">Objectclass oxAuthUmaPolicy</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>description</strong> </li>
+<li><strong>displayName</strong> </li>
+<li><strong>inum</strong> XRI i-number</li>
+<li><strong>oxAuthUmaScope</strong> URI reference of scope descriptor</li>
+<li><strong>oxPolicyScript</strong> ox policy script</li>
+<li><strong>programmingLanguage</strong> programming language</li>
+</ul>
+<h3 id="objectclass-oxauthumarpt">Objectclass oxAuthUmaRPT</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>oxAmHost</strong> am host</li>
+<li><strong>oxAuthAuthenticationTime</strong> oxAuth Authentication Time</li>
+<li><strong>oxAuthClientId</strong> oxAuth Client id</li>
+<li><strong>oxAuthCreation</strong> oxAuth Creation</li>
+<li><strong>oxAuthExpiration</strong> oxAuth Expiration</li>
+<li><strong>oxAuthTokenCode</strong> oxAuth Token Code</li>
+<li><strong>oxAuthUserId</strong> oxAuth user id</li>
+<li><strong>oxUmaPermission</strong> ox uma permission</li>
+<li><strong>uniqueIdentifier</strong> </li>
+</ul>
+<h3 id="objectclass-oxauthumaresourceset">Objectclass oxAuthUmaResourceSet</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>displayName</strong> </li>
+<li><strong>inum</strong> XRI i-number</li>
+<li><strong>owner</strong> </li>
+<li><strong>oxAssociatedClient</strong> Associate the dn of an OAuth2 client with a person or UMA Resource Set.</li>
+<li><strong>oxAuthUmaScope</strong> URI reference of scope descriptor</li>
+<li><strong>oxFaviconImage</strong> URI for a graphic icon</li>
+<li><strong>oxGroup</strong> User group</li>
+<li><strong>oxId</strong> Identifier</li>
+<li><strong>oxResource</strong> Host path</li>
+<li><strong>oxRevision</strong> Revision</li>
+<li><strong>oxType</strong> ox type</li>
+</ul>
+<h3 id="objectclass-oxauthumaresourcesetpermission">Objectclass oxAuthUmaResourceSetPermission</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>oxAmHost</strong> am host</li>
+<li><strong>oxAuthExpiration</strong> oxAuth Expiration</li>
+<li><strong>oxAuthUmaScope</strong> URI reference of scope descriptor</li>
+<li><strong>oxConfigurationCode</strong> ox configuration code</li>
+<li><strong>oxHost</strong> ox host</li>
+<li><strong>oxResourceSetId</strong> ox resource set id</li>
+<li><strong>oxTicket</strong> ox ticket</li>
+</ul>
+<h3 id="objectclass-oxauthumascopedescription">Objectclass oxAuthUmaScopeDescription</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>displayName</strong> </li>
+<li><strong>inum</strong> XRI i-number</li>
+<li><strong>owner</strong> </li>
+<li><strong>oxFaviconImage</strong> URI for a graphic icon</li>
+<li><strong>oxIconUrl</strong> ox icon url</li>
+<li><strong>oxId</strong> Identifier</li>
+<li><strong>oxPolicyRule</strong> Revision</li>
+<li><strong>oxRevision</strong> Revision</li>
+<li><strong>oxType</strong> ox type</li>
+<li><strong>oxUrl</strong> ox url</li>
+</ul>
+<h3 id="objectclass-oxentry">Objectclass oxEntry</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>displayName</strong> </li>
+<li><strong>iname</strong> None</li>
+<li><strong>inum</strong> XRI i-number</li>
+</ul>
+<h3 id="objectclass-oxlink">Objectclass oxLink</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>description</strong> </li>
+<li><strong>oxGuid</strong> A random string to mark temporary tokens</li>
+<li><strong>oxLinkCreator</strong> Link Creator</li>
+<li><strong>oxLinkExpirationDate</strong> Link Expiration Date</li>
+<li><strong>oxLinkLinktrack</strong> Linktrack link</li>
+<li><strong>oxLinkModerated</strong> Is Link Moderated?</li>
+<li><strong>oxLinkModerators</strong> Link Moderators</li>
+<li><strong>oxLinkPending</strong> Pending Registrations</li>
+</ul>
+<h3 id="objectclass-oxliteralnode">Objectclass oxLiteralNode</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>literalBinaryValue</strong> OX literalValue</li>
+<li><strong>literalValue</strong> OX literalValue</li>
+<li><strong>organizationalOwner</strong> OX organizationalOwner</li>
+<li><strong>owner</strong> </li>
+<li><strong>targetRelationalXdiStatement</strong> OX TargetRelationalXdiStatement</li>
+<li><strong>x</strong> OX XRI Component</li>
+<li><strong>xdiStatement</strong> OX xdiStatement</li>
+<li><strong>xri</strong> OX XRI address</li>
+</ul>
+<h3 id="objectclass-oxnode">Objectclass oxNode</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>organizationalOwner</strong> OX organizationalOwner</li>
+<li><strong>owner</strong> </li>
+<li><strong>sourceRelationalXdiStatement</strong> OX SourceRelationalXdiStatement</li>
+<li><strong>targetRelationalXdiStatement</strong> OX TargetRelationalXdiStatement</li>
+<li><strong>x</strong> OX XRI Component</li>
+<li><strong>xdiStatement</strong> OX xdiStatement</li>
+<li><strong>xri</strong> OX XRI address</li>
+</ul>
+<h3 id="objectclass-oxproxaccesstoken">Objectclass oxProxAccessToken</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>oxAuthCreation</strong> oxAuth Creation</li>
+<li><strong>oxAuthExpiration</strong> oxAuth Expiration</li>
+<li><strong>oxProxyAccessToken</strong> oxProx access token</li>
+<li><strong>oxProxyClientId</strong> oxProx client id</li>
+</ul>
+<h3 id="objectclass-oxproxclient">Objectclass oxProxClient</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>displayName</strong> </li>
+<li><strong>inum</strong> XRI i-number</li>
+<li><strong>oxProxyClaimMapping</strong> oxProx claim mapping</li>
+<li><strong>oxProxyScope</strong> oxProx scope</li>
+<li><strong>oxProxyToOpClientMapping</strong> oxProx client mapping to op client</li>
+</ul>
+<h3 id="objectclass-oxproxconfiguration">Objectclass oxProxConfiguration</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>ou</strong> </li>
+<li><strong>oxProxConf</strong> oxProx Configuration</li>
+<li><strong>oxScriptDn</strong> Script object DN</li>
+</ul>
+<h3 id="objectclass-oxproxop">Objectclass oxProxOp</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>c</strong> </li>
+<li><strong>displayName</strong> </li>
+<li><strong>inum</strong> XRI i-number</li>
+<li><strong>l</strong> </li>
+<li><strong>oxDomain</strong> domain</li>
+<li><strong>oxId</strong> Identifier</li>
+<li><strong>oxX509PEM</strong> x509 in PEM format</li>
+<li><strong>oxX509URL</strong> x509 URL</li>
+</ul>
+<h3 id="objectclass-oxpushapplication">Objectclass oxPushApplication</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>displayName</strong> </li>
+<li><strong>oxId</strong> Identifier</li>
+<li><strong>oxName</strong> Name</li>
+<li><strong>oxPushApplicationConf</strong> oxPush application configuration</li>
+</ul>
+<h3 id="objectclass-oxpushdevice">Objectclass oxPushDevice</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>oxAuthUserId</strong> oxAuth user id</li>
+<li><strong>oxId</strong> Identifier</li>
+<li><strong>oxPushApplication</strong> oxPush application DN</li>
+<li><strong>oxPushDeviceConf</strong> oxPush device configuration</li>
+<li><strong>oxType</strong> ox type</li>
+</ul>
+<h3 id="objectclass-oxscript">Objectclass oxScript</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>inum</strong> XRI i-number</li>
+<li><strong>oxScript</strong> Attribute that contains script (python, java script)</li>
+<li><strong>oxScriptType</strong> Attribute that contains script type (e.g. python, java script)</li>
+</ul>
+<h3 id="objectclass-oxtrustconfiguration">Objectclass oxTrustConfiguration</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>ou</strong> </li>
+<li><strong>oxTrustConfApplication</strong> oxTrust Application Configuration</li>
+</ul>
+<h3 id="objectclass-vddirectoryview">Objectclass vdDirectoryView</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>o</strong> </li>
+</ul>
+<h3 id="objectclass-vdapcontainer">Objectclass vdapcontainer</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>ou</strong> </li>
+</ul>
+<h3 id="objectclass-vdlabel">Objectclass vdlabel</h3>
+<ul>
+<li><strong>Description</strong> </li>
+<li><strong>o</strong> </li>
+</ul>
+</div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Copyright &copy; 2014, Gluu, Inc.</p>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/prettify-1.0.min.js"></script>
+        <script src="../../../js/base.js"></script>
+        
+    </body>
+</html>

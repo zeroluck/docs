@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon_ic.ico">
+
+        <title>Saml - Gluu Servers</title>
+
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../../css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../.."><img src="../../../img/logo.png" ></a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    
+                        <li >
+                            <a href="../../..">Home</a>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin Guide <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../introduction/">Introduction</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../installation/">Installation</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../oxTrust/">oxTrust User Interface</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../gluu-server-operations/">Gluu Server Operations</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../custom-look/">Customizing Look and Feel</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../registration/">Registration Workflow</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../certificates/">Certificates</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../user-management/">User Management</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../authentication/">Authentication</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../">SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../openid-connect/">OpenID Connect</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../uma/">UMA</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../oxPush/">oxPush</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../cluster/">HA Clusters</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/configuration/">Configuration</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/ldap/">LDAP Configuration</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/interception-scripts/">Interception Scripts</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/lib/">Libraries</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/oxd/">OXD</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/api/">API</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Articles <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/gluu-server-ce/">Try Gluu Server CE - Quickstart</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/apache-saml/">Apache SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/java-saml/">Java SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/google-saml/">Google SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/js-connect/">JavaScript OpenID Connect RP</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/java-connect/">Java OpenID Connect RP</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/scim-client/">Java SCIM client</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/benchmarking/">Gluu Server Benchmark</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/custom-attributes/">Adding Custom User Attributes</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                
+                </ul>
+            
+
+            
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li >
+                    <a rel="next" href="../inbound-saml/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../../uma/introduction/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a href="https://github.com/GluuFederation/docs">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                <li>
+                <!--<form action="." method="get" class="form-inline">-->
+                    <!--<div class="search-box">-->
+                        <!--<input type="text" value="" class="search-text" placeholder="Search" />-->
+                        <!--<input type="submit" value="Search" class="search-tag"/>-->
+                    <!--</div>-->
+                <!--</form>-->
+
+                </li>
+                
+            </ul>
+            
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+       
+        <li class="main active"><a href="#saml-sp-configuration">SAML SP Configuration</a></li>
+        
+            <li><a href="#shibboleth-sp">Shibboleth SP</a></li>
+        
+            <li><a href="#install-shibolleth-sp-package">Install Shibolleth SP Package</a></li>
+        
+            <li><a href="#copy-files-from-archive">Copy Files From Archive</a></li>
+        
+            <li><a href="#add-server-certificate-to-metadata">Add Server Certificate to Metadata</a></li>
+        
+            <li><a href="#update-hostnames-and-ports-in-configuration-file">Update Hostnames and Ports in Configuration File</a></li>
+        
+            <li><a href="#protect-folder-with-shibboleth-sso">Protect Folder with Shibboleth SSO</a></li>
+        
+            <li><a href="#restart-shibd-and-apache-httpd">Restart shibd and apache httpd</a></li>
+        
+       
+    
+       
+        <li class="main "><a href="#shibboleth-sp-for-windows">Shibboleth SP for Windows</a></li>
+        
+            <li><a href="#install-shibboleth-sp">Install Shibboleth SP</a></li>
+        
+            <li><a href="#apache2-installation">Apache2 Installation</a></li>
+        
+            <li><a href="#shibboleth-and-apache-configuration">Shibboleth and Apache Configuration</a></li>
+        
+            <li><a href="#iis7-installation">IIS7 Installation</a></li>
+        
+            <li><a href="#isapi-filter-configuration">ISAPI Filter Configuration</a></li>
+        
+       
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="saml-sp-configuration">SAML SP Configuration</h1>
+<h2 id="shibboleth-sp">Shibboleth SP</h2>
+<p>The SP configuration can be set up from the IdP. For this purpose it is necessary to set up the trust relationship from the Gluu IdP. For convenience, the following shall cover adding trust relationships.
+<img alt="SAML Menu" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/admin_saml_menu.png" /></p>
+<p>The Gluu Server Administrator can see the existing Trust Relationships by clickin on the <em>Trust Relationship</em> button from the menu. The following screen shall apear up on clicking the button.
+<img alt="Add TR" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_saml_create.png" /></p>
+<p>The *Add Relationship button will open a new screen as shown below. From this screen, the Gluu Server Administrator can easily add a new Trust Relationship in the IdP.</p>
+<h3 id="trust-relationship">Trust Relationship</h3>
+<p>The Gluu Server administrator can add new Trust Relationship from the menu by selecting the <em>Trust Relationship</em> button from the <em>SAML</em> menu. The following screen shall appear.
+<img alt="Add TR" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/admin_saml_newTR.png" /></p>
+<h2 id="install-shibolleth-sp-package">Install Shibolleth SP Package</h2>
+<p>The Shibboleth Service Provider(SP) software runs a system service, and it is configured via an apache module. For CentOS it is necessary to add shib.repo to /etc/yum/repos.d and install with yum.</p>
+<p><em>$ yum install shibboleth</em></p>
+<p><em>$ service shibd start</em></p>
+<p><em>$ chkconfig shibd on</em></p>
+<p>For other systems, please follow the instructions on the <a href="https://spaces.internet2.edu/display/SHIB2/NativeSPLinuxInstall">Shibboleth SP Installation</a> page.</p>
+<h2 id="copy-files-from-archive">Copy Files From Archive</h2>
+<p>Please copy the following files to the <em>/etc/shibboleth</em> folder.</p>
+<p><em>$ cp attribute-map.xml /etc/shibboleth/attribute-map.xml</em></p>
+<p><em>$ cp shibboleth2.xml /etc/shibboleth/shibboleth2.xml</em></p>
+<p><em>$ cp idp-metadata.xml /etc/shibboleth/idp-metadata.xml</em></p>
+<p><em>$ cp sp-metadata.xml /etc/shibboleth/sp-metadata.xml</em></p>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>IdP and SP metadata filenames are unique for each IdP and SP. The SP metadata is based on the i-number for the trust relationship.
+The IdP metadata is based on the i-number for the organization.</p>
+</blockquote>
+<h2 id="add-server-certificate-to-metadata">Add Server Certificate to Metadata</h2>
+<p>Please update the server certificate in shibboleth2.xml at the following location.</p>
+<p><em>$ vi /etc/shibboleth/shibboleth2.xml</em></p>
+<pre class="prettyprint well"><code>&lt; ds:X509Certificate &gt;
+
+* * * * * * * * * * * * * * *
+
+Insert pem format of the key
+
+* * * * * * * * * * * * * * *
+
+&lt; / ds: X509Certificate &gt;
+</code></pre>
+<h2 id="update-hostnames-and-ports-in-configuration-file">Update Hostnames and Ports in Configuration File</h2>
+<p>Please edit the hostname in secure session section in <em>shibboleth2.xml</em> file.</p>
+<p><em>$ vi /etc/shibboleth/shibboleth2.xml</em></p>
+<pre class="prettyprint well"><code>&lt; Host Name="hostname" &gt;
+
+&lt; Path name="secure" authType="shibboleth" requireSession="true"/ &gt;
+
+&lt; /Host &gt;
+</code></pre>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>Hostname and port should match the ServerName and Port directives of Apache</p>
+</blockquote>
+<p>Edit the <em>httpd.conf</em> file to set UseCanonicalName On:</p>
+<pre class="prettyprint well"><code>UseCanonicalName: On
+</code></pre>
+<h2 id="protect-folder-with-shibboleth-sso">Protect Folder with Shibboleth SSO</h2>
+<p>Add the following to <em>httpsd.conf</em> file to protect directories.</p>
+<p><em>$ vi /etc/httpd/conf/httpd.conf</em></p>
+<pre class="prettyprint well"><code>&lt; Directory "_path to directories_" &gt;
+
+ AuthType shibboleth
+
+ ShibRequestSetting requireSession 1
+
+ ShibUseHeaders On
+
+ require valid-user
+
+&lt; / Directory &gt;
+</code></pre>
+<h2 id="restart-shibd-and-apache-httpd">Restart shibd and apache httpd</h2>
+<p><em>$ service httd restart</em></p>
+<p><em>$ service shibd restart</em></p>
+<p>Try to access <em>https://hostname/Shibboleth.sso/Status</em></p>
+<h1 id="shibboleth-sp-for-windows">Shibboleth SP for Windows</h1>
+<h2 id="install-shibboleth-sp">Install Shibboleth SP</h2>
+<ol>
+<li>
+<p>Download the MSI of <a href="http://www.shibboleth.net/downloads/service-provider/latest">Shibboleth-SP</a></p>
+</li>
+<li>
+<p>Start installation by double clicking the MSI.
+<img alt="Click Screen" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_click.png" /></p>
+</li>
+</ol>
+<p>3.Agree the License Agreement</p>
+<ol>
+<li>
+<p>Select the destination folder; by default it is <strong>c:\opt\shibboleth-sp.</strong> A different directory can be selected from this screen, but it is recommended to follow the tree <strong>\opt\shibboleth-sp.</strong>
+<img alt="Destination" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_destination.png" />.</p>
+</li>
+<li>
+<p>Select Shibboleth Daemon port: default is <strong>1600</strong>, you can keep it for local testing.
+<img alt="Port" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_port.png" /></p>
+</li>
+<li>
+<p>Now, there are two options here, and you have to follow any one (not both) for your existing infrastructure.</p>
+</li>
+<li>
+<p>Option 1: Installaiton for Microsoft IIS Web Server.
+<img alt="Microsoft IIS Server" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_microsoft.png" /></p>
+<blockquote>
+<p>For Microsoft IIS Web Server, you have to Check "Install ISAPI filter and configure IIS", and remember to put the file Extension ".sso". This is very important.</p>
+</blockquote>
+</li>
+<li>
+<p>Option 2: Installation for Apache Web Server.
+<img alt="Apache Server" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_apachesetup.png" /></p>
+<blockquote>
+<p>For Apache Web Server, you have to Uncheck "Install ISAPI filter and configure IIS".</p>
+</blockquote>
+</li>
+</ol>
+<p>UAC of Windows 7 may block the program, so accept it.
+<img alt="UAC" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_uac.png" /></p>
+<h2 id="apache2-installation">Apache2 Installation</h2>
+<ol>
+<li>
+<p>Download <a href="http://httpd.apache.org/download.cgi#apache22">Apache HTTP Server</a> MSI with OpenSSL.</p>
+</li>
+<li>
+<p>Start installation by double clicking the MSI.
+<img alt="Apache Click" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_apacheclick.png" /></p>
+</li>
+<li>
+<p>Select Destination. You can keep the default destination for your local testing. But, please make sure that there is no other "Apache Software Foundation" directory in your current "C:\Program Files\" location.
+<img alt="Apache Location" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_apachedestination.png" /></p>
+</li>
+<li>
+<p>Insert Server Informations. For local testing, <strong>localdomain/localhost</strong> can be used.
+<img alt="Server info" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_serverinfo.png" /></p>
+</li>
+<li>
+<p>Test if Apache is installed or not. Open your web browser and use <strong>localhost</strong> as the address. If the screen resembles the screenshot below, then you are done.
+<img alt="Apache test" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_apachetest.png" /></p>
+</li>
+</ol>
+<h2 id="shibboleth-and-apache-configuration">Shibboleth and Apache Configuration</h2>
+<ol>
+<li>
+<p>Change the permission of Apache Installation Directory, provide <strong>write</strong> access.</p>
+</li>
+<li>
+<p>httpd.conf configuration</p>
+</li>
+<li>
+<p>Change: <strong>"ServerName localhost:80"</strong> (for your local testing)</p>
+</li>
+<li>
+<p>Copy apache22.conf from Shibboleth directory to <strong>~/apache/conf/extra/</strong></p>
+</li>
+<li>
+<p>Shibboleth2.xml configuration</p>
+</li>
+<li>
+<p>Change: Host name = <strong>"localhost"</strong> (for local testing)</p>
+</li>
+<li>
+<p>Change: entityID = <strong>"https://localhost/shibboleth"</strong> (for local testing)</p>
+</li>
+<li>
+<p>Change: ApplicationOverride id = <strong>"admin"</strong></p>
+</li>
+<li>
+<p>Reboot your Windows box</p>
+</li>
+</ol>
+<p>Test SP installation with Windows and Apache.</p>
+<p>Open Web browser and insert the address : <em>localhost/Shibboleth.sso/Status</em></p>
+<p>If the screen below resembles the screen on your browser, then you are done with your SP installation in Windows through Apache2
+<img alt="SP Apache" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_spapache.png" /></p>
+<h2 id="iis7-installation">IIS7 Installation</h2>
+<ol>
+<li>Start --&gt; Control Panel --&gt; Programs --&gt; <strong>"Turn Windows Features on or off"</strong></li>
+</ol>
+<p>Select (i) IIS, (ii) Web Management Tools, (iii) II6 Management Compatiability, (iv) IIS Management Console, (v) IIS Management Scripts and Tools, (vi) IIS Management Service</p>
+<p>Select (i) World Wide Web Service, (ii) CGI, (iii) ISAPI Filters, (iv) ISAPI Extenstions and press <strong>OK</strong>.
+<img alt="IIS Setup" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_iis7setup.png" /></p>
+<ol>
+<li>
+<p>Test if IIS7 is installed in your system with <strong>127.0.0.1</strong> in the web browser.
+<img alt="IIS7 test" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_iis7test.png" /></p>
+</li>
+<li>
+<p>Reboot the system.</p>
+</li>
+</ol>
+<h2 id="isapi-filter-configuration">ISAPI Filter Configuration</h2>
+<ol>
+<li>
+<p>Open IIS Manager [Start --&gt; Administrative Tools --&gt; Internet Information Service (IIS) Manager]</p>
+</li>
+<li>
+<p>Double click on <strong>"ISAPI and CGI Restrictions"</strong>
+<img alt="ISAPI CGI" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_isapicgi.png" /></p>
+</li>
+<li>
+<p>Add New Filter</p>
+<p>a.      1.Click Actions --&gt; Add (upper right corner)
+    2.Select <strong>\opt\shibboleth-sp\lib\shibboleth\isapi_shib.dll</strong>
+    3.Description: <strong>"Shibboleth"</strong>
+    4.Click <strong>"Allow"</strong> (from right hand side)
+    <img alt="Apache ISAPI filter" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/apache_sp_isapipath.png" /></p>
+<p>b.  Back to IIS Manager --&gt; ISAPI Filters.
+<img alt="ISAPI Filter" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/apache_sp_isapifilter.png" />
+Click <strong>"Add"</strong> (upper right corner)</p>
+<p>Filter name: Shibboleth</p>
+<p>Executable: <strong>\opt\shibboleth-sp\lib\shibboleth\isapi_shib.dll</strong>
+<img alt="ISAPI Edit" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/apache_sp_isapiedit.png" /></p>
+</li>
+<li>
+<p>SSO file extension mapping
+  a. Click on <strong>"Handling Mapping"</strong> from main page
+<img alt="Handler Mapping" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_handlermapping.png" /></p>
+</li>
+<li>
+<p>1.Click Actions --&gt; Add (upper right corner)
+  b. Click <strong>"Add Script Map"</strong> from Action
+<img alt="Add Script Map" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_addscriptmap.png" />
+  c. Request Path <strong>"*.sso"</strong>
+  d. Executable should be pointed to <strong>"isapi_shib.dll"</strong>
+<img alt="Executable Path" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_executable.png" /></p>
+</li>
+<li>
+<p>Restart IIS</p>
+</li>
+<li>
+<p>Check Status</p>
+</li>
+</ol>
+<p>Check your status by typing <strong>"http://127.0.0.1/Shibboleth.sso/Status"</strong> in the Web Browser. If it diplays an XML document, then the Shibboleth SP Installation in Windows IIS7 is complete.
+<img alt="Check Status" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_checkstatus.png" /></p>
+<blockquote>
+<p>If you want to establish SSO with your site, then you need an Identity Provider, their metadata and certificates.</p>
+</blockquote>
+</div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Copyright &copy; 2014, Gluu, Inc.</p>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/prettify-1.0.min.js"></script>
+        <script src="../../../js/base.js"></script>
+        
+    </body>
+</html>

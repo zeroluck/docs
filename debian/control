@@ -10,6 +10,6 @@ Homepage: http://www.gluu.org
 
 Package: gluu-docs
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, apache2
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Gluu documentation
  Gluu documents like install procedures
