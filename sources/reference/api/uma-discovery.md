@@ -1,12 +1,12 @@
 ## API Document
 
-### /oxauth/uma-configuration
+### /.well-known/uma-configuration
 
 #### Overview
 
 
 #### `/oxauth/uma-configuration`
-##### getMetadataConfiguration
+##### getConfiguration
 **GET** `/oxauth/uma-configuration`
 
 Provides configuration data as json document. It contains options and endpoints supported by the authorization server.
@@ -17,7 +17,7 @@ Provides configuration data as json document. It contains options and endpoints 
 ###### Parameters
 
 ###### Response
-[MetadataConfiguration](#MetadataConfiguration)
+[UmaConfiguration](#UmaConfiguration)
 
 
 ###### Errors
@@ -26,6 +26,10 @@ Provides configuration data as json document. It contains options and endpoints 
         <th>Status Code</th>
         <th>Reason</th>
     </tr>
+        <tr>
+            <td>500</td>
+            <td>Failed to build Uma configuration json object.</td>
+        </tr>
 </table>
 
 
@@ -34,7 +38,7 @@ Provides configuration data as json document. It contains options and endpoints 
 ## Data Types
 
 
-## <a name="MetadataConfiguration">MetadataConfiguration</a>
+## <a name="UmaConfiguration">UmaConfiguration</a>
 
 <table border="1">
     <tr>
@@ -45,27 +49,6 @@ Provides configuration data as json document. It contains options and endpoints 
         <th>notes</th>
     </tr>
         <tr>
-            <td>string</td>
-            <td>optional</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td>string</td>
-            <td>optional</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td>Array[string]</td>
-            <td>optional</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-        </tr>
-        <tr>
             <td>Array[string]</td>
             <td>optional</td>
             <td>-</td>
@@ -87,6 +70,20 @@ Provides configuration data as json document. It contains options and endpoints 
             <td>-</td>
         </tr>
         <tr>
+            <td>Array[string]</td>
+            <td>optional</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>string</td>
+            <td>optional</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
             <td>string</td>
             <td>optional</td>
             <td>-</td>
@@ -95,6 +92,13 @@ Provides configuration data as json document. It contains options and endpoints 
         </tr>
         <tr>
             <td>Array[string]</td>
+            <td>optional</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>string</td>
             <td>optional</td>
             <td>-</td>
             <td>-</td>
@@ -137,6 +141,13 @@ Provides configuration data as json document. It contains options and endpoints 
         </tr>
         <tr>
             <td>Array[string]</td>
+            <td>optional</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>string</td>
             <td>optional</td>
             <td>-</td>
             <td>-</td>
