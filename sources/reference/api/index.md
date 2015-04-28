@@ -15,6 +15,7 @@
 - [UMA Permission Registration Endpoint](./uma-permission-registration.md)
 - [UMA Create RPT Endpoint](./uma-create-rpt.md)
 - [UMA RPT Introspection Endpoint](./uma-rpt-status.md)
+- [UMA Authorization Endpoint](./uma-authorization-endpoint.md)
 
 
 ## Custom Gluu Endpoints
