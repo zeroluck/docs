@@ -48,6 +48,7 @@ pages:
 - ['reference/api/oic-end-session.md', '**HIDDEN**']
 - ['reference/api/uma-discovery.md', '**HIDDEN**']
 - ['reference/api/uma-resource-registration.md', '**HIDDEN**']
+- ['reference/api/uma-permission-registration.md', '**HIDDEN**']
 - ['reference/api/id-generation.md', '**HIDDEN**']
 
 

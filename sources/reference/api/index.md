@@ -12,10 +12,8 @@
 
 - [UMA Discovery](./uma-discovery.md)
 - [UMA Resource Registration Endpoint (Create/Update/Delete/Get)](./uma-resource-registration.md)
+- [UMA Permission Registration Endpoint (Create/Update/Delete/Get)](./uma-permission-registration.md)
 
-
-TODO -> Under construction
-We have full support of UMA, API documentation is on the way...
 
 ## Custom Gluu Endpoints
 
