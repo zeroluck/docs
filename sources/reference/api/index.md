@@ -11,6 +11,7 @@
 ## UMA
 
 - [UMA Discovery](./uma-discovery.md)
+- [UMA Resource Registration Endpoint (Create/Update/Delete/Get)](./uma-resource-registration.md)
 
 
 TODO -> Under construction
