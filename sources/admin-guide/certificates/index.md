@@ -8,7 +8,10 @@
 - *oxauth-web-keys.json*: This key is using by Gluu Server's OpenID Connect Server. 
 - *shibIDP.crt, shibIDP.csr, shibIDP.jks, shibIDP.key, shibIDP.key.orig, shibIDP.pkcs12*: These are required if you use Gluu Server's Shibboleth SAML server for any kind of SAML transactions. 
 
-_If you're using the Gluu Server CE binaries or latest Gluu Servers,_ you need to manually update certificates and keys from `/etc/certs/`. 
+_If you're using the Gluu Server CE binaries or latest Gluu Servers,_ you need
+to manually update certificates and keys from `/etc/certs/`. Please note that
+your new private key `can not be password protected` and public key should be
+base64 X.509.  
 
 As for example, in order to update Apache SSL cert:
 
