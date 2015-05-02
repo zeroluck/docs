@@ -23,7 +23,7 @@ The Gluu Server Community Edition should be deployed on a VM with:
 
 `# yum clean all`
 
-`# yum install --nogpgcheck gluu-server`
+`# yum install gluu-server`
 
 ### Start Gluu-Server: 
 
