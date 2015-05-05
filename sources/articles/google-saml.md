@@ -28,7 +28,7 @@ We need to configure both parties ( Google Apps and Gluu Server ) as they can ta
 
     * Verification certificate: Update your IDP's ( Gluu Server ) SAML cert
 
-        * How to get the SAML cert of your Gluu Server? [Here](https://support.gluu.org/questions/36/idp-certificate-entityid-location-http-redirect-location-etc/) it is. 
+        * How to get the SAML cert of your Gluu Server? [Here](https://support.gluu.org/view/installation/certificates-in-idp/275) it is. 
 
     * Use a domain specific issuer: Check it.
 
@@ -50,7 +50,7 @@ Got the metadata? Great, we are ready to move forward.
 
 * Create Trust Relationship for Google Apps: 
 
-    * How to create a trust relationship can be found [here](http://www.gluu.org/docs/admin-guide/configuration/shibIDP/#saml-trust-relationship). We need to follow the "File" method for Google Apps trust relationship. 
+    * How to create a trust relationship can be found [here](http://www.gluu.org/docs/admin-guide/oxTrust/saml/). We need to follow the "File" method for Google Apps trust relationship. 
     * Required attributes: Generally a nameID attributes is required. Please talk to us to generate this nameID in your Gluu Server. 
     * Relying Party Configuration: Yes, SAML2SSO should be configured. 
         * includeAttributeStatement: check
