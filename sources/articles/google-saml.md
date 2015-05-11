@@ -13,17 +13,17 @@ We need to configure both parties ( Google Apps and Gluu Server ) as they can ta
 
 * Login to dashboard.
 
-![Image](https://raw.githubusercontent.com/zamilskhan/Docs-private/master/docs/img/SAMLTrustRelationships/GoogleAppSSO/admin_console.png?raw=true)
+![Image](://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/GoogleAppSSO/admin_console.png)
 
 * Click "Security" tab.
 
 * A new page will appear from where you need to select `Set up single sign-on(SSO)`
 
-![Image](https://raw.githubusercontent.com/zamilskhan/Docs-private/master/docs/img/SAMLTrustRelationships/GoogleAppSSO/security_setting.png?raw=true)
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/GoogleAppSSO/security_setting.png)
 
 * The final Single Sign-On setting page will appear. 
 
-![Image](https://raw.githubusercontent.com/zamilskhan/Docs-private/master/docs/img/SAMLTrustRelationships/GoogleAppSSO/final_setup.png?raw=true)
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/GoogleAppSSO/final_setup.png)
 
    * `Enable` _Setup SSO with third party Identity Provider_, this case your Gluu Server. 
 
@@ -58,7 +58,7 @@ Got the metadata? Great, we are ready to move forward.
 
 * Create Trust Relationship for Google Apps: 
 
-   * How to create a trust relationship can be found [here](http://www.gluu.org/docs/admin-guide/oxTrust/saml/). We need to follow the "File" method for Google Apps trust relationship.
+   * How to create a trust relationship can be found [here](http://www.gluu.org/docs/admin-guide/saml/outbound-saml/#how-to-create-trust-relationship). We need to follow the "File" method for Google Apps trust relationship.
     * Required attributes: Generally a nameID attributes is required. Please talk to us to generate this nameID in your Gluu Server. 
     * Relying Party Configuration: Yes, SAML2SSO should be configured. 
         * includeAttributeStatement: check
