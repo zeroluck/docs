@@ -13,7 +13,7 @@ We need to configure both parties ( Google Apps and Gluu Server ) as they can ta
 
 * Login to dashboard.
 
-![Image](://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/GoogleAppSSO/admin_console.png)
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/GoogleAppSSO/admin_console.png)
 
 * Click "Security" tab.
 
