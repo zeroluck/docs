@@ -1,33 +1,52 @@
 # Certificates 
 
-**Gluu Server's certificate management has changed in Community Edition(CE) and latest Gluu Server bits.** All certificates are available in `/etc/certs/`. Here is a quick intro of those certificates: 
+Many of the components of the Gluu Server have cyrpto keys and X.509 certificates. There are many key formats, and keystore formats. Navigate to the sections below to find what you need for each of the Gluu Server components.
 
-- *asimba.crt, asimba.csr, asimba.key, asimba.key.orig, asimba.pkcs12 and asimbaIDP.jks*: These are associated with Asimba Proxy Server. If you install SAML Proxy Server ( Asimba ) in your Gluu Server, you have to deal with these cert and key. 
-- *httpd.crt, httpd.csr, httpd.key, httpd.key.orig*: These are SSL Apache related cert and key. Don't worry about CSR and .key.orig here if you want to update your Apache SSL cert. Just follow the doc which I provided you before. 
-- *opendj.crt*: This cert is being used by Gluu Server's internal Gluu-LDAP.
-- *oxauth-web-keys.json*: This key is using by Gluu Server's OpenID Connect Server. 
-- *shibIDP.crt, shibIDP.csr, shibIDP.jks, shibIDP.key, shibIDP.key.orig, shibIDP.pkcs12*: These are required if you use Gluu Server's Shibboleth SAML server for any kind of SAML transactions. 
+- [Asimba](#asimba)   
+- [Apache](#apache)   
+- [OpenDJ](#opendj)     
+- [oxAuth](#oxauth)   
+- [Shibboleth IDP](#shibboleth-idp)   
 
-_If you're using the Gluu Server CE binaries or latest Gluu Servers,_ you need
-to manually update certificates and keys from `/etc/certs/`. Please note that
-your new private key `can not be password protected` and public key should be
-base64 X.509.  
+## Asimba 
+`asimba.crt`, `asimba.csr`, `asimba.key`, `asimba.key.orig`, `asimba.pkcs12 and asimbaIDP.jks` are associated with the Asimba SAML Proxy Server. If you install SAML Proxy Server ( Asimba ) in your Gluu Server, you have to deal with these cert and key. 
 
-As for example, in order to update Apache SSL cert:
+## Apache 
+`httpd.crt`, `httpd.csr`, `httpd.key`, `httpd.key.orig` are SSL Apache related certs and keys. If you want to update your Apache SSL cert don't worry about the `.csr` and `.key.orig`.  
 
-- Push latest SSL httpd key and cert in `/etc/certs`.
-- Rename them to `httpd.key` and `httpd.crt` respectively.
-- Import the DER format of your cert in "cacert" ( location in CentOS/RHEL CE: `/etc/pki/java/`; location in Ubuntu CE: `/etc/ssl/certs/java`).
-- Restart your Gluu-server from outside the chroot container.
+## OpenDJ
+`opendj.crt` is the public cert being used by oxAuth to make a connection to the internal Gluu-LDAP.
 
-Many of the components of the Gluu Server have cyrpto keys and 
-X.509 certificates. There are many key formats, and keystore
-formats. Navigate to the sections above to find what you need for 
-each of the Gluu Server components.
+## oxAuth
+`oxauth-web-keys.json` is being used by Gluu's OpenID Connect & UMA server. 
 
-**If you're using a previous version of the Gluu Server,** you may have interfaces inside your server admin application to configure the followig certs:
-- [HTTPS](./https.md)
-- [SAML](./saml.md)
-- [OpenID Connect](./openid.md)
+## Shibboleth IDP
+`shibIDP.crt`, `shibIDP.csr`, `shibIDP.jks`, `shibIDP.key`, `shibIDP.key.orig`, `shibIDP.pkcs12` are required if you use the Gluu Server's Shibboleth SAML server for SAML transactions. 
 
+# Updating Certs
 
+If you're using the Gluu Server CE binaries or latest Gluu Servers, you need to
+manually update certificates and keys from `/etc/certs/`. Please note that your
+private key `can not be password protected` and public key should be base64
+X.509. For example, in order to update Apache SSL cert:
+
+- Push latest SSL httpd key and cert in `/etc/certs`.   
+- Rename them to `httpd.key` and `httpd.crt` respectively.    
+- Import the DER format of your cert in "cacert" ( location in RHEL/CentOS CE: `/etc/pki/java/`, location in Ubuntu CE: `/etc/ssl/certs/java` ).    
+- Restart your Gluu-server from outside the chroot container.   
+
+# Installing Intermediate Certificates
+
+1. Log into your Gluu Server container
+2. Keep your intermediate cert in `/etc/certs/`
+3. `https_gluu.conf` modification ( location: `/etc/httpd/conf.d` )
+    3.1 Add `SSLCertificateChainFile /etc/certs/name_of_your_interm_root_cert.crt`
+4. Restart `httpd`
+
+# Older Gluu Server Versions
+
+**If you are using a previous version of the Gluu Server,** you may have interfaces inside your server admin application to configure the followig certs:
+
+- [HTTPS](./https.md)   
+- [SAML](./saml.md)   
+- [OpenID Connect](./openid-connect.md)   

@@ -1,20 +1,4 @@
-# SAML SP Configuration
-
-## Shibboleth SP
-
-The SP configuration can be set up from the IdP. For this purpose it is necessary to set up the trust relationship from the Gluu IdP. For convenience, the following shall cover adding trust relationships.
-![SAML Menu](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/admin_saml_menu.png)
-
-The Gluu Server Administrator can see the existing Trust Relationships by clickin on the *Trust Relationship* button from the menu. The following screen shall apear up on clicking the button.
-![Add TR](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_saml_create.png)
-
-The *Add Relationship button will open a new screen as shown below. From this screen, the Gluu Server Administrator can easily add a new Trust Relationship in the IdP.
-
-### Trust Relationship
-The Gluu Server administrator can add new Trust Relationship from the menu by selecting the *Trust Relationship* button from the *SAML* menu. The following screen shall appear.
-![Add TR](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/admin_saml_newTR.png)
-
-## Install Shibolleth SP Package
+# Install Shibolleth SP Package
 The Shibboleth Service Provider(SP) software runs a system service, and it is configured via an apache module. For CentOS it is necessary to add shib.repo to /etc/yum/repos.d and install with yum.
 
 *$ yum install shibboleth*
@@ -106,8 +90,6 @@ Try to access _https://hostname/Shibboleth.sso/Status_
 
 # Shibboleth SP for Windows
 
-## Install Shibboleth SP
-
 1. Download the MSI of [Shibboleth-SP](http://www.shibboleth.net/downloads/service-provider/latest)
 
 2. Start installation by double clicking the MSI.
@@ -134,7 +116,7 @@ Try to access _https://hostname/Shibboleth.sso/Status_
 UAC of Windows 7 may block the program, so accept it.
 ![UAC](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_uac.png)
 
-## Apache2 Installation
+# Apache2 Installation
 
 1. Download [Apache HTTP Server](http://httpd.apache.org/download.cgi#apache22) MSI with OpenSSL.
 
@@ -150,7 +132,7 @@ UAC of Windows 7 may block the program, so accept it.
 5. Test if Apache is installed or not. Open your web browser and use **localhost** as the address. If the screen resembles the screenshot below, then you are done.
 ![Apache test](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_apachetest.png)
 
-## Shibboleth and Apache Configuration
+# Shibboleth and Apache Configuration
 
 1. Change the permission of Apache Installation Directory, provide **write** access.
 
@@ -177,7 +159,7 @@ Open Web browser and insert the address : _localhost/Shibboleth.sso/Status_
 If the screen below resembles the screen on your browser, then you are done with your SP installation in Windows through Apache2
 ![SP Apache](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_spapache.png)
 
-## IIS7 Installation
+# IIS7 Installation
 
 1. Start --> Control Panel --> Programs --> **"Turn Windows Features on or off"**
 
@@ -191,7 +173,7 @@ Select (i) World Wide Web Service, (ii) CGI, (iii) ISAPI Filters, (iv) ISAPI Ext
 
 3. Reboot the system.
 
-## ISAPI Filter Configuration
+# ISAPI Filter Configuration
 
 1. Open IIS Manager [Start --> Administrative Tools --> Internet Information Service (IIS) Manager]
 

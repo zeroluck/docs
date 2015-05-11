@@ -20,4 +20,3 @@ Cert" button respectively. Update the configuration and wait for 10 mins. Our
 configuration management system ( Puppet ) will perform the rest of the
 operation to configure certificate inside IDP. 
 
-

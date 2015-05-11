@@ -1,42 +1,33 @@
-Gluu Server Documentation
-=========================
+# Gluu Server Documentation
 
-Install virtualenv if necessary:
-
+Install /virtualenv/ if necessary.
 ```
 $ sudo pip install virtualenv
 ```
-
-Create a local python enviroment and install the version of mkdocs we used to make our custom theme:
-
+Create a local python environment and install the version of mkdocs we used to make our custom theme:
 ```
 $ virtualenv env
 $ env/bin/pip install -r requirements.txt
 ```
 
-For more information see their website: http://www.mkdocs.org
+For more information, please visit the [mkdocs website](http://www.mkdocs.org)
 
-To generate the documentation:
+To generate the documentation 
+```
+$ env/bin/mkdocs build
+```
+This will create a directory called 'site' which has the 'index.html' for viewing in your browser.
 
-     $ env/bin/mkdocs build
-
-This will create a directory called `site` which has the `index.html`
-for viewing in your browser.
-
-To run the server locally:
-
-     $ env/bin/mkdocs serve
-
+To run the server locally
+```
+$ env/bin/mkdocs serve
+```
 The home repository for this project is:
+- https://github.com/GluuFederation/docs
 
-- [https://github.com/GluuFederation/docs](https://github.com/GluuFederation/docs)
+If you would like to contribute documentation, please post a message on [Gluu Support](http://support.gluu.org)
 
-If you would like to contribute documentation please post a message on 
- http://support.gluu.org
-
-
-> License
-> 
+## License
 > Copyright © 2014 Gluu, Inc.
 > 
 > Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:

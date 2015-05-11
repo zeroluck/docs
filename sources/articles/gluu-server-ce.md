@@ -23,8 +23,8 @@ Each component of the Gluu Server is free to use in production. All OX products 
 Gluu will publish binaries for as many OS's as possible. Currently, the 
 easiest installation option is:  
 
-- [CentOS](../admin-guide/installation/centos.md)
-- [Ubuntu](../admin-guide/installation/ubuntu.md)
+- [CentOS](../admin-guide/deployment/centos.md)
+- [Ubuntu](../admin-guide/deployment/ubuntu.md)
 
 ## OpenID Connect RP Libraries
 

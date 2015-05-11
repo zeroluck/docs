@@ -1,27 +1,19 @@
 # SAML
 
-There are basically three types of Service Providers:  
+During deployment of the Gluu Server, you can choose to install up to two SAML IDPs. The two options are Shibboleth and Asimba.  Whether or not you want one or both of these SAML IDPs is dependant upon your SAML requirements.
 
-* `In-house SP`: ( in-house website which will serve as a Service Provider a.k.a. SP ). 
-* `Non-Federated SP`: That means the SP is *not* associated with a federation like InCommon or NJEdge. 
-* `Federated SP`: Those which are associated with a federation. For example, Educause is such SP which is included in the InCommon federation. 
+# Outbound vs. Inbound SAML
+- [Outbound SAML](./outbound-saml.md): Shibboleth is a thoroughly tested and stable SAML IDP. The main use case for Shibboleth is outbound SAML, which is the most typical flow for single sign-on (SSO). For example, if you wanted to create SSO to an app like Google Mail or Salesforce, you would use outbound SAML. 
 
-All kinds of SP can be configured for SSO from the Gluu Server. 
+- [Inbound SAML](./inbound-saml.md): Asimba is a well tested and stable SAML Proxy that can be used to support inbound SAML requirements. The main use case for Asimba is to enable websites to use a single IDP for SSO, even when the organization may have a number of IDPs that are trusted. 
 
-* _For `In-house SP`_ : 
-       * First, the target application needs to have installed and configured the Shibboleth SP software. Instructions for completing a base installation of the Shibboleth SP can be found [here](http://www.gluu.org/docs/articles/apache-saml/). 
-       * Then login to your Gluu IDP, navigate to the `SAML Trust Relationships` page, create a new Trust Relationship and use _Metadata Type: Generate_ . Gluu Server will generate important configuration files which you can place inside of your SP to mostly automate the Trust Relationship with your Gluu Server. Documentation is available [here](http://www.gluu.org/docs/admin-guide/saml/outbound-saml/#saml-trust-relationship) [ check out: "Generate" Metadata Type ] 
+*Note:* The Gluu Server GUI has interfaces for managing outbound SAML (Shibboleth). To manage Inbound SAML (Asimba), you will need to manually edit XML files as needed.   
 
-* _For `Non-Federated SP`_ : SP will provide you their metadata and other requirements (i.e: attributes, SSO link etc.) In the SAML Trust Relationship GUI, you need to use _Metadata Type: "File" or "URI"_ (to provide SP metdata link / upload ). 
+# SP Configuration
 
-* _For `Federated SP`_ : Once you have established trust with a Federation, this method is the most straight forward. Navigate to the Trust Relationship GUI, create a new trust relationship; Select _Metadata Type: "Federation"_, and then search for the correct SP metadata. Check out more instructions  [here](http://www.gluu.org/docs/admin-guide/saml/outbound-saml/#saml-trust-relationship)
-
-These contents are just for introduction, please see the links below for more details.
+The Shibboleth Service Provider (SP) software is used to protect applications and is configured via an apache module. Use [this guide](./saml-sp-configuration.md) to install the SP software. 
 
 
-## Contents
 
-- [Outbound SAML](outbound-saml.md)
-- [SAML SP Configuration](saml-sp-configuration.md)
-- [Inbound SAML](./inbound-saml.md)
+
 

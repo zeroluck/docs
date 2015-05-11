@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon_ic.ico">
+
+        <title>Configuration - Gluu Servers</title>
+
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../../css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../.."><img src="../../../img/logo.png" ></a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    
+                        <li >
+                            <a href="../../..">Home</a>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin Guide <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/introduction/">Introduction</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/installation/">Installation</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/oxTrust/">oxTrust User Interface</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/gluu-server-operations/">Gluu Server Operations</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/custom-look/">Customizing Look and Feel</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/registration/">Registration Workflow</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/certificates/">Certificates</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/user-management/">User Management</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/authentication/">Authentication</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/saml/">SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/openid-connect/">OpenID Connect</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/uma/">UMA</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/oxPush/">oxPush</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/cluster/">HA Clusters</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../">Configuration</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../ldap/">LDAP Configuration</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../interception-scripts/">Interception Scripts</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../lib/">Libraries</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../oxd/">OXD</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../api/">API</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Articles <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/gluu-server-ce/">Try Gluu Server CE - Quickstart</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/apache-saml/">Apache SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/java-saml/">Java SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/google-saml/">Google SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/js-connect/">JavaScript OpenID Connect RP</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/java-connect/">Java OpenID Connect RP</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/scim-client/">Java SCIM client</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/benchmarking/">Gluu Server Benchmark</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/custom-attributes/">Adding Custom User Attributes</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                
+                </ul>
+            
+
+            
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li >
+                    <a rel="next" href="../../ldap/attribute/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../oxTrust/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a href="https://github.com/GluuFederation/docs">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                <li>
+                <!--<form action="." method="get" class="form-inline">-->
+                    <!--<div class="search-box">-->
+                        <!--<input type="text" value="" class="search-text" placeholder="Search" />-->
+                        <!--<input type="submit" value="Search" class="search-tag"/>-->
+                    <!--</div>-->
+                <!--</form>-->
+
+                </li>
+                
+            </ul>
+            
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+       
+        <li class="main active"><a href="#oxauth-configuration">oxAuth Configuration</a></li>
+        
+            <li><a href="#oxauth-ldapproperties">oxauth-ldap.properties</a></li>
+        
+            <li><a href="#oxauth-configxml">oxauth-config.xml</a></li>
+        
+            <li><a href="#scope-to-claims-mapping-file">scope to claims mapping file</a></li>
+        
+       
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="oxauth-configuration">oxAuth Configuration</h1>
+<h2 id="oxauth-ldapproperties">oxauth-ldap.properties</h2>
+<p>These are the properties oxTrust uses to connect to LDAP</p>
+<ul>
+<li>
+<p><strong>bindDN</strong></p>
+</li>
+<li>
+<p><strong>bindPassword</strong></p>
+</li>
+<li>
+<p><strong>servers</strong> <code>localhost:1636</code></p>
+</li>
+<li>
+<p><strong>useSSL</strong> <code>TRUE | false</code></p>
+</li>
+<li>
+<p><strong>maxconnections</strong> <code>3</code></p>
+</li>
+</ul>
+<h2 id="oxauth-configxml">oxauth-config.xml</h2>
+<pre class="prettyprint well"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;configuration&gt;
+    &lt;appliance-inum&gt;%(inumAppliance)s&lt;/appliance-inum&gt;
+    &lt;issuer&gt;https://%(hostname)s&lt;/issuer&gt;
+    &lt;login-page&gt;https://%(hostname)s/oxauth/login.seam&lt;/login-page&gt;
+    &lt;authorization-page&gt;https://%(hostname)s/oxauth/authorize.seam&lt;/authorization-page&gt;
+    &lt;base-endpoint&gt;https://%(hostname)s/oxauth/seam/resource/restv1&lt;/base-endpoint&gt;
+    &lt;authorization-endpoint&gt;https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/authorize&lt;/authorization-endpoint&gt;
+    &lt;token-endpoint&gt;https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/token&lt;/token-endpoint&gt;
+    &lt;userinfo-endpoint&gt;https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/userinfo&lt;/userinfo-endpoint&gt;
+    &lt;clientinfo-endpoint&gt;https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/clientinfo&lt;/clientinfo-endpoint&gt;
+    &lt;check-session-iframe&gt;https://%(hostname)s/oxauth/opiframe.seam&lt;/check-session-iframe&gt;
+    &lt;end-session-endpoint&gt;https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/end_session&lt;/end-session-endpoint&gt;
+    &lt;jwks-uri&gt;https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/jwks&lt;/jwks-uri&gt;
+    &lt;registration-endpoint&gt;https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/register&lt;/registration-endpoint&gt;
+    &lt;validate-token-endpoint&gt;https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/validate&lt;/validate-token-endpoint&gt;
+    &lt;federation-metadata-endpoint&gt;https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/federationmetadata&lt;/federation-metadata-endpoint&gt;
+    &lt;federation-endpoint&gt;https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/federation&lt;/federation-endpoint&gt;
+    &lt;openid-discovery-endpoint&gt;https://%(hostname)s/.well-known/webfinger&lt;/openid-discovery-endpoint&gt;
+    &lt;openid-configuration-endpoint&gt;https://%(hostname)s/.well-known/openid-configuration&lt;/openid-configuration-endpoint&gt;
+    &lt;id-generation-endpoint&gt;https://%(hostname)s/oxauth/seam/resource/restv1/id&lt;/id-generation-endpoint&gt;
+    &lt;introspection-endpoint&gt;https://%(hostname)s/oxauth/seam/resource/restv1/introspection&lt;/introspection-endpoint&gt;
+    &lt;uma-configuration-endpoint&gt;https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/uma-configuration&lt;/uma-configuration-endpoint&gt;
+
+    &lt;!-- sets mode of the server. Possible values: memory, ldap--&gt;
+    &lt;mode&gt;ldap&lt;/mode&gt;
+
+    &lt;!-- Configuration is updated from LDAP, interval in seconds, 3600seconds = 1hour --&gt;
+    &lt;configuration-update-interval&gt;3600&lt;/configuration-update-interval&gt;
+
+    &lt;response-types-supported&gt;
+        &lt;response-type&gt;code&lt;/response-type&gt;
+        &lt;response-type&gt;code id_token&lt;/response-type&gt;
+        &lt;response-type&gt;token&lt;/response-type&gt;
+        &lt;response-type&gt;token id_token&lt;/response-type&gt;
+        &lt;response-type&gt;code token&lt;/response-type&gt;
+        &lt;response-type&gt;code token id_token&lt;/response-type&gt;
+        &lt;response-type&gt;id_token&lt;/response-type&gt;
+    &lt;/response-types-supported&gt;
+
+    &lt;grant-types-supported&gt;
+        &lt;grant-type&gt;authorization_code&lt;/grant-type&gt;
+        &lt;grant-type&gt;implicit&lt;/grant-type&gt;
+        &lt;grant-type&gt;urn:ietf:params:oauth:grant-type:jwt-bearer&lt;/grant-type&gt;
+    &lt;/grant-types-supported&gt;
+
+    &lt;!-- AMR enables an OpenID Connect client to request a specific method
+    of authentication --&gt;
+    &lt;amr-values-supported&gt;
+        &lt;!-- amr&gt;basic&lt;/amr--&gt;
+    &lt;/amr-values-supported&gt;
+
+    &lt;subject-types-supported&gt;
+        &lt;subject-type&gt;public&lt;/subject-type&gt;
+        &lt;subject-type&gt;pairwise&lt;/subject-type&gt;
+    &lt;/subject-types-supported&gt;
+
+    &lt;userinfo-signing-alg-values-supported&gt;
+        &lt;userinfo-signing-alg&gt;HS256&lt;/userinfo-signing-alg&gt;
+        &lt;userinfo-signing-alg&gt;HS384&lt;/userinfo-signing-alg&gt;
+        &lt;userinfo-signing-alg&gt;HS512&lt;/userinfo-signing-alg&gt;
+        &lt;userinfo-signing-alg&gt;RS256&lt;/userinfo-signing-alg&gt;
+        &lt;userinfo-signing-alg&gt;RS384&lt;/userinfo-signing-alg&gt;
+        &lt;userinfo-signing-alg&gt;RS512&lt;/userinfo-signing-alg&gt;
+        &lt;userinfo-signing-alg&gt;ES256&lt;/userinfo-signing-alg&gt;
+        &lt;userinfo-signing-alg&gt;ES384&lt;/userinfo-signing-alg&gt;
+        &lt;userinfo-signing-alg&gt;ES512&lt;/userinfo-signing-alg&gt;
+    &lt;/userinfo-signing-alg-values-supported&gt;
+
+    &lt;userinfo-encryption-alg-values-supported&gt;
+        &lt;userinfo-encryption-alg&gt;RSA1_5&lt;/userinfo-encryption-alg&gt;
+        &lt;userinfo-encryption-alg&gt;RSA-OAEP&lt;/userinfo-encryption-alg&gt;
+        &lt;userinfo-encryption-alg&gt;A128KW&lt;/userinfo-encryption-alg&gt;
+        &lt;userinfo-encryption-alg&gt;A256KW&lt;/userinfo-encryption-alg&gt;
+        &lt;!--userinfo-encryption-alg&gt;dir&lt;/userinfo-encryption-alg--&gt;
+        &lt;!--userinfo-encryption-alg&gt;ECDH-ES&lt;/userinfo-encryption-alg--&gt;
+        &lt;!--userinfo-encryption-alg&gt;ECDH-ES+A128KW&lt;/userinfo-encryption-alg--&gt;
+        &lt;!--userinfo-encryption-alg&gt;ECDH-ES+A256KW&lt;/userinfo-encryption-alg--&gt;
+    &lt;/userinfo-encryption-alg-values-supported&gt;
+
+    &lt;userinfo-encryption-enc-values-supported&gt;
+        &lt;userinfo-encryption-enc&gt;A128CBC+HS256&lt;/userinfo-encryption-enc&gt;
+        &lt;userinfo-encryption-enc&gt;A256CBC+HS512&lt;/userinfo-encryption-enc&gt;
+        &lt;userinfo-encryption-enc&gt;A128GCM&lt;/userinfo-encryption-enc&gt;
+        &lt;userinfo-encryption-enc&gt;A256GCM&lt;/userinfo-encryption-enc&gt;
+    &lt;/userinfo-encryption-enc-values-supported&gt;
+
+    &lt;id-token-signing-alg-values-supported&gt;
+        &lt;id-token-signing-alg&gt;HS256&lt;/id-token-signing-alg&gt;
+        &lt;id-token-signing-alg&gt;HS384&lt;/id-token-signing-alg&gt;
+        &lt;id-token-signing-alg&gt;HS512&lt;/id-token-signing-alg&gt;
+        &lt;id-token-signing-alg&gt;RS256&lt;/id-token-signing-alg&gt;
+        &lt;id-token-signing-alg&gt;RS384&lt;/id-token-signing-alg&gt;
+        &lt;id-token-signing-alg&gt;RS512&lt;/id-token-signing-alg&gt;
+        &lt;id-token-signing-alg&gt;ES256&lt;/id-token-signing-alg&gt;
+        &lt;id-token-signing-alg&gt;ES384&lt;/id-token-signing-alg&gt;
+        &lt;id-token-signing-alg&gt;ES512&lt;/id-token-signing-alg&gt;
+    &lt;/id-token-signing-alg-values-supported&gt;
+
+    &lt;id-token-encryption-alg-values-supported&gt;
+        &lt;id-token-encryption-alg&gt;RSA1_5&lt;/id-token-encryption-alg&gt;
+        &lt;id-token-encryption-alg&gt;RSA-OAEP&lt;/id-token-encryption-alg&gt;
+        &lt;id-token-encryption-alg&gt;A128KW&lt;/id-token-encryption-alg&gt;
+        &lt;id-token-encryption-alg&gt;A256KW&lt;/id-token-encryption-alg&gt;
+        &lt;!--id-token-encryption-alg&gt;dir&lt;/id-token-encryption-alg--&gt;
+        &lt;!--id-token-encryption-alg&gt;ECDH-ES&lt;/id-token-encryption-alg--&gt;
+        &lt;!--id-token-encryption-alg&gt;ECDH-ES+A128KW&lt;/id-token-encryption-alg--&gt;
+        &lt;!--id-token-encryption-alg&gt;ECDH-ES+A256KW&lt;/id-token-encryption-alg--&gt;
+    &lt;/id-token-encryption-alg-values-supported&gt;
+
+    &lt;id-token-encryption-enc-values-supported&gt;
+        &lt;id-token-encryption-enc&gt;A128CBC+HS256&lt;/id-token-encryption-enc&gt;
+        &lt;id-token-encryption-enc&gt;A256CBC+HS512&lt;/id-token-encryption-enc&gt;
+        &lt;id-token-encryption-enc&gt;A128GCM&lt;/id-token-encryption-enc&gt;
+        &lt;id-token-encryption-enc&gt;A256GCM&lt;/id-token-encryption-enc&gt;
+    &lt;/id-token-encryption-enc-values-supported&gt;
+
+    &lt;request-object-signing-alg-values-supported&gt;
+        &lt;request-object-signing-alg&gt;HS256&lt;/request-object-signing-alg&gt;
+        &lt;request-object-signing-alg&gt;HS384&lt;/request-object-signing-alg&gt;
+        &lt;request-object-signing-alg&gt;HS512&lt;/request-object-signing-alg&gt;
+        &lt;request-object-signing-alg&gt;RS256&lt;/request-object-signing-alg&gt;
+        &lt;request-object-signing-alg&gt;RS384&lt;/request-object-signing-alg&gt;
+        &lt;request-object-signing-alg&gt;RS512&lt;/request-object-signing-alg&gt;
+        &lt;request-object-signing-alg&gt;ES256&lt;/request-object-signing-alg&gt;
+        &lt;request-object-signing-alg&gt;ES384&lt;/request-object-signing-alg&gt;
+        &lt;request-object-signing-alg&gt;ES512&lt;/request-object-signing-alg&gt;
+    &lt;/request-object-signing-alg-values-supported&gt;
+
+    &lt;request-object-encryption-alg-values-supported&gt;
+        &lt;request-object-encryption-alg&gt;RSA1_5&lt;/request-object-encryption-alg&gt;
+        &lt;request-object-encryption-alg&gt;RSA-OAEP&lt;/request-object-encryption-alg&gt;
+        &lt;request-object-encryption-alg&gt;A128KW&lt;/request-object-encryption-alg&gt;
+        &lt;request-object-encryption-alg&gt;A256KW&lt;/request-object-encryption-alg&gt;
+        &lt;!--request-object-encryption-alg&gt;dir&lt;/request-object-encryption-alg--&gt;
+        &lt;!--request-object-encryption-alg&gt;ECDH-ES&lt;/request-object-encryption-alg--&gt;
+        &lt;!--request-object-encryption-alg&gt;ECDH-ES+A128KW&lt;/request-object-encryption-alg--&gt;
+        &lt;!--request-object-encryption-alg&gt;ECDH-ES+A256KW&lt;/request-object-encryption-alg--&gt;
+    &lt;/request-object-encryption-alg-values-supported&gt;
+
+    &lt;request-object-encryption-enc-values-supported&gt;
+        &lt;request-object-encryption-enc&gt;A128CBC+HS256&lt;/request-object-encryption-enc&gt;
+        &lt;request-object-encryption-enc&gt;A256CBC+HS512&lt;/request-object-encryption-enc&gt;
+        &lt;request-object-encryption-enc&gt;A128GCM&lt;/request-object-encryption-enc&gt;
+        &lt;request-object-encryption-enc&gt;A256GCM&lt;/request-object-encryption-enc&gt;
+    &lt;/request-object-encryption-enc-values-supported&gt;
+
+    &lt;token-endpoint-auth-methods-supported&gt;
+        &lt;token-endpoint-auth-method&gt;client_secret_basic&lt;/token-endpoint-auth-method&gt;
+        &lt;token-endpoint-auth-method&gt;client_secret_post&lt;/token-endpoint-auth-method&gt;
+        &lt;token-endpoint-auth-method&gt;client_secret_jwt&lt;/token-endpoint-auth-method&gt;
+        &lt;token-endpoint-auth-method&gt;private_key_jwt&lt;/token-endpoint-auth-method&gt;
+    &lt;/token-endpoint-auth-methods-supported&gt;
+
+    &lt;token-endpoint-auth-signing-alg-values-supported&gt;
+        &lt;token-endpoint-auth-signing-alg&gt;HS256&lt;/token-endpoint-auth-signing-alg&gt;
+        &lt;token-endpoint-auth-signing-alg&gt;HS384&lt;/token-endpoint-auth-signing-alg&gt;
+        &lt;token-endpoint-auth-signing-alg&gt;HS512&lt;/token-endpoint-auth-signing-alg&gt;
+        &lt;token-endpoint-auth-signing-alg&gt;RS256&lt;/token-endpoint-auth-signing-alg&gt;
+        &lt;token-endpoint-auth-signing-alg&gt;RS384&lt;/token-endpoint-auth-signing-alg&gt;
+        &lt;token-endpoint-auth-signing-alg&gt;RS512&lt;/token-endpoint-auth-signing-alg&gt;
+        &lt;token-endpoint-auth-signing-alg&gt;ES256&lt;/token-endpoint-auth-signing-alg&gt;
+        &lt;token-endpoint-auth-signing-alg&gt;ES384&lt;/token-endpoint-auth-signing-alg&gt;
+        &lt;token-endpoint-auth-signing-alg&gt;ES512&lt;/token-endpoint-auth-signing-alg&gt;
+    &lt;/token-endpoint-auth-signing-alg-values-supported&gt;
+
+    &lt;display-values-supported&gt;
+        &lt;display-value&gt;page&lt;/display-value&gt;
+        &lt;!--display-value&gt;popup&lt;/display-value--&gt;
+        &lt;!--display-value&gt;touch&lt;/display-value--&gt;
+        &lt;!--display-value&gt;wap&lt;/display-value--&gt;
+    &lt;/display-values-supported&gt;
+
+    &lt;claim-types-supported&gt;
+        &lt;claim-type&gt;normal&lt;/claim-type&gt;
+        &lt;!--claim-type&gt;distributed&lt;/claim-type--&gt;
+    &lt;/claim-types-supported&gt;
+
+    &lt;claims-supported&gt;
+        &lt;claim&gt;uid&lt;/claim&gt;
+        &lt;claim&gt;displayName&lt;/claim&gt;
+        &lt;claim&gt;givenName&lt;/claim&gt;
+        &lt;claim&gt;sn&lt;/claim&gt;
+        &lt;claim&gt;mail&lt;/claim&gt;
+    &lt;/claims-supported&gt;
+
+    &lt;service-documentation&gt;http://gluu.org/docs&lt;/service-documentation&gt;
+
+    &lt;claims-locales-supported&gt;
+        &lt;claim-locale&gt;en&lt;/claim-locale&gt;
+        &lt;!--claim-locale&gt;en-GB&lt;/claim-locale--&gt;
+        &lt;!--claim-locale&gt;en-CA&lt;/claim-locale--&gt;
+        &lt;!--claim-locale&gt;fr-FR&lt;/claim-locale--&gt;
+        &lt;!--claim-locale&gt;fr-CA&lt;/claim-locale--&gt;
+    &lt;/claims-locales-supported&gt;
+
+    &lt;ui-locales-supported&gt;
+        &lt;ui-locale&gt;en&lt;/ui-locale&gt;
+        &lt;ui-locale&gt;es&lt;/ui-locale&gt;
+        &lt;!--ui-locale&gt;en-GB&lt;/ui-locale--&gt;
+        &lt;!--ui-locale&gt;en-CA&lt;/ui-locale--&gt;
+        &lt;!--ui-locale&gt;fr-FR&lt;/ui-locale--&gt;
+        &lt;!--ui-locale&gt;fr-CA&lt;/ui-locale--&gt;
+    &lt;/ui-locales-supported&gt;
+
+    &lt;claims-parameter-supported&gt;true&lt;/claims-parameter-supported&gt;
+
+    &lt;request-parameter-supported&gt;true&lt;/request-parameter-supported&gt;
+
+    &lt;request-uri-parameter-supported&gt;true&lt;/request-uri-parameter-supported&gt;
+
+    &lt;require-request-uri-registration&gt;false&lt;/require-request-uri-registration&gt;
+
+    &lt;op-policy-uri&gt;http://ox.gluu.org/doku.php?id=oxauth:policy&lt;/op-policy-uri&gt;
+
+    &lt;op-tos-uri&gt;http://ox.gluu.org/doku.php?id=oxauth:tos&lt;/op-tos-uri&gt;
+
+    &lt;authorization-code-lifetime&gt;600&lt;/authorization-code-lifetime&gt;
+    &lt;refresh-token-lifetime&gt;14400&lt;/refresh-token-lifetime&gt;
+    &lt;id-token-lifetime&gt;3600&lt;/id-token-lifetime&gt;
+    &lt;short-lived-access-token-lifetime&gt;3600&lt;/short-lived-access-token-lifetime&gt;
+    &lt;long-lived-access-token-lifetime&gt;31536000&lt;/long-lived-access-token-lifetime&gt;
+
+    &lt;!-- if session id is not used during some time then it's removed automatically.
+         Lifetime in seconds, 86400 seconds = 1 day  --&gt;
+    &lt;session-id-unused-lifetime&gt;86400&lt;/session-id-unused-lifetime&gt;
+    &lt;session-id-enabled&gt;true&lt;/session-id-enabled&gt;
+
+    &lt;uma-add-scopes-automatically&gt;false&lt;/uma-add-scopes-automatically&gt;
+    &lt;uma-requester-permission-token-lifetime&gt;3600&lt;/uma-requester-permission-token-lifetime&gt;
+    &lt;uma-keep-client-during-resource-set-registration&gt;true&lt;/uma-keep-client-during-resource-set-registration&gt;
+
+    &lt;!-- Clean service interval in seconds --&gt;
+    &lt;clean-service-interval&gt;600&lt;/clean-service-interval&gt;
+
+    &lt;refresh-user-session-timeout-enabled&gt;true&lt;/refresh-user-session-timeout-enabled&gt;
+    &lt;refresh-user-session-timeout&gt;1800&lt;/refresh-user-session-timeout&gt;
+
+    &lt;default-signature-algorithm&gt;RS256&lt;/default-signature-algorithm&gt;
+    &lt;RS256-keyid&gt;1&lt;/RS256-keyid&gt;
+    &lt;RS384-keyid&gt;2&lt;/RS384-keyid&gt;
+    &lt;RS512-keyid&gt;3&lt;/RS512-keyid&gt;
+    &lt;ES256-keyid&gt;4&lt;/ES256-keyid&gt;
+    &lt;ES384-keyid&gt;5&lt;/ES384-keyid&gt;
+    &lt;ES512-keyid&gt;6&lt;/ES512-keyid&gt;
+
+    &lt;federation-enabled&gt;false&lt;/federation-enabled&gt;
+    &lt;!-- Federation check interval in seconds. Checks whether data in trusts are still valid
+    (e.g.) if RP redirectUri still exist in metadata, if no then remove from trust automatically.
+     86400 seconds = 24 hours --&gt;
+    &lt;federation-check-interval&gt;86400&lt;/federation-check-interval&gt;
+    &lt;!--Federation skip policy values: OR, AND. Used in case there is more than one federation trust for
+    given redirect_uri.--&gt;
+    &lt;federation-skip-policy&gt;OR&lt;/federation-skip-policy&gt;
+    &lt;!-- Federation scope policy. Possible values: JOIN.
+    Currently JOIN is the only supported value, means joining all scopes of trust list.--&gt;
+    &lt;federation-scope-policy&gt;JOIN&lt;/federation-scope-policy&gt;
+    &lt;federation-signing-alg&gt;RS512&lt;/federation-signing-alg&gt;
+    &lt;federation-signing-kid&gt;1&lt;/federation-signing-kid&gt;
+
+    &lt;!-- Dynamic registration custom stuff --&gt;
+    &lt;dynamic-registration-custom-object-class&gt;oxAuthClientCustomAttributes&lt;/dynamic-registration-custom-object-class&gt;
+
+    &lt;dynamic-registration-custom-attribute-supported&gt;
+        &lt;dynamic-registration-custom-attribute&gt;oxAuthTrustedClient&lt;/dynamic-registration-custom-attribute&gt;
+        &lt;dynamic-registration-custom-attribute&gt;myCustomAttr1&lt;/dynamic-registration-custom-attribute&gt;
+        &lt;dynamic-registration-custom-attribute&gt;myCustomAttr2&lt;/dynamic-registration-custom-attribute&gt;
+    &lt;/dynamic-registration-custom-attribute-supported&gt;
+
+    &lt;oxOpenIDConnectVersion&gt;openidconnect-1.0&lt;/oxOpenIDConnectVersion&gt;
+
+    &lt;organization-inum&gt;%(inumOrg)s&lt;/organization-inum&gt;
+    &lt;oxID&gt;https://%(hostname)s/oxid/service/gluu/inum&lt;/oxID&gt;
+
+    &lt;dynamic-registration-enabled&gt;true&lt;/dynamic-registration-enabled&gt;
+    &lt;!-- Value in seconds or 0 if they do not expire --&gt;
+    &lt;dynamic-registration-expiration-time&gt;86400&lt;/dynamic-registration-expiration-time&gt;
+
+    &lt;trusted-client-enabled&gt;true&lt;/trusted-client-enabled&gt;
+
+    &lt;auth-filters-enabled&gt;false&lt;/auth-filters-enabled&gt;
+    &lt;auth-filters&gt;
+        &lt;auth-filter&gt;
+            &lt;!--filter&gt;(&amp;amp;(associatedClient=*{0}*)(myPinCode={1}))&lt;/filter--&gt;
+            &lt;filter&gt;(&amp;amp;(mail=*{0}*)(inum={1}))&lt;/filter&gt;
+            &lt;!-- If bind=true oxAuth should try to bind to entry which it found by filter specified above --&gt;
+            &lt;bind&gt;false&lt;/bind&gt;
+            &lt;base-dn&gt;o=gluu&lt;/base-dn&gt;
+        &lt;/auth-filter&gt;
+        &lt;auth-filter&gt;
+            &lt;filter&gt;uid={0}&lt;/filter&gt;
+            &lt;bind&gt;true&lt;/bind&gt;
+            &lt;bind-password-attribute&gt;pwd&lt;/bind-password-attribute&gt;
+            &lt;base-dn&gt;o=gluu&lt;/base-dn&gt;
+        &lt;/auth-filter&gt;
+    &lt;/auth-filters&gt;
+
+    &lt;!-- Custom client filters to be able identify client by custom id. --&gt;
+    &lt;client-auth-filters-enabled&gt;false&lt;/client-auth-filters-enabled&gt;
+    &lt;client-auth-filters&gt;
+        &lt;client-auth-filter&gt;
+            &lt;filter&gt;myCustomAttr1={0}&lt;/filter&gt;
+            &lt;base-dn&gt;ou=clients,o=%(inumOrg)s,o=gluu&lt;/base-dn&gt;
+        &lt;/client-auth-filter&gt;
+        &lt;!--client-auth-filter&gt;
+            &lt;filter&gt;(&amp;amp;(myCustomAttr1={0})(myCustomAttr2={0}))&lt;/filter&gt;
+            &lt;base-dn&gt;ou=clients,o=%(inumOrg)s,o=gluu&lt;/base-dn&gt;
+        &lt;/client-auth-filter--&gt;
+    &lt;/client-auth-filters&gt;
+
+&lt;/configuration&gt;
+</code></pre>
+<h2 id="scope-to-claims-mapping-file">scope to claims mapping file</h2>
+<pre class="prettyprint well"><code>{
+"claimMapping":[
+    {
+        "ldap":"uid",
+        "claim":"sub"
+    },
+    {
+        "ldap":"displayName",
+        "claim":"name"
+    },
+    {
+        "ldap":"givenName",
+        "claim":"given_name"
+    },
+    {
+        "ldap":"sn",
+        "claim":"family_name"
+    },
+    {
+        "ldap":"photo1",
+        "claim":"picture"
+    },
+    {
+        "ldap":"timezone",
+        "claim":"zoneinfo"
+    },
+    {
+        "ldap":"preferredLanguage",
+        "claim":"locale"
+    },
+    {
+        "ldap":"mail",
+        "claim":"email"
+    },
+    {
+        "ldap":"homePostalAddress",
+        "claim":"formatted"
+    },
+    {
+        "ldap":"street",
+        "claim":"street_address"
+    },
+    {
+        "ldap":"l",
+        "claim":"locality"
+    },
+    {
+        "ldap":"st",
+        "claim":"region"
+    },
+    {
+        "ldap":"c",
+        "claim":"country"
+    },
+    {
+        "ldap":"postalCode",
+        "claim":"postal_code"
+    },
+    {
+        "ldap":"telephoneNumber",
+        "claim":"phone_number"
+    },
+    {
+        "ldap":"oxInum",
+        "claim":"inum"
+    }
+],
+"baseDn":{
+    "appliance":"ou=appliances,o=gluu",
+    "people":"ou=people,o=%(inumOrg)s,o=gluu",
+    "groups":"ou=groups,o=%(inumOrg)s,o=gluu",
+    "clients":"ou=clients,o=%(inumOrg)s,o=gluu",
+    "scopes":"ou=scopes,o=%(inumOrg)s,o=gluu",
+    "attributes":"ou=attributes,o=%(inumOrg)s,o=gluu",
+    "sessionId":"ou=session,o=%(inumOrg)s,o=gluu",
+    "federationMetadata":"ou=metadata,ou=federation,o=%(inumOrg)s,o=gluu",
+    "federationRP":"ou=rp,ou=federation,o=%(inumOrg)s,o=gluu",
+    "federationOP":"ou=op,ou=federation,o=%(inumOrg)s,o=gluu",
+    "federationRequest":"ou=request,ou=federation,o=%(inumOrg)s,o=gluu",
+    "federationTrust":"ou=trust,ou=federation,o=%(inumOrg)s,o=gluu",
+    "umaBase":"ou=uma,o=%(inumOrg)s,o=gluu",
+    "umaPolicy":"ou=policies,ou=uma,o=%(inumOrg)s,o=gluu"
+  }
+}
+</code></pre>
+</div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Copyright &copy; 2014, Gluu, Inc.</p>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/prettify-1.0.min.js"></script>
+        <script src="../../../js/base.js"></script>
+        
+    </body>
+</html>

@@ -3,7 +3,7 @@
 
 Google Apps will work as Service Provide ( SP ) and we need to "introduce" Gluu Server with Google Apps as Gluu Server can work as Identity Provider ( IDP ).
 
-NOTE: It's highly recommended to use Google staging apps setup before Google
+NOTE: It is highly recommended to use Google staging apps setup before Google
 production migration. If you have any question or confusion, please feel free to
 let us know.
 
@@ -26,7 +26,7 @@ We need to configure both parties ( Google Apps and Gluu Server ) as they can ta
 
     * Change Password URL: Organization should provide this link if they have any link for end users.
 
-    * Verification certificate: Update your IDP's ( Gluu Server ) SAML cert
+    * Verification certificate: Update the  SAML certificate of your IDP (Gluu Server)
 
         * How to get the SAML cert of your Gluu Server? [Here](https://support.gluu.org/view/installation/certificates-in-idp/275) it is. 
 
@@ -50,7 +50,7 @@ Got the metadata? Great, we are ready to move forward.
 
 * Create Trust Relationship for Google Apps: 
 
-    * How to create a trust relationship can be found [here](http://www.gluu.org/docs/admin-guide/oxTrust/saml/). We need to follow the "File" method for Google Apps trust relationship. 
+   * How to create a trust relationship can be found [here](http://www.gluu.org/docs/admin-guide/oxTrust/saml/). We need to follow the "File" method for Google Apps trust relationship.
     * Required attributes: Generally a nameID attributes is required. Please talk to us to generate this nameID in your Gluu Server. 
     * Relying Party Configuration: Yes, SAML2SSO should be configured. 
         * includeAttributeStatement: check

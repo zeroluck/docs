@@ -1,2 +1,0 @@
-# SAML Discovery Interception Script
-
