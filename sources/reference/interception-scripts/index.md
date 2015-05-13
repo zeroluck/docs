@@ -9,7 +9,7 @@ Another advantage of Jython was that developers can use either Java or Python cl
 To access custom scripts within oxTrust, navigate to Configuration > Manage Custom Scripts.
 
 # Overview
-There are currently 8 options that can be customized by using interception scripts. 
+There are currently 8 options that can be customized by using interception scripts.    
 
 - [Application Session Management](#application-session-management)         
 - [Authentication](#authentication)     
@@ -20,7 +20,7 @@ There are currently 8 options that can be customized by using interception scrip
 - [Update User](#update-user)       
 - [User Registration](#user-registration)       
 
-All script types inherit a base interface which has 3 methods:
+All script types inherit a base interface which has 3 methods:   
     
 `def init(self, configurationAttributes):`      
 
@@ -36,7 +36,7 @@ The script manager only loads enabled scripts. Hence, after enabling a script, t
 
 All scripts are stored in LDAP in the `ou=scripts,o=<org_inum>,o=gluu` branch.  
 
-This is a sample entry: 
+This is a sample entry:     
 
     dn: inum=@!1111!031C.4A65,ou=scripts,o=@!1111,o=gluu
     objectClass: oxCustomScript
@@ -60,11 +60,11 @@ The `getApiVersion` method allows API changes in order to do transparent migrati
 # Application Session Management
 This script allows an admin to notify 3rd party systems about requests to end an OAuth session. This method is triggered by an oxAuth call to the `end_session` endpoint. It's possible to add multiple scripts with this type. The application should call all of them according to the level.
 
-This script type adds only one method to base scipt type:
+This script type adds only one method to base scipt type:    
 
 `def endSession(self, httpRequest, authorizationGrant, configurationAttributes):`       
         
-These are the types of parameters:
+These are the types of parameters:    
 - `httpRequest` is `javax.servlet.http.HttpServletRequest`      
 - `authorizationGrant` is `org.xdi.oxauth.model.common.AuthorizationGrant`      
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`        
@@ -75,7 +75,7 @@ This script can be used in oxAuth application only.
 
 # Authentication
 
-An authentication script enables you to customize the user authentication experience. For example, you can write a script that enables a two-factor authentication mechnaism like Duo Security. By default oxAuth uses simple username/password authentication method. This scipt type allows an admin to implement more secure workflows to cover an organizations security requirements. It extends the base scipt type with the `init`, `destroy` and `getApiVersion` methods but also adds the following methods:
+An authentication script enables you to customize the user authentication experience. For example, you can write a script that enables a two-factor authentication mechnaism like Duo Security. By default oxAuth uses simple username/password authentication method. This scipt type allows an admin to implement more secure workflows to cover an organizations security requirements. It extends the base scipt type with the `init`, `destroy` and `getApiVersion` methods but also adds the following methods:    
 
 `def isValidAuthenticationMethod(self, usageType, configurationAttributes):`
 
@@ -95,19 +95,19 @@ An authentication script enables you to customize the user authentication experi
 
 The `isValidAuthenticationMethod` method is used to check if the authentication method is in a valid state. For example we can check there if a 3rd party mechanism is avalable to authenticate users. As a result it should return `True` or `False`.
 
-This method has the following parameters:
+This method has the following parameters:    
 - `usageType` is `org.xdi.model.AuthenticationScriptUsageType`  
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`    
 
 The `getAlternativeAuthenticationMethod` method is called only if the current authentication method is in an invalid state. Hence authenticator calls it only if `isValidAuthenticationMethod` returns `False`. As a result it should return the reserved authentication method name.
 
-This method has the following parameters:
+This method has the following parameters:    
 - `usageType` is `org.xdi.model.AuthenticationScriptUsageType`  
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`    
 
 The `authenticate` method is the key method within the person authentication script. It checks if the user has passed the specified step or not. As a result it should return `True` or `False`.
 
-This method has the following parameters:
+This method has the following parameters:    
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`    
 - `requestParameters` is `java.util.Map<String, String[]>`  
 - step is a java integer
@@ -115,48 +115,48 @@ This method has the following parameters:
 The `prepareForStep` method can be used to prepare variables needed to render login page and store them in event context.
 As a result it should return `True` or `False`. 
 
-This method has the following parameters:
+This method has the following parameters:    
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`    
 - `requestParameters` is `java.util.Map<String, String[]>`  
 - step is a java integer
 
 The `getCountAuthenticationSteps` method should return an integer value with the number of steps in the authentication workflow.
 
-This method has the following parameters:
+This method has the following parameters:    
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`    
 
 The `getExtraParametersForStep` method provides a way to notify the authenticator that it should store specified event context parameters event in the oxAuth session. It's needed in few cases, for example when an authentication script redirects the user to a 3rd party authentication system and expects the workflow to resume after that. As a result it should return a java array of strings.
 
-This method has the following parameters:
+This method has the following parameters:    
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`    
 - step is a java integer    
 
 The `getPageForStep` method allows the admin to render a required page for a specified authentication step. It should return a string value with a path to an XHTML page. If the return value is empty or null, the authenticator should render the default log in page `/login.xhtml`.
 
-This method has the following parameters:
+This method has the following parameters:     
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`    
 - step is a java integer    
 
 The `logout` method is not mandatory. It can be used in cases when you need to execute specific logout logic within the authentication scipt when oxAuth receives an end session request. Also it allows oxAuth to stop processing the end session request workflow if it returns `False`. As result it should return `True` or `False`.
 
-This method has the following parameters:
+This method has the following parameters:     
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`    
 - `requestParameters` is `java.util.Map<String, String[]>`  
 
 This script can be used in oxAuth application only.
 
-For a complete list of pre-written, open source Gluu authentication scripts, view our [server integrations](https://github.com/GluuFederation/oxAuth/tree/master/Server/integrations)
+**For a complete list of pre-written, open source Gluu authentication scripts, view our [server integrations](https://github.com/GluuFederation/oxAuth/tree/master/Server/integrations)**
 
 - [Sample Authentication Script](./sample-authentication-script.py) 
 
 # Authorization
 This is a special script for UMA. It allows an admin to protect UMA scopes with policies. It's possible to add more than one UMA policy to an UMA scope. On requesting access to a specified resource, the application should call specified UMA policies in order to grant/deny access.
 
-This script type adds only one method to base scipt type:
+This script type adds only one method to base scipt type:    
 
 `def authorize(self, authorizationContext, configurationAttributes):`   
 
-These are types of parameters:
+These are types of parameters:     
 - `authorizationContext` is `org.xdi.oxauth.service.uma.authorization.AuthorizationContext`     
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`        
 
@@ -167,11 +167,11 @@ This script can be used in oxAuth application only.
 # Cache Refresh
 In order to integrate with an existing authentication server oxTrust provides a mechanism called [Cache Refresh](../../admin-guide/configuration/index.md#cache-refresh) to copy user data to the local LDAP server. During this process it's posible to specify key attribute(s) and specify attribute name transformations. There are also cases when it can be used to overwrite attribute values or add new attributes based on other attributes values. 
 
-This script type adds only one method to base scipt type:
+This script type adds only one method to base scipt type:     
 
 `def updateUser(self, user, configurationAttributes):`      
 
-These are types of parameters:
+These are types of parameters:     
 - `user` is `org.gluu.oxtrust.model.GluuCustomPerson`       
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`        
 
@@ -182,11 +182,11 @@ This script can be used in oxTrust application only.
 # Client Registration
 oxAuth implements the [OpenID Connect dynamic client registration](https://openid.net/specs/openid-connect-registration-1_0.html) specification. All new clients have the same default access scopes and attributes except password and client ID. The Client Registration script allows an admin to modify this limitation. In this script it's possible to get a registration request, analyze it, and apply customizations to registered clients. For example, a script can give access to specified scopes if `redirect_uri` belongs to a specifed service or domain. 
 
-This script type adds only one method to base scipt type:
+This script type adds only one method to base scipt type:    
 
 `def updateClient(self, registerRequest, client, configurationAttributes):`     
 
-These are types of parameters:
+These are types of parameters:     
 - `registerRequest` is `org.xdi.oxauth.client.RegisterRequest`      
 - `client` is `org.xdi.oxauth.model.registration.Client`        
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`        
@@ -196,47 +196,47 @@ This script can be used in oxAuth application only.
 - [Sample Client Registration Script](./sample-client-registration-script)      
 
 # ID Generation
-By default oxAuth/oxTrust uses an internal method to generate unique identifiers for new person/client, etc. entries. In most cases the format of the ID is:
+By default oxAuth/oxTrust uses an internal method to generate unique identifiers for new person/client, etc. entries. In most cases the format of the ID is:    
 
 `'!' + idType.getInum() + '!' + four_random_HEX_characters + '.' + four_random_HEX_characters.`     
 
 The ID generation script enables an admin to implement custom ID generation rules. 
 
-This script type adds only one method to base scipt type:
+This script type adds only one method to base scipt type:     
 
 `def generateId(self, appId, idType, idPrefix, configurationAttributes):`       
 
-These are types of parameters:
+These are types of parameters:     
 - `appId` is application ID     
 - `idType` is ID Type       
 - `idPrefix` is ID Prefix       
 - `user` is `org.gluu.oxtrust.model.GluuCustomPerson`       
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`        
 
-This script can be used in oxTrust application only.
+This script can be used in oxTrust application only.     
 
 - [Sample ID Generation Script](./sample-id-generation.py)      
 
 # Update User
 oxTrust allows an admin to add and modify users wich belong to groups. In order to simplify this process and apply repeating actions, oxTrust supports an Update User script. In this script it's possible to modify a person entry before it is persisted in LDAP.
 
-This script type adds only one method to base scipt type:
+This script type adds only one method to base scipt type:     
 
 `def updateUser(self, user, persisted, configurationAttributes):`       
 
-These are types of parameters:
+These are types of parameters:     
 - `user` is `org.gluu.oxtrust.model.GluuCustomPerson`       
 - persisted is boolean value to specify if operation type: add/modify       
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`        
 
-This script can be used in oxTrust application only.
+This script can be used in oxTrust application only.     
 
 - [Sample Update User Script](./sample-update-user-script.py)       
 
 # User Registration
 oxTrust allows users to perform self-registration. In order to control/validate user registrations there is the user registration script type.
 
-This script type adds three methods to the base scipt type:
+This script type adds three methods to the base scipt type:     
 
 `def initRegistration(self, user, requestParameters, configurationAttributes):`     
 
@@ -244,7 +244,7 @@ This script type adds three methods to the base scipt type:
 
 `def postRegistration(self, user, requestParameters, configurationAttributes):`     
 
-All these methods expect the same parameters:
+All these methods expect the same parameters:      
 - `user` is `org.gluu.oxtrust.model.GluuCustomPerson`       
 - `requestParameters` is `java.util.Map<String, String[]>`      
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`        
