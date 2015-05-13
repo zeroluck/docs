@@ -65,7 +65,7 @@ This script type adds only one method to base scipt type:
 `def endSession(self, httpRequest, authorizationGrant, configurationAttributes):`       
         
 These are the types of parameters:    
-+ `httpRequest` is `javax.servlet.http.HttpServletRequest`      
+- `httpRequest` is `javax.servlet.http.HttpServletRequest`      
 - `authorizationGrant` is `org.xdi.oxauth.model.common.AuthorizationGrant`      
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`        
 
