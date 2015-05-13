@@ -30,7 +30,7 @@ This section of the documentation includes instructions for configuring a number
 ![Configuration Menu](https://cloud.githubusercontent.com/assets/5271048/7146931/b1875eb0-e2bc-11e4-813b-8ffbfe4ae809.png)
 
 # Organization Configuration
-The organization configuration section contains the following options:
+The organization configuration section contains the following options:    
 - [System Configuration](#system-configuration)		
 - [Manage Email Addresses](#manage-email-addresses)		
 - [SMTP Server Configuration](#smtp-server-configuration)		
@@ -191,7 +191,7 @@ Any person who knows the link will be able to register an account (as long as th
 
 Invitation Links can be optionally made "moderated" and a number of moderators can be assigned to the link from among registered users. In this case any newly registered users who used this link will not be immediately able to use their account until their registration is approved by the moderator of their link.
 
-Upon activating Invitation Links Management within the interface, you will be presented with the following option:
+Upon activating Invitation Links Management within the interface, you will be presented with the following option:    
 
 - **Run invite codes expiration process every**: This feature allows you to configure how often oxTrust will purge expired invitation links from the system. 
 - **Enable registration without invitation**: Allows public registration even when Invitation Links are used.
@@ -229,7 +229,7 @@ Additional attributes can be added from the Gluu Server GUI, oxTrust, by clickin
 
 * _Display Name:_ Thi display name can be anything that is human readable.
 
-* _Type:_ The attribute type should be selected from the drop-down meny. There are four attribute types supported by Gluu: 
+* _Type:_ The attribute type should be selected from the drop-down meny. There are four attribute types supported by Gluu:    
   1. Text	
   2. Numeric	
   3. Photo	
