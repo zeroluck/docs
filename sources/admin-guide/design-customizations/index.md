@@ -11,8 +11,7 @@ The look and feel of the Gluu Server can be edited to match your organizations b
 # Style customizations
 
 Static style elements like css, js and images are packaged into separate jar named
-_\<ProjectName\>_ Static- _\<version\>_ .jar (e.g. oxTrustStatic-1.3.0.Final.jar and oxAuthStatic-1.4.0x.Final.jar) and is added to the deployable
-war during the build time.
+_\<ProjectName\>_ Static- _\<version\>_ .jar (e.g. oxTrustStatic-1.3.0.Final.jar and oxAuthStatic-1.4.0x.Final.jar) and is added to the deployable war during the build time.
 
 Post deployment, the structure of the jar allows its context to be accessible from the Web contextroot.
 For example, the default values of the css and js locations are *\<contextPath\>/stylesheet* and
@@ -51,19 +50,19 @@ not to remove any of the important form elements. But you can add additional htm
 elements to meet your needs. (.xhtml files inside `/opt/tomcat/webapps/identity` and
 `/opt/tomcat/webapps/oxauth`)
 
-Standard forms in oxAuth:
+Standard forms in oxAuth:    
 * Default login page: `/opt/tomcat/webapps/oxauth/login.xhtml`      
 * Error page: `/opt/tomcat/webapps/oxauth/error.xhtml`      
 * Authorization page: `/opt/tomcat/webapps/oxauth/authorize.xhtml`      
 * Custom authentication scripts: xhtml files in `/opt/tomcat/webapps/oxauth/auth`       
 
-Standard forms in oxTrust:  
+Standard forms in oxTrust:      
 * Default registration page: `/opt/tomcat/webapps/identity/register.xhtml`      
 
-To remove the Gluu Copyright icon from your login page, navigate to:
+To remove the Gluu Copyright icon from your login page, navigate to:    
 `template.xhtml` under `/opt/tomcat/webapps/identity/WEB-INF/incl/layout`   
 
-And simply remove this snippet:
+And simply remove this snippet:    
 
     <s:fragment rendered="#{not isLogin}">
             <div class="footer">
