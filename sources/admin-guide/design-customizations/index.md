@@ -51,13 +51,13 @@ elements to meet your needs. (.xhtml files inside `/opt/tomcat/webapps/identity`
 `/opt/tomcat/webapps/oxauth`)
 
 Standard forms in oxAuth:    
-* Default login page: `/opt/tomcat/webapps/oxauth/login.xhtml`      
-* Error page: `/opt/tomcat/webapps/oxauth/error.xhtml`      
-* Authorization page: `/opt/tomcat/webapps/oxauth/authorize.xhtml`      
-* Custom authentication scripts: xhtml files in `/opt/tomcat/webapps/oxauth/auth`       
+- Default login page: `/opt/tomcat/webapps/oxauth/login.xhtml`      
+- Error page: `/opt/tomcat/webapps/oxauth/error.xhtml`      
+- Authorization page: `/opt/tomcat/webapps/oxauth/authorize.xhtml`      
+- Custom authentication scripts: xhtml files in `/opt/tomcat/webapps/oxauth/auth`       
 
 Standard forms in oxTrust:      
-* Default registration page: `/opt/tomcat/webapps/identity/register.xhtml`      
+- Default registration page: `/opt/tomcat/webapps/identity/register.xhtml`      
 
 To remove the Gluu Copyright icon from your login page, navigate to:    
 `template.xhtml` under `/opt/tomcat/webapps/identity/WEB-INF/incl/layout`   
@@ -79,15 +79,14 @@ In oxTrust, this is under Configuration > Organization Configuration, and is the
 
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/WebUI_modification/oxtrust/oxTrust_GUI_mod_configuration_overview.png?raw=true)
 
-* `Title`: Web User Interface title can be modified with this link. 
-* `Display name`: Display Name of IDP in ldap. [ This change is not suggested to be done by Gluu Server Administrator. As it will change configuration in our central server. ]
-* `Short name`: Short Name of Org in ldap. [ This change is not suggested to be done by Gluu Server Administrator. As it will change configuration in our central server. ]
-* `Description`: A little description about Gluu Server.
-* `Login page message`: Login page is now using oxAuth, we will more features to support Login page modification through oxAuth. 
-* `Welcome Title Text`: Gluu Server Administrator can add custom Welcome Title Text with feature.
-* `Welcome Page Message`: Various message can be included here. Out of the box, Gluu Server includes these 1. Upload SSL Certificate, 2. Active attribute … etc. messages.
-* `Organization Logo`: Organization logo can be uploaded and activated from here.
-You can upload your logo here, which will be shown in Gluu Server Administrative
-Control page. 
-* `Organization Favicon`: Organization favicon can be changed with this feature. 
-* `Menu Color`: It’s a color picker for Gluu Server. Gluu Server’s Web UI color can be changed with this option.
+- `Title`: Web User Interface title can be modified with this link. 
+- `Display name`: Display Name of IDP in ldap. [ This change is not suggested to be done by Gluu Server Administrator. As it will change configuration in our central server. ]
+- `Short name`: Short Name of Org in ldap. [ This change is not suggested to be done by Gluu Server Administrator. As it will change configuration in our central server. ]
+- `Description`: A little description about Gluu Server.
+- `Login page message`: Login page is now using oxAuth, we will more features to support Login page modification through oxAuth. 
+- `Welcome Title Text`: Gluu Server Administrator can add custom Welcome Title Text with feature.
+- `Welcome Page Message`: Various message can be included here. Out of the box, Gluu Server includes these 1. Upload SSL Certificate, 2. Active attribute … etc. messages.
+- `Organization Logo`: Organization logo can be uploaded and activated from here.
+You can upload your logo here, which will be shown in Gluu Server Administrative Control page. 
+- `Organization Favicon`: Organization favicon can be changed with this feature. 
+- `Menu Color`: It’s a color picker for Gluu Server. Gluu Server’s Web UI color can be changed with this option.
