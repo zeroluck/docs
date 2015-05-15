@@ -22,7 +22,7 @@ To keep the Gluu Server up-to-date with the latest user claims, your organizatio
 
 # Cache Refresh
 
-Cache refresh is documented in our [configuration section](../configuration/index.md#cache-refresh).
+Cache Refresh was built by Gluu to pull user information from a backend Active Directory/LDAP Server. Cache refresh dynamically synchronises user information from the backend data source to a local LDAP server in order to maximize performance. Cache refresh is documented in our [configuration section](../configuration/index.md#cache-refresh).
 
 # Self Registration
 
