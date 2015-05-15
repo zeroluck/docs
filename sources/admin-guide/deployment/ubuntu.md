@@ -26,9 +26,9 @@ Use the .deb installation to perform a base chroot installation with following G
 
 New alternative using our Gluu repo for ubuntu trusty:
 
-<code> # echo "deb http://deb-repo.gluu.org/ubuntu-repo/ trusty main" > /etc/apt/sources.list.d/gluu-repo.list </code>
+<code> # echo "deb http://repo.gluu.org/ubuntu-repo/ trusty main" > /etc/apt/sources.list.d/gluu-repo.list </code>
 
-<code> # curl http://deb-repo.gluu.org/ubuntu-repo/gluu-apt.key | apt-key add - </code>
+<code> # curl http://repo.gluu.org/ubuntu-repo/gluu-apt.key | apt-key add - </code>
 
 <code> # apt-get update </code>
 
