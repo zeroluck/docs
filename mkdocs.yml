@@ -19,6 +19,8 @@ pages:
 - ['admin-guide/introduction/index.md', 'Admin Guide', 'Introduction']
 - ['admin-guide/deployment/index.md', 'Admin Guide', 'Deployment']
 - ['admin-guide/configuration/index.md', 'Admin Guide', 'Configuration']
+- ['admin-guide/operations/index.md', 'Admin Guide', 'Operations']
+- ['admin-guide/certificates/index.md', 'Admin Guide', 'Certificates']
 - ['admin-guide/design-customizations/index.md', 'Admin Guide', 'Design and Customizations']
 - ['admin-guide/ldap/index.md', 'Admin Guide', 'LDAP']
 - ['admin-guide/saml/index.md', 'Admin Guide', 'SAML']
