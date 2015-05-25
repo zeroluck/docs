@@ -1,101 +1,88 @@
-site_name: Gluu Docs 
+site_name: Gluu Docs
 site_description: Documenation for the Gluu Server
 site_favicon: '/img/gluu_favicon.ico'
 copyright: Copyright &copy; 2014, Gluu, Inc.
 docs_dir: sources
 repo_url: https://github.com/GluuFederation/docs
-theme: spacelab
+theme: readthedocs
 
 theme_dir: ./theme/mkdocs/
 theme_center_lead: false
-include_search: false
-
+include_search: true
 pages:
 
-# Home Page
-- ['index.md', 'Home']
-
+- [index.md, Home]
 # Admin Guide Sections
-- ['admin-guide/introduction/index.md', 'Admin Guide', 'Introduction']
-- ['admin-guide/deployment/index.md', 'Admin Guide', 'Deployment']
-- ['admin-guide/operations/index.md', 'Admin Guide', 'Operations']
-- ['admin-guide/certificates/index.md', 'Admin Guide', 'Certificates']
-- ['admin-guide/configuration/index.md', 'Admin Guide', 'Configuration']
-- ['admin-guide/design-customizations/index.md', 'Admin Guide', 'Design and Customizations']
-- ['admin-guide/ldap/index.md', 'Admin Guide', 'LDAP']
-- ['admin-guide/saml/index.md', 'Admin Guide', 'SAML']
-- ['admin-guide/openid-connect/index.md', 'Admin Guide', 'OpenID Connect']
-- ['admin-guide/uma/index.md', 'Admin Guide', 'UMA']
-- ['admin-guide/user-management/index.md', 'Admin Guide', 'User Management']
-- ['admin-guide/personal/index.md', 'Admin Guide', 'Personal']
-- ['admin-guide/faq/index.md', 'Admin Guide', 'FAQ']
-
+- [admin-guide/introduction/index.md, Admin Guide, Introduction]
+- [admin-guide/deployment/index.md, Admin Guide, Deployment]
+- [admin-guide/certificates/index.md, Admin Guide, Certificates]
+- [admin-guide/configuration/index.md, Admin Guide, Configuration]
+- [admin-guide/design-customizations/index.md, Admin Guide, Design and Customizations]
+- [admin-guide/ldap/index.md, Admin Guide, LDAP]
+- [admin-guide/saml/index.md, Admin Guide, SAML]
+- [admin-guide/openid-connect/index.md, Admin Guide, OpenID Connect]
+- [admin-guide/uma/index.md, Admin Guide, UMA]
+- [admin-guide/user-management/index.md, Admin Guide, User Management]
+- [admin-guide/personal/index.md, Admin Guide, Personal]
+- [admin-guide/faq/index.md, Admin Guide, FAQ]
 # Reference Sections
-- ['reference/api/index.md', 'Reference', 'API']
-- ['reference/interception-scripts/index.md', 'Reference', 'Interception Scripts']
-- ['reference/ldap-namespace/index.md', 'Reference', 'LDAP Namespace']
-- ['reference/ldap-schema/index.md', 'Reference', 'LDAP Schema']
-- ['reference/lib/index.md', 'Reference', 'Gluu Library']
-- ['reference/oxAuth/index.md', 'Reference', 'oxAuth']
-- ['reference/oxd/index.md', 'Reference', 'OxD']
-- ['reference/oxTrust/index.md', 'Reference', 'oxTrust']
-- ['admin-guide/certificates/index.md', 'Reference', 'Certificates']
-
+- [reference/api/index.md, Reference, API]
+- [reference/interception-scripts/index.md, Reference, Interception Scripts]
+- [reference/ldap-namespace/index.md, Reference, LDAP Namespace]
+- [reference/ldap-schema/index.md, Reference, LDAP Schema]
+- [reference/lib/index.md, Reference, Gluu Library]
+- [reference/oxAuth/index.md, Reference, OxAuth]
+- [reference/oxd/index.md, Reference, OxD]
+- [reference/oxTrust/index.md, Reference, OxTrust]
 # Articles Sections
-- ['articles/apache-saml.md', 'Articles', 'Apache-SAML']
-- ['articles/benchmarking.md', 'Articles', 'Benchmarking']
-- ['articles/custom-attributes.md', 'Articles', 'Custom Attributes']
-- ['articles/google-saml.md', 'Articles', 'Google SAML']
-- ['articles/iis-saml.md', 'Articles', 'IIS SAML']
-- ['articles/java-connect.md', 'Articles', 'Java Connect']
-- ['articles/java-saml.md', 'Articles', 'Java SAML']
-- ['articles/js-connect.md', 'Articles', 'JS Connect']
-- ['articles/scim-client.md', 'Articles', 'SCIM Client']
-- ['articles/test-shib2.md', 'Articles', 'Test Shib2']
-- ['articles/gluu-server-ce.md', 'Articles', 'Gluu Server CE']
-- ['admin-guide/operations/index.md', 'Articles', 'Gluu Server Operations']
-
-# Subpages for admin-guide/certificates
-- ['admin-guide/certificates/https.md', '**HIDDEN**']
-- ['admin-guide/certificates/openid-connect.md', '**HIDDEN**']
-- ['admin-guide/certificates/saml.md', '**HIDDEN**']
-
-# Subpages for admin-guide/deployment- ['admin-guide/deployment/centos.md', '**HIDDEN**']
-- ['admin-guide/deployment/setup_py.md', '**HIDDEN**']
-- ['admin-guide/deployment/ubuntu.md', '**HIDDEN**']
-- ['admin-guide/deployment/centos.md', '**HIDDEN**']
-
-# Subpages for admin-guide/saml
-- ['admin-guide/saml/inbound-saml.md', '**HIDDEN**']
-- ['admin-guide/saml/outbound-saml.md', '**HIDDEN**']
-- ['admin-guide/saml/saml-sp-configuration.md', '**HIDDEN**']
-
-# Subpages for reference/api
-- ['reference/api/id-generation.md', '**HIDDEN**']
-- ['reference/api/oic-authorization.md', '**HIDDEN**']
-- ['reference/api/oic-end-session.md', '**HIDDEN**']
-- ['reference/api/oic-register-client.md', '**HIDDEN**']
-- ['reference/api/oic-token.md', '**HIDDEN**']
-- ['reference/api/oic-userinfo.md', '**HIDDEN**']
-- ['reference/api/uma-discovery.md', '**HIDDEN**']
-- ['reference/api/uma-authorization-endpoint.md', '**HIDDEN**']
-- ['reference/api/uma-create-rpt.md', '**HIDDEN**']
-- ['reference/api/uma-permission-registration.md', '**HIDDEN**']
-- ['reference/api/uma-resource-registration.md', '**HIDDEN**']
-- ['reference/api/uma-rpt-status.md', '**HIDDEN**']
-
-# Subpages for Interception Scritps
-- ['reference/interception-scripts/sample-application-session-script.py', '**HIDDEN**']
-- ['reference/interception-scripts/sample-authentication-script.py', '**HIDDEN**']
-- ['reference/interception-scripts/sample-cache-refresh-script.py', '**HIDDEN**']
-- ['reference/interception-scripts/sample-client-registration-script.py', '**HIDDEN**']
-- ['reference/interception-scripts/sample-id-generation-script.py', '**HIDDEN**']
-- ['reference/interception-scripts/sample-uma-authorization-script.py', '**HIDDEN**']
-- ['reference/interception-scripts/sample-update-user-script.py', '**HIDDEN**']
-- ['reference/interception-scripts/sample-user-registration-script.py', '**HIDDEN**']
-
-# Subpages for reference/lib
-- ['reference/lib/openid-connect.md', '**HIDDEN**']
-- ['reference/lib/saml.md', '**HIDDEN**']
-- ['reference/lib/scim.md', '**HIDDEN**']
-- ['reference/lib/uma.md', '**HIDDEN**']
+- [articles/apache-saml.md, Articles, Apache SAML SP Config]
+- [articles/google-saml.md, Articles, SAML SSO with Google]
+- [articles/java-saml.md, Articles, Java SAML]
+- [articles/iis-saml.md, Articles, IIS SAML Config]
+- [articles/benchmarking.md, Articles, Benchmarking]
+- [articles/custom-attributes.md, Articles, Custom Attributes]
+- [articles/gluu-server-ce.md, Articles, Gluu CE]
+- [articles/operations/index.md, Articles, Gluu CE Operations]
+- [articles/java-connect.md, Articles, OpenID in Java]
+- [articles/js-connect.md, Articles, OpenID from JavaScript]
+- [articles/scim-client.md, Articles, SCIM API]
+- [articles/test-shib2.md, Articles, Testing Shib2]
+# Deployment Sub-sections
+- [admin-guide/deployment/centos.md, hidden]
+- [admin-guide/deployment/setup_py.md, hidden]
+- [admin-guide/deployment/ubuntu.md, hidden]
+# Certificates Sub-sections
+- [admin-guide/certificates/https.md, hidden]
+- [admin-guide/certificates/openid-connect.md, hidden]
+- [admin-guide/certificates/saml.md, hidden]
+# SAML Sub-sections
+- [admin-guide/saml/inbound-saml.md, hidden]
+- [admin-guide/saml/outbound-saml.md, hidden]
+- [admin-guide/saml/saml-sp-configuration.md, hidden]
+# API Sub-sections
+- [reference/api/id-generation.md, hidden]
+- [reference/api/oic-authorization.md, hidden]
+- [reference/api/oic-end-session.md, hidden]
+- [reference/api/oic-register-client.md, hidden]
+- [reference/api/oic-token.md, hidden]
+- [reference/api/oic-userinfo.md, hidden]
+- [reference/api/uma-create-rpt.md, hidden]
+- [reference/api/uma-discovery.md, hidden]
+- [reference/api/uma-permission-registration.md, hidden]
+- [reference/api/uma-resource-registration.md, hidden]
+- [reference/api/uma-rpt-status.md, hidden]
+- [reference/api/uma-authorization-endpoint.md, hidden]
+# Interception Scripts Sub-sections
+- [reference/interception-scripts/sample-application-session-script.py, hidden]
+- [reference/interception-scripts/sample-authentication-script.py, hidden]
+- [reference/interception-scripts/sample-cache-refresh-script.py, hidden]
+- [reference/interception-scripts/sample-client-registration-script.py, hidden]
+- [reference/interception-scripts/sample-id-generation-script.py, hidden]
+- [reference/interception-scripts/sample-uma-authorization-script.py, hidden]
+- [reference/interception-scripts/sample-update-user-script.py, hidden]
+- [reference/interception-scripts/sample-user-registration-script.py, hidden]
+# Gluu Library Sub-sections
+- [reference/lib/openid-connect.md, hidden]
+- [reference/lib/saml.md, hidden]
+- [reference/lib/scim.md, hidden]
+- [reference/lib/uma.md, hidden]

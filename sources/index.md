@@ -31,7 +31,7 @@ The main documentation is organized into the following sections:
 	  - [Cache Refresh (LDAP Synchronization)](./admin-guide/configuration/index.md#cache-refresh)
 	  - [Configure Log Viewer](./admin-guide/configuration/index.md#configure-log-viewer)
 	  - [View Logs](./admin-guide/configuration/index.md#view-logs)
-- [Operations](./admin-guide/operations/index.md)
+- [Operations](./articles/operations/index.md)
 - [Design Customizations](./admin-guide/design-customizations/index.md)
 	  - [Style Customizations](admin-guide/design-customizations/index.md#style-customizations)
 	  - [Page Customizations](admin-guide/design-customizations/index.md#page-customizations)
