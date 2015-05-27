@@ -10,7 +10,7 @@
 
 For a **one server deployment**, the easiest way to install the Gluu Server is via one of our [Centos](./centos.md) or [Ubuntu](./ubuntu.md) packages.
 
-*Note:* Commercial Gluu Server Cluster Packages are currently under development. 
+*Note:* Commercial Gluu Server Cluster Packages are currently under development. You can learn more about the clustering project [here](../../../../../../docs-cluster/blob/master/sources/index.md). 
 
 # Hardware Guidance
 
