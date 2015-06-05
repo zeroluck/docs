@@ -1,5 +1,11 @@
 #SAML integration of Salesforce.com with Gluu Server
 
+By default Salesforce suggest deployers to implement IDP-initiated SSO.
+The initialization of IDP-initiated SSO is hectic as it require a big hostname
+which includes IDP's SSO link as well as SP's login url. So we prefer
+SP-initiated SSO and here in this documentation we are presenting a very simple
+SP-initiated SSO steps with Salesforce and Gluu Server. 
+
 ## Prepare Salesforce.com
 
 
