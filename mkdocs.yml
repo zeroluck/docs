@@ -37,6 +37,7 @@ pages:
 # Articles Sections
 - [articles/apache-saml.md, Articles, Apache SAML SP Config]
 - [articles/google-saml.md, Articles, SAML SSO with Google]
+- [articles/salesforce-sso.md, Articles, SAML SSO with Salesforce]
 - [articles/java-saml.md, Articles, Java SAML]
 - [articles/iis-saml.md, Articles, IIS SAML Config]
 - [articles/benchmarking.md, Articles, Benchmarking]
