@@ -33,3 +33,53 @@
      * Service Provider Initiated Request Binding: HTTP-Redirect
      * Here is how our final setup looks like: 
      ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/salesforce/Final_setup.png)
+     
+     
+## Prepare Gluu Server
+
+* How to create SAML trust relationship is available [here](http://www.gluu.org/docs/admin-guide/saml/outbound-saml/#saml-trust-relationship). 
+* Grab Salesforce metadata from Salesforce site. There is an option named 'Download Metadata' there. 
+  * Modify Salesforce metadata a bit: 
+    * Remove AuthnRequestsSigned=“true” from metadata. 
+    * Save metadata
+* Create Trust Relationship: 
+  * Display Name: Anything, whichever is easier for you to recognize this trust relationship. 
+  * Description: Anything, whichever is easier for you to recognize this trust relationship
+  * Metadata Type: File 
+  * Upload salesforce's metadata ( your modified one )
+  * Releases attributes: TransientID and Email
+  * 'Add' this trust
+  * Configure Specific Relying: It can be done from Gluu Server's GUI ( named: oxTrust )
+    * Select 'SAML2SSO'
+        * includeAttributeStatement: Enabled
+        * assertionLifetime: keep the default one
+        * assertionProxyCount: keep the default one
+        * signResponses: conditional
+        * signAssertions: never
+        * signRequests: conditional
+        * encryptAssertions: never
+        * encryptNameIds: never
+        * Save it
+  * 'Update' the trust relationship
+  * Here is how it looks like for our test setup: 
+  ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/salesforce/Gluu_Server.png)
+  
+  
+## Test SSO
+
+* Go back to Salesforce.com setup
+* Security Controls –> Single Sign On Settings
+* Enable 'Federated Single Sign-On Using SAML' 
+* Go to 'Domain Management'
+* Configure 'Authentication Configuration'
+  * Select 'Gluu Server' 
+  * Save it
+  * Here is how 'Authentication Configuration' looks like: 
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/salesforce/Authentication_Configuration.png)
+* This is SP-initiate SSO. So hit your Salesforce website link to initiate the SSO. 
+* [Here](https://www.youtube.com/watch?v=VehuRJr647E&feature=youtu.be) is video link of this SSO. 
+
+
+
+
+
