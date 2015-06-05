@@ -98,6 +98,7 @@ The main documentation is organized into the following sections:
 - [Benchmarking](./articles/benchmarking.md)
 - [Custom Attributes](./articles/custom-attributes.md)
 - [Google SAML](./articles/google-saml.md)
+- [Salesfore SAML)(./articles/salesforce-sso.md)
 - [IIS SAML](./articles/iis-saml.md)
 - [Java Connect](./articles/java-connect.md)
 - [Java SAML](./articles/java-saml.md)
