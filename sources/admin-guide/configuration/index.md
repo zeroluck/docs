@@ -283,7 +283,7 @@ This section allows the Gluu Server to connect to the backend Active Directory/L
 
 * _Use Anonymous Bind:_ Some customers do now allow username/password connections to their backend server. Enable this option if this applies to your organization.
 
-* _Bind DN:_ This contains the username to connect to the backend server.
+* _Bind DN:_ This contains the username to connect to the backend server. You need to use full DN here. As for example, _cn=gluu,dc=company,dc=org_
 
 * _Use SSL:_ Use this feature if the backend server allows SSL connectivity.
 
