@@ -125,8 +125,9 @@ Gluu Server Administrator can grab any SP’s entityID from “Filter” box. As
 
 * More configuration: If SP requires custom relying party and/or custom MetadataFilter configuration, that can be achieved using the following options: 
 * Configure MetadataFilters: Click on this option and Gluu Server will allow you to configure MetadataFilters inside the GUI.
-* IMAGE
 * Configure specific Relying Party: If the server admin “checks” this option a new link will appear which allows the server administrator to modify various relying party configurations like SAML2SSO, SAML2AttributeQuery, ShibbolethSSO etc. 
+
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/Relying_Party_Configuration.png)
 
 After adding a new Trust Relationship, the server administrator will observe a confirmation page like the one below. Please note that for testing purpose we did not provided any certificates. The IdP created the key and cert by itself. The image below shows a sample Trust Relationship after successful creation.
 
