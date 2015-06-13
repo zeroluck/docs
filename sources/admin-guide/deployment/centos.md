@@ -64,9 +64,9 @@ to suppress the interactive confirmation to proceed. For example, to re-run the 
 
 ## Starting | Stopping the Gluu Server
 
-`# /etc/init.d/gluu-server start`
+`# service gluu-server start`
 
-`# /etc/init.d/gluu-server stop`
+`# service gluu-server stop`
 
 ## Login to chroot environment
 
@@ -77,11 +77,11 @@ to suppress the interactive confirmation to proceed. For example, to re-run the 
 Exit from chroot environment to main linux. Stop the chroot environment, remove the Gluu Server,
 then remove the Gluu yum repository
 
-`# /etc/init.d/gluu-server stop`
+`# service gluu-server stop`
 
 `# yum remove gluu-server`
 
-`# rm -f -r /home/gluu-server.rpm.saved`
+`# rm -f -r /opt/gluu-server.rpm.saved`
 
 <!--
 or 
