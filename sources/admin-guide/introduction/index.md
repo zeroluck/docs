@@ -66,7 +66,7 @@ it was just a facade--the UI didn't actually do anything to configure OpenSSO. V
 Mike Schwartz met with members of the InCommon steering committee in San Antonio in October 2009.
 At that meeting, Mike expressed concern that OpenSSO might be end-of-life. Oracle had recently purchased
 Sun Microsystems, and before ForgeRock was formed, it seemed possible that Oracle would simply
-migrate OpenSSO customers to Oracle Access Manager. Bob convinced Mike that the Shibboleth IDP was a reasonable
+migrate OpenSSO customers to Oracle Access Manager. Bob Morgan from the University of Washington convinced Mike that the Shibboleth IDP was a reasonable
 alternative, and arguably had even more features in SAML, including fine grain access release policies, and
 a better approach for multi-party federation. As the InCommon federation's efforts to evangelize SAML federation
 would support Gluu's message, switching had marketing advantages, and would reduce the
