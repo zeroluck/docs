@@ -18,7 +18,7 @@ After configuring cache refresh, you should give it some time to run, and popula
 
 - Use the oxTrust admin to browse users.
 
-– Use ldapsearch to check to see if results are starting to come in. For example: 
+* Use ldapsearch to check to see if results are starting to come in. For example: 
 
     /opt/opendj/bin/ldapsearch -h localhost -p 1636 -Z -X -D "cn=directory manager" -w 'pass_of_ldap_ -b 'ou=people,o=DA....,o=gluu' dn | grep "dn\:" | wc -l
 
