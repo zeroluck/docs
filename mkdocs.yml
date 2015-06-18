@@ -35,6 +35,7 @@ pages:
 - [reference/oxd/index.md, Reference, OxD]
 - [reference/oxTrust/index.md, Reference, OxTrust]
 # Articles Sections
+- [articles/cache-refresh.md, Articles, Cachre Refresh Introduction]
 - [articles/apache-saml.md, Articles, Apache SAML SP Config]
 - [articles/google-saml.md, Articles, SAML SSO with Google]
 - [articles/salesforce-sso.md, Articles, SAML SSO with Salesforce]
