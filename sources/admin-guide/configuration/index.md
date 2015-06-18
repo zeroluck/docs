@@ -47,7 +47,7 @@ This feature allows the Gluu system administrator to customize and implement var
 
 * _Self-Service Password Reset:_ The Self-Service Password Reset is disabled by default. For Self-Service Password Reset to work SMTP Server(see below) should be configured as well. Password reset link for your Gluu server should be something like: "https://your.idp.link/identity/person/passwordReminder.htm"
 
-* _Cache Refresh:_ This is the mechanism which pulls and synchonises user information from a remote LDAP/Active Directory with the local LDAP of Gluu server. The Gluu server administrator needs to provide sufficient information including username and password before enabling this option. Before configuring Cache Refresh, you should read the [overview here](../../articles/cache-refresh.md). After reading the overview, you c an learn about the Cache Refresh GUI tools [here](#cache-refresh).
+* _Cache Refresh:_ This is the mechanism which pulls and synchonises user information from a remote LDAP/Active Directory with the local LDAP of Gluu server. The Gluu server administrator needs to provide sufficient information including username and password before enabling this option. Before configuring Cache Refresh, you should read the [overview here](../../../articles/cache-refresh.md). After reading the overview, you c an learn about the Cache Refresh GUI tools [here](#cache-refresh).
 
 * _SCIM Support:_ If the organization already has an identity management or provisioning system in place, the SCIM protocol can be used to push and synchronise the existing identity data into the Gluu Server.
 
