@@ -131,9 +131,7 @@ This is step by step guide to configure UMA for oxTrust and SCIM client. High le
 
 ## Base Configuration: Create oxAuth Clients, Policies
 
-1. Check if there are next oxAuth scopes [“http://docs.kantarainitiative.org/uma/scopes/prot.json”](http://docs.kantarainitiative.org/uma/scopes/prot.json) and [“http://docs.kantarainitiative.org/uma/scopes/authz.json”](http://docs.kantarainitiative.org/uma/scopes/authz.json). Add these scopes if needed.
-
-2. Register oxAuth client with scope [“http://docs.kantarainitiative.org/uma/scopes/prot.json”](http://docs.kantarainitiative.org/uma/scopes/prot.json). Property “oxAuthTokenEndpointAuthMethod” of this client should has value “client_secret_basic”. It's possible to do that using few methods: [Client Registration](http://ox.gluu.org/doku.php?id=oxauth:clientregistration), using [oxTrust](http://ox.gluu.org/doku.php?id=oxtrust:home) GUI, manually add entry to LDAP. oxTrust will use this oxAuth client to obtain PAT. Sample result entry:
+1. Register oxAuth client with scope “uma_protection”. Property “oxAuthTokenEndpointAuthMethod” of this client should has value “client_secret_basic”. It's possible to do that using few methods: [Client Registration](http://ox.gluu.org/doku.php?id=oxauth:clientregistration), using [oxTrust](http://ox.gluu.org/doku.php?id=oxtrust:home) GUI, manually add entry to LDAP. oxTrust will use this oxAuth client to obtain PAT. Sample result entry:
 
         dn: inum=@!1111!0008!F781.80AF,ou=clients,o=@!1111,o=gluu
         objectClass: oxAuthClient
@@ -146,7 +144,7 @@ This is step by step guide to configure UMA for oxTrust and SCIM client. High le
         oxAuthScope: inum=@!1111!0009!6D96,ou=scopes,o=@!1111,o=gluu
         oxAuthTokenEndpointAuthMethod: client_secret_basic
 
-3. Register oxAuth client with scope [“http://docs.kantarainitiative.org/uma/scopes/authz.json”](http://docs.kantarainitiative.org/uma/scopes/authz.json). Property “oxAuthTokenEndpointAuthMethod” of this client should has value “client_secret_basic”. It's possible to do that using few methods: [Client Registration](http://ox.gluu.org/doku.php?id=oxauth:clientregistration), using [oxTrust](http://ox.gluu.org/doku.php?id=oxtrust:home) GUI, manually add entry to LDAP. SCIM Client will use this oxAuth client to obtain AAT. Sample result entry:
+2. Register oxAuth client with scope “uma_authorization”. Property “oxAuthTokenEndpointAuthMethod” of this client should has value “client_secret_basic”. It's possible to do that using few methods: [Client Registration](http://ox.gluu.org/doku.php?id=oxauth:clientregistration), using [oxTrust](http://ox.gluu.org/doku.php?id=oxtrust:home) GUI, manually add entry to LDAP. SCIM Client will use this oxAuth client to obtain AAT. Sample result entry:
 
         dn: inum=@!1111!0008!FDC0.0FF5,ou=clients,o=@!1111,o=gluu
         objectClass: oxAuthClient
