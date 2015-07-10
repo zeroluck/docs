@@ -12,6 +12,10 @@ For a **one server deployment**, the easiest way to install the Gluu Server is v
 
 *Note:* Commercial Gluu Server Cluster Packages are currently under development. You can learn more about the clustering project [here](http://www.gluu.org/docs-cluster/). 
 
+# Support 
+
+Gluu offers both community and VIP support. Anyone can browse and open tickets on our [support portal](http://support.gluu.org). For private support, expedited assistance, and strategic consultations, please [schedule a meeting with us](http://gluu.org/booking) to discuss VIP support options.  
+
 # Hardware Guidance
 
 The Gluu Server is very flexible, and can be used for a wide array of access management requirements. Depending on the size of your data, and the number of concurrent transactions you want to support, you may need more or less memory or CPU capacity. 
