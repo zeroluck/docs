@@ -14,7 +14,7 @@
 	- [Disable Captcha for Registration Form](#disable-captcha-for-registration-form)	
 	- [Configure Registration Form Attributes](#configure-registration-form-attributes) 	
 - [Attributes](#attributes)	
-- [Cache Refresh](#cache-refresh)	
+- [Cache Refresh (a.k.a. Directory Integration)](#cache-refresh)	
 	- [Customer Backend Key/Attributes](#customer-backend-key-and-attributes)	
 	- [Source Backend LDAP Servers](#source-backend-ldap-servers)	
 	- [Inum LDAP Server](#inum-ldap-server)	
@@ -249,7 +249,7 @@ Additional attributes can be added from the Gluu Server GUI, oxTrust, by clickin
 
 * _Status:_ The status, when selected active, will release and publish the attribute in IdPThe status, when selected active, will release and publish the attribute in IdP.
 
-# Cache Refresh
+# Cache Refresh (a.k.a. Directory Integration)
 
 **Cache Refresh** was built by Gluu to pull user information from a backend customer Active Directory/LDAP Server. Cache refresh dynamically synchronises user information from the backend data source of the customer to the Gluu Server in order to maximize performance. This feature is sensitive in nature and any incorrect action may result in loss of data within the Gluu Server. Before configuring Cache Refresh, you should read the [overview here](../../articles/cache-refresh.md). For any questions relating to Cache Refresh functionality, you can seek assistance from [Gluu Support](http://support.gluu.org). 
 
