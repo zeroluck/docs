@@ -14,7 +14,7 @@
 	- [Disable Captcha for Registration Form](#disable-captcha-for-registration-form)	
 	- [Configure Registration Form Attributes](#configure-registration-form-attributes) 	
 - [Attributes](#attributes)	
-- [Cache Refresh a.k.a. Directory Integration](#cache-refresh)	
+- [Cache Refresh Directory Integration](#cache-refresh)	
 	- [Customer Backend Key/Attributes](#customer-backend-key-and-attributes)	
 	- [Source Backend LDAP Servers](#source-backend-ldap-servers)	
 	- [Inum LDAP Server](#inum-ldap-server)	
