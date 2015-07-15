@@ -10,7 +10,7 @@
 **POST** `/oxauth/authorize`
 
 Performs authorization.
-Performs authorization.
+The Authorization Endpoint performs Authentication of the End-User.
 
 ###### URL
     http://gluu.org/oxauth/authorize
@@ -139,18 +139,6 @@ Performs authorization.
             <td>string</td>
         </tr>
         <tr>
-            <th>auth_level</th>
-            <td>false</td>
-            <td>The minimum authentication level of authentication plugin</td>
-            <td>string</td>
-        </tr>
-        <tr>
-            <th>auth_mode</th>
-            <td>false</td>
-            <td>The name of authentication plugin</td>
-            <td>string</td>
-        </tr>
-        <tr>
             <th>origin_headers</th>
             <td>false</td>
             <td>Origin headers. Used in custom workflows.</td>
@@ -184,6 +172,42 @@ Performs authorization.
         <th>Status Code</th>
         <th>Reason</th>
     </tr>
+        <tr>
+            <td>302</td>
+            <td>interaction_required&#10;    The Authorization Server requires End-User interaction of some form to proceed. This error MAY be returned when the prompt parameter value in the Authentication Request is none, but the Authentication Request cannot be completed without displaying a user interface for End-User interaction. </td>
+        </tr>
+        <tr>
+            <td>302</td>
+            <td>login_required&#10;    The Authorization Server requires End-User authentication. This error MAY be returned when the prompt parameter value in the Authentication Request is none, but the Authentication Request cannot be completed without displaying a user interface for End-User authentication. </td>
+        </tr>
+        <tr>
+            <td>302</td>
+            <td>account_selection_required&#10;    The End-User is REQUIRED to select a session at the Authorization Server. The End-User MAY be authenticated at the Authorization Server with different associated accounts, but the End-User did not select a session. This error MAY be returned when the prompt parameter value in the Authentication Request is none, but the Authentication Request cannot be completed without displaying a user interface to prompt for a session to use. </td>
+        </tr>
+        <tr>
+            <td>302</td>
+            <td>consent_required&#10;    The Authorization Server requires End-User consent. This error MAY be returned when the prompt parameter value in the Authentication Request is none, but the Authentication Request cannot be completed without displaying a user interface for End-User consent. </td>
+        </tr>
+        <tr>
+            <td>302</td>
+            <td>invalid_request_uri&#10;    The request_uri in the Authorization Request returns an error or contains invalid data. </td>
+        </tr>
+        <tr>
+            <td>302</td>
+            <td>invalid_request_object&#10;    The request parameter contains an invalid Request Object. </td>
+        </tr>
+        <tr>
+            <td>302</td>
+            <td>request_not_supported&#10;    The OP does not support use of the request parameter</td>
+        </tr>
+        <tr>
+            <td>302</td>
+            <td>request_uri_not_supported&#10;    The OP does not support use of the request_uri parameter</td>
+        </tr>
+        <tr>
+            <td>302</td>
+            <td>registration_not_supported&#10;    The OP does not support use of the registration parameter</td>
+        </tr>
 </table>
 
 
@@ -192,7 +216,7 @@ Performs authorization.
 **GET** `/oxauth/authorize`
 
 Performs authorization.
-Performs authorization.
+The Authorization Endpoint performs Authentication of the End-User.
 
 ###### URL
     http://gluu.org/oxauth/authorize
@@ -327,18 +351,6 @@ Performs authorization.
             <td>string</td>
         </tr>
         <tr>
-            <th>auth_level</th>
-            <td>false</td>
-            <td>The minimum authentication level of authentication plugin</td>
-            <td>string</td>
-        </tr>
-        <tr>
-            <th>auth_mode</th>
-            <td>false</td>
-            <td>The name of authentication plugin</td>
-            <td>string</td>
-        </tr>
-        <tr>
             <th>origin_headers</th>
             <td>false</td>
             <td>Origin headers. Used in custom workflows.</td>
@@ -356,6 +368,42 @@ Performs authorization.
         <th>Status Code</th>
         <th>Reason</th>
     </tr>
+        <tr>
+            <td>302</td>
+            <td>interaction_required&#10;    The Authorization Server requires End-User interaction of some form to proceed. This error MAY be returned when the prompt parameter value in the Authentication Request is none, but the Authentication Request cannot be completed without displaying a user interface for End-User interaction. </td>
+        </tr>
+        <tr>
+            <td>302</td>
+            <td>login_required&#10;    The Authorization Server requires End-User authentication. This error MAY be returned when the prompt parameter value in the Authentication Request is none, but the Authentication Request cannot be completed without displaying a user interface for End-User authentication. </td>
+        </tr>
+        <tr>
+            <td>302</td>
+            <td>account_selection_required&#10;    The End-User is REQUIRED to select a session at the Authorization Server. The End-User MAY be authenticated at the Authorization Server with different associated accounts, but the End-User did not select a session. This error MAY be returned when the prompt parameter value in the Authentication Request is none, but the Authentication Request cannot be completed without displaying a user interface to prompt for a session to use. </td>
+        </tr>
+        <tr>
+            <td>302</td>
+            <td>consent_required&#10;    The Authorization Server requires End-User consent. This error MAY be returned when the prompt parameter value in the Authentication Request is none, but the Authentication Request cannot be completed without displaying a user interface for End-User consent. </td>
+        </tr>
+        <tr>
+            <td>302</td>
+            <td>invalid_request_uri&#10;    The request_uri in the Authorization Request returns an error or contains invalid data. </td>
+        </tr>
+        <tr>
+            <td>302</td>
+            <td>invalid_request_object&#10;    The request parameter contains an invalid Request Object. </td>
+        </tr>
+        <tr>
+            <td>302</td>
+            <td>request_not_supported&#10;    The OP does not support use of the request parameter</td>
+        </tr>
+        <tr>
+            <td>302</td>
+            <td>request_uri_not_supported&#10;    The OP does not support use of the request_uri parameter</td>
+        </tr>
+        <tr>
+            <td>302</td>
+            <td>registration_not_supported&#10;    The OP does not support use of the registration parameter</td>
+        </tr>
 </table>
 
 
