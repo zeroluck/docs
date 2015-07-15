@@ -5,15 +5,83 @@
 #### Overview
 
 
-#### `/oxauth/register`
-##### requestClientRead
-**GET** `/oxauth/register`
+#### `/oxauth/userinfo`
+##### requestUserInfoPost
+**POST** `/oxauth/userinfo`
 
-Reads client info.
-Reads client info.
+Returns Claims about the authenticated End-User.
+The Access Token obtained from an OpenID Connect Authentication Request is sent as a Bearer Token.
 
 ###### URL
-    http://gluu.org/oxauth/register
+    http://gluu.org/oxauth/userinfo
+###### Parameters
+- form
+
+    <table border="1">
+        <tr>
+            <th>Parameter</th>
+            <th>Required</th>
+            <th>Description</th>
+            <th>Data Type</th>
+        </tr>
+        <tr>
+            <th>access_token</th>
+            <td>true</td>
+            <td>OAuth 2.0 Access Token.</td>
+            <td>string</td>
+        </tr>
+    </table>
+- header
+
+    <table border="1">
+        <tr>
+            <th>Parameter</th>
+            <th>Required</th>
+            <th>Description</th>
+            <th>Data Type</th>
+        </tr>
+        <tr>
+            <th>Authorization</th>
+            <td>false</td>
+            <td></td>
+            <td>string</td>
+        </tr>
+    </table>
+
+###### Response
+[JSON[Response]](#JSON[Response])
+
+
+###### Errors
+<table border="1">
+    <tr>
+        <th>Status Code</th>
+        <th>Reason</th>
+    </tr>
+        <tr>
+            <td>400</td>
+            <td>invalid_request&#10;The request is missing a required parameter, includes an unsupported parameter or parameter value, repeats the same parameter, uses more than one method for including an access token, or is otherwise malformed.  The resource server SHOULD respond with the HTTP 400 (Bad Request) status code.</td>
+        </tr>
+        <tr>
+            <td>401</td>
+            <td>invalid_token&#10;The access token provided is expired, revoked, malformed, or invalid for other reasons.  The resource SHOULD respond with the HTTP 401 (Unauthorized) status code.  The client MAY request a new access token and retry the protected resource request.</td>
+        </tr>
+        <tr>
+            <td>403</td>
+            <td>insufficient_scope&#10;The request requires higher privileges than provided by the access token.  The resource server SHOULD respond with the HTTP 403 (Forbidden) status code and MAY include the &quot;scope&quot;&#10; attribute with the scope necessary to access the protected resource.</td>
+        </tr>
+</table>
+
+
+- - -
+##### requestUserInfoGet
+**GET** `/oxauth/userinfo`
+
+Returns Claims about the authenticated End-User.
+The Access Token obtained from an OpenID Connect Authentication Request is sent as a Bearer Token.
+
+###### URL
+    http://gluu.org/oxauth/userinfo
 ###### Parameters
 - query
 
@@ -25,9 +93,9 @@ Reads client info.
             <th>Data Type</th>
         </tr>
         <tr>
-            <th>client_id</th>
+            <th>access_token</th>
             <td>true</td>
-            <td>Client ID that identifies client.</td>
+            <td>OAuth 2.0 Access Token.</td>
             <td>string</td>
         </tr>
     </table>
@@ -58,135 +126,18 @@ Reads client info.
         <th>Status Code</th>
         <th>Reason</th>
     </tr>
-</table>
-
-
-- - -
-##### requestRegister
-**POST** `/oxauth/register`
-
-Registers new client dynamically.
-Registers new client dynamically.
-
-###### URL
-    http://gluu.org/oxauth/register
-###### Parameters
-- body
-
-    <table border="1">
         <tr>
-            <th>Parameter</th>
-            <th>Required</th>
-            <th>Description</th>
-            <th>Data Type</th>
+            <td>400</td>
+            <td>invalid_request&#10;The request is missing a required parameter, includes an unsupported parameter or parameter value, repeats the same parameter, uses more than one method for including an access token, or is otherwise malformed.  The resource server SHOULD respond with the HTTP 400 (Bad Request) status code.</td>
         </tr>
         <tr>
-            <th>body</th>
-            <td>true</td>
-            <td>Request parameters as JSON object with data described by Connect Client Registration Specification.</td>
-            <td>string</td>
-        </tr>
-    </table>
-- header
-
-    <table border="1">
-        <tr>
-            <th>Parameter</th>
-            <th>Required</th>
-            <th>Description</th>
-            <th>Data Type</th>
+            <td>401</td>
+            <td>invalid_token&#10;The access token provided is expired, revoked, malformed, or invalid for other reasons.  The resource SHOULD respond with the HTTP 401 (Unauthorized) status code.  The client MAY request a new access token and retry the protected resource request.</td>
         </tr>
         <tr>
-            <th>Authorization</th>
-            <td>false</td>
-            <td></td>
-            <td>string</td>
+            <td>403</td>
+            <td>insufficient_scope&#10;The request requires higher privileges than provided by the access token.  The resource server SHOULD respond with the HTTP 403 (Forbidden) status code and MAY include the &quot;scope&quot;&#10; attribute with the scope necessary to access the protected resource.</td>
         </tr>
-    </table>
-
-###### Response
-[JSON[Response]](#JSON[Response])
-
-
-###### Errors
-<table border="1">
-    <tr>
-        <th>Status Code</th>
-        <th>Reason</th>
-    </tr>
-</table>
-
-
-- - -
-#### `/oxauthregister`
-##### requestClientUpdate
-**PUT** `/oxauthregister`
-
-Updates client info.
-Updates client info.
-
-###### URL
-    http://gluu.org/oxauthregister
-###### Parameters
-- body
-
-    <table border="1">
-        <tr>
-            <th>Parameter</th>
-            <th>Required</th>
-            <th>Description</th>
-            <th>Data Type</th>
-        </tr>
-        <tr>
-            <th>body</th>
-            <td>true</td>
-            <td>Request parameters as JSON object with data described by Connect Client Registration Specification.</td>
-            <td>string</td>
-        </tr>
-    </table>
-- query
-
-    <table border="1">
-        <tr>
-            <th>Parameter</th>
-            <th>Required</th>
-            <th>Description</th>
-            <th>Data Type</th>
-        </tr>
-        <tr>
-            <th>client_id</th>
-            <td>true</td>
-            <td>Client ID that identifies client that must be updated by this request.</td>
-            <td>string</td>
-        </tr>
-    </table>
-- header
-
-    <table border="1">
-        <tr>
-            <th>Parameter</th>
-            <th>Required</th>
-            <th>Description</th>
-            <th>Data Type</th>
-        </tr>
-        <tr>
-            <th>Authorization</th>
-            <td>false</td>
-            <td></td>
-            <td>string</td>
-        </tr>
-    </table>
-
-###### Response
-[JSON[Response]](#JSON[Response])
-
-
-###### Errors
-<table border="1">
-    <tr>
-        <th>Status Code</th>
-        <th>Reason</th>
-    </tr>
 </table>
 
 
