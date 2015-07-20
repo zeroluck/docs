@@ -116,7 +116,6 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __oxSourceAttribute__ Source Attribute for this Attribute
  * __seeAlso__ 
  * __urn__ None
- * __gluuLdapAttributeName__ Used by oxAuth and oxTrust to specify the LDAP attribute of the name.
  * __oxAuthClaimName__ Used by oxAuth in conjunction with gluuLdapAttributeName to map claims to attributes in LDAP.
 
 ### Objectclass gluuGroup
