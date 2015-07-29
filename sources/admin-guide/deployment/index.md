@@ -14,7 +14,7 @@ For a one server deployment, the easiest way to install the Gluu Server is via o
 We have currently tested deployment on Digital Ocean, Amazon Web Services, and Rackspace servers. We plan on testing deployment on Google Cloud and Azure next. 
 
 #### Cluster Deployments
-*Note:* Commercial Gluu Server Cluster Packages are currently under development. You can learn more about the clustering project [here](http://www.gluu.org/docs-cluster/). 
+Commercial Gluu Server Cluster Packages are currently under development and not quite ready yet for primetime. You can learn more about the clustering project [here](http://www.gluu.org/docs-cluster/). 
 
 # Support 
 
