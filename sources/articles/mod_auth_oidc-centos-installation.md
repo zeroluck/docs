@@ -17,23 +17,24 @@ Next, create an apache conf file for loading this module. After that start the a
     # cat "LoadModule auth_openidc_module modules/mod_auth_openidc.so" > /etc/httpd/conf.d/mod_auth_openidc.conf
     # service httpd start
 
-For our demonstration, we are running gluuCE at **ce.gluu.org**.
+For our demonstration, we are running gluuCE at `ce.gluu.org`.
  
-Apache mod is being run at the same server but at the port **44443**.
+Apache mod is being run at the same server but at the `port 44443`.
 You may choose your own and make appropriate changes.
 
 #### Dynamic Client Registration
 
 Let's consider the case of dynamic client registration first.
-For this purpose we'll name the server: **dynamic.gluu.org**.
+
+For this purpose we'll name the server: `dynamic.gluu.org`.
 
 Let's prepare the server for serving the content protected by gluuCE.
 
-Create a directory named as: **dynamic** inside **/var/www/html**
+Create a directory named as: `dynamic` inside `/var/www/html`
 
     # mkdir /var/www/html/dynamic
 
-Now, let's create a file named **index.html** inside above directory with the following content:
+Now, let's create a file named `index.html` inside above directory with the following content:
 
     <html>
 	      <title>
@@ -44,16 +45,16 @@ Now, let's create a file named **index.html** inside above directory with the fo
 	     </body>
     </html>
 
-Create another directory named **metadata** in **/var/www/html** which will hold the metadata.
+Create another directory named `metadata` in `/var/www/html` which will hold the metadata.
 
     # mkdir /var/www/html/metadata
 
-Now, change the ownerships. This is **super critical**, because without this apache won't be able to write the metadata inside the directory.
+Now, change the ownerships. This is **extremely critical**, because without this apache won't be able to write the metadata inside the directory.
 
     # chown -R apache:apache /var/www/html
 
 Let's create the apache config file now.
-Create a file named **/etc/httpd/conf.d/dynamic.conf** with the contents as below:
+Create a file named `/etc/httpd/conf.d/dynamic.conf` with the contents as below:
 
     <VirtualHost *:44443>
 	      ServerName dynamic.gluu.org
@@ -83,12 +84,12 @@ Now, restart the apache service as below:
 
     # service httpd restart
 
-Now, try to access the page: **https://dynamic.gluu.org:44443/dynamic** and you should see the discovery page as below: You'll be presented with a discovery page, enter ''admin@ce.gluu.org''
+Now, try to access the page: `https://dynamic.gluu.org:44443/dynamic` and you should see the discovery page as below: You'll be presented with a discovery page, enter `admin@ce.gluu.org`
 
 {{:dynamic_discovery.png?500|}}
 
 
-The usual choice as per present used urls is: **admin@ce.gluu.org**. But you must use the existing user at the gluuCE along with existing url i.e existing_user@your.gluu.ce.server
+The usual choice as per present used urls is: `admin@ce.gluu.org`. But you must use the existing user at the gluuCE along with existing url i.e `existing_user@your.gluu.ce.server`
 
 After this we are presented with the oxAuth page from gluuCE where we enter the credentials for authentication.
 
@@ -98,15 +99,15 @@ After this we are presented with the oxAuth page from gluuCE where we enter the 
 
 Let's consider the case of **manual client registration** now if you don't wish to use dynamic client registration.
 
-For this purpose we'll name the server: **static.gluu.org**.
+For this purpose we'll name the server: `static.gluu.org`.
 
 Let's prepare the server for serving the content protected by gluuCE.
 
-Create a directory named as: **static** inside **/var/www/html**
+Create a directory named as: `static` inside `/var/www/html`
 
     # mkdir /var/www/html/static
 
-Now, let's create a file named **index.html** inside above created directory with the following content:
+Now, let's create a file named `index.html` inside above created directory with the following content:
 
     <html>
 	<title>
@@ -122,7 +123,7 @@ Now, change the ownerships.
     # chown -R apache:apache /var/www/html
 
 Let's create the apache config file now.
-Create a file named **/etc/httpd/conf.d/static.conf** with the contents as below:
+Create a file named `/etc/httpd/conf.d/static.conf` with the contents as below:
 
     <VirtualHost *:44443>
 	ServerName static.gluu.org
@@ -156,7 +157,7 @@ Now, restart the apache service as below:
 
     # service httpd restart
 
-Now, try to access the page: **https://static.gluu.org:44443/static** and you should see the oxAuth page from gluuCE where we enter the credentials for authentication.
+Now, try to access the page: `https://static.gluu.org:44443/static` and you should see the oxAuth page from gluuCE where we enter the credentials for authentication.
 
 {{:oxauth_authentication.png?500|}}
 
@@ -185,7 +186,7 @@ We get the client id from the search performed in gluu-server's Web UI. So, to g
 `# /opt/opendj/bin/ldapsearch -T -X -Z -p 1636 -D "cn=Directory Manager" -j /root/.pw -s sub -b "o=gluu" 'inum=@!C648.9803.5565.E5CB!0001!0DB0.EEDB!0008!7728.5650'`
 
 
-Create a file named **mod.ldif** with the following contents. The **oxAuthSubjectIdentifier** is same as the client id. Since it's missing initially when we register the client manually, so we have to add it later. The DN part to be used in **mod.ldif** is obtained from above command's output. 
+Create a file named `mod.ldif` with the following contents. The `oxAuthSubjectIdentifier` is same as the client id. Since it's missing initially when we register the client manually, so we have to add it later. The DN part to be used in `mod.ldif` is obtained from above command's output. 
 
 
     dn: inum=@!C648.9803.5565.E5CB!0001!0DB0.EEDB!0008!7728.5650,ou=clients,o=@!C648.9803.5565.E5CB!0001!0DB0.EEDB,o=gluu
@@ -193,10 +194,10 @@ Create a file named **mod.ldif** with the following contents. The **oxAuthSubjec
     add: oxAuthSubjectIdentifier
     oxAuthSubjectIdentifier: @!C648.9803.5565.E5CB!0001!0DB0.EEDB!0008!7728.5650
 
-Then run the **ldapmodify** command to insert the **oxAuthSubjectIdentifier** as below:
+Then run the `ldapmodify` command to insert the `oxAuthSubjectIdentifier` as below:
 
     /opt/opendj/bin/ldapmodify -Z -X -h localhost -p 1636 -D "cn=Directory Manager" -j /root/.pw -f /root/mod.ldif
 
 The command may vary depending upon how you are using.
 
-Then again access the page: **https://static.gluu.org:44443/static** and very good chances are there that you'll see the success message.
+Then again access the page: ``https://static.gluu.org:44443/static` and very good chances are there that you'll see the success message.
