@@ -5,7 +5,7 @@ What is SCIM?
 The Simple Cloud Identity Management (SCIM) specification is a standard REST/JSON API to standardize user and group CRUD (create, read, update, delete). You can review the detailed specification at [http://www.simplecloud.info](http://www.simplecloud.info). 
 The specification seeks to build upon experience with existing schemas and deployments, placing specific emphasis on simplicity of development and integration, while applying existing authentication, authorization, and privacy models. It's intent is to reduce the cost and complexity of user management operations by providing a common user schema and extension model, as well as binding documents to provide patterns for exchanging this schema using standard protocols. In essence, make it fast, cheap, and easy to move users in to, out of, and around the cloud.
 
-You can download a PDF copy of this guide from [HERE](https///svn.gluu.info/repository/openxdi/SCIM-Client/doc/pdf/SCIM_Documenation.pdf).
+You can download a PDF copy of this guide from [HERE](https://github.com/GluuFederation/SCIM-Client/tree/master/doc/pdf).
 
 
 ## Specification
@@ -401,8 +401,7 @@ Content-Type: application/xml
 
 SCIM-Client API , is a tool Gluu developed to make the communication with a SCIM server an easy task, SCIM-Client API can be used to build an application that sends request and receives responses from a SCIM server seamlessly.
 
-You can checkout SCIM-client from our SVN repository : 
-[https://svn.gluu.info/repository/openxdi/SCIM-Client/](https///svn.gluu.info/repository/openxdi/SCIM-Client/)
+You can checkout SCIM-client from our GIT repository : https://github.com/GluuFederation/SCIM-Client 
 
 SCIM-client support both Basic and oAuth 2.0 authentication , below is an example on how to create a ScimClient instance
 
@@ -539,8 +538,8 @@ ScimBulkOperation usersOperation = ExcelMapper.mapUsers(excelFileLocationUsers);
 ScimBulkOperation groupsOperation = ExcelMapper.mapGroups(excelFileLocationGroups);
 ```
 
-You can download the Excel file models from here :
- [https://svn.gluu.info/repository/openxdi/SCIM-Client/doc/SampleXLS/](https///svn.gluu.info/repository/openxdi/SCIM-Client/doc/SampleXLS/)
+You can download the Excel file models from here : https://github.com/GluuFederation/SCIM-Client/tree/master/doc/SampleXLS
+
 Excel files must follow the exact structure, the “Operation” cell defines the type of the operation ”Add,Update,delete” .
 For groups you can always add more groups to the spreadsheet following the same structure.
 
