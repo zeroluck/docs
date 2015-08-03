@@ -1,6 +1,4 @@
-Instructions on how to install mod_auth_oidc with the Gluu Server.
-
-## CentOS 6.x
+## Installing mod_auth_oidc with the Gluu Server on CentOS 6.x
 
 #### Add EPEL Repo
 `rpm -ivh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm`
