@@ -1,4 +1,4 @@
-## Ubuntu 14.04
+## Installing mod_auth_oidc on Gluu Server with Ubuntu 14.04
 
 #### Install Apache2 and enable module ssl as below:
 
