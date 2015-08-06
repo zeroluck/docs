@@ -20,7 +20,7 @@ Commercial Gluu Server Cluster Packages are currently under development and not 
 # Available Components
 When you deploy the Gluu Server, you will have the opportunity to specify which of the following softwares you want deployed on your server: 
 
-__oxAuth:*__ oxAuth provides endpoints for an OpenID Connect Identity Provider (IDP) and an UMA Authorization Server (AS). Both OpenID Connect and UMA are standard profiles of OAuth 2.0.   
+__oxAuth:*__ oxAuth provides endpoints for an OpenID Connect Identity Provider (IDP) and an UMA Authorization Server (AS). Both OpenID Connect and UMA are standard profiles of OAuth 2.0, used for single sign-on (SSO) and web and API access management, respectively.    
 __oxTrust:*__ oxTrust is the graphical user interface that is used for server management.   
 __LDAP:*__ The Gluu Server ships with a fork of the OpenDJ LDAP server. It is used to store attributes and server configurations locally.   
 __Apache 2 web server:*__ Apache 2 serves the web server for the Gluu Server. Without Apache 2, it's not possible to see the hostname from a browser.   
