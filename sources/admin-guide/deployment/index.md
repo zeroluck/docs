@@ -9,6 +9,8 @@
 
 # Gluu Server Installation
 
+Before deploying the Gluu Server, it may be helpful to review our [getting started](../getting-started/index.md). 
+
 #### Single Server Deployments
 For a one server deployment, the easiest way to install the Gluu Server is via one of our [Centos](./centos.md) or [Ubuntu](./ubuntu.md) packages.
 
