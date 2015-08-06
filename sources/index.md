@@ -19,6 +19,7 @@ The main documentation is organized into the following sections:
 	  - [Design Goals](./admin-guide/introduction/index.md#design-goals)
 	  - [Architecture](./admin-guide/introduction/index.md#architecture)
 	  - [Licenses](./admin-guide/introduction/index.md#licenses)
+- [Getting Started](./admin-guide/getting-started/index.md)
 - [Deployment](./admin-guide/deployment/index.md)
 	  - [CentOS](./admin-guide/deployment/centos.md)
 	  - [Ubuntu](./admin-guide/deployment/ubuntu.md)
