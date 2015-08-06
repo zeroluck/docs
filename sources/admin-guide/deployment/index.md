@@ -1,6 +1,7 @@
 **Table of Contents** 
 
 - [Gluu Server Installation](#gluu-server-installation) 
+- [Available Components](#available-components)
 - [Hardware Guidance](#hardware-guidance) 
 - [Java](#java) 
 - [LDAP](#ldap) 
