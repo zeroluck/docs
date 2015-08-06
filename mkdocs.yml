@@ -14,6 +14,7 @@ pages:
 - [index.md, Home]
 # Admin Guide Sections
 - [admin-guide/introduction/index.md, Admin Guide, Introduction]
+- [admin-guide/getting-started/index.md, Admin Guide, Getting Started]
 - [admin-guide/deployment/index.md, Admin Guide, Deployment]
 - [admin-guide/certificates/index.md, Admin Guide, Certificates]
 - [admin-guide/configuration/index.md, Admin Guide, Configuration]
