@@ -51,8 +51,8 @@ __Note: * implies that the software should *always* be deployed.__
 **Clusters:**  To get started, you should try the Single Server deployment first. The Gluu Server Cluster packages require a a commercial license when you deploy a cluster in more than one location. There are three licenses:
   
 1. **Ecommerce:** This license enables you to run a cluster consisting of two locations--for example, let's say you have one server on Amazon, and one server on Rackspace. For the first location, you'd use the "master" package, which is free. For the second location, you'd need to purchase the ecommerce license. This license does not include support. The [Cluster  Support](http://gluu.org/pricing) package is highly recommended and includes one license for clusters of up to two locations.
-2. **Premium:** The premium cluster license includes three licenses for clusters of up to five locations. These license are included when you purchase [Premium Support](http://gluu.org/pricing)
-3. **Enterprise:** The enterprise cluster license includes a site license for unlimited cluster deployments. It makes license management really easy because you can use the same license for all your enviornments, like devopment, QA and production.
+2. **Premium:** The premium cluster license includes three licenses for clusters of up to five locations. The premium license is included with [Premium Support](http://gluu.org/pricing).
+3. **Enterprise:** The enterprise cluster license includes a site license for unlimited cluster deployments. It makes license management really easy because you can use the same license for all your environments, like development, QA and production.
 
 ## Dashboard
 The Gluu Server dashboard shows you metrics on the health and activity of your server(s). It also enables you to view logs, and to manage other common Gluu Server administration tasks. 
