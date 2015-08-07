@@ -87,13 +87,13 @@ Now, try to access the page: `https://dynamic.gluu.org:44443/dynamic` and you sh
 
 When presented with the discovery page, enter `admin@ce.gluu.org`
 
-{{:dynamic_discovery.png?500|}}
+![dynamic_discovery](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/mod_auth_oidc/dynamic_discovery.png)
 
 The usual choice as per present used urls is: `admin@ce.gluu.org`. But you must use the existing user at the gluuCE along with existing url i.e `existing_user@your.gluu.ce.server`
 
 After this we are presented with the oxAuth page from gluuCE where we enter the credentials for authentication.
 
-{{:oxauth_authentication.png?500|}}
+![oxauth_authentication](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/mod_auth_oidc/oxauth_authentication.png)
 
 #### Manual Client Registration
 
@@ -162,7 +162,9 @@ Now, restart the apache service as below:
 
 Now, try to access the page: `https://static.gluu.org:44443/static` and you should see the oxAuth page from gluuCE where we enter the credentials for authentication.
 
-{{:oxauth_authentication.png?500|}}
+![oxauth_authentication](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/mod_auth_oidc/oxauth_authentication.png)
+
+
 
 Chances are there that you'll see the below error after logging in: 
 
