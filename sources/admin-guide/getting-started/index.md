@@ -66,6 +66,8 @@ Passwords do not mitigate a lot of risk, but for many organizations, its still t
 #### Custom Authentication
 `Custom Authentication` enables an organization to utilize [interception scripts](../../reference/interception-scripts/index.md#overview) to achieve advanced levels of authentication. Using authentication interception scripts, your organization can call third-party APIs to enable multi-factor authentication (MFA), intrusion detection systems, or make use of multiple backend servers for authentication. 
 
+The Gluu Server currently ships with support for the FIDO U2F standard. Instructions for adding additional strong authentication mechanisms can be found [here](../../reference/interception-scripts/index.md#authentication). 
+
 
 ## Identity Management
 To keep the Gluu Server up-to-date with the latest user information (a.k.a. attributes or claims), your organization can either "push" or "pull" identity data. In the "pull" mode, otherwise known as [LDAP Syncronization or Cache Refresh](../../articles/cache-refresh.md), the Gluu Server can use an existing LDAP identity source like Microsoft Active Directory as the authoritative source of identity information. If you "push" identities to the Gluu Server, you can use the JSON/REST SCIM 1.1 or 2.0 API. 
