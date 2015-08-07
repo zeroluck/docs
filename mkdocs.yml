@@ -89,3 +89,6 @@ pages:
 - [reference/lib/saml.md, hidden]
 - [reference/lib/scim.md, hidden]
 - [reference/lib/uma.md, hidden]
+# mod_auth_oid Sub-section
+- [articles/mod_auth_oidc-ubuntu-installation.md, hidden]
+- [articles/mod_auth_oidc-centos-installation.md, hidden]
