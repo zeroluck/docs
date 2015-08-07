@@ -76,6 +76,11 @@ To keep the Gluu Server up-to-date with the latest user information (a.k.a. attr
 ## Single Sign-On (SSO)
 Now it's time to connect your endpoints, portals or websites with your Gluu Server. The Gluu Server stack includes both a [SAML](../saml/index.md) and [OpenID Connect Identity Provider](../openid-connect/index.md) which can be configured for single sign-on to any SAML 2.0 or OpenID Connect protected application.
 
+Here are a couple how-to's for creating SSO to popular apps:
+
+- [Using SAML to get SSO with Google Apps](../../articles/google-saml.md)  
+- [Using SAML to get SSO with Salesforce.com](../../articles/salesforce-sso.md)  
+
 
 ## Web & API Access Management
 The Gluu Server includes an [UMA Authorization Server (AS)](../uma/index.md) that can be used to enforce policies for access to any API or web resource. UMA is a profile of OAuth2 that is complimentary to OpenID Connect. UMA defines RESTful, JSON-based, standardized flows and constructs for access management. 
