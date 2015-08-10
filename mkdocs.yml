@@ -35,6 +35,7 @@ pages:
 - [reference/oxAuth/index.md, Reference, OxAuth]
 - [reference/oxd/index.md, Reference, OxD]
 - [reference/oxTrust/index.md, Reference, OxTrust]
+- [reference/mod_auth_oidc/index.md, Reference, Apache Module]
 # Articles Sections
 - [articles/cache-refresh.md, Articles, Cache Refresh Introduction]
 - [articles/apache-saml.md, Articles, Apache SAML SP Config]
@@ -90,5 +91,5 @@ pages:
 - [reference/lib/scim.md, hidden]
 - [reference/lib/uma.md, hidden]
 # mod_auth_oid Sub-section
-- [articles/mod_auth_oidc-ubuntu-installation.md, hidden]
-- [articles/mod_auth_oidc-centos-installation.md, hidden]
+- [reference/mod_auth_oidc/ubuntu-installation.md, hidden]
+- [reference/mod_auth_oidc/centos-installation.md, hidden]
