@@ -22,19 +22,19 @@ enabled=1
 
 ### Shibboleth SP Installation
 
-* /# yum install shibboleth
+* # yum install shibboleth
 
-* /# service shibd start
+* # service shibd start
 
-* /# chkconfig shibd on
+* # chkconfig shibd on
 
 ### Install and Configure httpd
 
 #### Installation
 
-* /# yum install httpd
+* # yum install httpd
 
-* /# service httpd start
+* # service httpd start
 
 * Stop the firewall
 
@@ -84,29 +84,29 @@ This section describes how to configure "shibboleth2.xml" file.
 
 ### System Preparation
 
-1. /# apt-get install curl
+1. # apt-get install curl
 
 2. Grab Shibboleth repository from SWITCH:
 
-* /# curl -k -O http://pkg.switch.ch/switchaai/SWITCHaai-swdistrib.asc
+* # curl -k -O http://pkg.switch.ch/switchaai/SWITCHaai-swdistrib.asc
 
-* /# gpg --with-fingerprint SWITCHaai-swdistrib.asc
+* # gpg --with-fingerprint SWITCHaai-swdistrib.asc
 
-* /# apt-key add SWITCHaai-swdistrib.asc
+* # apt-key add SWITCHaai-swdistrib.asc
 
-* /# echo 'deb http://pkg.switch.ch/switchaai/ubuntu precise main' | sudo tee /etc/apt/sources.list.d/SWITCHaai-swdistrib.list> /dev/null
+* # echo 'deb http://pkg.switch.ch/switchaai/ubuntu precise main' | sudo tee /etc/apt/sources.list.d/SWITCHaai-swdistrib.list> /dev/null
 
-* /# apt-get update
+* # apt-get update
 
 ### Shibboleth SP Installation
 
-* /# apt-get install shibboleth
+* # apt-get install shibboleth
 
 * Quick test: `shibd -t [Important is the last line: overall configuration is loadable, check console for non-fatal problems]`
 
 ### Apache Testing
 
-* /# apache2ctl configtest
+* # apache2ctl configtest
 
 ### Test Shibboleth
 
