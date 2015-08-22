@@ -88,12 +88,7 @@ some Gluu Server appliance specific information, like the DNS hostname, and
 the information required for an X.509 certificate. 
 We are always working to make the setup easier. After successful Gluu 
 Server installation, run the Gluu Server `setup.py` to complete the 
-installation. The script is installed in `/install`, or you can get the latest 
-setup scripts:
-
-<code> wget https://github.com/GluuFederation/community-edition-setup/archive/master.zip </code>
-
-Unzip and cd to community-edition-setup
+installation. The script is installed in `/install`
 
 <code> ./setup.py </code>
 
