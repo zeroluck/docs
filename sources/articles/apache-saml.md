@@ -26,9 +26,10 @@ Please run the following commands to install the Shibboleth SP.
 * yum install shibboleth
 * service shibd start
 * chkconfig shibd on
-### Install and Configure httpd
 
+### Install and Configure httpd
 #### Installation
+
 The following commands will install and start the Apache server on your machine/linux environment.
 
 * yum install httpd
@@ -83,9 +84,8 @@ This section describes how to configure "shibboleth2.xml" file.
 
 ### System Preparation
 
-<<<<<<< HEAD
+
 * apt-get install curl
-Grab Shibboleth repository from SWITCH:
 
 * curl -k -O http://pkg.switch.ch/switchaai/SWITCHaai-swdistrib.asc
 
@@ -118,17 +118,12 @@ Grab Shibboleth repository from SWITCH:
 ### Shibboleth SP Installation
 
 * # apt-get install shibboleth
->>>>>>> c3677c6b29ded0af8a4a0bdc7de3ccf058bd33aa
 
-	* Quick test: `shibd -t [Important is the last line: overall configuration is loadable, check console for non-fatal problems]`
+* Quick test: `shibd -t [Important is the last line: overall configuration is loadable, check console for non-fatal problems]`
 
 ### Apache Testing
 
-<<<<<<< HEAD
 * apache2ctl configtest
-=======
-* # apache2ctl configtest
->>>>>>> c3677c6b29ded0af8a4a0bdc7de3ccf058bd33aa
 
 ### Test Shibboleth
 
