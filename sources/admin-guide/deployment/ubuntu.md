@@ -1,7 +1,8 @@
 **Table of Contents**  
 
 - [Gluu Server Ubuntu Installation Guide](#gluu-server-ubuntu-installation-guide)	
-	- [System Requirements](#system-requirements)	
+	- [System Requirements](#system-requirements)
+	- [Available Components](#available-components)
 	- [Install](#install)	
 	- [Starting and Stopping the Gluu Server](#starting-and-stopping-the-gluu-server)	
 	- [Login to chroot environment](#login-to-chroot-environment)	
@@ -17,6 +18,20 @@ The Gluu Server Community Edition should be deployed on a VM with:
 
 * Ubuntu Server 14.04(Trusty)	
 * 2 CPU Units and at least 2GB Physical Memory (more is always better, though)	
+
+## Available Components
+When you deploy the Gluu Server, you will have the opportunity to specify which of the following softwares you want deployed on your server: 
+
+__oxAuth:*__ oxAuth provides endpoints for an OpenID Connect Identity Provider (IDP) and an UMA Authorization Server (AS). Both OpenID Connect and UMA are standard profiles of OAuth 2.0, used for single sign-on (SSO) and web and API access management, respectively.    
+__oxTrust:*__ oxTrust is the graphical user interface that is used for server management.   
+__LDAP:*__ The Gluu Server ships with a fork of the OpenDJ LDAP server. It is used to store attributes and server configurations locally.   
+__Apache 2 web server:*__ Apache 2 serves the web server for the Gluu Server. Without Apache 2, it's not possible to see the hostname from a browser.   
+**Shibboleth 2 SAML IDP:** The Shibboleth server provides endpoints for a SAML Identity Provider (IDP). If you want to create single sign-on (SSO) to a SAML SP, you'll need a SAML IDP.   
+**Asimba SAML Proxy:** The Asimba SAML proxy should be deployed on if your organization needs to consolidate inbound SAML authentication from the IDPs of partners to a single website or app.   
+**CAS:** CAS is legacy at this point and should only be deployed if your organization has existing apps that can only support CAS for single sign-on.   
+
+__Note: * implies that the software should *always* be deployed.__
+
 
 ## Install 
 
@@ -73,12 +88,7 @@ some Gluu Server appliance specific information, like the DNS hostname, and
 the information required for an X.509 certificate. 
 We are always working to make the setup easier. After successful Gluu 
 Server installation, run the Gluu Server `setup.py` to complete the 
-installation. The script is installed in `/install`, or you can get the latest 
-setup scripts:
-
-<code> wget https://github.com/GluuFederation/community-edition-setup/archive/master.zip </code>
-
-Unzip and cd to community-edition-setup
+installation. The script is installed in `/install`
 
 <code> ./setup.py </code>
 

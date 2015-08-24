@@ -21,20 +21,37 @@ enabled=1
 * http://download.opensuse.org/repositories/security:/shibboleth/CentOS_CentOS-6/security:shibboleth.repo
 
 ### Shibboleth SP Installation
+<<<<<<< HEAD
 Please run the following commands to install the Shibboleth SP.
 >>
 * yum install shibboleth
 * service shibd start
 * chkconfig shibd on
 >>
+=======
+
+* # yum install shibboleth
+
+* # service shibd start
+
+* # chkconfig shibd on
+
+>>>>>>> c3677c6b29ded0af8a4a0bdc7de3ccf058bd33aa
 ### Install and Configure httpd
 
 #### Installation
 The following commands will install and start the Apache server on your machine/linux environment.
 
+<<<<<<< HEAD
 >>
 * yum install httpd
 * service httpd start
+=======
+* # yum install httpd
+
+* # service httpd start
+
+>>>>>>> c3677c6b29ded0af8a4a0bdc7de3ccf058bd33aa
 * Stop the firewall
 >>
 
@@ -85,6 +102,7 @@ This section describes how to configure "shibboleth2.xml" file.
 
 ### System Preparation
 
+<<<<<<< HEAD
 * apt-get install curl
 Grab Shibboleth repository from SWITCH:
 
@@ -101,12 +119,35 @@ Grab Shibboleth repository from SWITCH:
 ### Shibboleth SP Installation
 
 * apt-get install shibboleth
+=======
+1. # apt-get install curl
+
+2. Grab Shibboleth repository from SWITCH:
+
+* # curl -k -O http://pkg.switch.ch/switchaai/SWITCHaai-swdistrib.asc
+
+* # gpg --with-fingerprint SWITCHaai-swdistrib.asc
+
+* # apt-key add SWITCHaai-swdistrib.asc
+
+* # echo 'deb http://pkg.switch.ch/switchaai/ubuntu precise main' | sudo tee /etc/apt/sources.list.d/SWITCHaai-swdistrib.list> /dev/null
+
+* # apt-get update
+
+### Shibboleth SP Installation
+
+* # apt-get install shibboleth
+>>>>>>> c3677c6b29ded0af8a4a0bdc7de3ccf058bd33aa
 
 	* Quick test: `shibd -t [Important is the last line: overall configuration is loadable, check console for non-fatal problems]`
 
 ### Apache Testing
 
+<<<<<<< HEAD
 * apache2ctl configtest
+=======
+* # apache2ctl configtest
+>>>>>>> c3677c6b29ded0af8a4a0bdc7de3ccf058bd33aa
 
 ### Test Shibboleth
 
