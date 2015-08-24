@@ -21,39 +21,20 @@ enabled=1
 * http://download.opensuse.org/repositories/security:/shibboleth/CentOS_CentOS-6/security:shibboleth.repo
 
 ### Shibboleth SP Installation
-<<<<<<< HEAD
 Please run the following commands to install the Shibboleth SP.
->>
+
 * yum install shibboleth
 * service shibd start
 * chkconfig shibd on
->>
-=======
-
-* # yum install shibboleth
-
-* # service shibd start
-
-* # chkconfig shibd on
-
->>>>>>> c3677c6b29ded0af8a4a0bdc7de3ccf058bd33aa
 ### Install and Configure httpd
 
 #### Installation
 The following commands will install and start the Apache server on your machine/linux environment.
 
-<<<<<<< HEAD
->>
 * yum install httpd
 * service httpd start
-=======
-* # yum install httpd
-
-* # service httpd start
-
->>>>>>> c3677c6b29ded0af8a4a0bdc7de3ccf058bd33aa
 * Stop the firewall
->>
+
 
 #### Configuration
 Please edit the "shib.conf" file located at "/etc/httpd/conf.d/" to conform to the following changes.
