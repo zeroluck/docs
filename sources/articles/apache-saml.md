@@ -84,8 +84,11 @@ This section describes how to configure "shibboleth2.xml" file.
 
 ### System Preparation
 
+1. Install Curl
 
 * apt-get install curl
+
+2. Grab Shibboleth repository from SWITCH: 
 
 * curl -k -O http://pkg.switch.ch/switchaai/SWITCHaai-swdistrib.asc
 
@@ -100,24 +103,6 @@ This section describes how to configure "shibboleth2.xml" file.
 ### Shibboleth SP Installation
 
 * apt-get install shibboleth
-=======
-1. # apt-get install curl
-
-2. Grab Shibboleth repository from SWITCH:
-
-* # curl -k -O http://pkg.switch.ch/switchaai/SWITCHaai-swdistrib.asc
-
-* # gpg --with-fingerprint SWITCHaai-swdistrib.asc
-
-* # apt-key add SWITCHaai-swdistrib.asc
-
-* # echo 'deb http://pkg.switch.ch/switchaai/ubuntu precise main' | sudo tee /etc/apt/sources.list.d/SWITCHaai-swdistrib.list> /dev/null
-
-* # apt-get update
-
-### Shibboleth SP Installation
-
-* # apt-get install shibboleth
 
 * Quick test: `shibd -t [Important is the last line: overall configuration is loadable, check console for non-fatal problems]`
 
