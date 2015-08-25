@@ -102,7 +102,6 @@ The main documentation is organized into the following sections:
 - [Salesfore SAML](./articles/salesforce-sso.md)
 - [IIS SAML](./articles/iis-saml.md)
 - [Java Connect](./articles/java-connect.md)
-- [Java SAML](./articles/java-saml.md)
 - [JS Connect](./articles/js-connect.md)
 - [SCIM Client](./articles/scim-client.md)
 - [Test Shib2](./articles/test-shib2.md)
