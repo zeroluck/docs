@@ -5,10 +5,7 @@ copyright: Copyright &copy; 2014, Gluu, Inc.
 docs_dir: sources
 repo_url: https://github.com/GluuFederation/docs
 theme: readthedocs
-
 theme_dir: ./theme/mkdocs/
-theme_center_lead: false
-include_search: true
 pages:
 
 - [index.md, Home]
@@ -48,6 +45,7 @@ pages:
 - [articles/operations/index.md, Articles, Gluu CE Operations]
 - [articles/java-connect.md, Articles, OpenID in Java]
 - [articles/js-connect.md, Articles, OpenID from JavaScript]
+- [articles/java-saml.md, Articles,Java SAML Library ] 
 - [articles/scim-client.md, Articles, SCIM API]
 - [articles/test-shib2.md, Articles, Testing Shib2]
 # Deployment Sub-sections
