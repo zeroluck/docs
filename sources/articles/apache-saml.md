@@ -38,7 +38,7 @@ The following commands will install and start the Apache server on your machine/
 
 
 #### Configuration
-Please edit the "shib.conf" file located at "/etc/httpd/conf.d/" to conform to the following changes.
+Edit 'httpd.conf' with following changes.
 
 * Change ServerName directive to the server name of the SP
 
