@@ -409,8 +409,7 @@ SCIM-client support both Basic and oAuth 2.0 authentication , below is an exampl
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
 ```
 
-This will create an oAuth instance of ScimClient where: userName and passWord are the user credentials , clientID and clientSecret are oxAuth client credentials , domailURL is the domain where SCIM client resides example : [http://localhost:8080/oxTrust/seam/resource/restv1](http://localhost:8080/oxTrust/seam/resource/restv1)
-oxAuthDomain is the tokenURL example [http://localhost:8080/oxauth/seam/resource/restv1/oxauth/token](http://localhost:8080/oxauth/seam/resource/restv1/oxauth/token)
+This will create an oAuth instance of ScimClient where: `userName` and `passWord` are the user credentials , `clientID` and `clientSecret` are oxAuth client credentials , `domailURL` is the domain where SCIM client resides, for example : `http://localhost:8080/oxTrust/seam/resource/restv1` and `oxAuthDomain` is the `tokenURL` example `http://localhost:8080/oxauth/seam/resource/restv1/oxauth/token`
 
 ```
 ScimClient client = ScimClient.basicInstance(userName, passWord, domainURL);
@@ -516,9 +515,9 @@ String result = response.getResponseBodyString(); // this will give you Response
 
 ## oxAuth Client Creation
 
-It’s possible to create an oxAuth client dynamically using SCIM-Client , this option is available using the static method “create” method of the class ”OxAuthClientCreator”, where “applicationName” is the name of the desired client, “registerUrl” is the client registration url example : 
-[http://localhost:8080/oxauth/seam/resource/restv1/oxauth/register](http://localhost:8080/oxauth/seam/resource/restv1/oxauth/register)
-and “redirectUris” is a space separated String containing the desired redirect urls.
+It’s possible to create an oxAuth client dynamically using SCIM-Client , this option is available using the static method “create” method of the class `OxAuthClientCreator`, where `applicationName` is the name of the desired client, `registerUrl` is the client registration url example : 
+`http://localhost:8080/oxauth/seam/resource/restv1/oxauth/register`
+and `redirectUris` is a space separated String containing the desired redirect urls.
 
 ```
 CreationResult response = OxAuthClientCreator.create( applicationName, registerUrl, redirectUris);
