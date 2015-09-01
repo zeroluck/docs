@@ -27,7 +27,7 @@ The connection is extablished through the creation of a Trust Relationship using
 
 	4. Released: The necessary attributes, Transientid and the eduPersonPrincipalName, were selected from the attribute list.
  
-![hobsons-tr](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/hobsons-tr.jpeg)
+![hobsons-tr](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/hobsons-tr.jpg)
 
 	5. Finally click on "Add" to finish creating the trust relationship.
 
@@ -35,7 +35,7 @@ The connection is extablished through the creation of a Trust Relationship using
 
 Please ensure that the new trust relationship status is "active", else click on the trust relationship and activate it before configuring it.
 
-![hobsons-tr-active](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/hobsons-tr-active.jpeg)
+![hobsons-tr-active](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/hobsons-tr-active.jpg)
 
 The configuration screen can be accessed by clicking on the Hobsons Trust Relationship.
 
@@ -51,6 +51,6 @@ The configuration screen can be accessed by clicking on the Hobsons Trust Relati
 
 	* Set "encryptNameIds" to Never from the drop-down menu and click "Save".
 
-![hobsons-tr-update](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/hobsons-tr-update.jpeg)
+![hobsons-tr-update](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/hobsons-tr-update.jpg)
 
 4. Click "Update" to finish the Trust Relationship.
