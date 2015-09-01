@@ -153,7 +153,7 @@ After adding a new Trust Relationship, the server administrator will observe a c
     * [Certificates](../certificates/index.md) in Gluu Server             
 
 * How can I get the IDP's SAML cert? 
-    * SAML certificate is available in your IDP's metadata. Metadata can be collected by following these [instructions](https://support.gluu.org/questions/36/idp-certificate-entityid-location-http-redirect-location-etc/). 
+    * SAML certificate is available in your IDP's metadata. Metadata can be collected by following these [instructions](https://support.gluu.org/view/installation/idp-certificate-entityid-location-http-redirect-location-etc/265). 
 
 
 * I need to update metadata for one Service Provider. How is it possible? 
