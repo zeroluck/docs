@@ -12,15 +12,15 @@ You can download a PDF copy of this guide from [HERE](https://github.com/GluuFed
 
 SCIM is integrated as a service of oxTrust . To start operating with SCIM’s web service , you will need to send a request to one of SCIM’s endpoints , for example , if you want to add a user you need to send an HTTP request to this endpoint url :
 
-[https://localhost:8080/oxTrust/seam/resource/restv1/Users/](https///localhost/8080/oxTrust/seam/resource/restv1/Users/)
+`https://localhost:8080/oxTrust/seam/resource/restv1/Users/`
 
 for bulk operations (adding modifying and deleting multiple users ) you have to send a request to the bulk endpoint:
 
-[https://localhost:8080/oxTrust/seam/resource/restv1/Bulk/](https///localhost/8080/oxTrust/seam/resource/restv1/Bulk/)
+`https://localhost:8080/oxTrust/seam/resource/restv1/Bulk/`
 
 for group operations:
 
-[https://localhost:8080/oxTrust/seam/resource/restv1/Groups/](https///localhost/8080/oxTrust/seam/resource/restv1/Groups/)
+`https://localhost:8080/oxTrust/seam/resource/restv1/Groups/`
 
 You need to have a the right credentials and roles in order for you to access the endpoint example, which is for oxTrust means that you are a member of the Owner or Manager group specified in the organization entry. 
 Gluu’s SCIM web service uses both Basic authentication and oAuth 2.0 authentication . For the basic type of authentication you need to specify the user and password (base64 encoded) in the HTTP request HTTP header in order to be authenticated 
