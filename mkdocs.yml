@@ -38,6 +38,7 @@ pages:
 - [articles/apache-saml.md, Articles, Apache SAML SP Config]
 - [articles/google-saml.md, Articles, SAML SSO with Google]
 - [articles/salesforce-sso.md, Articles, SAML SSO with Salesforce]
+- [articles/hobsons-saml.md, Articles, SAML SSO with Hobsons]
 - [articles/iis-saml.md, Articles, IIS SAML Config]
 - [articles/benchmarking.md, Articles, Benchmarking]
 - [articles/custom-attributes.md, Articles, Custom Attributes]
