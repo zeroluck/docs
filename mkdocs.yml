@@ -48,7 +48,9 @@ pages:
 - [articles/js-connect.md, Articles, OpenID from JavaScript]
 - [articles/java-saml.md, Articles,Java SAML Library ] 
 - [articles/scim-client.md, Articles, SCIM API]
+- [articles/mod-auth-oidc-installation.md, Articles, mod_auth_oidc Installation Guide]
 - [articles/test-shib2.md, Articles, Testing Shib2]
+
 # Deployment Sub-sections
 - [admin-guide/deployment/centos.md, hidden]
 - [admin-guide/deployment/setup_py.md, hidden]
