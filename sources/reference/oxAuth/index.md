@@ -1,19 +1,6 @@
 # oxAuth Configuration 
 
-## oxauth-ldap.properties
-
-These are the properties oxTrust uses to connect to LDAP
-
- * __bindDN__
-
- * __bindPassword__
-
- * __servers__ `localhost:1636`
-
- * __useSSL__ `TRUE | false`
-
- * __maxconnections__ `3`
-
+- [oxAuth LDAP properties](./oxauth-ldap-properties.md)
 
 ## oxauth-config.xml
 
