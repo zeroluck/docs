@@ -13,8 +13,73 @@ The general structure of the configuration file is like that:
 
     </configuration>
 
-The subchapters are listed according to their order in the configuration
-file.
+The sections are listed according to their order in the configuration file.
+
+ * Basic settings
+
+ * Server mode
+
+ * Update interval
+
+ * Supported response types
+
+ * Supported grant types
+
+ * Supported algorithms a user can login with
+
+ * Supported encryption algorithms
+
+ * Supported ID token signing algorithms
+
+ * Supported ID token encryption algorithms
+
+ * Supported request object signing algorithms
+
+ * Supported request object encryption algorithms
+
+ * Supported request object encryption encoding values
+
+ * Supported token endpoint authentication methods
+
+ * Supported token endpoint authentication signing algorithm values
+
+ * Supported display values
+
+ * Supported claim types
+
+ * Supported claims
+
+ * Service documentation
+
+ * Supported locales for claims
+
+ * Supported locales for user interfaces
+
+ * Supported claims parameters
+
+ * Supported request parameters
+
+ * Supported request uri parameters
+
+ * Required request uri registration
+
+ * Uri for operation policy
+
+ * Uri for type-of-service
+
+ * Connection behaviour
+
+ * Default signature algorithms
+
+ * Federation availability
+
+ * Dynamic registration of custom stuff
+
+ * oxOpenID connect version
+
+ * Authorization filters
+
+ * Custom client filters
 
     <?xml version="1.0" encoding="UTF-8"?>
     <configuration>
