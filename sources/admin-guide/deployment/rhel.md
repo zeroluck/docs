@@ -1,4 +1,4 @@
-# Gluu Server Community Edition (CE) CentOS Configuration Guide
+# Gluu Server Community Edition (CE) RHEL Configuration Guide
 
 `chroot` is a pre-Docker OS level container technology. Like Docker, the `chroot` distribution includes a full linux distribution. As a file system based "jail", when you login to the Gluu Server from the host linux system, the `/` directory in the Gluu Server is actually `/home/gluu-server` on the host. 
 
