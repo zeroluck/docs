@@ -1,5 +1,5 @@
 
-## Basic settings
+### Basic settings
 
 ```
 <appliance-inum>%(inumAppliance)s</appliance-inum>
