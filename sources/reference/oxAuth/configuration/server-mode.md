@@ -6,5 +6,4 @@ This entry sets the mode of the server. Possible values are `memory` and
 
 ```
 <mode>ldap</mode>
-
 ```
