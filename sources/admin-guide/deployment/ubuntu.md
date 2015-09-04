@@ -75,7 +75,7 @@ and look for the LDAP password which is the same as the admin password.
 
 ## Login to chroot environment
 
-<code> # service gluu-sever login </code>
+<code> # service gluu-server login </code>
 
 Or if you prefer... 
 
