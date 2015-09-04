@@ -1,6 +1,21 @@
 
 ## oxauth-config.xml
 
+This file consists of several sections that we explain in more detail in
+the according subchapter.
+
+The general structure of the configuration file is like that:
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <configuration>
+        <appliance-inum>%(inumAppliance)s</appliance-inum>
+        ...
+
+    </configuration>
+
+The subchapters are listed according to their order in the configuration
+file.
+
     <?xml version="1.0" encoding="UTF-8"?>
     <configuration>
         <appliance-inum>%(inumAppliance)s</appliance-inum>
