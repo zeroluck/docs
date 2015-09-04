@@ -16,17 +16,18 @@ Directory Access Protocol (LDAP):
    Authenticate to the LDAP server using this password. This value
    refers to the LDAP entry `userPassword`.
 
- * __servers__ 
+ * __servers__
 
-   Define both the server name and the according port to use. The
-   default value is `localhost:1636`.
+   Define both the server name and the according network port to use. 
+   The default value is `localhost:1636` for the local machine, and 
+   port `1636`.
 
- * __useSSL__ 
+ * __useSSL__
 
    Enable an SSL connection for encrypted data transmission. For this
    entry use either `TRUE` to enable SSL, or `false` to disable SSL.
 
- * __maxconnections__ `3`
+ * __maxconnections__
 
    Define the maximum number of connections at the same time. The 
    default value is set to `3`.
