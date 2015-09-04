@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon_ic.ico">
+
+        <title>Interception Scripts - Gluu Docs</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../.."><img src="../../img/logo.png" ></a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    
+                        <li >
+                            <a href="../..">Home</a>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin Guide <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../admin-guide/introduction/">Introduction</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../admin-guide/deployment/">Deployment</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../admin-guide/configuration/">Configuration</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../admin-guide/design-customizations/">Design and Customizations</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../admin-guide/ldap/">LDAP</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../admin-guide/saml/">SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../admin-guide/openid-connect/">OpenID Connect</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../admin-guide/uma/">UMA</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../admin-guide/user-management/">User Management</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../admin-guide/personal/">Personal</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../admin-guide/faq/">FAQ</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown active">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../api/">API</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="active">
+                                        <a href="./">Interception Scripts</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../ldap-namespace/">LDAP Namespace</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../ldap-schema/">LDAP Schema</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../lib/">Gluu Library</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../oxAuth/">oxAuth</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../oxd/">OxD</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../oxTrust/">oxTrust</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../admin-guide/certificates/">Certificates</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Articles <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../articles/apache-saml/">Apache-SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../articles/benchmarking/">Benchmarking</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../articles/custom-attributes/">Custom Attributes</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../articles/google-saml/">Google SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../articles/iis-saml/">IIS SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../articles/java-connect/">Java Connect</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../articles/java-saml/">Java SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../articles/js-connect/">JS Connect</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../articles/scim-client/">SCIM Client</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../articles/test-shib2/">Test Shib2</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../articles/gluu-server-ce/">Gluu Server CE</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../admin-guide/operations/">Gluu Server Operations</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                
+                </ul>
+            
+
+            
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li >
+                    <a rel="next" href="../api/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../ldap-namespace/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a href="https://github.com/GluuFederation/docs">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                <li>
+                <!--<form action="." method="get" class="form-inline">-->
+                    <!--<div class="search-box">-->
+                        <!--<input type="text" value="" class="search-text" placeholder="Search" />-->
+                        <!--<input type="submit" value="Search" class="search-tag"/>-->
+                    <!--</div>-->
+                <!--</form>-->
+
+                </li>
+                
+            </ul>
+            
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+       
+        <li class="main active"><a href="#interception-scripts">Interception Scripts</a></li>
+        
+       
+    
+       
+        <li class="main "><a href="#overview">Overview</a></li>
+        
+       
+    
+       
+        <li class="main "><a href="#application-session-management">Application Session Management</a></li>
+        
+       
+    
+       
+        <li class="main "><a href="#authentication">Authentication</a></li>
+        
+       
+    
+       
+        <li class="main "><a href="#authorization">Authorization</a></li>
+        
+       
+    
+       
+        <li class="main "><a href="#cache-refresh">Cache Refresh</a></li>
+        
+       
+    
+       
+        <li class="main "><a href="#client-registration">Client Registration</a></li>
+        
+       
+    
+       
+        <li class="main "><a href="#id-generation">ID Generation</a></li>
+        
+       
+    
+       
+        <li class="main "><a href="#update-user">Update User</a></li>
+        
+       
+    
+       
+        <li class="main "><a href="#user-registration">User Registration</a></li>
+        
+       
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="interception-scripts">Interception Scripts</h1>
+<p>The Gluu Server was designed to be very flexible. Gluu Server admins can use <a href="http://www.jython.org/docs/tutorial/indexprogress.html">Jython</a> interception scripts to customize behavior.</p>
+<p>Jython was chosen because an interpreted language facilitates dynamic creation of business logic, and makes it easier to distribute this logic to a cluster of Gluu servers.</p>
+<p>Another advantage of Jython was that developers can use either Java or Python classes. Combined with the option of calling web services from Python or Java, this enables the Gluu Server to support any business-driven policy requirement.</p>
+<p>To access custom scripts within oxTrust, navigate to Configuration &gt; Manage Custom Scripts.</p>
+<h1 id="overview">Overview</h1>
+<p>There are currently 8 options that can be customized by using interception scripts.    </p>
+<ul>
+<li><a href="#application-session-management">Application Session Management</a>         </li>
+<li><a href="#authentication">Authentication</a>     </li>
+<li><a href="#authorization">Authorization</a>       </li>
+<li><a href="#cache-refresh">Cache Refresh</a>       </li>
+<li><a href="#client-registration">Client Registration</a>       </li>
+<li><a href="#id-generation">ID Generation</a>       </li>
+<li><a href="#update-user">Update User</a>       </li>
+<li><a href="#user-registration">User Registration</a>       </li>
+</ul>
+<p>All script types inherit a base interface which has 3 methods:   </p>
+<p><code>def init(self, configurationAttributes):</code>      </p>
+<p><code>def destroy(self, configurationAttributes):</code>       </p>
+<p><code>def getApiVersion(self):</code>      </p>
+<p>The <code>configurationAttributes</code> parameter is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code> with properties specified in <code>oxConfigurationProperty</code> attributes.   </p>
+<p>The <code>init</code> and <code>destroy</code> methods are called only one time during the script initialization and script destroy events. The <code>init</code> method can be used to do global script initialization, initiate objects, etc. The <code>destroy</code> method can be used to free resources and objects created in the <code>init</code> method.    </p>
+<p>The script manager only loads enabled scripts. Hence, after enabling a script, the script manager should trigger an event to load or destroy script. </p>
+<p>All scripts are stored in LDAP in the <code>ou=scripts,o=&lt;org_inum&gt;,o=gluu</code> branch.  </p>
+<p>This is a sample entry:     </p>
+<pre class="prettyprint well"><code>dn: inum=@!1111!031C.4A65,ou=scripts,o=@!1111,o=gluu
+objectClass: oxCustomScript
+objectClass: top
+description: &lt;custom_script_description&gt;
+displayName: &lt;display_name&gt;
+gluuStatus: true
+inum: @!1111!031C.4A65
+oxLevel: &lt;priority&gt;
+oxModuleProperty: {"value1":"module_property_name","value2":"module_property_value","description":""}
+oxConfigurationProperty: {"value1":"configuration_property_name","value2":"configuration_property_value","description":""}
+oxRevision: &lt;revision&gt;
+oxScript: &lt;custom_script&gt;
+oxScriptType: &lt;script_type&gt;
+programmingLanguage: python
+</code></pre>
+<p>The script manager reloads scripts automatically without needing to restart the application once <code>oxRevision</code> is increased.</p>
+<p>The <code>getApiVersion</code> method allows API changes in order to do transparent migration from an old script to a new API. Currently all scripts should return 1. For example, in the future we can extend the API of any script and call new method(s) only if API version &gt; 2, etc. exists. </p>
+<h1 id="application-session-management">Application Session Management</h1>
+<p>This script allows an admin to notify 3rd party systems about requests to end an OAuth session. This method is triggered by an oxAuth call to the <code>end_session</code> endpoint. It's possible to add multiple scripts with this type. The application should call all of them according to the level.</p>
+<p>This script type adds only one method to base scipt type:    </p>
+<p><code>def endSession(self, httpRequest, authorizationGrant, configurationAttributes):</code>       </p>
+<p>These are the types of parameters:  <br />
+- <code>httpRequest</code> is <code>javax.servlet.http.HttpServletRequest</code>    <br />
+- <code>authorizationGrant</code> is <code>org.xdi.oxauth.model.common.AuthorizationGrant</code>    <br />
+- <code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code>        </p>
+<p>This script can be used in oxAuth application only.</p>
+<ul>
+<li><a href="./sample-application-session-script.py">Sample Application Session Management Script</a></li>
+</ul>
+<h1 id="authentication">Authentication</h1>
+<p>An authentication script enables you to customize the user authentication experience. For example, you can write a script that enables a two-factor authentication mechnaism like Duo Security. By default oxAuth uses simple username/password authentication method. This scipt type allows an admin to implement more secure workflows to cover an organizations security requirements. It extends the base scipt type with the <code>init</code>, <code>destroy</code> and <code>getApiVersion</code> methods but also adds the following methods:    </p>
+<p><code>def isValidAuthenticationMethod(self, usageType, configurationAttributes):</code></p>
+<p><code>def getAlternativeAuthenticationMethod(self, usageType, configurationAttributes):</code></p>
+<p><code>def authenticate(self, configurationAttributes, requestParameters, step):</code>     </p>
+<p><code>def prepareForStep(self, configurationAttributes, requestParameters, step):</code>   </p>
+<p><code>def getCountAuthenticationSteps(self, configurationAttributes):</code>   </p>
+<p><code>def getExtraParametersForStep(self, configurationAttributes, step):</code>   </p>
+<p><code>def getPageForStep(self, configurationAttributes, step):</code>      </p>
+<p><code>def logout(self, configurationAttributes, requestParameters):</code>     </p>
+<p>The <code>isValidAuthenticationMethod</code> method is used to check if the authentication method is in a valid state. For example we can check there if a 3rd party mechanism is avalable to authenticate users. As a result it should return <code>True</code> or <code>False</code>.</p>
+<p>This method has the following parameters:  <br />
+- <code>usageType</code> is <code>org.xdi.model.AuthenticationScriptUsageType</code><br />
+- <code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code>    </p>
+<p>The <code>getAlternativeAuthenticationMethod</code> method is called only if the current authentication method is in an invalid state. Hence authenticator calls it only if <code>isValidAuthenticationMethod</code> returns <code>False</code>. As a result it should return the reserved authentication method name.</p>
+<p>This method has the following parameters:  <br />
+- <code>usageType</code> is <code>org.xdi.model.AuthenticationScriptUsageType</code><br />
+- <code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code>    </p>
+<p>The <code>authenticate</code> method is the key method within the person authentication script. It checks if the user has passed the specified step or not. As a result it should return <code>True</code> or <code>False</code>.</p>
+<p>This method has the following parameters:  <br />
+- <code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code>  <br />
+- <code>requestParameters</code> is <code>java.util.Map&lt;String, String[]&gt;</code><br />
+- step is a java integer</p>
+<p>The <code>prepareForStep</code> method can be used to prepare variables needed to render login page and store them in event context.
+As a result it should return <code>True</code> or <code>False</code>. </p>
+<p>This method has the following parameters:  <br />
+- <code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code>  <br />
+- <code>requestParameters</code> is <code>java.util.Map&lt;String, String[]&gt;</code><br />
+- step is a java integer</p>
+<p>The <code>getCountAuthenticationSteps</code> method should return an integer value with the number of steps in the authentication workflow.</p>
+<p>This method has the following parameters:  <br />
+- <code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code>    </p>
+<p>The <code>getExtraParametersForStep</code> method provides a way to notify the authenticator that it should store specified event context parameters event in the oxAuth session. It's needed in few cases, for example when an authentication script redirects the user to a 3rd party authentication system and expects the workflow to resume after that. As a result it should return a java array of strings.</p>
+<p>This method has the following parameters:  <br />
+- <code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code>  <br />
+- step is a java integer    </p>
+<p>The <code>getPageForStep</code> method allows the admin to render a required page for a specified authentication step. It should return a string value with a path to an XHTML page. If the return value is empty or null, the authenticator should render the default log in page <code>/login.xhtml</code>.</p>
+<p>This method has the following parameters:   <br />
+- <code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code>  <br />
+- step is a java integer    </p>
+<p>The <code>logout</code> method is not mandatory. It can be used in cases when you need to execute specific logout logic within the authentication scipt when oxAuth receives an end session request. Also it allows oxAuth to stop processing the end session request workflow if it returns <code>False</code>. As result it should return <code>True</code> or <code>False</code>.</p>
+<p>This method has the following parameters:   <br />
+- <code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code>  <br />
+- <code>requestParameters</code> is <code>java.util.Map&lt;String, String[]&gt;</code>  </p>
+<p>This script can be used in oxAuth application only.</p>
+<p><strong>For a complete list of pre-written, open source Gluu authentication scripts, view our <a href="https://github.com/GluuFederation/oxAuth/tree/master/Server/integrations">server integrations</a></strong></p>
+<ul>
+<li><a href="./sample-authentication-script.py">Sample Authentication Script</a> </li>
+</ul>
+<h1 id="authorization">Authorization</h1>
+<p>This is a special script for UMA. It allows an admin to protect UMA scopes with policies. It's possible to add more than one UMA policy to an UMA scope. On requesting access to a specified resource, the application should call specified UMA policies in order to grant/deny access.</p>
+<p>This script type adds only one method to base scipt type:    </p>
+<p><code>def authorize(self, authorizationContext, configurationAttributes):</code>   </p>
+<p>These are types of parameters:   <br />
+- <code>authorizationContext</code> is <code>org.xdi.oxauth.service.uma.authorization.AuthorizationContext</code>   <br />
+- <code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code>        </p>
+<p>This script can be used in oxAuth application only.</p>
+<ul>
+<li><a href="./sample-uma-authorization-script.py">Sample Authorization Script</a>   </li>
+</ul>
+<h1 id="cache-refresh">Cache Refresh</h1>
+<p>In order to integrate with an existing authentication server oxTrust provides a mechanism called <a href="../../admin-guide/configuration/#cache-refresh">Cache Refresh</a> to copy user data to the local LDAP server. During this process it's posible to specify key attribute(s) and specify attribute name transformations. There are also cases when it can be used to overwrite attribute values or add new attributes based on other attributes values. </p>
+<p>This script type adds only one method to base scipt type:     </p>
+<p><code>def updateUser(self, user, configurationAttributes):</code>      </p>
+<p>These are types of parameters:   <br />
+- <code>user</code> is <code>org.gluu.oxtrust.model.GluuCustomPerson</code>     <br />
+- <code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code>        </p>
+<p>This script can be used in oxTrust application only.</p>
+<ul>
+<li><a href="./sample-cache-refresh-script.py">Sample Cache Refresh Script</a>       </li>
+</ul>
+<h1 id="client-registration">Client Registration</h1>
+<p>oxAuth implements the <a href="https://openid.net/specs/openid-connect-registration-1_0.html">OpenID Connect dynamic client registration</a> specification. All new clients have the same default access scopes and attributes except password and client ID. The Client Registration script allows an admin to modify this limitation. In this script it's possible to get a registration request, analyze it, and apply customizations to registered clients. For example, a script can give access to specified scopes if <code>redirect_uri</code> belongs to a specifed service or domain. </p>
+<p>This script type adds only one method to base scipt type:    </p>
+<p><code>def updateClient(self, registerRequest, client, configurationAttributes):</code>     </p>
+<p>These are types of parameters:   <br />
+- <code>registerRequest</code> is <code>org.xdi.oxauth.client.RegisterRequest</code>    <br />
+- <code>client</code> is <code>org.xdi.oxauth.model.registration.Client</code>      <br />
+- <code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code>        </p>
+<p>This script can be used in oxAuth application only.</p>
+<ul>
+<li><a href="./sample-client-registration-script">Sample Client Registration Script</a>      </li>
+</ul>
+<h1 id="id-generation">ID Generation</h1>
+<p>By default oxAuth/oxTrust uses an internal method to generate unique identifiers for new person/client, etc. entries. In most cases the format of the ID is:    </p>
+<p><code>'!' + idType.getInum() + '!' + four_random_HEX_characters + '.' + four_random_HEX_characters.</code>     </p>
+<p>The ID generation script enables an admin to implement custom ID generation rules. </p>
+<p>This script type adds only one method to base scipt type:     </p>
+<p><code>def generateId(self, appId, idType, idPrefix, configurationAttributes):</code>       </p>
+<p>These are types of parameters:   <br />
+- <code>appId</code> is application ID   <br />
+- <code>idType</code> is ID Type     <br />
+- <code>idPrefix</code> is ID Prefix     <br />
+- <code>user</code> is <code>org.gluu.oxtrust.model.GluuCustomPerson</code>     <br />
+- <code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code>        </p>
+<p>This script can be used in oxTrust application only.     </p>
+<ul>
+<li><a href="./sample-id-generation.py">Sample ID Generation Script</a>      </li>
+</ul>
+<h1 id="update-user">Update User</h1>
+<p>oxTrust allows an admin to add and modify users wich belong to groups. In order to simplify this process and apply repeating actions, oxTrust supports an Update User script. In this script it's possible to modify a person entry before it is persisted in LDAP.</p>
+<p>This script type adds only one method to base scipt type:     </p>
+<p><code>def updateUser(self, user, persisted, configurationAttributes):</code>       </p>
+<p>These are types of parameters:   <br />
+- <code>user</code> is <code>org.gluu.oxtrust.model.GluuCustomPerson</code>     <br />
+- persisted is boolean value to specify if operation type: add/modify     <br />
+- <code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code>        </p>
+<p>This script can be used in oxTrust application only.     </p>
+<ul>
+<li><a href="./sample-update-user-script.py">Sample Update User Script</a>       </li>
+</ul>
+<h1 id="user-registration">User Registration</h1>
+<p>oxTrust allows users to perform self-registration. In order to control/validate user registrations there is the user registration script type.</p>
+<p>This script type adds three methods to the base scipt type:     </p>
+<p><code>def initRegistration(self, user, requestParameters, configurationAttributes):</code>     </p>
+<p><code>def preRegistration(self, user, requestParameters, configurationAttributes):</code>      </p>
+<p><code>def postRegistration(self, user, requestParameters, configurationAttributes):</code>     </p>
+<p>All these methods expect the same parameters:    <br />
+- <code>user</code> is <code>org.gluu.oxtrust.model.GluuCustomPerson</code>     <br />
+- <code>requestParameters</code> is <code>java.util.Map&lt;String, String[]&gt;</code>    <br />
+- <code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code>        </p>
+<p>First oxTrust executes the <code>initRegistration</code> method to do inital user entry update. The <code>preRegistration</code> method is called  before persisting the user entry in LDAP. Hence in this script it's possible to validate the user entry. The <code>postRegistration</code> method is called after successfully persisting the user entry in LDAP. In this method, for example, the script can send an e-mail or send notifications to other organization systems about the new user entry.</p>
+<p>All three methods should return <code>True</code> or <code>False</code>.       </p>
+<ul>
+<li><a href="./sample-user-registration-script.py">Sample User Registration Script</a>       </li>
+</ul>
+</div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Copyright &copy; 2014, Gluu, Inc.</p>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/prettify-1.0.min.js"></script>
+        <script src="../../js/base.js"></script>
+        
+    </body>
+</html>

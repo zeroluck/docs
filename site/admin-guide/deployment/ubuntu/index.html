@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon_ic.ico">
+
+        <title>Deployment - Gluu Docs</title>
+
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../../css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../.."><img src="../../../img/logo.png" ></a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    
+                        <li >
+                            <a href="../../..">Home</a>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin Guide <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../introduction/">Introduction</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../">Deployment</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../configuration/">Configuration</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../design-customizations/">Design and Customizations</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../ldap/">LDAP</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../saml/">SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../openid-connect/">OpenID Connect</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../uma/">UMA</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../user-management/">User Management</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../personal/">Personal</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../faq/">FAQ</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/api/">API</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/interception-scripts/">Interception Scripts</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/ldap-namespace/">LDAP Namespace</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/ldap-schema/">LDAP Schema</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/lib/">Gluu Library</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/oxAuth/">oxAuth</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/oxd/">OxD</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/oxTrust/">oxTrust</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../certificates/">Certificates</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Articles <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/apache-saml/">Apache-SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/benchmarking/">Benchmarking</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/custom-attributes/">Custom Attributes</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/google-saml/">Google SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/iis-saml/">IIS SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/java-connect/">Java Connect</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/java-saml/">Java SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/js-connect/">JS Connect</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/scim-client/">SCIM Client</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/test-shib2/">Test Shib2</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/gluu-server-ce/">Gluu Server CE</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../operations/">Gluu Server Operations</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                
+                </ul>
+            
+
+            
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li >
+                    <a rel="next" href="../setup_py/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../centos/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a href="https://github.com/GluuFederation/docs">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                <li>
+                <!--<form action="." method="get" class="form-inline">-->
+                    <!--<div class="search-box">-->
+                        <!--<input type="text" value="" class="search-text" placeholder="Search" />-->
+                        <!--<input type="submit" value="Search" class="search-tag"/>-->
+                    <!--</div>-->
+                <!--</form>-->
+
+                </li>
+                
+            </ul>
+            
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+       
+        <li class="main active"><a href="#gluu-server-ubuntu-installation-guide">Gluu Server Ubuntu Installation Guide</a></li>
+        
+            <li><a href="#system-requirements">System Requirements</a></li>
+        
+            <li><a href="#install">Install</a></li>
+        
+            <li><a href="#starting-and-stopping-the-gluu-server">Starting and Stopping the Gluu Server</a></li>
+        
+            <li><a href="#login-to-chroot-environment">Login to chroot environment</a></li>
+        
+            <li><a href="#running-the-latest-setup">Running the latest setup</a></li>
+        
+       
+    
+       
+        <li class="main "><a href="#uninstallation">Uninstallation</a></li>
+        
+       
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<p><strong>Table of Contents</strong>  </p>
+<ul>
+<li><a href="#gluu-server-ubuntu-installation-guide">Gluu Server Ubuntu Installation Guide</a>   <ul>
+<li><a href="#system-requirements">System Requirements</a>   </li>
+<li><a href="#install">Install</a>   </li>
+<li><a href="#starting-and-stopping-the-gluu-server">Starting and Stopping the Gluu Server</a>   </li>
+<li><a href="#login-to-chroot-environment">Login to chroot environment</a>   </li>
+<li><a href="#running-the-latest-setup">Running the latest setup</a>     </li>
+<li><a href="#uninstallation">Uninstallation</a> </li>
+</ul>
+</li>
+</ul>
+<h1 id="gluu-server-ubuntu-installation-guide">Gluu Server Ubuntu Installation Guide</h1>
+<h2 id="system-requirements">System Requirements</h2>
+<p>The Gluu Server Community Edition should be deployed on a VM with:</p>
+<ul>
+<li>Ubuntu Server 14.04(Trusty)   </li>
+<li>2 CPU Units and at least 2GB Physical Memory (more is always better, though)  </li>
+</ul>
+<h2 id="install">Install</h2>
+<p>Download and install Gluu-Server by following commands</p>
+<p>Use the .deb installation to perform a base chroot installation with following Gluu Server Base Ubuntu requirements</p>
+<p>New alternative using our Gluu repo for ubuntu trusty:</p>
+<p><code> # echo "deb http://repo.gluu.org/ubuntu-repo/ trusty main" &gt; /etc/apt/sources.list.d/gluu-repo.list </code></p>
+<p><code> # curl http://repo.gluu.org/ubuntu-repo/gluu-apt.key | apt-key add - </code></p>
+<p><code> # apt-get update </code></p>
+<p><code> # apt-get install gluu-server </code></p>
+<p><code> # service gluu-server start </code></p>
+<p><code> # service gluu-server login </code> </p>
+<p><code> # cd /install/community-edition-setup/ </code></p>
+<p><code> ./setup.py </code></p>
+<p>After setup.py script successful execution, login to oxTrust, the policy
+administration point for Gluu by pointing your browser to 
+https://hostname</p>
+<p>Note: if you are not using a resolvable DNS host, you will need to add 
+the hostname to your hosts file on the server which is running your browser.
+Login with the default user name “admin” and the password printed back in 
+the confirmation (also conatained in setup.properties.last (<code>grep -i pass</code>)
+and look for the LDAP password which is the same as the admin password.</p>
+<h2 id="starting-and-stopping-the-gluu-server">Starting and Stopping the Gluu Server</h2>
+<p><code> service gluu-server start </code></p>
+<p><code> service gluu-server stop </code></p>
+<h2 id="login-to-chroot-environment">Login to chroot environment</h2>
+<p><code> # service gluu-sever login </code></p>
+<p>Or if you prefer... </p>
+<p><code> chroot /home/gluu-server/ su - </code></p>
+<h2 id="running-the-latest-setup">Running the latest setup</h2>
+<p>To perform the final configuration of the Gluu Server you need to provide 
+some Gluu Server appliance specific information, like the DNS hostname, and 
+the information required for an X.509 certificate. 
+We are always working to make the setup easier. After successful Gluu 
+Server installation, run the Gluu Server <code>setup.py</code> to complete the 
+installation. The script is installed in <code>/install</code>, or you can get the latest 
+setup scripts:</p>
+<p><code> wget https://github.com/GluuFederation/community-edition-setup/archive/master.zip </code></p>
+<p>Unzip and cd to community-edition-setup</p>
+<p><code> ./setup.py </code></p>
+<p>Make sure you remove or encrypt setup.properties.last It has the clear text passwords for everything: LDAP, admin user, keystores, and 3DES salt.</p>
+<p>If something goes wrong, check setup.log for a detailed step-by-step of the installation. Or check setup_errors.log to just see the errors (or stderr output from the scripts).</p>
+<h3 id="scripted-installation">Scripted Installation</h3>
+<p>If you want to script the installation of the Gluu Server, here is what you can do to achieve your target: </p>
+<ul>
+<li>Save and backup your existing <code>setup.properties.last</code></li>
+<li>Uninstall existing Gluu-Server installation</li>
+<li>For new installation you can either grab a new VM or use existing one</li>
+<li>Run all commands till <code>service gluu-server login</code></li>
+<li>Copy your saved <code>setup.properties.last</code> file into new server's  /install/community-edition-setup/ location</li>
+<li>Rename <code>setup.properties.last</code> to <code>setup.properties</code></li>
+<li>Run setup script with <code>./setup.py</code> command</li>
+</ul>
+<h1 id="uninstallation">Uninstallation</h1>
+<p>Exit from chroot environment to main linux.</p>
+<p>Stop the chroot environment, which will unmount all chroot directories and after delete rpm. Please look at following commands.</p>
+<p><code> # service gluu-server stop </code></p>
+<p><code> # apt-get remove gluu-server </code></p>
+<p><code> # rm -rf /home/gluu-server </code></p>
+<p>On installation, any modified files are saved in <code>/home/gluu-server.save</code>
+If you want to blow away all remnants of the install, `rm -rf /home/gluu-server.save'</p>
+<p>In some circumstances, the installation can be broken. In that case please 
+try following to force uninstall the package.</p>
+<p><code> # dpkg --purge --force-all gluu-server </code></p>
+</div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Copyright &copy; 2014, Gluu, Inc.</p>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/prettify-1.0.min.js"></script>
+        <script src="../../../js/base.js"></script>
+        
+    </body>
+</html>

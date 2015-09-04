@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon_ic.ico">
+
+        <title>Custom Attributes - Gluu Docs</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../.."><img src="../../img/logo.png" ></a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    
+                        <li >
+                            <a href="../..">Home</a>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin Guide <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../admin-guide/introduction/">Introduction</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../admin-guide/deployment/">Deployment</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../admin-guide/configuration/">Configuration</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../admin-guide/design-customizations/">Design and Customizations</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../admin-guide/ldap/">LDAP</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../admin-guide/saml/">SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../admin-guide/openid-connect/">OpenID Connect</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../admin-guide/uma/">UMA</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../admin-guide/user-management/">User Management</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../admin-guide/personal/">Personal</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../admin-guide/faq/">FAQ</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../reference/api/">API</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../reference/interception-scripts/">Interception Scripts</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../reference/ldap-namespace/">LDAP Namespace</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../reference/ldap-schema/">LDAP Schema</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../reference/lib/">Gluu Library</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../reference/oxAuth/">oxAuth</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../reference/oxd/">OxD</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../reference/oxTrust/">oxTrust</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../admin-guide/certificates/">Certificates</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown active">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Articles <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../apache-saml/">Apache-SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../benchmarking/">Benchmarking</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="active">
+                                        <a href="./">Custom Attributes</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../google-saml/">Google SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../iis-saml/">IIS SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../java-connect/">Java Connect</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../java-saml/">Java SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../js-connect/">JS Connect</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../scim-client/">SCIM Client</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../test-shib2/">Test Shib2</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../gluu-server-ce/">Gluu Server CE</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../admin-guide/operations/">Gluu Server Operations</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                
+                </ul>
+            
+
+            
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li >
+                    <a rel="next" href="../benchmarking/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../google-saml/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a href="https://github.com/GluuFederation/docs">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                <li>
+                <!--<form action="." method="get" class="form-inline">-->
+                    <!--<div class="search-box">-->
+                        <!--<input type="text" value="" class="search-text" placeholder="Search" />-->
+                        <!--<input type="submit" value="Search" class="search-tag"/>-->
+                    <!--</div>-->
+                <!--</form>-->
+
+                </li>
+                
+            </ul>
+            
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+       
+        <li class="main active"><a href="#custom-attributes">Custom Attributes</a></li>
+        
+            <li><a href="#ldap-schema">LDAP Schema</a></li>
+        
+            <li><a href="#register-attribute-in-the-gluu-server">Register Attribute in the Gluu Server</a></li>
+        
+            <li><a href="#openid-scopes">OpenID Scopes</a></li>
+        
+            <li><a href="#oxauth-discovery-configuration">oxAuth Discovery configuration</a></li>
+        
+            <li><a href="#letting-the-world-know-about-your-custom-schema">Letting the world know about your custom schema</a></li>
+        
+       
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="custom-attributes">Custom Attributes</h1>
+<p>LDAP attributes, SAML attributes, OpenID Connect user claims--whatever you call
+them--many organizations have business-specific information about people that needs
+to be shared with applications. For simplicity, this article will refer to them as
+"attributes." Existing standard schemas like the LDAP <code>inetOrgPerson</code> standard, or
+the OpenID Connect <code>id_token</code> user claims define attributes like first name, last
+name and email address. Where possible, we recommend you use these. But what if
+there is an attribute that is just not in any standard schema? This article will
+explain what you need to do to configure the Gluu Server to support your new
+attributes, and give you some advice along the way with regard to best practices.
+We'll use fictional Company Acme Inc., which has requirements
+for "acmeCustNumber" and "acmeStateLicenseNumber"</p>
+<h2 id="ldap-schema">LDAP Schema</h2>
+<p>The first step is to make sure that your LDAP server can persist these attributes.
+Each LDAP server implementation manages schema in its own way. The most common
+LDAP server backend for the Gluu Server is OpenDJ, so this article will use this
+platform as an example. This schema should also work for 389DS. If you are using
+OpenLDAP or another platform, just refer to the respective documentation.</p>
+<p>In LDAP, "schema" refers to the <code>attribute</code> and <code>objectclass</code> definitions.
+In OpenDJ, schema is stored in <code>{opendj-home}/config/schema</code>. If your company has
+custom schema, it may be simpler to make a separate file that contains your
+definitions (rather than using the built-in attribute management features, which
+would store the schema in a default file, <code>100-user.ldif</code> in OpenDJ. Don't stress
+about the OID value in the schema definition. If your company has a standard
+OID management process in place, by all means use it. But otherwise just make
+sure the OID is unique. Be careful about defining attributes as single-value
+(you may change your mind later). Also, in your objectclasses, avoid
+requiring attributes with <code>MUST</code>.</p>
+<p>Below is a sample schema file for fictional OpenDJ. For more information see
+the <a href="http://opendj.forgerock.org/opendj-server/doc/admin-guide/#chap-schema">documentation</a></p>
+<p><code>101-acme.ldif</code></p>
+<pre class="prettyprint well"><code>dn: cn=schema
+objectClass: top
+objectClass: ldapSubentry
+objectClass: subschema
+cn: schema
+attributeTypes: ( acmeCustNumber-oid NAME 'acmeCustNumber' EQUALITY
+  caseIgnoreMatch ORDERING caseIgnoreOrderingMatch SUBSTR caseIgnoreSubstringsMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+attributeTypes: ( acmeStateLicenseNumber-oid NAME 'acmeStateLicenseNumber' EQUALITY
+  caseIgnoreMatch ORDERING caseIgnoreOrderingMatch SUBSTR caseIgnoreSubstringsMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15)
+objectClasses:  ( teaperson-oid NAME 'teaPerson' SUP top
+  MAY ( acmeCustNumber $ acmeStateLicenseNumber ) )
+</code></pre>
+<h2 id="register-attribute-in-the-gluu-server">Register Attribute in the Gluu Server</h2>
+<p>The Gluu Server needs to know which attributes are available. Each attribute that
+you want to make available must have a corresponding LDAP entry under
+<code>ou=attributes,o=&lt;org-inum&gt;,o=gluu</code>. If you browse your LDAP server after
+performing a Gluu Server base installation, you will see that many commonly
+used attributes are already there. When an LDAP entry exists for your attribute,
+it is considered to be "registered."</p>
+<p>There are two ways you can regsiter an attribute. If you are an LDAP geek, you
+can just create an LDIF file with the correct information, and load it in the
+LDAP server that is storing your configuration. If you want to quickly spool
+up new Gluu Servers, this is probably the quickest way to handle it.</p>
+<pre class="prettyprint well"><code>dn: inum=@!1111!0005!2B29,ou=attributes,o=@!1111,o=gluu
+objectClass: top
+objectClass: gluuAttribute
+inum: @!1111!0005!2B29
+description: How a person would want their name to be presented in writing.
+displayName: Display Name
+urn: urn:mace:dir:attribute-def:displayName
+gluuAttributeName: displayName
+gluuAttributeOrigin: gluuPerson
+gluuAttributeType: string
+gluuStatus: active
+gluuAttributeEditType: user
+gluuAttributeEditType: admin
+gluuAttributeViewType: user
+gluuAttributeViewType: admin
+</code></pre>
+<p>If you just have a couple of attributes, you can also use the oxTrust Web
+interface to add the attributes. See screenshot below, and refer to the
+oxTrust <a href="../admin-guide/saml/outbound-saml.md/#ldap-attributes/">documentation</a> for an explanation of all these fields.</p>
+<h2 id="openid-scopes">OpenID Scopes</h2>
+<p>In SAML, attributes are released directly to websites, so there is not much
+you need to do. In OpenID Connect, there is a little more complexity. OpenID
+Connect defines scopes, which let you group attributes together, and to provide
+a human understandable description of the attributes. This improves usability
+when you need to prompt a person to approve the disclosure of attributes to
+a third party. For example, instead of asking the user if its ok to release
+her address, city, state, and country, and providing a description of each
+attribute, it may be easier to ask the person if its ok to release "mailing
+address information." In situations where the attributes may confuse the person,
+OpenID Scopes are a really good thing.</p>
+<p>An example of the default Gluu Server authorization request:</p>
+<p><img alt="OpenID Connect Scope Authorization Screenshot" src="../img/openid_connect/authz_screenshot.png" /></p>
+<p>So if you have custom attributes, you may need to define a custom OpenID Scope.
+This is pretty easy to do using the oxTrust user interface, and you can just
+select the attributes that you previously registered.</p>
+<p>What attributes to put in what scopes depends on your privacy requirements.
+If there is an attribute that is particularly sensitive, it may need its own
+scope (i.e. a scope with just one attribute). A good example of this is
+'dateOfBirth.' For minors, this can be sensitive information, and your
+organization may need more control about which OpenID Connect clients with
+which to share this scope.</p>
+<p>In oxTrust configuration, be careful about making a scope available by
+default. This would mean that any client that registers via Dynamic Client
+Registration could request this scope. The OpenID Connect specification only
+requires the release of the <code>openid</code> scope, which should just contain the
+person identifier in the domain (i.e. for Google, this would be your Google id).
+However, rules were meant to be broken, so if you have a reason to release
+a scope by default, go for it!</p>
+<h2 id="oxauth-discovery-configuration">oxAuth Discovery configuration</h2>
+<p>Discovery enables clients to discover which attributes are available at an
+OpenID Provider. Ideally, this would be controlled also from oxTrust and this
+information would be persisted in the attribute LDAP data. At some point this
+will happen (see <a href="http://ox.gluu.org/jira/browse/OXTRUST-169">Jira issue</a>). But 
+in the meantime, this is controlled by oxauth.xml. So if you want to publish 
+that a claim is available, you'll need to update this section:</p>
+<pre class="prettyprint well"><code>&lt;claims-supported&gt;
+    &lt;claim&gt;uid&lt;/claim&gt;
+    &lt;claim&gt;givenName&lt;/claim&gt;
+    &lt;claim&gt;sn&lt;/claim&gt;
+    &lt;claim&gt;displayName&lt;/claim&gt;
+    &lt;claim&gt;mail&lt;/claim&gt;
+&lt;/claims-supported&gt;
+</code></pre>
+<h2 id="letting-the-world-know-about-your-custom-schema">Letting the world know about your custom schema</h2>
+<p>While OpenID Connect Discovery provides one place where you can publish
+information about your claims, and which scopes are must be requested
+to get a certain claim, its meant for computers to read, not people.
+For this reason, its a good idea to publish a schema definition guide
+that people can refer to. Gluu has a 
+<a href="http://www.gluu.co/sample-federation">sample federation public site</a>
+that you may want to look at if you needs some ideas about how to present
+the information.</p>
+</div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Copyright &copy; 2014, Gluu, Inc.</p>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/prettify-1.0.min.js"></script>
+        <script src="../../js/base.js"></script>
+        
+    </body>
+</html>

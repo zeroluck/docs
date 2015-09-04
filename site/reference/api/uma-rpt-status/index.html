@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon_ic.ico">
+
+        <title>Api - Gluu Docs</title>
+
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../../css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../.."><img src="../../../img/logo.png" ></a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    
+                        <li >
+                            <a href="../../..">Home</a>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin Guide <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/introduction/">Introduction</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/deployment/">Deployment</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/configuration/">Configuration</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/design-customizations/">Design and Customizations</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/ldap/">LDAP</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/saml/">SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/openid-connect/">OpenID Connect</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/uma/">UMA</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/user-management/">User Management</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/personal/">Personal</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/faq/">FAQ</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../">API</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../interception-scripts/">Interception Scripts</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../ldap-namespace/">LDAP Namespace</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../ldap-schema/">LDAP Schema</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../lib/">Gluu Library</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../oxAuth/">oxAuth</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../oxd/">OxD</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../oxTrust/">oxTrust</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/certificates/">Certificates</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Articles <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/apache-saml/">Apache-SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/benchmarking/">Benchmarking</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/custom-attributes/">Custom Attributes</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/google-saml/">Google SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/iis-saml/">IIS SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/java-connect/">Java Connect</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/java-saml/">Java SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/js-connect/">JS Connect</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/scim-client/">SCIM Client</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/test-shib2/">Test Shib2</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/gluu-server-ce/">Gluu Server CE</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../admin-guide/operations/">Gluu Server Operations</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                
+                </ul>
+            
+
+            
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li >
+                    <a rel="next" href="../uma-resource-registration/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../../interception-scripts/sample-application-session-script/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a href="https://github.com/GluuFederation/docs">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                <li>
+                <!--<form action="." method="get" class="form-inline">-->
+                    <!--<div class="search-box">-->
+                        <!--<input type="text" value="" class="search-text" placeholder="Search" />-->
+                        <!--<input type="submit" value="Search" class="search-tag"/>-->
+                    <!--</div>-->
+                <!--</form>-->
+
+                </li>
+                
+            </ul>
+            
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+       
+        <li class="main active"><a href="#api-document">API Document</a></li>
+        
+            <li><a href="#rptstatus">/rpt/status</a></li>
+        
+       
+    
+       
+        <li class="main "><a href="#data-types">Data Types</a></li>
+        
+       
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h2 id="api-document">API Document</h2>
+<h3 id="rptstatus">/rpt/status</h3>
+<h4 id="overview">Overview</h4>
+<h4 id="rptstatus_1"><code>/rpt/status</code></h4>
+<h5 id="requestrptstatusget">requestRptStatusGet</h5>
+<p><strong>GET</strong> <code>/rpt/status</code></p>
+<p>Not allowed</p>
+<h6 id="url">URL</h6>
+<pre class="prettyprint well"><code>http://gluu.org/rpt/status
+</code></pre>
+<h6 id="parameters">Parameters</h6>
+<ul>
+<li>
+<p>form</p>
+<p><table border="1">
+    <tr>
+        <th>Parameter</th>
+        <th>Required</th>
+        <th>Description</th>
+        <th>Data Type</th>
+    </tr>
+    <tr>
+        <th>token</th>
+        <td>false</td>
+        <td></td>
+        <td>string</td>
+    </tr>
+    <tr>
+        <th>token_type_hint</th>
+        <td>false</td>
+        <td></td>
+        <td>string</td>
+    </tr>
+</table>
+- header</p>
+<p><table border="1">
+    <tr>
+        <th>Parameter</th>
+        <th>Required</th>
+        <th>Description</th>
+        <th>Data Type</th>
+    </tr>
+    <tr>
+        <th>Authorization</th>
+        <td>false</td>
+        <td></td>
+        <td>string</td>
+    </tr>
+</table></p>
+</li>
+</ul>
+<h6 id="response">Response</h6>
+<p><a href="#"></a></p>
+<h6 id="errors">Errors</h6>
+<p><table border="1">
+    <tr>
+        <th>Status Code</th>
+        <th>Reason</th>
+    </tr>
+        <tr>
+            <td>405</td>
+            <td>Introspection of RPT is not allowed by GET HTTP method.</td>
+        </tr>
+</table></p>
+<hr />
+<h5 id="requestrptstatus">requestRptStatus</h5>
+<p><strong>POST</strong> <code>/rpt/status</code></p>
+<p>The resource server MUST determine a received RPT&#39;s status, including both whether it is active and, if so, its associated authorization data, before giving or refusing access to the client. An RPT is associated with a set of authorization data that governs whether the client is authorized for access. The token&#39;s nature and format are dictated by its profile; the profile might allow it to be self-contained, such that the resource server is able to determine its status locally, or might require or allow the resource server to make a run-time introspection request of the authorization server that issued the token.
+The endpoint MAY allow other parameters to provide further context to
+   the query.  For instance, an authorization service may need to know
+   the IP address of the client accessing the protected resource in
+   order to determine the appropriateness of the token being presented.</p>
+<p>To prevent unauthorized token scanning attacks, the endpoint MUST
+   also require some form of authorization to access this endpoint, such
+   as client authentication as described in OAuth 2.0 [RFC6749] or a
+   separate OAuth 2.0 access token such as the bearer token described in
+   OAuth 2.0 Bearer Token Usage [RFC6750].  The methods of managing and
+   validating these authentication credentials are out of scope of this
+   specification.</p>
+<h6 id="url_1">URL</h6>
+<pre class="prettyprint well"><code>http://gluu.org/rpt/status
+</code></pre>
+<h6 id="parameters_1">Parameters</h6>
+<ul>
+<li>
+<p>form</p>
+<p><table border="1">
+    <tr>
+        <th>Parameter</th>
+        <th>Required</th>
+        <th>Description</th>
+        <th>Data Type</th>
+    </tr>
+    <tr>
+        <th>token</th>
+        <td>true</td>
+        <td>The string value of the token.  For access tokens,&#10;      this is the &quot;access_token&quot; value returned from the token endpoint&#10;      defined in OAuth 2.0 [RFC6749] section 5.1.  For refresh tokens,&#10;      this is the &quot;refresh_token&quot; value returned from the token endpoint&#10;      as defined in OAuth 2.0 [RFC6749] section 5.1.  Other token types&#10;      are outside the scope of this specification.</td>
+        <td>string</td>
+    </tr>
+    <tr>
+        <th>token_type_hint</th>
+        <td>false</td>
+        <td>A hint about the type of the token&#10;      submitted for introspection.  The protected resource re MAY pass&#10;      this parameter in order to help the authorization server to&#10;      optimize the token lookup.  If the server is unable to locate the&#10;      token using the given hint, it MUST extend its search across all&#10;      of its supported token types.  An authorization server MAY ignore&#10;      this parameter, particularly if it is able to detect the token&#10;      type automatically.  Values for this field are defined in OAuth&#10;      Token Revocation [RFC7009].</td>
+        <td>string</td>
+    </tr>
+</table>
+- header</p>
+<p><table border="1">
+    <tr>
+        <th>Parameter</th>
+        <th>Required</th>
+        <th>Description</th>
+        <th>Data Type</th>
+    </tr>
+    <tr>
+        <th>Authorization</th>
+        <td>false</td>
+        <td></td>
+        <td>string</td>
+    </tr>
+</table></p>
+</li>
+</ul>
+<h6 id="response_1">Response</h6>
+<p><a href="#"></a></p>
+<h6 id="errors_1">Errors</h6>
+<p><table border="1">
+    <tr>
+        <th>Status Code</th>
+        <th>Reason</th>
+    </tr>
+        <tr>
+            <td>401</td>
+            <td>Unauthorized</td>
+        </tr>
+</table></p>
+<hr />
+<h2 id="data-types">Data Types</h2>
+</div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Copyright &copy; 2014, Gluu, Inc.</p>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/prettify-1.0.min.js"></script>
+        <script src="../../../js/base.js"></script>
+        
+    </body>
+</html>
