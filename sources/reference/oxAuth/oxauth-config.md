@@ -23,14 +23,14 @@ The sections are listed according to their order in the configuration file.
 
 - [Supported response types](./configuration/supported-response-types.md)
 
+- [Supported grant types](./configuration/supported-grant-types.md)
 
- * Supported grant types
+- [Supported algorithms a user can login with](./configuration/supported-algorithms-a-user-can-login-with.md)
 
- * Supported algorithms a user can login with
+- [Supported encryption algorithms](./configuration/supported-encryption-algorithms.md)
 
- * Supported encryption algorithms
+- [Supported ID token signing algorithms](./configuration/supported-id-token-signing-algorithms.md)
 
- * Supported ID token signing algorithms
 
  * Supported ID token encryption algorithms
 
@@ -84,22 +84,6 @@ The sections are listed according to their order in the configuration file.
 
     <?xml version="1.0" encoding="UTF-8"?>
     <configuration>
-
-        <!-- sets mode of the server. Possible values: memory, ldap-->
-        <mode>ldap</mode>
-
-        <!-- Configuration is updated from LDAP, interval in seconds, 3600seconds = 1hour -->
-        <configuration-update-interval>3600</configuration-update-interval>
-
-        <response-types-supported>
-            <response-type>code</response-type>
-            <response-type>code id_token</response-type>
-            <response-type>token</response-type>
-            <response-type>token id_token</response-type>
-            <response-type>code token</response-type>
-            <response-type>code token id_token</response-type>
-            <response-type>id_token</response-type>
-        </response-types-supported>
 
         <grant-types-supported>
             <grant-type>authorization_code</grant-type>
