@@ -87,13 +87,6 @@ The sections are listed according to their order in the configuration file.
     <?xml version="1.0" encoding="UTF-8"?>
     <configuration>
 
-        <userinfo-encryption-enc-values-supported>
-            <userinfo-encryption-enc>A128CBC+HS256</userinfo-encryption-enc>
-            <userinfo-encryption-enc>A256CBC+HS512</userinfo-encryption-enc>
-            <userinfo-encryption-enc>A128GCM</userinfo-encryption-enc>
-            <userinfo-encryption-enc>A256GCM</userinfo-encryption-enc>
-        </userinfo-encryption-enc-values-supported>
-
         <id-token-signing-alg-values-supported>
             <id-token-signing-alg>HS256</id-token-signing-alg>
             <id-token-signing-alg>HS384</id-token-signing-alg>
