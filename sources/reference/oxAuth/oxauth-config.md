@@ -33,8 +33,7 @@ The sections are listed according to their order in the configuration file.
 
 - [Supported ID token signing algorithms](./configuration/supported-id-token-signing-algorithms.md)
 
-
- * Supported ID token encryption algorithms
+- [Supported ID token encryption algorithms](./configuration/supported-id-token-encryption-algorithms.md)
 
  * Supported request object signing algorithms
 
@@ -86,24 +85,6 @@ The sections are listed according to their order in the configuration file.
 
     <?xml version="1.0" encoding="UTF-8"?>
     <configuration>
-
-        <id-token-encryption-alg-values-supported>
-            <id-token-encryption-alg>RSA1_5</id-token-encryption-alg>
-            <id-token-encryption-alg>RSA-OAEP</id-token-encryption-alg>
-            <id-token-encryption-alg>A128KW</id-token-encryption-alg>
-            <id-token-encryption-alg>A256KW</id-token-encryption-alg>
-            <!--id-token-encryption-alg>dir</id-token-encryption-alg-->
-            <!--id-token-encryption-alg>ECDH-ES</id-token-encryption-alg-->
-            <!--id-token-encryption-alg>ECDH-ES+A128KW</id-token-encryption-alg-->
-            <!--id-token-encryption-alg>ECDH-ES+A256KW</id-token-encryption-alg-->
-        </id-token-encryption-alg-values-supported>
-
-        <id-token-encryption-enc-values-supported>
-            <id-token-encryption-enc>A128CBC+HS256</id-token-encryption-enc>
-            <id-token-encryption-enc>A256CBC+HS512</id-token-encryption-enc>
-            <id-token-encryption-enc>A128GCM</id-token-encryption-enc>
-            <id-token-encryption-enc>A256GCM</id-token-encryption-enc>
-        </id-token-encryption-enc-values-supported>
 
         <request-object-signing-alg-values-supported>
             <request-object-signing-alg>HS256</request-object-signing-alg>
