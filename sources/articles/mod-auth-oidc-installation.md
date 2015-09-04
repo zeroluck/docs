@@ -1,4 +1,17 @@
+**Table of Contents** 
+
+- [SetUp Apache2](#setup-apache2)
+	- [CentOS](#centos)
+		- [Add EPEL Repo](#add-epel-repo)
+		- [Setup Apache2 SSL](#setup-apache2-ssl)
+	- [Ubuntu](#ubuntu)
+- [Client Registration](#client-registration)
+	- [Dynamic Client Registration](#dynamic-client-registration)
+	- [Manual Client Registration](#manual-client-registration)
+- [Getting DN from Client ID](#getting-dn-from-client-id)
+
 # mod_auth_oidc Installation Guide
+
 
 Following steps are involved in installation:
 
@@ -45,7 +58,7 @@ Next, create an **apache _conf_** file for loading this module, and start the ap
 
 Apache mod is being run at the same server but at the port **44443**. If you are using CentOS, move to __Client Registration__ step below.
 
-#### Ubuntu 14.04
+#### Ubuntu
 
 Install apache2 and enable module ssl by running following commands:
 
