@@ -87,18 +87,6 @@ The sections are listed according to their order in the configuration file.
     <?xml version="1.0" encoding="UTF-8"?>
     <configuration>
 
-        <id-token-signing-alg-values-supported>
-            <id-token-signing-alg>HS256</id-token-signing-alg>
-            <id-token-signing-alg>HS384</id-token-signing-alg>
-            <id-token-signing-alg>HS512</id-token-signing-alg>
-            <id-token-signing-alg>RS256</id-token-signing-alg>
-            <id-token-signing-alg>RS384</id-token-signing-alg>
-            <id-token-signing-alg>RS512</id-token-signing-alg>
-            <id-token-signing-alg>ES256</id-token-signing-alg>
-            <id-token-signing-alg>ES384</id-token-signing-alg>
-            <id-token-signing-alg>ES512</id-token-signing-alg>
-        </id-token-signing-alg-values-supported>
-
         <id-token-encryption-alg-values-supported>
             <id-token-encryption-alg>RSA1_5</id-token-encryption-alg>
             <id-token-encryption-alg>RSA-OAEP</id-token-encryption-alg>
