@@ -25,6 +25,8 @@ The sections are listed according to their order in the configuration file.
 
 - [Supported grant types](./configuration/supported-grant-types.md)
 
+- [Supported subject types](./configuration/supported-subject-types.md)
+
 - [Supported algorithms a user can login with](./configuration/supported-algorithms-a-user-can-login-with.md)
 
 - [Supported encryption algorithms](./configuration/supported-encryption-algorithms.md)
@@ -84,35 +86,6 @@ The sections are listed according to their order in the configuration file.
 
     <?xml version="1.0" encoding="UTF-8"?>
     <configuration>
-
-        <grant-types-supported>
-            <grant-type>authorization_code</grant-type>
-            <grant-type>implicit</grant-type>
-            <grant-type>urn:ietf:params:oauth:grant-type:jwt-bearer</grant-type>
-        </grant-types-supported>
-
-        <!-- AMR enables an OpenID Connect client to request a specific method
-        of authentication -->
-        <amr-values-supported>
-            <!-- amr>basic</amr-->
-        </amr-values-supported>
-
-        <subject-types-supported>
-            <subject-type>public</subject-type>
-            <subject-type>pairwise</subject-type>
-        </subject-types-supported>
-
-        <userinfo-signing-alg-values-supported>
-            <userinfo-signing-alg>HS256</userinfo-signing-alg>
-            <userinfo-signing-alg>HS384</userinfo-signing-alg>
-            <userinfo-signing-alg>HS512</userinfo-signing-alg>
-            <userinfo-signing-alg>RS256</userinfo-signing-alg>
-            <userinfo-signing-alg>RS384</userinfo-signing-alg>
-            <userinfo-signing-alg>RS512</userinfo-signing-alg>
-            <userinfo-signing-alg>ES256</userinfo-signing-alg>
-            <userinfo-signing-alg>ES384</userinfo-signing-alg>
-            <userinfo-signing-alg>ES512</userinfo-signing-alg>
-        </userinfo-signing-alg-values-supported>
 
         <userinfo-encryption-alg-values-supported>
             <userinfo-encryption-alg>RSA1_5</userinfo-encryption-alg>
