@@ -10,13 +10,13 @@ two options: (1) don't let the users login; (2) dynamically add the users to you
 Server LDAP server, which is what we call "dynamic enrollment."
 
 Using a Gluu Server
-[authentication interception script](../reference/interception-scripts/sample-authentication-script.md),
+[authentication interception script](../reference/interception-scripts/index.md),
 you can implement any kind of business logic. Gluu has contributed an interception script to handle
 Google login on
 [Github](https://github.com/GluuFederation/oxAuth/blob/master/Server/integrations/gplus/GooglePlusExternalAuthenticator.py).
 This article will provide step-by-step instructions on howto install and configure this script.
 
-## Register for Google client credentials
+## Configure Google
 
 In order to call Google API's, you need to register as a developer and create client credentials.
 Here are some [instructions](https://developers.google.com/identity/protocols/OAuth2)
@@ -48,9 +48,9 @@ the URL of your Gluu Server for example `https://idp.example.com`
 Google will display the client-id and secret... ignore it. What you want to do is download the JSON which
 you are going to upload into your Gluu Server.
 
-![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/google_login/05-create-oauth2-creds06-download_json.png)
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/google_login/06-download_json.png)
 
-Moved this file to `/opt/tomcat/conf/google.json` The JSON will look something like this
+Move this file to `/opt/tomcat/conf/google.json` The JSON will look something like this
 (no... these aren't aren't valid creds!):
 
 ```json
@@ -68,14 +68,16 @@ Moved this file to `/opt/tomcat/conf/google.json` The JSON will look something l
 }
 ```
 
-Also it's mandatory to enable Google+ API:
+The last step is to enable Google+ API's:
  - Navigate back to the Google API [console](https://console.developers.google.com/project)
  - Select project and enter project name
  - Open new project "API & auth -> API" menu item in configuration navigation tree
  - Click "Google+ API"
  - Click "Enable API" button
 
-Now its time to configure the Gluu Server. Login to oxTrust and navigate to "Configure Custom Scripts"
+## Configure Gluu Server
+
+Login to oxTrust and navigate to "Configure Custom Scripts"
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/google_login/06-manage-custom-scripts.png)
 
@@ -93,7 +95,7 @@ You'll also need to add some custom properties:
  * __gplus_remote_attributes_list__ : email, email, name, family_name, given_name, locale
  * __gplus_local_attributes_list__ : uid, mail, givenName, sn, cn, preferredLanguage
 
-1. gplus_client_secrets_file - It's mandatory property. It's path to application configuration file downloaded from Google console for application.
+1. _gplus_client_secrets_file_ - It's mandatory property. It's path to application configuration file downloaded from Google console for application.
 Example: `/etc/certs/gplus_client_secrets.json`
 These are steps needed to get it:
     a) Log into: https://console.developers.google.com/project
@@ -111,7 +113,7 @@ Also it's mandatory to enable Google+ API:
     d) Click "Google+ API"
     e) Click "Enable API" button
 
-2. gplus_deployment_type - Specify deployment mode. It's optional property. If this property isn't specified script
+2. _gplus_deployment_type_ - Specify deployment mode. It's optional property. If this property isn't specified script
    tries to find user in local LDAP by 'subject_identifier' claim specified in id_token. If this property has 'map' value script
    allow to map 'subject_identifier' to local user account. If this property has 'enroll' value script should add new user to local LDAP
    with status 'acrtive'. In order to map IDP attributes to local attributes it uses properties gplus_remote_attributes_list and
@@ -145,3 +147,47 @@ implements two methods:
 6. _gplus_client_configuration_attribute_ - Optional property to specify client entry attribute name
     which can override `gplus_client_secrets_file file` content. It can be used in cases when all
     clients should use separate `gplus_client_secrets.json` configuration.
+
+## Testing
+
+One simple way to test is to use oxTrust for testing. In the "Configure Authentication" menu dropdown, select
+"Google" (or whatever you entered as the "Name" of the custom authentication script--as the default
+authentication method.
+
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/google_login/08-select_default_authentication.png)
+
+After you login and logout, you should be presented with a new login form that has the Google Login button:
+
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/google_login/09-google-authentication-button.png)
+
+After clicking the Google Login button, you should be presented for authorization--Google needs to make sure
+its ok to release attributes to the Gluu Server:
+
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/google_login/10-google-authorization.png)
+
+If the script doesn't work, and you locked yourself out of oxTrust, don't worry! You can create an ldif file,
+for example `revert.ldif`, to set back the default authentication method, like this:
+
+    dn: inum=@!1E3B.F133.14FA.5062!0002!4B66.CF9C,ou=appliances,o=gluu
+    changetype: modify
+    replace: oxAuthenticationMode
+    oxAuthenticationMode: internal
+
+oxAuthenticationMode corresponds to the 'Name' of the customer authentication script in oxTrust, use
+`internal` to revert to the default ldap authentication. You'll have to change the `inum` with the `inum`
+for your installation. You can find it an ldapsearch like this:
+
+    /opt/opendj/bin/ldapsearch -h localhost -p 1389 -D "cn=directory manager" -j ~/.pw \
+    -b "ou=appliances,o=gluu" -s one "objectclass=*" inum
+
+where `~/.pw` is a file with your Directory Manager password. If you don't remember it, try
+    grep ldapPass= /install/community-edition-setup/setup.properties.last
+
+Once your ldif looks ok, then use ldapmodify to revert back to password authentication:
+
+    /opt/opendj/bin/ldapmodify -h localhost -p 1389 -D "cn=directory manager" -j ~/.pw -f revert.ldif
+
+If things go wrong, it can leave the sessions in your browswer in a bad state. If things get really weird,
+remove the cookies in your browser for the hostname of your Gluu Server.
+
+

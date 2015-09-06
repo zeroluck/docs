@@ -106,3 +106,5 @@ The main documentation is organized into the following sections:
 - [SCIM Client](./articles/scim-client.md)
 - [mod_auth_oidc Installation Guide](./articles/mod-auth-oidc-installation.md)
 - [Test Shib2](./articles/test-shib2.md)
+- [Social Login With Google](./articles/social-login-google.md)
+
