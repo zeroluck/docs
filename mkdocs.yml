@@ -48,7 +48,7 @@ pages:
 - [articles/js-connect.md, Articles, OpenID from JavaScript]
 - [articles/java-saml.md, Articles,Java SAML Library ] 
 - [articles/scim-client.md, Articles, SCIM API]
-- [articles/mod-auth-oidc-installation.md, Articles, mod_auth_oidc Installation Guide]
+- [articles/mod-auth-oidc/index.md, Articles, mod_auth_oidc Installation Guide]
 - [articles/test-shib2.md, Articles, Testing Shib2]
 
 # Deployment Sub-sections
@@ -91,5 +91,7 @@ pages:
 - [reference/lib/scim.md, hidden]
 - [reference/lib/uma.md, hidden]
 # mod_auth_oid Sub-section
+- [articles/mod-auth-oidc/ubuntu-installation.md, hidden]
+- [articles/mod-auth-oidc/centos-installation.md, hidden]
 - [reference/mod_auth_oidc/ubuntu-installation.md, hidden]
 - [reference/mod_auth_oidc/centos-installation.md, hidden]
