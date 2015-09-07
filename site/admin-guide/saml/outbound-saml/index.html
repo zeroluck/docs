@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon_ic.ico">
+
+        <title>Saml - Gluu Docs</title>
+
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../../css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../.."><img src="../../../img/logo.png" ></a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    
+                        <li >
+                            <a href="../../..">Home</a>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin Guide <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../introduction/">Introduction</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../deployment/">Deployment</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../configuration/">Configuration</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../design-customizations/">Design and Customizations</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../ldap/">LDAP</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../">SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../openid-connect/">OpenID Connect</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../uma/">UMA</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../user-management/">User Management</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../personal/">Personal</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../faq/">FAQ</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/api/">API</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/interception-scripts/">Interception Scripts</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/ldap-namespace/">LDAP Namespace</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/ldap-schema/">LDAP Schema</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/lib/">Gluu Library</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/oxAuth/">oxAuth</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/oxd/">OxD</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../reference/oxTrust/">oxTrust</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../certificates/">Certificates</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Articles <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/apache-saml/">Apache-SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/benchmarking/">Benchmarking</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/custom-attributes/">Custom Attributes</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/google-saml/">Google SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/iis-saml/">IIS SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/java-connect/">Java Connect</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/java-saml/">Java SAML</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/js-connect/">JS Connect</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/scim-client/">SCIM Client</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/test-shib2/">Test Shib2</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../../articles/gluu-server-ce/">Gluu Server CE</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li >
+                                        <a href="../../operations/">Gluu Server Operations</a>
+                                    </li>
+                                
+                            
+                            </ul>
+                        </li>
+                    
+                
+                
+                
+                
+                </ul>
+            
+
+            
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li >
+                    <a rel="next" href="../inbound-saml/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../saml-sp-configuration/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a href="https://github.com/GluuFederation/docs">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                <li>
+                <!--<form action="." method="get" class="form-inline">-->
+                    <!--<div class="search-box">-->
+                        <!--<input type="text" value="" class="search-text" placeholder="Search" />-->
+                        <!--<input type="submit" value="Search" class="search-tag"/>-->
+                    <!--</div>-->
+                <!--</form>-->
+
+                </li>
+                
+            </ul>
+            
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+       
+        <li class="main active"><a href="#outbound-saml">Outbound SAML</a></li>
+        
+            <li><a href="#metadata-of-website">Metadata of website:</a></li>
+        
+            <li><a href="#required-attribute-of-website">Required attribute of website:</a></li>
+        
+            <li><a href="#sso-testing-endpoint-of-website">SSO testing endpoint of website:</a></li>
+        
+       
+    
+       
+        <li class="main "><a href="#configuring-outbound-saml-sso">Configuring Outbound SAML SSO</a></li>
+        
+            <li><a href="#ldap-attributes">LDAP Attributes</a></li>
+        
+            <li><a href="#saml-trust-relationship">SAML Trust Relationship</a></li>
+        
+       
+    
+       
+        <li class="main "><a href="#faq">FAQ</a></li>
+        
+       
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<p><strong>Table of Contents</strong>  </p>
+<ul>
+<li><a href="#outbound-saml">Outbound SAML</a><ul>
+<li><a href="#metadata-of-website">Metadata of website:</a></li>
+<li><a href="#required-attribute-of-website">Required attribute of website:</a></li>
+<li><a href="#sso-testing-endpoint-of-website">SSO testing endpoint of website:</a></li>
+</ul>
+</li>
+<li><a href="#configuring-outbound-saml-sso">Configuring Outbound SAML SSO</a><ul>
+<li><a href="#ldap-attributes">LDAP Attributes</a></li>
+<li><a href="#saml-trust-relationship">SAML Trust Relationship</a><ul>
+<li><a href="#how-to-create-trust-relationship">How to create Trust Relationship</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#faq">FAQ</a></li>
+</ul>
+<h1 id="outbound-saml">Outbound SAML</h1>
+<p>Outbound SAML setup from Gluu Server is pretty easy using the Gluu Server's oxTrust GUI. The following pieces of information are needed from the target website or application:</p>
+<ul>
+<li><a href="#metadata-of-website">Metadata of website</a></li>
+<li><a href="#required-attribute-of-website">Required attribute of website</a></li>
+<li><a href="#sso-testing-endpoint-of-website">SSO testing endpoint of website</a></li>
+</ul>
+<p>Above three points are described briefly below. </p>
+<h2 id="metadata-of-website">Metadata of website:</h2>
+<p>Metadata is a XML file which has configuration data used to provision any
+website ( SP ) or IDP ( Gluu Server ) to communicate with each other. It's
+interchangeable between IDP and SP. </p>
+<p>Websites ( SP ) can provide metadata via URL or as a standalone separate file.
+If SP provide an XML separate file, Gluu Server can check the integrity of that
+metadata with it's own mechanism, which can be shown and tested from Gluu Server
+oxTrust GUI. </p>
+<h2 id="required-attribute-of-website">Required attribute of website:</h2>
+<p>Every organization has their own policy to release / share attributes with any
+IDP or SP. Gluu Server support and can be configured for standard or custom
+attribute. All can be done from Gluu Server oxTrust GUI. </p>
+<h2 id="sso-testing-endpoint-of-website">SSO testing endpoint of website:</h2>
+<p>Every website ( SP ) should have staging and production URL endpoint which can
+be checked for SSO, where user will hit to log into that SP. </p>
+<h1 id="configuring-outbound-saml-sso">Configuring Outbound SAML SSO</h1>
+<p>The Gluu Server's SAML capabilities are tightly integrated with <a href="https://shibboleth.net/">Shibboleth</a>. </p>
+<h2 id="ldap-attributes">LDAP Attributes</h2>
+<p>The Gluu Server releases all standard attributes. The server administrator is able to see attributes from the Web UI Configuration. </p>
+<p>Other than standard attributes, the server administrator can create and map any custom attributes in LDAP from the attributes section in the UI:</p>
+<p><img alt="Image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SamlIDPAdminGuide/Base_attributes.png?raw=true" /></p>
+<p>An “Active” attribute list can be seen from the Configuration → Attributes section. 
+The Gluu Server has a large LDAP tree which includes all standard attributes. Not all are necessarily “Active”. Active Attributes can be sorted by clicking “Show only Active Attributes.”</p>
+<p><img alt="Image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SamlIDPAdminGuide/LDAP_tree_Gluu_server.png?raw=true" /></p>
+<p>Organization can manage their required attributes from this big LDAP tree. Just
+select the attribute and make it active / inactive in the GUI. </p>
+<p><img alt="Image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SamlIDPAdminGuide/Active_inactive.png?raw=true" /></p>
+<p>If the organization needs more attributes or has custom attributes, they can be added from within the GUI. Click on “Add attribute” and a page like this will appear:</p>
+<p><img alt="Image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SamlIDPAdminGuide/Add_new_attribute.png?raw=true" /></p>
+<ul>
+<li><em>Name</em>: Name of this custom attribute. It must be unique in Gluu Server LDAP tree.</li>
+<li><em>SAML1 URI</em>: SAML1 URI value for custom attribute.</li>
+<li><em>SAML2 URI</em>: SAML2 URI value for custom attribute</li>
+<li><em>Display Name</em>: Any name which is human readable.</li>
+<li><em>Type</em>: Attribute type. There are four types supported by Gluu Server: (i) Text (ii) Numeric (iii) Photo and (iv) Date.</li>
+<li><em>Edit Type</em>: User who can edit this attribute definition.</li>
+<li><em>View Type</em>:  User who can view this attribute.</li>
+<li><em>Privacy Level</em>: From 1 to 5. Select the desired one.</li>
+<li><em>Multivalued</em>: Is this attribute has multi values? If yes, True. Otherwise, false. </li>
+<li><em>SCIM Attributes</em>: Is this attribute in SCIM architecture? True or False.</li>
+<li><em>Description</em>: Little description of this attribute</li>
+<li><em>Status</em>: “Active” will release and publish the attribute in IdP. </li>
+</ul>
+<h2 id="saml-trust-relationship">SAML Trust Relationship</h2>
+<p>A Trust Relationship is the mechanism to create single sign-on to any SAML Service Provider ( SP ) from the Gluu Server SAML IDP. Trust Relationships can be created from within the GUI.  </p>
+<h3 id="how-to-create-trust-relationship">How to create Trust Relationship</h3>
+<p>In order to create a trust relationship with any SP: </p>
+<ul>
+<li>Go to SAML → Trust Relationships</li>
+<li>Click on “Add Relationship”
+<img alt="Image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/Add_Relationships.png?raw=true" /></li>
+<li>A new page will appear. Here, Gluu Server Administrator needs to provide all informations regarding SP to establish Trust Relationship from Gluu Server. 
+<img alt="Image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/TR_new_page.png?raw=true" /><ul>
+<li><em>Display Name</em>: Name of the Trust Relationship ( it should be unique for every trust relationship ) </li>
+<li><em>Description</em>: Little description. Purpose and SSO link can be added here.</li>
+<li>
+<p><em>Metadata Type</em>: Depending on trusted party’s metadata (SP), there are four available types in Gluu Server</p>
+<ul>
+<li><em>File</em>: If SP has uploadable metadata in XML format, this option works best.</li>
+<li><em>URI</em>: If the metadata of SP has url link and accessible from internet, Gluu Server Administrator need to use this option. </li>
+<li>
+<p><em>Generate</em>: Using Gluu Server to generate configuration files for SP is another big option when the SP is inhouse application or “Shibboleth SP” is installed or going to be installed in target application site (SP).  <a href="http://www.gluu.org/docs/articles/apache-saml/">How to install Shibboleth SP</a> will help user to configure and install Shibboleth SP on their own area. Please note few things when you are going to use <em>Generate</em> method for your SP. </p>
+<ul>
+<li><em>URL</em> : This is the <code>hostname of SP</code></li>
+<li><em>Public certificate</em> : You <code>must</code> have to provide the certificate which is Base64 encoded ASCII file and contain "-----BEGIN CERTIFICATE-----" and "-----END CERTIFICATE-----". This certificate <code>can not be password protected</code>. </li>
+<li>After creating the Trust Relationship, download the generated configuration files from <code>Download Shibboleth2 configuration files</code> link and place these configuration files inside your SP configuration. </li>
+</ul>
+</li>
+<li>
+<p><em>Federation</em>: If target application ( SP ) is affiliated with any Federation server (i.e: InCommon, NJEdge etc. ), this option of “Metadata Type” is required. 
+Select “Federation” in Metadata Type and another drop down menu called “Select Federation” will appear. From this drop menu select desired Federation. 
+In order to create this documentation we took “InCommon” Federation as an example.
+<img alt="Image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/Federation_1.png?raw=true" /></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>After selecting the “Federation Name”, a new link named “Click to select entity id” will appear. From this link Gluu Server Administrator can select all SP’s entityIDs which are InCommon affiliated. Click on this link and another new SP entityID discovery page will appear like below image. </p>
+<p><img alt="Image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/Federation_2.png?raw=true" /></p>
+<p>Gluu Server Administrator can grab any SP’s entityID from “Filter” box. As for example, Gluu Server Administrator is looking for Educause entityID. </p>
+<p><img alt="Image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/Federation_3.png?raw=true" /></p>
+<ul>
+<li>
+<p>Public certifiate: Upload public certificate for this SP server. Please note that: public certificate’s CN (common name) MUST maintain the hostname of the SP server. If the SP has no certificate then keep this option blank and the IdP will generate a self signed certificate.</p>
+</li>
+<li>
+<p>Released: Release required attributes. Available attributes can be grabbed from upper left corner. </p>
+</li>
+<li>
+<p>More configuration: If SP requires custom relying party and/or custom MetadataFilter configuration, that can be achieved using the following options: </p>
+</li>
+<li>Configure MetadataFilters: Click on this option and Gluu Server will allow you to configure MetadataFilters inside the GUI.</li>
+<li>IMAGE</li>
+<li>Configure specific Relying Party: If the server admin “checks” this option a new link will appear which allows the server administrator to modify various relying party configurations like SAML2SSO, SAML2AttributeQuery, ShibbolethSSO etc. </li>
+</ul>
+<p>After adding a new Trust Relationship, the server administrator will observe a confirmation page like the one below. Please note that for testing purpose we did not provided any certificates. The IdP created the key and cert by itself. The image below shows a sample Trust Relationship after successful creation.</p>
+<h1 id="faq">FAQ</h1>
+<ul>
+<li>
+<p>I have a new SP, what do I need to do to create a Trust Relationship from the Gluu Server? </p>
+<ul>
+<li>
+<p>Basically there are two types of single sign-on: IDP-inititate SSO and SP-initiated SSO. You need to know what kind of SSO it is. </p>
+<ul>
+<li>
+<p>For SP-initiated SSO, you need to know: </p>
+<ul>
+<li>Required attributes by SP.  </li>
+<li>Metadata of SP. </li>
+<li>SSO endpoint / testing endpoint which end user will use to log
+into SP.   </li>
+</ul>
+</li>
+<li>
+<p>For IDP-initiated SSO, you need to know: </p>
+<ul>
+<li>Required attribute by SP. </li>
+<li>Metadata of SP ( if possible )</li>
+<li>SSO endpoint ( if possible )</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Where I can find my IDP's metadata? </p>
+<ul>
+<li>Gluu Server IDP metadata is available online at: <code>https://&lt;yourhostname&gt;/idp/shibboleth</code></li>
+</ul>
+</li>
+<li>
+<p>What kind of certificates does the Gluu Server use? </p>
+<ul>
+<li><a href="../../certificates/">Certificates</a> in Gluu Server             </li>
+</ul>
+</li>
+<li>
+<p>How can I get the IDP's SAML cert? </p>
+<ul>
+<li>SAML certificate is available in your IDP's metadata. Metadata can be collected by following these <a href="https://support.gluu.org/questions/36/idp-certificate-entityid-location-http-redirect-location-etc/">instructions</a>. </li>
+</ul>
+</li>
+<li>
+<p>I need to update metadata for one Service Provider. How is it possible? </p>
+<ul>
+<li>This is pretty easy. Just follow the instructions listed <a href="https://support.gluu.org/view/maintenance/update-metadata-for-service-provider/1446">here</a>. </li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Copyright &copy; 2014, Gluu, Inc.</p>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/prettify-1.0.min.js"></script>
+        <script src="../../../js/base.js"></script>
+        
+    </body>
+</html>

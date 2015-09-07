@@ -24,7 +24,7 @@ The full suite of software is distributed as linux packages that support either 
 
 
 ## Deployment
-The Gluu Server can be deployed on any physical or virtual server. Both distributions of the Gluu Server--Community Edition and Cluster--are distrubuted as containers. Community edition uses `chroot` containers, while the Cluster Edition uses `docker` containers. Container distribution enables Gluu to make sure that all the pieces are working together. If you actually had to integrate all the components of the Gluu Server together, it would take you a long time. 
+The Gluu Server can be deployed on any physical or virtual server. Both distributions of the Gluu Server--Community Edition and Cluster--are distributed as containers. Community edition uses `chroot` containers, while the Cluster Edition uses `docker` containers. Container distribution enables Gluu to make sure that all the pieces are working together. If you actually had to integrate all the components of the Gluu Server together, it would take you a long time. 
 
 #### Minimum Server Requirements:    
 Depending on the size of your data and the number of concurrent authentications you want to be able to support, you may need more or less memory or CPU capacity. For Gluu Server Community Edition, we recommend at least 2 CPU units, 4 GB of RAM, and around 20GB of disk space. Monitor your system performance, and make sure its not swapping, in which case you should add more RAM, and increase the JVM size of tomcat.
