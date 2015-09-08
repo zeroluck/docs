@@ -104,7 +104,7 @@ The main documentation is organized into the following sections:
 - [Java Connect](./articles/java-connect.md)
 - [JS Connect](./articles/js-connect.md)
 - [SCIM Client](./articles/scim-client.md)
-- [mod_auth_oidc Installation Guide](./articles/mod-auth-oidc-installation.md)
+- [mod_auth_oidc Installation Guide](./articles/mod-auth-oidc/index.md)
 - [Test Shib2](./articles/test-shib2.md)
 - [Social Login With Google](./articles/social-login-google.md)
 
