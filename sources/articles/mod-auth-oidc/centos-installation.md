@@ -31,6 +31,9 @@ Now, to setup __Apache2 SSL__, run the following commands:
 * yum install curl hiredis jansson
 * rpm -ivh https://github.com/pingidentity/mod_auth_openidc/releases/download/v1.8.2/mod_auth_openidc-1.8.2-1.el6.x86_64.rpm
 
+Note: In case of having difficulties in installing hiredis and jansson, try to update system using:
+
+* yum upgrade
 
 Confirm presence of the the mod file as below:
 
@@ -45,7 +48,7 @@ Next, create an **apache _conf_** file for loading this module, and start the ap
 * service httpd start
 
 
-Apache mod is being run at the same server but at the port **44443**.
+Apache mod should be using port **44443**.
 
 ### Client Registration
 
@@ -61,15 +64,13 @@ You can use any of the methods to register the client.
 
 For dynamic client registration, we'll name the server: **dynamic.gluu.org.**
 
-Let's prepare the server for serving the content protected by gluuCE.
-
 Create a directory **dynamic** inside **/var/www/html**, that is:
 
 
 * mkdir /var/www/html/dynamcic
 
 
-Now, create a file named **index.html**, and all following content:
+Now, create a file named **index.html**, and add following content:
 
 ```
 
@@ -86,7 +87,7 @@ Now, create a file named **index.html**, and all following content:
 
 Create another directory **metadeta** inside above directory to hold metadata.
 
-Now, change the ownership of directory, so that apache can write metadata inside the directory.
+Now, change the ownership of directory using:
 
 * chown -R apache:apache /var/www/html
 
@@ -142,9 +143,6 @@ After this we are presented with the *oxAuth* page from gluuCE where we enter th
 
 Considering __manual client registration__ case, we'll name the server: **static.gluu.org.**
 
-Let's prepare the server for serving the content protected by gluuCE.
-
-
 Create a directory named *static* inside /var/www/html, i. e.
 
 
@@ -173,7 +171,7 @@ Now, change the ownerships by using this command:
 * chown -R apache:apache /var/www/html
 
 
-Let's create the apache config file now. Create a file named **/etc/httpd/conf.d/static.conf** with the contents as below: 
+Create a file named **/etc/httpd/conf.d/static.conf** with the contents as below: 
 
 ```
 

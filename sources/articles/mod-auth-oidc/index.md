@@ -10,9 +10,7 @@ Generally, following steps are involved in installation:
 3. Getting DN from Client ID
 
 
-You can find **mod-auth-openidc** installation guide for **Ubuntu** [Here.](./ubuntu-installation.md)
-
-<and consult here(./centos-installation.md)in case of CentOS>
+Here, you can find complete guide for installing **mod-auth-openidc** in [Ubuntu](./ubuntu-installation.md) and [CentOS](./centos-installation.md). 
 
 
 

@@ -76,7 +76,6 @@ You can use any of the methods to register the client.
 
 For dynamic client registration, we'll name the server: **dynamic.gluu.org.**
 
-Let's prepare the server for serving the content protected by gluuCE.
 
 Create a directory **dynamic** inside **/var/www/html**, that is:
 
@@ -162,9 +161,6 @@ After this we are presented with the *oxAuth* page from gluuCE where we enter th
 #### Manual Client Registration
 
 Considering __manual client registration__ case, we'll name the server: **static.gluu.org.**
-
-Let's prepare the server for serving the content protected by gluuCE.
-
 
 Create a directory named *static* inside /var/www/html, i. e.
 
