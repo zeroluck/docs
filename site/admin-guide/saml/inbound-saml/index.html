@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Inbound saml - Gluu Docs</title>
+  
+
+  <link rel="shortcut icon" href="../../../img/gluu_favicon.ico">
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script>
+  <script src="../../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Gluu Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+			
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../..">Home</a>
+        
+    </li>
+<li>
+		
+          
+			
+            <li>
+    <ul class="subnav">
+    <li><span>Admin Guide</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../introduction/">Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../getting-started/">Getting Started</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../deployment/">Deployment</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../certificates/">Certificates</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../configuration/">Configuration</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../design-customizations/">Design and Customizations</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../ldap/">LDAP</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">SAML</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../openid-connect/">OpenID Connect</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../uma/">UMA</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../user-management/">User Management</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../personal/">Personal</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../faq/">FAQ</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+		
+          
+			
+            <li>
+    <ul class="subnav">
+    <li><span>Reference</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../reference/api/">API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../reference/interception-scripts/">Interception Scripts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../reference/ldap-namespace/">LDAP Namespace</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../reference/ldap-schema/">LDAP Schema</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../reference/lib/">Gluu Library</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../reference/oxAuth/">OxAuth</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../reference/oxd/">OxD</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../reference/oxTrust/">OxTrust</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../reference/mod_auth_oidc/">Apache Module</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+		
+          
+			
+            <li>
+    <ul class="subnav">
+    <li><span>Articles</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/cache-refresh/">Cache Refresh Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/apache-saml/">Apache SAML SP Config</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/google-saml/">SAML SSO with Google</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/salesforce-sso/">SAML SSO with Salesforce</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/hobsons-saml/">SAML SSO with Hobsons</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/iis-saml/">IIS SAML Config</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/benchmarking/">Benchmarking</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/custom-attributes/">Custom Attributes</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/gluu-server-ce/">Gluu CE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/operations/">Gluu CE Operations</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/java-connect/">OpenID in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/js-connect/">OpenID from JavaScript</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/java-saml/">Java SAML Library</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/scim-client/">SCIM API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/mod-auth-oidc/">mod_auth_oidc Installation Guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/test-shib2/">Testing Shib2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/social-login-google/">Social Login with Google</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+		
+          
+		
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Gluu Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>hidden &raquo;</li>
+        
+      
+    
+    <li>Inbound saml</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/GluuFederation/docs" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><strong>Table of Contents</strong> </p>
+<ul>
+<li><a href="#inbound-saml-in-gluu-server">Inbound SAML in Gluu Server</a></li>
+<li><a href="#requirements-for-inbound-saml">Requirements for Inbound SAML</a><ul>
+<li><a href="#metadata-of-authentication-server">Metadata of Authentication Server</a></li>
+<li><a href="#metadata-of-service-provider">Metadata of Service Provider</a></li>
+<li><a href="#saml-certificate-of-service-provider">SAML Certificate of Service Provider</a></li>
+<li><a href="#ssl-certificate-of-authentication-server">SSL Certificate of Authentication Server</a></li>
+<li><a href="#required-attributes">Required Attributes</a></li>
+</ul>
+</li>
+<li><a href="#asimba-configuration">Asimba Configuration</a><ul>
+<li><a href="#base-installation-of-asimba-package">Base Installation of Asimba Package</a></li>
+<li><a href="#asimba-apache-configuration">Asimba Apache Configuration</a></li>
+<li><a href="#test-asimba-setup">Test Asimba Setup</a></li>
+</ul>
+</li>
+<li><a href="#add-new-service-provider-or-identity-provider">Add New Service Provider or Identity Provider</a></li>
+<li><a href="#configure-asimba-saml-proxy">Configure Asimba SAML Proxy</a>
+        - <a href="#base-installation">Base SAML Proxy Installation</a><ul>
+<li><a href="#saml-proxy-apache-configuration">SAML Proxy Apache Configuration</a></li>
+</ul>
+</li>
+<li><a href="#add-new-identity-provider">Add New Identity Provider</a><ul>
+<li><a href="#required-files">Required Files</a></li>
+<li><a href="#configure-asimba.xml">Configure asimba.xml:</a></li>
+<li><a href="#work-on-idp-keystore">Work on IDP Keystore:</a></li>
+<li><a href="#idp-restart-tomcat">IDP Restart Tomcat</a></li>
+</ul>
+</li>
+<li><a href="#add-new-service-provider">Add New Service Provider</a><ul>
+<li><a href="#configure-asimba.xml">Configure asimba.xml:</a></li>
+<li><a href="#work-on-sp-keystore">Work on SP Keystore</a></li>
+<li><a href="#sp-restart-tomcat">SP Restart Tomcat</a></li>
+</ul>
+</li>
+<li><a href="#configure-sp">Configure SP</a><ul>
+<li><a href="#configure-remote-idp">Configure Remote IDP</a></li>
+</ul>
+</li>
+<li><a href="#how-to-test">How to Test</a></li>
+</ul>
+<h1 id="inbound-saml-in-gluu-server">Inbound SAML in Gluu Server</h1>
+<p>The main use case for Asimba is to enable websites to use a single IDP for single sign-on (SSO)
+even when the organization may have a number of IDPs that are trusted. For more
+information, please review the <a href="http://www.asimba.org/site/">Asimba website</a>.</p>
+<h1 id="requirements-for-inbound-saml">Requirements for Inbound SAML</h1>
+<ul>
+<li><a href="#metadata-of-authentication-server">Metadata of Authentication Server</a></li>
+<li><a href="#metadata-of-service-provider">Metadata of Service Provider</a></li>
+<li><a href="#saml-certificate-of-service-provider">SAML Certificate of Service Provider</a></li>
+<li><a href="#ssl-certificate-of-authentication-server">SSL Certificate of Authentication Server</a> </li>
+<li><a href="#required-attributes">Required Attributes</a></li>
+</ul>
+<p>Above points are described breifly below. </p>
+<h2 id="metadata-of-authentication-server">Metadata of Authentication Server</h2>
+<p>Authentication server can be any remote / native SAML IDP such as the Shibboleth IDP or Microsoft ADFS. You need the metadata of this server to configure Asimba. After configuration, end user will be able to select their desired authentication server from Asimba's discovery page. Or, you can configure the "selector" which will automatically redirect user to desired IDP / ADFS. </p>
+<h2 id="metadata-of-service-provider">Metadata of Service Provider</h2>
+<p>Just like the authentication server metadata, you will also need metadata from all websites ( SPs ) which will be connected.</p>
+<h2 id="saml-certificate-of-service-provider">SAML Certificate of Service Provider</h2>
+<p>Base64 encoded certificates are required to configure the Asimba trust store to connect / allow the inbound SAML request from the remote SP. </p>
+<h2 id="ssl-certificate-of-authentication-server">SSL Certificate of Authentication Server</h2>
+<p>Base64 encoded certificates for the authentication server are also required. </p>
+<h2 id="required-attributes">Required Attributes</h2>
+<p>Every organization has their own policy to release / pass attributes to service providers. It can be a standard attribute like UID or email address or it can be any custom attribute.  </p>
+<h1 id="asimba-configuration">Asimba Configuration</h1>
+<h2 id="base-installation-of-asimba-package">Base Installation of Asimba Package</h2>
+<ul>
+<li>Get the war for Asimba from <a href="http://asimba.org">http://asimba.org</a></li>
+<li>Copy the war file in <code>/opt/tomcat/webapps</code></li>
+<li>Restart tomcat, it will extract the Asimba</li>
+<li>Get the <code>asimba.conf</code> template from Gluu</li>
+<li>Generate the keystore for your Asimba server:<ul>
+<li>Command: <code>keytool -genkeypair -keyalg RSA -alias "&lt;ALIAS_OF_KEYSTORE&gt;" -keypass &lt;PASSWORD&gt; -keystore &lt;NAME_OF_JKS&gt;.jks -storepass &lt;PASSWORD&gt;</code><ul>
+<li>What is your first and last name?: Provide the hostname of Asimba server</li>
+<li>What is the name of your organizational unit?: IT</li>
+<li>What is the name of your organization?: Provide name</li>
+<li>What is the name of your City or Locality?: city name</li>
+<li>What is the name of your State or Province?: State name</li>
+<li>What is the two-letter country code for this unit?: US</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Adding IDP / ADFS in Asimba: </p>
+<ul>
+<li>Gather metadata of IDP / ADFS and keep them in some place under /tomcat/webapps/asimba-saml-proxy/WEB-INF/ </li>
+<li>Collect certificate of IDP / ADFS and import them in Asimba truststore JKS</li>
+</ul>
+</li>
+<li>
+<p>Adding SP in Asimba: </p>
+<ul>
+<li>Gather metadata of SP and keep them in some place under /tomcat/webapps/asimba-saml-proxy/WEB-INF/</li>
+<li>Collect certificate of SP and import them in Asimba truststore JKS</li>
+</ul>
+</li>
+<li>
+<p>Restart tomcat</p>
+</li>
+</ul>
+<h2 id="asimba-apache-configuration">Asimba Apache Configuration</h2>
+<ul>
+<li>
+<p>Configure <code>idp.conf</code>: </p>
+<pre><code>    &lt;Location /asimba-saml-proxy&gt;
+        ProxyPass ajp://&lt;ASIMBA_HOSTNAME&gt;:8009/asimba-saml-proxy retry=5 disablereuse=On
+        ProxyPassReverse ajp://&lt;ASIMBA_HOSTNAME&gt;:8009/asimba-saml-proxy
+
+        Order allow,deny
+        Allow from all
+    &lt;/Location&gt;
+</code></pre>
+</li>
+<li>
+<p>Restart httpd </p>
+</li>
+</ul>
+<h2 id="test-asimba-setup">Test Asimba Setup</h2>
+<ul>
+<li>Try to download the metadata of Asimba server with: <code>wget -c https://&lt;HOSTNAME&gt;/asimba-saml-proxy/profiles/saml2</code></li>
+</ul>
+<h1 id="add-new-service-provider-or-identity-provider">Add New Service Provider or Identity Provider</h1>
+<p>All our configurations are based on one Asimba configuration file named
+<code>asimba.xml</code>. It's also possible to configure Asimba with JDBC. For more info
+Asimba <a href="http://sourceforge.net/p/asimba/wiki/Home/">wiki</a> is availalbe.</p>
+<ul>
+<li>
+<p>Required tools</p>
+<ul>
+<li>Metadata of remote IDP</li>
+<li>SAML certificate of remote IDP</li>
+</ul>
+</li>
+<li>
+<p>Configuring <code>asimba.xml</code>: </p>
+<ul>
+<li>Grab the metadata of remote IDP and save it in some place. Make sure that user tomcat can read this xml copy. <ul>
+<li>Specify this metadata in  <code>&lt;websso&gt;\&lt;method&gt;\&lt;idps&gt;</code> section. <ul>
+<li><code>idp id</code> must follow the entityID of this metadata.</li>
+<li><code>scoping</code> should be "false"</li>
+<li>Add the static path of metadata inside <code>&lt;file&gt;</code> section. </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>A sample configuration should look like below:</p>
+<pre><code>        &lt;idp id="https://idp.gluu.org/idp/shibboleth" friendlyname="Gluu IDP" scoping="false" 
+            avoid_subjectconfirmation="false"&gt;
+                &lt;nameidpolicy enabled="false" /&gt;
+                    &lt;metadata&gt;
+                        &lt;file&gt;${webapp.root}/WEB-INF/metadata/idp/idp_gluu_org.xml&lt;/file&gt;
+                    &lt;metadata&gt;
+        &lt;/idp&gt;
+</code></pre>
+<h1 id="configure-asimba-saml-proxy">Configure Asimba SAML Proxy</h1>
+<ul>
+<li>Collect the metadata of IDP / AD FS which will be connected with your Asimba Server. </li>
+<li>Collect SAML certificate of that IDP / AD FS server which will be connected with Asimba Proxy Server. <ul>
+<li>Certificate must have to be a base64 encoded ASCII files which contain <code>-----BEGIN CERTIFICATE-----</code> and <code>-----END CERTIFICATE-----</code>. </li>
+<li>Certificate cannot be password protected. </li>
+</ul>
+</li>
+<li>Collect the metadata of SP which will be connected with Asimba SAML Proxy. </li>
+<li>Collect the SAML certificate of SP. <ul>
+<li>Certificate must have to be a base64 encoded ASCII files which contain <code>-----BEGIN CERTIFICATE-----</code> and <code>-----END CERTIFICATE-----</code>.</li>
+<li>Certificate cannot be password protected.</li>
+</ul>
+</li>
+</ul>
+<h2 id="base-saml-proxy-installation">Base SAML Proxy Installation</h2>
+<ul>
+<li>Get Asimba from <a href="http://sourceforge.net/projects/asimba/files/release/">Asimba repository</a> </li>
+<li>Send the war file in ~/tomcat/webapps/</li>
+<li>Restart tomcat, it will extract the asimba </li>
+<li>Generate the keystore for your SAML Proxy Server:<ul>
+<li>Command: <code>keytool -genkeypair -keyalg RSA -alias "&lt;ALIAS_OF_KEYSTORE&gt;" -keypass &lt;PASSWORD&gt; -keystore &lt;NAME_OF_JKS&gt;.jks -storepass &lt;PASSWORD&gt;</code><ul>
+<li>What is your first and last name?: Provide the hostname of Asimba server</li>
+<li>What is the name of your organizational unit?: IT</li>
+<li>What is the name of your organization?: Provide name</li>
+<li>What is the name of your City or Locality?: city name</li>
+<li>What is the name of your State or Province?: State name</li>
+<li>What is the two-letter country code for this unit?: US</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="saml-proxy-apache-configuration">SAML Proxy Apache Configuration</h2>
+<p>Configure <code>idp.conf</code>: </p>
+<pre><code>        &lt;Location /asimba-saml-proxy&gt;
+            ProxyPass ajp://&lt;ASIMBA_HOSTNAME&gt;:8009/asimba-saml-proxy retry=5 disablereuse=On
+            ProxyPassReverse ajp://&lt;ASIMBA_HOSTNAME&gt;:8009/asimba-saml-proxy
+
+            Order allow,deny
+            Allow from all
+        &lt;/Location&gt;
+</code></pre>
+<h1 id="add-new-identity-provider">Add New Identity Provider</h1>
+<p>All our configurations are based on one Asimba configuration file named
+<code>asimba.xml</code>. It's also possible to configure Asimba with JDBC. For more info view the
+Asimba <a href="http://sourceforge.net/p/asimba/wiki/Home/">wiki</a>.</p>
+<h2 id="required-files">Required Files</h2>
+<ul>
+<li>Metadata of remote IDP</li>
+<li>SAML certificate of remote IDP</li>
+</ul>
+<h2 id="configure-asimbaxml">Configure <code>asimba.xml</code>:</h2>
+<ul>
+<li>Grab the metadata of remote IDP and save it in some place. Make sure that user tomcat can read this xml copy. <ul>
+<li>Specify this metadata in  <code>&lt;websso&gt;\&lt;method&gt;\&lt;idps&gt;</code> section. <ul>
+<li><code>idp id</code> must follow the entityID of this metadata.</li>
+<li><code>scoping</code> should be "false"</li>
+<li>Add the static path of metadata inside <code>&lt;file&gt;</code> section. </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>A sample configuration should look like below:</p>
+<pre><code>        &lt;idp id="https://idp.gluu.org/idp/shibboleth" friendlyname="Gluu IDP" scoping="false" 
+            avoid_subjectconfirmation="false"&gt;
+                &lt;nameidpolicy enabled="false" /&gt;
+                    &lt;metadata&gt;
+                        &lt;file&gt;${webapp.root}/WEB-INF/metadata/idp/idp_gluu_org.xml&lt;/file&gt;
+                    &lt;metadata&gt;
+        &lt;/idp&gt;
+</code></pre>
+<h2 id="work-on-idp-keystore">Work on IDP Keystore:</h2>
+<ul>
+<li>Import the SAML certificate of IDP into Asimba's JKS<ul>
+<li>Convert certificate into DER format</li>
+<li>Import this DER formatted certificate into Asimba's keystore</li>
+<li>Please note that it's a good practice to follow the IDP's <code>entityID</code> as <code>alias</code> of this certificate.</li>
+</ul>
+</li>
+</ul>
+<p>Sample command would be: </p>
+<pre><code>    keytool -import -trustcacerts -alias https://idp.gluu.org/idp/shibboleth \ 
+        -file idp_gluu_org.der -keystore asimba-keystore.jks
+</code></pre>
+<h2 id="idp-restart-tomcat">IDP Restart Tomcat</h2>
+<p>If everything was done correctly, the new IDP is configured with Asimba</p>
+<h1 id="add-new-service-provider">Add New Service Provider</h1>
+<p>Required Files: </p>
+<ul>
+<li>Metadata of SP</li>
+<li>SAML certificate of SP</li>
+</ul>
+<h2 id="configure-asimbaxml_1">Configure <code>asimba.xml</code>:</h2>
+<ul>
+<li>Collect the metadata of SP and place in some location of your file system. Make sure that the metadata is in xml format and user tomcat readable.  </li>
+<li>Add Requestor: Every SP is known as <code>requestor</code> to Asimba. There are couple of place where we need to configure this SP inside Asimba's <code>asimba.xml</code> file. <ul>
+<li>Requestor should be configured in <requestorpoolfactory\<requestors>\&lt;requestor</li>
+<li><code>requestor id</code> should be the <code>entityID</code> of SP</li>
+<li><code>friendlyname</code> can be anything which is unique</li>
+</ul>
+</li>
+</ul>
+<p>A sample configuration should look like below: </p>
+<pre><code>        &lt;requestor id="http://sptest2.gluu.org/secure"
+                friendlyname="Gluu Test SP"
+                enabled="true" /&gt;
+</code></pre>
+<ul>
+<li>Add profile of requestor: In this section the location of SP's metadata and some other configurations are done. <ul>
+<li>This configuration is configured in <profiles>\&lt;websso\&lt;requestors\&lt;requestor</li>
+<li>The <code>requestor id</code> is the entityID of SP</li>
+<li><code>metadata</code> location is a the absolute path</li>
+</ul>
+</li>
+</ul>
+<p>A sample configuration of requestor's profile configuration: </p>
+<pre><code>        &lt;requestor id="http://sptest2.gluu.org/secure"
+            signing="FALSE"&gt;
+                &lt;metadata&gt;
+                    &lt;file&gt;${webapp.root}/WEB-INF/metadata/sp/sptest2_gluu_org.xml&lt;/file&gt;
+                &lt;/metadata&gt;
+        &lt;/requestor&gt;
+</code></pre>
+<h2 id="work-on-sp-keystore">Work on SP Keystore</h2>
+<ul>
+<li>Import the SAML certificate of SP into Asimba's JKS<ul>
+<li>Convert certificate into DER format</li>
+<li>Import this der formatted certificate into Asimba's keystore</li>
+<li>Please note that it's a good practice to follow the SP's <code>entityID</code> as <code>alias</code> of this certificate.</li>
+</ul>
+</li>
+</ul>
+<p>Sample command would be:</p>
+<pre><code>    keytool -import -trustcacerts -alias https://sptest2.gluu.org/secure \
+        -file sp_gluu_org.der -keystore asimba-keystore.jks
+</code></pre>
+<h2 id="sp-restart-tomcat">SP Restart Tomcat</h2>
+<p>If everything was done correctly, the SP is now configured in Asimba. </p>
+<h1 id="configure-sp">Configure SP</h1>
+<p>Now, it's time to configure your SP as it can send the request to Asimba server.
+The primary item to configure Asimba server in SP's configuration is <code>the
+metadata of Asimba</code>. Which can be grabbed easily with </p>
+<pre><code>wget -c https://&lt;HOSTNAME&gt;/asimba-saml-proxy/profiles/saml2
+</code></pre>
+<h2 id="configure-remote-idp">Configure Remote IDP</h2>
+<p>Remote IDP / AD FS also need to be configured for Asimba server as they can talk
+together. </p>
+<p>If the remote authentication server is a Shibboleth IDP, it just require three
+things: </p>
+<ul>
+<li>Metadata of Asimba - which can be grabbed easily. </li>
+<li>Name identifier attribute, which will be shared with Asimba - <code>persistentID</code></li>
+<li><code>SAML2SSO</code> relying party configuration for this trust relationship with Asimba. Values should be: <ul>
+<li><em>includeAttributeStatement</em> : true</li>
+<li><em>assertionLifetime</em> : 300000</li>
+<li><em>assertionProxyCount</em> : 0</li>
+<li><em>signResponses</em> : conditional</li>
+<li><em>signAssertions</em> : never</li>
+<li><em>signRequests</em> : conditional</li>
+<li><em>encryptAssertions</em> : never</li>
+<li><em>encryptNameIds</em> : never </li>
+</ul>
+</li>
+</ul>
+<h1 id="how-to-test">How to Test</h1>
+<p>The workflow of SAML Proxy is:</p>
+<p>End user hit the SP --&gt; SP will take user to Asimba's discovery page to select IDP --&gt; User will select IDP for authentication --&gt; After successful authentication user will be logged into SP</p>
+<p>Gluu has an auto selector mechanism which automatically redirect user from specified SP to desired IDP for authentication. If you want have questions, please open a ticket on <a href="http://support.gluu.org">support</a>. </p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../outbound-saml/" class="btn btn-neutral float-right" title="Outbound saml"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../certificates/saml/" class="btn btn-neutral" title="Saml"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    <!-- Copyright etc -->
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../../certificates/saml/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../outbound-saml/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

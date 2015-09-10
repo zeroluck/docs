@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Benchmarking - Gluu Docs</title>
+  
+
+  <link rel="shortcut icon" href="../../img/gluu_favicon.ico">
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Gluu Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+			
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+		
+          
+			
+            <li>
+    <ul class="subnav">
+    <li><span>Admin Guide</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/introduction/">Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/getting-started/">Getting Started</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/deployment/">Deployment</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/certificates/">Certificates</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/configuration/">Configuration</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/design-customizations/">Design and Customizations</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/ldap/">LDAP</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/saml/">SAML</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/openid-connect/">OpenID Connect</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/uma/">UMA</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/user-management/">User Management</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/personal/">Personal</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/faq/">FAQ</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+		
+          
+			
+            <li>
+    <ul class="subnav">
+    <li><span>Reference</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/api/">API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/interception-scripts/">Interception Scripts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/ldap-namespace/">LDAP Namespace</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/ldap-schema/">LDAP Schema</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/lib/">Gluu Library</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/oxAuth/">OxAuth</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/oxd/">OxD</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/oxTrust/">OxTrust</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/mod_auth_oidc/">Apache Module</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+		
+          
+			
+            <li>
+    <ul class="subnav">
+    <li><span>Articles</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../cache-refresh/">Cache Refresh Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../apache-saml/">Apache SAML SP Config</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../google-saml/">SAML SSO with Google</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../salesforce-sso/">SAML SSO with Salesforce</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../hobsons-saml/">SAML SSO with Hobsons</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../iis-saml/">IIS SAML Config</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Benchmarking</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#gluu-server-benchmark">Gluu Server Benchmark</a></li>
+                
+                    <li><a class="toctree-l4" href="#performance-tuning">Performance Tuning</a></li>
+                
+                    <li><a class="toctree-l4" href="#gluu-server">Gluu Server</a></li>
+                
+                    <li><a class="toctree-l4" href="#gluu-server-benchmark_1">Gluu Server Benchmark</a></li>
+                
+                    <li><a class="toctree-l4" href="#useful-links">Useful Links</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../custom-attributes/">Custom Attributes</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../gluu-server-ce/">Gluu CE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operations/">Gluu CE Operations</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../java-connect/">OpenID in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../js-connect/">OpenID from JavaScript</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../java-saml/">Java SAML Library</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../scim-client/">SCIM API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../mod-auth-oidc/">mod_auth_oidc Installation Guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../test-shib2/">Testing Shib2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../social-login-google/">Social Login with Google</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+		
+          
+		
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Gluu Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Articles &raquo;</li>
+        
+      
+    
+    <li>Benchmarking</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/GluuFederation/docs" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="gluu-server-benchmark">Gluu Server Benchmark</h1>
+<h2 id="performance-tuning">Performance Tuning</h2>
+<p>Gluu Server has stateless architecture, it scales quite easy. However to get high-performant server it must be tuned accordingly.</p>
+<p>Tuning consists of:</p>
+<ul>
+<li>LDAP Server (OpenDJ, OpenLDAP)</li>
+<li>Web Application Container (Tomcat, Jetty, JBoss)</li>
+<li>Gluu Server configuration Tuning</li>
+</ul>
+<h3 id="ldap-server">LDAP Server</h3>
+<p>(For convenience all samples sticks to OpenDJ however general recommendations are the same for other LDAP Servers)</p>
+<ol>
+<li>Maximum allowed connections</li>
+</ol>
+<p>If there is not enough connections to serve the client, connection is put "on hold" and waits. To avoid delays it's recommended to provide expected maximum allowed connections.</p>
+<pre><code> max-allowed-client-connections=1000
+</code></pre>
+
+<ol>
+<li>Provide enough resources to LDAP Server</li>
+</ol>
+<p>For example OpenDJ use JVM for running, for high performance it's recommended to give enough memory via JVM system properties.</p>
+<ol>
+<li>Allow LDAP Server use cache as much as possible.</li>
+</ol>
+<pre><code>    dsconfig -n set-backed-prop --backend-name userRoot --set db-cache-percent:50
+</code></pre>
+
+<h3 id="tomcat">Tomcat</h3>
+<ol>
+<li>Set maxmimum for parallel requests.</li>
+</ol>
+<p>Connector parameters in server.xml:</p>
+<ul>
+<li>maxThreads="10000"</li>
+<li>
+<p>maxConnections="10000"</p>
+</li>
+<li>
+<p>Set memory settings via JAVA_OPTS</p>
+</li>
+</ul>
+<p>set "JAVA_OPTS=-Xms1456m -Xmx7512m -XX:MaxPermSize=256m -XX:+DisableExplicitGC"</p>
+<ol>
+<li>Operating time</li>
+</ol>
+<p>Check via Tomcat monitor whether requests are handled or just "hangs" because there no enough resources</p>
+<p>Here is sample when processing time increase due to lack of resources:</p>
+<p><img alt="Alt text" src="http://gluu.org/docs/img/benchmark/tomcatStatus.png" title="Tomcat status" /></p>
+<h2 id="gluu-server">Gluu Server</h2>
+<ul>
+<li>
+<p>oxauth-ldap.properties - Increase ldap connection pool size</p>
+<p>maxconnections: 1000</p>
+</li>
+</ul>
+<h2 id="gluu-server-benchmark_1">Gluu Server Benchmark</h2>
+<p>Benchmarking based on Authentication Implicit Flow: http://openid.net/specs/openid-connect-core-1_0.html#ImplicitFlowAuth</p>
+<p>Measures were made on single machine with Gluu Server, LDAP Server and test runner (clients). Therefore here is quite <b>subjective</b> results</p>
+<table>
+  <tr>
+    <td><b>Invocations &nbsp;&nbsp;</b></td>
+    <td><b>Parallel threads &nbsp;&nbsp;</b></td>
+    <td><b>Time</b></td>
+    <td><b>Comments</b></td>
+  </tr>
+  <tr>
+    <td>100</td>
+    <td>100</td>
+    <td>8 seconds </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1000</td>
+    <td>100</td>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1000</td>
+    <td>200</td>
+    <td>-</td>
+    <td>Not representable: CPU 100%</td>
+  </tr>
+  <tr>
+    <td>2000</td>
+    <td>100</td>
+    <td>-</td>
+    <td>Not representable: CPU 100%</td>
+  </tr>
+  <tr>
+    <td>2000</td>
+    <td>200</td>
+    <td>-</td>
+    <td>Not representable: CPU 100%</td>
+  </tr>
+  <tr>
+    <td>10000</td>
+    <td>300</td>
+    <td>-</td>
+    <td>Not representable: CPU 100%</td>
+  </tr>
+  <tr>
+    <td>1000000</td>
+    <td>300</td>
+    <td>-</td>
+    <td>Not representable: CPU 100%</td>
+  </tr>
+</table>
+
+<h2 id="useful-links">Useful Links</h2>
+<ul>
+<li><a href="http://opendj.forgerock.org/opendj-server/doc/admin-guide/index/chap-tuning.html">OpenDJ Performance Tuning</a></li>
+<li><a href="http://opendj.forgerock.org/opendj-server/configref/global.html#max-allowed-client-connections">OpenDJ Global configuration</a></li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../custom-attributes/" class="btn btn-neutral float-right" title="Custom Attributes"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../iis-saml/" class="btn btn-neutral" title="IIS SAML Config"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    <!-- Copyright etc -->
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../iis-saml/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../custom-attributes/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

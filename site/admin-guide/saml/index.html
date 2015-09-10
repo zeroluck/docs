@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SAML - Gluu Docs</title>
+  
+
+  <link rel="shortcut icon" href="../../img/gluu_favicon.ico">
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Gluu Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+			
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+		
+          
+			
+            <li>
+    <ul class="subnav">
+    <li><span>Admin Guide</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../introduction/">Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../getting-started/">Getting Started</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../deployment/">Deployment</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../certificates/">Certificates</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../configuration/">Configuration</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../design-customizations/">Design and Customizations</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../ldap/">LDAP</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">SAML</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#saml">SAML</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#outbound-vs-inbound-saml">Outbound vs. Inbound SAML</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#sp-configuration">SP Configuration</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../openid-connect/">OpenID Connect</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../uma/">UMA</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../user-management/">User Management</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../personal/">Personal</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../faq/">FAQ</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+		
+          
+			
+            <li>
+    <ul class="subnav">
+    <li><span>Reference</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/api/">API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/interception-scripts/">Interception Scripts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/ldap-namespace/">LDAP Namespace</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/ldap-schema/">LDAP Schema</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/lib/">Gluu Library</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/oxAuth/">OxAuth</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/oxd/">OxD</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/oxTrust/">OxTrust</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/mod_auth_oidc/">Apache Module</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+		
+          
+			
+            <li>
+    <ul class="subnav">
+    <li><span>Articles</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/cache-refresh/">Cache Refresh Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/apache-saml/">Apache SAML SP Config</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/google-saml/">SAML SSO with Google</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/salesforce-sso/">SAML SSO with Salesforce</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/hobsons-saml/">SAML SSO with Hobsons</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/iis-saml/">IIS SAML Config</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/benchmarking/">Benchmarking</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/custom-attributes/">Custom Attributes</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/gluu-server-ce/">Gluu CE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/operations/">Gluu CE Operations</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/java-connect/">OpenID in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/js-connect/">OpenID from JavaScript</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/java-saml/">Java SAML Library</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/scim-client/">SCIM API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/mod-auth-oidc/">mod_auth_oidc Installation Guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/test-shib2/">Testing Shib2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/social-login-google/">Social Login with Google</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+		
+          
+		
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Gluu Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Admin Guide &raquo;</li>
+        
+      
+    
+    <li>SAML</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/GluuFederation/docs" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="saml">SAML</h1>
+<p>During deployment of the Gluu Server, you can choose to install up to two SAML IDPs. The two options are Shibboleth and Asimba.  Whether or not you want one or both of these SAML IDPs is dependant upon your SAML requirements.</p>
+<h1 id="outbound-vs-inbound-saml">Outbound vs. Inbound SAML</h1>
+<ul>
+<li>
+<p><a href="outbound-saml/">Outbound SAML</a>: Shibboleth is a thoroughly tested and stable SAML IDP. The main use case for Shibboleth is outbound SAML, which is the most typical flow for single sign-on (SSO). For example, if you wanted to create SSO to an app like Google Mail or Salesforce, you would use outbound SAML. </p>
+</li>
+<li>
+<p><a href="inbound-saml/">Inbound SAML</a>: Asimba is a well tested and stable SAML Proxy that can be used to support inbound SAML requirements. The main use case for Asimba is to enable websites to use a single IDP for SSO, even when the organization may have a number of IDPs that are trusted. </p>
+</li>
+</ul>
+<p><em>Note:</em> The Gluu Server GUI has interfaces for managing outbound SAML (Shibboleth). To manage Inbound SAML (Asimba), you will need to manually edit XML files as needed.   </p>
+<h1 id="sp-configuration">SP Configuration</h1>
+<p>The Shibboleth Service Provider (SP) software is used to protect applications and is configured via an apache module. Use <a href="saml-sp-configuration/">this guide</a> to install the SP software. </p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../openid-connect/" class="btn btn-neutral float-right" title="OpenID Connect"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../ldap/" class="btn btn-neutral" title="LDAP"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    <!-- Copyright etc -->
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../ldap/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../openid-connect/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

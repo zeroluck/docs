@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>None/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>None/admin-guide/introduction/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/getting-started/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/deployment/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/certificates/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/configuration/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/design-customizations/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/ldap/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/saml/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/openid-connect/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/uma/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/user-management/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/personal/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/faq/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/reference/api/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/interception-scripts/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/ldap-namespace/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/ldap-schema/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/lib/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/oxAuth/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/oxd/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/oxTrust/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/mod_auth_oidc/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/articles/cache-refresh/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/articles/apache-saml/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/articles/google-saml/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/articles/salesforce-sso/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/articles/hobsons-saml/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/articles/iis-saml/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/articles/benchmarking/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/articles/custom-attributes/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/articles/gluu-server-ce/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/articles/operations/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/articles/java-connect/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/articles/js-connect/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/articles/java-saml/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/articles/scim-client/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/articles/mod-auth-oidc/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/articles/test-shib2/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/articles/social-login-google/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/admin-guide/deployment/centos/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/deployment/setup_py/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/deployment/ubuntu/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/certificates/https/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/certificates/openid-connect/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/certificates/saml/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/saml/inbound-saml/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/saml/outbound-saml/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/saml/saml-sp-configuration/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/api/id-generation/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/api/oic-authorization/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/api/oic-end-session/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/api/oic-register-client/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/api/oic-token/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/api/oic-userinfo/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/api/uma-create-rpt/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/api/uma-discovery/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/api/uma-permission-registration/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/api/uma-resource-registration/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/api/uma-rpt-status/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/api/uma-authorization-endpoint/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/interception-scripts/sample-application-session-script/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/interception-scripts/sample-authentication-script/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/interception-scripts/sample-cache-refresh-script/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/interception-scripts/sample-client-registration-script/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/interception-scripts/sample-id-generation-script/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/interception-scripts/sample-uma-authorization-script/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/interception-scripts/sample-update-user-script/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/interception-scripts/sample-user-registration-script/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/lib/openid-connect/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/lib/saml/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/lib/scim/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/lib/uma/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/articles/mod-auth-oidc/ubuntu-installation/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/articles/mod-auth-oidc/centos-installation/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/mod_auth_oidc/ubuntu-installation/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/reference/mod_auth_oidc/centos-installation/</loc>
+     <lastmod>2015-09-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+</urlset>

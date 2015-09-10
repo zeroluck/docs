@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Certificates - Gluu Docs</title>
+  
+
+  <link rel="shortcut icon" href="../../img/gluu_favicon.ico">
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Gluu Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+			
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+		
+          
+			
+            <li>
+    <ul class="subnav">
+    <li><span>Admin Guide</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../introduction/">Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../getting-started/">Getting Started</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../deployment/">Deployment</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Certificates</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#certificates">Certificates</a></li>
+                
+                    <li><a class="toctree-l4" href="#asimba">Asimba</a></li>
+                
+                    <li><a class="toctree-l4" href="#apache">Apache</a></li>
+                
+                    <li><a class="toctree-l4" href="#opendj">OpenDJ</a></li>
+                
+                    <li><a class="toctree-l4" href="#oxauth">oxAuth</a></li>
+                
+                    <li><a class="toctree-l4" href="#shibboleth-idp">Shibboleth IDP</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#updating-certs">Updating Certs</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#installing-intermediate-certificates">Installing Intermediate Certificates</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#older-gluu-server-versions">Older Gluu Server Versions</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../configuration/">Configuration</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../design-customizations/">Design and Customizations</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../ldap/">LDAP</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../saml/">SAML</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../openid-connect/">OpenID Connect</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../uma/">UMA</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../user-management/">User Management</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../personal/">Personal</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../faq/">FAQ</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+		
+          
+			
+            <li>
+    <ul class="subnav">
+    <li><span>Reference</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/api/">API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/interception-scripts/">Interception Scripts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/ldap-namespace/">LDAP Namespace</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/ldap-schema/">LDAP Schema</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/lib/">Gluu Library</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/oxAuth/">OxAuth</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/oxd/">OxD</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/oxTrust/">OxTrust</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/mod_auth_oidc/">Apache Module</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+		
+          
+			
+            <li>
+    <ul class="subnav">
+    <li><span>Articles</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/cache-refresh/">Cache Refresh Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/apache-saml/">Apache SAML SP Config</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/google-saml/">SAML SSO with Google</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/salesforce-sso/">SAML SSO with Salesforce</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/hobsons-saml/">SAML SSO with Hobsons</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/iis-saml/">IIS SAML Config</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/benchmarking/">Benchmarking</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/custom-attributes/">Custom Attributes</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/gluu-server-ce/">Gluu CE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/operations/">Gluu CE Operations</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/java-connect/">OpenID in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/js-connect/">OpenID from JavaScript</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/java-saml/">Java SAML Library</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/scim-client/">SCIM API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/mod-auth-oidc/">mod_auth_oidc Installation Guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/test-shib2/">Testing Shib2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/social-login-google/">Social Login with Google</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+		
+          
+		
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Gluu Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Admin Guide &raquo;</li>
+        
+      
+    
+    <li>Certificates</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/GluuFederation/docs" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="certificates">Certificates</h1>
+<p>Many of the components of the Gluu Server have cyrpto keys and X.509 certificates. There are many key formats, and keystore formats. Navigate to the sections below to find what you need for each of the Gluu Server components.</p>
+<ul>
+<li><a href="#asimba">Asimba</a>   </li>
+<li><a href="#apache">Apache</a>   </li>
+<li><a href="#opendj">OpenDJ</a>     </li>
+<li><a href="#oxauth">oxAuth</a>   </li>
+<li><a href="#shibboleth-idp">Shibboleth IDP</a>   </li>
+</ul>
+<h2 id="asimba">Asimba</h2>
+<p><code>asimba.crt</code>, <code>asimba.csr</code>, <code>asimba.key</code>, <code>asimba.key.orig</code>, <code>asimba.pkcs12 and asimbaIDP.jks</code> are associated with the Asimba SAML Proxy Server. If you install SAML Proxy Server ( Asimba ) in your Gluu Server, you have to deal with these cert and key. </p>
+<h2 id="apache">Apache</h2>
+<p><code>httpd.crt</code>, <code>httpd.csr</code>, <code>httpd.key</code>, <code>httpd.key.orig</code> are SSL Apache related certs and keys. If you want to update your Apache SSL cert don't worry about the <code>.csr</code> and <code>.key.orig</code>.  </p>
+<h2 id="opendj">OpenDJ</h2>
+<p><code>opendj.crt</code> is the public cert being used by oxAuth to make a connection to the internal Gluu-LDAP.</p>
+<h2 id="oxauth">oxAuth</h2>
+<p><code>oxauth-web-keys.json</code> is being used by Gluu's OpenID Connect &amp; UMA server. </p>
+<h2 id="shibboleth-idp">Shibboleth IDP</h2>
+<p><code>shibIDP.crt</code>, <code>shibIDP.csr</code>, <code>shibIDP.jks</code>, <code>shibIDP.key</code>, <code>shibIDP.key.orig</code>, <code>shibIDP.pkcs12</code> are required if you use the Gluu Server's Shibboleth SAML server for SAML transactions. </p>
+<h1 id="updating-certs">Updating Certs</h1>
+<p>If you're using the Gluu Server CE binaries or latest Gluu Servers, you need to
+manually update certificates and keys from <code>/etc/certs/</code>. Please note that your
+private key <code>can not be password protected</code> and public key should be base64
+X.509. For example, in order to update Apache SSL cert:</p>
+<ul>
+<li>Push latest SSL httpd key and cert in <code>/etc/certs</code>.   </li>
+<li>Rename them to <code>httpd.key</code> and <code>httpd.crt</code> respectively.    </li>
+<li>Import the DER format of your cert in "cacert" ( location in RHEL/CentOS CE: <code>/etc/pki/java/</code>, location in Ubuntu CE: <code>/etc/ssl/certs/java</code> ).    </li>
+<li>Restart your Gluu-server from outside the chroot container.   </li>
+</ul>
+<h1 id="installing-intermediate-certificates">Installing Intermediate Certificates</h1>
+<ol>
+<li>Log into your Gluu Server container</li>
+<li>Keep your intermediate cert in <code>/etc/certs/</code></li>
+<li><code>https_gluu.conf</code> modification ( location: <code>/etc/httpd/conf.d</code> )
+    3.1 Add <code>SSLCertificateChainFile /etc/certs/name_of_your_interm_root_cert.crt</code></li>
+<li>Restart <code>httpd</code></li>
+</ol>
+<h1 id="older-gluu-server-versions">Older Gluu Server Versions</h1>
+<p><strong>If you are using a previous version of the Gluu Server,</strong> you may have interfaces inside your server admin application to configure the followig certs:</p>
+<ul>
+<li><a href="https/">HTTPS</a>   </li>
+<li><a href="saml/">SAML</a>   </li>
+<li><a href="openid-connect/">OpenID Connect</a>   </li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../configuration/" class="btn btn-neutral float-right" title="Configuration"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../deployment/" class="btn btn-neutral" title="Deployment"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    <!-- Copyright etc -->
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../deployment/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../configuration/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

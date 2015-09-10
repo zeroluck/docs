@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Centos installation - Gluu Docs</title>
+  
+
+  <link rel="shortcut icon" href="../../../img/gluu_favicon.ico">
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script>
+  <script src="../../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Gluu Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+			
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../..">Home</a>
+        
+    </li>
+<li>
+		
+          
+			
+            <li>
+    <ul class="subnav">
+    <li><span>Admin Guide</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../admin-guide/introduction/">Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../admin-guide/getting-started/">Getting Started</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../admin-guide/deployment/">Deployment</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../admin-guide/certificates/">Certificates</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../admin-guide/configuration/">Configuration</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../admin-guide/design-customizations/">Design and Customizations</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../admin-guide/ldap/">LDAP</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../admin-guide/saml/">SAML</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../admin-guide/openid-connect/">OpenID Connect</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../admin-guide/uma/">UMA</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../admin-guide/user-management/">User Management</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../admin-guide/personal/">Personal</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../admin-guide/faq/">FAQ</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+		
+          
+			
+            <li>
+    <ul class="subnav">
+    <li><span>Reference</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../reference/api/">API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../reference/interception-scripts/">Interception Scripts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../reference/ldap-namespace/">LDAP Namespace</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../reference/ldap-schema/">LDAP Schema</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../reference/lib/">Gluu Library</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../reference/oxAuth/">OxAuth</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../reference/oxd/">OxD</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../reference/oxTrust/">OxTrust</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../reference/mod_auth_oidc/">Apache Module</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+		
+          
+			
+            <li>
+    <ul class="subnav">
+    <li><span>Articles</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../cache-refresh/">Cache Refresh Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../apache-saml/">Apache SAML SP Config</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../google-saml/">SAML SSO with Google</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../salesforce-sso/">SAML SSO with Salesforce</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../hobsons-saml/">SAML SSO with Hobsons</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../iis-saml/">IIS SAML Config</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../benchmarking/">Benchmarking</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../custom-attributes/">Custom Attributes</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../gluu-server-ce/">Gluu CE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../operations/">Gluu CE Operations</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../java-connect/">OpenID in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../js-connect/">OpenID from JavaScript</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../java-saml/">Java SAML Library</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../scim-client/">SCIM API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">mod_auth_oidc Installation Guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../test-shib2/">Testing Shib2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../social-login-google/">Social Login with Google</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+		
+          
+		
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Gluu Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>hidden &raquo;</li>
+        
+      
+    
+    <li>Centos installation</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/GluuFederation/docs" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><strong>Table of Contents</strong> </p>
+<ul>
+<li><a href="#setup-apache2">SetUp Apache2</a><ul>
+<li><a href="#add-epel-repo">Add EPEL Repo</a></li>
+<li><a href="#setup-apache2-ssl">Setup Apache2 SSL</a></li>
+</ul>
+</li>
+<li><a href="#client-registration">Client Registration</a><ul>
+<li><a href="#dynamic-client-registration">Dynamic Client Registration</a></li>
+<li><a href="#manual-client-registration">Manual Client Registration</a></li>
+</ul>
+</li>
+<li><a href="#getting-dn-from-client-id">Getting DN from Client ID</a></li>
+</ul>
+<h1 id="mod_auth_oidc-installation-guide">mod_auth_oidc Installation Guide</h1>
+<h3 id="setup-apache2">SetUp Apache2</h3>
+<p>We're assuming that all the hostnames will be dns resolvable. If not, then you should consider making entries in <strong>/etc/hosts.</strong></p>
+<h5 id="add-epel-repo">Add EPEL Repo</h5>
+<p>Run the following command to <strong>Add EPEL Repo</strong>.</p>
+<ul>
+<li>rpm -ivh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm</li>
+</ul>
+<h5 id="setup-apache2-ssl">Setup Apache2 SSL</h5>
+<p>Now, to setup <strong>Apache2 SSL</strong>, run the following commands:</p>
+<ul>
+<li>yum install httpd mod_ssl</li>
+<li>yum install curl hiredis jansson</li>
+<li>rpm -ivh https://github.com/pingidentity/mod_auth_openidc/releases/download/v1.8.2/mod_auth_openidc-1.8.2-1.el6.x86_64.rpm</li>
+</ul>
+<p>Note: In case of having difficulties in installing hiredis and jansson, try to update system using:</p>
+<ul>
+<li>yum upgrade</li>
+</ul>
+<p>Confirm presence of the the mod file as below:</p>
+<ul>
+<li>ls -l /usr/lib64/httpd/modules/mod_auth_openidc.so </li>
+</ul>
+<p>Next, create an <strong>apache <em>conf</em></strong> file for loading this module, and start the apache service (running gluuCE at <strong>ce.gluu.org</strong>).</p>
+<ul>
+<li>cat "LoadModule auth_openidc_module modules/mod_auth_openidc.so" &gt; /etc/httpd/conf.d/mod_auth_openidc.conf</li>
+<li>service httpd start</li>
+</ul>
+<p>Apache mod should be using port <strong>44443</strong>.</p>
+<h3 id="client-registration">Client Registration</h3>
+<p>There are two methods for client registration:</p>
+<ol>
+<li>Dynamic Client Registration</li>
+<li>Manual Cient Registration</li>
+</ol>
+<p>You can use any of the methods to register the client.</p>
+<h4 id="dynamic-client-registration">Dynamic Client Registration</h4>
+<p>For dynamic client registration, we'll name the server: <strong>dynamic.gluu.org.</strong></p>
+<p>Create a directory <strong>dynamic</strong> inside <strong>/var/www/html</strong>, that is:</p>
+<ul>
+<li>mkdir /var/www/html/dynamcic</li>
+</ul>
+<p>Now, create a file named <strong>index.html</strong>, and add following content:</p>
+<pre><code>
+&lt;html&gt;
+    &lt;title&gt;
+        Protected URL
+    &lt;/title&gt;
+    &lt;body&gt;
+        Nice to see the protected url via Dynamic Registration
+    &lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+
+<p>Create another directory <strong>metadeta</strong> inside above directory to hold metadata.</p>
+<p>Now, change the ownership of directory using:</p>
+<ul>
+<li>chown -R apache:apache /var/www/html</li>
+</ul>
+<p>Let's create the apache config file now. Create a file named <strong>/etc/httpd/conf.d/dynamic.conf</strong> with the contents as below:</p>
+<pre><code>
+&lt;VirtualHost *:44443&gt;
+    ServerName dynamic.gluu.org
+    DocumentRoot /var/www/html
+
+    OIDCMetadataDir /var/www/html/metadata
+    OIDCClientSecret secret
+
+    OIDCRedirectURI https://dynamic.gluu.org:44443/dynamic/fake_redirect_uri
+    OIDCCryptoPassphrase secret
+    OIDCSSLValidateServer Off
+
+    &lt;Location /dynamic/&gt;
+        AuthType openid-connect
+        Require valid-user
+    &lt;/Location&gt;
+
+    SSLEngine On
+    SSLCertificateFile /etc/pki/tls/certs/localhost.crt
+    SSLCertificateKeyFile /etc/pki/tls/private/localhost.key
+&lt;/VirtualHost&gt;
+
+</code></pre>
+
+<p>Here, cert and key files are pre-existing on the server. You can use your own too.</p>
+<p>Now, restart the apache service as:</p>
+<ul>
+<li>service httpd restart</li>
+</ul>
+<p>Now, try to access <a href="https://dynamic.gluu.org:44443/dynamic">this page</a>, and You'll be presented with a discovery page, enter <code>admin@ce.gluu.org</code></p>
+<p><img alt="IMAGE" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/mod_auth_oidc/dynamic_discovery.png" /></p>
+<p>The usual choice as per present used urls is: <strong>admin@ce.gluu.org</strong>. But you must use the existing user at the gluuCE along with existing url i.e <em>existing_user</em>@your.gluu.ce.server</p>
+<p>After this we are presented with the <em>oxAuth</em> page from gluuCE where we enter the credentials for authentication. </p>
+<p><img alt="IMAGE" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/mod_auth_oidc/oxauth_authentication.png" /></p>
+<h4 id="manual-client-registration">Manual Client Registration</h4>
+<p>Considering <strong>manual client registration</strong> case, we'll name the server: <strong>static.gluu.org.</strong></p>
+<p>Create a directory named <em>static</em> inside /var/www/html, i. e.</p>
+<ul>
+<li>mkdir /var/www/html/static </li>
+</ul>
+<p>Now, let's create another file named <em>index.html</em> with content:</p>
+<pre><code>
+&lt;html&gt;
+    &lt;title&gt;
+        Protected URL
+    &lt;/title&gt;
+    &lt;body&gt;
+        Nice to see the protected url via Manual registration
+    &lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+
+<p>Now, change the ownerships by using this command:</p>
+<ul>
+<li>chown -R apache:apache /var/www/html</li>
+</ul>
+<p>Create a file named <strong>/etc/httpd/conf.d/static.conf</strong> with the contents as below: </p>
+<pre><code>
+&lt;VirtualHost *:44443&gt;
+    ServerName static.gluu.org
+    DocumentRoot /var/www/html
+
+    OIDCRedirectURI https://static.gluu.org:44443/static/fake_redirect_uri
+    OIDCCryptoPassphrase newsecret
+
+    OIDCProviderMetadataURL https://ce.gluu.org/.well-known/openid-configuration
+    OIDCClientID @!C648.9803.5565.E5CB!0001!0DB0.EEDB!0008!7728.5650
+    OIDCClientSecret newsecret
+    OIDCResponseType id_token
+    OIDCProviderTokenEndpointAuth client_secret_basic
+
+    OIDCProviderIssuer  https://ce.gluu.org
+    OIDCSSLValidateServer Off
+
+    &lt;Location /static/&gt;
+        AuthType openid-connect
+        Require valid-user
+    &lt;/Location&gt;
+
+    SSLEngine On
+    SSLCertificateFile /etc/pki/tls/certs/localhost.crt
+    SSLCertificateKeyFile /etc/pki/tls/private/localhost.key
+&lt;/VirtualHost&gt;
+
+</code></pre>
+
+<p>Instead of pre-existing cert and key files, feel free to use your own.</p>
+<p>Now, restart the apache service as below:</p>
+<ul>
+<li>service httpd restart</li>
+</ul>
+<p>Now, try to access <a href="https://static.gluu.org:44443/static">this page</a>, and you should see the oxAuth page from gluuCE where we enter the credentials for authentication. </p>
+<p><img alt="IMAGE" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/mod_auth_oidc/oxauth_authentication.png" /></p>
+<p>Chances are there that you'll see the below error after logging in: </p>
+<pre><code>
+Error:
+
+The OpenID Connect Provider returned an error: Error in handling response type.
+
+</code></pre>
+
+<p>And that, the apache log at the client side as below:</p>
+<pre><code>
+[Fri Jun 05 14:48:28 2015] [error] [client 124.253.60.123] oidc_proto_validate_idtoken: id_token JSON payload did not contain the required-by-spec &quot;sub&quot; string value, referer: https://static.gluu.org:44443/static/fake_redirect_uri
+[Fri Jun 05 14:48:28 2015] [error] [client 124.253.60.123] oidc_proto_parse_idtoken: id_token payload could not be validated, aborting, referer: https://static.gluu.org:44443/static/fake_redirect_uri
+
+</code></pre>
+
+<p>To solve this problem, log into the gluuCE server by running following command:</p>
+<ul>
+<li>service gluu-server login</li>
+</ul>
+<h3 id="getting-dn-from-client-id">Getting DN from Client ID</h3>
+<p>We get the client id from the search performed in gluu-server's Web UI. So, to get the DN part we perform the below command. The ldap password can be stored in /root/.pw or at any convenient location. In our case the command was:</p>
+<ul>
+<li>/opt/opendj/bin/ldapsearch -T -X -Z -p 1636 -D "cn=Directory Manager" -j /root/.pw -s sub -b "o=gluu" 'inum=@!C648.9803.5565.E5CB!0001!0DB0.EEDB!0008!7728.5650' </li>
+</ul>
+<p>Create a file named <strong>mod.ldif</strong> with the contents given below. The DN part to be used in <strong>mod.ldif</strong> is obtained from above command's output.</p>
+<pre><code>
+dn: inum=@!C648.9803.5565.E5CB!0001!0DB0.EEDB!0008!7728.5650,ou=clients,o=@!C648.9803.5565.E5CB!0001!0DB0.EEDB,o=gluu
+changetype: modify
+add: oxAuthSubjectIdentifier
+oxAuthSubjectIdentifier: @!C648.9803.5565.E5CB!0001!0DB0.EEDB!0008!7728.5650
+
+</code></pre>
+
+<p>Then run the <strong>ldapmodify</strong> command to insert the <strong>oxAuthSubjectIdentifier</strong> as below:</p>
+<ul>
+<li>/opt/opendj/bin/ldapmodify -Z -X -h localhost -p 1636 -D "cn=Directory Manager" -j /root/.pw -f /root/mod.ldif</li>
+</ul>
+<p>The command may vary depending upon your using.</p>
+<p>Then again access <a href="https://static.gluu.org:44443/static">this page</a> and you should see the success message.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../../reference/mod_auth_oidc/ubuntu-installation/" class="btn btn-neutral float-right" title="Ubuntu installation"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../ubuntu-installation/" class="btn btn-neutral" title="Ubuntu installation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    <!-- Copyright etc -->
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../ubuntu-installation/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../../reference/mod_auth_oidc/ubuntu-installation/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

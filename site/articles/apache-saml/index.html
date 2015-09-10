@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Apache SAML SP Config - Gluu Docs</title>
+  
+
+  <link rel="shortcut icon" href="../../img/gluu_favicon.ico">
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Gluu Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+			
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+		
+          
+			
+            <li>
+    <ul class="subnav">
+    <li><span>Admin Guide</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/introduction/">Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/getting-started/">Getting Started</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/deployment/">Deployment</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/certificates/">Certificates</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/configuration/">Configuration</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/design-customizations/">Design and Customizations</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/ldap/">LDAP</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/saml/">SAML</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/openid-connect/">OpenID Connect</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/uma/">UMA</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/user-management/">User Management</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/personal/">Personal</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/faq/">FAQ</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+		
+          
+			
+            <li>
+    <ul class="subnav">
+    <li><span>Reference</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/api/">API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/interception-scripts/">Interception Scripts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/ldap-namespace/">LDAP Namespace</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/ldap-schema/">LDAP Schema</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/lib/">Gluu Library</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/oxAuth/">OxAuth</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/oxd/">OxD</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/oxTrust/">OxTrust</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../reference/mod_auth_oidc/">Apache Module</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+		
+          
+			
+            <li>
+    <ul class="subnav">
+    <li><span>Articles</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../cache-refresh/">Cache Refresh Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Apache SAML SP Config</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#apache-saml">Apache SAML</a></li>
+                
+                    <li><a class="toctree-l4" href="#configuring-apache-shibboleth-sp-in-centos">Configuring Apache Shibboleth SP in CentOS</a></li>
+                
+                    <li><a class="toctree-l4" href="#configuring-apache-shibboleth-sp-in-ubuntu">Configuring Apache Shibboleth SP in Ubuntu</a></li>
+                
+                    <li><a class="toctree-l4" href="#configuring-apache-shibboleth-sp-in-windows">Configuring Apache Shibboleth SP in Windows</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../google-saml/">SAML SSO with Google</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../salesforce-sso/">SAML SSO with Salesforce</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../hobsons-saml/">SAML SSO with Hobsons</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../iis-saml/">IIS SAML Config</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../benchmarking/">Benchmarking</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../custom-attributes/">Custom Attributes</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../gluu-server-ce/">Gluu CE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../operations/">Gluu CE Operations</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../java-connect/">OpenID in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../js-connect/">OpenID from JavaScript</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../java-saml/">Java SAML Library</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../scim-client/">SCIM API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../mod-auth-oidc/">mod_auth_oidc Installation Guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../test-shib2/">Testing Shib2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../social-login-google/">Social Login with Google</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+		
+          
+		
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Gluu Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Articles &raquo;</li>
+        
+      
+    
+    <li>Apache SAML SP Config</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/GluuFederation/docs" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="apache-saml">Apache SAML</h1>
+<h2 id="configuring-apache-shibboleth-sp-in-centos">Configuring Apache Shibboleth SP in CentOS</h2>
+<h3 id="system-preparation">System Preparation</h3>
+<p><strong>Add Shibboleth repo for CentOS</strong></p>
+<ul>
+<li>Contents of shib.repo</li>
+</ul>
+<pre><code>[security_shibboleth]
+name=Shibboleth (CentOS_CentOS-6)
+type=rpm-md
+baseurl=http://download.opensuse.org/repositories/security:/shibboleth/CentOS_CentOS-6/
+gpgcheck=1
+gpgkey=http://download.opensuse.org/repositories/security:/shibboleth/CentOS_CentOS-6/repodata/repomd.xml.key
+enabled=1
+</code></pre>
+
+<ul>
+<li>http://download.opensuse.org/repositories/security:/shibboleth/CentOS_CentOS-6/security:shibboleth.repo</li>
+</ul>
+<h3 id="shibboleth-sp-installation">Shibboleth SP Installation</h3>
+<p>Please run the following commands to install the Shibboleth SP.</p>
+<ul>
+<li>yum install shibboleth</li>
+<li>service shibd start</li>
+<li>chkconfig shibd on</li>
+</ul>
+<h3 id="install-and-configure-httpd">Install and Configure httpd</h3>
+<h4 id="installation">Installation</h4>
+<p>The following commands will install and start the Apache server on your machine/linux environment.</p>
+<ul>
+<li>yum install httpd</li>
+<li>service httpd start</li>
+<li>Stop the firewall</li>
+</ul>
+<h4 id="configuration">Configuration</h4>
+<p>Edit 'httpd.conf' with following changes.</p>
+<ul>
+<li>
+<p>Change ServerName directive to the server name of the SP</p>
+</li>
+<li>
+<p>UseCanonicalName = On</p>
+</li>
+<li>
+<p>Restart httpd</p>
+</li>
+</ul>
+<h4 id="httpd-testing">Httpd Testing</h4>
+<ul>
+<li>
+<p>Create a "index.html" file inside /var/www/html</p>
+</li>
+<li>
+<p>Restart httpd</p>
+</li>
+<li>
+<p>Check from your browser</p>
+</li>
+</ul>
+<h4 id="sp-key-certificate">SP Key Certificate</h4>
+<ul>
+<li>
+<p>Create private key and certificate and place those in /etc/shibboleth</p>
+</li>
+<li>
+<p>Change permission</p>
+</li>
+</ul>
+<h3 id="shibboleth-sp-configuration">Shibboleth SP Configuration</h3>
+<p>This section describes how to configure "shibboleth2.xml" file.</p>
+<ul>
+<li>
+<p>Provide "entityID" of SP in:</p>
+<ul>
+<li><code>&lt;ApplicationDefaults entityID="http://sp.example.org/Shibboleth"&gt; section</code></li>
+</ul>
+</li>
+<li>
+<p>Provide "entityID" of IdP in:</p>
+<ul>
+<li><code>&lt;SSO entityID="https://idp.gluu.org/idp/shibboleth"&gt; section</code></li>
+</ul>
+</li>
+<li>
+<p>Point the metadata provider, in most cases it is Gluu IdP metadata link:</p>
+<ul>
+<li><code>&lt;MetadataProvider type="XML" uri="https://idp.gluu.org/idp/shibboleth"&gt; section</code></li>
+</ul>
+</li>
+<li>
+<p>Provide the key and cert of SP in:</p>
+<ul>
+<li><code>&lt;CredentialResolver type="File" key="spkey.key" certificate="spcrt.crt"&gt; section</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="configuring-apache-shibboleth-sp-in-ubuntu">Configuring Apache Shibboleth SP in Ubuntu</h2>
+<h3 id="system-preparation_1">System Preparation</h3>
+<ol>
+<li>
+<p>Install Curl</p>
+</li>
+<li>
+<p>apt-get install curl</p>
+</li>
+<li>
+<p>Grab Shibboleth repository from SWITCH: </p>
+</li>
+<li>
+<p>curl -k -O http://pkg.switch.ch/switchaai/SWITCHaai-swdistrib.asc</p>
+</li>
+<li>
+<p>gpg --with-fingerprint SWITCHaai-swdistrib.asc</p>
+</li>
+<li>
+<p>apt-key add SWITCHaai-swdistrib.asc</p>
+</li>
+<li>
+<p>echo 'deb http://pkg.switch.ch/switchaai/ubuntu precise main' | sudo tee /etc/apt/sources.list.d/SWITCHaai-swdistrib.list&gt; /dev/null</p>
+</li>
+<li>
+<p>apt-get update</p>
+</li>
+</ol>
+<h3 id="shibboleth-sp-installation_1">Shibboleth SP Installation</h3>
+<ul>
+<li>
+<p>apt-get install shibboleth</p>
+</li>
+<li>
+<p>Quick test: <code>shibd -t [Important is the last line: overall configuration is loadable, check console for non-fatal problems]</code></p>
+</li>
+</ul>
+<h3 id="apache-testing">Apache Testing</h3>
+<ul>
+<li>apache2ctl configtest</li>
+</ul>
+<h3 id="test-shibboleth">Test Shibboleth</h3>
+<ul>
+<li>https://hostname_of_sp/Shobboleth.sso/Session</li>
+</ul>
+<p><code>It will say: "A valid session was not found."</code></p>
+<h3 id="shibboleth-manual-configuration-one-physical-sp">Shibboleth Manual Configuration (one Physical SP):</h3>
+<ul>
+<li>
+<p>Create a directory named "secure" under /var/www/</p>
+</li>
+<li>
+<p>Change permission for directory "secure" to www-data:www-data</p>
+</li>
+<li>
+<p>httpd.conf</p>
+<ul>
+<li>
+<p>ServerName <code>&lt;hostname_of_server&gt;</code></p>
+</li>
+<li>
+<p>Set Location:</p>
+<p><code>&lt;Location /secure&gt;
+    AuthType shibboleth
+    ShibRequestSetting requireSession 1
+    ShibUseHeaders on
+    Require valid-user
+&lt;/Location&gt;</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p>shibboleth2.xml configuration</p>
+<ul>
+<li>
+<p>EntityID of SP: <code>ApplicationDefaults entityID="http://hostname/secure"</code></p>
+</li>
+<li>
+<p>Privide EntityID of IDP: <code>SSO entityID="https://idp.gluu.org/idp/shibboleth"</code></p>
+</li>
+<li>
+<p>Metadata Provider, IDP: <code>MetadataProvider type="XML" uri="https://idp.gluu.org/idp/shibboleth"</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Restart shibd and apache2</p>
+</li>
+<li>
+<p>Create Trust Relationship for this SP in your desired IdP.</p>
+</li>
+</ul>
+<h2 id="configuring-apache-shibboleth-sp-in-windows">Configuring Apache Shibboleth SP in Windows</h2>
+<h3 id="shibboleth-sp-installation_2">Shibboleth SP Installation</h3>
+<ol>
+<li>
+<p>Download the MSI of Shibboleth-SP from :http://www.shibboleth.net/downloads/service-provider/latest/</p>
+</li>
+<li>
+<p>Start the installation</p>
+</li>
+</ol>
+<p><img alt="IMAGE" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_click.png" /></p>
+<ol>
+<li>Destination folder (by default it is: C:\opt\shibboleth-sp).</li>
+</ol>
+<p><img alt="IMAGE" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_destination.png" /></p>
+<ol>
+<li>Select Shibboleth Daemon port: default is 1600, you can keep it for local testing</li>
+</ol>
+<p><img alt="IMAGE" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_port.png" /></p>
+<ol>
+<li>
+<p>Now, there are two options here. You have to follow either one (but not both) according to your target.</p>
+<ol>
+<li>
+<p>Option 1: If you are installing Shibboleth for Apache Web Server</p>
+</li>
+<li>
+<p>Option 2: If you are installing Shibboleth for Microsoft IIS Web Server</p>
+<p>a. For Microsoft IIS Web Server, CHECK “Install ISAPI filter and configure IIS”, remember to put the file Extension ”.sso”; this            is necessary</p>
+</li>
+</ol>
+</li>
+</ol>
+<p><img alt="IMAGE" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_microsoft.png" /></p>
+<pre><code>    b. For Apache Web Server, UNCHECK "Install ISAPI filter and configure IIS".
+</code></pre>
+<p><img alt="IMAGE" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_apachesetup.png" /></p>
+<pre><code>3. UAC of Windows 7 may block this program, so allow it.
+</code></pre>
+<p><img alt="IMAGE" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_uac.png" /></p>
+<h3 id="apache-configuration">Apache Configuration</h3>
+<ol>
+<li>Download the Apache HTTP server MSI Installer with OpenSSL: http://httpd.apache.org/download.cgi#apache22</li>
+</ol>
+<p><img alt="IMAGE" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_apacheclick.png" /></p>
+<ol>
+<li>Select Destination. You can keep the default destination for your local testing. But, make sure that there is no other “Apache Software Foundation” directory in your current “C:\Program Files\” location.</li>
+</ol>
+<p><img alt="IMAGE" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_apachedestination.png" /></p>
+<ol>
+<li>Provide Server Information. For local testing, you can use “localdomain/localhost”</li>
+</ol>
+<p><img alt="IMAGE" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_serverinfo.png" /></p>
+<ol>
+<li>Test whether Apache is installed or not. Open your web browser and use “localhost”. If you see something like image shown below; you are done!</li>
+</ol>
+<p>a<img alt="IMAGE" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_apachetest.png" /></p>
+<h4 id="shibboleth-and-apache-configuration">Shibboleth and Apache Configuration</h4>
+<ol>
+<li>
+<p>Change the permission of the Apache Installation Directory, provide “write” access</p>
+</li>
+<li>
+<p>'httpd.conf' configuration</p>
+<ol>
+<li>
+<p>Change: “ServerName localhost:80” (for your local testing)</p>
+</li>
+<li>
+<p>Copy apache22.conf from the Shibboleth directory to ~/apache/conf/extra/</p>
+</li>
+</ol>
+</li>
+<li>
+<p>'Shibboleth2.xml' configuration</p>
+<ol>
+<li>
+<p>Change: Host name=“localhost” ( for local testging )</p>
+</li>
+<li>
+<p>Change: entityID=“https://localhost/shibboleth” ( for local testing )</p>
+</li>
+<li>
+<p>Change: ApplicationOverride id=“admin” entityID=“https://localhost/shibboleth/”</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Reboot your windows machine.</p>
+</li>
+</ol>
+<h5 id="test-sp-installation-with-windows-and-apache">Test SP Installation with Windows and Apache</h5>
+<ol>
+<li>Open Web browser and provide the address: localhost/Shibboleth.sso/Status</li>
+<li>If you can see some XML page like the one shown below, you are done with your SP installation in Windows through Apache2.</li>
+</ol>
+<p>a<img alt="IMAGE" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_checkstatus.png" /></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../google-saml/" class="btn btn-neutral float-right" title="SAML SSO with Google"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../cache-refresh/" class="btn btn-neutral" title="Cache Refresh Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    <!-- Copyright etc -->
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../cache-refresh/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../google-saml/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

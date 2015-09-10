@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Centos - Gluu Docs</title>
+  
+
+  <link rel="shortcut icon" href="../../../img/gluu_favicon.ico">
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script>
+  <script src="../../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Gluu Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+			
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../..">Home</a>
+        
+    </li>
+<li>
+		
+          
+			
+            <li>
+    <ul class="subnav">
+    <li><span>Admin Guide</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../introduction/">Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../getting-started/">Getting Started</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">Deployment</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../certificates/">Certificates</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../configuration/">Configuration</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../design-customizations/">Design and Customizations</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../ldap/">LDAP</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../saml/">SAML</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../openid-connect/">OpenID Connect</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../uma/">UMA</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../user-management/">User Management</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../personal/">Personal</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../faq/">FAQ</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+		
+          
+			
+            <li>
+    <ul class="subnav">
+    <li><span>Reference</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../reference/api/">API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../reference/interception-scripts/">Interception Scripts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../reference/ldap-namespace/">LDAP Namespace</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../reference/ldap-schema/">LDAP Schema</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../reference/lib/">Gluu Library</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../reference/oxAuth/">OxAuth</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../reference/oxd/">OxD</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../reference/oxTrust/">OxTrust</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../reference/mod_auth_oidc/">Apache Module</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+		
+          
+			
+            <li>
+    <ul class="subnav">
+    <li><span>Articles</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/cache-refresh/">Cache Refresh Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/apache-saml/">Apache SAML SP Config</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/google-saml/">SAML SSO with Google</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/salesforce-sso/">SAML SSO with Salesforce</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/hobsons-saml/">SAML SSO with Hobsons</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/iis-saml/">IIS SAML Config</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/benchmarking/">Benchmarking</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/custom-attributes/">Custom Attributes</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/gluu-server-ce/">Gluu CE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/operations/">Gluu CE Operations</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/java-connect/">OpenID in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/js-connect/">OpenID from JavaScript</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/java-saml/">Java SAML Library</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/scim-client/">SCIM API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/mod-auth-oidc/">mod_auth_oidc Installation Guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/test-shib2/">Testing Shib2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../../articles/social-login-google/">Social Login with Google</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+		
+          
+		
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Gluu Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>hidden &raquo;</li>
+        
+      
+    
+    <li>Centos</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/GluuFederation/docs" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="gluu-server-community-edition-ce-centos-configuration-guide">Gluu Server Community Edition (CE) CentOS Configuration Guide</h1>
+<p><code>chroot</code> is a pre-Docker OS level container technology. Like Docker, the <code>chroot</code> distribution includes a full linux distribution. As a file system based "jail", when you login to the Gluu Server from the host linux system, the <code>/</code> directory in the Gluu Server is actually <code>/home/gluu-server</code> on the host. </p>
+<p>This strategy has its pluses and minuses. In certain circumstances, there are ways for a hacker to “break out of the jail”, and escalate to the host file system. (You don't want to make any file system links from the chroot'd server to the main host!) The benefit is ease of deployment (Docker not required...). We wanted a simple package that people could install and uninstall quickly.</p>
+<p>To report issues or provide feedback about the installation process, please use <a href="https://github.com/GluuFederation/community-edition-setup/issues">GitHub</a> or register for an account on <a href="https://support.gluu.org">https://support.gluu.org</a>.</p>
+<h2 id="system-requirements">System Requirements</h2>
+<p>The Gluu Server Community Edition should be deployed on a VM with:</p>
+<ul>
+<li>CentOS 6.5 </li>
+<li>2 CPU Units and at least 2GB Physical Memory (more is always better, though)</li>
+</ul>
+<h2 id="available-components">Available Components</h2>
+<p>When you deploy the Gluu Server, you will have the opportunity to specify which of the following softwares you want deployed on your server: </p>
+<p><strong>oxAuth:*</strong> oxAuth provides endpoints for an OpenID Connect Identity Provider (IDP) and an UMA Authorization Server (AS). Both OpenID Connect and UMA are standard profiles of OAuth 2.0, used for single sign-on (SSO) and web and API access management, respectively.  <br />
+<strong>oxTrust:*</strong> oxTrust is the graphical user interface that is used for server management. <br />
+<strong>LDAP:*</strong> The Gluu Server ships with a fork of the OpenDJ LDAP server. It is used to store attributes and server configurations locally. <br />
+<strong>Apache 2 web server:*</strong> Apache 2 serves the web server for the Gluu Server. Without Apache 2, it's not possible to see the hostname from a browser. <br />
+<strong>Shibboleth 2 SAML IDP:</strong> The Shibboleth server provides endpoints for a SAML Identity Provider (IDP). If you want to create single sign-on (SSO) to a SAML SP, you'll need a SAML IDP. <br />
+<strong>Asimba SAML Proxy:</strong> The Asimba SAML proxy should be deployed on if your organization needs to consolidate inbound SAML authentication from the IDPs of partners to a single website or app. <br />
+<strong>CAS:</strong> CAS is legacy at this point and should only be deployed if your organization has existing apps that can only support CAS for single sign-on.   </p>
+<p><strong>Note: * implies that the software should <em>always</em> be deployed.</strong></p>
+<h2 id="installing-gluu-server-with-yum">Installing GLUU Server with yum:</h2>
+<p><code># wget http://repo.gluu.org/centos/Gluu.repo -O /etc/yum.repos.d/Gluu.repo</code></p>
+<p><code># wget http://repo.gluu.org/centos/RPM-GPG-KEY-GLUU -O /etc/pki/rpm-gpg/RPM-GPG-KEY-GLUU</code></p>
+<p><code># rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-GLUU</code></p>
+<p><code># yum clean all</code></p>
+<p><code># yum install gluu-server</code></p>
+<h2 id="start-gluu-server">Start Gluu-Server:</h2>
+<p><code># service gluu-server start</code></p>
+<h2 id="gluu-server-configuration">Gluu Server Configuration</h2>
+<p>To perform the final configuration of the Gluu Server you need to provide some instance specific information, like the DNS hostname, and the information required to generate certificates. Post rpm installation, run the Gluu Server <code>setup.py</code> to complete the installation.  See <a href="../setup_py/">setup.py help</a> or run <code>./setup.py -h</code> to see the latest installation options.  </p>
+<ul>
+<li>Login to Gluu Server container: </li>
+</ul>
+<p><code># service gluu-server login</code></p>
+<ul>
+<li>Run "setup" script to perform the final installation: </li>
+</ul>
+<p><code># cd /install/community-edition-setup/</code></p>
+<p><code># ./setup.py</code></p>
+<p>After setup.py script successful execution, point your browser to <code>https://hostname</code> Login with the
+default user name “admin” and the LDAP password printed back in the confirmation (also 
+contained in <code>setup.properties.last</code>). If you want to see the full LDIF for the admin user,
+it is contained in <code>/opt/opendj/ldif/people.ldif</code></p>
+<p>Make sure you remove or encrypt <code>setup.properties.last</code> It has the clear text passwords for everything: LDAP, admin user, keystores, and 3DES salt.</p>
+<p>If something goes wrong, check <code>setup.log</code> for a detailed step-by-step of the installation. Or check 
+<code>setup_errors.log</code> to just see the errors (or stderr output from the scripts).</p>
+<!--
+If you want to script the installation of the Gluu Server, user the `-f` option or just save the 
+properties file as `setup.properties` and it will be automatically detected. Also use the `-n` option 
+to suppress the interactive confirmation to proceed. For example, to re-run the last installation:
+
+`./setup.py -n -f setup.properties.last`
+-->
+
+<h2 id="starting-stopping-the-gluu-server">Starting | Stopping the Gluu Server</h2>
+<p><code># service gluu-server start</code></p>
+<p><code># service gluu-server stop</code></p>
+<h2 id="login-to-chroot-environment">Login to chroot environment</h2>
+<p><code># service gluu-server login</code></p>
+<h2 id="gluu-server-uninstallation">Gluu Server Uninstallation</h2>
+<p>Exit from chroot environment to main linux. Stop the chroot environment, remove the Gluu Server,
+then remove the Gluu yum repository</p>
+<p><code># service gluu-server stop</code></p>
+<p><code># yum remove gluu-server</code></p>
+<p><code># rm -f -r /opt/gluu-server.rpm.saved</code></p>
+<!--
+or
+
+`# rpm -e Gluu-Server-Repo-2.0-0.el6.x86_64`
+-->
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../setup_py/" class="btn btn-neutral float-right" title="Setup py"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../../articles/social-login-google/" class="btn btn-neutral" title="Social Login with Google"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    <!-- Copyright etc -->
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../../../articles/social-login-google/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../setup_py/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

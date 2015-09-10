@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>OxTrust - Gluu Docs</title>
+  
+
+  <link rel="shortcut icon" href="../../img/gluu_favicon.ico">
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Gluu Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+			
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+		
+          
+			
+            <li>
+    <ul class="subnav">
+    <li><span>Admin Guide</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/introduction/">Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/getting-started/">Getting Started</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/deployment/">Deployment</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/certificates/">Certificates</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/configuration/">Configuration</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/design-customizations/">Design and Customizations</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/ldap/">LDAP</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/saml/">SAML</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/openid-connect/">OpenID Connect</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/uma/">UMA</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/user-management/">User Management</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/personal/">Personal</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../admin-guide/faq/">FAQ</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+		
+          
+			
+            <li>
+    <ul class="subnav">
+    <li><span>Reference</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../api/">API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../interception-scripts/">Interception Scripts</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../ldap-namespace/">LDAP Namespace</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../ldap-schema/">LDAP Schema</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../lib/">Gluu Library</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../oxAuth/">OxAuth</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../oxd/">OxD</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">OxTrust</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#oxtrust-configuration">oxTrust Configuration</a></li>
+                
+                    <li><a class="toctree-l4" href="#oxtrustproperties">oxTrust.properties</a></li>
+                
+                    <li><a class="toctree-l4" href="#oxtrustldapproperties">oxTrustLdap.properties</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../mod_auth_oidc/">Apache Module</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+		
+          
+			
+            <li>
+    <ul class="subnav">
+    <li><span>Articles</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/cache-refresh/">Cache Refresh Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/apache-saml/">Apache SAML SP Config</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/google-saml/">SAML SSO with Google</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/salesforce-sso/">SAML SSO with Salesforce</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/hobsons-saml/">SAML SSO with Hobsons</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/iis-saml/">IIS SAML Config</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/benchmarking/">Benchmarking</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/custom-attributes/">Custom Attributes</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/gluu-server-ce/">Gluu CE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/operations/">Gluu CE Operations</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/java-connect/">OpenID in Java</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/js-connect/">OpenID from JavaScript</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/java-saml/">Java SAML Library</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/scim-client/">SCIM API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/mod-auth-oidc/">mod_auth_oidc Installation Guide</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/test-shib2/">Testing Shib2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../articles/social-login-google/">Social Login with Google</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+		
+          
+		
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Gluu Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Reference &raquo;</li>
+        
+      
+    
+    <li>OxTrust</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/GluuFederation/docs" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="oxtrust-configuration">oxTrust Configuration</h1>
+<p>oxTrust is a JBoss Seam application that provides organizational cloud identity
+management services, including REST service endpoints and a user friendly cloud
+identity management console (aka a GUI). </p>
+<p>oxTrust is tightly coupled with oxAuth. oxAuth configuration is stored in LDAP,
+and it would be hard to generate the right configuration entries without
+oxTrust. The projects are separate projects because in a high throughput cluster
+deployment, many oxAuth servers are needed versus a few oxTrust instances.</p>
+<h2 id="oxtrustproperties">oxTrust.properties</h2>
+<ul>
+<li>
+<p><strong>applianceInum</strong> </p>
+</li>
+<li>
+<p><strong>orgInum</strong> </p>
+</li>
+<li>
+<p><strong>orgDisplayName</strong> </p>
+</li>
+<li>
+<p><strong>orgShortName</strong> </p>
+</li>
+<li>
+<p><strong>idp.url</strong> </p>
+</li>
+<li>
+<p><strong>appliance.url</strong> </p>
+</li>
+<li>
+<p><strong>keystore.path</strong> </p>
+</li>
+<li>
+<p><strong>keystore.password</strong> </p>
+</li>
+<li>
+<p><strong>person-objectClass-types</strong> <code>inetOrgPerson, gluuPerson</code></p>
+</li>
+<li>
+<p><strong>person-objectClass-displayNames</strong> <code>inetOrgPerson, gluuPerson</code></p>
+</li>
+<li>
+<p><strong>svn.configuration-store.root</strong> </p>
+</li>
+<li>
+<p><strong>svn.configuration-store.user</strong> </p>
+</li>
+<li>
+<p><strong>svn.configuration-store.password</strong> </p>
+</li>
+<li>
+<p><strong>person.allow-modification</strong> `TRUE | false'</p>
+</li>
+<li>
+<p><strong>site.update-appliance-status</strong> 'true | FALSE`</p>
+</li>
+<li>
+<p><strong>persist-in-svn</strong> <code>true | FALSE</code></p>
+</li>
+<li>
+<p><strong>baseDN</strong> <code>o=gluu</code></p>
+</li>
+<li>
+<p><strong>schema.add.attribute.attributeTypes</strong> <code>( %%s-oid NAME '%%s' EQUALITY caseIgnoreMatch ORDERING caseIgnoreOrderingMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 USAGE userApplications X-SCHEMA-FILE '100-user.ldif' X-ORIGIN 'gluu' )</code></p>
+</li>
+<li>
+<p><strong>schema.add-without-attribute-types.objectClass.objectClasses</strong> <code>( %%s-oid NAME '%%s' SUP top STRUCTURAL MUST objectClass X-SCHEMA-FILE '100-user.ldif' X-ORIGIN 'gluu' )</code></p>
+</li>
+<li>
+<p><strong>schema.add-with-attribute-types.objectClass.objectClasses</strong> <code>( %%s-oid NAME '%%s' SUP top STRUCTURAL MUST objectClass MAY ( %%s ) X-SCHEMA-FILE '100-user.ldif' X-ORIGIN 'gluu' )</code></p>
+</li>
+<li>
+<p><strong>photo.repository.root-dir</strong> <code>/var/photos</code></p>
+</li>
+<li>
+<p><strong>photo.repository.thumb-width</strong> <code>300</code></p>
+</li>
+<li>
+<p><strong>photo.repository.thumb-height</strong> <code>300</code></p>
+</li>
+<li>
+<p><strong>photo.repository.count-levels</strong> <code>3</code></p>
+</li>
+<li>
+<p><strong>photo.repository.count-folders-per-level</strong> <code>20</code></p>
+</li>
+<li>
+<p><strong>velocity.log</strong> <code>/opt/tomcat/logs/velocity.log</code></p>
+</li>
+<li>
+<p><strong>logo.location</strong> <code>/var/photos</code></p>
+</li>
+<li>
+<p><strong>gluuSP.shared.attributes</strong> <code>uid, mail, sn, givenName</code></p>
+</li>
+<li>
+<p><strong>gluuSP.metadata</strong> <code>/opt/idp/metadata</code></p>
+</li>
+<li>
+<p><strong>shibboleth2.idp.root-dir</strong> <code>/opt/idp</code></p>
+</li>
+<li>
+<p><strong>shibboleth2.federation.root-dir</strong> <code>/opt/shibboleth-federation</code></p>
+</li>
+<li>
+<p><strong>shibboleth2.sp.conf-dir</strong> <code>/etc/shibboleth</code></p>
+</li>
+<li>
+<p><strong>configGeneration</strong> <code>enabled | DISABLED</code></p>
+</li>
+<li>
+<p><strong>idp.securityCert</strong> </p>
+</li>
+<li>
+<p><strong>idp.securityKey</strong> </p>
+</li>
+<li>
+<p><strong>.securityCert</strong> </p>
+</li>
+<li>
+<p><strong>idp.securityKeyPassword</strong> </p>
+</li>
+<li>
+<p><strong>idp.bindDN</strong> </p>
+</li>
+<li>
+<p><strong>idp.bindPassword</strong> </p>
+</li>
+<li>
+<p><strong>idp.useSSL</strong> <code>TRUE | false</code></p>
+</li>
+<li>
+<p><strong>idp.ldap.server</strong> </p>
+</li>
+<li>
+<p><strong>mysql.url</strong> <code>jdbc:mysql:///localhost</code></p>
+</li>
+<li>
+<p><strong>mysql.user</strong> <code>idp</code></p>
+</li>
+<li>
+<p><strong>mysql.password</strong> </p>
+</li>
+<li>
+<p><strong>ldifStoreDir</strong> <code>/var/removedldif/</code></p>
+</li>
+<li>
+<p><strong>cacertsLocation</strong> <code>/usr/java/latest/jre/lib/security/cacerts</code> This option defines keystore to use for SSL download certificate verification. It is a good idea to have all truster root CA at this keystore Defaults to tomcat SSL keystore (one defined in server.xml)</p>
+</li>
+<li>
+<p><strong>cacertsPassphrase</strong> If this option is present it will be used as a passphrase to keystore 
+defined in the cacertsLocation. It is only needed if cacertsLocation is 
+defined and is protected by password. For default jre cacerts behavior (empty
+password) - leace commented.  </p>
+</li>
+<li>
+<p><strong>certDir</strong> <code>/etc/certs/</code> location of certificates used in configuration files</p>
+</li>
+<li>
+<p><strong>certDirTemp</strong> <code>/etc/certs/temp</code> temporary location for certificates while user performs update procedures </p>
+</li>
+<li>
+<p><strong>servicesRestartTrigger</strong> <code>/opt/gluu/trigger_restart_of_services_delete_me_to_do_so</code> File to 
+be deleted to trigger restart of appliance services.</p>
+</li>
+<li>
+<p><strong>oxtrust.auth.mode</strong>  set this to "basic" without the quotation to use basic authentication or leave it blank to use oxAuth</p>
+</li>
+<li>
+<p><strong>oxauth.authorize.url</strong> </p>
+</li>
+<li><strong>oxauth.token.url</strong> </li>
+<li><strong>oxauth.token.validation.url</strong> </li>
+<li><strong>oxauth.checksession.url</strong> </li>
+<li><strong>oxauth.userinfo.url</strong> </li>
+<li>
+<p><strong>oxauth.logout.url</strong> </p>
+</li>
+<li>
+<p><strong>oxauth.client.id</strong> </p>
+</li>
+<li><strong>oxauth.client.credentials</strong> </li>
+<li><strong>oxauth.client.password</strong> </li>
+<li><strong>oxauth.client.scope</strong> <code>openid+profile+address+email</code></li>
+</ul>
+<h2 id="oxtrustldapproperties">oxTrustLdap.properties</h2>
+<p>These are the properties oxTrust uses to connect to LDAP</p>
+<ul>
+<li>
+<p><strong>bindDN</strong> </p>
+</li>
+<li>
+<p><strong>bindPassword</strong> </p>
+</li>
+<li>
+<p><strong>servers</strong> <code>localhost:1636</code></p>
+</li>
+<li>
+<p><strong>useSSL</strong> <code>TRUE | false</code></p>
+</li>
+<li>
+<p><strong>maxconnections</strong> <code>3</code></p>
+</li>
+<li>
+<p><strong>baseConfigurationDN</strong> </p>
+</li>
+<li>
+<p><strong>createLdapConfigurationEntryIfNotExist</strong> <code>TRUE | false</code></p>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../mod_auth_oidc/" class="btn btn-neutral float-right" title="Apache Module"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../oxd/" class="btn btn-neutral" title="OxD"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    <!-- Copyright etc -->
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../oxd/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../mod_auth_oidc/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
