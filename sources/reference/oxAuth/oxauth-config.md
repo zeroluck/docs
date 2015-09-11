@@ -176,77 +176,146 @@ whereas 3600 seconds represent 1 hour.
 
 ### Supported request object signing algorithms
 
+```
+<request-object-signing-alg-values-supported>
+    <request-object-signing-alg>HS256</request-object-signing-alg>
+    <request-object-signing-alg>HS384</request-object-signing-alg>
+    <request-object-signing-alg>HS512</request-object-signing-alg>
+    <request-object-signing-alg>RS256</request-object-signing-alg>
+    <request-object-signing-alg>RS384</request-object-signing-alg>
+    <request-object-signing-alg>RS512</request-object-signing-alg>
+    <request-object-signing-alg>ES256</request-object-signing-alg>
+    <request-object-signing-alg>ES384</request-object-signing-alg>
+    <request-object-signing-alg>ES512</request-object-signing-alg>
+</request-object-signing-alg-values-supported>
+
+```
+
 ### Supported request object encryption algorithms
+
+```
+<request-object-encryption-alg-values-supported>
+    <request-object-encryption-alg>RSA1_5</request-object-encryption-alg>
+    <request-object-encryption-alg>RSA-OAEP</request-object-encryption-alg>
+    <request-object-encryption-alg>A128KW</request-object-encryption-alg>
+    <request-object-encryption-alg>A256KW</request-object-encryption-alg>
+    <!--request-object-encryption-alg>dir</request-object-encryption-alg-->
+    <!--request-object-encryption-alg>ECDH-ES</request-object-encryption-alg-->
+    <!--request-object-encryption-alg>ECDH-ES+A128KW</request-object-encryption-alg-->
+    <!--request-object-encryption-alg>ECDH-ES+A256KW</request-object-encryption-alg-->
+</request-object-encryption-alg-values-supported>
+
+```
 
 ### Supported request object encryption encoding values
 
+```
+```
+
 ### Supported token endpoint authentication methods
+
+```
+```
 
 ### Supported token endpoint authentication signing algorithm values
 
+```
+```
+
 ### Supported display values
+
+```
+```
 
 ### Supported claim types
 
+```
+```
+
 ### Supported claims
+
+```
+```
 
 ### Service documentation
 
+```
+```
+
 ### Supported locales for claims
+
+```
+```
 
 ### Supported locales for user interfaces
 
+```
+```
+
 ### Supported claims parameters
+
+```
+```
 
 ### Supported request parameters
 
+```
+```
+
 ### Supported request uri parameters
+
+```
+```
 
 ### Required request uri registration
 
+```
+```
+
 ### Uri for operation policy
+
+```
+```
 
 ### Uri for type-of-service
 
+```
+```
+
 ### Connection behaviour
+
+```
+```
 
 ### Default signature algorithms
 
+```
+```
+
 ### Federation availability
+
+```
+```
 
 ### Dynamic registration of custom stuff
 
+```
+```
+
 ### oxOpenID connect version
 
+```
+```
+
 ### Authorization filters
+
+```
+```
 
 ### Custom client filters
 
     <?xml version="1.0" encoding="UTF-8"?>
     <configuration>
-        <request-object-signing-alg-values-supported>
-            <request-object-signing-alg>HS256</request-object-signing-alg>
-            <request-object-signing-alg>HS384</request-object-signing-alg>
-            <request-object-signing-alg>HS512</request-object-signing-alg>
-            <request-object-signing-alg>RS256</request-object-signing-alg>
-            <request-object-signing-alg>RS384</request-object-signing-alg>
-            <request-object-signing-alg>RS512</request-object-signing-alg>
-            <request-object-signing-alg>ES256</request-object-signing-alg>
-            <request-object-signing-alg>ES384</request-object-signing-alg>
-            <request-object-signing-alg>ES512</request-object-signing-alg>
-        </request-object-signing-alg-values-supported>
-
-        <request-object-encryption-alg-values-supported>
-            <request-object-encryption-alg>RSA1_5</request-object-encryption-alg>
-            <request-object-encryption-alg>RSA-OAEP</request-object-encryption-alg>
-            <request-object-encryption-alg>A128KW</request-object-encryption-alg>
-            <request-object-encryption-alg>A256KW</request-object-encryption-alg>
-            <!--request-object-encryption-alg>dir</request-object-encryption-alg-->
-            <!--request-object-encryption-alg>ECDH-ES</request-object-encryption-alg-->
-            <!--request-object-encryption-alg>ECDH-ES+A128KW</request-object-encryption-alg-->
-            <!--request-object-encryption-alg>ECDH-ES+A256KW</request-object-encryption-alg-->
-        </request-object-encryption-alg-values-supported>
-
         <request-object-encryption-enc-values-supported>
             <request-object-encryption-enc>A128CBC+HS256</request-object-encryption-enc>
             <request-object-encryption-enc>A256CBC+HS512</request-object-encryption-enc>
