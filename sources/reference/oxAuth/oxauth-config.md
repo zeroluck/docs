@@ -15,77 +15,215 @@ The general structure of the configuration file is like that:
 
 The sections are listed according to their order in the configuration file.
 
-- [Basic settings](./configuration/basic-settings.md)
+### Basic settings
 
-- [Server mode](./configuration/server-mode.md)
+```
+<appliance-inum>%(inumAppliance)s</appliance-inum>
+<issuer>https://%(hostname)s</issuer>
+<login-page>https://%(hostname)s/oxauth/login.seam</login-page>
+<authorization-page>https://%(hostname)s/oxauth/authorize.seam</authorization-page>
+<base-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1</base-endpoint>
+<authorization-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/authorize</authorization-endpoint>
+<token-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/token</token-endpoint>
+<userinfo-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/userinfo</userinfo-endpoint>
+<clientinfo-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/clientinfo</clientinfo-endpoint>
+<check-session-iframe>https://%(hostname)s/oxauth/opiframe.seam</check-session-iframe>
+<end-session-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/end_session</end-session-endpoint>
+<jwks-uri>https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/jwks</jwks-uri>
+<registration-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/register</registration-endpoint>
+<validate-token-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/validate</validate-token-endpoint>
+<federation-metadata-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/federationmetadata</federation-metadata-endpoint>
+<federation-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/federation</federation-endpoint>
+<openid-discovery-endpoint>https://%(hostname)s/.well-known/webfinger</openid-discovery-endpoint>
+<openid-configuration-endpoint>https://%(hostname)s/.well-known/openid-configuration</openid-configuration-endpoint>
+<id-generation-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1/id</id-generation-endpoint>
+<introspection-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1/introspection</introspection-endpoint>
+<uma-configuration-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/uma-configuration</uma-configuration-endpoint>
+```
 
-- [Update interval](./configuration/update-interval.md)
+### Server mode
 
-- [Supported response types](./configuration/supported-response-types.md)
+This entry sets the mode of the server. Possible values are `memory` and
+`ldap`.
 
-- [Supported grant types](./configuration/supported-grant-types.md)
+```
+<mode>ldap</mode>
+```
 
-- [Supported subject types](./configuration/supported-subject-types.md)
+### Update interval
 
-- [Supported algorithms a user can login with](./configuration/supported-algorithms-a-user-can-login-with.md)
+This entry sets the value for the update interval the configuration is
+updated from the LDAP. The value represents the interval in seconds
+whereas 3600 seconds represent 1 hour.
 
-- [Supported encryption algorithms](./configuration/supported-encryption-algorithms.md)
+```
+<configuration-update-interval>3600</configuration-update-interval>
+```
 
-- [Supported ID token signing algorithms](./configuration/supported-id-token-signing-algorithms.md)
+### Supported response types
 
-- [Supported ID token encryption algorithms](./configuration/supported-id-token-encryption-algorithms.md)
+```
+<response-types-supported>
+    <response-type>code</response-type>
+    <response-type>code id_token</response-type>
+    <response-type>token</response-type>
+    <response-type>token id_token</response-type>
+    <response-type>code token</response-type>
+    <response-type>code token id_token</response-type>
+    <response-type>id_token</response-type>
+</response-types-supported>
+```
 
- * Supported request object signing algorithms
+### Supported grant types
 
- * Supported request object encryption algorithms
+```
+<grant-types-supported>
+    <grant-type>authorization_code</grant-type>
+    <grant-type>implicit</grant-type>
+    <grant-type>urn:ietf:params:oauth:grant-type:jwt-bearer</grant-type>
+</grant-types-supported>
 
- * Supported request object encryption encoding values
+<!-- AMR enables an OpenID Connect client to request a specific method of authentication -->
+<amr-values-supported>
+    <!-- amr>basic</amr-->
+</amr-values-supported>
+```
 
- * Supported token endpoint authentication methods
+### Supported subject types
 
- * Supported token endpoint authentication signing algorithm values
+```
+<subject-types-supported>
+    <subject-type>public</subject-type>
+    <subject-type>pairwise</subject-type>
+</subject-types-supported>
+```
 
- * Supported display values
+### Supported algorithms a user can login with
 
- * Supported claim types
+```
+<userinfo-signing-alg-values-supported>
+    <userinfo-signing-alg>HS256</userinfo-signing-alg>
+    <userinfo-signing-alg>HS384</userinfo-signing-alg>
+    <userinfo-signing-alg>HS512</userinfo-signing-alg>
+    <userinfo-signing-alg>RS256</userinfo-signing-alg>
+    <userinfo-signing-alg>RS384</userinfo-signing-alg>
+    <userinfo-signing-alg>RS512</userinfo-signing-alg>
+    <userinfo-signing-alg>ES256</userinfo-signing-alg>
+    <userinfo-signing-alg>ES384</userinfo-signing-alg>
+    <userinfo-signing-alg>ES512</userinfo-signing-alg>
+</userinfo-signing-alg-values-supported>
+```
 
- * Supported claims
+### Supported encryption algorithms
 
- * Service documentation
+```
+<userinfo-encryption-alg-values-supported>
+    <userinfo-encryption-alg>RSA1_5</userinfo-encryption-alg>
+    <userinfo-encryption-alg>RSA-OAEP</userinfo-encryption-alg>
+    <userinfo-encryption-alg>A128KW</userinfo-encryption-alg>
+    <userinfo-encryption-alg>A256KW</userinfo-encryption-alg>
+    <!--userinfo-encryption-alg>dir</userinfo-encryption-alg-->
+    <!--userinfo-encryption-alg>ECDH-ES</userinfo-encryption-alg-->
+    <!--userinfo-encryption-alg>ECDH-ES+A128KW</userinfo-encryption-alg-->
+    <!--userinfo-encryption-alg>ECDH-ES+A256KW</userinfo-encryption-alg-->
+</userinfo-encryption-alg-values-supported>
 
- * Supported locales for claims
+<userinfo-encryption-enc-values-supported>
+    <userinfo-encryption-enc>A128CBC+HS256</userinfo-encryption-enc>
+    <userinfo-encryption-enc>A256CBC+HS512</userinfo-encryption-enc>
+    <userinfo-encryption-enc>A128GCM</userinfo-encryption-enc>
+    <userinfo-encryption-enc>A256GCM</userinfo-encryption-enc>
+</userinfo-encryption-enc-values-supported>
+```
 
- * Supported locales for user interfaces
+### Supported ID token signing algorithms
 
- * Supported claims parameters
+```
+<id-token-signing-alg-values-supported>
+    <id-token-signing-alg>HS256</id-token-signing-alg>
+    <id-token-signing-alg>HS384</id-token-signing-alg>
+    <id-token-signing-alg>HS512</id-token-signing-alg>
+    <id-token-signing-alg>RS256</id-token-signing-alg>
+    <id-token-signing-alg>RS384</id-token-signing-alg>
+    <id-token-signing-alg>RS512</id-token-signing-alg>
+    <id-token-signing-alg>ES256</id-token-signing-alg>
+    <id-token-signing-alg>ES384</id-token-signing-alg>
+    <id-token-signing-alg>ES512</id-token-signing-alg>
+</id-token-signing-alg-values-supported>
+```
 
- * Supported request parameters
+### Supported ID token encryption algorithms
 
- * Supported request uri parameters
+```
+<id-token-encryption-alg-values-supported>
+    <id-token-encryption-alg>RSA1_5</id-token-encryption-alg>
+    <id-token-encryption-alg>RSA-OAEP</id-token-encryption-alg>
+    <id-token-encryption-alg>A128KW</id-token-encryption-alg>
+    <id-token-encryption-alg>A256KW</id-token-encryption-alg>
+    <!--id-token-encryption-alg>dir</id-token-encryption-alg-->
+    <!--id-token-encryption-alg>ECDH-ES</id-token-encryption-alg-->
+    <!--id-token-encryption-alg>ECDH-ES+A128KW</id-token-encryption-alg-->
+    <!--id-token-encryption-alg>ECDH-ES+A256KW</id-token-encryption-alg-->
+</id-token-encryption-alg-values-supported>
 
- * Required request uri registration
+<id-token-encryption-enc-values-supported>
+    <id-token-encryption-enc>A128CBC+HS256</id-token-encryption-enc>
+    <id-token-encryption-enc>A256CBC+HS512</id-token-encryption-enc>
+    <id-token-encryption-enc>A128GCM</id-token-encryption-enc>
+    <id-token-encryption-enc>A256GCM</id-token-encryption-enc>
+</id-token-encryption-enc-values-supported>
+```
 
- * Uri for operation policy
+### Supported request object signing algorithms
 
- * Uri for type-of-service
+### Supported request object encryption algorithms
 
- * Connection behaviour
+### Supported request object encryption encoding values
 
- * Default signature algorithms
+### Supported token endpoint authentication methods
 
- * Federation availability
+### Supported token endpoint authentication signing algorithm values
 
- * Dynamic registration of custom stuff
+### Supported display values
 
- * oxOpenID connect version
+### Supported claim types
 
- * Authorization filters
+### Supported claims
 
- * Custom client filters
+### Service documentation
+
+### Supported locales for claims
+
+### Supported locales for user interfaces
+
+### Supported claims parameters
+
+### Supported request parameters
+
+### Supported request uri parameters
+
+### Required request uri registration
+
+### Uri for operation policy
+
+### Uri for type-of-service
+
+### Connection behaviour
+
+### Default signature algorithms
+
+### Federation availability
+
+### Dynamic registration of custom stuff
+
+### oxOpenID connect version
+
+### Authorization filters
+
+### Custom client filters
 
     <?xml version="1.0" encoding="UTF-8"?>
     <configuration>
-
         <request-object-signing-alg-values-supported>
             <request-object-signing-alg>HS256</request-object-signing-alg>
             <request-object-signing-alg>HS384</request-object-signing-alg>
@@ -265,20 +403,6 @@ The sections are listed according to their order in the configuration file.
                 <base-dn>o=gluu</base-dn>
             </auth-filter>
         </auth-filters>
-
-        <!-- Custom client filters to be able identify client by custom id. -->
-        <client-auth-filters-enabled>false</client-auth-filters-enabled>
-        <client-auth-filters>
-            <client-auth-filter>
-                <filter>myCustomAttr1={0}</filter>
-                <base-dn>ou=clients,o=%(inumOrg)s,o=gluu</base-dn>
-            </client-auth-filter>
-            <!--client-auth-filter>
-                <filter>(&amp;(myCustomAttr1={0})(myCustomAttr2={0}))</filter>
-                <base-dn>ou=clients,o=%(inumOrg)s,o=gluu</base-dn>
-            </client-auth-filter-->
-        </client-auth-filters>
-
     </configuration>
 
 
