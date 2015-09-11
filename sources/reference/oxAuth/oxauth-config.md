@@ -188,7 +188,6 @@ whereas 3600 seconds represent 1 hour.
     <request-object-signing-alg>ES384</request-object-signing-alg>
     <request-object-signing-alg>ES512</request-object-signing-alg>
 </request-object-signing-alg-values-supported>
-
 ```
 
 ### Supported request object encryption algorithms
@@ -204,22 +203,44 @@ whereas 3600 seconds represent 1 hour.
     <!--request-object-encryption-alg>ECDH-ES+A128KW</request-object-encryption-alg-->
     <!--request-object-encryption-alg>ECDH-ES+A256KW</request-object-encryption-alg-->
 </request-object-encryption-alg-values-supported>
-
 ```
 
 ### Supported request object encryption encoding values
 
 ```
+<request-object-encryption-enc-values-supported>
+    <request-object-encryption-enc>A128CBC+HS256</request-object-encryption-enc>
+    <request-object-encryption-enc>A256CBC+HS512</request-object-encryption-enc>
+    <request-object-encryption-enc>A128GCM</request-object-encryption-enc>
+    <request-object-encryption-enc>A256GCM</request-object-encryption-enc>
+</request-object-encryption-enc-values-supported>
 ```
 
 ### Supported token endpoint authentication methods
 
 ```
+<token-endpoint-auth-methods-supported>
+    <token-endpoint-auth-method>client_secret_basic</token-endpoint-auth-method>
+    <token-endpoint-auth-method>client_secret_post</token-endpoint-auth-method>
+    <token-endpoint-auth-method>client_secret_jwt</token-endpoint-auth-method>
+    <token-endpoint-auth-method>private_key_jwt</token-endpoint-auth-method>
+</token-endpoint-auth-methods-supported>
 ```
 
 ### Supported token endpoint authentication signing algorithm values
 
 ```
+<token-endpoint-auth-signing-alg-values-supported>
+    <token-endpoint-auth-signing-alg>HS256</token-endpoint-auth-signing-alg>
+    <token-endpoint-auth-signing-alg>HS384</token-endpoint-auth-signing-alg>
+    <token-endpoint-auth-signing-alg>HS512</token-endpoint-auth-signing-alg>
+    <token-endpoint-auth-signing-alg>RS256</token-endpoint-auth-signing-alg>
+    <token-endpoint-auth-signing-alg>RS384</token-endpoint-auth-signing-alg>
+    <token-endpoint-auth-signing-alg>RS512</token-endpoint-auth-signing-alg>
+    <token-endpoint-auth-signing-alg>ES256</token-endpoint-auth-signing-alg>
+    <token-endpoint-auth-signing-alg>ES384</token-endpoint-auth-signing-alg>
+    <token-endpoint-auth-signing-alg>ES512</token-endpoint-auth-signing-alg>
+</token-endpoint-auth-signing-alg-values-supported>
 ```
 
 ### Supported display values
@@ -316,31 +337,8 @@ whereas 3600 seconds represent 1 hour.
 
     <?xml version="1.0" encoding="UTF-8"?>
     <configuration>
-        <request-object-encryption-enc-values-supported>
-            <request-object-encryption-enc>A128CBC+HS256</request-object-encryption-enc>
-            <request-object-encryption-enc>A256CBC+HS512</request-object-encryption-enc>
-            <request-object-encryption-enc>A128GCM</request-object-encryption-enc>
-            <request-object-encryption-enc>A256GCM</request-object-encryption-enc>
-        </request-object-encryption-enc-values-supported>
 
-        <token-endpoint-auth-methods-supported>
-            <token-endpoint-auth-method>client_secret_basic</token-endpoint-auth-method>
-            <token-endpoint-auth-method>client_secret_post</token-endpoint-auth-method>
-            <token-endpoint-auth-method>client_secret_jwt</token-endpoint-auth-method>
-            <token-endpoint-auth-method>private_key_jwt</token-endpoint-auth-method>
-        </token-endpoint-auth-methods-supported>
 
-        <token-endpoint-auth-signing-alg-values-supported>
-            <token-endpoint-auth-signing-alg>HS256</token-endpoint-auth-signing-alg>
-            <token-endpoint-auth-signing-alg>HS384</token-endpoint-auth-signing-alg>
-            <token-endpoint-auth-signing-alg>HS512</token-endpoint-auth-signing-alg>
-            <token-endpoint-auth-signing-alg>RS256</token-endpoint-auth-signing-alg>
-            <token-endpoint-auth-signing-alg>RS384</token-endpoint-auth-signing-alg>
-            <token-endpoint-auth-signing-alg>RS512</token-endpoint-auth-signing-alg>
-            <token-endpoint-auth-signing-alg>ES256</token-endpoint-auth-signing-alg>
-            <token-endpoint-auth-signing-alg>ES384</token-endpoint-auth-signing-alg>
-            <token-endpoint-auth-signing-alg>ES512</token-endpoint-auth-signing-alg>
-        </token-endpoint-auth-signing-alg-values-supported>
 
         <display-values-supported>
             <display-value>page</display-value>
