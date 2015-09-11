@@ -284,186 +284,166 @@ whereas 3600 seconds represent 1 hour.
 ### Supported locales for claims
 
 ```
+<claims-locales-supported>
+    <claim-locale>en</claim-locale>
+    <!--claim-locale>en-GB</claim-locale-->
+    <!--claim-locale>en-CA</claim-locale-->
+    <!--claim-locale>fr-FR</claim-locale-->
+    <!--claim-locale>fr-CA</claim-locale-->
+</claims-locales-supported>
 ```
 
 ### Supported locales for user interfaces
 
 ```
+<ui-locales-supported>
+    <ui-locale>en</ui-locale>
+    <ui-locale>es</ui-locale>
+    <!--ui-locale>en-GB</ui-locale-->
+    <!--ui-locale>en-CA</ui-locale-->
+    <!--ui-locale>fr-FR</ui-locale-->
+    <!--ui-locale>fr-CA</ui-locale-->
+</ui-locales-supported>
 ```
 
 ### Supported claims parameters
 
 ```
+<claims-parameter-supported>true</claims-parameter-supported>
 ```
 
 ### Supported request parameters
 
 ```
+<request-parameter-supported>true</request-parameter-supported>
 ```
 
 ### Supported request uri parameters
 
 ```
+<request-uri-parameter-supported>true</request-uri-parameter-supported>
 ```
 
 ### Required request uri registration
 
 ```
+<require-request-uri-registration>false</require-request-uri-registration>
 ```
 
 ### Uri for operation policy
 
 ```
+<op-policy-uri>http://ox.gluu.org/doku.php?id=oxauth:policy</op-policy-uri>
 ```
 
 ### Uri for type-of-service
 
 ```
+<op-tos-uri>http://ox.gluu.org/doku.php?id=oxauth:tos</op-tos-uri>
 ```
 
 ### Connection behaviour
 
 ```
+<authorization-code-lifetime>600</authorization-code-lifetime>
+<refresh-token-lifetime>14400</refresh-token-lifetime>
+<id-token-lifetime>3600</id-token-lifetime>
+<short-lived-access-token-lifetime>3600</short-lived-access-token-lifetime>
+<long-lived-access-token-lifetime>31536000</long-lived-access-token-lifetime>
+
+<!-- if session id is not used during some time then it's removed automatically.
+     Lifetime in seconds, 86400 seconds = 1 day  -->
+<session-id-unused-lifetime>86400</session-id-unused-lifetime>
+<session-id-enabled>true</session-id-enabled>
+
+<uma-add-scopes-automatically>false</uma-add-scopes-automatically>
+<uma-requester-permission-token-lifetime>3600</uma-requester-permission-token-lifetime>
+<uma-keep-client-during-resource-set-registration>true</uma-keep-client-during-resource-set-registration>
+
+<!-- Clean service interval in seconds -->
+<clean-service-interval>600</clean-service-interval>
+
+<refresh-user-session-timeout-enabled>true</refresh-user-session-timeout-enabled>
+<refresh-user-session-timeout>1800</refresh-user-session-timeout>
 ```
 
 ### Default signature algorithms
 
 ```
+<default-signature-algorithm>RS256</default-signature-algorithm>
+<RS256-keyid>1</RS256-keyid>
+<RS384-keyid>2</RS384-keyid>
+<RS512-keyid>3</RS512-keyid>
+<ES256-keyid>4</ES256-keyid>
+<ES384-keyid>5</ES384-keyid>
+<ES512-keyid>6</ES512-keyid>
 ```
 
 ### Federation availability
 
 ```
+<federation-enabled>false</federation-enabled>
+<!-- Federation check interval in seconds. Checks whether data in trusts are still valid
+(e.g.) if RP redirectUri still exist in metadata, if no then remove from trust automatically.
+ 86400 seconds = 24 hours -->
+<federation-check-interval>86400</federation-check-interval>
+<!--Federation skip policy values: OR, AND. Used in case there is more than one federation trust for
+given redirect_uri.-->
+<federation-skip-policy>OR</federation-skip-policy>
+<!-- Federation scope policy. Possible values: JOIN.
+Currently JOIN is the only supported value, means joining all scopes of trust list.-->
+<federation-scope-policy>JOIN</federation-scope-policy>
+<federation-signing-alg>RS512</federation-signing-alg>
+<federation-signing-kid>1</federation-signing-kid>
 ```
 
 ### Dynamic registration of custom stuff
 
 ```
+<!-- Dynamic registration custom stuff -->
+<dynamic-registration-custom-object-class>oxAuthClientCustomAttributes</dynamic-registration-custom-object-class>
+
+<dynamic-registration-custom-attribute-supported>
+    <dynamic-registration-custom-attribute>oxAuthTrustedClient</dynamic-registration-custom-attribute>
+    <dynamic-registration-custom-attribute>myCustomAttr1</dynamic-registration-custom-attribute>
+    <dynamic-registration-custom-attribute>myCustomAttr2</dynamic-registration-custom-attribute>
+</dynamic-registration-custom-attribute-supported>
 ```
 
 ### oxOpenID connect version
 
 ```
+<oxOpenIDConnectVersion>openidconnect-1.0</oxOpenIDConnectVersion>
+<organization-inum>%(inumOrg)s</organization-inum>
+<oxID>https://%(hostname)s/oxid/service/gluu/inum</oxID>
+
+<dynamic-registration-enabled>true</dynamic-registration-enabled>
+<!-- Value in seconds or 0 if they do not expire -->
+<dynamic-registration-expiration-time>86400</dynamic-registration-expiration-time>
+
+<trusted-client-enabled>true</trusted-client-enabled>
 ```
 
 ### Authorization filters
 
 ```
+<auth-filters-enabled>false</auth-filters-enabled>
+<auth-filters>
+    <auth-filter>
+        <!--filter>(&amp;(associatedClient=*{0}*)(myPinCode={1}))</filter-->
+        <filter>(&amp;(mail=*{0}*)(inum={1}))</filter>
+        <!-- If bind=true oxAuth should try to bind to entry which it found by filter specified above -->
+        <bind>false</bind>
+        <base-dn>o=gluu</base-dn>
+    </auth-filter>
+    <auth-filter>
+        <filter>uid={0}</filter>
+        <bind>true</bind>
+        <bind-password-attribute>pwd</bind-password-attribute>
+        <base-dn>o=gluu</base-dn>
+    </auth-filter>
+</auth-filters>
 ```
 
 ### Custom client filters
-
-    <?xml version="1.0" encoding="UTF-8"?>
-    <configuration>
-
-        <claims-locales-supported>
-            <claim-locale>en</claim-locale>
-            <!--claim-locale>en-GB</claim-locale-->
-            <!--claim-locale>en-CA</claim-locale-->
-            <!--claim-locale>fr-FR</claim-locale-->
-            <!--claim-locale>fr-CA</claim-locale-->
-        </claims-locales-supported>
-
-        <ui-locales-supported>
-            <ui-locale>en</ui-locale>
-            <ui-locale>es</ui-locale>
-            <!--ui-locale>en-GB</ui-locale-->
-            <!--ui-locale>en-CA</ui-locale-->
-            <!--ui-locale>fr-FR</ui-locale-->
-            <!--ui-locale>fr-CA</ui-locale-->
-        </ui-locales-supported>
-
-        <claims-parameter-supported>true</claims-parameter-supported>
-
-        <request-parameter-supported>true</request-parameter-supported>
-
-        <request-uri-parameter-supported>true</request-uri-parameter-supported>
-
-        <require-request-uri-registration>false</require-request-uri-registration>
-
-        <op-policy-uri>http://ox.gluu.org/doku.php?id=oxauth:policy</op-policy-uri>
-
-        <op-tos-uri>http://ox.gluu.org/doku.php?id=oxauth:tos</op-tos-uri>
-
-        <authorization-code-lifetime>600</authorization-code-lifetime>
-        <refresh-token-lifetime>14400</refresh-token-lifetime>
-        <id-token-lifetime>3600</id-token-lifetime>
-        <short-lived-access-token-lifetime>3600</short-lived-access-token-lifetime>
-        <long-lived-access-token-lifetime>31536000</long-lived-access-token-lifetime>
-
-        <!-- if session id is not used during some time then it's removed automatically.
-             Lifetime in seconds, 86400 seconds = 1 day  -->
-        <session-id-unused-lifetime>86400</session-id-unused-lifetime>
-        <session-id-enabled>true</session-id-enabled>
-
-        <uma-add-scopes-automatically>false</uma-add-scopes-automatically>
-        <uma-requester-permission-token-lifetime>3600</uma-requester-permission-token-lifetime>
-        <uma-keep-client-during-resource-set-registration>true</uma-keep-client-during-resource-set-registration>
-
-        <!-- Clean service interval in seconds -->
-        <clean-service-interval>600</clean-service-interval>
-
-        <refresh-user-session-timeout-enabled>true</refresh-user-session-timeout-enabled>
-        <refresh-user-session-timeout>1800</refresh-user-session-timeout>
-
-        <default-signature-algorithm>RS256</default-signature-algorithm>
-        <RS256-keyid>1</RS256-keyid>
-        <RS384-keyid>2</RS384-keyid>
-        <RS512-keyid>3</RS512-keyid>
-        <ES256-keyid>4</ES256-keyid>
-        <ES384-keyid>5</ES384-keyid>
-        <ES512-keyid>6</ES512-keyid>
-
-        <federation-enabled>false</federation-enabled>
-        <!-- Federation check interval in seconds. Checks whether data in trusts are still valid
-        (e.g.) if RP redirectUri still exist in metadata, if no then remove from trust automatically.
-         86400 seconds = 24 hours -->
-        <federation-check-interval>86400</federation-check-interval>
-        <!--Federation skip policy values: OR, AND. Used in case there is more than one federation trust for
-        given redirect_uri.-->
-        <federation-skip-policy>OR</federation-skip-policy>
-        <!-- Federation scope policy. Possible values: JOIN.
-        Currently JOIN is the only supported value, means joining all scopes of trust list.-->
-        <federation-scope-policy>JOIN</federation-scope-policy>
-        <federation-signing-alg>RS512</federation-signing-alg>
-        <federation-signing-kid>1</federation-signing-kid>
-
-        <!-- Dynamic registration custom stuff -->
-        <dynamic-registration-custom-object-class>oxAuthClientCustomAttributes</dynamic-registration-custom-object-class>
-
-        <dynamic-registration-custom-attribute-supported>
-            <dynamic-registration-custom-attribute>oxAuthTrustedClient</dynamic-registration-custom-attribute>
-            <dynamic-registration-custom-attribute>myCustomAttr1</dynamic-registration-custom-attribute>
-            <dynamic-registration-custom-attribute>myCustomAttr2</dynamic-registration-custom-attribute>
-        </dynamic-registration-custom-attribute-supported>
-
-        <oxOpenIDConnectVersion>openidconnect-1.0</oxOpenIDConnectVersion>
-
-        <organization-inum>%(inumOrg)s</organization-inum>
-        <oxID>https://%(hostname)s/oxid/service/gluu/inum</oxID>
-
-        <dynamic-registration-enabled>true</dynamic-registration-enabled>
-        <!-- Value in seconds or 0 if they do not expire -->
-        <dynamic-registration-expiration-time>86400</dynamic-registration-expiration-time>
-
-        <trusted-client-enabled>true</trusted-client-enabled>
-
-        <auth-filters-enabled>false</auth-filters-enabled>
-        <auth-filters>
-            <auth-filter>
-                <!--filter>(&amp;(associatedClient=*{0}*)(myPinCode={1}))</filter-->
-                <filter>(&amp;(mail=*{0}*)(inum={1}))</filter>
-                <!-- If bind=true oxAuth should try to bind to entry which it found by filter specified above -->
-                <bind>false</bind>
-                <base-dn>o=gluu</base-dn>
-            </auth-filter>
-            <auth-filter>
-                <filter>uid={0}</filter>
-                <bind>true</bind>
-                <bind-password-attribute>pwd</bind-password-attribute>
-                <base-dn>o=gluu</base-dn>
-            </auth-filter>
-        </auth-filters>
-    </configuration>
-
 
