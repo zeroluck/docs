@@ -383,13 +383,22 @@ whereas 3600 seconds represent 1 hour.
 
 ```
 <federation-enabled>false</federation-enabled>
+```
+
+```
 <!-- Federation check interval in seconds. Checks whether data in trusts are still valid
 (e.g.) if RP redirectUri still exist in metadata, if no then remove from trust automatically.
  86400 seconds = 24 hours -->
 <federation-check-interval>86400</federation-check-interval>
+```
+
+```
 <!--Federation skip policy values: OR, AND. Used in case there is more than one federation trust for
 given redirect_uri.-->
 <federation-skip-policy>OR</federation-skip-policy>
+```
+
+```
 <!-- Federation scope policy. Possible values: JOIN.
 Currently JOIN is the only supported value, means joining all scopes of trust list.-->
 <federation-scope-policy>JOIN</federation-scope-policy>
@@ -400,7 +409,6 @@ Currently JOIN is the only supported value, means joining all scopes of trust li
 ### Dynamic registration of custom stuff
 
 ```
-<!-- Dynamic registration custom stuff -->
 <dynamic-registration-custom-object-class>oxAuthClientCustomAttributes</dynamic-registration-custom-object-class>
 
 <dynamic-registration-custom-attribute-supported>
