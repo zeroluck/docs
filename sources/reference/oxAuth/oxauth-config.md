@@ -246,21 +246,39 @@ whereas 3600 seconds represent 1 hour.
 ### Supported display values
 
 ```
+<display-values-supported>
+    <display-value>page</display-value>
+    <!--display-value>popup</display-value-->
+    <!--display-value>touch</display-value-->
+    <!--display-value>wap</display-value-->
+</display-values-supported>
 ```
 
 ### Supported claim types
 
 ```
+<claim-types-supported>
+    <claim-type>normal</claim-type>
+    <!--claim-type>distributed</claim-type-->
+</claim-types-supported>
 ```
 
 ### Supported claims
 
 ```
+<claims-supported>
+    <claim>uid</claim>
+    <claim>displayName</claim>
+    <claim>givenName</claim>
+    <claim>sn</claim>
+    <claim>mail</claim>
+</claims-supported>
 ```
 
 ### Service documentation
 
 ```
+<service-documentation>http://gluu.org/docs</service-documentation>
 ```
 
 ### Supported locales for claims
@@ -337,30 +355,6 @@ whereas 3600 seconds represent 1 hour.
 
     <?xml version="1.0" encoding="UTF-8"?>
     <configuration>
-
-
-
-        <display-values-supported>
-            <display-value>page</display-value>
-            <!--display-value>popup</display-value-->
-            <!--display-value>touch</display-value-->
-            <!--display-value>wap</display-value-->
-        </display-values-supported>
-
-        <claim-types-supported>
-            <claim-type>normal</claim-type>
-            <!--claim-type>distributed</claim-type-->
-        </claim-types-supported>
-
-        <claims-supported>
-            <claim>uid</claim>
-            <claim>displayName</claim>
-            <claim>givenName</claim>
-            <claim>sn</claim>
-            <claim>mail</claim>
-        </claims-supported>
-
-        <service-documentation>http://gluu.org/docs</service-documentation>
 
         <claims-locales-supported>
             <claim-locale>en</claim-locale>
