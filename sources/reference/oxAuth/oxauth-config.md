@@ -431,6 +431,13 @@ authenticate endpoints:
 
 ### Supported locales for claims
 
+Currently, these languages are supported for claims:
+
+* en-GB: British English
+* en-CA: Canadian English
+* fr-FR: French 
+* fr-CA: Canadian French
+
 ```
 <claims-locales-supported>
     <claim-locale>en</claim-locale>
