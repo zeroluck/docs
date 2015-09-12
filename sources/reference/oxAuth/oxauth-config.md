@@ -158,7 +158,16 @@ enabled, currently:
     <!--userinfo-encryption-alg>ECDH-ES+A128KW</userinfo-encryption-alg-->
     <!--userinfo-encryption-alg>ECDH-ES+A256KW</userinfo-encryption-alg-->
 </userinfo-encryption-alg-values-supported>
+```
 
+These encryption encoding values are supported, too:
+
+* A128CBC+HS256
+* A256CBC+HS512
+* A128GCM
+* A256GCM
+
+```
 <userinfo-encryption-enc-values-supported>
     <userinfo-encryption-enc>A128CBC+HS256</userinfo-encryption-enc>
     <userinfo-encryption-enc>A256CBC+HS512</userinfo-encryption-enc>
