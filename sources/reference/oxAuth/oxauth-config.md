@@ -166,12 +166,14 @@ enabled, currently:
 </userinfo-encryption-alg-values-supported>
 ```
 
-These encryption encoding values are supported, too:
+### Supported encryption encoding values
 
-* A128CBC+HS256
-* A256CBC+HS512
-* A128GCM
-* A256GCM
+These encryption encoding values are supported:
+
+* A128CBC+HS256: AES_128_CBC_HMAC_SHA_256 authenticated encryption using a 256 bit key
+* A256CBC+HS512: AES_256_CBC_HMAC_SHA_512 authenticated encryption using a 512 bit key
+* A128GCM: AES in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 128 bit key
+* A256GCM: AES in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 256 bit key
 
 ```
 <userinfo-encryption-enc-values-supported>
@@ -561,7 +563,11 @@ Currently JOIN is the only supported value, means joining all scopes of trust li
 
 [ecdsa]: https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm "Elliptic Curve Digital Signature Algorithm (ECDSA), Wikipedia"
 
+[gcm]: https://en.wikipedia.org/wiki/Galois/Counter_Mode "Galois/Counter Mode (GCM), Wikipedia"
+
 [hmac]: https://en.wikipedia.org/wiki/Hash-based_message_authentication_code "Hash-based message authentication code (HMAC), Wikipedia"
+
+[nist-SP800-38D]: http://csrc.nist.gov/publications/nistpubs/800-38D/SP-800-38D.pdf "Recommendation for Block Cipher Modes of Operation: Galois/Counter Mode (GCM) and GMAC, National Institute of Standards and Technology (NIST), 2007"
 
 [oaep]: https://en.wikipedia.org/wiki/Optimal_asymmetric_encryption_padding "Optimal asymmetric encryption padding (OAEP), Wikipedia"
 
