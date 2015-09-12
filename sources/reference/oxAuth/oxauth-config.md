@@ -132,6 +132,21 @@ procedures:
 
 ### Supported encryption algorithms
 
+Currently, the Gluu server supports these algorithms for data encryption:
+
+* RSA1_5
+* RSA-OAEP
+* A128KW
+* A256KW
+
+Though listed in the configuration file, these algorithms are not
+enabled, currently:
+
+* dir
+* ECDH-ES
+* ECDH-ES+A128KW
+* ECDH-ES+A256KW
+
 ```
 <userinfo-encryption-alg-values-supported>
     <userinfo-encryption-alg>RSA1_5</userinfo-encryption-alg>
