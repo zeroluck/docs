@@ -220,6 +220,19 @@ token:
 
 ### Supported request object signing algorithms
 
+Currently, the Gluu server supports these algorithms to sign a request
+object:
+
+* HS256: [HMAC][hmac] using [SHA-256][sha2] hash algorithm.
+* HS384: [HMAC][hmac] using [SHA-384][sha2] hash algorithm.
+* HS512: [HMAC][hmac] using [SHA-512][sha2] hash algorithm.
+* RS256: [RSASSA-PKCS-v1_5][rsassa] using [SHA-256][sha2] hash algorithm.
+* RS384: [RSASSA-PKCS-v1_5][rsassa] using [SHA-384][sha2] hash algorithm.
+* RS512: [RSASSA-PKCS-v1_5][rsassa] using [SHA-512][sha2] hash algorithm.
+* ES256: [ECDSA][ecdsa] using P-256 curve and [SHA-256][sha2] hash algorithm.
+* ES384: [ECDSA][ecdsa] using P-384 curve and [SHA-384][sha2] hash algorithm.
+* ES512: [ECDSA][ecdsa] using P-521 curve and [SHA-512][sha2] hash algorithm.
+
 ```
 <request-object-signing-alg-values-supported>
     <request-object-signing-alg>HS256</request-object-signing-alg>
