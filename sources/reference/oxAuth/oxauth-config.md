@@ -134,7 +134,7 @@ procedures:
 
 Currently, the Gluu server supports these algorithms for data encryption:
 
-* RSA1_5
+* RSA1_5: RSA 1.5 (PKCS #1) according to [RFC 2313][rfc2313]
 * RSA-OAEP
 * A128KW
 * A256KW
@@ -486,10 +486,13 @@ Currently JOIN is the only supported value, means joining all scopes of trust li
 
 ### Custom client filters
 
-[hmac] https://en.wikipedia.org/wiki/Hash-based_message_authentication_code "Hash-based message authentication code (HMAC), Wikipedia"
+[ecdsa]: https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm "Elliptic Curve Digital Signature Algorithm (ECDSA), Wikipedia"
 
-[rsassa] https://tools.ietf.org/html/draft-ietf-jose-json-web-algorithms-14#page-12 "Digital Signature with RSASSA-PKCS1-V1_5, in JSON Web Algorithms (JWA), draft-ietf-jose-json-web-algorithms-14, July 2013"
+[hmac]: https://en.wikipedia.org/wiki/Hash-based_message_authentication_code "Hash-based message authentication code (HMAC), Wikipedia"
 
-[sha2] https://en.wikipedia.org/wiki/SHA-2 "Secure Hash Algorithm (SHA) SHA-2 familiy, Wikipedia"
+[rfc2313]: https://tools.ietf.org/html/rfc2313 "RFC 2313: PKCS #1: RSA Encryption Version 1.5"
 
-[ecdsa] https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm "Elliptic Curve Digital Signature Algorithm (ECDSA), Wikipedia"
+[rsassa]: https://tools.ietf.org/html/draft-ietf-jose-json-web-algorithms-14#page-12 "Digital Signature with RSASSA-PKCS1-V1_5, in JSON Web Algorithms (JWA), draft-ietf-jose-json-web-algorithms-14, July 2013"
+
+[sha2]: https://en.wikipedia.org/wiki/SHA-2 "Secure Hash Algorithm (SHA) SHA-2 familiy, Wikipedia"
+
