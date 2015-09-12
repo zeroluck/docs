@@ -246,8 +246,18 @@ enabled, currently:
     <!--id-token-encryption-alg>ECDH-ES+A256KW</id-token-encryption-alg-->
 </id-token-encryption-alg-values-supported>
 
+```
+
 ### Supported encryption encoding values for ID tokens
 
+These encryption encoding values for ID tokens are supported:
+
+* A128CBC+HS256: AES_128_CBC_HMAC_SHA_256 authenticated encryption using a 256 bit key
+* A256CBC+HS512: AES_256_CBC_HMAC_SHA_512 authenticated encryption using a 512 bit key
+* A128GCM: Advanced Encryption Standard (AES) in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 128 bit key
+* A256GCM: Advanced Encryption Standard (AES) in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 256 bit key
+
+```
 <id-token-encryption-enc-values-supported>
     <id-token-encryption-enc>A128CBC+HS256</id-token-encryption-enc>
     <id-token-encryption-enc>A256CBC+HS512</id-token-encryption-enc>
