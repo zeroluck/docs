@@ -62,6 +62,9 @@ whereas 3600 seconds represent 1 hour.
 
 ### Supported response types
 
+This entry defines the response types that are supported by the Gluu
+server.
+
 ```
 <response-types-supported>
     <response-type>code</response-type>
@@ -99,6 +102,19 @@ whereas 3600 seconds represent 1 hour.
 ```
 
 ### Supported algorithms a user can login with
+
+Currently, the Gluu server supports these algorithms for login
+procedures:
+
+* HS256: HMAC using SHA-256 hash algorithm.
+* HS384: HMAC using SHA-384 hash algorithm.
+* HS512: HMAC using SHA-512 hash algorithm.
+* RS256: RSASSA-PKCS-v1_5 using SHA-256 hash algorithm.
+* RS384: RSASSA-PKCS-v1_5 using SHA-384 hash algorithm.
+* RS512: RSASSA-PKCS-v1_5 using SHA-512 hash algorithm.
+* ES256: ECDSA using P-256 curve and SHA-256 hash algorithm.
+* ES384: ECDSA using P-384 curve and SHA-384 hash algorithm.
+* ES512: ECDSA using P-521 curve and SHA-512 hash algorithm.
 
 ```
 <userinfo-signing-alg-values-supported>
