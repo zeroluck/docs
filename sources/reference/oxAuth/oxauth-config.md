@@ -198,6 +198,22 @@ token:
 
 ### Supported ID token encryption algorithms
 
+Currently, the Gluu server supports these encryption algorithms for
+ID tokens:
+
+* RSA1_5: RSA 1.5 (PKCS #1) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
+* RSA-OAEP: RSA with [Optimal asymmetric encryption padding (OAEP)][oaep] with the default parameters specified by [RFC 3447][rfc3447] in section A.2.1.
+* A128KW: Advanced Encryption Standard (AES) Key Wrap Algorithm ([RFC 3394][rfc3394]) using 128 bit keys.
+* A256KW: Advanced Encryption Standard (AES) Key Wrap Algorithm ([RFC 3394][rfc3394]) using 256 bit keys.
+
+Though listed in the configuration file, these algorithms are not
+enabled, currently:
+
+* dir: Direct use of a shared symmetric key as the Content Encryption Key (CEK) for the block encryption step (rather than using the symmetric key to wrap the CEK).
+* ECDH-ES: Elliptic Curve Diffie-Hellman Ephemeral Static ([RFC 6090][rfc6090]) key agreement using the Concat KDF, as defined in section 5.8.1 of NIST.800-56A, with the agreed-upon key being used directly as the Content Encryption Key (CEK) (rather than being used to wrap the CEK).
+* ECDH-ES+A128KW: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the Content Encryption Key (CEK) with the "A128KW" function (rather than being used directly as the CEK).
+* ECDH-ES+A256KW: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the Content Encryption Key (CEK) with the "A256KW" function (rather than being used directly as the CEK).
+
 ```
 <id-token-encryption-alg-values-supported>
     <id-token-encryption-alg>RSA1_5</id-token-encryption-alg>
@@ -250,7 +266,7 @@ object:
 ### Supported request object encryption algorithms
 
 Currently, the Gluu server supports these encryption algorithms for
-request algorithms:
+request objects:
 
 * RSA1_5: RSA 1.5 (PKCS #1) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
 * RSA-OAEP: RSA with [Optimal asymmetric encryption padding (OAEP)][oaep] with the default parameters specified by [RFC 3447][rfc3447] in section A.2.1.
