@@ -142,10 +142,10 @@ Currently, the Gluu server supports these algorithms for data encryption:
 Though listed in the configuration file, these algorithms are not
 enabled, currently:
 
-* dir
-* ECDH-ES
-* ECDH-ES+A128KW
-* ECDH-ES+A256KW
+* dir: Direct use of a shared symmetric key as the Content Encryption Key (CEK) for the block encryption step (rather than using the symmetric key to wrap the CEK).
+* ECDH-ES: Elliptic Curve Diffie-Hellman Ephemeral Static ([RFC 6090][rfc6090]) key agreement using the Concat KDF, as defined in section 5.8.1 of NIST.800-56A, with the agreed-upon key being used directly as the Content Encryption Key (CEK) (rather than being used to wrap the CEK).
+* ECDH-ES+A128KW: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the Content Encryption Key (CEK) with the "A128KW" function (rather than being used directly as the CEK).
+* ECDH-ES+A256KW: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the Content Encryption Key (CEK) with the "A256KW" function (rather than being used directly as the CEK).
 
 ```
 <userinfo-encryption-alg-values-supported>
@@ -497,6 +497,8 @@ Currently JOIN is the only supported value, means joining all scopes of trust li
 [rfc3394]: https://tools.ietf.org/html/rfc3394 "RFC 3394: Advanced Encryption Standard (AES) Key Wrap Algorithm, IETF"
 
 [rfc3447]: https://tools.ietf.org/html/rfc3447 "RFC 3447: Public-Key Cryptography Standards (PKCS) #1: RSA Cryptography, Specifications Version 2.1, IETF"
+
+[rfc6090]: https://tools.ietf.org/html/rfc6090 "RFC 6090: Fundamental Elliptic Curve Cryptography Algorithms, IETF"
 
 [rsassa]: https://tools.ietf.org/html/draft-ietf-jose-json-web-algorithms-14#page-12 "Digital Signature with RSASSA-PKCS1-V1_5, in JSON Web Algorithms (JWA), draft-ietf-jose-json-web-algorithms-14, July 2013"
 
