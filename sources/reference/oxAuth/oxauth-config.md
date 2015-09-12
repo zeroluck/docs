@@ -100,6 +100,9 @@ These grant types are supported:
 
 ### Supported subject types
 
+This entry defines the supported subject types. Possible values are
+`public` and `pairwise`.
+
 ```
 <subject-types-supported>
     <subject-type>public</subject-type>
