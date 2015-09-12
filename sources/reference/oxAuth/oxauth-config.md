@@ -134,10 +134,10 @@ procedures:
 
 Currently, the Gluu server supports these algorithms for data encryption:
 
-* RSA1_5: RSA 1.5 (PKCS #1) according to [RFC 2313][rfc2313]
+* RSA1_5: RSA 1.5 (PKCS #1) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
 * RSA-OAEP: RSA with [Optimal asymmetric encryption padding (OAEP)][oaep]
-* A128KW
-* A256KW
+* A128KW:
+* A256KW: 
 
 Though listed in the configuration file, these algorithms are not
 enabled, currently:
@@ -492,7 +492,9 @@ Currently JOIN is the only supported value, means joining all scopes of trust li
 
 [oaep]: https://en.wikipedia.org/wiki/Optimal_asymmetric_encryption_padding "Optimal asymmetric encryption padding (OAEP), Wikipedia"
 
-[rfc2313]: https://tools.ietf.org/html/rfc2313 "RFC 2313: PKCS #1: RSA Encryption Version 1.5"
+[rfc2313]: https://tools.ietf.org/html/rfc2313 "RFC 2313: Public-Key Cryptography Standards (PKCS #1): RSA Encryption Version 1.5, IETF"
+
+[rfc3447]: https://tools.ietf.org/html/rfc3447 "RFC 3447: Public-Key Cryptography Standards (PKCS) #1: RSA Cryptography, Specifications Version 2.1, IETF"
 
 [rsassa]: https://tools.ietf.org/html/draft-ietf-jose-json-web-algorithms-14#page-12 "Digital Signature with RSASSA-PKCS1-V1_5, in JSON Web Algorithms (JWA), draft-ietf-jose-json-web-algorithms-14, July 2013"
 
