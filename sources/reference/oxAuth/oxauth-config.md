@@ -135,7 +135,7 @@ procedures:
 Currently, the Gluu server supports these algorithms for data encryption:
 
 * RSA1_5: RSA 1.5 (PKCS #1) according to [RFC 2313][rfc2313]
-* RSA-OAEP
+* RSA-OAEP: RSA with [Optimal asymmetric encryption padding (OAEP)][oaep]
 * A128KW
 * A256KW
 
@@ -489,6 +489,8 @@ Currently JOIN is the only supported value, means joining all scopes of trust li
 [ecdsa]: https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm "Elliptic Curve Digital Signature Algorithm (ECDSA), Wikipedia"
 
 [hmac]: https://en.wikipedia.org/wiki/Hash-based_message_authentication_code "Hash-based message authentication code (HMAC), Wikipedia"
+
+[oaep]: https://en.wikipedia.org/wiki/Optimal_asymmetric_encryption_padding "Optimal asymmetric encryption padding (OAEP), Wikipedia"
 
 [rfc2313]: https://tools.ietf.org/html/rfc2313 "RFC 2313: PKCS #1: RSA Encryption Version 1.5"
 
