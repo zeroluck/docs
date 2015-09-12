@@ -109,9 +109,9 @@ procedures:
 * HS256: [HMAC][hmac] using [SHA-256][sha2] hash algorithm.
 * HS384: [HMAC][hmac] using [SHA-384][sha2] hash algorithm.
 * HS512: [HMAC][hmac] using [SHA-512][sha2] hash algorithm.
-* RS256: RSASSA-PKCS-v1_5 using SHA-256 hash algorithm.
-* RS384: RSASSA-PKCS-v1_5 using SHA-384 hash algorithm.
-* RS512: RSASSA-PKCS-v1_5 using SHA-512 hash algorithm.
+* RS256: [RSASSA-PKCS-v1_5][rsassa] using [SHA-256][sha2] hash algorithm.
+* RS384: [RSASSA-PKCS-v1_5][rsassa] using [SHA-384][sha2] hash algorithm.
+* RS512: [RSASSA-PKCS-v1_5][rsassa] using [SHA-512][sha2] hash algorithm.
 * ES256: ECDSA using P-256 curve and SHA-256 hash algorithm.
 * ES384: ECDSA using P-384 curve and SHA-384 hash algorithm.
 * ES512: ECDSA using P-521 curve and SHA-512 hash algorithm.
@@ -474,3 +474,5 @@ Currently JOIN is the only supported value, means joining all scopes of trust li
 [hmac] https://en.wikipedia.org/wiki/Hash-based_message_authentication_code "Hash-based message authentication code (HMAC), Wikipedia"
 
 [sha2] https://en.wikipedia.org/wiki/SHA-2 "Secure Hash Algorithm (SHA) SHA-2 familiy, Wikipedia"
+
+[rsassa] https://tools.ietf.org/html/draft-ietf-jose-json-web-algorithms-14#page-12 "Digital Signature with RSASSA-PKCS1-V1_5, in JSON Web Algorithms (JWA), draft-ietf-jose-json-web-algorithms-14, July 2013"
