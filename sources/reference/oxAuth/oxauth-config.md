@@ -135,9 +135,9 @@ procedures:
 Currently, the Gluu server supports these algorithms for data encryption:
 
 * RSA1_5: RSA 1.5 (PKCS #1) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
-* RSA-OAEP: RSA with [Optimal asymmetric encryption padding (OAEP)][oaep]
-* A128KW:
-* A256KW: 
+* RSA-OAEP: RSA with [Optimal asymmetric encryption padding (OAEP)][oaep] with the default parameters specified by [RFC 3447][rfc3447] in section A.2.1.
+* A128KW: Advanced Encryption Standard (AES) Key Wrap Algorithm ([RFC 3394][rfc3394]) using 128 bit keys.
+* A256KW: Advanced Encryption Standard (AES) Key Wrap Algorithm ([RFC 3394][rfc3394]) using 256 bit keys.
 
 Though listed in the configuration file, these algorithms are not
 enabled, currently:
@@ -493,6 +493,8 @@ Currently JOIN is the only supported value, means joining all scopes of trust li
 [oaep]: https://en.wikipedia.org/wiki/Optimal_asymmetric_encryption_padding "Optimal asymmetric encryption padding (OAEP), Wikipedia"
 
 [rfc2313]: https://tools.ietf.org/html/rfc2313 "RFC 2313: Public-Key Cryptography Standards (PKCS #1): RSA Encryption Version 1.5, IETF"
+
+[rfc3394]: https://tools.ietf.org/html/rfc3394 "RFC 3394: Advanced Encryption Standard (AES) Key Wrap Algorithm, IETF"
 
 [rfc3447]: https://tools.ietf.org/html/rfc3447 "RFC 3447: Public-Key Cryptography Standards (PKCS) #1: RSA Cryptography, Specifications Version 2.1, IETF"
 
