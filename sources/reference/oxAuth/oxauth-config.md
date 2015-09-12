@@ -106,9 +106,9 @@ server.
 Currently, the Gluu server supports these algorithms for login
 procedures:
 
-* HS256: [HMAC][hmac] using SHA-256 hash algorithm.
-* HS384: HMAC using SHA-384 hash algorithm.
-* HS512: HMAC using SHA-512 hash algorithm.
+* HS256: [HMAC][hmac] using [SHA-256][sha2] hash algorithm.
+* HS384: [HMAC][hmac] using [SHA-384][sha2] hash algorithm.
+* HS512: [HMAC][hmac] using [SHA-512][sha2] hash algorithm.
 * RS256: RSASSA-PKCS-v1_5 using SHA-256 hash algorithm.
 * RS384: RSASSA-PKCS-v1_5 using SHA-384 hash algorithm.
 * RS512: RSASSA-PKCS-v1_5 using SHA-512 hash algorithm.
@@ -472,3 +472,5 @@ Currently JOIN is the only supported value, means joining all scopes of trust li
 ### Custom client filters
 
 [hmac] https://en.wikipedia.org/wiki/Hash-based_message_authentication_code "Hash-based message authentication code (HMAC), Wikipedia"
+
+[sha2] https://en.wikipedia.org/wiki/SHA-2 "Secure Hash Algorithm (SHA) SHA-2 familiy, Wikipedia"
