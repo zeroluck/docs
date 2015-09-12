@@ -63,7 +63,7 @@ whereas 3600 seconds represent 1 hour.
 ### Supported response types
 
 This entry defines the response types that are supported by the Gluu
-server.
+server. 
 
 ```
 <response-types-supported>
@@ -78,6 +78,12 @@ server.
 ```
 
 ### Supported grant types
+
+These grant types are supported:
+
+* authorization_code
+* implicit
+* urn:ietf:params:oauth:grant-type:jwt-bearer
 
 ```
 <grant-types-supported>
