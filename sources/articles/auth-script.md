@@ -27,11 +27,11 @@ PyDev is a useful Eclipse tool for editing Python files. It also support Jython.
 To add an Eclipse plugin, the first thing to do to select "Install New Software" from the
 Help menu:
 
-![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/auth-script/01-install-software.jpg)
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/auth-article/01-install-software.jpg)
 
 After this, you'll need to add the repositories for the software.
 
-![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/auth-script/02-Add-Repositories.jpg)
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/auth-article/02-Add-Repositories.jpg)
 
  - PyDev - http://download.jboss.org/jbosstools/mars/development/updates/
  - JBoss Tools - http://download.jboss.org/jbosstools/mars/development/updates/
@@ -39,23 +39,23 @@ After this, you'll need to add the repositories for the software.
 Then select the respective repository in the "Work with" dropdown and check the box for the
 software you want to install, as in the images below.
 
-![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/auth-script/03-add-Pydev.jpg)
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/auth-article/03-add-Pydev.jpg)
 
 And from JBoss Tools, under "JBoss Web and Jave EE Development" select "Jboss Tools RichFaces":
 
-![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/auth-script/04-add-jboss-richfaces.jpg)
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/auth-article/04-add-jboss-richfaces.jpg)
 
 ### Create a project
 
 The next thing you'll want to do is to specify the Jython interpreter under the Window / Preferences
 menu:
 
-![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/auth-script/05-preferences-jython-interpreter.jpg)
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/auth-article/05-preferences-jython-interpreter.jpg)
 
 Now you can create a new project to keep all your stuff. From the File menu, create a new PyDev
 project
 
-![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/auth-script/06-new-pydev-project.jpg)
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/auth-article/06-new-pydev-project.jpg)
 
 Now you'll want to create some files:
  - A Python file for your script
@@ -95,9 +95,13 @@ the Duo script for a good example of this. In our sample
 the organization we wrote it for only wanted to use Duo for the IT group. So we checked group
 membership, and dynamically adjusted the number of steps.
 
-One more method you will need to implement in a multi-step authentication (or even a custom
-one step authentication) is `getPageForStep` which specifies the page you want to returne
-for a given step.
+If you need to save session variables between steps, use the `getExtraParametersForStep` method.
+The Gluu Server persists these variables in LDAP in able to support stateless clustered two step 
+authentications.
+
+If you need to display a special Web page for an interactive login, (or even a custom
+first page) you'll need to implement the `getPageForStep` which specifies the page you 
+want to return for a given step.
 
 ## Custom Properties
 
@@ -105,7 +109,7 @@ Sometimes its helpful to enable system administrators to enter properties that m
 If you don't want to ask them to modify the script, you can use the Custom Property feature, as seen
 in this screenshot:
 
-![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/auth-script/07-custom-properties.jpg)
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/auth-article/07-custom-properties.jpg)
 
 To access this information in your script with `configurationAttributes.get("<key>").getValue2()`
 where `<key>` specifies the value you want to retrieve.
