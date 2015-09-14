@@ -68,8 +68,16 @@ whereas 3600 seconds represent 1 hour.
 
 ### Supported response types
 
-This entry defines the response types that are supported by the Gluu
-server. 
+This entry defines the various response types that are supported by the
+Gluu server. The following combinations are possible:
+
+* code:
+* code id_token:
+* token:
+* token id_token:
+* code token:
+* code token id_token:
+* id_token:
 
 ```
 <response-types-supported>
