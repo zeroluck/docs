@@ -419,6 +419,14 @@ The Gluu server supports these display values:
 
 ### Supported claims
 
+The Gluu server supports these values for claims:
+
+* uid: a valid user id
+* displayName: a previously chosen user name that is displayed
+* givenName: a previously given user name
+* sn: 
+* mail: a stored email address for this user
+
 ```
 <claims-supported>
     <claim>uid</claim>
