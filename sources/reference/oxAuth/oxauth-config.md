@@ -183,11 +183,11 @@ Currently, the Gluu server supports these algorithms for data encryption:
 Though listed in the configuration file, these algorithms are not
 enabled, currently:
 
-* dir: Direct use of a shared symmetric key as the Content Encryption Key (CEK) for the block encryption step (rather than using the symmetric key to wrap the CEK).
+* dir: Direct use of a shared symmetric key as the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] for the block encryption step (rather than using the symmetric key to wrap the CEK).
 * ECDH-ES: Elliptic Curve Diffie-Hellman Ephemeral Static ([RFC
-6090][rfc6090]) key agreement using the Concat KDF, as defined in section 5.8.1 of [NIST.800-56A][nist-SP800-56AR2], with the agreed-upon key being used directly as the Content Encryption Key (CEK) (rather than being used to wrap the CEK).
-* ECDH-ES+A128KW: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the Content Encryption Key (CEK) with the "A128KW" function (rather than being used directly as the CEK).
-* ECDH-ES+A256KW: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the Content Encryption Key (CEK) with the "A256KW" function (rather than being used directly as the CEK).
+6090][rfc6090]) key agreement using the Concat KDF, as defined in section 5.8.1 of [NIST.800-56A][nist-SP800-56AR2], with the agreed-upon key being used directly as the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] (rather than being used to wrap the CEK).
+* ECDH-ES+A128KW: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] with the "A128KW" function (rather than being used directly as the CEK).
+* ECDH-ES+A256KW: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] with the "A256KW" function (rather than being used directly as the CEK).
 
 ```
 <userinfo-encryption-alg-values-supported>
@@ -262,10 +262,10 @@ ID tokens:
 Though listed in the configuration file, these algorithms are not
 enabled, currently:
 
-* dir: Direct use of a shared symmetric key as the Content Encryption Key (CEK) for the block encryption step (rather than using the symmetric key to wrap the CEK).
-* ECDH-ES: Elliptic Curve Diffie-Hellman Ephemeral Static ([RFC 6090][rfc6090]) key agreement using the Concat KDF, as defined in section 5.8.1 of [NIST.800-56A][nist-SP800-56AR2], with the agreed-upon key being used directly as the Content Encryption Key (CEK) (rather than being used to wrap the CEK).
-* ECDH-ES+A128KW: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the Content Encryption Key (CEK) with the "A128KW" function (rather than being used directly as the CEK).
-* ECDH-ES+A256KW: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the Content Encryption Key (CEK) with the "A256KW" function (rather than being used directly as the CEK).
+* dir: Direct use of a shared symmetric key as the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] for the block encryption step (rather than using the symmetric key to wrap the CEK).
+* ECDH-ES: Elliptic Curve Diffie-Hellman Ephemeral Static ([RFC 6090][rfc6090]) key agreement using the Concat KDF, as defined in section 5.8.1 of [NIST.800-56A][nist-SP800-56AR2], with the agreed-upon key being used directly as the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] (rather than being used to wrap the CEK).
+* ECDH-ES+A128KW: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] with the "A128KW" function (rather than being used directly as the CEK).
+* ECDH-ES+A256KW: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] with the "A256KW" function (rather than being used directly as the CEK).
 
 ```
 <id-token-encryption-alg-values-supported>
@@ -341,10 +341,10 @@ request objects:
 Though listed in the configuration file, these algorithms are not
 enabled, currently:
 
-* dir: Direct use of a shared symmetric key as the Content Encryption Key (CEK) for the block encryption step (rather than using the symmetric key to wrap the CEK).
-* ECDH-ES: Elliptic Curve Diffie-Hellman Ephemeral Static ([RFC 6090][rfc6090]) key agreement using the Concat KDF, as defined in section 5.8.1 of [NIST.800-56A][nist-SP800-56AR2], with the agreed-upon key being used directly as the Content Encryption Key (CEK) (rather than being used to wrap the CEK).
-* ECDH-ES+A128KW: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the Content Encryption Key (CEK) with the "A128KW" function (rather than being used directly as the CEK).
-* ECDH-ES+A256KW: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the Content Encryption Key (CEK) with the "A256KW" function (rather than being used directly as the CEK).
+* dir: Direct use of a shared symmetric key as the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] for the block encryption step (rather than using the symmetric key to wrap the CEK).
+* ECDH-ES: Elliptic Curve Diffie-Hellman Ephemeral Static ([RFC 6090][rfc6090]) key agreement using the Concat KDF, as defined in section 5.8.1 of [NIST.800-56A][nist-SP800-56AR2], with the agreed-upon key being used directly as the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] (rather than being used to wrap the CEK).
+* ECDH-ES+A128KW: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] with the "A128KW" function (rather than being used directly as the CEK).
+* ECDH-ES+A256KW: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] with the "A256KW" function (rather than being used directly as the CEK).
 
 ```
 <request-object-encryption-alg-values-supported>
@@ -755,6 +755,8 @@ definition allows the following tags:
 To be defined.
 
 [ecdsa]: https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm "Elliptic Curve Digital Signature Algorithm (ECDSA), Wikipedia"
+
+[glossary-of-cryptographic-keys]: https://en.wikipedia.org/wiki/Glossary_of_cryptographic_keys "Glossary of cryptographic keys"
 
 [gcm]: https://en.wikipedia.org/wiki/Galois/Counter_Mode "Galois/Counter Mode (GCM), Wikipedia"
 
