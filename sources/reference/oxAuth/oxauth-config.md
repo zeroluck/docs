@@ -636,7 +636,7 @@ a full list of values see the Default signature algorithms.
 <federation-signing-kid>1</federation-signing-kid>
 ```
 
-### Dynamic registration of custom stuff
+### Dynamic registration of custom object
 
 ```
 <dynamic-registration-custom-object-class>oxAuthClientCustomAttributes</dynamic-registration-custom-object-class>
