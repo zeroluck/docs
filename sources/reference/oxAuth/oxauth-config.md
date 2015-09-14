@@ -592,11 +592,11 @@ To require a request for uri registration, the tag
 
 These tags control the behaviour of the connection:
 
-* authorization-code-lifetime
-* refresh-token-lifetime
-* id-token-lifetime
-* short-lived-access-token-lifetime
-* long-lived-access-token-lifetime
+* authorization-code-lifetime: sets the lifetime of the authorization code. The default is 600.
+* refresh-token-lifetime: sets the interval the token is refreshed. The default value is 14400s that represents 6 hours
+* id-token-lifetime: sets the lifetime of the id token. The default value os 3600s that represents one hour
+* short-lived-access-token-lifetime: sets the short-lived access token lifetime
+* long-lived-access-token-lifetime: sets the long-lived access token lifetime
 
 ```
 <authorization-code-lifetime>600</authorization-code-lifetime>
@@ -604,7 +604,6 @@ These tags control the behaviour of the connection:
 <id-token-lifetime>3600</id-token-lifetime>
 <short-lived-access-token-lifetime>3600</short-lived-access-token-lifetime>
 <long-lived-access-token-lifetime>31536000</long-lived-access-token-lifetime>
-
 ```
 
 These tags control the behaviour of a session:
