@@ -578,16 +578,21 @@ are part of the list:
 <ES512-keyid>6</ES512-keyid>
 ```
 
-### Federation availability
+### Federation settings
+
+The entry `federation-enabled` sets the value for the federation
+feature whereas `true` means enabled, and `false` means disabled.
 
 ```
 <federation-enabled>false</federation-enabled>
 ```
 
+The entry `federation-check-interval` defines the federation check
+interval in seconds. It checks whether data in trusts are still valid
+(e.g.) if RP redirectUri still exists in metadata. If not then remove
+from trust automatically. The value `86400` represents 24 hours.
+
 ```
-<!-- Federation check interval in seconds. Checks whether data in trusts are still valid
-(e.g.) if RP redirectUri still exist in metadata, if no then remove from trust automatically.
- 86400 seconds = 24 hours -->
 <federation-check-interval>86400</federation-check-interval>
 ```
 
