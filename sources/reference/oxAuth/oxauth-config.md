@@ -184,7 +184,8 @@ Though listed in the configuration file, these algorithms are not
 enabled, currently:
 
 * dir: Direct use of a shared symmetric key as the Content Encryption Key (CEK) for the block encryption step (rather than using the symmetric key to wrap the CEK).
-* ECDH-ES: Elliptic Curve Diffie-Hellman Ephemeral Static ([RFC 6090][rfc6090]) key agreement using the Concat KDF, as defined in section 5.8.1 of NIST.800-56A, with the agreed-upon key being used directly as the Content Encryption Key (CEK) (rather than being used to wrap the CEK).
+* ECDH-ES: Elliptic Curve Diffie-Hellman Ephemeral Static ([RFC
+6090][rfc6090]) key agreement using the Concat KDF, as defined in section 5.8.1 of [NIST.800-56A][nist-SP800-56AR2], with the agreed-upon key being used directly as the Content Encryption Key (CEK) (rather than being used to wrap the CEK).
 * ECDH-ES+A128KW: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the Content Encryption Key (CEK) with the "A128KW" function (rather than being used directly as the CEK).
 * ECDH-ES+A256KW: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the Content Encryption Key (CEK) with the "A256KW" function (rather than being used directly as the CEK).
 
@@ -262,7 +263,7 @@ Though listed in the configuration file, these algorithms are not
 enabled, currently:
 
 * dir: Direct use of a shared symmetric key as the Content Encryption Key (CEK) for the block encryption step (rather than using the symmetric key to wrap the CEK).
-* ECDH-ES: Elliptic Curve Diffie-Hellman Ephemeral Static ([RFC 6090][rfc6090]) key agreement using the Concat KDF, as defined in section 5.8.1 of NIST.800-56A, with the agreed-upon key being used directly as the Content Encryption Key (CEK) (rather than being used to wrap the CEK).
+* ECDH-ES: Elliptic Curve Diffie-Hellman Ephemeral Static ([RFC 6090][rfc6090]) key agreement using the Concat KDF, as defined in section 5.8.1 of [NIST.800-56A][nist-SP800-56AR2], with the agreed-upon key being used directly as the Content Encryption Key (CEK) (rather than being used to wrap the CEK).
 * ECDH-ES+A128KW: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the Content Encryption Key (CEK) with the "A128KW" function (rather than being used directly as the CEK).
 * ECDH-ES+A256KW: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the Content Encryption Key (CEK) with the "A256KW" function (rather than being used directly as the CEK).
 
@@ -341,7 +342,7 @@ Though listed in the configuration file, these algorithms are not
 enabled, currently:
 
 * dir: Direct use of a shared symmetric key as the Content Encryption Key (CEK) for the block encryption step (rather than using the symmetric key to wrap the CEK).
-* ECDH-ES: Elliptic Curve Diffie-Hellman Ephemeral Static ([RFC 6090][rfc6090]) key agreement using the Concat KDF, as defined in section 5.8.1 of NIST.800-56A, with the agreed-upon key being used directly as the Content Encryption Key (CEK) (rather than being used to wrap the CEK).
+* ECDH-ES: Elliptic Curve Diffie-Hellman Ephemeral Static ([RFC 6090][rfc6090]) key agreement using the Concat KDF, as defined in section 5.8.1 of [NIST.800-56A][nist-SP800-56AR2], with the agreed-upon key being used directly as the Content Encryption Key (CEK) (rather than being used to wrap the CEK).
 * ECDH-ES+A128KW: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the Content Encryption Key (CEK) with the "A128KW" function (rather than being used directly as the CEK).
 * ECDH-ES+A256KW: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the Content Encryption Key (CEK) with the "A256KW" function (rather than being used directly as the CEK).
 
@@ -759,11 +760,13 @@ To be defined.
 
 [hmac]: https://en.wikipedia.org/wiki/Hash-based_message_authentication_code "Hash-based message authentication code (HMAC), Wikipedia"
 
+[inum]: https://en.wikipedia.org/wiki/INum_Initiative "INum Initiative, Wikipedia"
+
 [json]: https://en.wikipedia.org/wiki/JSON "JSON, Wikipedia"
 
 [nist-SP800-38D]: http://csrc.nist.gov/publications/nistpubs/800-38D/SP-800-38D.pdf "Recommendation for Block Cipher Modes of Operation: Galois/Counter Mode (GCM) and GMAC, National Institute of Standards and Technology (NIST), 2007"
 
-[inum]: https://en.wikipedia.org/wiki/INum_Initiative "INum Initiative, Wikipedia"
+[nist-SP800-56AR2]: http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-56Ar2.pdf "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography, Revision 2, National Institute of Standards and Technology (NIST), 2013"
 
 [oaep]: https://en.wikipedia.org/wiki/Optimal_asymmetric_encryption_padding "Optimal asymmetric encryption padding (OAEP), Wikipedia"
 
