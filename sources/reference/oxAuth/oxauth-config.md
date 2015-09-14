@@ -17,6 +17,8 @@ The sections are listed according to their order in the configuration file.
 
 ### Basic settings
 
+The basic settings describe the setup of the Gluu server.
+
 ```
 <appliance-inum>%(inumAppliance)s</appliance-inum>
 <issuer>https://%(hostname)s</issuer>
@@ -43,8 +45,12 @@ The sections are listed according to their order in the configuration file.
 
 ### Server mode
 
-This entry sets the mode of the server. Possible values are `memory` and
-`ldap`.
+This entry sets the mode of the Gluu server. Possible values are
+`memory` and `ldap`.
+
+* memory:
+
+* ldap:
 
 ```
 <mode>ldap</mode>
@@ -612,9 +618,9 @@ scopes of the trust list are joined.
 <federation-scope-policy>JOIN</federation-scope-policy>
 ```
 
-These entries set both the federation signing algorithm, and according
-signing key id. The default settings are `RS512` and `1`. For a full
-list of values see the Default signature algorithms.
+These entries set both the federation signing algorithm, and the
+according signing key id. The default settings are `RS512` and `1`. For
+a full list of values see the Default signature algorithms.
 
 ```
 <federation-signing-alg>RS512</federation-signing-alg>
