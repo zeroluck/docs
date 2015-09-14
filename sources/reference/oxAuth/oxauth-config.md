@@ -612,6 +612,10 @@ scopes of the trust list are joined.
 <federation-scope-policy>JOIN</federation-scope-policy>
 ```
 
+These entries set both the federation signing algorithm, and according
+signing key id. The default settings are `RS512` and `1`. For a full
+list of values see the Default signature algorithms.
+
 ```
 <federation-signing-alg>RS512</federation-signing-alg>
 <federation-signing-kid>1</federation-signing-kid>
