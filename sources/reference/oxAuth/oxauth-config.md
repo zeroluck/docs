@@ -120,9 +120,11 @@ These grant types are supported:
 
 AMR abbreviates the term Authentication Methods References. In general,
 it is a [JSON][json] array of case sensitive strings that are
-identifiers for authentication methods used in the authentication.
+identifiers for authentication methods used in the authentication. In
+this specific case, AMR enables an OpenID Connect client to request a
+specific method of authentication, and is turned off by default.
 
-<!-- AMR enables an OpenID Connect client to request a specific method of authentication -->
+```
 <amr-values-supported>
     <!-- amr>basic</amr-->
 </amr-values-supported>
