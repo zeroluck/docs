@@ -447,6 +447,11 @@ As the default value, `page` is enabled, only.
 
 ### Supported claim types
 
+Currently, the Gluu server supports these claims:
+
+* normal
+* distributed
+
 ```
 <claim-types-supported>
     <claim-type>normal</claim-type>
