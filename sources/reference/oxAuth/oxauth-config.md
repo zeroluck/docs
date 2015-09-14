@@ -590,6 +590,22 @@ To require a request for uri registration, the tag
 
 ### Connection behaviour
 
+These tags control the behaviour of the connection:
+
+* authorization-code-lifetime
+* refresh-token-lifetime
+* id-token-lifetime
+* short-lived-access-token-lifetime
+* long-lived-access-token-lifetime
+* session-id-unused-lifetime
+* session-id-enabled
+* uma-add-scopes-automatically
+* uma-requester-permission-token-lifetime
+* uma-keep-client-during-resource-set-registration
+* clean-service-interval
+* refresh-user-session-timeout-enabled
+* refresh-user-session-timeout
+
 ```
 <authorization-code-lifetime>600</authorization-code-lifetime>
 <refresh-token-lifetime>14400</refresh-token-lifetime>
