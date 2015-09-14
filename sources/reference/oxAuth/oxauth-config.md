@@ -638,6 +638,24 @@ a full list of values see the Default signature algorithms.
 
 ### Dynamic registration of custom object
 
+Dynamic Client Registration is configurable because some servers may not
+want to support this feature due to it opens you up to the possibility
+of a DOS attack. To enable this feature set the value for
+`dynamic-registration-enabled` to `true`, otherwise to `false`.
+
+```
+<dynamic-registration-enabled>true</dynamic-registration-enabled>
+```
+
+The expiration time for Dynamic Client Registration allows to configure
+a time in seconds for the client's account expiration, it can be set to
+zero if the client account never expires.
+
+```
+<!-- Value in seconds or 0 if they do not expire -->
+<dynamic-registration-expiration-time>86400</dynamic-registration-expiration-time>
+```
+
 ```
 <dynamic-registration-custom-object-class>oxAuthClientCustomAttributes</dynamic-registration-custom-object-class>
 
@@ -650,10 +668,6 @@ a full list of values see the Default signature algorithms.
 <oxOpenIDConnectVersion>openidconnect-1.0</oxOpenIDConnectVersion>
 <organization-inum>%(inumOrg)s</organization-inum>
 <oxID>https://%(hostname)s/oxid/service/gluu/inum</oxID>
-
-<dynamic-registration-enabled>true</dynamic-registration-enabled>
-<!-- Value in seconds or 0 if they do not expire -->
-<dynamic-registration-expiration-time>86400</dynamic-registration-expiration-time>
 
 <trusted-client-enabled>true</trusted-client-enabled>
 ```
