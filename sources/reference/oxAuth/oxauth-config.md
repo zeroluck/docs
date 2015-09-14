@@ -439,6 +439,9 @@ The Gluu server supports these values for claims:
 
 ### Service documentation
 
+This entry keeps the path to the service documentation of the Gluu
+server.
+
 ```
 <service-documentation>http://gluu.org/docs</service-documentation>
 ```
