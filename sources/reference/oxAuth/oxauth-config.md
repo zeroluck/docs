@@ -671,9 +671,14 @@ To set a specific version for the connection via OpenID use the tag
 <oxOpenIDConnectVersion>openidconnect-1.0</oxOpenIDConnectVersion>
 ```
 
+Each custom object class can be registered dynamically. Set the the tag
+`dynamic-registration-custom-object-class` to the referenced class name.
+
 ```
 <dynamic-registration-custom-object-class>oxAuthClientCustomAttributes</dynamic-registration-custom-object-class>
+```
 
+```
 <dynamic-registration-custom-attribute-supported>
     <dynamic-registration-custom-attribute>oxAuthTrustedClient</dynamic-registration-custom-attribute>
     <dynamic-registration-custom-attribute>myCustomAttr1</dynamic-registration-custom-attribute>
