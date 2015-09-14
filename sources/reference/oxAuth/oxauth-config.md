@@ -660,8 +660,15 @@ configure both the URL of the service under the tag `oxID`, and the
 organization inum used by this service under the tag `organization`.
 
 ```
-<organization-inum>%(inumOrg)s</organization-inum>
 <oxID>https://%(hostname)s/oxid/service/gluu/inum</oxID>
+<organization-inum>%(inumOrg)s</organization-inum>
+```
+
+To set a specific version for the connection via OpenID use the tag
+`oxOpenIDConnectVersion` like that:
+
+```
+<oxOpenIDConnectVersion>openidconnect-1.0</oxOpenIDConnectVersion>
 ```
 
 ```
@@ -672,8 +679,6 @@ organization inum used by this service under the tag `organization`.
     <dynamic-registration-custom-attribute>myCustomAttr1</dynamic-registration-custom-attribute>
     <dynamic-registration-custom-attribute>myCustomAttr2</dynamic-registration-custom-attribute>
 </dynamic-registration-custom-attribute-supported>
-
-<oxOpenIDConnectVersion>openidconnect-1.0</oxOpenIDConnectVersion>
 
 <trusted-client-enabled>true</trusted-client-enabled>
 ```
