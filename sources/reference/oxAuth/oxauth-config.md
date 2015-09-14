@@ -684,7 +684,12 @@ Each custom object class can be registered dynamically. Set the the tag
     <dynamic-registration-custom-attribute>myCustomAttr1</dynamic-registration-custom-attribute>
     <dynamic-registration-custom-attribute>myCustomAttr2</dynamic-registration-custom-attribute>
 </dynamic-registration-custom-attribute-supported>
+```
 
+Trusted clients have to be enabled, first. Set the tag
+`trusted-client-enabled` to `true`, or `false` if otherwise wanted.
+
+```
 <trusted-client-enabled>true</trusted-client-enabled>
 ```
 
