@@ -597,14 +597,6 @@ These tags control the behaviour of the connection:
 * id-token-lifetime
 * short-lived-access-token-lifetime
 * long-lived-access-token-lifetime
-* session-id-unused-lifetime
-* session-id-enabled
-* uma-add-scopes-automatically
-* uma-requester-permission-token-lifetime
-* uma-keep-client-during-resource-set-registration
-* clean-service-interval
-* refresh-user-session-timeout-enabled
-* refresh-user-session-timeout
 
 ```
 <authorization-code-lifetime>600</authorization-code-lifetime>
@@ -613,20 +605,40 @@ These tags control the behaviour of the connection:
 <short-lived-access-token-lifetime>3600</short-lived-access-token-lifetime>
 <long-lived-access-token-lifetime>31536000</long-lived-access-token-lifetime>
 
+```
+
+These tags control the behaviour of a session:
+
+* session-id-unused-lifetime
+* session-id-enabled
+
+```
 <!-- if session id is not used during some time then it's removed automatically.
      Lifetime in seconds, 86400 seconds = 1 day  -->
 <session-id-unused-lifetime>86400</session-id-unused-lifetime>
 <session-id-enabled>true</session-id-enabled>
+<refresh-user-session-timeout-enabled>true</refresh-user-session-timeout-enabled>
+<refresh-user-session-timeout>1800</refresh-user-session-timeout>
+```
 
+These tags control the User Managed Access (UMA):
+
+* uma-add-scopes-automatically
+* uma-requester-permission-token-lifetime
+* uma-keep-client-during-resource-set-registration
+
+```
 <uma-add-scopes-automatically>false</uma-add-scopes-automatically>
 <uma-requester-permission-token-lifetime>3600</uma-requester-permission-token-lifetime>
 <uma-keep-client-during-resource-set-registration>true</uma-keep-client-during-resource-set-registration>
+```
 
-<!-- Clean service interval in seconds -->
+To adjust the time of the service interval use the value for the tag
+`clean-service-interval`. The value is set in seconds:
+
+```
 <clean-service-interval>600</clean-service-interval>
 
-<refresh-user-session-timeout-enabled>true</refresh-user-session-timeout-enabled>
-<refresh-user-session-timeout>1800</refresh-user-session-timeout>
 ```
 
 ### Default signature algorithms
