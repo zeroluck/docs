@@ -629,7 +629,8 @@ scopes of the trust list are joined.
 
 These entries set both the federation signing algorithm, and the
 according signing key id. The default settings are `RS512` and `1`. For
-a full list of values see the Default signature algorithms.
+a full list of possible values see the section about default signature
+algorithms.
 
 ```
 <federation-signing-alg>RS512</federation-signing-alg>
@@ -732,6 +733,8 @@ definition allows the following tags:
 ```
 
 ### Custom client filters
+
+To be defined.
 
 [ecdsa]: https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm "Elliptic Curve Digital Signature Algorithm (ECDSA), Wikipedia"
 
