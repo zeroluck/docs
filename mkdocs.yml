@@ -22,7 +22,7 @@ pages:
 - [admin-guide/uma/index.md, Admin Guide, UMA]
 - [admin-guide/user-management/index.md, Admin Guide, User Management]
 - [admin-guide/personal/index.md, Admin Guide, Personal]
-- [admin-guide/faq/index.md, Admin Guide, FAQ]
+
 # Reference Sections
 - [reference/api/index.md, Reference, API]
 - [reference/interception-scripts/index.md, Reference, Interception Scripts]
@@ -51,6 +51,10 @@ pages:
 - [articles/test-shib2.md, Articles, Testing Shib2]
 - [articles/social-login-google.md, Articles, Social Login with Google]
 - [articles/auth-script.md, Articles, Howto Write a Custom Authn Script]
+
+# FAQ
+- [admin-guide/faq/index.md, FAQ, General]
+- [reference/cloud-deployment/index.md, FAQ, Cloud Deployment]
 
 # Deployment Sub-sections
 - [admin-guide/deployment/centos.md, hidden]
