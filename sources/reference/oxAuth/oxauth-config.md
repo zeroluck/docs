@@ -646,11 +646,7 @@ a full list of values see the Default signature algorithms.
     <dynamic-registration-custom-attribute>myCustomAttr1</dynamic-registration-custom-attribute>
     <dynamic-registration-custom-attribute>myCustomAttr2</dynamic-registration-custom-attribute>
 </dynamic-registration-custom-attribute-supported>
-```
 
-### oxOpenID connect version
-
-```
 <oxOpenIDConnectVersion>openidconnect-1.0</oxOpenIDConnectVersion>
 <organization-inum>%(inumOrg)s</organization-inum>
 <oxID>https://%(hostname)s/oxid/service/gluu/inum</oxID>
