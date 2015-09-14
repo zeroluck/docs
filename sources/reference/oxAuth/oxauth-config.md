@@ -450,6 +450,10 @@ server.
 
 Currently, these languages are supported for claims:
 
+* en: English
+
+These languages are not enabled by default:
+
 * en-GB: British English
 * en-CA: Canadian English
 * fr-FR: French 
@@ -466,6 +470,18 @@ Currently, these languages are supported for claims:
 ```
 
 ### Supported locales for user interfaces
+
+Currently, these languages are supported for claims:
+
+* en: English
+* es: Spanish
+
+These languages are not enabled, yet:
+
+* en-GB: British English
+* en-CA: Canadian English
+* fr-FR: French 
+* fr-CA: Canadian French
 
 ```
 <ui-locales-supported>
