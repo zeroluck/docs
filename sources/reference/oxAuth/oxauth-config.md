@@ -429,9 +429,12 @@ authenticate endpoints:
 
 The Gluu server supports these display values:
 
+* page
 * popup
 * touch
 * wap
+
+As the default value, `page` is enabled, only.
 
 ```
 <display-values-supported>
