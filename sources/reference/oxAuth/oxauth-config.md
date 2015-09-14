@@ -652,8 +652,16 @@ a time in seconds for the client's account expiration, it can be set to
 zero if the client account never expires.
 
 ```
-<!-- Value in seconds or 0 if they do not expire -->
 <dynamic-registration-expiration-time>86400</dynamic-registration-expiration-time>
+```
+
+Dynamic Client Registration uses an inum generator service. You can
+configure both the URL of the service under the tag `oxID`, and the
+organization inum used by this service under the tag `organization`.
+
+```
+<organization-inum>%(inumOrg)s</organization-inum>
+<oxID>https://%(hostname)s/oxid/service/gluu/inum</oxID>
 ```
 
 ```
@@ -666,8 +674,6 @@ zero if the client account never expires.
 </dynamic-registration-custom-attribute-supported>
 
 <oxOpenIDConnectVersion>openidconnect-1.0</oxOpenIDConnectVersion>
-<organization-inum>%(inumOrg)s</organization-inum>
-<oxID>https://%(hostname)s/oxid/service/gluu/inum</oxID>
 
 <trusted-client-enabled>true</trusted-client-enabled>
 ```
