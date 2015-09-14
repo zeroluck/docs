@@ -604,10 +604,15 @@ trust for a given redirect uri. The default value is `OR`.
 <federation-skip-policy>OR</federation-skip-policy>
 ```
 
+The entry `federation-scope-policy` defines the federation scope policy.
+Currently, the only possible value is `JOIN` and means that all the
+scopes of the trust list are joined.
+
 ```
-<!-- Federation scope policy. Possible values: JOIN.
-Currently JOIN is the only supported value, means joining all scopes of trust list.-->
 <federation-scope-policy>JOIN</federation-scope-policy>
+```
+
+```
 <federation-signing-alg>RS512</federation-signing-alg>
 <federation-signing-kid>1</federation-signing-kid>
 ```
