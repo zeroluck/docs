@@ -81,6 +81,11 @@ pages:
 - [reference/api/uma-resource-registration.md, hidden]
 - [reference/api/uma-rpt-status.md, hidden]
 - [reference/api/uma-authorization-endpoint.md, hidden]
+
+# oxAuth Sub-section
+- [reference/oxAuth/oxauth-config.md, hidden]
+- [reference/oxAuth/oxauth-ldap-properties.md, hidden]
+- [reference/oxAuth/oxauth-scope-to-claims-mapping-file.md, hidden]
 # Interception Scripts Sub-sections
 - [reference/interception-scripts/sample-application-session-script.py, hidden]
 - [reference/interception-scripts/sample-authentication-script.py, hidden]
