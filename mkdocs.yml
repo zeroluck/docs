@@ -47,7 +47,6 @@ pages:
 - [articles/java-connect.md, Articles, OpenID in Java]
 - [articles/js-connect.md, Articles, OpenID from JavaScript]
 - [articles/java-saml.md, Articles,Java SAML Library ] 
-- [articles/scim-client.md, Articles, SCIM API]
 - [articles/mod-auth-oidc/index.md, Articles, mod_auth_oidc Installation Guide]
 - [articles/test-shib2.md, Articles, Testing Shib2]
 - [articles/social-login-google.md, Articles, Social Login with Google]
