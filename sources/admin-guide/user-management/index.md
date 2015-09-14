@@ -157,12 +157,13 @@ This is step by step guide to configure UMA for oxTrust and SCIM client. High le
         oxAuthScope: inum=@!1111!0009!6D97,ou=scopes,o=@!1111,o=gluu
         oxAuthTokenEndpointAuthMethod: client_secret_basic
 
-3. Create UMA policy. These are list of steps which allows to add new policy.
- + Log with administrative privileges into oxTrust.
- + Open menu “Configuration→Manage Custom Scripts”.
- - Select “UMA Authorization Policies” tab and click “Add custom script configuration”.
- - Select language “Python”.
- - Paste this base policy script:
+3. Create UMA policy. These are list of steps which allows to add new policy: 
+
+ 	1. Log with administrative privileges into oxTrust.
+ 	2. Open menu “Configuration→Manage Custom Scripts”.
+ 	4. Select “UMA Authorization Policies” tab and click “Add custom script configuration”.
+ 	5. Select language “Python”.
+ 	6. Paste this base policy script:
 
 
             from org.xdi.model.custom.script.type.uma import AuthorizationPolicyType
@@ -209,7 +210,7 @@ This is step by step guide to configure UMA for oxTrust and SCIM client. High le
 
                 print "UMA Authorization policy. Authorizing client"
                 return True
- - Replace in script above client inum "@!1111!0008!FDC0.0FF5" with client inum which were added in step 3
+ - Replace in script above client inum "@!1111!0008!FDC0.0FF5" with client inum which were added in step 3[Maybe an error.2/1 Check inums]
  - Click "Enabled" check box
  - Click "Update" button
 

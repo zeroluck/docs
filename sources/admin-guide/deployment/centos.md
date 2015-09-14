@@ -11,7 +11,7 @@ To report issues or provide feedback about the installation process, please use 
 The Gluu Server Community Edition should be deployed on a VM with:
 
 * CentOS 6.5 
-* 2 CPU Units and at least 2GB Physical Memory (more is always better, though)
+* 2 CPU Units and at least 4GB Physical Memory (more is always better, though)
 
 ## Available Components
 When you deploy the Gluu Server, you will have the opportunity to specify which of the following softwares you want deployed on your server: 
