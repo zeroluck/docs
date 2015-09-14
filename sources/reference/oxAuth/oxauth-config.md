@@ -698,8 +698,16 @@ Trusted clients have to be enabled, first. Set the tag
 
 ### Authorization filters
 
+To use authorization filters you have to enable them, first. Set the tag
+`auth-filters-enabled` to `true`:
+
 ```
 <auth-filters-enabled>false</auth-filters-enabled>
+```
+
+Next, you can use the previously defined authorization filters.
+
+```
 <auth-filters>
     <auth-filter>
         <!--filter>(&amp;(associatedClient=*{0}*)(myPinCode={1}))</filter-->
