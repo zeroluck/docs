@@ -115,6 +115,7 @@ These grant types are supported:
     <grant-type>implicit</grant-type>
     <grant-type>urn:ietf:params:oauth:grant-type:jwt-bearer</grant-type>
 </grant-types-supported>
+```
 
 ### AMR Support
 
