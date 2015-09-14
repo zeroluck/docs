@@ -53,8 +53,8 @@ pages:
 - [articles/auth-script.md, Articles, Howto Write a Custom Authn Script]
 
 # FAQ
-- [faq/general.md, FAQ, General]
-- [faq/cloud-deployment.md, FAQ, Cloud Deployment]
+- [faq/general/index.md, FAQ, General]
+- [faq/cloud-deployment/index.md, FAQ, Cloud Deployment]
 
 # Deployment Sub-sections
 - [admin-guide/deployment/centos.md, hidden]
