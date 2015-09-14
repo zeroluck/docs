@@ -1,8 +1,9 @@
 
 ## oxauth-config.xml
 
-This file consists of several sections that we explain in more detail in
-the according subchapter.
+The configuration for oxAuth is a file in [XML format][xml]. It consists
+of several sections that we explain in more detail in the according
+subchapter.
 
 The general structure of the configuration file is like that:
 
@@ -17,7 +18,7 @@ The sections are listed according to their order in the configuration file.
 
 ### Basic settings
 
-The basic settings describe the setup of the gluu server.
+The basic settings describe the setup of the Gluu server.
 
 * appliance-inum: the [iNum code][inum] the appliances refer to
 * issuer: the according hostname, or specific uri
@@ -768,3 +769,4 @@ To be defined.
 
 [sha2]: https://en.wikipedia.org/wiki/SHA-2 "Secure Hash Algorithm (SHA) SHA-2 familiy, Wikipedia"
 
+[xml]: https://en.wikipedia.org/wiki/XML "XML, Wikipedia"
