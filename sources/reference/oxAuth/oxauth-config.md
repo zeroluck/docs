@@ -17,9 +17,9 @@ The sections are listed according to their order in the configuration file.
 
 ### Basic settings
 
-The basic settings describe the setup of the Gluu server.
+The basic settings describe the setup of the gluu server.
 
-* appliance-inum: the iNum code the appliances refer to
+* appliance-inum: the [iNum code][inum] the appliances refer to
 * issuer: the according hostname, or specific uri
 * login-page: the login page for the according hostname, or uri
 * authorization-page: the oxAuth authorization page
@@ -751,6 +751,8 @@ To be defined.
 [hmac]: https://en.wikipedia.org/wiki/Hash-based_message_authentication_code "Hash-based message authentication code (HMAC), Wikipedia"
 
 [nist-SP800-38D]: http://csrc.nist.gov/publications/nistpubs/800-38D/SP-800-38D.pdf "Recommendation for Block Cipher Modes of Operation: Galois/Counter Mode (GCM) and GMAC, National Institute of Standards and Technology (NIST), 2007"
+
+[inum]: https://en.wikipedia.org/wiki/INum_Initiative "INum Initiative, Wikipedia"
 
 [oaep]: https://en.wikipedia.org/wiki/Optimal_asymmetric_encryption_padding "Optimal asymmetric encryption padding (OAEP), Wikipedia"
 
