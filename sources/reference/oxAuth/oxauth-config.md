@@ -18,7 +18,7 @@ The sections are listed according to their order in the configuration file.
 
 ### Basic settings
 
-The basic settings describe the setup of the Gluu server.
+The basic settings describe the general setup of the Gluu server.
 
 * appliance-inum: the [iNum code][inum] the appliances refer to
 * issuer: the according hostname, or specific uri
