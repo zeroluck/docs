@@ -45,12 +45,13 @@ The basic settings describe the setup of the Gluu server.
 
 ### Server mode
 
-This entry sets the mode of the Gluu server. Possible values are
-`memory` and `ldap`.
+This entry sets the mode of the Gluu oxAauth server. Possible modes are
+`in-memory` and `ldap`.
 
-* memory:
+* memory: run the oxAauth server in `in-memory` mode.
 
-* ldap:
+* ldap: run the oxAauth server in `ldap` mode. This is required to work
+  in cluster.
 
 ```
 <mode>ldap</mode>
