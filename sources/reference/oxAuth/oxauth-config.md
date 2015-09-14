@@ -393,6 +393,12 @@ authenticate endpoints:
 
 ### Supported display values
 
+The Gluu server supports these display values:
+
+* popup
+* touch
+* wap
+
 ```
 <display-values-supported>
     <display-value>page</display-value>
