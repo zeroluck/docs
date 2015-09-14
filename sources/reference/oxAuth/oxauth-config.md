@@ -557,6 +557,17 @@ These languages are not enabled, yet:
 
 ### Default signature algorithms
 
+These entries define the default signature algorithm, and list the key
+ids for the other signature algorithms that are available. These values
+are part of the list:
+
+* RS256: [RSASSA-PKCS-v1_5][rsassa] using [SHA-256][sha2] hash algorithm.
+* RS384: [RSASSA-PKCS-v1_5][rsassa] using [SHA-384][sha2] hash algorithm.
+* RS512: [RSASSA-PKCS-v1_5][rsassa] using [SHA-512][sha2] hash algorithm.
+* ES256: [ECDSA][ecdsa] using P-256 curve and [SHA-256][sha2] hash algorithm.
+* ES384: [ECDSA][ecdsa] using P-384 curve and [SHA-384][sha2] hash algorithm.
+* ES512: [ECDSA][ecdsa] using P-521 curve and [SHA-512][sha2] hash algorithm.
+
 ```
 <default-signature-algorithm>RS256</default-signature-algorithm>
 <RS256-keyid>1</RS256-keyid>
