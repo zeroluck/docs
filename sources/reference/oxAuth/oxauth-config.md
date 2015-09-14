@@ -68,8 +68,8 @@ This entry sets the mode of the Gluu oxAauth server. Possible modes are
 
 ### Update interval
 
-This entry sets the value for the update interval the configuration is
-updated from the LDAP. The value represents the interval in seconds
+This entry sets the value for the interval the configuration is updated
+from the LDAP server. The value represents the interval in seconds
 whereas 3600 seconds represent 1 hour.
 
 ```
@@ -115,6 +115,12 @@ These grant types are supported:
     <grant-type>implicit</grant-type>
     <grant-type>urn:ietf:params:oauth:grant-type:jwt-bearer</grant-type>
 </grant-types-supported>
+
+### AMR Support
+
+AMR abbreviates the term Authentication Methods References. In general,
+it is a [JSON][json] array of case sensitive strings that are
+identifiers for authentication methods used in the authentication.
 
 <!-- AMR enables an OpenID Connect client to request a specific method of authentication -->
 <amr-values-supported>
@@ -750,6 +756,8 @@ To be defined.
 [gcm]: https://en.wikipedia.org/wiki/Galois/Counter_Mode "Galois/Counter Mode (GCM), Wikipedia"
 
 [hmac]: https://en.wikipedia.org/wiki/Hash-based_message_authentication_code "Hash-based message authentication code (HMAC), Wikipedia"
+
+[json]: https://en.wikipedia.org/wiki/JSON "JSON, Wikipedia"
 
 [nist-SP800-38D]: http://csrc.nist.gov/publications/nistpubs/800-38D/SP-800-38D.pdf "Recommendation for Block Cipher Modes of Operation: Galois/Counter Mode (GCM) and GMAC, National Institute of Standards and Technology (NIST), 2007"
 
