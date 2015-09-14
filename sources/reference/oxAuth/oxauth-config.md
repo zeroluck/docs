@@ -611,10 +611,14 @@ These tags control the behaviour of a session:
 
 * session-id-unused-lifetime
 * session-id-enabled
+* refresh-user-session-timeout-enabled
+* refresh-user-session-timeout
+
+If the session id is not used during some time then it is removed,
+automatically. The lifetime is set in seconds, whereas 86400 seconds
+represent a single day.
 
 ```
-<!-- if session id is not used during some time then it's removed automatically.
-     Lifetime in seconds, 86400 seconds = 1 day  -->
 <session-id-unused-lifetime>86400</session-id-unused-lifetime>
 <session-id-enabled>true</session-id-enabled>
 <refresh-user-session-timeout-enabled>true</refresh-user-session-timeout-enabled>
