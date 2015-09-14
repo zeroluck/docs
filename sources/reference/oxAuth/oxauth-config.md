@@ -678,6 +678,9 @@ Each custom object class can be registered dynamically. Set the the tag
 <dynamic-registration-custom-object-class>oxAuthClientCustomAttributes</dynamic-registration-custom-object-class>
 ```
 
+Dynamic registration allows the usage of custom attributes using the tag
+`dynamic-registration-custom-attribute`.
+
 ```
 <dynamic-registration-custom-attribute-supported>
     <dynamic-registration-custom-attribute>oxAuthTrustedClient</dynamic-registration-custom-attribute>
