@@ -625,7 +625,7 @@ represent a single day.
 <refresh-user-session-timeout>1800</refresh-user-session-timeout>
 ```
 
-These tags control the User Managed Access (UMA):
+These tags control the [User Managed Access (UMA)][uma]:
 
 * uma-add-scopes-automatically
 * uma-requester-permission-token-lifetime
@@ -840,5 +840,7 @@ To be defined.
 [rsassa]: https://tools.ietf.org/html/draft-ietf-jose-json-web-algorithms-14#page-12 "Digital Signature with RSASSA-PKCS1-V1_5, in JSON Web Algorithms (JWA), draft-ietf-jose-json-web-algorithms-14, July 2013"
 
 [sha2]: https://en.wikipedia.org/wiki/SHA-2 "Secure Hash Algorithm (SHA) SHA-2 familiy, Wikipedia"
+
+[uma]: https://de.wikipedia.org/wiki/User-Managed_Access "User-Managed Access (UMA), Wikipedia"
 
 [xml]: https://en.wikipedia.org/wiki/XML "XML, Wikipedia"
