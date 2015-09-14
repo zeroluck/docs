@@ -19,11 +19,19 @@ The sections are listed according to their order in the configuration file.
 
 The basic settings describe the setup of the Gluu server.
 
+* appliance-inum: the iNum code the appliances refer to
+* issuer: the according hostname, or specific uri
+* login-page: the login page for the according hostname, or uri
+* authorization-page: the oxAuth authorization page
+
 ```
 <appliance-inum>%(inumAppliance)s</appliance-inum>
 <issuer>https://%(hostname)s</issuer>
 <login-page>https://%(hostname)s/oxauth/login.seam</login-page>
 <authorization-page>https://%(hostname)s/oxauth/authorize.seam</authorization-page>
+```
+
+```
 <base-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1</base-endpoint>
 <authorization-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/authorize</authorization-endpoint>
 <token-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/token</token-endpoint>
