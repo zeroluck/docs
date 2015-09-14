@@ -538,11 +538,19 @@ These languages are not enabled, yet:
 
 ### Supported claims parameters
 
+To enable additional parameters for claims, the tag
+`claims-parameter-supported` has to be set to `true` before, and
+`false` otherwise.
+
 ```
 <claims-parameter-supported>true</claims-parameter-supported>
 ```
 
 ### Supported request parameters
+
+To enable additional parameters for request, the tag
+`request-parameter-supported` has to be set to `true` before, and
+`false` otherwise.
 
 ```
 <request-parameter-supported>true</request-parameter-supported>
@@ -550,11 +558,19 @@ These languages are not enabled, yet:
 
 ### Supported request uri parameters
 
+To enable additional parameters for uri requests, the tag
+`request-uri-parameter-supported` has to be set to `true` before, and
+`false` otherwise.
+
 ```
 <request-uri-parameter-supported>true</request-uri-parameter-supported>
 ```
 
 ### Required request uri registration
+
+To require a request for uri registration, the tag
+`require-request-uri-registration` has to be set to `true` before, and
+`false` otherwise.
 
 ```
 <require-request-uri-registration>false</require-request-uri-registration>
