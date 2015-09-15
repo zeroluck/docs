@@ -809,10 +809,10 @@ Trusted clients have to be enabled, first. Set the tag
 <trusted-client-enabled>true</trusted-client-enabled>
 ```
 
-### Authorization filters
+### Authorization LDAP filters
 
-To use authorization filters you have to enable them, first. Set the tag
-`auth-filters-enabled` to `true`:
+To use authorization LDAP filters you have to enable them, first. Set
+the tag `auth-filters-enabled` to `true`:
 
 ```
 <auth-filters-enabled>false</auth-filters-enabled>
@@ -844,7 +844,9 @@ definition allows the following tags:
 </auth-filters>
 ```
 
-### Custom client filters
+### Custom LDAP client filters
+
+oxAuth allows to define custom LDAP client filters:
 
 ```
 <client-auth-filters-enabled>`true`</client-auth-filters-enabled>
