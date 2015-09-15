@@ -91,12 +91,12 @@ according endpoint:
 
 ### Server mode
 
-This entry sets the mode of the Gluu oxAauth Server. Possible modes are
+This entry sets the mode of the Gluu oxAuth Server. Possible modes are
 `memory` and `ldap`.
 
-* memory: run the oxAauth server in `in-memory` mode.
+* memory: run the oxAuth server in `in-memory` mode.
 
-* ldap: run the oxAauth server in `ldap` mode. This is required to work
+* ldap: run the oxAuth server in `ldap` mode. This is required to work
   in cluster.
 
 ```
