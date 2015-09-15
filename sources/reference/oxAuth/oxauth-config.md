@@ -56,12 +56,12 @@ communicates with.
 * id-generation-endpoint
 * introspection-endpoint
 
-Additionally, the Gluu Server includes an UMA Authorization Server (AS)
-that can be used to enforce policies for access to any API or web
-resource. UMA is a profile of OAuth2 that is complimentary to
-[OpenID][openid] Connect. UMA defines RESTful, [JSON][json]-based,
-standardized flows and constructs for access management. Use this tag to
-configure the according endpoint:
+Additionally, the Gluu Server includes an [User-Managed Access
+(UMA)][uma] Authorization Server (AS) that can be used to enforce policies for
+access to any API or web resource. UMA is a profile of OAuth2 that is
+complimentary to [OpenID][openid] Connect. UMA defines RESTful,
+[JSON][json]-based, standardized flows and constructs for access
+management. Use this tag to configure the according endpoint:
 
 * uma-configuration-endpoint
 
