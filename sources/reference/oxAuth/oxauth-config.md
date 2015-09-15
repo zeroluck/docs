@@ -32,6 +32,27 @@ The basic settings describe the general setup of the Gluu server.
 <authorization-page>https://%(hostname)s/oxauth/authorize.seam</authorization-page>
 ```
 
+Using the following tags you specify the endpoints the Gluu server
+communicates with to do a proper single sign-on:
+
+* base-endpoint
+* authorization-endpoint
+* token-endpoint
+* userinfo-endpoint
+* clientinfo-endpoint
+* check-session-iframe
+* end-session-endpoint
+* jwks-uri
+* registration-endpoint
+* validate-token-endpoint
+* federation-metadata-endpoint
+* federation-endpoint
+* openid-discovery-endpoint
+* openid-configuration-endpoint
+* id-generation-endpoint
+* introspection-endpoint
+* uma-configuration-endpoint
+
 ```
 <base-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1</base-endpoint>
 <authorization-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/authorize</authorization-endpoint>
