@@ -32,10 +32,10 @@ The basic settings describe the general setup of the Gluu Server.
 <authorization-page>https://%(hostname)s/oxauth/authorize.seam</authorization-page>
 ```
 
-The Gluu Server allows connections via [SAML][saml], and an OpenID
-Connect Identity Provider. To do a proper single sign-on , use the
-following tags you specify the endpoints the Gluu Server communicates
-with.
+The Gluu Server allows connections via [Security Assertion Markup
+Language (SAML)][saml], and an [OpenID][openid] Connect Identity
+Provider. To do a proper single sign-on , use the following tags you
+specify the endpoints the Gluu Server communicates with.
 
 * base-endpoint
 * authorization-endpoint
@@ -145,8 +145,9 @@ These grant types are supported:
 AMR abbreviates the term Authentication Methods References. In general,
 it is a [JSON][json] array of case sensitive strings that are
 identifiers for authentication methods used in the authentication. In
-this specific case, AMR enables an OpenID Connect client to request a
-specific method of authentication, and is turned off by default.
+this specific case, AMR enables an [OpenID][openid] Connect client to
+request a specific method of authentication, and is turned off by
+default.
 
 ```
 <amr-values-supported>
@@ -762,8 +763,8 @@ organization inum used by this service under the tag `organization`.
 <organization-inum>%(inumOrg)s</organization-inum>
 ```
 
-To set a specific version for the connection via OpenID use the tag
-`oxOpenIDConnectVersion` like that:
+To set a specific version for the connection via [OpenID][openid] use
+the tag `oxOpenIDConnectVersion` like that:
 
 ```
 <oxOpenIDConnectVersion>openidconnect-1.0</oxOpenIDConnectVersion>
@@ -850,6 +851,8 @@ To be defined.
 [nist-SP800-56AR2]: http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-56Ar2.pdf "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography, Revision 2, National Institute of Standards and Technology (NIST), 2013"
 
 [oaep]: https://en.wikipedia.org/wiki/Optimal_asymmetric_encryption_padding "Optimal asymmetric encryption padding (OAEP), Wikipedia"
+
+[openid]: https://en.wikipedia.org/wiki/OpenID "OpenID, Wikipedia"
 
 [rfc2313]: https://tools.ietf.org/html/rfc2313 "RFC 2313: Public-Key Cryptography Standards (PKCS #1): RSA Encryption Version 1.5, IETF"
 
