@@ -849,8 +849,22 @@ definition allows the following tags:
 oxAuth allows to define custom [LDAP][ldap] client filters. oxAuth uses
 them to find clients in the [LDAP][ldap] tree.
 
+To use custom [LDAP][ldap] client filters you have to enable them,
+first. Set the tag `client-auth-filters-enabled` to `true`:
+
 ```
 <client-auth-filters-enabled>`true`</client-auth-filters-enabled>
+```
+
+Next, you can use the previously defined authorization filters. A filter
+definition allows the following tags:
+
+* filter: the condition for the filter
+* bind: can be either `true` or `false`. If `true` oxAuth binds to the entry which is found by the filter as specified above
+* bind-password-attribute: the name of the password attribute
+* base-dn: the name of the base domain, for example `o=gluu`
+
+```
 <client-auth-filters>
     <client-auth-filter>
         <filter>`myCustomAttr1={0}`</filter>
