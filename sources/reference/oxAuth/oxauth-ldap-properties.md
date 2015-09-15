@@ -10,9 +10,9 @@ source release by [Forgerock][forgerock]. It is possible to use any
 control.
 
 We publish the latest schema in our community-edition-setup project. The
-schema that we publish for Gluu OpenDJ should also work for Forgerock
-OpenDJ, UnboundID LDAP server, and Oracle Directory Server Enterprise
-Edition (ODSEE).
+schema that we publish for Gluu OpenDJ should also work for [Forgerock
+OpenDJ][forgerock-opendj], [UnboundID][unboundid] LDAP server, and
+[Oracle Directory Server Enterprise Edition (ODSEE)][odsee].
 
 These are the properties [oxTrust][oxtrust] uses to connect to
 [Lightweight Directory Access Protocol (LDAP)][ldap]:
@@ -48,10 +48,16 @@ These are the properties [oxTrust][oxtrust] uses to connect to
 
 [forgerock]: https://en.wikipedia.org/wiki/ForgeRock "Forgerock, Wikipedia"
 
+[forgerock-opendj]: http://opendj.forgerock.org/ "OpenDJ Directory Services Project"
+
 [ldap]: https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol "Lightweight Directory Access Protocol (LDAP), Wikipedia"
+
+[odsee]: http://www.oracle.com/technetwork/middleware/id-mgmt/overview/index-085178.html "Oracle Directory Server Enterprise Edition (ODSEE)"
 
 [opendj]: https://en.wikipedia.org/wiki/OpenDJ "OpenDJ, Wikipedia"
 
 [oxtrust]: ../oxTrust/ "oxTrust documentation"
 
 [ssl]: https://en.wikipedia.org/wiki/Transport_Layer_Security "Transport Layer Security (TLS), Wikipedia"
+
+[unboundid]: https://www.unboundid.com/ "UnboundiD"
