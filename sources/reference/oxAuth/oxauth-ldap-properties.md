@@ -19,15 +19,15 @@ These are the properties [oxTrust][oxtrust] uses to connect to
 
  * __bindDN__
 
-   Authenticate with this unique entry, and bind to the LDAP server
-   using the given domain name `dn` (initiate an LDAP session). 
-   Typically, a single LDAP entry consists of entries like 
-   `dn: dc=example,dc=com`.
+   Authenticate with this unique entry, and bind to the [LDAP][ldap]
+   server using the given domain name `dn` (initiate an [LDAP][ldap]
+   session). Typically, a single [LDAP][ldap] entry consists of entries
+   like `dn: dc=example,dc=com`.
 
  * __bindPassword__
 
-   Authenticate to the LDAP server using this password. This value
-   refers to the LDAP entry `userPassword`.
+   Authenticate to the [LDAP][ldap] server using this password. This 
+   value refers to the [LDAP][ldap] entry `userPassword`.
 
  * __servers__
 
