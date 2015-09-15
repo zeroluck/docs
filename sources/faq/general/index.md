@@ -17,11 +17,11 @@ system administrators can mold the Gluu Server to solve the exact access managem
 
 ## How do I install the Gluu Server?
 
-Instructions for installation can be found [here](../deployment/index.md)
+Instructions for installation can be found [here](http://www.gluu.org/docs/admin-guide/deployment/)
 
 ## Where can I find license information for the components of the Gluu Server?
 
-Licenses for the various components of the Gluu Server can be found [here](../introduction/index.md#licenses)
+Licenses for the various components of the Gluu Server can be found [here](http://www.gluu.org/docs/admin-guide/introduction/#licenses)
 
 ## Can I contribute to the Gluu Server?
 
@@ -37,7 +37,7 @@ Yes! You can find more information on our [website](http://gluu.org/pricing).
 
 ## Does it work for mobile or api access management?
 
-Yes! The Gluu Server provides interfaces for UMA, a new standardized profile of OAuth2. [Using UMA](./admin-guide/uma/) you can protect web URLs like APIs and folders and enforce authorization policies for access.
+Yes! The Gluu Server provides interfaces for UMA, a new standardized profile of OAuth2. [Using UMA](http://www.gluu.org/docs/admin-guide/uma/) you can protect web URLs like APIs and folders and enforce authorization policies for access.
 
 ## How can the Gluu Server make the Internet a safer place?
 
