@@ -11,7 +11,7 @@ send an SMS code to implement a two-step out-of-band authentication mechanism.
 
 ## Suggested Development Environment
 
-Gluu Server custom scripts are written in Jython. In this article, I'm going to recommend
+Gluu Server custom scripts are written in [Jython](http://www.jython.org/). In this article, I'm going to recommend
 using Eclipse. You can't actually run the scripts from Eclipse, but it provides a nice editor
 which makes coding more enjoyable.
 
