@@ -76,11 +76,12 @@ communicates with.
 ```
 
 Additionally, the Gluu Server includes an [User-Managed Access
-(UMA)][uma] Authorization Server (AS) that can be used to enforce policies for
-access to any API or web resource. UMA is a profile of OAuth2 that is
-complimentary to [OpenID][openid] Connect. UMA defines RESTful,
-[JSON][json]-based, standardized flows and constructs for access
-management. Use this tag to configure the according endpoint:
+(UMA)][uma] Authorization Server (AS) that can be used to enforce
+policies for access to any API or web resource. UMA is a profile of
+[OAuth2][oauth2] that is complimentary to [OpenID][openid] Connect. UMA
+defines [REST][rest]ful, [JSON][json]-based, standardized flows and
+constructs for access management. Use this tag to configure the
+according endpoint:
 
 * uma-configuration-endpoint
 
@@ -865,7 +866,11 @@ To be defined.
 
 [oaep]: https://en.wikipedia.org/wiki/Optimal_asymmetric_encryption_padding "Optimal asymmetric encryption padding (OAEP), Wikipedia"
 
+[oauth2]: https://en.wikipedia.org/wiki/OAuth#OAuth_2.0 "OAuth 2.0, Wikipedia"
+
 [openid]: https://en.wikipedia.org/wiki/OpenID "OpenID, Wikipedia"
+
+[rest]: https://en.wikipedia.org/wiki/Representational_state_transfer "Representational State Transfer (REST), Wikipedia"
 
 [rfc2313]: https://tools.ietf.org/html/rfc2313 "RFC 2313: Public-Key Cryptography Standards (PKCS #1): RSA Encryption Version 1.5, IETF"
 
