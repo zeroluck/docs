@@ -847,7 +847,9 @@ definition allows the following tags:
 ### Custom LDAP client filters
 
 oxAuth allows to define custom [LDAP][ldap] client filters. oxAuth uses
-them to find clients in the [LDAP][ldap] tree.
+them to find clients in the [LDAP][ldap] Namespace, or Directory
+Information Tree (DIT) structure. For detailed information regarding the
+Gluu Server LDAP Namespace, have a look [here][glue-server-ldap-namespace].
 
 To use custom [LDAP][ldap] client filters you have to enable them,
 first. Set the tag `client-auth-filters-enabled` to `true`:
@@ -880,6 +882,8 @@ definition allows the following tags:
 [ecdsa]: https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm "Elliptic Curve Digital Signature Algorithm (ECDSA), Wikipedia"
 
 [glossary-of-cryptographic-keys]: https://en.wikipedia.org/wiki/Glossary_of_cryptographic_keys "Glossary of cryptographic keys"
+
+[glue-server-ldap-namespace]: ../ldap-namespace/ "LDAP Namespace"
 
 [gcm]: https://en.wikipedia.org/wiki/Galois/Counter_Mode "Galois/Counter Mode (GCM), Wikipedia"
 
