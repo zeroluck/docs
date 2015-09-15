@@ -117,7 +117,7 @@ These grant types are supported:
 </grant-types-supported>
 ```
 
-### AMR Support
+### Support for Authentication Methods References (AMR)
 
 AMR abbreviates the term Authentication Methods References. In general,
 it is a [JSON][json] array of case sensitive strings that are
