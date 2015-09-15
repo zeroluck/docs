@@ -32,8 +32,9 @@ The basic settings describe the general setup of the Gluu server.
 <authorization-page>https://%(hostname)s/oxauth/authorize.seam</authorization-page>
 ```
 
-Using the following tags you specify the endpoints the Gluu server
-communicates with to do a proper single sign-on:
+The Gluu server allows to connect both via SAML, and an OpenID Connect
+Identity Provider. To do a proper single sign-on , use the following
+tags you specify the endpoints the Gluu server communicates with.
 
 * base-endpoint
 * authorization-endpoint
