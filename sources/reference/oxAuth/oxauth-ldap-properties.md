@@ -2,7 +2,7 @@
 ## oxauth-ldap.properties
 
 These are the properties [oxTrust][oxtrust] uses to connect to
-Lightweight Directory Access Protocol (LDAP):
+[Lightweight Directory Access Protocol (LDAP)][ldap]:
 
  * __bindDN__
 
@@ -31,5 +31,7 @@ Lightweight Directory Access Protocol (LDAP):
 
    Define the maximum number of connections at the same time. The 
    default value is set to `3`.
+
+[ldap]: https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol "Lightweight Directory Access Protocol (LDAP), Wikipedia"
 
 [oxtrust]: ../oxTrust/ "oxTrust documentation"
