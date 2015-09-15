@@ -1,6 +1,19 @@
 
 ## oxauth-ldap.properties
 
+The Gluu Server uses [Lightweight Directory Access Protocol
+(LDAP)][ldap] for persistence to store [oxTrust][oxtrust] and oxAuth
+data, and to cache user entries. The Gluu Server packages include Gluu
+[OpenDJ][opendj], which is our fork of OpenDJ 2.6.0, the last open
+source release by [Forgerock][forgerock]. It is possible to use any
+[LDAP][ldap] server, as long as you have the schema and security under
+control.
+
+We publish the latest schema in our community-edition-setup project. The
+schema that we publish for Gluu OpenDJ should also work for Forgerock
+OpenDJ, UnboundID LDAP server, and Oracle Directory Server Enterprise
+Edition (ODSEE).
+
 These are the properties [oxTrust][oxtrust] uses to connect to
 [Lightweight Directory Access Protocol (LDAP)][ldap]:
 
@@ -33,7 +46,11 @@ These are the properties [oxTrust][oxtrust] uses to connect to
    Define the maximum number of connections at the same time. The 
    default value is set to `3`.
 
+[forgerock]: https://en.wikipedia.org/wiki/ForgeRock "Forgerock, Wikipedia"
+
 [ldap]: https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol "Lightweight Directory Access Protocol (LDAP), Wikipedia"
+
+[opendj]: https://en.wikipedia.org/wiki/OpenDJ "OpenDJ, Wikipedia"
 
 [oxtrust]: ../oxTrust/ "oxTrust documentation"
 
