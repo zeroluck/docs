@@ -2,7 +2,7 @@
 
 One of the coolest things about the Gluu Server is that you can write very flexible
 business logic for authentication. This is accomplished by writing a custom authentication
-script. There are a bunch of scripts that Gluu provides out-of-the-box, for example social login
+script. There are a bunch of [scripts that Gluu provides out-of-the-box](../reference/interception-scripts/index.md#authentication), for example social login
 using Google and strong authentication solutions like FIDO U2F tokens and Duo Security.
 But if you want to write your own script, this article is for you!
 
