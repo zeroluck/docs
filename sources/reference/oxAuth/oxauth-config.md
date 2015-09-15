@@ -56,15 +56,6 @@ communicates with.
 * id-generation-endpoint
 * introspection-endpoint
 
-Additionally, the Gluu Server includes an [User-Managed Access
-(UMA)][uma] Authorization Server (AS) that can be used to enforce policies for
-access to any API or web resource. UMA is a profile of OAuth2 that is
-complimentary to [OpenID][openid] Connect. UMA defines RESTful,
-[JSON][json]-based, standardized flows and constructs for access
-management. Use this tag to configure the according endpoint:
-
-* uma-configuration-endpoint
-
 ```
 <base-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1</base-endpoint>
 <authorization-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/authorize</authorization-endpoint>
@@ -82,6 +73,18 @@ management. Use this tag to configure the according endpoint:
 <openid-configuration-endpoint>https://%(hostname)s/.well-known/openid-configuration</openid-configuration-endpoint>
 <id-generation-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1/id</id-generation-endpoint>
 <introspection-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1/introspection</introspection-endpoint>
+```
+
+Additionally, the Gluu Server includes an [User-Managed Access
+(UMA)][uma] Authorization Server (AS) that can be used to enforce policies for
+access to any API or web resource. UMA is a profile of OAuth2 that is
+complimentary to [OpenID][openid] Connect. UMA defines RESTful,
+[JSON][json]-based, standardized flows and constructs for access
+management. Use this tag to configure the according endpoint:
+
+* uma-configuration-endpoint
+
+```
 <uma-configuration-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/uma-configuration</uma-configuration-endpoint>
 ```
 
