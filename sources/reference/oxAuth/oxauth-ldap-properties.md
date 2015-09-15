@@ -24,8 +24,9 @@ These are the properties [oxTrust][oxtrust] uses to connect to
 
  * __useSSL__
 
-   Enable an SSL connection for encrypted data transmission. For this
-   entry use either `TRUE` to enable SSL, or `false` to disable SSL.
+   Enable an [SSL][ssl] connection for encrypted data transmission. For
+   this entry use either `TRUE` to enable SSL, or `false` to disable
+   [SSL][ssl].
 
  * __maxconnections__
 
@@ -35,3 +36,5 @@ These are the properties [oxTrust][oxtrust] uses to connect to
 [ldap]: https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol "Lightweight Directory Access Protocol (LDAP), Wikipedia"
 
 [oxtrust]: ../oxTrust/ "oxTrust documentation"
+
+[ssl]: https://en.wikipedia.org/wiki/Transport_Layer_Security "Transport Layer Security (TLS), Wikipedia"
