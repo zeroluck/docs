@@ -25,8 +25,8 @@ These are the properties [oxTrust][oxtrust] uses to connect to
  * __useSSL__
 
    Enable an [SSL][ssl] connection for encrypted data transmission. For
-   this entry use either `TRUE` to enable SSL, or `false` to disable
-   [SSL][ssl].
+   this entry use either `TRUE` to enable [SSL][ssl], or `false` to
+   disable [SSL][ssl].
 
  * __maxconnections__
 
