@@ -95,15 +95,26 @@ The main documentation is organized into the following sections:
 - [oxTrust](./reference/oxTrust/index.md)
 
 # Articles
+- [Gluu CE](./articles/gluu-server-ce.md)
+- [Gluu CE Operations](./articles/operations/index.md)
+- [Cache Refresh Introduction](./articles/cache-refresh.md)
 - [Apache SAML](./articles/apache-saml.md)
 - [Benchmarking](./articles/benchmarking.md)
 - [Custom Attributes](./articles/custom-attributes.md)
-- [Google SAML](./articles/google-saml.md)
-- [Salesfore SAML](./articles/salesforce-sso.md)
 - [IIS SAML](./articles/iis-saml.md)
-- [Java Connect](./articles/java-connect.md)
-- [JS Connect](./articles/js-connect.md)
+- [Java SAML Library](./articles/java-saml.md)
+- [Java OpenID Connect](./articles/java-connect.md)
+- [JS OpenID Connect](./articles/js-connect.md)
 - [mod_auth_oidc Installation Guide](./articles/mod-auth-oidc/index.md)
-- [Test Shib2](./articles/test-shib2.md)
+- [Testing Shib2](./articles/test-shib2.md)
 - [Social Login With Google](./articles/social-login-google.md)
+- [SAML SSO with Salesforce](./articles/salesforce-sso.md)
+- [SAML SSO with Hobsons](./articles/hobsons-saml.md)
+- [SAML SSO with Google](./articles/google-saml.md)
+- [How to Write a Custom Authentication Script](./articles/auth-script.md)
+
+
+
+
+
 
