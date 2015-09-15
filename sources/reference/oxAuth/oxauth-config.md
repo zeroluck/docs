@@ -811,8 +811,8 @@ Trusted clients have to be enabled, first. Set the tag
 
 ### Authorization LDAP filters
 
-To use authorization LDAP filters you have to enable them, first. Set
-the tag `auth-filters-enabled` to `true`:
+To use authorization [LDAP][ldap] filters you have to enable them,
+first. Set the tag `auth-filters-enabled` to `true`:
 
 ```
 <auth-filters-enabled>false</auth-filters-enabled>
@@ -846,7 +846,8 @@ definition allows the following tags:
 
 ### Custom LDAP client filters
 
-oxAuth allows to define custom LDAP client filters:
+oxAuth allows to define custom [LDAP][ldap] client filters. oxAuth uses
+them to find clients in the [LDAP][ldap] tree.
 
 ```
 <client-auth-filters-enabled>`true`</client-auth-filters-enabled>
@@ -873,6 +874,8 @@ oxAuth allows to define custom LDAP client filters:
 [inum]: https://en.wikipedia.org/wiki/INum_Initiative "INum Initiative, Wikipedia"
 
 [json]: https://en.wikipedia.org/wiki/JSON "JSON, Wikipedia"
+
+[ldap]: https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol "Lightweight Directory Access Protocol (LDAP), Wikipedia"
 
 [nist-SP800-38D]: http://csrc.nist.gov/publications/nistpubs/800-38D/SP-800-38D.pdf "Recommendation for Block Cipher Modes of Operation: Galois/Counter Mode (GCM) and GMAC, National Institute of Standards and Technology (NIST), 2007"
 
