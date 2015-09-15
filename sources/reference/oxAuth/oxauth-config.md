@@ -32,9 +32,10 @@ The basic settings describe the general setup of the Gluu Server.
 <authorization-page>https://%(hostname)s/oxauth/authorize.seam</authorization-page>
 ```
 
-The Gluu Server allows to connect both via SAML, and an OpenID Connect
-Identity Provider. To do a proper single sign-on , use the following
-tags you specify the endpoints the Gluu Server communicates with.
+The Gluu Server allows connections via [SAML][saml], and an OpenID
+Connect Identity Provider. To do a proper single sign-on , use the
+following tags you specify the endpoints the Gluu Server communicates
+with.
 
 * base-endpoint
 * authorization-endpoint
@@ -859,6 +860,8 @@ To be defined.
 [rfc6090]: https://tools.ietf.org/html/rfc6090 "RFC 6090: Fundamental Elliptic Curve Cryptography Algorithms, IETF"
 
 [rsassa]: https://tools.ietf.org/html/draft-ietf-jose-json-web-algorithms-14#page-12 "Digital Signature with RSASSA-PKCS1-V1_5, in JSON Web Algorithms (JWA), draft-ietf-jose-json-web-algorithms-14, July 2013"
+
+[saml]: https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language "Security Assertion Markup Language (SAML), Wikipedia"
 
 [sha2]: https://en.wikipedia.org/wiki/SHA-2 "Secure Hash Algorithm (SHA) SHA-2 familiy, Wikipedia"
 
