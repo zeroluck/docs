@@ -846,7 +846,19 @@ definition allows the following tags:
 
 ### Custom client filters
 
-To be defined.
+```
+<client-auth-filters-enabled>`true`</client-auth-filters-enabled>
+<client-auth-filters>
+    <client-auth-filter>
+        <filter>`myCustomAttr1={0}`</filter>
+        <base-dn>`ou=clients,o=@!1111,o=gluu`</base-dn>
+    </client-auth-filter>
+    <!--client-auth-filter>
+        <filter>`(&amp;(myCustomAttr1={0})(myCustomAttr2={0}))`</filter>
+        <base-dn>`ou=clients,o=@!1111,o=gluu`</base-dn>
+    </client-auth-filter-->
+</client-auth-filters>
+```
 
 [ecdsa]: https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm "Elliptic Curve Digital Signature Algorithm (ECDSA), Wikipedia"
 
