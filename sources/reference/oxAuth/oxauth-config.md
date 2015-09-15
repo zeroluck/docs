@@ -18,7 +18,7 @@ The sections are listed according to their order in the configuration file.
 
 ### Basic settings
 
-The basic settings describe the general setup of the Gluu server.
+The basic settings describe the general setup of the Gluu Server.
 
 * appliance-inum: the [iNum code][inum] the appliances refer to
 * issuer: the according hostname, or specific uri
@@ -32,9 +32,9 @@ The basic settings describe the general setup of the Gluu server.
 <authorization-page>https://%(hostname)s/oxauth/authorize.seam</authorization-page>
 ```
 
-The Gluu server allows to connect both via SAML, and an OpenID Connect
+The Gluu Server allows to connect both via SAML, and an OpenID Connect
 Identity Provider. To do a proper single sign-on , use the following
-tags you specify the endpoints the Gluu server communicates with.
+tags you specify the endpoints the Gluu Server communicates with.
 
 * base-endpoint
 * authorization-endpoint
@@ -76,7 +76,7 @@ tags you specify the endpoints the Gluu server communicates with.
 
 ### Server mode
 
-This entry sets the mode of the Gluu oxAauth server. Possible modes are
+This entry sets the mode of the Gluu oxAauth Server. Possible modes are
 `memory` and `ldap`.
 
 * memory: run the oxAauth server in `in-memory` mode.
@@ -101,7 +101,7 @@ whereas 3600 seconds represent 1 hour.
 ### Supported response types
 
 This entry defines the various response types that are supported by the
-Gluu server. The following combinations are possible:
+Gluu Server. The following combinations are possible:
 
 * code:
 * code id_token:
@@ -167,7 +167,7 @@ This entry defines the supported subject types. Possible values are
 
 ### Supported algorithms a user can login with
 
-Currently, the Gluu server supports these algorithms for login
+Currently, the Gluu Server supports these algorithms for login
 procedures:
 
 * HS256: [HMAC][hmac] using [SHA-256][sha2] hash algorithm.
@@ -196,7 +196,7 @@ procedures:
 
 ### Supported encryption algorithms
 
-Currently, the Gluu server supports these algorithms for data encryption:
+Currently, the Gluu Server supports these algorithms for data encryption:
 
 * RSA1_5: RSA 1.5 (PKCS #1) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
 * RSA-OAEP: RSA with [Optimal asymmetric encryption padding (OAEP)][oaep] with the default parameters specified by [RFC 3447][rfc3447] in section A.2.1.
@@ -245,7 +245,7 @@ These encryption encoding values are supported:
 
 ### Supported ID token signing algorithms
 
-Currently, the Gluu server supports these algorithms to sign an ID
+Currently, the Gluu Server supports these algorithms to sign an ID
 token:
 
 * HS256: [HMAC][hmac] using [SHA-256][sha2] hash algorithm.
@@ -274,7 +274,7 @@ token:
 
 ### Supported ID token encryption algorithms
 
-Currently, the Gluu server supports these encryption algorithms for
+Currently, the Gluu Server supports these encryption algorithms for
 ID tokens:
 
 * RSA1_5: RSA 1.5 (PKCS #1) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
@@ -324,7 +324,7 @@ These encryption encoding values for ID tokens are supported:
 
 ### Supported request object signing algorithms
 
-Currently, the Gluu server supports these algorithms to sign a request
+Currently, the Gluu Server supports these algorithms to sign a request
 object:
 
 * HS256: [HMAC][hmac] using [SHA-256][sha2] hash algorithm.
@@ -353,7 +353,7 @@ object:
 
 ### Supported request object encryption algorithms
 
-Currently, the Gluu server supports these encryption algorithms for
+Currently, the Gluu Server supports these encryption algorithms for
 request objects:
 
 * RSA1_5: RSA 1.5 (PKCS #1) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
@@ -420,7 +420,7 @@ Currently, these methods are supported:
 
 ### Supported token endpoint authentication signing algorithm values
 
-Currently, the Gluu server supports these signing algorithms to
+Currently, the Gluu Server supports these signing algorithms to
 authenticate endpoints:
 
 * HS256: [HMAC][hmac] using [SHA-256][sha2] hash algorithm.
@@ -449,7 +449,7 @@ authenticate endpoints:
 
 ### Supported display values
 
-The Gluu server supports these display values:
+The Gluu Server supports these display values:
 
 * page
 * popup
@@ -469,7 +469,7 @@ As the default value, `page` is enabled, only.
 
 ### Supported claim types
 
-Currently, the Gluu server supports these claims:
+Currently, the Gluu Server supports these claims:
 
 * normal
 * distributed
@@ -483,7 +483,7 @@ Currently, the Gluu server supports these claims:
 
 ### Supported claims
 
-The Gluu server supports these values for claims:
+The Gluu Server supports these values for claims:
 
 * uid: a valid user id
 * displayName: a previously chosen user name that is displayed
@@ -504,7 +504,7 @@ The Gluu server supports these values for claims:
 ### Service documentation
 
 This entry keeps the path to the service documentation of the Gluu
-server.
+Server.
 
 ```
 <service-documentation>http://gluu.org/docs</service-documentation>
