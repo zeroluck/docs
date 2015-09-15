@@ -210,9 +210,9 @@ This is step by step guide to configure UMA for oxTrust and SCIM client. High le
 
                 print "UMA Authorization policy. Authorizing client"
                 return True
- - Replace in script above client inum "@!1111!0008!FDC0.0FF5" with client inum which were added in step 3[Maybe an error.2/1 Check inums]
- - Click "Enabled" check box
- - Click "Update" button
+ - Replace in script above client inum "@!1111!0008!FDC0.0FF5" with client inum which were added in step 2.
+ - Click "Enabled" check box.
+ - Click "Update" button.
 
 Note: There is sample UMA Authorization Policy in CE. You can modify it instead of adding new one.
 
