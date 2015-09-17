@@ -2,7 +2,7 @@
 
 One of the coolest things about the Gluu Server is that you can write very flexible
 business logic for authentication. This is accomplished by writing a custom authentication
-script. There are a bunch of scripts that Gluu provides out-of-the-box, for example social login
+script. There are a bunch of [scripts that Gluu provides out-of-the-box](../reference/interception-scripts/index.md#authentication), for example social login
 using Google and strong authentication solutions like FIDO U2F tokens and Duo Security.
 But if you want to write your own script, this article is for you!
 
@@ -11,7 +11,7 @@ send an SMS code to implement a two-step out-of-band authentication mechanism.
 
 ## Suggested Development Environment
 
-Gluu Server custom scripts are written in Jython. In this article, I'm going to recommend
+Gluu Server custom scripts are written in [Jython](http://www.jython.org/). In this article, I'm going to recommend
 using Eclipse. You can't actually run the scripts from Eclipse, but it provides a nice editor
 which makes coding more enjoyable.
 
