@@ -3,6 +3,8 @@
 Need to protect a test Apache folder using SAML on an Ubuntu server? Hate to read? This article is for you.
 Replace "minnow" and "minnow.gluu.info" with your website hostname.
 
+## Configure Apache
+
     # apt-get install apache2 libshibsp6 libapache2-mod-shib2
     # a2enmod cgi
     # a2enmod ssl
@@ -25,7 +27,23 @@ in the Gluu Server
     # mkdir protected
     # touch /var/www/protected/printHeaders.py
     # chmod ugo+x /var/www/protected/printHeaders.py
-   
+    
+Edit the default site
+
+    # vi /etc/apache2/sites-available/default-ssl.conf
+    
+Add this part:
+
+                ScriptAlias /protected/ /var/www/protected/
+                <Directory /var/www/protected>
+                        AddHandler cgi-script .py
+                        Options +ExecCGI
+                        SSLOptions +StdEnvVars
+                        AuthType shibboleth
+                        ShibRequestSetting requireSession 1
+                        Require valid-user
+                </Directory>
+                   
 Edit printHeaders.py, adding this simple script which will show you the HTTP Headers:
     
     #!/usr/bin/python
@@ -44,6 +62,7 @@ Edit printHeaders.py, adding this simple script which will show you the HTTP Hea
         print "<p><B>%s</B>: %s </p>" % (item, d[item])
     print "</BODY></HTML>"
     
+# Configure the Shibboleth SP 
     
 Use this for shibboleth2.xml and replace `minnow.gluu.info` with the hostname of your SP, and
 `brookie.gluu.info` with the hostname of your IDP.
@@ -200,6 +219,9 @@ and "Add Relationship"
 
 Wait 5 minutes for the Shibboleth IDP to detect reload the metadata.... <crickets chirping>...
 
+
+## Test
+
 Test the cgi script: `https://minnow.gluu.info/protected/printHeaders.py`
 
 Enter the a valid username password (like `admin` and your inital admin password).
@@ -266,7 +288,7 @@ The display should return something like this:
     SSL_SERVER_I_DN: emailAddress=mike@gluu.org,CN=minnow.gluu.info,O=Gluu,L=Austin,ST=TX,C=US
     SSL_SERVER_I_DN_C: US
     SSL_SERVER_I_DN_CN: minnow.gluu.info
-    SSL_SERVER_I_DN_Email: mike@gluu.org
+    SSL_SERVER_I_DN_Email: mike@gmail.com
     SSL_SERVER_I_DN_L: Austin
     SSL_SERVER_I_DN_O: Gluu
     SSL_SERVER_I_DN_ST: TX
@@ -275,7 +297,7 @@ The display should return something like this:
     SSL_SERVER_S_DN: emailAddress=mike@gluu.org,CN=minnow.gluu.info,O=Gluu,L=Austin,ST=TX,C=US
     SSL_SERVER_S_DN_C: US
     SSL_SERVER_S_DN_CN: minnow.gluu.info
-    SSL_SERVER_S_DN_Email: mike@gluu.org
+    SSL_SERVER_S_DN_Email: mike@gmail.com
     SSL_SERVER_S_DN_L: Austin
     SSL_SERVER_S_DN_O: Gluu
     SSL_SERVER_S_DN_ST: TX
@@ -285,3 +307,15 @@ The display should return something like this:
     SSL_TLS_SNI: minnow.gluu.info
     SSL_VERSION_INTERFACE: mod_ssl/2.4.7
     SSL_VERSION_LIBRARY: OpenSSL/1.0.1f
+    
+## Troubleshooting 
+
+ - Make sure you update your hosts file on the Gluu Server, apache server, and your workstation--this won't work with 
+ just IP addresses.
+ 
+ - Check the Shibboleth logs if you don't see the headers or REMOTE_USER environment variables: 
+ `/opt/idp/logs/idp-process.log`  Also you may want to `# service tomcat stop` and `# service tomcat start`
+ to make sure the new Shibboleth IDP xml files were loaded.
+ 
+ - Clear the cookies in your browser for both the apache site and the Gluu Server if you are logging in and 
+ logging out a lot with lots of server restarts.
