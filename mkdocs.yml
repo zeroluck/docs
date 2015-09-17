@@ -51,6 +51,7 @@ pages:
 - [articles/test-shib2.md, Articles, Testing Shib2]
 - [articles/social-login-google.md, Articles, Social Login with Google]
 - [articles/auth-script.md, Articles, How to Write a Custom Authn Script]
+- [articles/ubuntu-shib-apache.md, Articles, Super Quick Ubuntu Shib Apache Install]
 
 # FAQ
 - [faq/general/index.md, FAQ, General]
