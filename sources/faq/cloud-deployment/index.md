@@ -13,5 +13,14 @@ The Apache Virtual Hosts entries were modified to utilize specific ports `x.x.x.
 Another discovery was made; Azure assigns a new Public/Private IP addresses each time the server is started. This was troublesome as manual editing of the hosts file necessary to change the private IP mapping in the hosts file, every time the VM was shutdown or rebooted. 
 The VM was rebuilt from image and placed into a Networking group to set a static Private IP to bypass the assigning of new Public/Private IP.
 
+## Amazon AWS
+Amazon AWS provides a public and private IP address to its clouds. 
+Normal installation following the [deployment guide](http://www.gluu.org/docs/admin-guide/deployment/) was not working.
+
+After installing the `gluu-package` server, a python script called `setup.py` must run to complete the installation. Running the script prompts for some values including hostname, IP address, locale etc. The script/installer will not work if the AWS Public IP address is used.
+
+The Private IP address, provided in the `setup.py` prompt did not create any problem and the server ran without any hiccups. There was no issue found with the numeric portion of the domain name either.
+
 ## Help Us
+
 Please help us by giving us your feedback sharing any knowledge you have regarding any tips or tricks to deploy Gluu Server in any specific cloud platform. Your feedback and suggestions are valuable to us and will allow us to enrich the community knowledge. Please to post a commit in this page in [this link](https://github.com/GluuFederation/docs/blob/master/sources/faq/cloud-deployment/index.md) or open a support ticket in the Gluu [Support Portal](support.gluu.org) to notify us about your feedback and suggestions.
