@@ -17,7 +17,7 @@ The VM was rebuilt from image and placed into a Networking group to set a static
 Amazon AWS provides a public and private IP address to its clouds. 
 Normal installation following the [deployment guide](http://www.gluu.org/docs/admin-guide/deployment/) was not working.
 
-After installing the `gluu-package` server, a python script called `setup.py` must run to complete the installation. Running the script prompts for some values including hostname, IP address, locale etc. The script/installer will not work if the AWS Public IP address is used.
+After installing the `gluu-server`, a python script called `setup.py` must run to complete the installation. Running the script prompts for some values including hostname, IP address, locale etc. The script/installer will not work if the AWS Public IP address is used.
 
 The Private IP address, provided in the `setup.py` prompt did not create any problem and the server ran without any hiccups. There was no issue found with the numeric portion of the domain name either.
 
