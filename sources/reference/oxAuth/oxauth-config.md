@@ -119,13 +119,13 @@ whereas 3600 seconds represent 1 hour.
 This entry defines the various response types that are supported by the
 Gluu Server. The following combinations are possible:
 
-* code:
-* code id_token:
-* token:
-* token id_token:
-* code token:
-* code token id_token:
-* id_token:
+* code: Authorization Code Grant Type
+* token: Implicit Grant Type
+* id_token: ID Token
+* code id_token: Authorization Code Grant Type and Implicit Grant Type
+* token id_token: Implicit Grant Type and ID Token
+* code token: Authorization Code Grant Type and Implicit Grant Type
+* code token id_token: Authorization Code Grant Type, Implicit Grant Type, and ID Token
 
 ```
 <response-types-supported>
