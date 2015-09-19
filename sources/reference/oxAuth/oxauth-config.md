@@ -143,9 +143,9 @@ Gluu Server. The following combinations are possible:
 
 These grant types are supported:
 
-* authorization_code
-* implicit
-* urn:ietf:params:oauth:grant-type:jwt-bearer
+* `authorization_code`
+* `implicit`
+* `urn:ietf:params:oauth:grant-type:jwt-bearer`
 
 The last entry from the list above refers to JSON Web Token (JWT)
 Profile for OAuth 2.0 Client Authentication and Authorization Grants as
@@ -426,10 +426,10 @@ These encryption encoding values are supported:
 Currently, these methods are supported for token endpoint
 authentication:
 
-* client_secret_basic
-* client_secret_post
-* client_secret_jwt
-* private_key_jwt
+* `client_secret_basic`
+* `client_secret_post`
+* `client_secret_jwt`
+* `private_key_jwt`
 
 ```
 <token-endpoint-auth-methods-supported>
@@ -473,10 +473,10 @@ authenticate endpoints:
 
 The Gluu Server supports these display values:
 
-* page
-* popup
-* touch
-* wap
+* `page`
+* `popup`
+* `touch`
+* `wap`
 
 As the default value, `page` is enabled, only.
 
@@ -493,8 +493,8 @@ As the default value, `page` is enabled, only.
 
 Currently, the Gluu Server supports these claims:
 
-* normal
-* distributed
+* `normal`
+* `distributed`
 
 ```
 <claim-types-supported>
@@ -507,11 +507,11 @@ Currently, the Gluu Server supports these claims:
 
 The Gluu Server supports these values for claims:
 
-* uid: a valid user id
-* displayName: a previously chosen user name that is displayed
-* givenName: a previously given user name
-* sn: 
-* mail: a stored email address for this user
+* `uid`: a valid user id
+* `displayName`: a previously chosen user name that is displayed
+* `givenName`: a previously given user name
+* `sn`: 
+* `mail`: a stored email address for this user
 
 ```
 <claims-supported>
@@ -641,12 +641,12 @@ To define a certain oxAuth type-of-service uri use the tag `op-tos-uri`.
 
 These tags control the behaviour of the connection:
 
-* authorization-code-lifetime: sets the lifetime of the authorization code. The default is 600 seconds.
-* refresh-token-lifetime: sets the interval the token is refreshed. The default value is 14400 seconds that represent 6 hours.
-* id-token-lifetime: sets the lifetime of the id token. The default value os 3600 seconds that represents one hour.
-* short-lived-access-token-lifetime: sets the short-lived access token
+* `authorization-code-lifetime`: sets the lifetime of the authorization code. The default is 600 seconds.
+* `refresh-token-lifetime`: sets the interval the token is refreshed. The default value is 14400 seconds that represent 6 hours.
+* `id-token-lifetime`: sets the lifetime of the id token. The default value os 3600 seconds that represents one hour.
+* `short-lived-access-token-lifetime`: sets the short-lived access token
 lifetime
-* long-lived-access-token-lifetime: sets the long-lived access token lifetime
+* `long-lived-access-token-lifetime`: sets the long-lived access token lifetime
 
 ```
 <authorization-code-lifetime>600</authorization-code-lifetime>
@@ -658,15 +658,15 @@ lifetime
 
 These tags control the behaviour of a session:
 
-* session-id-unused-lifetime: if the session id is not used during some
+* `session-id-unused-lifetime`: if the session id is not used during some
 time then it is removed, automatically. The lifetime is set in seconds,
 whereas 86400 seconds represent a single day.
-* session-id-enabled: this tag is either `true` or `false` and displays
+* `session-id-enabled`: this tag is either `true` or `false` and displays
 whether a session id is enabled or not
-* refresh-user-session-timeout-enabled: this tag is either `true` or
+* `refresh-user-session-timeout-enabled`: this tag is either `true` or
 `false` and defines whether the timeout is enabled to refresh a user
 session. The default value is `true`.
-* refresh-user-session-timeout: defines the duration of the timeout
+* `refresh-user-session-timeout`: defines the duration of the timeout
 after which the session is refreshed. The default value is set to 1800
 seconds.
 
@@ -679,9 +679,9 @@ seconds.
 
 These tags control the [User Managed Access (UMA)][uma]:
 
-* uma-add-scopes-automatically
-* uma-requester-permission-token-lifetime
-* uma-keep-client-during-resource-set-registration
+* `uma-add-scopes-automatically`
+* `uma-requester-permission-token-lifetime`
+* `uma-keep-client-during-resource-set-registration`
 
 ```
 <uma-add-scopes-automatically>false</uma-add-scopes-automatically>
