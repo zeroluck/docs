@@ -143,9 +143,9 @@ Gluu Server. The following combinations are possible:
 
 These grant types are supported:
 
-* `authorization_code`
-* `implicit`
-* `urn:ietf:params:oauth:grant-type:jwt-bearer`
+* `authorization_code`:
+* `implicit`:
+* `urn:ietf:params:oauth:grant-type:jwt-bearer`:
 
 The last entry from the list above refers to JSON Web Token (JWT)
 Profile for OAuth 2.0 Client Authentication and Authorization Grants as
@@ -733,8 +733,9 @@ enabled, and `false` means disabled.
 
 The entry `federation-check-interval` defines the federation check
 interval in seconds. It checks whether data in trusts are still valid
-(e.g.) if RP redirectUri still exists in metadata. If not then remove
-from trust automatically. The value `86400` represents 24 hours.
+for example if the request parameter (RP) `redirectUri` still exists in
+metadata. If not then remove from trust automatically. The value `86400`
+represents 24 hours.
 
 ```
 <federation-check-interval>86400</federation-check-interval>
