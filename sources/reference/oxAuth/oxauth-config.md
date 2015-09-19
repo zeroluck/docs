@@ -690,7 +690,8 @@ These tags control the [User Managed Access (UMA)][uma]:
 ```
 
 To adjust the time of the service interval use the value for the tag
-`clean-service-interval`. The value is set in seconds:
+`clean-service-interval`. The value is set in seconds, and the default
+value is 600 seconds:
 
 ```
 <clean-service-interval>600</clean-service-interval>
