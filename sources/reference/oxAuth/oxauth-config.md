@@ -34,10 +34,10 @@ The basic settings describe the general setup of the Gluu Server.
 
 The Gluu Server allows connections via [Security Assertion Markup
 Language (SAML)][saml], and an [OpenID][openid] Connect Identity
-Provider that can be configured for single sign-on to any SAML 2.0 or
-OpenID Connect protected application. To do a proper single sign-on ,
-use the following tags you specify the endpoints the Gluu Server
-communicates with.
+Provider that can be configured for [single sign-on][sso] to any SAML
+2.0 or OpenID Connect protected application. To do a proper single
+sign-on, use the following tags to specify the endpoints the Gluu
+Server communicates with:
 
 * base-endpoint
 * authorization-endpoint
@@ -920,6 +920,8 @@ definition allows the following tags:
 [saml]: https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language "Security Assertion Markup Language (SAML), Wikipedia"
 
 [sha2]: https://en.wikipedia.org/wiki/SHA-2 "Secure Hash Algorithm (SHA) SHA-2 familiy, Wikipedia"
+
+[sso]: https://en.wikipedia.org/wiki/Single_sign-on "Single sign-on, Wikipedia"
 
 [uma]: https://de.wikipedia.org/wiki/User-Managed_Access "User-Managed Access (UMA), Wikipedia"
 
