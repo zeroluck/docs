@@ -145,6 +145,8 @@ These grant types are supported:
 
 * `authorization_code`:
 * `implicit`:
+* `client_credentials`:
+* `refresh_token`: as described in [OAuth 2.0][rfc6749]
 * `urn:ietf:params:oauth:grant-type:jwt-bearer`:
 
 The last entry from the list above refers to JSON Web Token (JWT)
@@ -949,6 +951,8 @@ definition allows the following tags:
 [rfc3447]: https://tools.ietf.org/html/rfc3447 "RFC 3447: Public-Key Cryptography Standards (PKCS) #1: RSA Cryptography, Specifications Version 2.1, IETF"
 
 [rfc6090]: https://tools.ietf.org/html/rfc6090 "RFC 6090: Fundamental Elliptic Curve Cryptography Algorithms, IETF"
+
+[rfc6749]: https://tools.ietf.org/html/rfc6749 "RFC 6749: The OAuth 2.0 Authorization Framework, IETF"
 
 [rsassa]: https://tools.ietf.org/html/draft-ietf-jose-json-web-algorithms-14#page-12 "Digital Signature with RSASSA-PKCS1-V1_5, in JSON Web Algorithms (JWA), draft-ietf-jose-json-web-algorithms-14, July 2013"
 
