@@ -839,10 +839,10 @@ first. Set the tag `auth-filters-enabled` to `true`:
 Next, you can use the previously defined authorization filters. A filter
 definition allows the following tags:
 
-* filter: the condition for the filter
-* bind: can be either `true` or `false`. If `true` oxAuth binds to the entry which is found by the filter as specified above
-* bind-password-attribute: the name of the password attribute
-* base-dn: the name of the base domain, for example `o=gluu`
+* `filter`: the condition for the filter
+* `bind`: can be either `true` or `false`. If `true` oxAuth binds to the entry which is found by the filter as specified above
+* `bind-password-attribute`: the name of the password attribute
+* `base-dn`: the name of the base domain, for example `o=gluu`
 
 ```
 <auth-filters>
@@ -879,10 +879,10 @@ first. Set the tag `client-auth-filters-enabled` to `true`:
 Next, you can use the previously defined authorization filters. A filter
 definition allows the following tags:
 
-* filter: the condition for the filter
-* bind: can be either `true` or `false`. If `true` oxAuth binds to the entry which is found by the filter as specified above
-* bind-password-attribute: the name of the password attribute
-* base-dn: the name of the base domain, for example `o=gluu`
+* `filter`: the condition for the filter
+* `bind`: can be either `true` or `false`. If `true` oxAuth binds to the entry which is found by the filter as specified above
+* `bind-password-attribute`: the name of the password attribute
+* `base-dn`: the name of the base domain, for example `o=gluu`
 
 ```
 <client-auth-filters>
