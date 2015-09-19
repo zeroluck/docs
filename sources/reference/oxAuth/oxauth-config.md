@@ -40,13 +40,13 @@ Provider that can be configured for [single sign-on][sso] to any SAML
 To do a proper single sign-on, use the following tags to specify the
 endpoints the Gluu Server communicates with:
 
-* base-endpoint
-* authorization-endpoint
-* token-endpoint
-* userinfo-endpoint
-* clientinfo-endpoint
-* check-session-iframe
-* end-session-endpoint
+* base-endpoint: remote station for basic communication
+* authorization-endpoint: remote station for general authorization
+* token-endpoint: remote station for token-based communication
+* userinfo-endpoint: remote station to receive user information from
+* clientinfo-endpoint: remote station to receive client information from
+* check-session-iframe: iframe that validates/refers to the current session
+* end-session-endpoint: remote station to terminate the session
 * jwks-uri: uri for authorization via [JSON Web Key Set (JWKS)][jwk]
 * registration-endpoint
 * validate-token-endpoint
