@@ -20,10 +20,10 @@ The sections are listed according to their order in the configuration file.
 
 The basic settings describe the general setup of the Gluu Server.
 
-* appliance-inum: the [iNum code][inum] the appliances refer to
-* issuer: the according hostname, or specific uri
-* login-page: the login page for the according hostname, or uri
-* authorization-page: the oxAuth authorization page
+* `appliance-inum`: the [iNum code][inum] the appliances refer to
+* `issuer`: the according hostname, or specific uri
+* `login-page`: the login page for the according hostname, or uri
+* `authorization-page`: the oxAuth authorization page
 
 ```
 <appliance-inum>%(inumAppliance)s</appliance-inum>
@@ -40,22 +40,22 @@ Provider that can be configured for [single sign-on][sso] to any SAML
 To do a proper single sign-on, use the following tags to specify the
 endpoints the Gluu Server communicates with:
 
-* base-endpoint: the remote station for basic communication
-* authorization-endpoint: the remote station for general authorization
-* token-endpoint: the remote station for token-based communication
-* userinfo-endpoint: the remote station to receive user information from
-* clientinfo-endpoint: the remote station to receive client information from
-* check-session-iframe: the name of the [iframe][iframe] that is associated to the current session
-* end-session-endpoint: the remote station to terminate the current session
-* jwks-uri: the uri for authorization via [JSON Web Key Set (JWKS)][jwk]
-* registration-endpoint: the remote station to register
-* validate-token-endpoint: the remote station that validates authorization tokens
-* federation-metadata-endpoint: the remote station for [Active Directory Federation Services (ADFS)][adfs-wikipedia] metadata
-* federation-endpoint: the remote station for using the [Active Directory Federation Services (ADFS)][adfs-wikipedia]
-* openid-discovery-endpoint: the remote station for the [OpenID][openid] Discovery service 
-* openid-configuration-endpoint: the remote station for the [OpenID][openid] configuration
-* id-generation-endpoint: the remote station for the generation of the ID
-* introspection-endpoint: the remote station for further introspection
+* `base-endpoint`: the remote station for basic communication
+* `authorization-endpoint`: the remote station for general authorization
+* `token-endpoint`: the remote station for token-based communication
+* `userinfo-endpoint`: the remote station to receive user information from
+* `clientinfo-endpoint`: the remote station to receive client information from
+* `check-session-iframe`: the name of the [iframe][iframe] that is associated to the current session
+* `end-session-endpoint`: the remote station to terminate the current session
+* `jwks-uri`: the uri for authorization via [JSON Web Key Set (JWKS)][jwk]
+* `registration-endpoint`: the remote station to register
+* `validate-token-endpoint`: the remote station that validates authorization tokens
+* `federation-metadata-endpoint`: the remote station for [Active Directory Federation Services (ADFS)][adfs-wikipedia] metadata
+* `federation-endpoint`: the remote station for using the [Active Directory Federation Services (ADFS)][adfs-wikipedia]
+* `openid-discovery-endpoint`: the remote station for the [OpenID][openid] Discovery service 
+* `openid-configuration-endpoint`: the remote station for the [OpenID][openid] configuration
+* `id-generation-endpoint`: the remote station for the generation of the ID
+* `introspection-endpoint`: the remote station for further introspection
 
 ```
 <base-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1</base-endpoint>
@@ -84,7 +84,7 @@ defines [REST][rest]ful, [JSON][json]-based, standardized flows and
 constructs for access management. Use this tag to configure the
 according endpoint:
 
-* uma-configuration-endpoint
+* `uma-configuration-endpoint`
 
 ```
 <uma-configuration-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/uma-configuration</uma-configuration-endpoint>
@@ -119,13 +119,13 @@ whereas 3600 seconds represent 1 hour.
 This entry defines the various response types that are supported by the
 Gluu Server. The following combinations are possible:
 
-* code: Authorization Code Grant Type
-* token: Implicit Grant Type
-* id_token: ID Token
-* code id_token: Authorization Code Grant Type and Implicit Grant Type
-* token id_token: Implicit Grant Type and ID Token
-* code token: Authorization Code Grant Type and Implicit Grant Type
-* code token id_token: Authorization Code Grant Type, Implicit Grant Type, and ID Token
+* `code`: Authorization Code Grant Type
+* `token`: Implicit Grant Type
+* `id_token`: ID Token
+* `code id_token`: Authorization Code Grant Type and Implicit Grant Type
+* `token id_token`: Implicit Grant Type and ID Token
+* `code token`: Authorization Code Grant Type and Implicit Grant Type
+* `code token id_token`: Authorization Code Grant Type, Implicit Grant Type, and ID Token
 
 ```
 <response-types-supported>
