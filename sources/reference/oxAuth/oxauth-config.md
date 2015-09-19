@@ -147,6 +147,10 @@ These grant types are supported:
 * implicit
 * urn:ietf:params:oauth:grant-type:jwt-bearer
 
+The last entry from the list above refers to JSON Web Token (JWT)
+Profile for OAuth 2.0 Client Authentication and Authorization Grants as
+described in the according [IETF document][ietf-jwk].
+
 ```
 <grant-types-supported>
     <grant-type>authorization_code</grant-type>
@@ -217,8 +221,8 @@ Currently, the Gluu Server supports these algorithms for data encryption:
 
 * RSA1_5: RSA 1.5 (PKCS #1) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
 * RSA-OAEP: RSA with [Optimal asymmetric encryption padding (OAEP)][oaep] with the default parameters specified by [RFC 3447][rfc3447] in section A.2.1.
-* A128KW: Advanced Encryption Standard (AES) Key Wrap Algorithm ([RFC 3394][rfc3394]) using 128 bit keys.
-* A256KW: Advanced Encryption Standard (AES) Key Wrap Algorithm ([RFC 3394][rfc3394]) using 256 bit keys.
+* A128KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 128 bit keys.
+* A256KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 256 bit keys.
 
 Though listed in the configuration file, these algorithms are not
 enabled, currently:
@@ -246,10 +250,10 @@ enabled, currently:
 
 These encryption encoding values are supported:
 
-* A128CBC+HS256: AES_128_CBC_HMAC_SHA_256 authenticated encryption using a 256 bit key
-* A256CBC+HS512: AES_256_CBC_HMAC_SHA_512 authenticated encryption using a 512 bit key
-* A128GCM: Advanced Encryption Standard (AES) in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 128 bit key
-* A256GCM: Advanced Encryption Standard (AES) in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 256 bit key
+* A128CBC+HS256: [AES][aes]_128_CBC_HMAC_SHA_256 authenticated encryption using a 256 bit key
+* A256CBC+HS512: [AES][aes]_256_CBC_HMAC_SHA_512 authenticated encryption using a 512 bit key
+* A128GCM: [Advanced Encryption Standard (AES)][aes] in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 128 bit key
+* A256GCM: [Advanced Encryption Standard (AES)][aes] in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 256 bit key
 
 ```
 <userinfo-encryption-enc-values-supported>
@@ -296,8 +300,8 @@ ID tokens:
 
 * RSA1_5: RSA 1.5 (PKCS #1) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
 * RSA-OAEP: RSA with [Optimal asymmetric encryption padding (OAEP)][oaep] with the default parameters specified by [RFC 3447][rfc3447] in section A.2.1.
-* A128KW: Advanced Encryption Standard (AES) Key Wrap Algorithm ([RFC 3394][rfc3394]) using 128 bit keys.
-* A256KW: Advanced Encryption Standard (AES) Key Wrap Algorithm ([RFC 3394][rfc3394]) using 256 bit keys.
+* A128KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 128 bit keys.
+* A256KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 256 bit keys.
 
 Though listed in the configuration file, these algorithms are not
 enabled, currently:
@@ -325,10 +329,10 @@ enabled, currently:
 
 These encryption encoding values for ID tokens are supported:
 
-* A128CBC+HS256: AES_128_CBC_HMAC_SHA_256 authenticated encryption using a 256 bit key
-* A256CBC+HS512: AES_256_CBC_HMAC_SHA_512 authenticated encryption using a 512 bit key
-* A128GCM: Advanced Encryption Standard (AES) in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 128 bit key
-* A256GCM: Advanced Encryption Standard (AES) in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 256 bit key
+* A128CBC+HS256: [AES][aes]_128_CBC_HMAC_SHA_256 authenticated encryption using a 256 bit key
+* A256CBC+HS512: [AES][aes]_256_CBC_HMAC_SHA_512 authenticated encryption using a 512 bit key
+* A128GCM: [Advanced Encryption Standard (AES)][aes] in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 128 bit key
+* A256GCM: [Advanced Encryption Standard (AES)][aes] in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 256 bit key
 
 ```
 <id-token-encryption-enc-values-supported>
@@ -375,8 +379,8 @@ request objects:
 
 * RSA1_5: RSA 1.5 (PKCS #1) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
 * RSA-OAEP: RSA with [Optimal asymmetric encryption padding (OAEP)][oaep] with the default parameters specified by [RFC 3447][rfc3447] in section A.2.1.
-* A128KW: Advanced Encryption Standard (AES) Key Wrap Algorithm ([RFC 3394][rfc3394]) using 128 bit keys.
-* A256KW: Advanced Encryption Standard (AES) Key Wrap Algorithm ([RFC 3394][rfc3394]) using 256 bit keys.
+* A128KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 128 bit keys.
+* A256KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 256 bit keys.
 
 Though listed in the configuration file, these algorithms are not
 enabled, currently:
@@ -403,10 +407,10 @@ enabled, currently:
 
 These encryption encoding values are supported:
 
-* A128CBC+HS256: AES_128_CBC_HMAC_SHA_256 authenticated encryption using a 256 bit key
-* A256CBC+HS512: AES_256_CBC_HMAC_SHA_512 authenticated encryption using a 512 bit key
-* A128GCM: Advanced Encryption Standard (AES) in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 128 bit key
-* A256GCM: Advanced Encryption Standard (AES) in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 256 bit key
+* A128CBC+HS256: [AES][aes]_128_CBC_HMAC_SHA_256 authenticated encryption using a 256 bit key
+* A256CBC+HS512: [AES][aes]_256_CBC_HMAC_SHA_512 authenticated encryption using a 512 bit key
+* A128GCM: [Advanced Encryption Standard (AES)][aes] in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 128 bit key
+* A256GCM: [Advanced Encryption Standard (AES)][aes] in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 256 bit key
 
 ```
 <request-object-encryption-enc-values-supported>
@@ -887,6 +891,8 @@ definition allows the following tags:
 
 [adfs-wikipedia]: https://en.wikipedia.org/wiki/Active_Directory_Federation_Services "Active Directory Federation Services (ADFS), Wikipedia"
 
+[aes]: https://en.wikipedia.org/wiki/Advanced_Encryption_Standard "Advanced Encryption Standard (AES), Wikipedia"
+
 [ecdsa]: https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm "Elliptic Curve Digital Signature Algorithm (ECDSA), Wikipedia"
 
 [glossary-of-cryptographic-keys]: https://en.wikipedia.org/wiki/Glossary_of_cryptographic_keys "Glossary of cryptographic keys"
@@ -896,6 +902,8 @@ definition allows the following tags:
 [gcm]: https://en.wikipedia.org/wiki/Galois/Counter_Mode "Galois/Counter Mode (GCM), Wikipedia"
 
 [hmac]: https://en.wikipedia.org/wiki/Hash-based_message_authentication_code "Hash-based message authentication code (HMAC), Wikipedia"
+
+[ietf-jwk]: https://tools.ietf.org/html/draft-ietf-oauth-jwt-bearer-12 "JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants, IETF draft"
 
 [iframe]: https://en.wikipedia.org/wiki/HTML_element#Frames "HTML element: iframe, Wikipedia"
 
