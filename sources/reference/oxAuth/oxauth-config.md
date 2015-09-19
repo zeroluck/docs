@@ -897,7 +897,7 @@ definition allows the following tags:
 </client-auth-filters>
 ```
 
-[adfs-msdn]: https://msdn.microsoft.com/en-us/library/bb897402.aspx Active Directory Federation Services (ADFS), MSDN"
+[adfs-msdn]: https://msdn.microsoft.com/en-us/library/bb897402.aspx "Active Directory Federation Services (ADFS), MSDN"
 
 [adfs-wikipedia]: https://en.wikipedia.org/wiki/Active_Directory_Federation_Services "Active Directory Federation Services (ADFS), Wikipedia"
 
