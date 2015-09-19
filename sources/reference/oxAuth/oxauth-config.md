@@ -423,7 +423,8 @@ These encryption encoding values are supported:
 
 ### Supported token endpoint authentication methods
 
-Currently, these methods are supported:
+Currently, these methods are supported for token endpoint
+authentication:
 
 * client_secret_basic
 * client_secret_post
@@ -621,11 +622,16 @@ To require a request for uri registration, the tag
 
 ### Uri for operation policy
 
+To define a certain oxAuth operation policy uri use the tag
+`op-policy-uri`.
+
 ```
 <op-policy-uri>http://ox.gluu.org/doku.php?id=oxauth:policy</op-policy-uri>
 ```
 
 ### Uri for type-of-service
+
+To define a certain oxAuth type-of-service uri use the tag `op-tos-uri`.
 
 ```
 <op-tos-uri>http://ox.gluu.org/doku.php?id=oxauth:tos</op-tos-uri>
