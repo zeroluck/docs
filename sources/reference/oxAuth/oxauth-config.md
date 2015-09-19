@@ -84,7 +84,7 @@ defines [REST][rest]ful, [JSON][json]-based, standardized flows and
 constructs for access management. Use this tag to configure the
 according endpoint:
 
-* `uma-configuration-endpoint`
+* `uma-configuration-endpoint`: uri that defines the endpoint
 
 ```
 <uma-configuration-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/uma-configuration</uma-configuration-endpoint>
@@ -493,8 +493,8 @@ As the default value, `page` is enabled, only.
 
 Currently, the Gluu Server supports these claims:
 
-* `normal`
-* `distributed`
+* `normal`:
+* `distributed`:
 
 ```
 <claim-types-supported>
