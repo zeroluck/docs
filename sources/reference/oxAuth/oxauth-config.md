@@ -40,18 +40,18 @@ Provider that can be configured for [single sign-on][sso] to any SAML
 To do a proper single sign-on, use the following tags to specify the
 endpoints the Gluu Server communicates with:
 
-* base-endpoint: remote station for basic communication
-* authorization-endpoint: remote station for general authorization
-* token-endpoint: remote station for token-based communication
-* userinfo-endpoint: remote station to receive user information from
-* clientinfo-endpoint: remote station to receive client information from
-* check-session-iframe: name of the [iframe][iframe] that is associated to the current session
-* end-session-endpoint: remote station to terminate the session
-* jwks-uri: uri for authorization via [JSON Web Key Set (JWKS)][jwk]
-* registration-endpoint
-* validate-token-endpoint
-* federation-metadata-endpoint
-* federation-endpoint
+* base-endpoint: the remote station for basic communication
+* authorization-endpoint: the remote station for general authorization
+* token-endpoint: the remote station for token-based communication
+* userinfo-endpoint: the remote station to receive user information from
+* clientinfo-endpoint: the remote station to receive client information from
+* check-session-iframe: the name of the [iframe][iframe] that is associated to the current session
+* end-session-endpoint: the remote station to terminate the current session
+* jwks-uri: the uri for authorization via [JSON Web Key Set (JWKS)][jwk]
+* registration-endpoint: the remote station to register
+* validate-token-endpoint: the remote station that validates authorization tokens
+* federation-metadata-endpoint: the remote station for [Active Directory Federation Services (ADFS)][adfs-wikipedia] metadata
+* federation-endpoint: the remote station for using the [Active Directory Federation Services (ADFS)][adfs-wikipedia]
 * openid-discovery-endpoint
 * openid-configuration-endpoint
 * id-generation-endpoint
@@ -879,6 +879,10 @@ definition allows the following tags:
     </client-auth-filter-->
 </client-auth-filters>
 ```
+
+[adfs-msdn]: https://msdn.microsoft.com/en-us/library/bb897402.aspx Active Directory Federation Services (ADFS), MSDN"
+
+[adfs-wikipedia]: https://en.wikipedia.org/wiki/Active_Directory_Federation_Services "Active Directory Federation Services (ADFS), Wikipedia"
 
 [ecdsa]: https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm "Elliptic Curve Digital Signature Algorithm (ECDSA), Wikipedia"
 
