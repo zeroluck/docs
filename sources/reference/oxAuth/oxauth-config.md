@@ -902,8 +902,7 @@ definition allows the following tags:
 
 [json]: https://en.wikipedia.org/wiki/JSON "JSON, Wikipedia"
 
-[jwk]: https://tools.ietf.org/html/rfc7517 "JSON Web Key (JWK), Internet
-Engineering Task Force (IETF), RFC 7517"
+[jwk]: https://tools.ietf.org/html/rfc7517 "JSON Web Key (JWK), Internet Engineering Task Force (IETF), RFC 7517"
 
 [ldap]: https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol "Lightweight Directory Access Protocol (LDAP), Wikipedia"
 
