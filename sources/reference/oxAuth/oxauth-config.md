@@ -707,8 +707,9 @@ are part of the list:
 
 ### Federation settings
 
-The entry `federation-enabled` sets the value for the federation
-feature whereas `true` means enabled, and `false` means disabled.
+The entry `federation-enabled` sets the value for the [Active Directory
+Federation Services (ADFS)][adfs-wikipedia] feature. `true` means
+enabled, and `false` means disabled.
 
 ```
 <federation-enabled>false</federation-enabled>
@@ -723,9 +724,11 @@ from trust automatically. The value `86400` represents 24 hours.
 <federation-check-interval>86400</federation-check-interval>
 ```
 
-The entry `federation-skip-policy` defines xxx. Accepted values are `OR`
-and `AND`. This value is used in case there is more than one federation
-trust for a given redirect uri. The default value is `OR`.
+The entry `federation-skip-policy` defines the way the different
+[Active Directory Federation Services (ADFS)][adfs-wikipedia] policies
+are processed. Accepted values are `OR` and `AND`. This value is used in
+case there is more than one federation trust for a given redirect uri.
+The default value is `OR`.
 
 ```
 <federation-skip-policy>OR</federation-skip-policy>
