@@ -53,8 +53,8 @@ endpoints the Gluu Server communicates with:
 * federation-metadata-endpoint: the remote station for [Active Directory Federation Services (ADFS)][adfs-wikipedia] metadata
 * federation-endpoint: the remote station for using the [Active Directory Federation Services (ADFS)][adfs-wikipedia]
 * openid-discovery-endpoint: the remote station for the [OpenID][openid] Discovery service * openid-configuration-endpoint: the remote station for the [OpenID][openid] configuration
-* id-generation-endpoint
-* introspection-endpoint
+* id-generation-endpoint: the remote station for the generation of the ID
+* introspection-endpoint: the remote station for further introspection
 
 ```
 <base-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1</base-endpoint>
