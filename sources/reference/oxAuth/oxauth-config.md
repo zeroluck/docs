@@ -45,7 +45,7 @@ endpoints the Gluu Server communicates with:
 * token-endpoint: remote station for token-based communication
 * userinfo-endpoint: remote station to receive user information from
 * clientinfo-endpoint: remote station to receive client information from
-* check-session-iframe: iframe that validates/refers to the current session
+* check-session-iframe: name of the [iframe][iframe] that is associated to the current session
 * end-session-endpoint: remote station to terminate the session
 * jwks-uri: uri for authorization via [JSON Web Key Set (JWKS)][jwk]
 * registration-endpoint
@@ -889,6 +889,8 @@ definition allows the following tags:
 [gcm]: https://en.wikipedia.org/wiki/Galois/Counter_Mode "Galois/Counter Mode (GCM), Wikipedia"
 
 [hmac]: https://en.wikipedia.org/wiki/Hash-based_message_authentication_code "Hash-based message authentication code (HMAC), Wikipedia"
+
+[iframe]: https://en.wikipedia.org/wiki/HTML_element#Frames "HTML element: iframe, Wikipedia"
 
 [inum]: https://en.wikipedia.org/wiki/INum_Initiative "INum Initiative, Wikipedia"
 
