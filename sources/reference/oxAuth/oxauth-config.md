@@ -771,8 +771,9 @@ algorithms.
 
 Dynamic Client Registration is configurable because some servers may not
 want to support this feature due to it opens you up to the possibility
-of a DOS attack. To enable this feature set the value for
-`dynamic-registration-enabled` to `true`, otherwise to `false`.
+of a [Denial-of-service attack (DOS) attack][dos]. To enable this
+feature set the value for `dynamic-registration-enabled` to `true`,
+otherwise to `false`.
 
 ```
 <dynamic-registration-enabled>true</dynamic-registration-enabled>
@@ -902,6 +903,8 @@ definition allows the following tags:
 [adfs-wikipedia]: https://en.wikipedia.org/wiki/Active_Directory_Federation_Services "Active Directory Federation Services (ADFS), Wikipedia"
 
 [aes]: https://en.wikipedia.org/wiki/Advanced_Encryption_Standard "Advanced Encryption Standard (AES), Wikipedia"
+
+[dos]: https://en.wikipedia.org/wiki/Denial-of-service_attack "Denial-of-service attack (DOS), Wikipedia"
 
 [ecdsa]: https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm "Elliptic Curve Digital Signature Algorithm (ECDSA), Wikipedia"
 
