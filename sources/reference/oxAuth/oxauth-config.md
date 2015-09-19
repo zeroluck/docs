@@ -35,9 +35,10 @@ The basic settings describe the general setup of the Gluu Server.
 The Gluu Server allows connections via [Security Assertion Markup
 Language (SAML)][saml], and an [OpenID][openid] Connect Identity
 Provider that can be configured for [single sign-on][sso] to any SAML
-2.0 or OpenID Connect protected application. To do a proper single
-sign-on, use the following tags to specify the endpoints the Gluu
-Server communicates with:
+2.0 or OpenID Connect protected application. 
+
+To do a proper single sign-on, use the following tags to specify the
+endpoints the Gluu Server communicates with:
 
 * base-endpoint
 * authorization-endpoint
@@ -46,7 +47,7 @@ Server communicates with:
 * clientinfo-endpoint
 * check-session-iframe
 * end-session-endpoint
-* jwks-uri
+* jwks-uri: uri for authorization via [JSON Web Key Set (JWKS)][jwk]
 * registration-endpoint
 * validate-token-endpoint
 * federation-metadata-endpoint
@@ -892,6 +893,9 @@ definition allows the following tags:
 [inum]: https://en.wikipedia.org/wiki/INum_Initiative "INum Initiative, Wikipedia"
 
 [json]: https://en.wikipedia.org/wiki/JSON "JSON, Wikipedia"
+
+[jwk]: https://tools.ietf.org/html/rfc7517 "JSON Web Key (JWK), Internet
+Engineering Task Force (IETF), RFC 7517"
 
 [ldap]: https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol "Lightweight Directory Access Protocol (LDAP), Wikipedia"
 
