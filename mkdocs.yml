@@ -1,0 +1,110 @@
+site_name: Gluu Docs
+site_description: Documenation for the Gluu Server
+site_favicon: '/img/gluu_favicon.ico'
+copyright: Copyright &copy; 2014, Gluu, Inc.
+docs_dir: sources
+repo_url: https://github.com/GluuFederation/docs
+theme: readthedocs
+theme_dir: ./theme/mkdocs/
+pages:
+
+- [index.md, Home]
+# Admin Guide Sections
+- [admin-guide/introduction/index.md, Admin Guide, Introduction]
+- [admin-guide/getting-started/index.md, Admin Guide, Getting Started]
+- [admin-guide/deployment/index.md, Admin Guide, Deployment]
+- [admin-guide/certificates/index.md, Admin Guide, Certificates]
+- [admin-guide/configuration/index.md, Admin Guide, Configuration]
+- [admin-guide/design-customizations/index.md, Admin Guide, Design and Customizations]
+- [admin-guide/ldap/index.md, Admin Guide, LDAP]
+- [admin-guide/saml/index.md, Admin Guide, SAML]
+- [admin-guide/openid-connect/index.md, Admin Guide, OpenID Connect]
+- [admin-guide/uma/index.md, Admin Guide, UMA]
+- [admin-guide/user-management/index.md, Admin Guide, User Management]
+- [admin-guide/personal/index.md, Admin Guide, Personal]
+- [admin-guide/SCIM-user-test/index.md, Admin Guide, SCIM User]
+
+
+# Reference Sections
+- [reference/api/index.md, Reference, API]
+- [reference/interception-scripts/index.md, Reference, Interception Scripts]
+- [reference/ldap-namespace/index.md, Reference, LDAP Namespace]
+- [reference/ldap-schema/index.md, Reference, LDAP Schema]
+- [reference/lib/index.md, Reference, Gluu Library]
+- [reference/oxAuth/index.md, Reference, OxAuth]
+- [reference/oxd/index.md, Reference, OxD]
+- [reference/oxTrust/index.md, Reference, OxTrust]
+- [reference/mod_auth_oidc/index.md, Reference, Apache Module]
+# Articles Sections
+- [articles/cache-refresh.md, Articles, Cache Refresh Introduction]
+- [articles/apache-saml.md, Articles, Apache SAML SP Config]
+- [articles/google-saml.md, Articles, SAML SSO with Google]
+- [articles/salesforce-sso.md, Articles, SAML SSO with Salesforce]
+- [articles/hobsons-saml.md, Articles, SAML SSO with Hobsons]
+- [articles/iis-saml.md, Articles, IIS SAML Config]
+- [articles/benchmarking.md, Articles, Benchmarking]
+- [articles/custom-attributes.md, Articles, Custom Attributes]
+- [articles/gluu-server-ce.md, Articles, Gluu CE]
+- [articles/operations/index.md, Articles, Gluu CE Operations]
+- [articles/java-connect.md, Articles, OpenID in Java]
+- [articles/js-connect.md, Articles, OpenID from JavaScript]
+- [articles/java-saml.md, Articles,Java SAML Library ] 
+- [articles/mod-auth-oidc/index.md, Articles, mod_auth_oidc Installation Guide]
+- [articles/test-shib2.md, Articles, Testing Shib2]
+- [articles/social-login-google.md, Articles, Social Login with Google]
+- [articles/auth-script.md, Articles, How to Write a Custom Authn Script]
+- [articles/ubuntu-shib-apache.md, Articles, Super Quick Ubuntu Shib Apache Install]
+
+# FAQ
+- [faq/general/index.md, FAQ, General]
+- [faq/cloud-deployment/index.md, FAQ, Cloud Deployment]
+
+# Deployment Sub-sections
+- [admin-guide/deployment/centos.md, hidden]
+- [admin-guide/deployment/setup_py.md, hidden]
+- [admin-guide/deployment/ubuntu.md, hidden]
+# Certificates Sub-sections
+- [admin-guide/certificates/https.md, hidden]
+- [admin-guide/certificates/openid-connect.md, hidden]
+- [admin-guide/certificates/saml.md, hidden]
+# SAML Sub-sections
+- [admin-guide/saml/inbound-saml.md, hidden]
+- [admin-guide/saml/outbound-saml.md, hidden]
+- [admin-guide/saml/saml-sp-configuration.md, hidden]
+# API Sub-sections
+- [reference/api/id-generation.md, hidden]
+- [reference/api/oic-authorization.md, hidden]
+- [reference/api/oic-end-session.md, hidden]
+- [reference/api/oic-register-client.md, hidden]
+- [reference/api/oic-token.md, hidden]
+- [reference/api/oic-userinfo.md, hidden]
+- [reference/api/uma-create-rpt.md, hidden]
+- [reference/api/uma-discovery.md, hidden]
+- [reference/api/uma-permission-registration.md, hidden]
+- [reference/api/uma-resource-registration.md, hidden]
+- [reference/api/uma-rpt-status.md, hidden]
+- [reference/api/uma-authorization-endpoint.md, hidden]
+
+# oxAuth Sub-section
+- [reference/oxAuth/oxauth-config.md, hidden]
+- [reference/oxAuth/oxauth-ldap-properties.md, hidden]
+- [reference/oxAuth/oxauth-scope-to-claims-mapping-file.md, hidden]
+# Interception Scripts Sub-sections
+- [reference/interception-scripts/sample-application-session-script.py, hidden]
+- [reference/interception-scripts/sample-authentication-script.py, hidden]
+- [reference/interception-scripts/sample-cache-refresh-script.py, hidden]
+- [reference/interception-scripts/sample-client-registration-script.py, hidden]
+- [reference/interception-scripts/sample-id-generation-script.py, hidden]
+- [reference/interception-scripts/sample-uma-authorization-script.py, hidden]
+- [reference/interception-scripts/sample-update-user-script.py, hidden]
+- [reference/interception-scripts/sample-user-registration-script.py, hidden]
+# Gluu Library Sub-sections
+- [reference/lib/openid-connect.md, hidden]
+- [reference/lib/saml.md, hidden]
+- [reference/lib/scim.md, hidden]
+- [reference/lib/uma.md, hidden]
+# mod_auth_oid Sub-section
+- [articles/mod-auth-oidc/ubuntu-installation.md, hidden]
+- [articles/mod-auth-oidc/centos-installation.md, hidden]
+- [reference/mod_auth_oidc/ubuntu-installation.md, hidden]
+- [reference/mod_auth_oidc/centos-installation.md, hidden]

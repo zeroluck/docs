@@ -27,7 +27,9 @@ The following table has a list of all the major branches of the tree under `o=gl
 | ou=push,o=1234,o=gluu                    | Mobile device metadata used by oxPush                     |
 | ou=federation,o=1234,o=gluu              | OAuth2 federation metadata                                |
 | ou=oxProx,o=1234,o=gluu                  | oxProx configuration data                                 |
-| 
+| oxAuthGrantId=grantId,inum=clientId,ou=clients,o=1234,o=gluu | Granted tokens |
+| ou=pairwiseIdentifiers,inum=personId,ou=people,o=1234,o=gluu | Pairwise Identifier for each Sector Identifier |
+|
 
 
 
