@@ -172,7 +172,6 @@ into production.
   - Enter an identifier, for example: https://seed.gluu.org or acct:mike@seed.gluu.org
   - Click submit.
 
-{{:oxauth:openidconnectdiscovery.png?|}}
 ![](http://www.gluu.org/docs/img/oxAuth-RP/openidconnectdiscovery.png "Screenshot of oxAuth-RP OpenID Connect Discovery")
 
 ## Dynamic Client Registration
