@@ -161,3 +161,81 @@ The key for logout is to understand the limitations of logout, and to test the u
 are important to you, so you will not be surprised by the behavior when you put your application
 into production.
 
+
+# Testing with oxAuth RP
+
+  - Go to https://seed.gluu.org/oxauth-rp
+  - Or deploy oxAuth-rp.war
+
+## OpenID Connect Discovery
+
+  - Enter an identifier, for example: https://seed.gluu.org or acct:mike@seed.gluu.org
+  - Click submit.
+
+{{:oxauth:openidconnectdiscovery.png?|}}
+![](http://www.gluu.org/docs/img/oxAuth-RP/openidconnectdiscovery.png "Screenshot of oxAuth-RP OpenID Connect Discovery")
+
+## Dynamic Client Registration
+
+![](http://www.gluu.org/docs/img/oxAuth-RP/dynamicclientregistration.png "Screenshot of oxAuth-RP Dynamic Client Registration")
+
+### Client Read
+
+![](http://www.gluu.org/docs/img/oxAuth-RP/clientread.png "Screenshot of oxAuth-RP Client Read")
+
+
+## Authorization Code Grant
+
+### Request Authorization and receive the Authorization Code and ID Token
+
+  - Go to https://seed.gluu.org/oxauth-rp
+  - Enter the Authorization Endpoint (eg: https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/authorize)
+  - Select the Response Types: CODE and ID_TOKEN
+  - Enter the Client ID (eg: @!EDFB.879F.2DAE.D95A!0001!0442.B31E!0008!A2DA.C10F)
+  - Select the desired Scopes: openid is mandatory, profile, address, email and phone are optional.
+  - Enter a Redirect URI (eg: https://seed.gluu.org/oxauth-rp/home.seam)
+  - Optionally enter a State value.
+  - Click submit.
+
+![](http://www.gluu.org/docs/img/oxAuth-RP/requestauthorizationcodegrant.png "Screenshot of oxAuth-RP Authorization Endpoint")
+
+### Request Access Token using the Authorization Code
+
+  - Once redirected back to https://seed.gluu.org/oxauth-rp
+  - Enter the Token Endpoint (eg: https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/token)
+  - Select the Grant Type: AUTHORIZATION_CODE
+  - Enter the Client ID.
+  - Enter the Client Secret.
+  - Enter the Code received from the previous request
+  - Enter the Redirect URI (eg: https://seed.gluu.org/oxauth-rp/home.seam)
+  - Enter the Scopes: openid profile address email phone.
+  - Click submit.
+
+![](http://www.gluu.org/docs/img/oxAuth-RP/requestaccesstokenwithauthorizationcode.png "Screenshot of oxAuth-RP Token Endpoint")
+
+### Request new Access Token using the Refresh Token
+
+  - Go to https://seed.gluu.org/oxauth-rp
+  - Enter the Token Endpoint (https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/token)
+  - Select the Grant Type: REFRESH_TOKEN
+  - Enter the Client ID.
+  - Enter the Client Secret.
+  - Enter the Refresh Token received in a previous request.
+  - Click submit.
+
+![](http://www.gluu.org/docs/img/oxAuth-RP/refreshtoken.png "Screenshot of oxAuth-RP Refresh Token")
+
+
+## UserInfo Endpoint
+
+![](http://www.gluu.org/docs/img/oxAuth-RP/userinfoendpoint.png "Screenshot of oxAuth-RP User Info Endpoint")
+
+## Session Management
+
+### End Session Endpoint
+
+![](http://www.gluu.org/docs/img/oxAuth-RP/endsession.png "Screenshot of oxAuth-RP End Session Endpoint")
+
+### Check Session iFrame
+
+![](http://www.gluu.org/docs/img/oxAuth-RP/checksession.png "Screenshot of oxAuth-RP Check Session iFrame")
