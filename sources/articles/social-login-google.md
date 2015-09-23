@@ -92,7 +92,7 @@ You'll also need to add some custom properties:
 
  * __gplus_client_secrets_file__ : /opt/tomcat/conf/google.json
  * __gplus_deployment_type__ : enroll
- * __gplus_remote_attributes_list__ : email, email, name, family_name, given_name, locale
+ * __gplus_remote_attributes_list__ : email, email, given_name, family_name, given_name, locale
  * __gplus_local_attributes_list__ : uid, mail, givenName, sn, cn, preferredLanguage
 
 1. _gplus_client_secrets_file_ - It's mandatory property. It's path to application configuration file downloaded from Google console for application.
