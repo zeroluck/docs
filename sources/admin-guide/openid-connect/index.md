@@ -9,6 +9,12 @@
 	- [Search clients](#search-clients)
 	- [View client](#view-clients)
 - [Session management](#session-management)
+- [Testing with oxAuth RP](#testing-with-oxauth-rp)
+	- [OpenID Connect Discovery](#openid-connect-discovery)
+	- [Dynamic Client Registration](#dynamic-client-registration)
+	- [Authorization Endpoint](#authorization-endpoint)
+	- [UserInfo Endpoint](#userinfo-endpoint)
+	- [OpenID Connect Session Management](#openid-connect-session-management)
 
 # Overview 
 
@@ -183,7 +189,7 @@ into production.
 ![](http://www.gluu.org/docs/img/oxAuth-RP/clientread.png "Screenshot of oxAuth-RP Client Read")
 
 
-## Authorization Code Grant
+## Authorization Endpoint
 
 ### Request Authorization and receive the Authorization Code and ID Token
 
@@ -229,7 +235,7 @@ into production.
 
 ![](http://www.gluu.org/docs/img/oxAuth-RP/userinfoendpoint.png "Screenshot of oxAuth-RP User Info Endpoint")
 
-## Session Management
+## OpenID Connect Session Management
 
 ### End Session Endpoint
 
