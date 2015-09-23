@@ -56,8 +56,8 @@ pages:
 - [articles/ubuntu-shib-apache.md, Articles, Super Quick Ubuntu Shib Apache Install]
 
 # FAQ
-- [faq/general/index.md, FAQ, General]
-- [faq/cloud-deployment/index.md, FAQ, Cloud Deployment]
+- [faq/index.md, FAQ, General]
+- [faq/cloud-faq.md, FAQ, Cloud Deployment]
 
 # Deployment Sub-sections
 - [admin-guide/deployment/centos.md, hidden]
