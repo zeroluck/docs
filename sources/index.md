@@ -65,7 +65,8 @@ The main documentation is organized into the following sections:
 	  - [SCIM UMA Authentication](./admin-guide/user-management/index.md#scim-uma-authentication)
 - [Personal](./admin-guide/personal/index.md) 
 - [SCIM User](./admin-guide/SCIM-user-test/index.md)
-- [FAQ](./faq/general/index.md)
+- [General FAQ](./faq/index.md)
+- [Cloud FAQ](./faq/cloud-faq.md)
 
 # Reference
 - [API](./reference/api/index.md) 
