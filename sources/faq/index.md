@@ -1,11 +1,11 @@
-## Gluu Server FAQ
+# Gluu Server FAQ
 
 ## What can I do with a Gluu Server?
 
-People--employees, customers, and partners-–need to be identified to interact electronically
+People-employees, customers, and partners-need to be identified to interact electronically
 with an organization. Authentication (_authn_) and authorization (_authz_) is a challenge faced
-by almost every organization large enough to register an Internet domain. And it’s not just
-people that need to be authenticated and authorized. “Clients” are online agents that can
+by almost every organization large enough to register an Internet domain. And its not just
+people that need to be authenticated and authorized. Clients are online agents that can
 interact with services on your behalf. With the emergence of the IoT and the API economy,
 developers and system administrators are urgently searching for standards based solutions and
 best practices to improve the security of web and mobile applications.
@@ -43,7 +43,7 @@ Yes! The Gluu Server provides interfaces for UMA, a new standardized profile of 
 
 It is imperative for our society that we decentralize identity. Facebook and
 Google have bridged our inability to identify our friends on the Internet by
-providing a central identity hub-–you can share a Google doc with someone
+providing a central identity hub-you can share a Google doc with someone
 only if they have a Google account. With a myriad of vendors producing
 hardware and software that interact on our behalf, we cannot build our society on
 central identity silos. Like enlightened despotism, it seems efficient. But
@@ -61,7 +61,7 @@ For years, deploying an application access management suite was too expensive
 for any but the largest enterprises, who engineered tightly bundled proprietary
 application security solutions like Oracle Access Manager, IBM Tivoli Access Manager
 or CA SiteMinder. These security suites used proprietary protocols and resulted in
-“vendor lock-in.” The Gluu server offers an alternative:
+vendor lock-in. The Gluu server offers an alternative:
 enterprise class access management, using 100% open source components
 that are free to use in production. This recipe has been developed by Gluu over the
 last five years, and is proven to work in a variety of deployments around the globe
@@ -93,7 +93,7 @@ planet and even on the Internet too!
 The Internet will not become a safer place if only big companies can afford security. If organizations
 had to pay a license fee for every web, email and DNS server, the Internet would be a much smaller place.
 Even companies that may opt for a non-open-source solution, may need a cost effective solutions to
-recommend to partners. If you need your partners to support secure open standards for security, you can’t
+recommend to partners. If you need your partners to support secure open standards for security, you canÂ’t
 ask them to buy expensive enterprise software. Finally, privacy advocates around the globe prefer open
 source security solutions. Black boxes are anathema to application security.
 
