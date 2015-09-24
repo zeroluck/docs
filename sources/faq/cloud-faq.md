@@ -1,5 +1,4 @@
 # Cloud Deployment FAQ
-[TOC]
 
 The Cloud Deployment FAQ provides cloud specific notes for the cluster installation on different cloud providers. 
 The following are notes, not complete installation guides. 
