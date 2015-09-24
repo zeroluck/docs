@@ -1,12 +1,5 @@
 **Table of Contents** 
-
-- [Adding New User](#adding-new-user)
-- [SCIM UMA Authentication](#scim-uma-authentication )
-	- [Base configuration: Create oxAuth Clients, Policies](#base-configuration-create-oxauth-clients-policies)
-	- [oxTrust configuration (Resource Server)](#oxtrust-configuration-resource-server)
-	- [SCIM Client (Requesting Party) sample code](#scim-client-requesting-party-sample-code)
-
-
+[TOC]
 # Adding New User 
 
 To keep the Gluu Server up-to-date with the latest user claims, your organization can either "push" or "pull" identity data. In the "pull" mode, otherwise known as LDAP Syncronization or Cache Refresh, the Gluu Server can use an existing LDAP identity source like Microsoft Active Directory as the authoritative source of identity information. If you "push" identities to the Gluu Server, you can use the JSON/REST SCIM API. 

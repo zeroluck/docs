@@ -1,4 +1,5 @@
 # Interception Scripts
+[TOC]
 
 The Gluu Server was designed to be very flexible. Gluu Server admins can use [Jython](http://www.jython.org/docs/tutorial/indexprogress.html) interception scripts to customize behavior.
 

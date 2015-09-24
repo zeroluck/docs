@@ -1,21 +1,6 @@
 **Table of Contents** 
 
-- [Overview](#overview)
-- [New Jargon (taxonomy)](#new-jargon-taxonomy)
-- [Discovery](#discovery)
-- [Scopes](#scopes)
-- [Client Registration](#client-registration)
-	- [Custom Client Registration](#custom-client-registration)
-	- [Search clients](#search-clients)
-	- [View client](#view-clients)
-- [Session management](#session-management)
-- [Testing with oxAuth RP](#testing-with-oxauth-rp)
-	- [OpenID Connect Discovery](#openid-connect-discovery)
-	- [Dynamic Client Registration](#dynamic-client-registration)
-	- [Authorization Endpoint](#authorization-endpoint)
-	- [UserInfo Endpoint](#userinfo-endpoint)
-	- [OpenID Connect Session Management](#openid-connect-session-management)
-
+[TOC]
 # Overview 
 
 Since [Interop 4](http://www.gluu.co/.fm8t) the Gluu Server has one of the most comprehensive

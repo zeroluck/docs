@@ -353,7 +353,7 @@ Latest Gluu Servers ( including Community Edition ) introduced two updgraded sec
 
   * _Server IP Address:_ Include the IP of your Gluu Server here. This feature basically added to run Cache Refresh mechanism perfectly in clustered environment.
   
-  * _Removed Script File Name location:_ New version of Gluu Server allows Gluu Server Administrator to manage your custom scripts with more interctive section under configuration named "[Manage Custom Scripts](http://www.gluu.org/docs/admin-guide/oxTrust/configuration/#manage-custom-scripts)"
+  * _Removed Script File Name location:_ New version of Gluu Server allows Gluu Server Administrator to manage your custom scripts with more interctive section under configuration named Manage Custom Scripts.
 
   * _Update:_ This button is to push the changes in the Gluu Server and it should be hit only when the values have been entered.
 

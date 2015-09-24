@@ -1,10 +1,5 @@
 **Table of Contents** 
-
-- [Design Customizations](#design-customization)
-- [Style customizations](#style-customizations)
-- [Page customizations](#page-customizations)
-- [Built-in oxTrust customization](#built-in-oxtrust-customization)
-
+[TOC]
 #Design Customizations
 The look and feel of the Gluu Server can be edited to match your organizations branding and custom requirements.
 

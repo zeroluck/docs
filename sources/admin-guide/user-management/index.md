@@ -28,7 +28,7 @@ Cache Refresh was built by Gluu to pull user information from a backend Active D
 
 Self-Registration is done by users on a self-service basis. Since oxTrust user registration cannot add users to a backend LDAP or Active Directory server, self-registration will only be effective if GluuLDAP is used for authentication of users.
 
-BY default a a limited number of attribute is present in default self-registration form. If more attributes are needed they can be added in Registration Management of Organization Configuration. Learn more about Registration Management [here](../configuration/index.md#registration-management).
+BY default a a limited number of attribute is present in default self-registration form. If more attributes are needed they can be added in Registration Management of Organization Configuration. Learn more about Registration Management [here](../configuration/index.md#manage-registration).
 
 # Local User Management
 

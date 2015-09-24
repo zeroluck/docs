@@ -4,7 +4,7 @@
 
 This strategy has its pluses and minuses. In certain circumstances, there are ways for a hacker to “break out of the jail”, and escalate to the host file system. (You don't want to make any file system links from the chroot'd server to the main host!) The benefit is ease of deployment (Docker not required...). We wanted a simple package that people could install and uninstall quickly.
 
-To report issues or provide feedback about the installation process, please use [GitHub](https://github.com/GluuFederation/community-edition-setup/issues) or register for an account on [https://support.gluu.org](https://support.gluu.org).
+To report issues or provide feedback about the installation process, please use [GitHub](https://github.com/GluuFederation/community-edition-setup/issues) or register for an account on [Gluu Support Portal](https://support.gluu.org).
 
 ## System Requirements
 

@@ -1,21 +1,7 @@
 # Getting Started
 
 This document will show you how to get up and running with the Gluu Server. It is broken down into the following sections:
-
-- [Overview](#overview)    
-- [Deployment](#deployment)    
-	- [Minimum Server Requirements:](#minimum-server-requirements)  
-	- [OS Support](#os-support)  
-	- [Available Components](#available-components)  
-	- [Deployment Models](#deployment-models)  
-- [Dashboard](#dashboard)  
-- [Person Authentication](#person-authentication)  
-	- [Basic Authentication](#basic-authentication)  
-	- [Custom Authentication](#custom-authentication)  
-- [Identity Management](#identity-management)  
-- [Single Sign-On (SSO)](#single-sign-on-sso)  
-- [Web & API Access Management](#web-and-api-access-management)  
-
+[TOC]
 ## Overview
 
 The Gluu Server is an identity and access management suite comprised of free open source software (FOSS) components. Some of the software was written by Gluu (everything with an "ox" prefix, like "oxAuth"), and some of the software we forked from existing open source projects like the Shibboleth SAML identity provider, Forgerock community release of OpenDJ, the Asimba SAML proxy, the CAS authentication server and many more components that are part of the linux distributions. Learn more about each of the open source licenses in use [here](../introduction/index.md#licenses).

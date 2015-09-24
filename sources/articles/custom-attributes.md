@@ -82,7 +82,7 @@ up new Gluu Servers, this is probably the quickest way to handle it.
 
 If you just have a couple of attributes, you can also use the oxTrust Web
 interface to add the attributes. See screenshot below, and refer to the
-oxTrust [documentation](../admin-guide/saml/outbound-saml.md/#ldap-attributes/) for an explanation of all these fields.
+oxTrust [documentation](http://www.gluu.org/docs/admin-guide/configuration/#attributes) for an explanation of all these fields.
 
 ## OpenID Scopes
 
@@ -99,7 +99,7 @@ OpenID Scopes are a really good thing.
 
 An example of the default Gluu Server authorization request:
 
-![OpenID Connect Scope Authorization Screenshot](../img/openid_connect/authz_screenshot.png)
+![OpenID Connect Scope Authorization Screenshot](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/openid_connect/authz_screenshot.png)
 
 So if you have custom attributes, you may need to define a custom OpenID Scope.
 This is pretty easy to do using the oxTrust user interface, and you can just
