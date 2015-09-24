@@ -64,8 +64,14 @@ The main documentation is organized into the following sections:
 	  - [SCIM oxAuth Authentication](./admin-guide/user-management/index.md#scim-oxauth-authentication)
 	  - [SCIM UMA Authentication](./admin-guide/user-management/index.md#scim-uma-authentication)
 - [Personal](./admin-guide/personal/index.md) 
+<<<<<<< HEAD
 - [SCIM](./admin-guide/SCIM/index.md)
 - [FAQ](./faq/general/index.md)
+=======
+- [SCIM User](./admin-guide/SCIM-user-test/index.md)
+- [General FAQ](./faq/index.md)
+- [Cloud FAQ](./faq/cloud-faq.md)
+>>>>>>> 29881db67ce6c02c740da79428e387a2d265d20d
 
 # Reference
 - [API](./reference/api/index.md) 

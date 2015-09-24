@@ -86,7 +86,6 @@ Use this for shibboleth2.xml and replace `minnow.gluu.info` with the hostname of
                 </Host>
             </RequestMap>
         </RequestMapper>
-        -->
         <ApplicationDefaults id="default" policyId="default"
             entityID="https://minnow.gluu.info/shibboleth"
             REMOTE_USER="eppn persistent-id targeted-id uid mail"
@@ -217,8 +216,18 @@ and "Add Relationship"
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/ubuntu-shib-apache/minnow-saml-trust-relationship-shibboleth-sp.png)
 
-Wait 5 minutes for the Shibboleth IDP to detect reload the metadata.... <crickets chirping>...
+Then configure for SAML2SSO profile
 
+Click on the checkbox to "Configure specific RelyingParty" 
+
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/ubuntu-shib-apache/configure_rp.png)
+
+And then click add the SAML2SSO profile
+
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/ubuntu-shib-apache/saml_sso-profile.png)
+
+Then "Save" and "Update." Wait 5 minutes for the Shibboleth IDP to detect reload the metadata or
+stop and start tomcat.
 
 ## Test
 
