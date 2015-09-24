@@ -21,4 +21,4 @@ While running the `/install/community-edition-setup/setup.py` script, use the Pr
 
 Please help us by giving us your feedback and sharing any knowledge you have regarding any tips or tricks to deploy Gluu Server in any specific cloud platform. Your feedback and suggestions are valuable to us and will allow us to enrich the community knowledge. 
 
-**Please to post a commit in this page in [this link](https://github.com/GluuFederation/docs/blob/master/sources/faq/cloud-deployment/index.md) or open a support ticket in the Gluu [Support Portal](support.gluu.org) to notify us about your feedback and suggestions.**
+**Please to post a commit in this page in [this link](https://github.com/GluuFederation/docs/blob/master/sources/faq/cloud-deployment/index.md) or open a support ticket in the [Gluu Support Portal](support.gluu.org) to notify us about your feedback and suggestions.**
