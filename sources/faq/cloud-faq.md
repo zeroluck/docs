@@ -2,7 +2,7 @@
 
 The Cloud Deployment FAQ provides cloud specific notes for the cluster installation on different cloud providers. 
 The following are notes, not complete installation guides. 
-Please see the [Deployment Guide](http://www.gluu.org/docs/admin-guide/deployment/) for complete installation instructions.
+Please see the [Deployment Guide](../admin-guide/deployment/index.md) for complete installation instructions.
 
 ## Microsoft Azure
 Microsoft Azure assigns a public and private IP to the VM. Initially the server could not be reached at the public address (404 - error) even though Apache logs indicated inbound traffic and Gluu server login page was unavailable.
