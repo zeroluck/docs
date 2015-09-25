@@ -98,7 +98,7 @@ This entry sets the mode of the Gluu oxAuth Server. Possible modes are
 * memory: run the oxAuth server in `in-memory` mode.
 
 * ldap: run the oxAuth server in `ldap` mode. This is required to work
-  in cluster.
+  in cluster, and this is the default setting.
 
 ```
 <mode>ldap</mode>
