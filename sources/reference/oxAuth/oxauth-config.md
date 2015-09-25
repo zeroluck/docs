@@ -525,14 +525,20 @@ authenticate endpoints:
 </token-endpoint-auth-signing-alg-values-supported>
 ```
 
-### Supported display values
+### Supported OpenID display values
 
-The Gluu Server supports these display values:
+According to the [OpenID Core Documentation][openid-core], the Gluu
+Server supports these display values as part of the request parameter
+set:
 
-* `page`:
-* `popup`:
-* `touch`:
-* `wap`:
+* `page`: display the authentication information as a full User Agent
+  page view. If not specified otherwise this is the default value.
+* `popup`: display the authentication information with a popup User
+  Agent window.
+* `touch`: display the authentication information consistent with a
+  device that leverages a touch interface.
+* `wap`: display the authentication information consistent with a
+  "feature phone" type display.
 
 As the default value, `page` is enabled, only.
 
@@ -995,6 +1001,8 @@ definition allows the following tags:
 [oauth2]: https://en.wikipedia.org/wiki/OAuth#OAuth_2.0 "OAuth 2.0, Wikipedia"
 
 [openid]: https://en.wikipedia.org/wiki/OpenID "OpenID, Wikipedia"
+
+[openid-core]: http://openid.net/specs/openid-connect-core-1_0.html "OpenID Connect Core 1.0"
 
 [oxwiki-authorization]: http://ox.gluu.org/doku.php?id=oxauth:authorizationcodegrant "OX wiki, Authorization Code Grant"
 
