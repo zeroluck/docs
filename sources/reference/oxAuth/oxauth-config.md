@@ -484,6 +484,9 @@ authentication:
   key was registered. The client authenticates in accordance with section 
   2.2 of (JWT) Bearer Token Profiles and OAuth 2.0 Assertion Profile
 
+To enable the desired endpoint authentication method from the list above
+activate the according tag `token-endpoint-auth-method`:
+
 ```
 <token-endpoint-auth-methods-supported>
     <token-endpoint-auth-method>client_secret_basic</token-endpoint-auth-method>
@@ -526,10 +529,10 @@ authenticate endpoints:
 
 The Gluu Server supports these display values:
 
-* `page`
-* `popup`
-* `touch`
-* `wap`
+* `page`:
+* `popup`:
+* `touch`:
+* `wap`:
 
 As the default value, `page` is enabled, only.
 
