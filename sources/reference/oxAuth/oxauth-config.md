@@ -697,7 +697,7 @@ To require a request for uri registration, the tag
 ### Uri for operation policy
 
 To define a certain oxAuth operation policy uri use the tag
-`op-policy-uri`.
+`op-policy-uri`. The value refers to an according policy document.
 
 ```
 <op-policy-uri>http://ox.gluu.org/doku.php?id=oxauth:policy</op-policy-uri>
@@ -706,6 +706,7 @@ To define a certain oxAuth operation policy uri use the tag
 ### Uri for type-of-service
 
 To define a certain oxAuth type-of-service uri use the tag `op-tos-uri`.
+The value refers to an according type-of-service document.
 
 ```
 <op-tos-uri>http://ox.gluu.org/doku.php?id=oxauth:tos</op-tos-uri>
