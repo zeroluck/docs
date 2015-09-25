@@ -105,6 +105,7 @@ The main documentation is organized into the following sections:
 - [Benchmarking](./articles/benchmarking.md)
 - [Custom Attributes](./articles/custom-attributes.md)
 - [IIS SAML](./articles/iis-saml.md)
+- [oxRay Plugin](./articles/oxray.md)
 - [Java SAML Library](./articles/java-saml.md)
 - [Java OpenID Connect](./articles/java-connect.md)
 - [JS OpenID Connect](./articles/js-connect.md)
