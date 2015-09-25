@@ -146,7 +146,7 @@ according tag `response-type`:
 
 These grant types are supported:
 
-* `authorization_code`:
+* `authorization_code`: use an authorization code as grant as described in [oxwiki-authorization]
 * `implicit`:
 * `client_credentials`:
 * `refresh_token`: as described in [OAuth 2.0][rfc6749]
@@ -944,6 +944,8 @@ definition allows the following tags:
 [oauth2]: https://en.wikipedia.org/wiki/OAuth#OAuth_2.0 "OAuth 2.0, Wikipedia"
 
 [openid]: https://en.wikipedia.org/wiki/OpenID "OpenID, Wikipedia"
+
+[oxwiki-authorization]: http://ox.gluu.org/doku.php?id=oxauth:authorizationcodegrant "Authorization Code Grant"
 
 [rest]: https://en.wikipedia.org/wiki/Representational_state_transfer "Representational State Transfer (REST), Wikipedia"
 
