@@ -561,7 +561,13 @@ Server supports these claims:
   following section "Supported Claims" for a detailed list of values.
 * `distributed`: these claims are asserted by a Claims provider other
   than the OpenID provider but are returned as references by the OpenID
-  provider.
+  provider. The claim dataset is represented by using special
+  `_claim_names` and `_claim_sources` members of the [JSON][json] object
+  containing the Claims.
+
+Currently, the claim type `aggregated` is not supported. To activate a
+certain claim type enable the according tag in the configuration file as
+follows:
 
 ```
 <claim-types-supported>
