@@ -48,13 +48,13 @@ endpoints the Gluu Server communicates with:
 * `check-session-iframe`: the name of the [iframe][iframe] that is associated to the current session
 * `end-session-endpoint`: the remote station to terminate the current session
 * `jwks-uri`: the uri for authorization via [JSON Web Key Set (JWKS)][jwk]
-* `registration-endpoint`: the remote station to register
-* `validate-token-endpoint`: the remote station that validates authorization tokens
+* `registration-endpoint`: the remote station to register the connection
+* `validate-token-endpoint`: the remote station to validate authorization tokens
 * `federation-metadata-endpoint`: the remote station for [Active Directory Federation Services (ADFS)][adfs-wikipedia] metadata
 * `federation-endpoint`: the remote station for using the [Active Directory Federation Services (ADFS)][adfs-wikipedia]
 * `openid-discovery-endpoint`: the remote station for the [OpenID][openid] Discovery service 
 * `openid-configuration-endpoint`: the remote station for the [OpenID][openid] configuration
-* `id-generation-endpoint`: the remote station for the generation of the ID
+* `id-generation-endpoint`: the remote station to generate the ID
 * `introspection-endpoint`: the remote station for further introspection
 
 ```
