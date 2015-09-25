@@ -607,16 +607,17 @@ Server.
 
 ### Supported locales for claims
 
-Currently, these languages are supported for claims:
+Currently, the Gluu Server supports these languages for claims:
 
 * en: English
-
-These languages are not enabled by default:
-
 * en-GB: British English
 * en-CA: Canadian English
 * fr-FR: French 
 * fr-CA: Canadian French
+
+These languages are enabled by default:
+
+* en: English
 
 ```
 <claims-locales-supported>
