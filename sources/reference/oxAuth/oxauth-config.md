@@ -564,9 +564,9 @@ Currently, the Gluu Server supports these claims:
 The Gluu Server supports these values for claims:
 
 * `uid`: a valid user id
-* `displayName`: a previously chosen user name that is displayed
+* `displayName`: a previously chosen display name for the Gluu Server User Interface
 * `givenName`: a previously given user name
-* `sn`: 
+* `sn`: abbreviation for *short name*. This feature has not been tested yet.
 * `mail`: a stored email address for this user
 
 ```
