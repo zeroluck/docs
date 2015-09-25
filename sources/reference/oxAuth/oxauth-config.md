@@ -127,6 +127,9 @@ Gluu Server. The following combinations are possible:
 * `code token`: Authorization Code Grant Type and Implicit Grant Type
 * `code token id_token`: Authorization Code Grant Type, Implicit Grant Type, and ID Token
 
+To enable the desired combinations from the list above activate the
+according tag `response-type`:
+
 ```
 <response-types-supported>
     <response-type>code</response-type>
