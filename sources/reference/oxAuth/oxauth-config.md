@@ -18,12 +18,12 @@ The sections are listed according to their order in the configuration file.
 
 ### Basic settings
 
-The basic settings describe the general setup of the Gluu server.
+The basic settings describe the general setup of the Gluu Server.
 
-* appliance-inum: the [iNum code][inum] the appliances refer to
-* issuer: the according hostname, or specific uri
-* login-page: the login page for the according hostname, or uri
-* authorization-page: the oxAuth authorization page
+* `appliance-inum`: the [iNum code][inum] the appliances refer to
+* `issuer`: the according hostname, or specific uri of the issuer
+* `login-page`: the login page for the according hostname, or uri
+* `authorization-page`: the oxAuth authorization page
 
 ```
 <appliance-inum>%(inumAppliance)s</appliance-inum>
@@ -31,6 +31,31 @@ The basic settings describe the general setup of the Gluu server.
 <login-page>https://%(hostname)s/oxauth/login.seam</login-page>
 <authorization-page>https://%(hostname)s/oxauth/authorize.seam</authorization-page>
 ```
+
+The Gluu Server allows connections via [Security Assertion Markup
+Language (SAML)][saml], and an [OpenID][openid] Connect Identity
+Provider that can be configured for [Single Sign-On (SSO)][sso] to any
+SAML 2.0 or OpenID Connect protected application.
+
+To do a proper single sign-on, use the following tags to specify the
+endpoints the Gluu Server communicates with:
+
+* `base-endpoint`: the remote station for basic communication
+* `authorization-endpoint`: the remote station for general authorization
+* `token-endpoint`: the remote station for token-based communication
+* `userinfo-endpoint`: the remote station to receive user information from
+* `clientinfo-endpoint`: the remote station to receive client information from
+* `check-session-iframe`: the name of the [iframe][iframe] that is associated to the current session
+* `end-session-endpoint`: the remote station to terminate the current session
+* `jwks-uri`: the uri for authorization via [JSON Web Key Set (JWKS)][jwk]
+* `registration-endpoint`: the remote station to register the connection
+* `validate-token-endpoint`: the remote station to validate authorization tokens
+* `federation-metadata-endpoint`: the remote station for [Active Directory Federation Services (ADFS)][adfs-wikipedia] metadata
+* `federation-endpoint`: the remote station for using the [Active Directory Federation Services (ADFS)][adfs-wikipedia]
+* `openid-discovery-endpoint`: the remote station for the [OpenID][openid] Discovery service 
+* `openid-configuration-endpoint`: the remote station for the [OpenID][openid] configuration
+* `id-generation-endpoint`: the remote station to generate the ID
+* `introspection-endpoint`: the remote station for further introspection
 
 ```
 <base-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1</base-endpoint>
@@ -49,18 +74,31 @@ The basic settings describe the general setup of the Gluu server.
 <openid-configuration-endpoint>https://%(hostname)s/.well-known/openid-configuration</openid-configuration-endpoint>
 <id-generation-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1/id</id-generation-endpoint>
 <introspection-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1/introspection</introspection-endpoint>
+```
+
+Additionally, the Gluu Server includes an [User-Managed Access
+(UMA)][uma] Authorization Server (AS) that can be used to enforce
+policies for access to any API or web resource. UMA is a profile of
+[OAuth2][oauth2] that is complimentary to [OpenID][openid] Connect. UMA
+defines [REST][rest]ful, [JSON][json]-based, standardized flows and
+constructs for access management. Use this tag to configure the
+according endpoint:
+
+* `uma-configuration-endpoint`: uri that defines the endpoint
+
+```
 <uma-configuration-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/uma-configuration</uma-configuration-endpoint>
 ```
 
 ### Server mode
 
-This entry sets the mode of the Gluu oxAauth server. Possible modes are
+This entry sets the mode of the Gluu oxAuth Server. Possible modes are
 `memory` and `ldap`.
 
-* memory: run the oxAauth server in `in-memory` mode.
+* memory: run the oxAuth server in `in-memory` mode.
 
-* ldap: run the oxAauth server in `ldap` mode. This is required to work
-  in cluster.
+* ldap: run the oxAuth server in `ldap` mode. This is required to work
+  in cluster, and this is the default setting.
 
 ```
 <mode>ldap</mode>
@@ -79,25 +117,28 @@ whereas 3600 seconds represent 1 hour.
 ### Supported response types
 
 This entry defines the various response types that are supported by the
-Gluu server. The following combinations are possible:
+Gluu Server. The following combinations are possible:
 
-* code:
-* code id_token:
-* token:
-* token id_token:
-* code token:
-* code token id_token:
-* id_token:
+* `code`: Authorization Code Grant Type
+* `token`: Implicit Grant Type
+* `id_token`: ID Token
+* `code id_token`: Authorization Code Grant Type and Implicit Grant Type
+* `token id_token`: Implicit Grant Type and ID Token
+* `code token`: Authorization Code Grant Type and Implicit Grant Type
+* `code token id_token`: Authorization Code Grant Type, Implicit Grant Type, and ID Token
+
+To enable the desired combinations from the list above activate the
+according tag `response-type`:
 
 ```
 <response-types-supported>
     <response-type>code</response-type>
-    <response-type>code id_token</response-type>
     <response-type>token</response-type>
+    <response-type>id_token</response-type>
+    <response-type>code id_token</response-type>
     <response-type>token id_token</response-type>
     <response-type>code token</response-type>
     <response-type>code token id_token</response-type>
-    <response-type>id_token</response-type>
 </response-types-supported>
 ```
 
@@ -105,29 +146,43 @@ Gluu server. The following combinations are possible:
 
 These grant types are supported:
 
-* authorization_code
-* implicit
-* urn:ietf:params:oauth:grant-type:jwt-bearer
+* `authorization_code`: use an authorization code as grant as described in 
+  the [OX wiki][oxwiki-authorization]
+* `implicit`: a simplified authorization code flow optimized for clients
+  implemented in a browser using a scripting language such as JavaScript.
+  See the [OX wiki][oxwiki-authorization-implicit] for more information.
+* `client_credentials`: authorization grant recommended to be used when the 
+  client is acting on its own behalf. See the 
+  [OX wiki][oxwiki-authorization-client-credentials] for more information.
+* `refresh_token`: as described in [OAuth 2.0][rfc6749], and 
+  [OX wiki][oxwiki-authorization].
+* `urn:ietf:params:oauth:grant-type:jwt-bearer`: this entry refers to JSON 
+  Web Token (JWT) Profile for [OAuth 2.0][oauth2] Client Authentication and 
+  Authorization Grants as described in the according [IETF document][ietf-jwk].
 
 ```
 <grant-types-supported>
     <grant-type>authorization_code</grant-type>
     <grant-type>implicit</grant-type>
+    <grant-type>client_credentials</grant-type>
+    <grant-type>refresh_token</grant-type>
     <grant-type>urn:ietf:params:oauth:grant-type:jwt-bearer</grant-type>
 </grant-types-supported>
 ```
 
-### AMR Support
+### Support for Authentication Methods References (AMR)
 
 AMR abbreviates the term Authentication Methods References. In general,
 it is a [JSON][json] array of case sensitive strings that are
-identifiers for authentication methods used in the authentication. In
-this specific case, AMR enables an OpenID Connect client to request a
-specific method of authentication, and is turned off by default.
+identifiers for authentication methods used in the authentication
+procedure. In this specific case, AMR enables an [OpenID][openid]
+Connect client to request a specific method of authentication. 
+
+By default, this feature is turned off.
 
 ```
 <amr-values-supported>
-    <!-- amr>basic</amr-->
+    <amr>basic</amr>
 </amr-values-supported>
 ```
 
@@ -145,7 +200,7 @@ This entry defines the supported subject types. Possible values are
 
 ### Supported algorithms a user can login with
 
-Currently, the Gluu server supports these algorithms for login
+Currently, the Gluu Server supports these algorithms for login
 procedures:
 
 * HS256: [HMAC][hmac] using [SHA-256][sha2] hash algorithm.
@@ -157,6 +212,9 @@ procedures:
 * ES256: [ECDSA][ecdsa] using P-256 curve and [SHA-256][sha2] hash algorithm.
 * ES384: [ECDSA][ecdsa] using P-384 curve and [SHA-384][sha2] hash algorithm.
 * ES512: [ECDSA][ecdsa] using P-521 curve and [SHA-512][sha2] hash algorithm.
+
+To enable the desired algorithm from the list above activate the
+according tag `userinfo-signing-alg`:
 
 ```
 <userinfo-signing-alg-values-supported>
@@ -174,21 +232,24 @@ procedures:
 
 ### Supported encryption algorithms
 
-Currently, the Gluu server supports these algorithms for data encryption:
+Currently, the Gluu Server supports these algorithms for data encryption:
 
-* RSA1_5: RSA 1.5 (PKCS #1) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
-* RSA-OAEP: RSA with [Optimal asymmetric encryption padding (OAEP)][oaep] with the default parameters specified by [RFC 3447][rfc3447] in section A.2.1.
-* A128KW: Advanced Encryption Standard (AES) Key Wrap Algorithm ([RFC 3394][rfc3394]) using 128 bit keys.
-* A256KW: Advanced Encryption Standard (AES) Key Wrap Algorithm ([RFC 3394][rfc3394]) using 256 bit keys.
+* RSA1_5: [RSA][rsa] 1.5 (PKCS #1) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
+* RSA-OAEP: [RSA][rsa] with [Optimal asymmetric encryption padding (OAEP)][oaep] with the default parameters specified by [RFC 3447][rfc3447] in section A.2.1.
+* A128KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 128 bit keys.
+* A256KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 256 bit keys.
 
 Though listed in the configuration file, these algorithms are not
 enabled, currently:
 
-* dir: Direct use of a shared symmetric key as the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] for the block encryption step (rather than using the symmetric key to wrap the CEK).
-* ECDH-ES: Elliptic Curve Diffie-Hellman Ephemeral Static ([RFC
+* `dir`: Direct use of a shared symmetric key as the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] for the block encryption step (rather than using the symmetric key to wrap the CEK).
+* `ECDH-ES`: Elliptic Curve Diffie-Hellman Ephemeral Static ([RFC
 6090][rfc6090]) key agreement using the Concat KDF, as defined in section 5.8.1 of [NIST.800-56A][nist-SP800-56AR2], with the agreed-upon key being used directly as the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] (rather than being used to wrap the CEK).
-* ECDH-ES+A128KW: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] with the "A128KW" function (rather than being used directly as the CEK).
-* ECDH-ES+A256KW: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] with the "A256KW" function (rather than being used directly as the CEK).
+* `ECDH-ES+A128KW`: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] with the "A128KW" function (rather than being used directly as the CEK).
+* `ECDH-ES+A256KW`: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] with the "A256KW" function (rather than being used directly as the CEK).
+
+To enable the desired algorithm from the list above activate the
+according tag `userinfo-encryption-alg`:
 
 ```
 <userinfo-encryption-alg-values-supported>
@@ -207,10 +268,13 @@ enabled, currently:
 
 These encryption encoding values are supported:
 
-* A128CBC+HS256: AES_128_CBC_HMAC_SHA_256 authenticated encryption using a 256 bit key
-* A256CBC+HS512: AES_256_CBC_HMAC_SHA_512 authenticated encryption using a 512 bit key
-* A128GCM: Advanced Encryption Standard (AES) in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 128 bit key
-* A256GCM: Advanced Encryption Standard (AES) in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 256 bit key
+* A128CBC+HS256: [AES][aes]_128_CBC_HMAC_SHA_256 authenticated encryption using a 256 bit key
+* A256CBC+HS512: [AES][aes]_256_CBC_HMAC_SHA_512 authenticated encryption using a 512 bit key
+* A128GCM: [Advanced Encryption Standard (AES)][aes] in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 128 bit key
+* A256GCM: [Advanced Encryption Standard (AES)][aes] in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 256 bit key
+
+To enable the desired encryption encoding value from the list above
+activate the according tag `userinfo-encryption-enc`:
 
 ```
 <userinfo-encryption-enc-values-supported>
@@ -223,7 +287,7 @@ These encryption encoding values are supported:
 
 ### Supported ID token signing algorithms
 
-Currently, the Gluu server supports these algorithms to sign an ID
+Currently, the Gluu Server supports these algorithms to sign an ID
 token:
 
 * HS256: [HMAC][hmac] using [SHA-256][sha2] hash algorithm.
@@ -235,6 +299,9 @@ token:
 * ES256: [ECDSA][ecdsa] using P-256 curve and [SHA-256][sha2] hash algorithm.
 * ES384: [ECDSA][ecdsa] using P-384 curve and [SHA-384][sha2] hash algorithm.
 * ES512: [ECDSA][ecdsa] using P-521 curve and [SHA-512][sha2] hash algorithm.
+
+To enable the desired signing algorithms from the list above
+activate the according tag `id-token-signing-alg`:
 
 ```
 <id-token-signing-alg-values-supported>
@@ -252,21 +319,24 @@ token:
 
 ### Supported ID token encryption algorithms
 
-Currently, the Gluu server supports these encryption algorithms for
+Currently, the Gluu Server supports these encryption algorithms for
 ID tokens:
 
-* RSA1_5: RSA 1.5 (PKCS #1) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
-* RSA-OAEP: RSA with [Optimal asymmetric encryption padding (OAEP)][oaep] with the default parameters specified by [RFC 3447][rfc3447] in section A.2.1.
-* A128KW: Advanced Encryption Standard (AES) Key Wrap Algorithm ([RFC 3394][rfc3394]) using 128 bit keys.
-* A256KW: Advanced Encryption Standard (AES) Key Wrap Algorithm ([RFC 3394][rfc3394]) using 256 bit keys.
+* RSA1_5: [RSA][rsa] 1.5 (PKCS #1) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
+* RSA-OAEP: [RSA][rsa] with [Optimal asymmetric encryption padding (OAEP)][oaep] with the default parameters specified by [RFC 3447][rfc3447] in section A.2.1.
+* A128KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 128 bit keys.
+* A256KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 256 bit keys.
 
 Though listed in the configuration file, these algorithms are not
 enabled, currently:
 
-* dir: Direct use of a shared symmetric key as the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] for the block encryption step (rather than using the symmetric key to wrap the CEK).
-* ECDH-ES: Elliptic Curve Diffie-Hellman Ephemeral Static ([RFC 6090][rfc6090]) key agreement using the Concat KDF, as defined in section 5.8.1 of [NIST.800-56A][nist-SP800-56AR2], with the agreed-upon key being used directly as the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] (rather than being used to wrap the CEK).
-* ECDH-ES+A128KW: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] with the "A128KW" function (rather than being used directly as the CEK).
-* ECDH-ES+A256KW: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] with the "A256KW" function (rather than being used directly as the CEK).
+* `dir`: Direct use of a shared symmetric key as the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] for the block encryption step (rather than using the symmetric key to wrap the CEK).
+* `ECDH-ES`: Elliptic Curve Diffie-Hellman Ephemeral Static ([RFC 6090][rfc6090]) key agreement using the Concat KDF, as defined in section 5.8.1 of [NIST.800-56A][nist-SP800-56AR2], with the agreed-upon key being used directly as the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] (rather than being used to wrap the CEK).
+* `ECDH-ES+A128KW`: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] with the "A128KW" function (rather than being used directly as the CEK).
+* `ECDH-ES+A256KW`: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] with the "A256KW" function (rather than being used directly as the CEK).
+
+To enable the desired token encryption algorithm from the list above
+activate the according tag `id-token-encryption-alg`:
 
 ```
 <id-token-encryption-alg-values-supported>
@@ -286,10 +356,13 @@ enabled, currently:
 
 These encryption encoding values for ID tokens are supported:
 
-* A128CBC+HS256: AES_128_CBC_HMAC_SHA_256 authenticated encryption using a 256 bit key
-* A256CBC+HS512: AES_256_CBC_HMAC_SHA_512 authenticated encryption using a 512 bit key
-* A128GCM: Advanced Encryption Standard (AES) in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 128 bit key
-* A256GCM: Advanced Encryption Standard (AES) in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 256 bit key
+* A128CBC+HS256: [AES][aes]_128_CBC_HMAC_SHA_256 authenticated encryption using a 256 bit key
+* A256CBC+HS512: [AES][aes]_256_CBC_HMAC_SHA_512 authenticated encryption using a 512 bit key
+* A128GCM: [Advanced Encryption Standard (AES)][aes] in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 128 bit key
+* A256GCM: [Advanced Encryption Standard (AES)][aes] in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 256 bit key
+
+To enable the desired token encryption encoding value from the list
+above activate the according tag `id-token-encryption-enc`:
 
 ```
 <id-token-encryption-enc-values-supported>
@@ -302,7 +375,7 @@ These encryption encoding values for ID tokens are supported:
 
 ### Supported request object signing algorithms
 
-Currently, the Gluu server supports these algorithms to sign a request
+Currently, the Gluu Server supports these algorithms to sign a request
 object:
 
 * HS256: [HMAC][hmac] using [SHA-256][sha2] hash algorithm.
@@ -314,6 +387,9 @@ object:
 * ES256: [ECDSA][ecdsa] using P-256 curve and [SHA-256][sha2] hash algorithm.
 * ES384: [ECDSA][ecdsa] using P-384 curve and [SHA-384][sha2] hash algorithm.
 * ES512: [ECDSA][ecdsa] using P-521 curve and [SHA-512][sha2] hash algorithm.
+
+To enable the desired signing algorithm from the list above activate the
+according tag `request-object-signing-alg`:
 
 ```
 <request-object-signing-alg-values-supported>
@@ -331,21 +407,24 @@ object:
 
 ### Supported request object encryption algorithms
 
-Currently, the Gluu server supports these encryption algorithms for
+Currently, the Gluu Server supports these encryption algorithms for
 request objects:
 
-* RSA1_5: RSA 1.5 (PKCS #1) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
-* RSA-OAEP: RSA with [Optimal asymmetric encryption padding (OAEP)][oaep] with the default parameters specified by [RFC 3447][rfc3447] in section A.2.1.
-* A128KW: Advanced Encryption Standard (AES) Key Wrap Algorithm ([RFC 3394][rfc3394]) using 128 bit keys.
-* A256KW: Advanced Encryption Standard (AES) Key Wrap Algorithm ([RFC 3394][rfc3394]) using 256 bit keys.
+* RSA1_5: [RSA][rsa] 1.5 (PKCS #1) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
+* RSA-OAEP: [RSA][rsa] with [Optimal asymmetric encryption padding (OAEP)][oaep] with the default parameters specified by [RFC 3447][rfc3447] in section A.2.1.
+* A128KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 128 bit keys.
+* A256KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 256 bit keys.
 
 Though listed in the configuration file, these algorithms are not
 enabled, currently:
 
-* dir: Direct use of a shared symmetric key as the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] for the block encryption step (rather than using the symmetric key to wrap the CEK).
-* ECDH-ES: Elliptic Curve Diffie-Hellman Ephemeral Static ([RFC 6090][rfc6090]) key agreement using the Concat KDF, as defined in section 5.8.1 of [NIST.800-56A][nist-SP800-56AR2], with the agreed-upon key being used directly as the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] (rather than being used to wrap the CEK).
-* ECDH-ES+A128KW: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] with the "A128KW" function (rather than being used directly as the CEK).
-* ECDH-ES+A256KW: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] with the "A256KW" function (rather than being used directly as the CEK).
+* `dir`: Direct use of a shared symmetric key as the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] for the block encryption step (rather than using the symmetric key to wrap the CEK).
+* `ECDH-ES`: Elliptic Curve Diffie-Hellman Ephemeral Static ([RFC 6090][rfc6090]) key agreement using the Concat KDF, as defined in section 5.8.1 of [NIST.800-56A][nist-SP800-56AR2], with the agreed-upon key being used directly as the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] (rather than being used to wrap the CEK).
+* `ECDH-ES+A128KW`: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] with the "A128KW" function (rather than being used directly as the CEK).
+* `ECDH-ES+A256KW`: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] with the "A256KW" function (rather than being used directly as the CEK).
+
+To enable the desired signing encryption algorithm from the list above
+activate the according tag `request-object-encryption-alg`:
 
 ```
 <request-object-encryption-alg-values-supported>
@@ -364,10 +443,13 @@ enabled, currently:
 
 These encryption encoding values are supported:
 
-* A128CBC+HS256: AES_128_CBC_HMAC_SHA_256 authenticated encryption using a 256 bit key
-* A256CBC+HS512: AES_256_CBC_HMAC_SHA_512 authenticated encryption using a 512 bit key
-* A128GCM: Advanced Encryption Standard (AES) in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 128 bit key
-* A256GCM: Advanced Encryption Standard (AES) in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 256 bit key
+* A128CBC+HS256: [AES][aes]_128_CBC_HMAC_SHA_256 authenticated encryption using a 256 bit key
+* A256CBC+HS512: [AES][aes]_256_CBC_HMAC_SHA_512 authenticated encryption using a 512 bit key
+* A128GCM: [Advanced Encryption Standard (AES)][aes] in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 128 bit key
+* A256GCM: [Advanced Encryption Standard (AES)][aes] in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 256 bit key
+
+To enable the desired encryption encoding value from the list above
+activate the according tag `request-object-encryption-enc`:
 
 ```
 <request-object-encryption-enc-values-supported>
@@ -380,12 +462,30 @@ These encryption encoding values are supported:
 
 ### Supported token endpoint authentication methods
 
-Currently, these methods are supported:
+Currently, these methods are supported for token endpoint
+authentication:
 
-* client_secret_basic
-* client_secret_post
-* client_secret_jwt
-* private_key_jwt
+* `client_secret_basic`: clients in possession of a client password
+  authenticate with the Authorization Server using HTTP Basic
+  authentication scheme.
+* `client_secret_post`: clients in possession of a client password
+  authenticate with the Authorization Server by including the client
+  credentials in the request body.
+* `client_secret_jwt`: clients in possession of a client password create
+  a [JSON Web Token (JWT)][ietf-jwk] using the HMAC-SHA algorithm. The
+  Hash-based Message Authentication Code (HMAC) is calculated using the
+  `client_secret` as the shared key. The client Authenticates in
+  accordance with section 2.2 of (JWT) Bearer Token Profiles and [OAuth
+  2.0][oauth2] Assertion Profile
+* `private_key_jwt`: clients that have registered a public key sign a 
+  [JSON Web Token (JWT)][ietf-jwk] using the [RSA][rsa] algorithm if a RSA 
+  key was registered or the [ECDSA][ecdsa] algorithm if an Elliptic Curve 
+  key was registered. The client authenticates in accordance with section 
+  2.2 of (JWT) Bearer Token Profiles and [OAuth 2.0][oauth2] Assertion 
+  Profile
+
+To enable the desired endpoint authentication method from the list above
+activate the according tag `token-endpoint-auth-method`:
 
 ```
 <token-endpoint-auth-methods-supported>
@@ -398,7 +498,7 @@ Currently, these methods are supported:
 
 ### Supported token endpoint authentication signing algorithm values
 
-Currently, the Gluu server supports these signing algorithms to
+Currently, the Gluu Server supports these signing algorithms to
 authenticate endpoints:
 
 * HS256: [HMAC][hmac] using [SHA-256][sha2] hash algorithm.
@@ -425,14 +525,20 @@ authenticate endpoints:
 </token-endpoint-auth-signing-alg-values-supported>
 ```
 
-### Supported display values
+### Supported OpenID display values
 
-The Gluu server supports these display values:
+According to the [OpenID Core Documentation][openid-core], the Gluu
+Server supports these display values as part of the request parameter
+set:
 
-* page
-* popup
-* touch
-* wap
+* `page`: display the authentication information as a full User Agent
+  page view. If not specified otherwise this is the default value.
+* `popup`: display the authentication information with a popup User
+  Agent window.
+* `touch`: display the authentication information consistent with a
+  device that leverages a touch interface.
+* `wap`: display the authentication information consistent with a
+  "feature phone" type display.
 
 As the default value, `page` is enabled, only.
 
@@ -445,12 +551,23 @@ As the default value, `page` is enabled, only.
 </display-values-supported>
 ```
 
-### Supported claim types
+### Supported OpenID claim types
 
-Currently, the Gluu server supports these claims:
+According to the [OpenID Core Documentation][openid-core], the Gluu
+Server supports these claims:
 
-* normal
-* distributed
+* `normal`: these claims are directly asserted by the OpenID provider. A
+  claim dataset is represented as a [JSON][json] object. See the
+  following section "Supported Claims" for a detailed list of values.
+* `distributed`: these claims are asserted by a Claims provider other
+  than the OpenID provider but are returned as references by the OpenID
+  provider. The claim dataset is represented by using special
+  `_claim_names` and `_claim_sources` members of the [JSON][json] object
+  containing the Claims.
+
+Currently, the claim type `aggregated` is not supported. To activate a
+certain claim type enable the according tag in the configuration file as
+follows:
 
 ```
 <claim-types-supported>
@@ -459,15 +576,15 @@ Currently, the Gluu server supports these claims:
 </claim-types-supported>
 ```
 
-### Supported claims
+### Supported OpenID claims
 
-The Gluu server supports these values for claims:
+The Gluu Server supports these values for claims:
 
-* uid: a valid user id
-* displayName: a previously chosen user name that is displayed
-* givenName: a previously given user name
-* sn: 
-* mail: a stored email address for this user
+* `uid`: a valid user id
+* `displayName`: a previously chosen display name for the Gluu Server User Interface
+* `givenName`: a previously given user name
+* `sn`: abbreviation for *short name*. This feature has not been tested yet.
+* `mail`: a stored email address for this user
 
 ```
 <claims-supported>
@@ -482,7 +599,7 @@ The Gluu server supports these values for claims:
 ### Service documentation
 
 This entry keeps the path to the service documentation of the Gluu
-server.
+Server.
 
 ```
 <service-documentation>http://gluu.org/docs</service-documentation>
@@ -513,17 +630,18 @@ These languages are not enabled by default:
 
 ### Supported locales for user interfaces
 
-Currently, these languages are supported for claims:
+Currently, these languages are supported for claims as part of user
+interfaces:
 
-* en: English
-* es: Spanish
+* `en`: English
+* `es`: Spanish
 
 These languages are not enabled, yet:
 
-* en-GB: British English
-* en-CA: Canadian English
-* fr-FR: French 
-* fr-CA: Canadian French
+* `en-GB`: British English
+* `en-CA`: Canadian English
+* `fr-FR`: French 
+* `fr-CA`: Canadian French
 
 ```
 <ui-locales-supported>
@@ -578,11 +696,17 @@ To require a request for uri registration, the tag
 
 ### Uri for operation policy
 
+To define a certain oxAuth operation policy uri use the tag
+`op-policy-uri`. The value refers to an according policy document.
+
 ```
 <op-policy-uri>http://ox.gluu.org/doku.php?id=oxauth:policy</op-policy-uri>
 ```
 
 ### Uri for type-of-service
+
+To define a certain oxAuth type-of-service uri use the tag `op-tos-uri`.
+The value refers to an according type-of-service document.
 
 ```
 <op-tos-uri>http://ox.gluu.org/doku.php?id=oxauth:tos</op-tos-uri>
@@ -592,11 +716,12 @@ To require a request for uri registration, the tag
 
 These tags control the behaviour of the connection:
 
-* authorization-code-lifetime: sets the lifetime of the authorization code. The default is 600.
-* refresh-token-lifetime: sets the interval the token is refreshed. The default value is 14400s that represents 6 hours
-* id-token-lifetime: sets the lifetime of the id token. The default value os 3600s that represents one hour
-* short-lived-access-token-lifetime: sets the short-lived access token lifetime
-* long-lived-access-token-lifetime: sets the long-lived access token lifetime
+* `authorization-code-lifetime`: sets the lifetime of the authorization code. The default is 600 seconds.
+* `refresh-token-lifetime`: sets the interval the token is refreshed. The default value is 14400 seconds that represent 6 hours.
+* `id-token-lifetime`: sets the lifetime of the id token. The default value os 3600 seconds that represents one hour.
+* `short-lived-access-token-lifetime`: sets the short-lived access token
+lifetime
+* `long-lived-access-token-lifetime`: sets the long-lived access token lifetime
 
 ```
 <authorization-code-lifetime>600</authorization-code-lifetime>
@@ -608,14 +733,17 @@ These tags control the behaviour of the connection:
 
 These tags control the behaviour of a session:
 
-* session-id-unused-lifetime
-* session-id-enabled
-* refresh-user-session-timeout-enabled
-* refresh-user-session-timeout
-
-If the session id is not used during some time then it is removed,
-automatically. The lifetime is set in seconds, whereas 86400 seconds
-represent a single day.
+* `session-id-unused-lifetime`: if the session id is not used during some
+time then it is removed, automatically. The lifetime is set in seconds,
+whereas 86400 seconds represent a single day.
+* `session-id-enabled`: this tag is either `true` or `false` and displays
+whether a session id is enabled or not
+* `refresh-user-session-timeout-enabled`: this tag is either `true` or
+`false` and defines whether the timeout is enabled to refresh a user
+session. The default value is `true`.
+* `refresh-user-session-timeout`: defines the duration of the timeout
+after which the session is refreshed. The default value is set to 1800
+seconds.
 
 ```
 <session-id-unused-lifetime>86400</session-id-unused-lifetime>
@@ -626,9 +754,9 @@ represent a single day.
 
 These tags control the [User Managed Access (UMA)][uma]:
 
-* uma-add-scopes-automatically
-* uma-requester-permission-token-lifetime
-* uma-keep-client-during-resource-set-registration
+* `uma-add-scopes-automatically`
+* `uma-requester-permission-token-lifetime`
+* `uma-keep-client-during-resource-set-registration`
 
 ```
 <uma-add-scopes-automatically>false</uma-add-scopes-automatically>
@@ -637,7 +765,8 @@ These tags control the [User Managed Access (UMA)][uma]:
 ```
 
 To adjust the time of the service interval use the value for the tag
-`clean-service-interval`. The value is set in seconds:
+`clean-service-interval`. The value is set in seconds, and the default
+value is 600 seconds:
 
 ```
 <clean-service-interval>600</clean-service-interval>
@@ -669,8 +798,9 @@ are part of the list:
 
 ### Federation settings
 
-The entry `federation-enabled` sets the value for the federation
-feature whereas `true` means enabled, and `false` means disabled.
+The entry `federation-enabled` sets the value for the [Active Directory
+Federation Services (ADFS)][adfs-wikipedia] feature. `true` means
+enabled, and `false` means disabled.
 
 ```
 <federation-enabled>false</federation-enabled>
@@ -678,16 +808,19 @@ feature whereas `true` means enabled, and `false` means disabled.
 
 The entry `federation-check-interval` defines the federation check
 interval in seconds. It checks whether data in trusts are still valid
-(e.g.) if RP redirectUri still exists in metadata. If not then remove
-from trust automatically. The value `86400` represents 24 hours.
+for example if the request parameter (RP) `redirectUri` still exists in
+metadata. If not then remove from trust automatically. The value `86400`
+represents 24 hours.
 
 ```
 <federation-check-interval>86400</federation-check-interval>
 ```
 
-The entry `federation-skip-policy` defines xxx. Accepted values are `OR`
-and `AND`. This value is used in case there is more than one federation
-trust for a given redirect uri. The default value is `OR`.
+The entry `federation-skip-policy` defines the way the different
+[Active Directory Federation Services (ADFS)][adfs-wikipedia] policies
+are processed. Accepted values are `OR` and `AND`. This value is used in
+case there is more than one federation trust for a given redirect uri.
+The default value is `OR`.
 
 ```
 <federation-skip-policy>OR</federation-skip-policy>
@@ -715,8 +848,9 @@ algorithms.
 
 Dynamic Client Registration is configurable because some servers may not
 want to support this feature due to it opens you up to the possibility
-of a DOS attack. To enable this feature set the value for
-`dynamic-registration-enabled` to `true`, otherwise to `false`.
+of a [Denial-of-service attack (DOS) attack][dos]. To enable this
+feature set the value for `dynamic-registration-enabled` to `true`,
+otherwise to `false`.
 
 ```
 <dynamic-registration-enabled>true</dynamic-registration-enabled>
@@ -739,8 +873,8 @@ organization inum used by this service under the tag `organization`.
 <organization-inum>%(inumOrg)s</organization-inum>
 ```
 
-To set a specific version for the connection via OpenID use the tag
-`oxOpenIDConnectVersion` like that:
+To set a specific version for the connection via [OpenID][openid] use
+the tag `oxOpenIDConnectVersion` like that:
 
 ```
 <oxOpenIDConnectVersion>openidconnect-1.0</oxOpenIDConnectVersion>
@@ -771,10 +905,10 @@ Trusted clients have to be enabled, first. Set the tag
 <trusted-client-enabled>true</trusted-client-enabled>
 ```
 
-### Authorization filters
+### Authorization LDAP filters
 
-To use authorization filters you have to enable them, first. Set the tag
-`auth-filters-enabled` to `true`:
+To use authorization [LDAP][ldap] filters you have to enable them,
+first. Set the tag `auth-filters-enabled` to `true`:
 
 ```
 <auth-filters-enabled>false</auth-filters-enabled>
@@ -783,10 +917,10 @@ To use authorization filters you have to enable them, first. Set the tag
 Next, you can use the previously defined authorization filters. A filter
 definition allows the following tags:
 
-* filter: the condition for the filter
-* bind: can be either `true` or `false`. If `true` oxAuth binds to the entry which is found by the filter as specified above
-* bind-password-attribute: the name of the password attribute
-* base-dn: the name of the base domain, for example `o=gluu`
+* `filter`: the condition for the filter
+* `bind`: can be either `true` or `false`. If `true` oxAuth binds to the entry which is found by the filter as specified above
+* `bind-password-attribute`: the name of the password attribute
+* `base-dn`: the name of the base domain, for example `o=gluu`
 
 ```
 <auth-filters>
@@ -806,27 +940,90 @@ definition allows the following tags:
 </auth-filters>
 ```
 
-### Custom client filters
+### Custom LDAP client filters
 
-To be defined.
+oxAuth allows to define custom [LDAP][ldap] client filters. oxAuth uses
+them to find clients in the [LDAP][ldap] Namespace, or Directory
+Information Tree (DIT) structure. For detailed information regarding the
+Gluu Server LDAP Namespace, have a look [here][glue-server-ldap-namespace].
+
+To use custom [LDAP][ldap] client filters you have to enable them,
+first. Set the tag `client-auth-filters-enabled` to `true`:
+
+```
+<client-auth-filters-enabled>`true`</client-auth-filters-enabled>
+```
+
+Next, you can use the previously defined authorization filters. A filter
+definition allows the following tags:
+
+* `filter`: the condition for the filter
+* `bind`: can be either `true` or `false`. If `true` oxAuth binds to the entry which is found by the filter as specified above
+* `bind-password-attribute`: the name of the password attribute
+* `base-dn`: the name of the base domain, for example `o=gluu`
+
+```
+<client-auth-filters>
+    <client-auth-filter>
+        <filter>`myCustomAttr1={0}`</filter>
+        <base-dn>`ou=clients,o=@!1111,o=gluu`</base-dn>
+    </client-auth-filter>
+    <!--client-auth-filter>
+        <filter>`(&amp;(myCustomAttr1={0})(myCustomAttr2={0}))`</filter>
+        <base-dn>`ou=clients,o=@!1111,o=gluu`</base-dn>
+    </client-auth-filter-->
+</client-auth-filters>
+```
+
+[adfs-msdn]: https://msdn.microsoft.com/en-us/library/bb897402.aspx "Active Directory Federation Services (ADFS), MSDN"
+
+[adfs-wikipedia]: https://en.wikipedia.org/wiki/Active_Directory_Federation_Services "Active Directory Federation Services (ADFS), Wikipedia"
+
+[aes]: https://en.wikipedia.org/wiki/Advanced_Encryption_Standard "Advanced Encryption Standard (AES), Wikipedia"
+
+[dos]: https://en.wikipedia.org/wiki/Denial-of-service_attack "Denial-of-service attack (DOS), Wikipedia"
 
 [ecdsa]: https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm "Elliptic Curve Digital Signature Algorithm (ECDSA), Wikipedia"
 
 [glossary-of-cryptographic-keys]: https://en.wikipedia.org/wiki/Glossary_of_cryptographic_keys "Glossary of cryptographic keys"
 
+[glue-server-ldap-namespace]: ../ldap-namespace/ "LDAP Namespace"
+
 [gcm]: https://en.wikipedia.org/wiki/Galois/Counter_Mode "Galois/Counter Mode (GCM), Wikipedia"
 
 [hmac]: https://en.wikipedia.org/wiki/Hash-based_message_authentication_code "Hash-based message authentication code (HMAC), Wikipedia"
 
+[ietf-jwk]: https://tools.ietf.org/html/draft-ietf-oauth-jwt-bearer-12 "JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants, IETF draft"
+
+[iframe]: https://en.wikipedia.org/wiki/HTML_element#Frames "HTML element: iframe, Wikipedia"
+
 [inum]: https://en.wikipedia.org/wiki/INum_Initiative "INum Initiative, Wikipedia"
 
 [json]: https://en.wikipedia.org/wiki/JSON "JSON, Wikipedia"
+
+[jwk]: https://tools.ietf.org/html/rfc7517 "JSON Web Key (JWK), Internet Engineering Task Force (IETF), RFC 7517"
+
+[ldap]: https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol "Lightweight Directory Access Protocol (LDAP), Wikipedia"
 
 [nist-SP800-38D]: http://csrc.nist.gov/publications/nistpubs/800-38D/SP-800-38D.pdf "Recommendation for Block Cipher Modes of Operation: Galois/Counter Mode (GCM) and GMAC, National Institute of Standards and Technology (NIST), 2007"
 
 [nist-SP800-56AR2]: http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-56Ar2.pdf "Recommendation for Pair-Wise Key Establishment Schemes Using Discrete Logarithm Cryptography, Revision 2, National Institute of Standards and Technology (NIST), 2013"
 
 [oaep]: https://en.wikipedia.org/wiki/Optimal_asymmetric_encryption_padding "Optimal asymmetric encryption padding (OAEP), Wikipedia"
+
+[oauth2]: https://en.wikipedia.org/wiki/OAuth#OAuth_2.0 "OAuth 2.0, Wikipedia"
+
+[openid]: https://en.wikipedia.org/wiki/OpenID "OpenID, Wikipedia"
+
+[openid-core]: http://openid.net/specs/openid-connect-core-1_0.html "OpenID Connect Core 1.0"
+
+[oxwiki-authorization]: http://ox.gluu.org/doku.php?id=oxauth:authorizationcodegrant "OX wiki, Authorization Code Grant"
+
+[oxwiki-authorization-implicit]: http://ox.gluu.org/doku.php?id=oxauth:implicitgrant "OX wiki, Implicit Grant"
+
+[oxwiki-authorization-client-credentials]: http://ox.gluu.org/doku.php?id=oxauth:clientcredentialsgrant "OX wiki, Client Credentials Grant"
+
+[rest]: https://en.wikipedia.org/wiki/Representational_state_transfer "Representational State Transfer (REST), Wikipedia"
 
 [rfc2313]: https://tools.ietf.org/html/rfc2313 "RFC 2313: Public-Key Cryptography Standards (PKCS #1): RSA Encryption Version 1.5, IETF"
 
@@ -836,9 +1033,17 @@ To be defined.
 
 [rfc6090]: https://tools.ietf.org/html/rfc6090 "RFC 6090: Fundamental Elliptic Curve Cryptography Algorithms, IETF"
 
+[rfc6749]: https://tools.ietf.org/html/rfc6749 "RFC 6749: The OAuth 2.0 Authorization Framework, IETF"
+
+[rsa]: https://en.wikipedia.org/wiki/RSA_%28cryptosystem%29 "RSA (cryptosystem), Wikipedia"
+
 [rsassa]: https://tools.ietf.org/html/draft-ietf-jose-json-web-algorithms-14#page-12 "Digital Signature with RSASSA-PKCS1-V1_5, in JSON Web Algorithms (JWA), draft-ietf-jose-json-web-algorithms-14, July 2013"
 
+[saml]: https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language "Security Assertion Markup Language (SAML), Wikipedia"
+
 [sha2]: https://en.wikipedia.org/wiki/SHA-2 "Secure Hash Algorithm (SHA) SHA-2 familiy, Wikipedia"
+
+[sso]: https://en.wikipedia.org/wiki/Single_sign-on "Single sign-on, Wikipedia"
 
 [uma]: https://de.wikipedia.org/wiki/User-Managed_Access "User-Managed Access (UMA), Wikipedia"
 
