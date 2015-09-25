@@ -154,12 +154,12 @@ These grant types are supported:
 * `client_credentials`: authorization grant recommended to be used when the 
   client is acting on its own behalf. See the 
   [OX wiki][oxwiki-authorization-client-credentials] for more information.
-* `refresh_token`: as described in [OAuth 2.0][rfc6749]
-* `urn:ietf:params:oauth:grant-type:jwt-bearer`:
-
-The last entry from the list above refers to JSON Web Token (JWT)
-Profile for OAuth 2.0 Client Authentication and Authorization Grants as
-described in the according [IETF document][ietf-jwk].
+* `refresh_token`: as described in [OAuth 2.0][rfc6749], and 
+  [OX wiki][oxwiki-authorization].
+* `urn:ietf:params:oauth:grant-type:jwt-bearer`: this entry refers to
+  JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and
+  Authorization Grants as described in the according 
+  [IETF document][ietf-jwk].
 
 ```
 <grant-types-supported>
