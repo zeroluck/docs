@@ -235,8 +235,8 @@ according tag `userinfo-signing-alg`:
 
 Currently, the Gluu Server supports these algorithms for data encryption:
 
-* RSA1_5: RSA 1.5 (PKCS #1) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
-* RSA-OAEP: RSA with [Optimal asymmetric encryption padding (OAEP)][oaep] with the default parameters specified by [RFC 3447][rfc3447] in section A.2.1.
+* RSA1_5: [RSA][rsa] 1.5 (PKCS #1) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
+* RSA-OAEP: [RSA][rsa] with [Optimal asymmetric encryption padding (OAEP)][oaep] with the default parameters specified by [RFC 3447][rfc3447] in section A.2.1.
 * A128KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 128 bit keys.
 * A256KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 256 bit keys.
 
@@ -323,8 +323,8 @@ activate the according tag `id-token-signing-alg`:
 Currently, the Gluu Server supports these encryption algorithms for
 ID tokens:
 
-* RSA1_5: RSA 1.5 (PKCS #1) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
-* RSA-OAEP: RSA with [Optimal asymmetric encryption padding (OAEP)][oaep] with the default parameters specified by [RFC 3447][rfc3447] in section A.2.1.
+* RSA1_5: [RSA][rsa] 1.5 (PKCS #1) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
+* RSA-OAEP: [RSA][rsa] with [Optimal asymmetric encryption padding (OAEP)][oaep] with the default parameters specified by [RFC 3447][rfc3447] in section A.2.1.
 * A128KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 128 bit keys.
 * A256KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 256 bit keys.
 
@@ -411,8 +411,8 @@ according tag `request-object-signing-alg`:
 Currently, the Gluu Server supports these encryption algorithms for
 request objects:
 
-* RSA1_5: RSA 1.5 (PKCS #1) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
-* RSA-OAEP: RSA with [Optimal asymmetric encryption padding (OAEP)][oaep] with the default parameters specified by [RFC 3447][rfc3447] in section A.2.1.
+* RSA1_5: [RSA][rsa] 1.5 (PKCS #1) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
+* RSA-OAEP: [RSA][rsa] with [Optimal asymmetric encryption padding (OAEP)][oaep] with the default parameters specified by [RFC 3447][rfc3447] in section A.2.1.
 * A128KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 128 bit keys.
 * A256KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 256 bit keys.
 
@@ -473,15 +473,16 @@ authentication:
   authenticate with the Authorization Server by including the client
   credentials in the request body.
 * `client_secret_jwt`: clients in possession of a client password create
-  a JWT using the HMAC-SHA algorithm. The HMAC (Hash-based Message
-  Authentication Code) is calculated using the `client_secret` as the
-  shared key. The client Authenticates in accordance with section 2.2 of
-  (JWT) Bearer Token Profiles and OAuth 2.0 Assertion Profile
-* `private_key_jwt`: clients that have registered a public key sign a
-  JWT using the RSA algorithm if a RSA key was registered or the ECDSA
-  algorithm if an Elliptic Curve key was registered. The Client
-  Authenticates in accordance with section 2.2 of (JWT) Bearer Token
-  Profiles and OAuth 2.0 Assertion Profile
+  a [JSON Web Token (JWT)][ietf-jwk] using the HMAC-SHA algorithm. The
+  Hash-based Message Authentication Code (HMAC) is calculated using the
+  `client_secret` as the shared key. The client Authenticates in
+  accordance with section 2.2 of (JWT) Bearer Token Profiles and OAuth 2.0
+  Assertion Profile
+* `private_key_jwt`: clients that have registered a public key sign a 
+  [JSON Web Token (JWT)][ietf-jwk] using the [RSA][rsa] algorithm if a RSA 
+  key was registered or the [ECDSA][ecdsa] algorithm if an Elliptic Curve 
+  key was registered. The client authenticates in accordance with section 
+  2.2 of (JWT) Bearer Token Profiles and OAuth 2.0 Assertion Profile
 
 ```
 <token-endpoint-auth-methods-supported>
@@ -1009,6 +1010,8 @@ definition allows the following tags:
 [rfc6090]: https://tools.ietf.org/html/rfc6090 "RFC 6090: Fundamental Elliptic Curve Cryptography Algorithms, IETF"
 
 [rfc6749]: https://tools.ietf.org/html/rfc6749 "RFC 6749: The OAuth 2.0 Authorization Framework, IETF"
+
+[rsa]: https://en.wikipedia.org/wiki/RSA_%28cryptosystem%29 "RSA (cryptosystem), Wikipedia"
 
 [rsassa]: https://tools.ietf.org/html/draft-ietf-jose-json-web-algorithms-14#page-12 "Digital Signature with RSASSA-PKCS1-V1_5, in JSON Web Algorithms (JWA), draft-ietf-jose-json-web-algorithms-14, July 2013"
 
