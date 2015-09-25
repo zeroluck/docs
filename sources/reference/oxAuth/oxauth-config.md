@@ -576,7 +576,7 @@ follows:
 </claim-types-supported>
 ```
 
-### Supported claims
+### Supported OpenID claims
 
 The Gluu Server supports these values for claims:
 
@@ -630,7 +630,8 @@ These languages are not enabled by default:
 
 ### Supported locales for user interfaces
 
-Currently, these languages are supported for claims:
+Currently, these languages are supported for claims as part of user
+interfaces:
 
 * `en`: English
 * `es`: Spanish
