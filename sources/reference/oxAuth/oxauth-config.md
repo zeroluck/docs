@@ -234,7 +234,7 @@ according tag `userinfo-signing-alg`:
 
 Currently, the Gluu Server supports these algorithms for data encryption:
 
-* RSA1_5: [RSA][rsa] 1.5 (PKCS #1) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
+* RSA1_5: [RSA][rsa] 1.5 ([PKCS #1][pkcs1]) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
 * RSA-OAEP: [RSA][rsa] with [Optimal asymmetric encryption padding (OAEP)][oaep] with the default parameters specified by [RFC 3447][rfc3447] in section A.2.1.
 * A128KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 128 bit keys.
 * A256KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 256 bit keys.
@@ -322,7 +322,7 @@ activate the according tag `id-token-signing-alg`:
 Currently, the Gluu Server supports these encryption algorithms for
 ID tokens:
 
-* RSA1_5: [RSA][rsa] 1.5 (PKCS #1) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
+* RSA1_5: [RSA][rsa] 1.5 ([PKCS #1][pkcs1]) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
 * RSA-OAEP: [RSA][rsa] with [Optimal asymmetric encryption padding (OAEP)][oaep] with the default parameters specified by [RFC 3447][rfc3447] in section A.2.1.
 * A128KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 128 bit keys.
 * A256KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 256 bit keys.
@@ -410,7 +410,7 @@ according tag `request-object-signing-alg`:
 Currently, the Gluu Server supports these encryption algorithms for
 request objects:
 
-* RSA1_5: [RSA][rsa] 1.5 (PKCS #1) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
+* RSA1_5: [RSA][rsa] 1.5 ([PKCS #1][pkcs1]) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
 * RSA-OAEP: [RSA][rsa] with [Optimal asymmetric encryption padding (OAEP)][oaep] with the default parameters specified by [RFC 3447][rfc3447] in section A.2.1.
 * A128KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 128 bit keys.
 * A256KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 256 bit keys.
@@ -1022,6 +1022,8 @@ definition allows the following tags:
 [oxwiki-authorization-implicit]: http://ox.gluu.org/doku.php?id=oxauth:implicitgrant "OX wiki, Implicit Grant"
 
 [oxwiki-authorization-client-credentials]: http://ox.gluu.org/doku.php?id=oxauth:clientcredentialsgrant "OX wiki, Client Credentials Grant"
+
+[pkcs1]: https://en.wikipedia.org/wiki/PKCS_1 "Public-Key Cryptography Standards (PKCS) #1, Wikipedia"
 
 [rest]: https://en.wikipedia.org/wiki/Representational_state_transfer "Representational State Transfer (REST), Wikipedia"
 
