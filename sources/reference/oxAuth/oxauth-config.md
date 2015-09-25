@@ -182,7 +182,7 @@ turned off by default.
 
 ```
 <amr-values-supported>
-    <!-- amr>basic</amr-->
+    <amr>basic</amr>
 </amr-values-supported>
 ```
 
