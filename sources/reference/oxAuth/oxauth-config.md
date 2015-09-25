@@ -151,7 +151,9 @@ These grant types are supported:
 * `implicit`: a simplified authorization code flow optimized for clients
   implemented in a browser using a scripting language such as JavaScript.
   See the [OX wiki][oxwiki-authorization-implicit] for more information.
-* `client_credentials`:
+* `client_credentials`: authorization grant recommended to be used when the 
+  client is acting on its own behalf. See the 
+  [OX wiki][oxwiki-authorization-client-credentials] for more information.
 * `refresh_token`: as described in [OAuth 2.0][rfc6749]
 * `urn:ietf:params:oauth:grant-type:jwt-bearer`:
 
@@ -953,6 +955,8 @@ definition allows the following tags:
 [oxwiki-authorization]: http://ox.gluu.org/doku.php?id=oxauth:authorizationcodegrant "OX wiki, Authorization Code Grant"
 
 [oxwiki-authorization-implicit]: http://ox.gluu.org/doku.php?id=oxauth:implicitgrant "OX wiki, Implicit Grant"
+
+[oxwiki-authorization-client-credentials]: http://ox.gluu.org/doku.php?id=oxauth:clientcredentialsgrant "OX wiki, Client Credentials Grant"
 
 [rest]: https://en.wikipedia.org/wiki/Representational_state_transfer "Representational State Transfer (REST), Wikipedia"
 
