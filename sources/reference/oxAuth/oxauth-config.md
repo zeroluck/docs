@@ -177,8 +177,9 @@ AMR abbreviates the term Authentication Methods References. In general,
 it is a [JSON][json] array of case sensitive strings that are
 identifiers for authentication methods used in the authentication
 procedure. In this specific case, AMR enables an [OpenID][openid]
-Connect client to request a specific method of authentication, and is
-turned off by default.
+Connect client to request a specific method of authentication. 
+
+By default, this feature is turned off.
 
 ```
 <amr-values-supported>
@@ -213,6 +214,9 @@ procedures:
 * ES384: [ECDSA][ecdsa] using P-384 curve and [SHA-384][sha2] hash algorithm.
 * ES512: [ECDSA][ecdsa] using P-521 curve and [SHA-512][sha2] hash algorithm.
 
+To enable the desired algorithm from the list above activate the
+according tag `userinfo-signing-alg`:
+
 ```
 <userinfo-signing-alg-values-supported>
     <userinfo-signing-alg>HS256</userinfo-signing-alg>
@@ -245,6 +249,9 @@ enabled, currently:
 * `ECDH-ES+A128KW`: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] with the "A128KW" function (rather than being used directly as the CEK).
 * `ECDH-ES+A256KW`: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] with the "A256KW" function (rather than being used directly as the CEK).
 
+To enable the desired algorithm from the list above activate the
+according tag `userinfo-encryption-alg`:
+
 ```
 <userinfo-encryption-alg-values-supported>
     <userinfo-encryption-alg>RSA1_5</userinfo-encryption-alg>
@@ -266,6 +273,9 @@ These encryption encoding values are supported:
 * A256CBC+HS512: [AES][aes]_256_CBC_HMAC_SHA_512 authenticated encryption using a 512 bit key
 * A128GCM: [Advanced Encryption Standard (AES)][aes] in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 128 bit key
 * A256GCM: [Advanced Encryption Standard (AES)][aes] in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 256 bit key
+
+To enable the desired encryption encoding value from the list above
+activate the according tag `userinfo-encryption-enc`:
 
 ```
 <userinfo-encryption-enc-values-supported>
@@ -290,6 +300,9 @@ token:
 * ES256: [ECDSA][ecdsa] using P-256 curve and [SHA-256][sha2] hash algorithm.
 * ES384: [ECDSA][ecdsa] using P-384 curve and [SHA-384][sha2] hash algorithm.
 * ES512: [ECDSA][ecdsa] using P-521 curve and [SHA-512][sha2] hash algorithm.
+
+To enable the desired signing algorithms from the list above
+activate the according tag `id-token-signing-alg`:
 
 ```
 <id-token-signing-alg-values-supported>
@@ -323,6 +336,9 @@ enabled, currently:
 * `ECDH-ES+A128KW`: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] with the "A128KW" function (rather than being used directly as the CEK).
 * `ECDH-ES+A256KW`: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] with the "A256KW" function (rather than being used directly as the CEK).
 
+To enable the desired token encryption algorithm from the list above
+activate the according tag `id-token-encryption-alg`:
+
 ```
 <id-token-encryption-alg-values-supported>
     <id-token-encryption-alg>RSA1_5</id-token-encryption-alg>
@@ -345,6 +361,9 @@ These encryption encoding values for ID tokens are supported:
 * A256CBC+HS512: [AES][aes]_256_CBC_HMAC_SHA_512 authenticated encryption using a 512 bit key
 * A128GCM: [Advanced Encryption Standard (AES)][aes] in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 128 bit key
 * A256GCM: [Advanced Encryption Standard (AES)][aes] in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 256 bit key
+
+To enable the desired token encryption encoding value from the list
+above activate the according tag `id-token-encryption-enc`:
 
 ```
 <id-token-encryption-enc-values-supported>
@@ -369,6 +388,9 @@ object:
 * ES256: [ECDSA][ecdsa] using P-256 curve and [SHA-256][sha2] hash algorithm.
 * ES384: [ECDSA][ecdsa] using P-384 curve and [SHA-384][sha2] hash algorithm.
 * ES512: [ECDSA][ecdsa] using P-521 curve and [SHA-512][sha2] hash algorithm.
+
+To enable the desired signing algorithm from the list above activate the
+according tag `request-object-signing-alg`:
 
 ```
 <request-object-signing-alg-values-supported>
@@ -402,6 +424,9 @@ enabled, currently:
 * `ECDH-ES+A128KW`: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] with the "A128KW" function (rather than being used directly as the CEK).
 * `ECDH-ES+A256KW`: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] with the "A256KW" function (rather than being used directly as the CEK).
 
+To enable the desired signing encryption algorithm from the list above
+activate the according tag `request-object-encryption-alg`:
+
 ```
 <request-object-encryption-alg-values-supported>
     <request-object-encryption-alg>RSA1_5</request-object-encryption-alg>
@@ -423,6 +448,9 @@ These encryption encoding values are supported:
 * A256CBC+HS512: [AES][aes]_256_CBC_HMAC_SHA_512 authenticated encryption using a 512 bit key
 * A128GCM: [Advanced Encryption Standard (AES)][aes] in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 128 bit key
 * A256GCM: [Advanced Encryption Standard (AES)][aes] in [Galois/Counter Mode (GCM)][gcm] ([NIST.800-38D][nist-SP800-38D]) using a 256 bit key
+
+To enable the desired encryption encoding value from the list above
+activate the according tag `request-object-encryption-enc`:
 
 ```
 <request-object-encryption-enc-values-supported>
