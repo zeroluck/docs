@@ -551,9 +551,10 @@ As the default value, `page` is enabled, only.
 </display-values-supported>
 ```
 
-### Supported claim types
+### Supported OpenID claim types
 
-Currently, the Gluu Server supports these claims:
+According to the [OpenID Core Documentation][openid-core], the Gluu
+Server supports these claims:
 
 * `normal`:
 * `distributed`:
