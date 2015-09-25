@@ -21,7 +21,7 @@ The sections are listed according to their order in the configuration file.
 The basic settings describe the general setup of the Gluu Server.
 
 * `appliance-inum`: the [iNum code][inum] the appliances refer to
-* `issuer`: the according hostname, or specific uri
+* `issuer`: the according hostname, or specific uri of the issuer
 * `login-page`: the login page for the according hostname, or uri
 * `authorization-page`: the oxAuth authorization page
 
@@ -34,8 +34,8 @@ The basic settings describe the general setup of the Gluu Server.
 
 The Gluu Server allows connections via [Security Assertion Markup
 Language (SAML)][saml], and an [OpenID][openid] Connect Identity
-Provider that can be configured for [single sign-on][sso] to any SAML
-2.0 or OpenID Connect protected application. 
+Provider that can be configured for [Single Sign-On (SSO)][sso] to any
+SAML 2.0 or OpenID Connect protected application.
 
 To do a proper single sign-on, use the following tags to specify the
 endpoints the Gluu Server communicates with:
