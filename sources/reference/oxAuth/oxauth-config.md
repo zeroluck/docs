@@ -704,10 +704,10 @@ To define a certain oxAuth operation policy uri use the tag
 <op-policy-uri>http://ox.gluu.org/doku.php?id=oxauth:policy</op-policy-uri>
 ```
 
-### Uri for type-of-service
+### Uri for type-of-service operations
 
-To define a certain oxAuth type-of-service uri use the tag `op-tos-uri`.
-The value refers to an according type-of-service document.
+To define a certain oxAuth type-of-service operations uri use the tag
+`op-tos-uri`. The value refers to an according type-of-service document.
 
 ```
 <op-tos-uri>http://ox.gluu.org/doku.php?id=oxauth:tos</op-tos-uri>
@@ -771,7 +771,6 @@ value is 600 seconds:
 
 ```
 <clean-service-interval>600</clean-service-interval>
-
 ```
 
 ### Default signature algorithms
