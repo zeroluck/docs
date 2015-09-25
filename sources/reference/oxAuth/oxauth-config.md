@@ -146,8 +146,11 @@ according tag `response-type`:
 
 These grant types are supported:
 
-* `authorization_code`: use an authorization code as grant as described in [oxwiki-authorization]
-* `implicit`:
+* `authorization_code`: use an authorization code as grant as described in 
+  the [OX wiki][oxwiki-authorization]
+* `implicit`: a simplified authorization code flow optimized for clients
+  implemented in a browser using a scripting language such as JavaScript.
+  See the [OX wiki][oxwiki-authorization-implicit] for more information.
 * `client_credentials`:
 * `refresh_token`: as described in [OAuth 2.0][rfc6749]
 * `urn:ietf:params:oauth:grant-type:jwt-bearer`:
@@ -160,6 +163,8 @@ described in the according [IETF document][ietf-jwk].
 <grant-types-supported>
     <grant-type>authorization_code</grant-type>
     <grant-type>implicit</grant-type>
+    <grant-type>client_credentials</grant-type>
+    <grant-type>refresh_token</grant-type>
     <grant-type>urn:ietf:params:oauth:grant-type:jwt-bearer</grant-type>
 </grant-types-supported>
 ```
@@ -945,7 +950,9 @@ definition allows the following tags:
 
 [openid]: https://en.wikipedia.org/wiki/OpenID "OpenID, Wikipedia"
 
-[oxwiki-authorization]: http://ox.gluu.org/doku.php?id=oxauth:authorizationcodegrant "Authorization Code Grant"
+[oxwiki-authorization]: http://ox.gluu.org/doku.php?id=oxauth:authorizationcodegrant "OX wiki, Authorization Code Grant"
+
+[oxwiki-authorization-implicit]: http://ox.gluu.org/doku.php?id=oxauth:implicitgrant "OX wiki, Implicit Grant"
 
 [rest]: https://en.wikipedia.org/wiki/Representational_state_transfer "Representational State Transfer (REST), Wikipedia"
 
