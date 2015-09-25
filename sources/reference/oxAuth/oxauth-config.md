@@ -835,9 +835,10 @@ scopes of the trust list are joined.
 ```
 
 These entries set both the federation signing algorithm, and the
-according signing key id. The default settings are `RS512` and `1`. For
-a full list of possible values see the section about default signature
-algorithms.
+according signing key id. The default settings are `RS512` for
+[RSASSA-PKCS-v1_5][rsassa] using [SHA-512][sha2] hash algorithm, and `1`
+to enable federation signing. For a full list of possible values see the
+section about default signature algorithms.
 
 ```
 <federation-signing-alg>RS512</federation-signing-alg>
