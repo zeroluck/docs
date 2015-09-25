@@ -556,8 +556,12 @@ As the default value, `page` is enabled, only.
 According to the [OpenID Core Documentation][openid-core], the Gluu
 Server supports these claims:
 
-* `normal`:
-* `distributed`:
+* `normal`: these claims are directly asserted by the OpenID provider. A
+  claim dataset is represented as a [JSON][json] object. See the
+  following section "Supported Claims" for a detailed list of values.
+* `distributed`: these claims are asserted by a Claims provider other
+  than the OpenID provider but are returned as references by the OpenID
+  provider.
 
 ```
 <claim-types-supported>
