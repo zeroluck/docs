@@ -466,10 +466,22 @@ activate the according tag `request-object-encryption-enc`:
 Currently, these methods are supported for token endpoint
 authentication:
 
-* `client_secret_basic`
-* `client_secret_post`
-* `client_secret_jwt`
-* `private_key_jwt`
+* `client_secret_basic`: clients in possession of a client password
+  authenticate with the Authorization Server using HTTP Basic
+  authentication scheme.
+* `client_secret_post`: clients in possession of a client password
+  authenticate with the Authorization Server by including the client
+  credentials in the request body.
+* `client_secret_jwt`: clients in possession of a client password create
+  a JWT using the HMAC-SHA algorithm. The HMAC (Hash-based Message
+  Authentication Code) is calculated using the `client_secret` as the
+  shared key. The client Authenticates in accordance with section 2.2 of
+  (JWT) Bearer Token Profiles and OAuth 2.0 Assertion Profile
+* `private_key_jwt`: clients that have registered a public key sign a
+  JWT using the RSA algorithm if a RSA key was registered or the ECDSA
+  algorithm if an Elliptic Curve key was registered. The Client
+  Authenticates in accordance with section 2.2 of (JWT) Bearer Token
+  Profiles and OAuth 2.0 Assertion Profile
 
 ```
 <token-endpoint-auth-methods-supported>
