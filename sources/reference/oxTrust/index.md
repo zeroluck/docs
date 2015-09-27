@@ -23,17 +23,17 @@ display and authentication properties.
 
  * __orgInum__ 
 
- * __orgDisplayName__ 
+ * __orgDisplayName__ holds the display name of the organization.
 
- * __orgShortName__ 
+ * __orgShortName__ holds the short name of the organization.
 
- * __idp.url__ 
+ * __idp.url__ holds the uri of the OpenID provider that is in use.
 
- * __appliance.url__ 
+ * __appliance.url__ holds the uri of the appliance.
 
- * __keystore.path__ 
+ * __keystore.path__ holds the path to the keystore.
 
- * __keystore.password__ 
+ * __keystore.password__ holds the password to the keystore.
 
  * __person-objectClass-types__ `inetOrgPerson, gluuPerson`
 
