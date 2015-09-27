@@ -546,7 +546,8 @@ set:
 * `wap`: display the authentication information consistent with a
   "feature phone" type display.
 
-As the default value, `page` is enabled, only.
+As the default value, `page` is enabled, only. To activate one of the
+other display values enable the according tag.
 
 ```
 <display-values-supported>
