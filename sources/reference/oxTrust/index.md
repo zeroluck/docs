@@ -45,22 +45,25 @@ display and authentication properties.
 
 ### SVN-related properties
 
- * __svn.configuration-store.root__ 
+ * __svn.configuration-store.root__ sets the root of the SVN
+   configuration store.
 
- * __svn.configuration-store.user__ 
+ * __svn.configuration-store.user__ sets the usaer name of the SVN
+   configuration store.
 
- * __svn.configuration-store.password__ 
+ * __svn.configuration-store.password__ sets the password of the SVN
+  configuration store.
 
  * __person.allow-modification__ enables or disables the allowance to
-   modify a person entry. Use `TRUE` to allow (default value), and
+   modify a person entry. Use `true` to allow (default value), and
    `false` to forbid.
 
  * __site.update-appliance-status__ change the update appliance state
-   for the site. Use `true` to allow, and `FALSE` to forbid (default
+   for the site. Use `true` to allow, and `false` to forbid (default
    value).
 
  * __persist-in-svn__ control the state of persistance in the SVN. Use
-   `true` to enable, and `FALSE` to disable (default value).
+   `true` to enable, and `false` to disable (default value).
 
  * __baseDN__ set the base domain name of oxTrust. The default value is
    `o=gluu`.
