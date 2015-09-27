@@ -569,11 +569,11 @@ other display values enable the according tag.
 ### Supported OpenID claim types
 
 According to the [OpenID Core Documentation][openid-core], the Gluu
-Server supports these claims:
+Server supports the claims `normal` and `distributed`:
 
 * `normal`: these claims are directly asserted by the OpenID provider. A
-  claim dataset is represented as a [JSON][json] object. See the
-  following section "Supported Claims" for a detailed list of values.
+  claim dataset is represented as a [JSON][json] object. See the following
+  section "Supported OpenID Claims" for a detailed list of values.
 * `distributed`: these claims are asserted by a claims provider other
   than the OpenID provider but are returned as references by the OpenID
   provider. The claim dataset is represented by using special
