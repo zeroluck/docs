@@ -53,11 +53,14 @@ servers are needed versus a few oxTrust instances.
 
  * __schema.add-with-attribute-types.objectClass.objectClasses__ `( %%s-oid NAME '%%s' SUP top STRUCTURAL MUST objectClass MAY ( %%s ) X-SCHEMA-FILE '100-user.ldif' X-ORIGIN 'gluu' )`
 
- * __photo.repository.root-dir__ `/var/photos`
+ * __photo.repository.root-dir__ sets the path to the root directory of
+   photographs. The default value is `/var/photos`.
 
- * __photo.repository.thumb-width__ `300`
+ * __photo.repository.thumb-width__ sets the thumb with of a photo. 
+   The default value is `300` pixels.
 
- * __photo.repository.thumb-height__ `300`
+ * __photo.repository.thumb-height__ sets the thumb height of a photo.
+   The default value is `300` pixels.
 
  * __photo.repository.count-levels__ `3`
 
