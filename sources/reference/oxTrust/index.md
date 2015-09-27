@@ -116,7 +116,7 @@ password) - leace commented.
  * __servicesRestartTrigger__ `/opt/gluu/trigger_restart_of_services_delete_me_to_do_so` File to 
 be deleted to trigger restart of appliance services.
 
- * __oxtrust.auth.mode__  set this to "basic" without the quotation to use basic authentication or leave it blank to use oxAuth
+ * __oxtrust.auth.mode__  set this tag to `basic` without the quotation to use basic authentication or leave it blank to use oxAuth
 
  * __oxauth.authorize.url__ 
  * __oxauth.token.url__ 
@@ -146,7 +146,7 @@ These are the properties oxTrust uses to connect to [LDAP][ldap]
 
  * __baseConfigurationDN__ 
 
- * __createLdapConfigurationEntryIfNotExist__ `TRUE | false`
+ * __createLdapConfigurationEntryIfNotExist__ if an [LDAP][ldap] configuration entry does not exist it can be created, automatically. Set this tag to `TRUE`, or `false` if otherwise wanted.
 
 [jboss]: https://en.wikipedia.org/wiki/WildFly "JBoss, Wildfly, Wikipedia"
 
