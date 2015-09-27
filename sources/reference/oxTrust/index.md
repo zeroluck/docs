@@ -112,7 +112,9 @@ These properties refer to authentication settings of oxTrust.
  * __shibboleth2.sp.conf-dir__ sets the configuration directory for the
    shibboleth plugin. The default value is `/etc/shibboleth`.
 
- * __configGeneration__ `enabled | DISABLED`
+ * __configGeneration__ set this entry to control the automatic
+   generation of the configuration file. Use `enabled` to allow that, 
+   and `DISABLED` otherwise (default value).
 
  * __idp.securityCert__ 
 
@@ -130,11 +132,14 @@ These properties refer to authentication settings of oxTrust.
 
  * __idp.ldap.server__ 
 
- * __mysql.url__ `jdbc:mysql:///localhost`
+ * __mysql.url__ define the MySQL connector as uri. The default value is
+   `jdbc:mysql:///localhost` for the local machine using the JDBC driver.
 
- * __mysql.user__ `idp`
+ * __mysql.user__ define the user name for the MySQL connection. The
+   default value is `idp`.
 
- * __mysql.password__ 
+ * __mysql.password__ define the password for the MySQL connection. The
+   default value is empty.
 
  * __ldifStoreDir__ `/var/removedldif/`
 
