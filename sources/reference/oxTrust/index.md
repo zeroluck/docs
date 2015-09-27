@@ -96,15 +96,21 @@ These properties refer to visual settings of oxTrust.
 
 These properties refer to authentication settings of oxTrust.
 
- * __gluuSP.shared.attributes__ `uid, mail, sn, givenName`
+ * __gluuSP.shared.attributes__ sets the shared attributes. The default
+   value is `uid, mail, sn, givenName`.
 
- * __gluuSP.metadata__ `/opt/idp/metadata`
+ * __gluuSP.metadata__ sets the path to the Gluu Server metadata. The
+   default value is `/opt/idp/metadata`.
 
- * __shibboleth2.idp.root-dir__ `/opt/idp`
+ * __shibboleth2.idp.root-dir__ sets the root directory for the
+   shibboleth plugin. The default value is `/opt/idp`.
 
- * __shibboleth2.federation.root-dir__ `/opt/shibboleth-federation`
+ * __shibboleth2.federation.root-dir__ sets the root directory for the
+   shibboleth federation plugin. The default value is
+   `/opt/shibboleth-federation`.
 
- * __shibboleth2.sp.conf-dir__ `/etc/shibboleth`
+ * __shibboleth2.sp.conf-dir__ sets the configuration directory for the
+   shibboleth plugin. The default value is `/etc/shibboleth`.
 
  * __configGeneration__ `enabled | DISABLED`
 
