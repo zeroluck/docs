@@ -137,9 +137,9 @@ These properties refer to authentication settings of oxTrust.
 
  * __idp.bindPassword__ holds the password the OpenID provider is bind to.
 
- * __idp.useSSL__ enables or disables a secure connection via SSL. Use
-   `true` to enable (default value), or `false` to disable the usage of
-   SSL.
+ * __idp.useSSL__ enables or disables a secure connection via
+   [SSL][ssl]. Use `true` to enable (default value), or `false` to disable
+   the usage of [SSL][ssl].
 
  * __idp.ldap.server__ holds the name of OpenID [LDAP][ldap] server.
 
@@ -157,9 +157,9 @@ These properties refer to authentication settings of oxTrust.
 
  * __cacertsLocation__ holds the value
    `/usr/java/latest/jre/lib/security/cacerts`. This option defines a
-   keystore to be used for downloaded SSL certificates. It is a good idea
-   to have all trusted root Certification Authority (CA) at this
-   keystore. It defaults to the Tomcat SSL keystore that is defined in
+   keystore to be used for downloaded [SSL][ssl] certificates. It is a 
+   good idea to have all trusted root Certification Authority (CA) at 
+   this keystore. It defaults to the Tomcat SSL keystore that is defined in
    `server.xml`.
 
  * __cacertsPassphrase__ If this option is present it will be used as a
@@ -207,9 +207,9 @@ services:
    network port for the connection. The default value is 
    `localhost:1636` for the local maching on port `1636`.
 
- * __useSSL__ enable this tag to initiate a secure connection via SSL.
-   Set this tag to `true` (default value), or `false` if otherwise
-   wanted.
+ * __useSSL__ enable this tag to initiate a secure connection via 
+   [SSL][ssl]. Set this tag to `true` (default value), or `false` 
+   if otherwise wanted.
 
  * __maxconnections__ set this entry to define the maximum number of
    parallel connections. The default value is set to `3`.
@@ -228,3 +228,5 @@ services:
 [ldap]: https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol "Lightweight Directory Access Protocol (LDAP), Wikipedia"
 
 [ldif]: https://en.wikipedia.org/wiki/LDAP_Data_Interchange_Format "LDAP Data Interchange Format (LDIF), Wikipedia"
+
+[ssl]: https://en.wikipedia.org/wiki/Transport_Layer_Security "Transport Layer Security, Wikipedia"
