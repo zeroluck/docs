@@ -193,8 +193,8 @@ is a locally unique and never reassigned identifier within the issuer
 for the end-user, which is intended to be consumed by the client. There
 are two possible subject identifier types -- *public* and *pairwise*.
 
-* public
-* pairwise
+* `public`: provide the same subject value to all clients
+* `pairwise`: provide a different subject value to each client
 
 ```
 <subject-types-supported>
