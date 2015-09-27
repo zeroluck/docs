@@ -133,20 +133,28 @@ be deleted to trigger restart of appliance services.
 ## oxTrustLdap.properties
 
 These are the properties oxTrust uses to connect to [LDAP][ldap]
+services:
 
  * __bindDN__ 
 
  * __bindPassword__ 
 
- * __servers__ `localhost:1636`
+ * __servers__ define the [LDAP][ldap] hostname, and the according
+   network port for the connection. The default value is `localhost:1636`
+   for localhost on port `1636`.
 
- * __useSSL__ `TRUE | false`
+ * __useSSL__ enable this tag to initiate a secure connection via SSL.
+   Set this tag to `TRUE`, or `false` if otherwise wanted.
 
- * __maxconnections__ `3`
+
+ * __maxconnections__ set this entry to define the maximum number of
+   parallel connections. The default value is set to `3`.
 
  * __baseConfigurationDN__ 
 
- * __createLdapConfigurationEntryIfNotExist__ if an [LDAP][ldap] configuration entry does not exist it can be created, automatically. Set this tag to `TRUE`, or `false` if otherwise wanted.
+ * __createLdapConfigurationEntryIfNotExist__ if an [LDAP][ldap]
+   configuration entry does not exist it can be created, automatically. Set
+   this tag to `TRUE`, or `false` if otherwise wanted.
 
 [jboss]: https://en.wikipedia.org/wiki/WildFly "JBoss, Wildfly, Wikipedia"
 
