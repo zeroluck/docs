@@ -732,11 +732,14 @@ To define a certain oxAuth type-of-service operations uri use the tag
 
 These tags control the behaviour of the connection:
 
-* `authorization-code-lifetime`: sets the lifetime of the authorization code. The default is 600 seconds.
-* `refresh-token-lifetime`: sets the interval the token is refreshed. The default value is 14400 seconds that represent 6 hours.
-* `id-token-lifetime`: sets the lifetime of the id token. The default value os 3600 seconds that represents one hour.
+* `authorization-code-lifetime`: sets the lifetime of the authorization
+  code. The default is 600 seconds.
+* `refresh-token-lifetime`: sets the interval the token is refreshed.
+  The default value is 14400 seconds that represent 6 hours.
+* `id-token-lifetime`: sets the lifetime of the id token. The default
+  value os 3600 seconds that represents one hour.
 * `short-lived-access-token-lifetime`: sets the short-lived access token
-lifetime
+  lifetime
 * `long-lived-access-token-lifetime`: sets the long-lived access token lifetime
 
 ```
@@ -750,16 +753,16 @@ lifetime
 These tags control the behaviour of a session:
 
 * `session-id-unused-lifetime`: if the session id is not used during some
-time then it is removed, automatically. The lifetime is set in seconds,
-whereas 86400 seconds represent a single day.
+  time then it is removed, automatically. The lifetime is set in seconds,
+  whereas 86400 seconds represent a single day.
 * `session-id-enabled`: this tag is either `true` or `false` and displays
-whether a session id is enabled or not
+  whether a session id is enabled or not
 * `refresh-user-session-timeout-enabled`: this tag is either `true` or
-`false` and defines whether the timeout is enabled to refresh a user
-session. The default value is `true`.
+  `false` and defines whether the timeout is enabled to refresh a user
+  session. The default value is `true`.
 * `refresh-user-session-timeout`: defines the duration of the timeout
-after which the session is refreshed. The default value is set to 1800
-seconds.
+  after which the session is refreshed. The default value is set to 1800
+  seconds.
 
 ```
 <session-id-unused-lifetime>86400</session-id-unused-lifetime>
