@@ -506,6 +506,11 @@ activate the according tag `token-endpoint-auth-method`:
 </token-endpoint-auth-methods-supported>
 ```
 
+Furthermore, the [OpenID Core specification][openid-core] defines the
+method `none`. This method is used to connect without authentication,
+and is not supported by the Gluu Server, currently.
+
+
 ### Supported token endpoint authentication signing algorithm values
 
 Currently, the Gluu Server supports these signing algorithms to
