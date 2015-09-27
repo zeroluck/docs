@@ -103,7 +103,11 @@ servers are needed versus a few oxTrust instances.
 
  * __ldifStoreDir__ `/var/removedldif/`
 
- * __cacertsLocation__ `/usr/java/latest/jre/lib/security/cacerts` This option defines keystore to use for SSL download certificate verification. It is a good idea to have all truster root CA at this keystore Defaults to tomcat SSL keystore (one defined in server.xml)
+ * __cacertsLocation__ holds the value
+   `/usr/java/latest/jre/lib/security/cacerts`. This option defines a
+   keystore to be used for downloaded SSL certificates. It is a good idea
+   to have all trusted root CA at this keystore. It defaults to the Tomcat
+   SSL keystore that is defined in `server.xml`.
 
  * __cacertsPassphrase__ If this option is present it will be used as a
    passphrase to a keystore that is defined in the tag `cacertsLocation`.
