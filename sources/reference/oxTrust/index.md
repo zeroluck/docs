@@ -105,10 +105,11 @@ servers are needed versus a few oxTrust instances.
 
  * __cacertsLocation__ `/usr/java/latest/jre/lib/security/cacerts` This option defines keystore to use for SSL download certificate verification. It is a good idea to have all truster root CA at this keystore Defaults to tomcat SSL keystore (one defined in server.xml)
 
- * __cacertsPassphrase__ If this option is present it will be used as a passphrase to keystore 
-defined in the cacertsLocation. It is only needed if cacertsLocation is 
-defined and is protected by password. For default jre cacerts behavior (empty
-password) - leace commented.  
+ * __cacertsPassphrase__ If this option is present it will be used as a
+   passphrase to a keystore that is defined in the tag `cacertsLocation`.
+   It is only needed if `cacertsLocation` is defined and is protected by 
+   password. For default jre cacerts behavior (empty password) - leace 
+   commented.
 
  * __certDir__ holds the value `/etc/certs/`. This is the location of
    certificates used in configuration files.
@@ -119,7 +120,7 @@ password) - leace commented.
 
  * __servicesRestartTrigger__ holds the filename
    `/opt/gluu/trigger_restart_of_services_delete_me_to_do_so`. Deleting
-   this files works as a trigger that restarts the appliance services.
+   this file works as a trigger that restarts the appliance services.
 
  * __oxtrust.auth.mode__  set this tag to `basic` without the quotation to use basic authentication or leave it blank to use oxAuth
 
