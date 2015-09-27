@@ -13,6 +13,12 @@ servers are needed versus a few oxTrust instances.
 
 ## oxTrust.properties
 
+The oxTrust has quite a few properties to control its behaviour. This
+consists of general properties, SVN-related properties as well as
+display and authentication properties.
+
+### General properties
+
  * __applianceInum__ 
 
  * __orgInum__ 
@@ -32,6 +38,8 @@ servers are needed versus a few oxTrust instances.
  * __person-objectClass-types__ `inetOrgPerson, gluuPerson`
 
  * __person-objectClass-displayNames__ `inetOrgPerson, gluuPerson`
+
+### SVN-related properties
 
  * __svn.configuration-store.root__ 
 
@@ -53,6 +61,8 @@ servers are needed versus a few oxTrust instances.
 
  * __schema.add-with-attribute-types.objectClass.objectClasses__ `( %%s-oid NAME '%%s' SUP top STRUCTURAL MUST objectClass MAY ( %%s ) X-SCHEMA-FILE '100-user.ldif' X-ORIGIN 'gluu' )`
 
+### Display properties
+
  * __photo.repository.root-dir__ sets the path to the root directory of
    photographs. The default value is `/var/photos`.
 
@@ -69,6 +79,8 @@ servers are needed versus a few oxTrust instances.
  * __velocity.log__ `/opt/tomcat/logs/velocity.log`
 
  * __logo.location__ `/var/photos`
+
+### Authentication properties 
 
  * __gluuSP.shared.attributes__ `uid, mail, sn, givenName`
 
