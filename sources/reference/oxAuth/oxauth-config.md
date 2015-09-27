@@ -468,15 +468,17 @@ activate the according tag `request-object-encryption-enc`:
 
 ### Supported token endpoint authentication methods
 
-Currently, these methods are supported for token endpoint
-authentication:
+The [OpenID Core specification][openid-core] defines a number of methods
+that are used by clients to authenticate to the authorization server
+when using the token endpoint. The Gluu Server supports the following
+methods:
 
-* `client_secret_basic`: clients in possession of a client password
-  authenticate with the Authorization Server using HTTP Basic
-  authentication scheme.
-* `client_secret_post`: clients in possession of a client password
-  authenticate with the Authorization Server by including the client
-  credentials in the request body.
+* `client_secret_basic`: clients have received a client password from
+  the Authentication Server, and authenticate with the Authorization
+  Server using HTTP Basic authentication scheme.
+* `client_secret_post`: clients have received a client password from
+  the Authentication Server, and authenticate with the Authorization
+  Server by including the client credentials in the request body.
 * `client_secret_jwt`: clients in possession of a client password create
   a [JSON Web Token (JWT)][ietf-jwk] using the HMAC-SHA algorithm. The
   Hash-based Message Authentication Code (HMAC) is calculated using the
