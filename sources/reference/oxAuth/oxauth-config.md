@@ -510,7 +510,6 @@ Furthermore, the [OpenID Core specification][openid-core] defines the
 method `none`. This method is used to connect without authentication,
 and is not supported by the Gluu Server, currently.
 
-
 ### Supported token endpoint authentication signing algorithm values
 
 Currently, the Gluu Server supports these signing algorithms to
@@ -543,13 +542,13 @@ authenticate endpoints:
 ### Supported OpenID display values
 
 According to the [OpenID Core Documentation][openid-core], the Gluu
-Server supports these display values as part of the request parameter
-set:
+Server supports these OpenID display values as part of the request
+parameter set:
 
-* `page`: display the authentication information as a full User Agent
+* `page`: display the authentication information as a full user agent
   page view. If not specified otherwise this is the default value.
-* `popup`: display the authentication information with a popup User
-  Agent window.
+* `popup`: display the authentication information with a popup user
+  agent window.
 * `touch`: display the authentication information consistent with a
   device that leverages a touch interface.
 * `wap`: display the authentication information consistent with a
