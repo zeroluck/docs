@@ -4,10 +4,11 @@ oxTrust is a JBoss Seam application that provides organizational cloud identity
 management services, including REST service endpoints and a user friendly cloud
 identity management console (aka a GUI). 
 
-oxTrust is tightly coupled with oxAuth. oxAuth configuration is stored in LDAP,
-and it would be hard to generate the right configuration entries without
-oxTrust. The projects are separate projects because in a high throughput cluster
-deployment, many oxAuth servers are needed versus a few oxTrust instances.
+oxTrust is tightly coupled with oxAuth. oxAuth configuration is stored
+in [LDAP][ldap], and it would be hard to generate the right
+configuration entries without oxTrust. The projects are separate
+projects because in a high throughput cluster deployment, many oxAuth
+servers are needed versus a few oxTrust instances.
 
 ## oxTrust.properties
 
@@ -130,7 +131,7 @@ be deleted to trigger restart of appliance services.
 
 ## oxTrustLdap.properties
 
-These are the properties oxTrust uses to connect to LDAP
+These are the properties oxTrust uses to connect to [LDAP][ldap]
 
  * __bindDN__ 
 
@@ -145,5 +146,7 @@ These are the properties oxTrust uses to connect to LDAP
  * __baseConfigurationDN__ 
 
  * __createLdapConfigurationEntryIfNotExist__ `TRUE | false`
+
+[ldap]: https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol "Lightweight Directory Access Protocol (LDAP), Wikipedia"
 
 
