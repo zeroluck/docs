@@ -147,8 +147,9 @@ These properties refer to authentication settings of oxTrust.
  * __cacertsLocation__ holds the value
    `/usr/java/latest/jre/lib/security/cacerts`. This option defines a
    keystore to be used for downloaded SSL certificates. It is a good idea
-   to have all trusted root CA at this keystore. It defaults to the Tomcat
-   SSL keystore that is defined in `server.xml`.
+   to have all trusted root Certification Authority (CA) at this
+   keystore. It defaults to the Tomcat SSL keystore that is defined in
+   `server.xml`.
 
  * __cacertsPassphrase__ If this option is present it will be used as a
    passphrase to a keystore that is defined in the tag `cacertsLocation`.
@@ -191,12 +192,12 @@ services:
  * __bindPassword__ define the [LDAP][ldap] passwort to bind to
 
  * __servers__ define the [LDAP][ldap] hostname, and the according
-   network port for the connection. The default value is `localhost:1636`
-   for localhost on port `1636`.
+   network port for the connection. The default value is 
+   `localhost:1636` for the local maching on port `1636`.
 
  * __useSSL__ enable this tag to initiate a secure connection via SSL.
-   Set this tag to `TRUE`, or `false` if otherwise wanted.
-
+   Set this tag to `true` (default value), or `false` if otherwise
+   wanted.
 
  * __maxconnections__ set this entry to define the maximum number of
    parallel connections. The default value is set to `3`.
@@ -205,8 +206,8 @@ services:
    configuration
 
  * __createLdapConfigurationEntryIfNotExist__ if an [LDAP][ldap]
-   configuration entry does not exist it can be created, automatically. Set
-   this tag to `TRUE`, or `false` if otherwise wanted.
+   configuration entry does not exist it can be created, automatically. 
+   Set this tag to `true` (default value), or `false` if otherwise wanted.
 
 [jboss]: https://en.wikipedia.org/wiki/WildFly "JBoss, Wildfly, Wikipedia"
 
