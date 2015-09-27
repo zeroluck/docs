@@ -35,9 +35,13 @@ display and authentication properties.
 
  * __keystore.password__ holds the password to the keystore.
 
- * __person-objectClass-types__ `inetOrgPerson, gluuPerson`
+ * __person-objectClass-types__ holds the relation between the person 
+   entry, and its according object class. An example value is
+   `inetOrgPerson, gluuPerson`.
 
- * __person-objectClass-displayNames__ `inetOrgPerson, gluuPerson`
+ * __person-objectClass-displayNames__ holds the relation between the
+   display name of the person, and its according object class. An 
+   example value is `inetOrgPerson, gluuPerson`.
 
 ### SVN-related properties
 
