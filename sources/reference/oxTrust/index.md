@@ -182,10 +182,16 @@ These properties refer to authentication settings of oxTrust.
  * __oxtrust.auth.mode__  set this tag to `basic` without the quotation 
    to use basic authentication or leave it blank to use oxAuth.
 
- * __oxauth.authorize.url__ 
- * __oxauth.token.url__ 
- * __oxauth.token.validation.url__ 
- * __oxauth.checksession.url__ 
+ * __oxauth.authorize.url__ defines the oxAuth authorization uri.
+
+ * __oxauth.token.url__ defines the oxAuth token uri.
+
+ * __oxauth.token.validation.url__ defines the oxAuth uri for token
+   validation.
+
+ * __oxauth.checksession.url__ define the oxAuth uri to check the
+   current session.
+
  * __oxauth.userinfo.url__ 
  * __oxauth.logout.url__ 
 
