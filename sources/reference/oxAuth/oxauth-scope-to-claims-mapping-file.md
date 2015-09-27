@@ -1,6 +1,7 @@
 
-## scope to claims mapping file
+## Scope to claims mapping file
 
+```
     {
     "claimMapping":[
         {
@@ -85,4 +86,4 @@
         "umaPolicy":"ou=policies,ou=uma,o=%(inumOrg)s,o=gluu"
       }
     }
-
+```
