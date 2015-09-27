@@ -19,9 +19,9 @@ display and authentication properties.
 
 ### General properties
 
- * __applianceInum__ 
+ * __applianceInum__ sets the [INum][inum] of the appliance
 
- * __orgInum__ 
+ * __orgInum__ sets the [INum][inum] of the organisation
 
  * __orgDisplayName__ holds the display name of the organization.
 
@@ -217,6 +217,8 @@ services:
  * __createLdapConfigurationEntryIfNotExist__ if an [LDAP][ldap]
    configuration entry does not exist it can be created, automatically. 
    Set this tag to `true` (default value), or `false` if otherwise wanted.
+
+[inum]: https://en.wikipedia.org/wiki/INum_Initiative "INum Initiative, Wikipedia"
 
 [jboss]: https://en.wikipedia.org/wiki/WildFly "JBoss, Wildfly, Wikipedia"
 
