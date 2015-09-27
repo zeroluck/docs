@@ -110,11 +110,16 @@ defined in the cacertsLocation. It is only needed if cacertsLocation is
 defined and is protected by password. For default jre cacerts behavior (empty
 password) - leace commented.  
 
- * __certDir__ `/etc/certs/` location of certificates used in configuration files
+ * __certDir__ holds the value `/etc/certs/`. This is the location of
+   certificates used in configuration files.
 
- * __certDirTemp__ `/etc/certs/temp` temporary location for certificates while user performs update procedures 
- * __servicesRestartTrigger__ `/opt/gluu/trigger_restart_of_services_delete_me_to_do_so` File to 
-be deleted to trigger restart of appliance services.
+ * __certDirTemp__ holds the value `/etc/certs/temp`. This is the
+   temporary location for certificates while user performs update
+   procedures.
+
+ * __servicesRestartTrigger__ holds the filename
+   `/opt/gluu/trigger_restart_of_services_delete_me_to_do_so`. Deleting
+   this files works as a trigger that restarts the appliance services.
 
  * __oxtrust.auth.mode__  set this tag to `basic` without the quotation to use basic authentication or leave it blank to use oxAuth
 
