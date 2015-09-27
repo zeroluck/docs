@@ -47,13 +47,19 @@ display and authentication properties.
 
  * __svn.configuration-store.password__ 
 
- * __person.allow-modification__ `TRUE | false'
+ * __person.allow-modification__ enables or disables the allowance to
+   modify a person entry. Use `TRUE` to allow (default value), and
+   `false` to forbid.
 
- * __site.update-appliance-status__ 'true | FALSE`
+ * __site.update-appliance-status__ change the update appliance state
+   for the site. Use `true` to allow, and `FALSE` to forbid (default
+   value).
 
- * __persist-in-svn__ `true | FALSE`
+ * __persist-in-svn__ control the state of persistance in the SVN. Use
+   `true` to enable, and `FALSE` to disable (default value).
 
- * __baseDN__ `o=gluu`
+ * __baseDN__ set the base domain name of oxTrust. The default value is
+   `o=gluu`.
 
  * __schema.add.attribute.attributeTypes__ `( %%s-oid NAME '%%s' EQUALITY caseIgnoreMatch ORDERING caseIgnoreOrderingMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 USAGE userApplications X-SCHEMA-FILE '100-user.ldif' X-ORIGIN 'gluu' )`
 
