@@ -116,21 +116,25 @@ These properties refer to authentication settings of oxTrust.
    generation of the configuration file. Use `enabled` to allow that, 
    and `DISABLED` otherwise (default value).
 
- * __idp.securityCert__ 
+ * __idp.securityCert__ holds the security certificate of the OpenID
+   provider.
 
- * __idp.securityKey__ 
+ * __idp.securityKey__ holds the security key of the OpenID provider.
 
- * __.securityCert__ 
+ * __.securityCert__ holds the security certificate of the machine.
 
- * __idp.securityKeyPassword__ 
+ * __idp.securityKeyPassword__ holds the security key password of the
+   OpenID provider.
 
- * __idp.bindDN__ 
+ * __idp.bindDN__ holds the domain name the OpenID provider is bind to.
 
- * __idp.bindPassword__ 
+ * __idp.bindPassword__ holds the password the OpenID provider is bind to.
 
- * __idp.useSSL__ `TRUE | false`
+ * __idp.useSSL__ enables or disables a secure connection via SSL. Use
+   `true` to enable (default value), or `false` to disable the usage of
+   SSL.
 
- * __idp.ldap.server__ 
+ * __idp.ldap.server__ holds the name of OpenID [LDAP][ldap] server.
 
  * __mysql.url__ define the MySQL connector as uri. The default value is
    `jdbc:mysql:///localhost` for the local machine using the JDBC driver.
@@ -168,7 +172,8 @@ These properties refer to authentication settings of oxTrust.
    `/opt/gluu/trigger_restart_of_services_delete_me_to_do_so`. Deleting
    this file works as a trigger that restarts the appliance services.
 
- * __oxtrust.auth.mode__  set this tag to `basic` without the quotation to use basic authentication or leave it blank to use oxAuth
+ * __oxtrust.auth.mode__  set this tag to `basic` without the quotation 
+   to use basic authentication or leave it blank to use oxAuth.
 
  * __oxauth.authorize.url__ 
  * __oxauth.token.url__ 
