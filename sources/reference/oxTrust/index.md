@@ -63,6 +63,8 @@ display and authentication properties.
 
 ### Display properties
 
+These properties refer to visual settings of oxTrust.
+
  * __photo.repository.root-dir__ sets the path to the root directory of
    photographs. The default value is `/var/photos`.
 
@@ -72,15 +74,21 @@ display and authentication properties.
  * __photo.repository.thumb-height__ sets the thumb height of a photo.
    The default value is `300` pixels.
 
- * __photo.repository.count-levels__ `3`
+ * __photo.repository.count-levels__ sets the count level per photo
+   repository. The default value is `3`.
 
- * __photo.repository.count-folders-per-level__ `20`
+ * __photo.repository.count-folders-per-level__ sets the number of
+   folders per level. The default value is `20`.
 
- * __velocity.log__ `/opt/tomcat/logs/velocity.log`
+ * __velocity.log__ this entry defines the filename in which the
+   velocity is kept. The default value is `/opt/tomcat/logs/velocity.log`.
 
- * __logo.location__ `/var/photos`
+ * __logo.location__ this entry defines the directory name for the
+   photos. The default value is `/var/photos`.
 
 ### Authentication properties 
+
+These properties refer to authentication settings of oxTrust.
 
  * __gluuSP.shared.attributes__ `uid, mail, sn, givenName`
 
