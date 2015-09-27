@@ -192,10 +192,12 @@ These properties refer to authentication settings of oxTrust.
  * __oxauth.checksession.url__ define the oxAuth uri to check the
    current session.
 
- * __oxauth.userinfo.url__ 
- * __oxauth.logout.url__ 
+ * __oxauth.userinfo.url__ define the oxAuth uri for user information
 
- * __oxauth.client.id__ 
+ * __oxauth.logout.url__ define the oxAuth uri to logout
+
+ * __oxauth.client.id__ define the id of the oxAuth client
+
  * __oxauth.client.credentials__ 
  * __oxauth.client.password__ 
  * __oxauth.client.scope__ `openid+profile+address+email`
