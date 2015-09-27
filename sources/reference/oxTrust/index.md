@@ -135,9 +135,9 @@ be deleted to trigger restart of appliance services.
 These are the properties oxTrust uses to connect to [LDAP][ldap]
 services:
 
- * __bindDN__ 
+ * __bindDN__ define the [LDAP][ldap] domain name to bind to
 
- * __bindPassword__ 
+ * __bindPassword__ define the [LDAP][ldap] passwort to bind to
 
  * __servers__ define the [LDAP][ldap] hostname, and the according
    network port for the connection. The default value is `localhost:1636`
@@ -150,7 +150,8 @@ services:
  * __maxconnections__ set this entry to define the maximum number of
    parallel connections. The default value is set to `3`.
 
- * __baseConfigurationDN__ 
+ * __baseConfigurationDN__ define the [LDAP][ldap] domain name for base
+   configuration
 
  * __createLdapConfigurationEntryIfNotExist__ if an [LDAP][ldap]
    configuration entry does not exist it can be created, automatically. Set
