@@ -141,7 +141,8 @@ These properties refer to authentication settings of oxTrust.
  * __mysql.password__ define the password for the MySQL connection. The
    default value is empty.
 
- * __ldifStoreDir__ `/var/removedldif/`
+ * __ldifStoreDir__  define the path to the [LDAP Data Interchange Format
+   (LDIF)][ldif] store. The default value is `/var/removedldif/`.
 
  * __cacertsLocation__ holds the value
    `/usr/java/latest/jre/lib/security/cacerts`. This option defines a
@@ -211,3 +212,4 @@ services:
 
 [ldap]: https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol "Lightweight Directory Access Protocol (LDAP), Wikipedia"
 
+[ldif]: https://en.wikipedia.org/wiki/LDAP_Data_Interchange_Format "LDAP Data Interchange Format (LDIF), Wikipedia"
