@@ -1,6 +1,10 @@
 
 ## Scope to claims mapping file
 
+This file does a mapping between the scopes and the different claims
+that are used by the Gluu Server. The mapping has a [JSON][json]
+structure.
+
 ```
     {
     "claimMapping":[
@@ -87,3 +91,6 @@
       }
     }
 ```
+
+[json]: https://en.wikipedia.org/wiki/JSON "JSON, Wikipedia"
+
