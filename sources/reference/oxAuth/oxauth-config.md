@@ -191,7 +191,8 @@ By default, this feature is turned off.
 According to the [OpenID Core Documentation][openid-core], an identifier
 is a locally unique and never reassigned identifier within the issuer
 for the end-user, which is intended to be consumed by the client. There
-are two possible subject identifier types -- *public* and *pairwise*.
+are two possible subject identifier types available -- *public* and
+*pairwise*. The Gluu Server supports both of them.
 
 * `public`: provide the same subject value to all clients
 * `pairwise`: provide a different subject value to each client
