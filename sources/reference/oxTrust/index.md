@@ -1,8 +1,9 @@
 # oxTrust Configuration
 
-oxTrust is a JBoss Seam application that provides organizational cloud identity
-management services, including REST service endpoints and a user friendly cloud
-identity management console (aka a GUI). 
+oxTrust is a [JBoss][jboss] Seam application that provides
+organizational cloud identity management services, including REST
+service endpoints and a user friendly cloud identity management console
+(aka a GUI).
 
 oxTrust is tightly coupled with oxAuth. oxAuth configuration is stored
 in [LDAP][ldap], and it would be hard to generate the right
@@ -147,6 +148,7 @@ These are the properties oxTrust uses to connect to [LDAP][ldap]
 
  * __createLdapConfigurationEntryIfNotExist__ `TRUE | false`
 
-[ldap]: https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol "Lightweight Directory Access Protocol (LDAP), Wikipedia"
+[jboss]: https://en.wikipedia.org/wiki/WildFly "JBoss, Wildfly, Wikipedia"
 
+[ldap]: https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol "Lightweight Directory Access Protocol (LDAP), Wikipedia"
 
