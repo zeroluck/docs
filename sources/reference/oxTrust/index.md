@@ -198,9 +198,13 @@ These properties refer to authentication settings of oxTrust.
 
  * __oxauth.client.id__ define the id of the oxAuth client
 
- * __oxauth.client.credentials__ 
- * __oxauth.client.password__ 
- * __oxauth.client.scope__ `openid+profile+address+email`
+ * __oxauth.client.credentials__ define the credentials for the oxAuth
+   client.
+
+ * __oxauth.client.password__ define the password for the oxAuth client
+
+ * __oxauth.client.scope__ define the scope of the oxAuth client. The
+   default value is `openid+profile+address+email`.
 
 ## oxTrustLdap.properties
 
