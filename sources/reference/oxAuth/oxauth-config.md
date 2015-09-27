@@ -78,11 +78,11 @@ endpoints the Gluu Server communicates with:
 
 Additionally, the Gluu Server includes an [User-Managed Access
 (UMA)][uma] Authorization Server (AS) that can be used to enforce
-policies for access to any API or web resource. UMA is a profile of
-[OAuth2][oauth2] that is complimentary to [OpenID][openid] Connect. UMA
-defines [REST][rest]ful, [JSON][json]-based, standardized flows and
-constructs for access management. Use this tag to configure the
-according endpoint:
+policies for access to any Application Programming Interface (API) or
+web resource. UMA is a profile of [OAuth2][oauth2] that is complimentary
+to [OpenID][openid] Connect. UMA defines [REST][rest]ful,
+[JSON][json]-based, standardized flows and constructs for access
+management. Use this tag to configure the according endpoint:
 
 * `uma-configuration-endpoint`: uri that defines the endpoint
 
@@ -186,10 +186,12 @@ By default, this feature is turned off.
 </amr-values-supported>
 ```
 
-### Supported subject types
+### Supported subject identifier types
 
-This entry defines the supported subject types. Possible values are
-`public` and `pairwise`.
+According to the [OpenID Core Documentation][openid-core], an identifier
+is a locally unique and never reassigned identifier within the issuer
+for the end-user, which is intended to be consumed by the client. There
+are two possible subject identifier types -- public and pairwise.
 
 ```
 <subject-types-supported>
