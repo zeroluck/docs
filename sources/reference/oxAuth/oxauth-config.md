@@ -78,11 +78,11 @@ endpoints the Gluu Server communicates with:
 
 Additionally, the Gluu Server includes an [User-Managed Access
 (UMA)][uma] Authorization Server (AS) that can be used to enforce
-policies for access to any API or web resource. UMA is a profile of
-[OAuth2][oauth2] that is complimentary to [OpenID][openid] Connect. UMA
-defines [REST][rest]ful, [JSON][json]-based, standardized flows and
-constructs for access management. Use this tag to configure the
-according endpoint:
+policies for access to any Application Programming Interface (API) or
+web resource. UMA is a profile of [OAuth2][oauth2] that is complimentary
+to [OpenID][openid] Connect. UMA defines [REST][rest]ful,
+[JSON][json]-based, standardized flows and constructs for access
+management. Use this tag to configure the according endpoint:
 
 * `uma-configuration-endpoint`: uri that defines the endpoint
 
@@ -186,10 +186,16 @@ By default, this feature is turned off.
 </amr-values-supported>
 ```
 
-### Supported subject types
+### Supported subject identifier types
 
-This entry defines the supported subject types. Possible values are
-`public` and `pairwise`.
+According to the [OpenID Core Documentation][openid-core], an identifier
+is a locally unique and never reassigned identifier within the issuer
+for the end-user, which is intended to be consumed by the client. There
+are two possible subject identifier types available -- *public* and
+*pairwise*. The Gluu Server supports both of them.
+
+* `public`: provide the same subject value to all clients
+* `pairwise`: provide a different subject value to each client
 
 ```
 <subject-types-supported>
@@ -234,7 +240,7 @@ according tag `userinfo-signing-alg`:
 
 Currently, the Gluu Server supports these algorithms for data encryption:
 
-* RSA1_5: [RSA][rsa] 1.5 (PKCS #1) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
+* RSA1_5: [RSA][rsa] 1.5 ([PKCS #1][pkcs1]) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
 * RSA-OAEP: [RSA][rsa] with [Optimal asymmetric encryption padding (OAEP)][oaep] with the default parameters specified by [RFC 3447][rfc3447] in section A.2.1.
 * A128KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 128 bit keys.
 * A256KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 256 bit keys.
@@ -322,7 +328,7 @@ activate the according tag `id-token-signing-alg`:
 Currently, the Gluu Server supports these encryption algorithms for
 ID tokens:
 
-* RSA1_5: [RSA][rsa] 1.5 (PKCS #1) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
+* RSA1_5: [RSA][rsa] 1.5 ([PKCS #1][pkcs1]) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
 * RSA-OAEP: [RSA][rsa] with [Optimal asymmetric encryption padding (OAEP)][oaep] with the default parameters specified by [RFC 3447][rfc3447] in section A.2.1.
 * A128KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 128 bit keys.
 * A256KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 256 bit keys.
@@ -410,7 +416,7 @@ according tag `request-object-signing-alg`:
 Currently, the Gluu Server supports these encryption algorithms for
 request objects:
 
-* RSA1_5: [RSA][rsa] 1.5 (PKCS #1) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
+* RSA1_5: [RSA][rsa] 1.5 ([PKCS #1][pkcs1]) according to [RFC 2313][rfc2313] and [RFC 3447][rfc3447].
 * RSA-OAEP: [RSA][rsa] with [Optimal asymmetric encryption padding (OAEP)][oaep] with the default parameters specified by [RFC 3447][rfc3447] in section A.2.1.
 * A128KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 128 bit keys.
 * A256KW: [Advanced Encryption Standard (AES)][aes] Key Wrap Algorithm ([RFC 3394][rfc3394]) using 256 bit keys.
@@ -462,21 +468,25 @@ activate the according tag `request-object-encryption-enc`:
 
 ### Supported token endpoint authentication methods
 
-Currently, these methods are supported for token endpoint
-authentication:
+The [OpenID Core specification][openid-core] defines a number of methods
+that are used by clients to authenticate to the authorization server
+when using the token endpoint. The Gluu Server supports the following
+methods:
 
-* `client_secret_basic`: clients in possession of a client password
-  authenticate with the Authorization Server using HTTP Basic
-  authentication scheme.
-* `client_secret_post`: clients in possession of a client password
-  authenticate with the Authorization Server by including the client
-  credentials in the request body.
-* `client_secret_jwt`: clients in possession of a client password create
-  a [JSON Web Token (JWT)][ietf-jwk] using the HMAC-SHA algorithm. The
-  Hash-based Message Authentication Code (HMAC) is calculated using the
-  `client_secret` as the shared key. The client Authenticates in
-  accordance with section 2.2 of (JWT) Bearer Token Profiles and [OAuth
-  2.0][oauth2] Assertion Profile
+* `client_secret_basic`: clients have received a client password
+  (`client_secret`) from the Authentication Server, and authenticate
+  with the Authorization Server using HTTP Basic authentication scheme.
+* `client_secret_post`: clients have received a client password 
+  (`client_secret`) from the Authentication Server, and authenticate 
+  with the Authorization Server by including the client credentials in 
+  the request body.
+* `client_secret_jwt`: clients have received a client password
+  (`client_secret`) from the Authentication Server, and create a [JSON
+  Web Token (JWT)][ietf-jwk] based on the HMAC-SHA algorithm such as
+  HMAC SHA-256. The [Hash-based Message Authentication Code (HMAC)][hmac]
+  is calculated using the `client_secret` as the shared key. The client
+  Authenticates in accordance with section 2.2 of (JWT) Bearer Token
+  Profiles and [OAuth 2.0][oauth2] Assertion Profile
 * `private_key_jwt`: clients that have registered a public key sign a 
   [JSON Web Token (JWT)][ietf-jwk] using the [RSA][rsa] algorithm if a RSA 
   key was registered or the [ECDSA][ecdsa] algorithm if an Elliptic Curve 
@@ -495,6 +505,10 @@ activate the according tag `token-endpoint-auth-method`:
     <token-endpoint-auth-method>private_key_jwt</token-endpoint-auth-method>
 </token-endpoint-auth-methods-supported>
 ```
+
+Furthermore, the [OpenID Core specification][openid-core] defines the
+method `none`. This method is used to connect without authentication,
+and is not supported by the Gluu Server, currently.
 
 ### Supported token endpoint authentication signing algorithm values
 
@@ -528,19 +542,20 @@ authenticate endpoints:
 ### Supported OpenID display values
 
 According to the [OpenID Core Documentation][openid-core], the Gluu
-Server supports these display values as part of the request parameter
-set:
+Server supports these OpenID display values as part of the request
+parameter set:
 
-* `page`: display the authentication information as a full User Agent
+* `page`: display the authentication information as a full user agent
   page view. If not specified otherwise this is the default value.
-* `popup`: display the authentication information with a popup User
-  Agent window.
+* `popup`: display the authentication information with a popup user
+  agent window.
 * `touch`: display the authentication information consistent with a
   device that leverages a touch interface.
 * `wap`: display the authentication information consistent with a
   "feature phone" type display.
 
-As the default value, `page` is enabled, only.
+As the default value, `page` is enabled, only. To activate one of the
+other display values enable the according tag.
 
 ```
 <display-values-supported>
@@ -554,16 +569,16 @@ As the default value, `page` is enabled, only.
 ### Supported OpenID claim types
 
 According to the [OpenID Core Documentation][openid-core], the Gluu
-Server supports these claims:
+Server supports the claims `normal` and `distributed`:
 
 * `normal`: these claims are directly asserted by the OpenID provider. A
-  claim dataset is represented as a [JSON][json] object. See the
-  following section "Supported Claims" for a detailed list of values.
-* `distributed`: these claims are asserted by a Claims provider other
+  claim dataset is represented as a [JSON][json] object. See the following
+  section "Supported OpenID Claims" for a detailed list of values.
+* `distributed`: these claims are asserted by a claims provider other
   than the OpenID provider but are returned as references by the OpenID
   provider. The claim dataset is represented by using special
   `_claim_names` and `_claim_sources` members of the [JSON][json] object
-  containing the Claims.
+  containing the claims.
 
 Currently, the claim type `aggregated` is not supported. To activate a
 certain claim type enable the according tag in the configuration file as
@@ -583,7 +598,7 @@ The Gluu Server supports these values for claims:
 * `uid`: a valid user id
 * `displayName`: a previously chosen display name for the Gluu Server User Interface
 * `givenName`: a previously given user name
-* `sn`: abbreviation for *short name*. This feature has not been tested yet.
+* `sn`: the familiy name of the user. This feature has not been tested yet.
 * `mail`: a stored email address for this user
 
 ```
@@ -607,16 +622,17 @@ Server.
 
 ### Supported locales for claims
 
-Currently, these languages are supported for claims:
+Currently, the Gluu Server supports these languages for claims:
 
 * en: English
-
-These languages are not enabled by default:
-
 * en-GB: British English
 * en-CA: Canadian English
 * fr-FR: French 
 * fr-CA: Canadian French
+
+These languages are enabled by default:
+
+* en: English
 
 ```
 <claims-locales-supported>
@@ -703,10 +719,10 @@ To define a certain oxAuth operation policy uri use the tag
 <op-policy-uri>http://ox.gluu.org/doku.php?id=oxauth:policy</op-policy-uri>
 ```
 
-### Uri for type-of-service
+### Uri for type-of-service operations
 
-To define a certain oxAuth type-of-service uri use the tag `op-tos-uri`.
-The value refers to an according type-of-service document.
+To define a certain oxAuth type-of-service operations uri use the tag
+`op-tos-uri`. The value refers to an according type-of-service document.
 
 ```
 <op-tos-uri>http://ox.gluu.org/doku.php?id=oxauth:tos</op-tos-uri>
@@ -716,11 +732,14 @@ The value refers to an according type-of-service document.
 
 These tags control the behaviour of the connection:
 
-* `authorization-code-lifetime`: sets the lifetime of the authorization code. The default is 600 seconds.
-* `refresh-token-lifetime`: sets the interval the token is refreshed. The default value is 14400 seconds that represent 6 hours.
-* `id-token-lifetime`: sets the lifetime of the id token. The default value os 3600 seconds that represents one hour.
+* `authorization-code-lifetime`: sets the lifetime of the authorization
+  code. The default is 600 seconds.
+* `refresh-token-lifetime`: sets the interval the token is refreshed.
+  The default value is 14400 seconds that represent 6 hours.
+* `id-token-lifetime`: sets the lifetime of the id token. The default
+  value os 3600 seconds that represents one hour.
 * `short-lived-access-token-lifetime`: sets the short-lived access token
-lifetime
+  lifetime
 * `long-lived-access-token-lifetime`: sets the long-lived access token lifetime
 
 ```
@@ -734,16 +753,16 @@ lifetime
 These tags control the behaviour of a session:
 
 * `session-id-unused-lifetime`: if the session id is not used during some
-time then it is removed, automatically. The lifetime is set in seconds,
-whereas 86400 seconds represent a single day.
+  time then it is removed, automatically. The lifetime is set in seconds,
+  whereas 86400 seconds represent a single day.
 * `session-id-enabled`: this tag is either `true` or `false` and displays
-whether a session id is enabled or not
+  whether a session id is enabled or not
 * `refresh-user-session-timeout-enabled`: this tag is either `true` or
-`false` and defines whether the timeout is enabled to refresh a user
-session. The default value is `true`.
+  `false` and defines whether the timeout is enabled to refresh a user
+  session. The default value is `true`.
 * `refresh-user-session-timeout`: defines the duration of the timeout
-after which the session is refreshed. The default value is set to 1800
-seconds.
+  after which the session is refreshed. The default value is set to 1800
+  seconds.
 
 ```
 <session-id-unused-lifetime>86400</session-id-unused-lifetime>
@@ -770,7 +789,6 @@ value is 600 seconds:
 
 ```
 <clean-service-interval>600</clean-service-interval>
-
 ```
 
 ### Default signature algorithms
@@ -835,9 +853,10 @@ scopes of the trust list are joined.
 ```
 
 These entries set both the federation signing algorithm, and the
-according signing key id. The default settings are `RS512` and `1`. For
-a full list of possible values see the section about default signature
-algorithms.
+according signing key id. The default settings are `RS512` for
+[RSASSA-PKCS-v1_5][rsassa] using [SHA-512][sha2] hash algorithm, and `1`
+to enable federation signing. For a full list of possible values see the
+section about default signature algorithms.
 
 ```
 <federation-signing-alg>RS512</federation-signing-alg>
@@ -1022,6 +1041,8 @@ definition allows the following tags:
 [oxwiki-authorization-implicit]: http://ox.gluu.org/doku.php?id=oxauth:implicitgrant "OX wiki, Implicit Grant"
 
 [oxwiki-authorization-client-credentials]: http://ox.gluu.org/doku.php?id=oxauth:clientcredentialsgrant "OX wiki, Client Credentials Grant"
+
+[pkcs1]: https://en.wikipedia.org/wiki/PKCS_1 "Public-Key Cryptography Standards (PKCS) #1, Wikipedia"
 
 [rest]: https://en.wikipedia.org/wiki/Representational_state_transfer "Representational State Transfer (REST), Wikipedia"
 
