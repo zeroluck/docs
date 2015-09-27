@@ -14,7 +14,7 @@ servers are needed versus a few oxTrust instances.
 ## oxTrust.properties
 
 The oxTrust has quite a few properties to control its behaviour. This
-consists of general properties, SVN-related properties as well as
+consists of general properties, [SVN][svn]-related properties as well as
 display and authentication properties.
 
 ### General properties
@@ -45,14 +45,14 @@ display and authentication properties.
 
 ### SVN-related properties
 
- * __svn.configuration-store.root__ sets the root of the SVN
+ * __svn.configuration-store.root__ sets the root of the [SVN][svn]
    configuration store.
 
- * __svn.configuration-store.user__ sets the usaer name of the SVN
-   configuration store.
+ * __svn.configuration-store.user__ sets the usaer name of the
+   [SVN][svn] configuration store.
 
- * __svn.configuration-store.password__ sets the password of the SVN
-  configuration store.
+ * __svn.configuration-store.password__ sets the password of the 
+   [SVN][svn] configuration store.
 
  * __person.allow-modification__ enables or disables the allowance to
    modify a person entry. Use `true` to allow (default value), and
@@ -62,8 +62,9 @@ display and authentication properties.
    for the site. Use `true` to allow, and `false` to forbid (default
    value).
 
- * __persist-in-svn__ control the state of persistance in the SVN. Use
-   `true` to enable, and `false` to disable (default value).
+ * __persist-in-svn__ control the state of persistance in the
+   [SVN][svn]. Use `true` to enable, and `false` to disable (default
+   value).
 
  * __baseDN__ set the base domain name of oxTrust. The default value is
    `o=gluu`.
@@ -246,3 +247,5 @@ services:
 [rest]: https://en.wikipedia.org/wiki/Representational_state_transfer "Representational state transfer (REST), Wikipedia"
 
 [ssl]: https://en.wikipedia.org/wiki/Transport_Layer_Security "Transport Layer Security, Wikipedia"
+
+[svn]: https://en.wikipedia.org/wiki/Apache_Subversion "Apache Subversion, Wikipedia"
