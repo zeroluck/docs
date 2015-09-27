@@ -5,8 +5,8 @@ organizational cloud identity management services, including
 [REST][rest] service endpoints and a user friendly cloud identity
 management console (aka a GUI).
 
-oxTrust is tightly coupled with oxAuth. oxAuth configuration is stored
-in [LDAP][ldap], and it would be hard to generate the right
+oxTrust is tightly coupled with [oxAuth][oxauth]. oxAuth configuration
+is stored in [LDAP][ldap], and it would be hard to generate the right
 configuration entries without oxTrust. The projects are separate
 projects because in a high throughput cluster deployment, many oxAuth
 servers are needed versus a few oxTrust instances.
@@ -240,6 +240,8 @@ services:
 [ldap]: https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol "Lightweight Directory Access Protocol (LDAP), Wikipedia"
 
 [ldif]: https://en.wikipedia.org/wiki/LDAP_Data_Interchange_Format "LDAP Data Interchange Format (LDIF), Wikipedia"
+
+[oxauth]: http://www.gluu.org/docs/reference/oxAuth/ "oxAuth, Gluu Docs"
 
 [rest]: https://en.wikipedia.org/wiki/Representational_state_transfer "Representational state transfer (REST), Wikipedia"
 
