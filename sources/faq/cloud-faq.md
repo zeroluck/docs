@@ -12,6 +12,7 @@ The Apache Virtual Hosts entries were modified to utilize specific ports `x.x.x.
 Another discovery was made; Azure assigns a new Public/Private IP addresses each time the server is started. This was troublesome as manual editing of the hosts file necessary to change the private IP mapping in the hosts file, every time the VM was shutdown or rebooted. 
 The VM was rebuilt from image and placed into a Networking group to set a static Private IP to bypass the assigning of new Public/Private IP.
 
+For a complete step-by-step guide, see the [Microsoft Azure Setup Guide](./azure.md).
 ## Amazon AWS
 Amazon AWS provides a public and private IP address to its clouds. 
 While running the `/install/community-edition-setup/setup.py` script, use the Private IP address.
