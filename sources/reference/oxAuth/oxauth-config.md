@@ -173,9 +173,9 @@ These grant types are supported:
 
 ### Support for Authentication Methods References (AMR)
 
-AMR abbreviates the term Authentication Methods References. In general,
-it is a [JSON][json] array of case sensitive strings that are
-identifiers for authentication methods used in the authentication
+AMR abbreviates the term [Authentication Methods References][ietf-amr].
+In general, it is a [JSON][json] array of case sensitive strings that
+are identifiers for authentication methods used in the authentication
 procedure. In this specific case, AMR enables an [OpenID][openid]
 Connect client to request a specific method of authentication. 
 
@@ -1012,6 +1012,8 @@ definition allows the following tags:
 [gcm]: https://en.wikipedia.org/wiki/Galois/Counter_Mode "Galois/Counter Mode (GCM), Wikipedia"
 
 [hmac]: https://en.wikipedia.org/wiki/Hash-based_message_authentication_code "Hash-based message authentication code (HMAC), Wikipedia"
+
+[ietf-amr]: https://tools.ietf.org/html/draft-jones-oauth-amr-values-00 "Authentication Method Reference Values, draft-jones-oauth-amr-values-00, IETF"
 
 [ietf-jwk]: https://tools.ietf.org/html/draft-ietf-oauth-jwt-bearer-12 "JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants, IETF draft"
 
