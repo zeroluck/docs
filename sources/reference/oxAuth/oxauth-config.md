@@ -156,9 +156,10 @@ These grant types are supported:
   [OX wiki][oxwiki-authorization-client-credentials] for more information.
 * `refresh_token`: as described in [OAuth 2.0][rfc6749], and 
   [OX wiki][oxwiki-authorization].
-* `urn:ietf:params:oauth:grant-type:jwt-bearer`: this entry refers to JSON 
-  Web Token (JWT) Profile for [OAuth 2.0][oauth2] Client Authentication and 
-  Authorization Grants as described in the according [IETF document][ietf-jwk].
+* `urn:ietf:params:oauth:grant-type:jwt-bearer`: this entry refers to [JSON 
+  Web Token (JWT)][ietf-jwk] Profile for [OAuth 2.0][oauth2] Client
+  Authentication and Authorization Grants as described in the according
+  [IETF document][ietf-jwk].
 
 ```
 <grant-types-supported>
