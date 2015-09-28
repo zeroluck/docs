@@ -21,7 +21,7 @@ display and authentication properties.
 
  * __applianceInum__ sets the [INum][inum] of the appliance
 
- * __orgInum__ sets the [INum][inum] of the organisation
+ * __orgInum__ sets the [INum][inum] of the organization
 
  * __orgDisplayName__ holds the display name of the organization.
 
@@ -48,7 +48,7 @@ display and authentication properties.
  * __svn.configuration-store.root__ sets the root of the [SVN][svn]
    configuration store.
 
- * __svn.configuration-store.user__ sets the usaer name of the
+ * __svn.configuration-store.user__ sets the user name of the
    [SVN][svn] configuration store.
 
  * __svn.configuration-store.password__ sets the password of the 
@@ -62,7 +62,7 @@ display and authentication properties.
    for the site. Use `true` to allow, and `false` to forbid (default
    value).
 
- * __persist-in-svn__ control the state of persistance in the
+ * __persist-in-svn__ control the state of persistence in the
    [SVN][svn]. Use `true` to enable, and `false` to disable (default
    value).
 
@@ -195,7 +195,7 @@ These properties refer to authentication settings of oxTrust.
 
  * __oxauth.userinfo.url__ define the oxAuth uri for user information
 
- * __oxauth.logout.url__ define the oxAuth uri to logout
+ * __oxauth.logout.url__ define the oxAuth uri to log out
 
  * __oxauth.client.id__ define the id of the oxAuth client
 
@@ -214,11 +214,11 @@ services:
 
  * __bindDN__ define the [LDAP][ldap] domain name to bind to
 
- * __bindPassword__ define the [LDAP][ldap] passwort to bind to
+ * __bindPassword__ define the [LDAP][ldap] password to bind to
 
  * __servers__ define the [LDAP][ldap] hostname, and the according
    network port for the connection. The default value is 
-   `localhost:1636` for the local maching on port `1636`.
+   `localhost:1636` for the local machine on port `1636`.
 
  * __useSSL__ enable this tag to initiate a secure connection via 
    [SSL][ssl]. Set this tag to `true` (default value), or `false` 
