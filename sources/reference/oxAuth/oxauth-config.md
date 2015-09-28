@@ -3,7 +3,7 @@
 
 The configuration for oxAuth is a file in [XML format][xml]. It consists
 of several sections that we explain in more detail in the according
-subchapter.
+sub-chapter.
 
 The general structure of the configuration file is like that:
 
@@ -156,9 +156,10 @@ These grant types are supported:
   [OX wiki][oxwiki-authorization-client-credentials] for more information.
 * `refresh_token`: as described in [OAuth 2.0][rfc6749], and 
   [OX wiki][oxwiki-authorization].
-* `urn:ietf:params:oauth:grant-type:jwt-bearer`: this entry refers to JSON 
-  Web Token (JWT) Profile for [OAuth 2.0][oauth2] Client Authentication and 
-  Authorization Grants as described in the according [IETF document][ietf-jwk].
+* `urn:ietf:params:oauth:grant-type:jwt-bearer`: this entry refers to [JSON 
+  Web Token (JWT)][ietf-jwk] Profile for [OAuth 2.0][oauth2] Client
+  Authentication and Authorization Grants as described in the according
+  [IETF document][ietf-jwk].
 
 ```
 <grant-types-supported>
@@ -172,9 +173,9 @@ These grant types are supported:
 
 ### Support for Authentication Methods References (AMR)
 
-AMR abbreviates the term Authentication Methods References. In general,
-it is a [JSON][json] array of case sensitive strings that are
-identifiers for authentication methods used in the authentication
+AMR abbreviates the term [Authentication Methods References][ietf-amr].
+In general, it is a [JSON][json] array of case sensitive strings that
+are identifiers for authentication methods used in the authentication
 procedure. In this specific case, AMR enables an [OpenID][openid]
 Connect client to request a specific method of authentication. 
 
@@ -547,7 +548,7 @@ parameter set:
 
 * `page`: display the authentication information as a full user agent
   page view. If not specified otherwise this is the default value.
-* `popup`: display the authentication information with a popup user
+* `popup`: display the authentication information with a pop-up user
   agent window.
 * `touch`: display the authentication information consistent with a
   device that leverages a touch interface.
@@ -598,7 +599,7 @@ The Gluu Server supports these values for claims:
 * `uid`: a valid user id
 * `displayName`: a previously chosen display name for the Gluu Server User Interface
 * `givenName`: a previously given user name
-* `sn`: the familiy name of the user. This feature has not been tested yet.
+* `sn`: the family name of the user. This feature has not been tested yet.
 * `mail`: a stored email address for this user
 
 ```
@@ -737,7 +738,7 @@ These tags control the behaviour of the connection:
 * `refresh-token-lifetime`: sets the interval the token is refreshed.
   The default value is 14400 seconds that represent 6 hours.
 * `id-token-lifetime`: sets the lifetime of the id token. The default
-  value os 3600 seconds that represents one hour.
+  value is 3600 seconds that represents one hour.
 * `short-lived-access-token-lifetime`: sets the short-lived access token
   lifetime
 * `long-lived-access-token-lifetime`: sets the long-lived access token lifetime
@@ -1011,6 +1012,8 @@ definition allows the following tags:
 [gcm]: https://en.wikipedia.org/wiki/Galois/Counter_Mode "Galois/Counter Mode (GCM), Wikipedia"
 
 [hmac]: https://en.wikipedia.org/wiki/Hash-based_message_authentication_code "Hash-based message authentication code (HMAC), Wikipedia"
+
+[ietf-amr]: https://tools.ietf.org/html/draft-jones-oauth-amr-values-00 "Authentication Method Reference Values, draft-jones-oauth-amr-values-00, IETF"
 
 [ietf-jwk]: https://tools.ietf.org/html/draft-ietf-oauth-jwt-bearer-12 "JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants, IETF draft"
 
