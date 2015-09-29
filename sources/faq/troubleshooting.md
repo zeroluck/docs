@@ -10,7 +10,7 @@
 
 ## Browser and your local OS
 - Is your browser updated to the most recent version available? Have you tried to access your Gluu instance with some other browser? Does it have any 3rd-party security-related add-ons installed? If it does you should try to switch them off and test the connection again.
-- Do you have any anti-virus solution installed on the machine from which you are accessing Gluu's box, which tries to filter web traffic? Try to disable them and see whether it will resolve the issue.
+- Do you have any anti-virus solution installed on the machine from which you are accessing Gluu's box, which tries to filter web traffic? Try to disable it and see whether it will resolve the issue.
 
 ## Networking
 - Is there an unobstructed route between the machine from which you are accessing your Gluu's instance, and the machine at which it's installed? Firewalls on the destination host or, sometimes, security safeguards put by virtual machine renting service providers can be cuting off your Gluu from the outside world by default, and may require additional configuration efforts, specific to the particular case. Make sure that all needed ports are accessible and that Gluu is indeed the one who is listening on them. For Cache Refresh users: make sure that backend (source) LDAP database is accessbile from the machine where Gluu is installed.
