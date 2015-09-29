@@ -6,7 +6,7 @@
 ## OS
 - The Gluu Server must be installed on a 64 bit OS. If the host doesn't meet these requirements, it **will not** work. 
 
-- Is the Gluu Server installed on a supported OS? Please check [here](todo) for supported operating systems and versions. 
+- Is the Gluu Server installed on a supported OS? Please check here [TODO: <-insert link] for supported operating systems and versions. 
 
 ## Networking
 - Is there an unobstructed route between 
