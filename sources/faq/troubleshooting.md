@@ -30,7 +30,7 @@
   - `/etc/init.d/tomcat status` and `/etc/init.d/opendj status`
 - Try stopping the Gluu Service, then check ports again with `netstat` command shown above. 
   - Are some of the required ports still present in the output? 
-- Make sure that you have waited long enough after service was restarted (or just installed), especially on slow machines and VMs at problematic cloud providers. Often Gluu needs a minute or two to become fully operational (until then it will return 404 error or blank pages even on machines that meet all requirements, and on slow machines it will need even more time.)
+- Make sure that you have waited long enough after service was restarted (or just installed), especially on slow machines and VMs at problematic cloud providers. Often Gluu needs a minute or two to become fully operational (and until then it will return 404 error or blank pages) even on machines that meet all requirements, and on slow machines it will need even more time.
 
 ## Log Monitoing
 - Monitor logs with `tail -F`, while repeatedly triggering the issue, and provide any suspicious entries that can be relevant to the case:
