@@ -8,8 +8,12 @@
 
 - Is the Gluu Server installed on a supported OS? Please check here [TODO: <-insert link] for supported operating systems and versions. 
 
+## Browser and your local OS
+- Is your browser updated to the most recent version available? Have you tried to access your Gluu instance with some other browser? Does it have any 3rd-party security-related add-ons installed?
+- Do you have any anti-virus solution installed on the machine from which you are accessing Gluu's box, which tries to filter web traffic?
+
 ## Networking
-- Is there an unobstructed route between 
+- Is there an unobstructed route between the machine from which you are accessing your Gluu's instance, and the machine at which it's installed? Fierwalls on the destination host or, sometimes, security safeguards put by cloud service providers can cut off your Gluu from the outside world by default, and may require additional configuration efforts, specific to the particular case.
 
 ## Cloud Setups
 - Be particularly cautious when dealing with cloud setups, as some solutions have strange and problematic network layouts, while others can severly limit disk access speeds, which results in prolonged service starts that can be mistaken for malfunctioning. See our [cloud FAQ's](../cloud-faq.md)
