@@ -229,7 +229,7 @@ Any software published by Gluu in the OX Project is MIT license.
 
 ## 389DS
 
-See [http://directory.fedoraproject.org/wiki/Licensing](http://directory.fedoraproject.org/wiki/Licensing)
+[389 Directory Server License](http://www.port389.org/docs/389ds/licensing.html)
 
 ## Asimba
 

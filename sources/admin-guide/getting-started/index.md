@@ -1,21 +1,7 @@
 # Getting Started
 
 This document will show you how to get up and running with the Gluu Server. It is broken down into the following sections:
-
-- [Overview](#overview)    
-- [Deployment](#deployment)    
-	- [Minimum Server Requirements:](#minimum-server-requirements)  
-	- [OS Support](#os-support)  
-	- [Available Components](#available-components)  
-	- [Deployment Models](#deployment-models)  
-- [Dashboard](#dashboard)  
-- [Person Authentication](#person-authentication)  
-	- [Basic Authentication](#basic-authentication)  
-	- [Custom Authentication](#custom-authentication)  
-- [Identity Management](#identity-management)  
-- [Single Sign-On (SSO)](#single-sign-on-sso)  
-- [Web & API Access Management](#web-and-api-access-management)  
-
+[TOC]
 ## Overview
 
 The Gluu Server is an identity and access management suite comprised of free open source software (FOSS) components. Some of the software was written by Gluu (everything with an "ox" prefix, like "oxAuth"), and some of the software we forked from existing open source projects like the Shibboleth SAML identity provider, Forgerock community release of OpenDJ, the Asimba SAML proxy, the CAS authentication server and many more components that are part of the linux distributions. Learn more about each of the open source licenses in use [here](../introduction/index.md#licenses).
@@ -24,7 +10,7 @@ The full suite of software is distributed as linux packages that support either 
 
 
 ## Deployment
-The Gluu Server can be deployed on any physical or virtual server. Both distributions of the Gluu Server--Community Edition and Cluster--are distrubuted as containers. Community edition uses `chroot` containers, while the Cluster Edition uses `docker` containers. Container distribution enables Gluu to make sure that all the pieces are working together. If you actually had to integrate all the components of the Gluu Server together, it would take you a long time. 
+The Gluu Server can be deployed on any physical or virtual server. Both distributions of the Gluu Server--Community Edition and Cluster--are distributed as containers. Community edition uses `chroot` containers, while the Cluster Edition uses `docker` containers. Container distribution enables Gluu to make sure that all the pieces are working together. If you actually had to integrate all the components of the Gluu Server together, it would take you a long time. 
 
 #### Minimum Server Requirements:    
 Depending on the size of your data and the number of concurrent authentications you want to be able to support, you may need more or less memory or CPU capacity. For Gluu Server Community Edition, we recommend at least 2 CPU units, 4 GB of RAM, and around 20GB of disk space. Monitor your system performance, and make sure its not swapping, in which case you should add more RAM, and increase the JVM size of tomcat.

@@ -1,3 +1,4 @@
+[TOC]
 # oxD Communication Protocol
 
 **state:** in progress (not finished yet)
@@ -48,15 +49,25 @@ If error returned then "data" part contains error description.
 ## Command Types
 
 Command types:
- 1.  [Register client](#Register client) - register_client
- 2.  [Client read](#Client read) - client_read
- 3.  [Obtain PAT](#Obtain PAT) - obtain_pat
- 4.  [Register resource](#Register resource) - register_resource
- 5.  [Check status of RPT](#Check status of RPT) - rpt_status
- 6.  [Check status of ID Token](#Check status of ID Token) - id_token_status
- 7.  [Check status of Access Token](#Check status of Access Token) - access_token_status
- 8.  [Register permission ticket](#Register permission ticket) - register_ticket
- 9.  [Discovery](#Discovery) - discovery
+1.  Register client - register_client
+ 
+2.  Client read - client_read
+
+3.  Obtain PAT - obtain_pat
+
+4.  Register resource - register_resource
+
+5.  Check status of RPT - rpt_status
+
+6.  Check status of ID Token - id_token_status
+
+7.  Check status of Access Token - access_token_status
+
+8.  Register permission ticket - register_ticket
+
+9.  Discovery - discovery
+
+Please see below for Command details.
 
 ### Register client
 

@@ -22,7 +22,9 @@ pages:
 - [admin-guide/uma/index.md, Admin Guide, UMA]
 - [admin-guide/user-management/index.md, Admin Guide, User Management]
 - [admin-guide/personal/index.md, Admin Guide, Personal]
-- [admin-guide/faq/index.md, Admin Guide, FAQ]
+- [admin-guide/SCIM/index.md, Admin Guide, SCIM]
+
+
 # Reference Sections
 - [reference/api/index.md, Reference, API]
 - [reference/interception-scripts/index.md, Reference, Interception Scripts]
@@ -39,6 +41,7 @@ pages:
 - [articles/google-saml.md, Articles, SAML SSO with Google]
 - [articles/salesforce-sso.md, Articles, SAML SSO with Salesforce]
 - [articles/hobsons-saml.md, Articles, SAML SSO with Hobsons]
+- [articles/oxray.md, Articles, oxRay Plugin]
 - [articles/iis-saml.md, Articles, IIS SAML Config]
 - [articles/benchmarking.md, Articles, Benchmarking]
 - [articles/custom-attributes.md, Articles, Custom Attributes]
@@ -47,14 +50,21 @@ pages:
 - [articles/java-connect.md, Articles, OpenID in Java]
 - [articles/js-connect.md, Articles, OpenID from JavaScript]
 - [articles/java-saml.md, Articles,Java SAML Library ] 
-- [articles/scim-client.md, Articles, SCIM API]
-- [articles/mod-auth-oidc-installation.md, Articles, mod_auth_oidc Installation Guide]
+- [articles/mod-auth-oidc/index.md, Articles, mod_auth_oidc Installation Guide]
 - [articles/test-shib2.md, Articles, Testing Shib2]
+- [articles/social-login-google.md, Articles, Social Login with Google]
+- [articles/auth-script.md, Articles, How to Write a Custom Authn Script]
+- [articles/ubuntu-shib-apache.md, Articles, Super Quick Ubuntu Shib Apache Install]
 
+# FAQ
+- [faq/index.md, FAQ, General]
+- [faq/cloud-faq.md, FAQ, Cloud Deployment]
+- [faq/azure.md, hidden]
 # Deployment Sub-sections
 - [admin-guide/deployment/centos.md, hidden]
 - [admin-guide/deployment/setup_py.md, hidden]
 - [admin-guide/deployment/ubuntu.md, hidden]
+- [admin-guide/deployment/rhel.md, hidden]
 # Certificates Sub-sections
 - [admin-guide/certificates/https.md, hidden]
 - [admin-guide/certificates/openid-connect.md, hidden]
@@ -76,6 +86,11 @@ pages:
 - [reference/api/uma-resource-registration.md, hidden]
 - [reference/api/uma-rpt-status.md, hidden]
 - [reference/api/uma-authorization-endpoint.md, hidden]
+
+# oxAuth Sub-section
+- [reference/oxAuth/oxauth-config.md, hidden]
+- [reference/oxAuth/oxauth-ldap-properties.md, hidden]
+- [reference/oxAuth/oxauth-scope-to-claims-mapping-file.md, hidden]
 # Interception Scripts Sub-sections
 - [reference/interception-scripts/sample-application-session-script.py, hidden]
 - [reference/interception-scripts/sample-authentication-script.py, hidden]
@@ -91,5 +106,7 @@ pages:
 - [reference/lib/scim.md, hidden]
 - [reference/lib/uma.md, hidden]
 # mod_auth_oid Sub-section
+- [articles/mod-auth-oidc/ubuntu-installation.md, hidden]
+- [articles/mod-auth-oidc/centos-installation.md, hidden]
 - [reference/mod_auth_oidc/ubuntu-installation.md, hidden]
 - [reference/mod_auth_oidc/centos-installation.md, hidden]

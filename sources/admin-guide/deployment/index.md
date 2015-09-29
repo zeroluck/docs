@@ -12,9 +12,9 @@
 **Note:** Before deploying the Gluu Server, it may be helpful to review our [getting started](../getting-started/index.md) document. 
 
 #### Single Server Deployments
-For a one server deployment, the easiest way to install the Gluu Server is via one of our [Centos](./centos.md) or [Ubuntu](./ubuntu.md) packages.
+For a single server deployment, the easiest way to install the Gluu Server is via one of our [Centos](./centos.md), [Ubuntu](./ubuntu.md) or [RHEL](./rhel.md) packages.
 
-We have currently tested deployment on Digital Ocean, Amazon Web Services, and Rackspace servers. We plan on testing deployment on Google Cloud and Azure next. 
+Please see our [Cloud Deployment FAQ](http://www.gluu.org/docs/faq/cloud-faq/) for cloud specific notes.
 
 #### Cluster Deployments
 Commercial Gluu Server Cluster Packages are currently under development and not quite ready yet for primetime. You can learn more about the clustering project [here](http://www.gluu.org/docs-cluster/). 
@@ -42,7 +42,7 @@ The Gluu Server is very flexible, and can be used for a wide array of access man
 
 With that said, if you are running all the Gluu Server services on one server (i.e. SAML, OAuth2, LDAP), we would recommend at least 2 CPU units, 4 GB of RAM and around 30GB of disk space. Not enough memory may produce some really weird bugs. 
 
-From there, you may need to adjust the resources based on the requirements.  For an overview of Gluu performance considerations, see this [Gluu blog](http://www.gluu.co/so-fast).  
+From there, you may need to adjust the resources based on the requirements.  For an overview of Gluu performance considerations, see this [Gluu blog](http://www.gluu.org/blog/).
 
 # Java
 The Gluu Server components have been tested with OpenJDK version 1.7 or later.

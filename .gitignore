@@ -1,4 +1,2 @@
 ./.idea
-./site/
-./docs.iml
-Docs.iml
+/site

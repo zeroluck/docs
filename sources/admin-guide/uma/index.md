@@ -1,26 +1,8 @@
 **Table of Contents**  
-
-- [Introduction](#introduction)
-	- [Enterprise UMA](#enterprise-uma)
-	- [UMA in Action](#uma-in-action)
-- [Discovery](#discovery)
-	- [Discovery References](#discovery-references)
-- [Resource Registration](#resource-registration)
-- [UMA Scopes](#uma-scopes)
-	- [Define UMA Scopes via oxTrust](#define-uma-scopes-via-oxtrust)
-	- [Implementation specificity](#implementation-specificity)  
-			- [External sample ldif](#external-sample-ldif)  
-			- [Internal sample ldif](#internal-sample-ldif)  
-	- [Register resource via oxTrust](#register-resource-via-oxtrust)
-- [UMA Policies](#uma-policies)
-	- [Define policy in oxTrust](#define-policy-in-oxtrust)
-	- [Algorithm](#algorithm)
-- [Requesting party trust elevation](#requesting-party-trust-elevation)  
-- [References](#references)  
-
+[TOC]
 # Introduction
 
-User-Managed Access (UMA) is an OAuth-based web-based access management protocol. The protocol is defined in a [draft version 1.0 specification](https://kantarainitiative.org/confluence/display/uma/UMA+1.0+Core+Protocol). A corresponding specification defines obligations of legally responsible parties that engage in UMA-conforming interactions. Although the primary use cases of UMA have centered on individual people (that is, the "users" who manage access to their own online resources), the UMA notion of authorization as a service also has relevance to modern enterprises that must secure APIs and other web resources in a developer-friendly way.
+User-Managed Access (UMA) is an OAuth-based web-based access management protocol. The protocol is defined in a [version 1.0 specification](https://kantarainitiative.org/confluence/display/uma/UMA+Protocol). A corresponding specification defines obligations of legally responsible parties that engage in UMA-conforming interactions. Although the primary use cases of UMA have centered on individual people (that is, the "users" who manage access to their own online resources), the UMA notion of authorization as a service also has relevance to modern enterprises that must secure APIs and other web resources in a developer-friendly way.
 
 ##Enterprise UMA
 The Gluu Server implements UMA in a way that enables the protectection of any web resource. Through the oxTrust interface, the server admin can write custom [authorization interception scripts](../../reference/interception-scripts/index.md#authorization) which may contain logic to grant (or forbid) access. All terminology used by this page is borrowed from UMA and Connect specs.
@@ -274,7 +256,7 @@ Cache-Control: no-store
 
 # References
 - [Kantara Enterprise UMA Case Study](http://kantarainitiative.org/confluence/display/uma/Case+Study%3A+Access+Management+2.0+for+the+Enterprise) 
-- [UMA 1.0 Specifications](http://kantarainitiative.org/confluence/display/uma/UMA+1.0+Core+Protocol)
+- [UMA 1.0 Specifications](https://kantarainitiative.org/confluence/display/uma/UMA+Protocol)
 - [UMA Requestion Party Sample implementation](https://svn.gluu.info/repository/openxdi/oxUmaDemo/RP/)
 - [UMA Resource Server Sample implementation](https://svn.gluu.info/repository/openxdi/oxUmaDemo/RS/)
 - [Gluu Server](http://gluu.org)

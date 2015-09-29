@@ -119,6 +119,6 @@ Measures were made on single machine with Gluu Server, LDAP Server and test runn
 
 ## Useful Links
 
-- [OpenDJ Performance Tuning](http://opendj.forgerock.org/opendj-server/doc/admin-guide/index/chap-tuning.html)
+- [OpenDJ Performance Tuning](https://backstage.forgerock.com/#!/docs/opendj/2.6.0/admin-guide/chap-tuning)
 - [OpenDJ Global configuration](http://opendj.forgerock.org/opendj-server/configref/global.html#max-allowed-client-connections)
 

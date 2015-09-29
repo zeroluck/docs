@@ -28,7 +28,7 @@ Cache Refresh was built by Gluu to pull user information from a backend Active D
 
 Self-Registration is done by users on a self-service basis. Since oxTrust user registration cannot add users to a backend LDAP or Active Directory server, self-registration will only be effective if GluuLDAP is used for authentication of users.
 
-BY default a a limited number of attribute is present in default self-registration form. If more attributes are needed they can be added in Registration Management of Organization Configuration. Learn more about Registration Management [here](../configuration/index.md#registration-management).
+BY default a a limited number of attribute is present in default self-registration form. If more attributes are needed they can be added in Registration Management of Organization Configuration. Learn more about Registration Management [here](../configuration/index.md#manage-registration).
 
 # Local User Management
 
@@ -157,12 +157,13 @@ This is step by step guide to configure UMA for oxTrust and SCIM client. High le
         oxAuthScope: inum=@!1111!0009!6D97,ou=scopes,o=@!1111,o=gluu
         oxAuthTokenEndpointAuthMethod: client_secret_basic
 
-3. Create UMA policy. These are list of steps which allows to add new policy.
- + Log with administrative privileges into oxTrust.
- + Open menu “Configuration→Manage Custom Scripts”.
- - Select “UMA Authorization Policies” tab and click “Add custom script configuration”.
- - Select language “Python”.
- - Paste this base policy script:
+3. Create UMA policy. These are list of steps which allows to add new policy: 
+
+ 	1. Log with administrative privileges into oxTrust.
+ 	2. Open menu “Configuration→Manage Custom Scripts”.
+ 	4. Select “UMA Authorization Policies” tab and click “Add custom script configuration”.
+ 	5. Select language “Python”.
+ 	6. Paste this base policy script:
 
 
             from org.xdi.model.custom.script.type.uma import AuthorizationPolicyType
@@ -209,9 +210,9 @@ This is step by step guide to configure UMA for oxTrust and SCIM client. High le
 
                 print "UMA Authorization policy. Authorizing client"
                 return True
- - Replace in script above client inum "@!1111!0008!FDC0.0FF5" with client inum which were added in step 3
- - Click "Enabled" check box
- - Click "Update" button
+ - Replace in script above client inum "@!1111!0008!FDC0.0FF5" with client inum which were added in step 2.
+ - Click "Enabled" check box.
+ - Click "Update" button.
 
 Note: There is sample UMA Authorization Policy in CE. You can modify it instead of adding new one.
 

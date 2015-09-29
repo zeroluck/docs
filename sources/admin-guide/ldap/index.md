@@ -1,19 +1,5 @@
 **Table of Contents**  
-
-- [LDAP Configuration](#ldap-configuration)
-- [Indexing](#indexing)
-	- [OpenDJ Indexing](#opendj-indexing)
-	- [389DS Indexing](#389ds-indexing)
-	- [OpenLDAP Indexing](#openldap-indexing)
-	- [Configuring LDAP indexing to improve OX applications performance](#configuring-ldap-indexing-to-improve-ox-applications)
-	- [oxAuth filters](#oxauth-filters)
-	- [Determining what needs indexing](#determining-what-needs-indexing)
-	- [Sample commands to add indexes](#sample-commands-to-add-indexes)
-- [Replication](#replication)
-	- [OpenDJ](#opendj)
-	- [OpenLDAP](#openldap)
-	- [389DS](#389ds)
-
+[TOC]
 # LDAP Configuration
 
 This section has information about how the Gluu Server uses LDAP, and other LDAP recommendations.
@@ -36,7 +22,7 @@ and custom authentication and authorization requirements.
 
 ## 389DS Indexing
 
-[Indexing Architecture](http://directory.fedoraproject.org/wiki/Database_Architecture#Indexing)
+[Indexing Architecture](http://directory.fedoraproject.org/docs/389ds/design/database-architecture.html)
 
 ## OpenLDAP Indexing
 

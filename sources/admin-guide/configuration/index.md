@@ -47,7 +47,7 @@ This feature allows the Gluu system administrator to customize and implement var
 
 * _Self-Service Password Reset:_ The Self-Service Password Reset is disabled by default. For Self-Service Password Reset to work SMTP Server(see below) should be configured as well. Password reset link for your Gluu server should be something like: "https://your.idp.link/identity/person/passwordReminder.htm"
 
-* _Cache Refresh:_ This is the mechanism which pulls and synchonises user information from a remote LDAP/Active Directory with the local LDAP of Gluu server. The Gluu server administrator needs to provide sufficient information including username and password before enabling this option. Before configuring Cache Refresh, you should read the [overview here](../../articles/cache-refresh.md). After reading the overview, you c an learn about the Cache Refresh GUI tools [here](#cache-refresh).
+* _Cache Refresh:_ This is the mechanism which pulls and synchonises user information from a remote LDAP/Active Directory with the local LDAP of Gluu server. The Gluu server administrator needs to provide sufficient information including username and password before enabling this option. Before configuring Cache Refresh, you should read the [overview here](../../articles/cache-refresh.md). After reading the overview, you can learn about the Cache Refresh GUI tools [here](#cache-refresh).
 
 * _SCIM Support:_ If the organization already has an identity management or provisioning system in place, the SCIM protocol can be used to push and synchronise the existing identity data into the Gluu Server.
 
@@ -125,7 +125,7 @@ This feature provides options to add various changes in the Gluu Server User Int
 * _Menu Color:_ This is the menu color picker for the Gluu Server User Interface. The color used in the demo screenshots is Green.
 
 # Manage Authentication
-This section allows the Gluu Server Administrator to define how and where the server should connect to authenticate users. If it is a remote LDAP/Active Directory server, the values are required. The values can also be used if the organization is using the local LDAP for authentication. 
+This section allows the Gluu Server Administrator to define how and where the server should connect to authenticate users. If it is a remote LDAP/Active Directory server, the values are required. Put the details of the data source that you are trying to connect with Gluu Server. The data source can your back-end Active Directory or local LDAP server. 
 
 ![Manage LDAP Authentication](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_manage_ldap.png)
 
@@ -251,7 +251,7 @@ Additional attributes can be added from the Gluu Server GUI, oxTrust, by clickin
 
 # Cache Refresh
 
-**Cache Refresh** was built by Gluu to pull user information from a backend customer Active Directory/LDAP Server. Cache refresh dynamically synchronises user information from the backend data source of the customer to the Gluu Server in order to maximize performance. This feature is sensitive in nature and any incorrect action may result in loss of data within the Gluu Server. Before configuring Cache Refresh, you should read the [overview here](../../articles/cache-refresh.md). For any questions relating to Cache Refresh functionality, you can seek assistance from [Gluu Support](http://support.gluu.org). 
+**Cache Refresh** was built by Gluu to pull user information from a backend customer Active Directory/LDAP Server. Cache refresh dynamically synchronises user information from the backend data source of the customer to the Gluu Server in order to maximize performance. This feature is sensitive in nature and any incorrect action may result in loss of data within the Gluu Server. Before configuring Cache Refresh, you should read the [overview here](../../articles/cache-refresh.md). For any questions relating to Cache Refresh functionality, you can seek assistance from [Gluu Support](http://support.gluu.org). *For a successful Cache Refresh setup, you have to insert data in ALL FIELDS below.*
 
 ![Cache Refresh Menu](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_menu.png)
 
@@ -303,23 +303,23 @@ If any organization has multiple Active Directory/LDAP server, click on **Add so
 
 ![Inum LDAP Server](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_inum.png)
 
-This section of the application allows the server administrator to connect to the internal LDAP of the Gluu Server. Please contact Gluu Support for the values for this section.
+This section of the application allows the server administrator to connect to the internal LDAP of the Gluu Server.
 
-* _Name:_ This contains the name of the Gluu LDAP server.
+* _Name:_ This contains the name of the Gluu LDAP server. i.e. 'inumdb'
 
-* _Bind DN:_ This field contains the username to connect to the internal server.
+* _Bind DN:_ This field contains the username to connect to the internal server. Default BindDN for Gluu Server is: 'cn=directory manager' 
 
-* _Use SSL:_ Please tick the ckeckbox because the SSL must be activated.
+* _Use SSL:_ Please tick the ckeckbox because the SSL must be activated. 
 
 * _Max Connections:_ The recommended number of connections is 2.
 
-* _Server:_ The hostname of the server with IP should be put here.
+* _Server:_ The hostname of the server with IP should be put here. Default Server address for Gluu Server is: localhost:1636
 
-* _Base DN:_ This contains the Gluu Server LDAP tree which is allowed to access the user information.
+* _Base DN:_ This contains the Gluu Server LDAP tree which is allowed to access the user information. Default Base DN: ou=people,o=site
 
 * _Enabled:_ Enabling this feature saves the values inside the gluu server.
 
-* _Change Bind Password:_ This option can be used to bind/change the password to connect to the internal LDAP of the Gluu Server.
+* _Change Bind Password:_ This option can be used to bind/change the password to connect to the internal LDAP of the Gluu Server. Bind Password is the same password which you inserted durning installation of Gluu Server
 
 * _Refresh Method:_ The Gluu Server allows the Server Administrator to apply two types of Cache Refresh mechanism (i) VDS Method and (ii) Copy Method.
 
@@ -353,7 +353,7 @@ Latest Gluu Servers ( including Community Edition ) introduced two updgraded sec
 
   * _Server IP Address:_ Include the IP of your Gluu Server here. This feature basically added to run Cache Refresh mechanism perfectly in clustered environment.
   
-  * _Removed Script File Name location:_ New version of Gluu Server allows Gluu Server Administrator to manage your custom scripts with more interctive section under configuration named "[Manage Custom Scripts](http://www.gluu.org/docs/admin-guide/oxTrust/configuration/#manage-custom-scripts)"
+  * _Removed Script File Name location:_ New version of Gluu Server allows Gluu Server Administrator to manage your custom scripts with more interctive section under configuration named Manage Custom Scripts.
 
   * _Update:_ This button is to push the changes in the Gluu Server and it should be hit only when the values have been entered.
 

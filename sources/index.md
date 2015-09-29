@@ -4,7 +4,7 @@ The Gluu Server is a free open source access management suite of software primar
 
 The code is open source, and [available on github](http://github.com/gluufederation).
 
-Community support can be enlisted either on the [Gluu website](http://support.gluu.org) or by opening an issue on [Github](http://github.com/GluuFederation). Gluu also offers [VIP support](http://gluu.org/pricing) and can refer your organization to one of our world-class [integration partners](http://www.gluu.org/partners/current-partners/) for any custom development and integration needs. 
+Community support can be enlisted either on the [Gluu website](http://support.gluu.org) or by opening an issue on [Github](http://github.com/GluuFederation). Gluu also offers [VIP support and operational services](http://gluu.org/pricing) and can refer your organization to one of our world-class [integration partners](http://www.gluu.org/partners/current-partners/) for any custom development and integration needs. 
 
 The main documentation is organized into the following sections:
 
@@ -64,7 +64,10 @@ The main documentation is organized into the following sections:
 	  - [SCIM oxAuth Authentication](./admin-guide/user-management/index.md#scim-oxauth-authentication)
 	  - [SCIM UMA Authentication](./admin-guide/user-management/index.md#scim-uma-authentication)
 - [Personal](./admin-guide/personal/index.md) 
-- [FAQ](./admin-guide/faq/index.md)
+- [SCIM](./admin-guide/SCIM/index.md)
+- [General FAQ](./faq/index.md)
+- [Cloud FAQ](./faq/cloud-faq.md)
+
 
 # Reference
 - [API](./reference/api/index.md) 
@@ -95,14 +98,27 @@ The main documentation is organized into the following sections:
 - [oxTrust](./reference/oxTrust/index.md)
 
 # Articles
+- [Gluu CE](./articles/gluu-server-ce.md)
+- [Gluu CE Operations](./articles/operations/index.md)
+- [Cache Refresh Introduction](./articles/cache-refresh.md)
 - [Apache SAML](./articles/apache-saml.md)
 - [Benchmarking](./articles/benchmarking.md)
 - [Custom Attributes](./articles/custom-attributes.md)
-- [Google SAML](./articles/google-saml.md)
-- [Salesfore SAML](./articles/salesforce-sso.md)
 - [IIS SAML](./articles/iis-saml.md)
-- [Java Connect](./articles/java-connect.md)
-- [JS Connect](./articles/js-connect.md)
-- [SCIM Client](./articles/scim-client.md)
-- [mod_auth_oidc Installation Guide](./articles/mod-auth-oidc-installation.md)
-- [Test Shib2](./articles/test-shib2.md)
+- [oxRay Plugin](./articles/oxray.md)
+- [Java SAML Library](./articles/java-saml.md)
+- [Java OpenID Connect](./articles/java-connect.md)
+- [JS OpenID Connect](./articles/js-connect.md)
+- [mod_auth_oidc Installation Guide](./articles/mod-auth-oidc/index.md)
+- [Testing Shib2](./articles/test-shib2.md)
+- [Social Login With Google](./articles/social-login-google.md)
+- [SAML SSO with Salesforce](./articles/salesforce-sso.md)
+- [SAML SSO with Hobsons](./articles/hobsons-saml.md)
+- [SAML SSO with Google](./articles/google-saml.md)
+- [How to Write a Custom Authentication Script](./articles/auth-script.md)
+
+
+
+
+
+
