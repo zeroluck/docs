@@ -13,7 +13,7 @@
 - Do you have any anti-virus solution installed on the machine from which you are accessing Gluu's box, which tries to filter web traffic?
 
 ## Networking
-- Is there an unobstructed route between the machine from which you are accessing your Gluu's instance, and the machine at which it's installed? Firewalls on the destination host or, sometimes, security safeguards put by cloud service providers can be cuting off your Gluu from the outside world by default, and may require additional configuration efforts, specific to the particular case. Make sure that all needed ports are accessible and that Gluu is indeed the one who is listening on them. For Cache Refresh users: make sure that backend (source) LDAP database is accessbile from the machine where Gluu is installed.
+- Is there an unobstructed route between the machine from which you are accessing your Gluu's instance, and the machine at which it's installed? Firewalls on the destination host or, sometimes, security safeguards put by virtual machine renting service providers can be cuting off your Gluu from the outside world by default, and may require additional configuration efforts, specific to the particular case. Make sure that all needed ports are accessible and that Gluu is indeed the one who is listening on them. For Cache Refresh users: make sure that backend (source) LDAP database is accessbile from the machine where Gluu is installed.
 
 ## Cloud Setups
 - Be particularly cautious when dealing with cloud setups, as some solutions have strange and problematic network layouts, while others can severly limit disk access speeds, which results in prolonged service starts that can be mistaken for malfunctioning. See our [cloud FAQ's](../cloud-faq.md)
