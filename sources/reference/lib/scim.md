@@ -690,7 +690,8 @@ Content:
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?><SearchService xmlns="urn:scim:schemas:core:1.0"><attribute>oxTrustCustAttrA</attribute><value>some random value1</value></SearchService>
 ```
 
-The result will be returned as a JSON or XML person as it would for a regular GET person operation. 
+The result will be returned as a JSON or XML person as it would be for a
+regular GET person operation.
 
 You can use the SCIM-Client library as follows:
 
@@ -698,7 +699,9 @@ You can use the SCIM-Client library as follows:
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
 ScimResponse response = client.personSearch(attribute,value MediaType.APPLICATION_JSON);
 response.getStatusCode() // this will give you the Status code
-String result = response.getResponseBodyString(); // this will give you Response body 
+String result = response.getResponseBodyString(); // this will give you response body 
 ```
 
-Where attribute is the attribute name, and value is the value you’re looking for.
+`attribute` is the attribute name, and `value` is the value you are
+looking for.
+
