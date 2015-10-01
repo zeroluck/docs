@@ -408,8 +408,8 @@ server, seamlessly.
 You can checkout the SCIM-client from our GIT repository at
 https://github.com/GluuFederation/SCIM-Client .
 
-The SCIM-client supports both Basic and oAuth 2.0 authentication. Below
-is an example on how to create a ScimClient instance:
+The SCIM-Client supports both Basic and oAuth 2.0 authentication. Below
+is an example on how to create an instance based on the ScimClient class:
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
@@ -433,8 +433,18 @@ For the basic authentication you only need the user’s credentials
 
 ## Adding an entity
 
-In this example we will show you how to add a person or a group using SCIM-Client, SCIM-Client API comes with two methods to accomplish that , “createPerson” and “createPersonString” ,with createPerson method you pass the person you want to add as ScimPerson object and you specify the desired media type format “XML/JSON” and SCIM-client API will parse the ScimPerson object into XML or JSON and send your request, Same applies to groups , you can use createGroup with ScimGroup as a parameter or createGroupString.
-You can also use createPesronString method and pass the person as an XML or JSON String.
+In this example we will show you how to add a person or a group using
+SCIM-Client. The SCIM-Client API comes with two methods to accomplish
+that -- "createPerson", and "createPersonString". 
+
+With the method createPerson you pass the person you want to add as
+ScimPerson object, and you specify the desired media type format
+"XML/JSON". Then, the SCIM-Client API will parse the ScimPerson object
+into XML or JSON, and send your request. 
+
+The same applies to groups. You can use createGroup with ScimGroup as a
+parameter, or createGroupString. You can also use the method
+createPersonString and pass the person as an XML or JSON String.
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
