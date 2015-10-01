@@ -1,6 +1,3 @@
-**Table of Contents** 
-
-[TOC]
 # Overview 
 
 Since [Interop 4](http://www.gluu.co/.fm8t) the Gluu Server has one of the most comprehensive
