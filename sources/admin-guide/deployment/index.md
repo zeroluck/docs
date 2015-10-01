@@ -1,12 +1,3 @@
-**Table of Contents** 
-
-- [Gluu Server Installation](#gluu-server-installation) 
-- [Available Components](#available-components)
-- [Hardware Guidance](#hardware-guidance) 
-- [Java](#java) 
-- [LDAP](#ldap) 
-- [Licenses](#licenses) 
-
 # Gluu Server Installation
 
 **Note:** Before deploying the Gluu Server, it may be helpful to review our [getting started](../getting-started/index.md) document. 
