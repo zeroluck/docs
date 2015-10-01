@@ -20,7 +20,7 @@ We currently publish packages for the following operating systems:
 Please see our [Cloud Deployment FAQ](../../faq/cloud-faq.md) for cloud specific notes and our [Troubleshooting doc](../../faq/troubleshooting.md) for resolutions to common issues.  
 
 # High Availability Cluster Deployments
-Commercial Gluu Server Cluster Packages are currently under development and not quite ready yet for primetime. You can learn more about the clustering project [here](../../../../../../docs-cluster/blob/master/sources/index.md). 
+Commercial Gluu Server Cluster Packages are currently under development and not quite ready yet for primetime. You can learn more about the clustering project [here](http://gluu.org/docs-cluster). 
 
 # Available Components
 When you deploy the Gluu Server, you will have the opportunity to specify which of the following softwares you want deployed on your server: 
