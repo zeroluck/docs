@@ -86,11 +86,14 @@ then remove the Gluu yum repository
 
 `# rm -f -r /opt/gluu-server.rpm.saved`
 
-## Troubleshooting
-Please see our [Cloud Deployment FAQ](../../faq/cloud-faq.md) for cloud specific notes and our [Troubleshooting FAQ](../../faq/troubleshooting.md) for resolutions to common issues.  
-
 <!--
 or 
 
 `# rpm -e Gluu-Server-Repo-2.0-0.el6.x86_64`
 -->
+
+## Troubleshooting
+Please see our [Cloud Deployment FAQ](../../faq/cloud-faq.md) for cloud specific notes and our [Troubleshooting FAQ](../../faq/troubleshooting.md) for resolutions to common issues.  
+
+## Support 
+Gluu offers both community and VIP support. Anyone can browse and open tickets on our [support portal](http://support.gluu.org). For private support, expedited assistance, and strategic consultations, please view [our pricing](http://gluu.org/pricing) and [schedule a meeting with us](http://gluu.org/booking) to discuss VIP support options.
