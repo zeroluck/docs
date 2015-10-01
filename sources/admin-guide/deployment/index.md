@@ -12,10 +12,10 @@
 **Note:** Before deploying the Gluu Server, it may be helpful to review our [getting started](../getting-started/index.md) document. 
 
 # Supported Operating Systems
-We currently publish packages for the following operating systems:
-- [Centos](./centos.md)
-- [Ubuntu](./ubuntu.md) 
-- [RHEL](./rhel.md)
+We currently publish packages for the following operating systems:  
+- [Centos](./centos.md)  
+- [Ubuntu](./ubuntu.md)   
+- [RHEL](./rhel.md)  
 
 Please see our [Cloud Deployment FAQ](../../faq/cloud-faq.md) for cloud specific notes and our [Troubleshooting FAQ](../../faq/troubleshooting.md) for resolutions to common issues.  
 
