@@ -497,7 +497,8 @@ String result = response.getResponseBodyString(); // this will give you Response
 
 ## Deleting an entity
 
-To delete an entity you simply pass it’s ID as a String parameter into “deletePerson” or “deleteGroup” methods.
+To delete an entity you simply pass it’s ID as a string parameter using
+either the method "deletePerson" or "deleteGroup".
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
