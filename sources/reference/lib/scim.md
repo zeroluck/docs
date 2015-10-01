@@ -400,23 +400,36 @@ Content-Type: application/xml
 
 # SCIM-Client API
 
-SCIM-Client API , is a tool Gluu developed to make the communication with a SCIM server an easy task, SCIM-Client API can be used to build an application that sends request and receives responses from a SCIM server seamlessly.
+The SCIM-Client API is a tool Gluu developed to make the communication
+with a SCIM server an easy task. The SCIM-Client API helps to build an
+application that sends requests and receives responses from a SCIM
+server, seamlessly.
 
-You can checkout SCIM-client from our GIT repository : https://github.com/GluuFederation/SCIM-Client 
+You can checkout the SCIM-client from our GIT repository at
+https://github.com/GluuFederation/SCIM-Client .
 
-SCIM-client support both Basic and oAuth 2.0 authentication , below is an example on how to create a ScimClient instance
+The SCIM-client supports both Basic and oAuth 2.0 authentication. Below
+is an example on how to create a ScimClient instance:
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
 ```
 
-This will create an oAuth instance of ScimClient where: `userName` and `passWord` are the user credentials , `clientID` and `clientSecret` are oxAuth client credentials , `domailURL` is the domain where SCIM client resides, for example : `http://localhost:8080/oxTrust/seam/resource/restv1` and `oxAuthDomain` is the `tokenURL` example `http://localhost:8080/oxauth/seam/resource/restv1/oxauth/token`
+This will create an oAuth instance of ScimClient with the following
+values:
+
+* `userName` and `passWord` are the user credentials
+* `clientID` and `clientSecret` are oxAuth client credentials
+* `domailURL` is the domain where the SCIM client resides, for example `http://localhost:8080/oxTrust/seam/resource/restv1` and 
+* `oxAuthDomain` is the `tokenURL`, for example
+`http://localhost:8080/oxauth/seam/resource/restv1/oxauth/token` .
 
 ```
 ScimClient client = ScimClient.basicInstance(userName, passWord, domainURL);
 ```
 
-For the basic authentication you only need the user’s credentials userName and passWord and the domain URL.
+For the basic authentication you only need the user’s credentials
+`userName` and `passWord` as well as the `domainURL`.
 
 ## Adding an entity
 
