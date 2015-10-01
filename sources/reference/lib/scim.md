@@ -655,7 +655,12 @@ oxSCIMCustomAttribute: true
 
 # User search service
 
-This service is used to lockup a person/user by a specific attribute search pattern , for example if you want to look for a person with the email ID reda@gluu.org all you will have to do is to provide the service with the exact LDAP attribute name and the value you wish to look for as a content, and the service will return the person in question.
+This service is used to look-up a person/user by a specific attribute
+search pattern. For example, if you want to look for a person with the
+email ID `reda@gluu.org` all you have to do is to provide the service
+with the exact LDAP attribute name, and the value you wish to look for
+as a content. As a result, the service will return the person data you
+have asked for.
 
 JSON Example:
 
