@@ -598,9 +598,14 @@ spreadsheet following the same structure.
 
 # SCIM Dynamic Custom Attributes
 
-SCIM supports only a specific set of attributes and if we want to add any custom ones we would have to refactor the code every time we have a requirement for a new attribute, at Gluu, we thought of that and we came up the a dynamic way to add custom attributes to the person’s representation.
-All you have to do is to add this portion to your person’s representation :
-XML Example:
+SCIM supports only a specific set of attributes. If we want to add any
+custom attributes we would have to refactor the code every time we have
+a requirement for a new one. At Gluu, we thought about that and
+implemented a dynamic way to add custom attributes to the person’s
+representation. All you have to do is to add this portion to your
+person’s representation entry.
+
+XML example:
 
 ```
 <code XML><customAttributes>
