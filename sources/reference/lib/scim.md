@@ -573,8 +573,16 @@ response.getExpiresAt(); // the expiration date of the client
 
 ## Bulk requests from Excel files
 
-Excel spreadsheets are widely used by individuals and companies of different backgrounds , we at Gluu ,we thought about that , so we’ve embedded SCIM-client with methods that can help you turn an Excel file into a ScimBulkOperation object .
-For that reason we made two methods available , one for generation bulk users request “ mapUsers” method and the other for generating bulk group requests “mapGroups” method , both methods takes the path to the “XLS” file as a parameter, methods are available at “ExcelMapper” class;
+Excel spreadsheets are widely used by both individuals and companies of
+different backgrounds. At Gluu, we thought about that and so we
+implemented methods for the SCIM-Client that help you to turn an Excel
+file into a ScimBulkOperation object.
+
+For that reason there are two methods available -- one for generation
+bulk users request named “mapUsers”, and the other for generating bulk
+group requests named “mapGroups” method. As a parameter, both methods
+accept the path to the “XLS” file. The two methods are available at part
+of the ExcelMapper class.
 
 ```
 ScimBulkOperation usersOperation = ExcelMapper.mapUsers(excelFileLocationUsers);
