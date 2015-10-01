@@ -41,7 +41,9 @@ https://svn.gluu.info/repository/openxdi/oxAuth/trunk/Server/src/main/java/org/x
 
 ## Sample of Gluu Server in Action
 
-It may be not as obvious how to make whole UMA scenario work between different parties : Resource Server, Relying Party and Authorization Server. For this reason Gluu prepares :
+It may be not as obvious how to make the whole UMA scenario work between
+the different parties -- the Resource Server, Relying Party, and the
+Authorization Server. For this reason Gluu prepares these components:
 
 - Gluu Server - Authorization Server
 - [oxuma-rp](https://svn.gluu.info/repository/openxdi/oxUmaDemo/RP/) - sample Relying Party
