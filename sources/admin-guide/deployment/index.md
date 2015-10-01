@@ -50,4 +50,4 @@ All software used in the Gluu Server is free to use in production. All software 
 
 # Support 
 
-Gluu offers both community and VIP support. Anyone can browse and open tickets on our [support portal](http://support.gluu.org). For private support, expedited assistance, and strategic consultations, please [schedule a meeting with us](http://gluu.org/booking) to discuss VIP support options.  
+Gluu offers both community and VIP support. Anyone can browse and open tickets on our [support portal](http://support.gluu.org). For private support, expedited assistance, and strategic consultations, please view [our pricing](http://gluu.org/pricing) and [schedule a meeting with us](http://gluu.org/booking) to discuss VIP support options.  
