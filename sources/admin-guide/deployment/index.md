@@ -11,12 +11,15 @@
 
 **Note:** Before deploying the Gluu Server, it may be helpful to review our [getting started](../getting-started/index.md) document. 
 
-#### Single Server Deployments
-For a single server deployment, the easiest way to install the Gluu Server is via one of our [Centos](./centos.md), [Ubuntu](./ubuntu.md) or [RHEL](./rhel.md) packages.
+# Supported Operating Systems
 
-Please see our [Cloud Deployment FAQ](http://www.gluu.org/docs/faq/cloud-faq/) for cloud specific notes.
+- [Centos](./centos.md)
+- [Ubuntu](./ubuntu.md) 
+- [RHEL](./rhel.md) packages.
 
-#### Cluster Deployments
+Please see our [Cloud Deployment FAQ](../../faq/cloud-faq.md) for cloud specific notes and our [Troubleshooting doc](../../faq/troubleshooting.md) for resolutions to common issues.  
+
+# High Availability Cluster Deployments
 Commercial Gluu Server Cluster Packages are currently under development and not quite ready yet for primetime. You can learn more about the clustering project [here](http://www.gluu.org/docs-cluster/). 
 
 # Available Components
