@@ -86,6 +86,9 @@ then remove the Gluu yum repository
 
 `# rm -f -r /opt/gluu-server.rpm.saved`
 
+# Troubleshooting
+Please see our [Cloud Deployment FAQ](../../faq/cloud-faq.md) for cloud specific notes and our [Troubleshooting FAQ](../../faq/troubleshooting.md) for resolutions to common issues.  
+
 <!--
 or 
 
