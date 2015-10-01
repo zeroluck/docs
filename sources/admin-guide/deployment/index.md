@@ -17,7 +17,7 @@ We currently publish packages for the following operating systems:
 - [Ubuntu](./ubuntu.md) 
 - [RHEL](./rhel.md)
 
-Please see our [Cloud Deployment FAQ](../../faq/cloud-faq.md) for cloud specific notes and our [Troubleshooting doc](../../faq/troubleshooting.md) for resolutions to common issues.  
+Please see our [Cloud Deployment FAQ](../../faq/cloud-faq.md) for cloud specific notes and our [Troubleshooting FAQ](../../faq/troubleshooting.md) for resolutions to common issues.  
 
 # High Availability Cluster Deployments
 Commercial Gluu Server Cluster Packages are currently under development and not quite ready yet for primetime. You can learn more about the clustering project [here](http://gluu.org/docs-cluster). 
