@@ -22,7 +22,8 @@ __LDAP:*__ The Gluu Server ships with a fork of the OpenDJ LDAP server. It is us
 - __Apache 2 web server:*__ Apache 2 serves the web server for the Gluu Server. Without Apache 2, it's not possible to see the hostname from a browser.    
 - **Shibboleth 2 SAML IDP:** The Shibboleth server provides endpoints for a SAML Identity Provider (IDP). If you want to create single sign-on (SSO) to a SAML SP, you'll need a SAML IDP.   
 - **Asimba SAML Proxy:** The Asimba SAML proxy should be deployed on if your organization needs to consolidate inbound SAML authentication from the IDPs of partners to a single website or app.   
-- **CAS:** CAS is legacy at this point and should only be deployed if your organization has existing apps that can only support CAS for single sign-on.   
+- **CAS:** CAS is legacy at this point and should only be deployed if your organization has existing apps that can only support CAS for single sign-on.
+- **oxAuth RP:** The oxAuth RP is a web UI to enable OpenID Connect discovery, dynamic client registration, and authentication testing. For more information, please check our [OpenID Connect docs](../openid-connect/index.md).
 
 __Note: * implies that the software should *always* be deployed.__
 
