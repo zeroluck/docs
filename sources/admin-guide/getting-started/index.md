@@ -3,25 +3,13 @@
 This document will show you how to get up and running with the Gluu Server. It is broken down into the following sections:
 
 
-
 ## Overview
-
 The Gluu Server is an identity and access management suite comprised of free open source software (FOSS) components. Some of the software was written by Gluu (everything with an "ox" prefix, like "oxAuth"), and some of the software we forked from existing open source projects like the Shibboleth SAML identity provider, Forgerock community release of OpenDJ, the Asimba SAML proxy, the CAS authentication server and many more components that are part of the linux distributions. Learn more about each of the open source licenses in use [here](../introduction/index.md#licenses).
 
 The full suite of software is distributed as linux packages that support either single server or clustered deployments. In order to deploy the clustered package to multiple locations, you'll need a commercial license. More about that topic below in [Deployment Models](#deployment-models).
 
-
 ## Deployment
 The Gluu Server can be deployed on any physical or virtual server. Both distributions of the Gluu Server--Community Edition and Cluster--are distributed as containers. Community edition uses `chroot` containers, while the Cluster Edition uses `docker` containers. Container distribution enables Gluu to make sure that all the pieces are working together. If you actually had to integrate all the components of the Gluu Server together, it would take you a long time. 
-
-#### Minimum Server Requirements:    
-Depending on the size of your data and the number of concurrent authentications you want to be able to support, you may need more or less memory or CPU capacity. For Gluu Server Community Edition, we recommend at least 2 CPU units, 4 GB of RAM, and around 20GB of disk space. Monitor your system performance, and make sure its not swapping, in which case you should add more RAM, and increase the JVM size of tomcat.
- 
-#### OS Support:     
-We currently support and maintain package repositories for [Ubuntu](../deployment/ubuntu.md), [CentOS](../deployment/centos.md). Red Hat packages are in beta and will be available soon. Fedora and Debian packages are on the roadmap.
-
-#### Available Components
-Please review our [deployment guide](../deployment/index.md#available-components) for a list of available components.
 
 #### Deployment Models:  
 **Single Server:** You can find deployment instructions for a single instance of the Gluu Server by following one of the links above for your preferred operating system. All single server deployments of the Gluu Server can be deployed in production with an unlimited number of users for free. Community support is available on our [public forum](http://support.gluu.org), or you can purchase [Basic Support](http://gluu.org/pricing) to open private tickets and enlist security and support consultations with Gluu engineers.   
