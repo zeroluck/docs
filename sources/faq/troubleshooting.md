@@ -1,7 +1,7 @@
 # Troubleshooting
 
 ## Memory
-- Does the system have enough memory/CPU? For production environments it's required to provide at least 4GB of RAM for tomcat allocations, so the full amount of RAM assigned for the host shouldn't be lower than 6GB. 
+- Does the system have enough memory/CPU? At least 4GB of RAM is required for for tomcat so the full amount of RAM assigned for the host should be no less than 6GB. 
 
 ## OS
 - The Gluu Server must be installed on a 64 bit OS. If the host doesn't meet these requirements, it **will not** work. 
