@@ -86,7 +86,7 @@ If you want to script the installation of the Gluu Server, here is what you can 
 * Run setup script with `./setup.py` command
 
 
-# Uninstallation
+## Uninstallation
 
 Exit from chroot environment to main linux.
 
@@ -105,3 +105,6 @@ In some circumstances, the installation can be broken. In that case please
 try following to force uninstall the package.
 
 <code> # dpkg --purge --force-all gluu-server </code>
+
+## Troubleshooting
+Please see our [Cloud Deployment FAQ](../../faq/cloud-faq.md) for cloud specific notes and our [Troubleshooting FAQ](../../faq/troubleshooting.md) for resolutions to common issues.  
