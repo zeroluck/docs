@@ -118,20 +118,21 @@ These properties refer to visual settings of oxTrust.
 These properties refer to authentication settings of oxTrust.
 
  * __gluuSP.shared.attributes__ sets the shared attributes. The default
-   value is `uid, mail, sn, givenName`.
+   value is `uid, mail, sn, givenName` that refer to the attributes user
+   id, email address, short name, and the displayed name.
 
  * __gluuSP.metadata__ sets the path to the Gluu Server metadata. The
    default value is `/opt/idp/metadata`.
 
  * __shibboleth2.idp.root-dir__ sets the root directory for the
-   shibboleth plugin. The default value is `/opt/idp`.
+   [shibboleth][shibboleth] plugin. The default value is `/opt/idp`.
 
  * __shibboleth2.federation.root-dir__ sets the root directory for the
-   shibboleth federation plugin. The default value is
+   [shibboleth][shibboleth] federation plugin. The default value is
    `/opt/shibboleth-federation`.
 
  * __shibboleth2.sp.conf-dir__ sets the configuration directory for the
-   shibboleth plugin. The default value is `/etc/shibboleth`.
+   [shibboleth][shibboleth] plugin. The default value is `/etc/shibboleth`.
 
  * __configGeneration__ set this entry to control the automatic
    generation of the configuration file. Use `enabled` to allow that, 
@@ -260,6 +261,8 @@ services:
 [oxauth]: http://www.gluu.org/docs/reference/oxAuth/ "oxAuth, Gluu Docs"
 
 [rest]: https://en.wikipedia.org/wiki/Representational_state_transfer "Representational state transfer (REST), Wikipedia"
+
+[shibboleth]: https://en.wikipedia.org/wiki/Shibboleth_%28Internet2%29 "Shibboleth (Internet2), Wikipedia"
 
 [ssl]: https://en.wikipedia.org/wiki/Transport_Layer_Security "Transport Layer Security, Wikipedia"
 
