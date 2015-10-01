@@ -534,7 +534,10 @@ String result = response.getResponseBodyString(); // this will give you Response
 
 ## Bulk operations
 
-To use Bulk operation you pass the operation as a ScimBulkOperation object into “bulkOperation” method or as a JSON/XML string into “bulkOperationString” method and without forgetting to specify the desired media type.
+To use Bulk operation you pass the operation as a ScimBulkOperation
+object into “bulkOperation” method or as a JSON/XML string into
+“bulkOperationString” method. As a second parameter do not forget to
+specify the desired media type.
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
@@ -552,9 +555,13 @@ String result = response.getResponseBodyString(); // this will give you Response
 
 ## oxAuth Client Creation
 
-It’s possible to create an oxAuth client dynamically using SCIM-Client , this option is available using the static method “create” method of the class `OxAuthClientCreator`, where `applicationName` is the name of the desired client, `registerUrl` is the client registration url example : 
-`http://localhost:8080/oxauth/seam/resource/restv1/oxauth/register`
-and `redirectUris` is a space separated String containing the desired redirect urls.
+It is possible to create an oxAuth client dynamically using SCIM-Client.
+This option is available using the static method “create” of the class
+`OxAuthClientCreator` where `applicationName` is the name of the desired
+client, and `registerUrl` is the client registration url, for example: 
+`http://localhost:8080/oxauth/seam/resource/restv1/oxauth/register`.
+`redirectUris` is a space-separated string that contains the desired
+redirect urls.
 
 ```
 CreationResult response = OxAuthClientCreator.create( applicationName, registerUrl, redirectUris);
