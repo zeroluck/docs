@@ -109,8 +109,9 @@ These properties refer to visual settings of oxTrust.
    velocity logfile is kept. The default value is
    `/opt/tomcat/logs/velocity.log`.
 
- * __logo.location__ this entry defines the directory name for the
-   photos. The default value is `/var/photos`.
+ * __logo.location__ this entry defines the directory name for both the
+   images, and the logos that are in use. The default value is
+   `/var/photos`.
 
 ### Authentication properties 
 
