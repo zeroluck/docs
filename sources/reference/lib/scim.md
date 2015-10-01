@@ -589,10 +589,12 @@ ScimBulkOperation usersOperation = ExcelMapper.mapUsers(excelFileLocationUsers);
 ScimBulkOperation groupsOperation = ExcelMapper.mapGroups(excelFileLocationGroups);
 ```
 
-You can download the Excel file models from here : https://github.com/GluuFederation/SCIM-Client/tree/master/doc/SampleXLS
+You can download the Excel file models from here: https://github.com/GluuFederation/SCIM-Client/tree/master/doc/SampleXLS
 
-Excel files must follow the exact structure, the “Operation” cell defines the type of the operation ”Add,Update,delete” .
-For groups you can always add more groups to the spreadsheet following the same structure.
+Excel files have to follow an pre-defined structure. The “Operation”
+cell defines the type of the operation. Possible values are `Add`,
+`Update`, and `delete`. For groups you can always add more groups to the
+spreadsheet following the same structure.
 
 # SCIM Dynamic Custom Attributes
 
