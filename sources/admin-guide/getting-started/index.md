@@ -1,7 +1,9 @@
 # Getting Started
 
 This document will show you how to get up and running with the Gluu Server. It is broken down into the following sections:
-[TOC]
+
+
+
 ## Overview
 
 The Gluu Server is an identity and access management suite comprised of free open source software (FOSS) components. Some of the software was written by Gluu (everything with an "ox" prefix, like "oxAuth"), and some of the software we forked from existing open source projects like the Shibboleth SAML identity provider, Forgerock community release of OpenDJ, the Asimba SAML proxy, the CAS authentication server and many more components that are part of the linux distributions. Learn more about each of the open source licenses in use [here](../introduction/index.md#licenses).
@@ -19,17 +21,7 @@ Depending on the size of your data and the number of concurrent authentications 
 We currently support and maintain package repositories for [Ubuntu](../deployment/ubuntu.md), [CentOS](../deployment/centos.md). Red Hat packages are in beta and will be available soon. Fedora and Debian packages are on the roadmap.
 
 #### Available Components
-When you deploy the Gluu Server, you will have the opportunity to specify which of the following softwares you want deployed on your server: 
-
-__oxAuth:*__ oxAuth provides endpoints for an OpenID Connect Identity Provider (IDP) and an UMA Authorization Server (AS). Both OpenID Connect and UMA are standard profiles of OAuth 2.0, used for single sign-on (SSO) and web and API access management, respectively.    
-__oxTrust:*__ oxTrust is the graphical user interface that is used for server management.   
-__LDAP:*__ The Gluu Server ships with a fork of the OpenDJ LDAP server. It is used to store attributes and server configurations locally.   
-__Apache 2 web server:*__ Apache 2 serves the web server for the Gluu Server. Without Apache 2, it's not possible to see the hostname from a browser.   
-**Shibboleth 2 SAML IDP:** The Shibboleth server provides endpoints for a SAML Identity Provider (IDP). If you want to create single sign-on (SSO) to a SAML SP, you'll need a SAML IDP.   
-**Asimba SAML Proxy:** The Asimba SAML proxy should be deployed on if your organization needs to consolidate inbound SAML authentication from the IDPs of partners to a single website or app.   
-**CAS:** CAS is legacy at this point and should only be deployed if your organization has existing apps that can only support CAS for single sign-on.   
-
-__Note: * implies that the software should *always* be deployed.__
+Please review our [deployment guide](../deployment/index.md) for a list of available components.
 
 #### Deployment Models:  
 **Single Server:** You can find deployment instructions for a single instance of the Gluu Server by following one of the links above for your preferred operating system. All single server deployments of the Gluu Server can be deployed in production with an unlimited number of users for free. Community support is available on our [public forum](http://support.gluu.org), or you can purchase [Basic Support](http://gluu.org/pricing) to open private tickets and enlist security and support consultations with Gluu engineers.   
