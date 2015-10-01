@@ -1,5 +1,5 @@
 # Gluu Server Installation
-These are instructions for single server Gluu Server deployments. 
+These are instructions for **single server** Gluu Server deployments. 
 
 Commercial Gluu Server Cluster Packages are currently under development, but are not quite ready yet for primetime. You can learn more about the cluster project [here](http://gluu.org/docs-cluster). 
 
