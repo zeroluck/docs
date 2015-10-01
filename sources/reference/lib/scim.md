@@ -444,7 +444,7 @@ into XML or JSON, and send your request.
 
 The same applies to groups. You can use createGroup with ScimGroup as a
 parameter, or createGroupString. You can also use the method
-createPersonString and pass the person as an XML or JSON String.
+createPersonString and pass the person as an XML or JSON string.
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
@@ -457,7 +457,7 @@ response.getStatusCode() // this will give you the Status code
 String result = response.getResponseBodyString(); // this will give you Response body 
 ```
 
-In this 2nd example we will use createPersonString 
+In the second example we will use createPersonString, instead:
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
