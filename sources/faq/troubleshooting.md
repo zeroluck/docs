@@ -6,7 +6,7 @@
 ## OS
 - The Gluu Server must be installed on a 64 bit OS. If the host doesn't meet these requirements, it **will not** work. 
 
-- Is the Gluu Server installed on a supported OS? Please check our [deployment doc](../../admin-guide/deployment/index.md#supported-operating-systems) for supported operating systems and versions. 
+- Is the Gluu Server installed on a supported OS? Please check our [deployment doc](../admin-guide/deployment/index.md#supported-operating-systems) for supported operating systems and versions. 
 
 ## Browser and your local OS
 - Is your browser updated to the most recent version available? Have you tried to access your Gluu instance with some other browser? Does it have any 3rd-party security-related add-ons installed? If it does you should try to switch them off and test the connection again.
