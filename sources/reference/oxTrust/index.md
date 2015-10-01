@@ -77,6 +77,9 @@ revision control system [SVN][svn].
 
 ### Attribute schema definitions
 
+The following properties define the schema to add various attribute
+types.
+
  * __schema.add.attribute.attributeTypes__ `( %%s-oid NAME '%%s' EQUALITY caseIgnoreMatch ORDERING caseIgnoreOrderingMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 USAGE userApplications X-SCHEMA-FILE '100-user.ldif' X-ORIGIN 'gluu' )`
 
  * __schema.add-without-attribute-types.objectClass.objectClasses__ `( %%s-oid NAME '%%s' SUP top STRUCTURAL MUST objectClass X-SCHEMA-FILE '100-user.ldif' X-ORIGIN 'gluu' )`
@@ -103,7 +106,8 @@ These properties refer to visual settings of oxTrust.
    folders per level. The default value is `20`.
 
  * __velocity.log__ this entry defines the filename in which the
-   velocity is kept. The default value is `/opt/tomcat/logs/velocity.log`.
+   velocity logfile is kept. The default value is
+   `/opt/tomcat/logs/velocity.log`.
 
  * __logo.location__ this entry defines the directory name for the
    photos. The default value is `/var/photos`.
