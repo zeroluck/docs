@@ -27,8 +27,8 @@ pages:
 # FAQ
 - [faq/index.md, FAQ, General]
 - [faq/cloud-faq.md, FAQ, Cloud Deployment]
-- [faq/azure.md, hidden]
 - [faq/troubleshooting.md, FAQ, Troubleshooting]
+- [faq/azure.md, hidden]
 
 # Reference Sections
 - [reference/api/index.md, Reference, API]
