@@ -21,7 +21,7 @@ Depending on the size of your data and the number of concurrent authentications 
 We currently support and maintain package repositories for [Ubuntu](../deployment/ubuntu.md), [CentOS](../deployment/centos.md). Red Hat packages are in beta and will be available soon. Fedora and Debian packages are on the roadmap.
 
 #### Available Components
-Please review our [deployment guide](../deployment/index.md) for a list of available components.
+Please review our [deployment guide](../deployment/index.md#available-components) for a list of available components.
 
 #### Deployment Models:  
 **Single Server:** You can find deployment instructions for a single instance of the Gluu Server by following one of the links above for your preferred operating system. All single server deployments of the Gluu Server can be deployed in production with an unlimited number of users for free. Community support is available on our [public forum](http://support.gluu.org), or you can purchase [Basic Support](http://gluu.org/pricing) to open private tickets and enlist security and support consultations with Gluu engineers.   
