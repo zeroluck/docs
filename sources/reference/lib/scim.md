@@ -400,28 +400,51 @@ Content-Type: application/xml
 
 # SCIM-Client API
 
-SCIM-Client API , is a tool Gluu developed to make the communication with a SCIM server an easy task, SCIM-Client API can be used to build an application that sends request and receives responses from a SCIM server seamlessly.
+The SCIM-Client API is a tool Gluu developed to make the communication
+with a SCIM server an easy task. The SCIM-Client API helps to build an
+application that sends requests and receives responses from a SCIM
+server, seamlessly.
 
-You can checkout SCIM-client from our GIT repository : https://github.com/GluuFederation/SCIM-Client 
+You can checkout the SCIM-client from our GIT repository at
+https://github.com/GluuFederation/SCIM-Client .
 
-SCIM-client support both Basic and oAuth 2.0 authentication , below is an example on how to create a ScimClient instance
+The SCIM-Client supports both Basic and oAuth 2.0 authentication. Below
+is an example on how to create an instance based on the ScimClient class:
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
 ```
 
-This will create an oAuth instance of ScimClient where: `userName` and `passWord` are the user credentials , `clientID` and `clientSecret` are oxAuth client credentials , `domailURL` is the domain where SCIM client resides, for example : `http://localhost:8080/oxTrust/seam/resource/restv1` and `oxAuthDomain` is the `tokenURL` example `http://localhost:8080/oxauth/seam/resource/restv1/oxauth/token`
+This will create an oAuth instance of ScimClient with the following
+values:
+
+* `userName` and `passWord` are the user credentials
+* `clientID` and `clientSecret` are oxAuth client credentials
+* `domailURL` is the domain where the SCIM client resides, for example `http://localhost:8080/oxTrust/seam/resource/restv1` and 
+* `oxAuthDomain` is the `tokenURL`, for example
+`http://localhost:8080/oxauth/seam/resource/restv1/oxauth/token` .
 
 ```
 ScimClient client = ScimClient.basicInstance(userName, passWord, domainURL);
 ```
 
-For the basic authentication you only need the user’s credentials userName and passWord and the domain URL.
+For the basic authentication you only need the user’s credentials
+`userName` and `passWord` as well as the `domainURL`.
 
 ## Adding an entity
 
-In this example we will show you how to add a person or a group using SCIM-Client, SCIM-Client API comes with two methods to accomplish that , “createPerson” and “createPersonString” ,with createPerson method you pass the person you want to add as ScimPerson object and you specify the desired media type format “XML/JSON” and SCIM-client API will parse the ScimPerson object into XML or JSON and send your request, Same applies to groups , you can use createGroup with ScimGroup as a parameter or createGroupString.
-You can also use createPesronString method and pass the person as an XML or JSON String.
+In this example we will show you how to add a person or a group using
+SCIM-Client. The SCIM-Client API comes with two methods to accomplish
+that -- "createPerson", and "createPersonString". 
+
+With the method createPerson you pass the person you want to add as
+ScimPerson object, and you specify the desired media type format
+"XML/JSON". Then, the SCIM-Client API will parse the ScimPerson object
+into XML or JSON, and send your request. 
+
+The same applies to groups. You can use createGroup with ScimGroup as a
+parameter, or createGroupString. You can also use the method
+createPersonString and pass the person as an XML or JSON string.
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
@@ -434,7 +457,7 @@ response.getStatusCode() // this will give you the Status code
 String result = response.getResponseBodyString(); // this will give you Response body 
 ```
 
-In this 2nd example we will use createPersonString 
+In the second example we will use createPersonString, instead:
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
@@ -445,8 +468,18 @@ String result = response.getResponseBodyString(); // this will give you Response
 
 ## Modifying an entity
 
-In this example we will show you how to modify a person or a group using SCIM-Client, SCIM-Client API comes with two methods to accomplish that , “updatePerson” and “updatePersonString” ,with updatePerson method you pass the person you want to update as ScimPerson object and his uid as a String and you specify the desired media type format “XML/JSON” and SCIM-client API will parse the ScimPerson object into XML or JSON and send your request, Same applies to groups , you can use createGroup with ScimGroup as a parameter or createGroupString.
-You can also use createPesronString method and pass the person as an XML or JSON String.
+In this example we will show you how to modify a person or a group using
+SCIM-Client. The SCIM-Client API comes with two methods to accomplish
+that -- "updatePerson" and "updatePersonString". 
+
+With the method updatePerson you pass the person you want to update as
+ScimPerson object, and his uid as a string. Furthermore, you specify the
+desired media type format "XML/JSON" so that the SCIM-Client API can
+parse the ScimPerson object into XML or JSON, and send your request. 
+
+The same applies to groups. You can use createGroup with ScimGroup as a
+parameter or createGroupString. You can also use the method
+createPersonString, and pass the person as an XML or JSON string.
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
@@ -464,7 +497,8 @@ String result = response.getResponseBodyString(); // this will give you Response
 
 ## Deleting an entity
 
-To delete an entity you simply pass it’s ID as a String parameter into “deletePerson” or “deleteGroup” methods.
+To delete an entity you simply pass it’s ID as a string parameter using
+either the method "deletePerson" or "deleteGroup".
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
@@ -480,7 +514,9 @@ response.getStatusCode() // this will give you the Status code
 
 ## Retrieving an entity
 
-To retrieve a person or a group you can use “retrievePerson” or “retrieveGroup” method by passing the Entity’s id as a parameter and the desired media type.
+To retrieve a person or a group you can use the methods "retrievePerson"
+or "retrieveGroup” by passing the entity’s id as a parameter and the
+desired media type.
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
@@ -498,7 +534,10 @@ String result = response.getResponseBodyString(); // this will give you Response
 
 ## Bulk operations
 
-To use Bulk operation you pass the operation as a ScimBulkOperation object into “bulkOperation” method or as a JSON/XML string into “bulkOperationString” method and without forgetting to specify the desired media type.
+To use Bulk operation you pass the operation as a ScimBulkOperation
+object into “bulkOperation” method or as a JSON/XML string into
+“bulkOperationString” method. As a second parameter do not forget to
+specify the desired media type.
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
@@ -516,9 +555,13 @@ String result = response.getResponseBodyString(); // this will give you Response
 
 ## oxAuth Client Creation
 
-It’s possible to create an oxAuth client dynamically using SCIM-Client , this option is available using the static method “create” method of the class `OxAuthClientCreator`, where `applicationName` is the name of the desired client, `registerUrl` is the client registration url example : 
-`http://localhost:8080/oxauth/seam/resource/restv1/oxauth/register`
-and `redirectUris` is a space separated String containing the desired redirect urls.
+It is possible to create an oxAuth client dynamically using SCIM-Client.
+This option is available using the static method “create” of the class
+`OxAuthClientCreator` where `applicationName` is the name of the desired
+client, and `registerUrl` is the client registration url, for example: 
+`http://localhost:8080/oxauth/seam/resource/restv1/oxauth/register`.
+`redirectUris` is a space-separated string that contains the desired
+redirect urls.
 
 ```
 CreationResult response = OxAuthClientCreator.create( applicationName, registerUrl, redirectUris);
@@ -530,24 +573,39 @@ response.getExpiresAt(); // the expiration date of the client
 
 ## Bulk requests from Excel files
 
-Excel spreadsheets are widely used by individuals and companies of different backgrounds , we at Gluu ,we thought about that , so we’ve embedded SCIM-client with methods that can help you turn an Excel file into a ScimBulkOperation object .
-For that reason we made two methods available , one for generation bulk users request “ mapUsers” method and the other for generating bulk group requests “mapGroups” method , both methods takes the path to the “XLS” file as a parameter, methods are available at “ExcelMapper” class;
+Excel spreadsheets are widely used by both individuals and companies of
+different backgrounds. At Gluu, we thought about that and so we
+implemented methods for the SCIM-Client that help you to turn an Excel
+file into a ScimBulkOperation object.
+
+For that reason there are two methods available -- one for generation
+bulk users request named “mapUsers”, and the other for generating bulk
+group requests named “mapGroups” method. As a parameter, both methods
+accept the path to the “XLS” file. The two methods are available at part
+of the ExcelMapper class.
 
 ```
 ScimBulkOperation usersOperation = ExcelMapper.mapUsers(excelFileLocationUsers);
 ScimBulkOperation groupsOperation = ExcelMapper.mapGroups(excelFileLocationGroups);
 ```
 
-You can download the Excel file models from here : https://github.com/GluuFederation/SCIM-Client/tree/master/doc/SampleXLS
+You can download the Excel file models from here: https://github.com/GluuFederation/SCIM-Client/tree/master/doc/SampleXLS
 
-Excel files must follow the exact structure, the “Operation” cell defines the type of the operation ”Add,Update,delete” .
-For groups you can always add more groups to the spreadsheet following the same structure.
+Excel files have to follow an pre-defined structure. The “Operation”
+cell defines the type of the operation. Possible values are `Add`,
+`Update`, and `delete`. For groups you can always add more groups to the
+spreadsheet following the same structure.
 
 # SCIM Dynamic Custom Attributes
 
-SCIM supports only a specific set of attributes and if we want to add any custom ones we would have to refactor the code every time we have a requirement for a new attribute, at Gluu, we thought of that and we came up the a dynamic way to add custom attributes to the person’s representation.
-All you have to do is to add this portion to your person’s representation :
-XML Example:
+SCIM supports only a specific set of attributes. If we want to add any
+custom attributes we would have to refactor the code every time we have
+a requirement for a new one. At Gluu, we thought about that and
+implemented a dynamic way to add custom attributes to the person’s
+representation. All you have to do is to add this portion to your
+person’s representation entry.
+
+XML example:
 
 ```
 <code XML><customAttributes>
@@ -566,7 +624,16 @@ JSON Example:
 "customAttributes":[{"name":"oxTrustCustAttrA","values":["some random value1","some random value2"]}]
 ```
 
-Where “name” is the name of the LDAP attribute and “values” is its values , both single and multivalued attributes are supported , and custom attribute must be under “oxCustomAttributes” objectClass or they may be under the gluuPerson one , also in the “Attributes” LDAP node you will need to add an entry representation for the attribute , when“oxSCIMCustomAttribute” is set to true SCIM will look for that attribute in the person entry and if it has a value it will appear in the final result, when the attribute “oxMultivaluedAttribute” is set to true SCIM will know that this attribute is Multivalued , example:
+In the examples above "name" is the name of the LDAP attribute, and
+"values" are its values. Both single and multi-valued attributes are
+supported. Add custom attributes using the "oxCustomAttributes"
+objectClass, or they have to appear under the gluuPerson one. Also, in
+the "Attributes" LDAP node you will need to add an according entry
+representation for the attribute. If "oxSCIMCustomAttribute" is set to
+`true` SCIM will look for this attribute in the person entry, and if it
+has a value it will appear in the final result. If the attribute
+"oxMultivaluedAttribute" is set to `true` SCIM will know that this
+attribute is multi-valued, for example:
 
 ```
 dn: inum=@!1111!0005!8E7F,ou=attributes,o=@!1111,o=gluu
@@ -588,7 +655,12 @@ oxSCIMCustomAttribute: true
 
 # User search service
 
-This service is used to lockup a person/user by a specific attribute search pattern , for example if you want to look for a person with the email ID reda@gluu.org all you will have to do is to provide the service with the exact LDAP attribute name and the value you wish to look for as a content, and the service will return the person in question.
+This service is used to look-up a person/user by a specific attribute
+search pattern. For example, if you want to look for a person with the
+email ID `reda@gluu.org` all you have to do is to provide the service
+with the exact LDAP attribute name, and the value you wish to look for
+as a content. As a result, the service will return the person data you
+have asked for.
 
 JSON Example:
 
@@ -618,7 +690,8 @@ Content:
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?><SearchService xmlns="urn:scim:schemas:core:1.0"><attribute>oxTrustCustAttrA</attribute><value>some random value1</value></SearchService>
 ```
 
-The result will be returned as a JSON or XML person as it would for a regular GET person operation. 
+The result will be returned as a JSON or XML person as it would be for a
+regular GET person operation.
 
 You can use the SCIM-Client library as follows:
 
@@ -626,7 +699,9 @@ You can use the SCIM-Client library as follows:
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
 ScimResponse response = client.personSearch(attribute,value MediaType.APPLICATION_JSON);
 response.getStatusCode() // this will give you the Status code
-String result = response.getResponseBodyString(); // this will give you Response body 
+String result = response.getResponseBodyString(); // this will give you response body 
 ```
 
-Where attribute is the attribute name, and value is the value you’re looking for.
+`attribute` is the attribute name, and `value` is the value you are
+looking for.
+

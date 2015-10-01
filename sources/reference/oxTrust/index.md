@@ -3,7 +3,7 @@
 oxTrust is a [JBoss][jboss] Seam application that provides
 organizational cloud identity management services, including
 [REST][rest] service endpoints and a user friendly cloud identity
-management console (aka a GUI).
+management console aka a Graphical User Interface (GUI).
 
 oxTrust is tightly coupled with [oxAuth][oxauth]. oxAuth configuration
 is stored in [LDAP][ldap], and it would be hard to generate the right
@@ -19,6 +19,9 @@ display and authentication properties.
 
 ### General properties
 
+These properties control the general setup of oxTrust, and set several
+appliance-specific variables.
+
  * __applianceInum__ sets the [INum][inum] of the appliance
 
  * __orgInum__ sets the [INum][inum] of the organization
@@ -27,7 +30,7 @@ display and authentication properties.
 
  * __orgShortName__ holds the short name of the organization.
 
- * __idp.url__ holds the uri of the OpenID provider that is in use.
+ * __idp.url__ holds the uri of the [OpenID][openid] provider that is in use.
 
  * __appliance.url__ holds the uri of the appliance.
 
@@ -44,6 +47,9 @@ display and authentication properties.
    example value is `inetOrgPerson, gluuPerson`.
 
 ### SVN-related properties
+
+The following properties define settings that are related to the
+revision control system [SVN][svn].
 
  * __svn.configuration-store.root__ sets the root of the [SVN][svn]
    configuration store.
@@ -68,6 +74,11 @@ display and authentication properties.
 
  * __baseDN__ set the base domain name of oxTrust. The default value is
    `o=gluu`.
+
+### Attribute schema definitions
+
+The following properties define the schema to add various attribute
+types.
 
  * __schema.add.attribute.attributeTypes__ `( %%s-oid NAME '%%s' EQUALITY caseIgnoreMatch ORDERING caseIgnoreOrderingMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 USAGE userApplications X-SCHEMA-FILE '100-user.ldif' X-ORIGIN 'gluu' )`
 
@@ -95,48 +106,51 @@ These properties refer to visual settings of oxTrust.
    folders per level. The default value is `20`.
 
  * __velocity.log__ this entry defines the filename in which the
-   velocity is kept. The default value is `/opt/tomcat/logs/velocity.log`.
+   velocity logfile is kept. The default value is
+   `/opt/tomcat/logs/velocity.log`.
 
- * __logo.location__ this entry defines the directory name for the
-   photos. The default value is `/var/photos`.
+ * __logo.location__ this entry defines the directory name for both the
+   images, and the logos that are in use. The default value is
+   `/var/photos`.
 
 ### Authentication properties 
 
 These properties refer to authentication settings of oxTrust.
 
  * __gluuSP.shared.attributes__ sets the shared attributes. The default
-   value is `uid, mail, sn, givenName`.
+   value is `uid, mail, sn, givenName` that refer to the attributes user
+   id, email address, short name, and the displayed name.
 
  * __gluuSP.metadata__ sets the path to the Gluu Server metadata. The
    default value is `/opt/idp/metadata`.
 
  * __shibboleth2.idp.root-dir__ sets the root directory for the
-   shibboleth plugin. The default value is `/opt/idp`.
+   [shibboleth][shibboleth] plugin. The default value is `/opt/idp`.
 
  * __shibboleth2.federation.root-dir__ sets the root directory for the
-   shibboleth federation plugin. The default value is
+   [shibboleth][shibboleth] federation plugin. The default value is
    `/opt/shibboleth-federation`.
 
  * __shibboleth2.sp.conf-dir__ sets the configuration directory for the
-   shibboleth plugin. The default value is `/etc/shibboleth`.
+   [shibboleth][shibboleth] plugin. The default value is `/etc/shibboleth`.
 
  * __configGeneration__ set this entry to control the automatic
    generation of the configuration file. Use `enabled` to allow that, 
-   and `DISABLED` otherwise (default value).
+   and `disabled` otherwise (default value).
 
- * __idp.securityCert__ holds the security certificate of the OpenID
-   provider.
+ * __idp.securityCert__ holds the security certificate of the
+   [OpenID][openid] provider.
 
- * __idp.securityKey__ holds the security key of the OpenID provider.
+ * __idp.securityKey__ holds the security key of the [OpenID][openid] provider.
 
  * __.securityCert__ holds the security certificate of the machine.
 
  * __idp.securityKeyPassword__ holds the security key password of the
-   OpenID provider.
+   [OpenID][openid] provider.
 
- * __idp.bindDN__ holds the domain name the OpenID provider is bind to.
+ * __idp.bindDN__ holds the domain name the [OpenID][openid] provider is bind to.
 
- * __idp.bindPassword__ holds the password the OpenID provider is bind to.
+ * __idp.bindPassword__ holds the password the [OpenID][openid] provider is bind to.
 
  * __idp.useSSL__ enables or disables a secure connection via
    [SSL][ssl]. Use `true` to enable (default value), or `false` to disable
@@ -242,9 +256,13 @@ services:
 
 [ldif]: https://en.wikipedia.org/wiki/LDAP_Data_Interchange_Format "LDAP Data Interchange Format (LDIF), Wikipedia"
 
+[openid]: https://en.wikipedia.org/wiki/OpenID "OpenID, Wikipedia"
+
 [oxauth]: http://www.gluu.org/docs/reference/oxAuth/ "oxAuth, Gluu Docs"
 
 [rest]: https://en.wikipedia.org/wiki/Representational_state_transfer "Representational state transfer (REST), Wikipedia"
+
+[shibboleth]: https://en.wikipedia.org/wiki/Shibboleth_%28Internet2%29 "Shibboleth (Internet2), Wikipedia"
 
 [ssl]: https://en.wikipedia.org/wiki/Transport_Layer_Security "Transport Layer Security, Wikipedia"
 
