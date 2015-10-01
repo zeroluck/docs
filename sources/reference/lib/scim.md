@@ -468,8 +468,18 @@ String result = response.getResponseBodyString(); // this will give you Response
 
 ## Modifying an entity
 
-In this example we will show you how to modify a person or a group using SCIM-Client, SCIM-Client API comes with two methods to accomplish that , “updatePerson” and “updatePersonString” ,with updatePerson method you pass the person you want to update as ScimPerson object and his uid as a String and you specify the desired media type format “XML/JSON” and SCIM-client API will parse the ScimPerson object into XML or JSON and send your request, Same applies to groups , you can use createGroup with ScimGroup as a parameter or createGroupString.
-You can also use createPesronString method and pass the person as an XML or JSON String.
+In this example we will show you how to modify a person or a group using
+SCIM-Client. The SCIM-Client API comes with two methods to accomplish
+that -- "updatePerson" and "updatePersonString". 
+
+With the method updatePerson you pass the person you want to update as
+ScimPerson object, and his uid as a string. Furthermore, you specify the
+desired media type format "XML/JSON" so that the SCIM-Client API can
+parse the ScimPerson object into XML or JSON, and send your request. 
+
+The same applies to groups. You can use createGroup with ScimGroup as a
+parameter or createGroupString. You can also use the method
+createPersonString, and pass the person as an XML or JSON string.
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
