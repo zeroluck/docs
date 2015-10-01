@@ -1,6 +1,7 @@
 # UMA
 
-Gluu Server has complete implementation of UMA protocol and in addition provides flexible authorization scripts.
+The Gluu Server has a complete implementation of the UMA protocol. In
+addition, it provides flexible authorization scripts.
 
 ## Reference
 
@@ -10,7 +11,7 @@ Gluu Server has complete implementation of UMA protocol and in addition provides
 * UMA Client sources: https://svn.gluu.info/repository/openxdi/oxAuth/trunk/Client/src/main/java/org/xdi/oxauth/client/uma/
 * UMA Client test sources: https://svn.gluu.info/repository/openxdi/oxAuth/trunk/Client/src/test/java/org/xdi/oxauth/ws/rs/uma/
 
-If you use maven you can use Gluu Maven public repository:
+If you use Maven you can use the Gluu Maven public repository:
 
 Repo url:
 
@@ -19,6 +20,7 @@ http://ox.gluu.org/maven/
 ```
 
 Dependency:
+
 ```
    <groupId>org.xdi</groupId>
    <artifactId>oxauth-client</artifactId>
@@ -27,9 +29,10 @@ Dependency:
 
 ### UMA Server
 
-UMA Server is part of Gluu Server. To pick it up please refer to Gluu Server (oxAuth) documentation.
+The UMA Server is part of the Gluu Server. To pick it up please refer to
+the Gluu Server (oxAuth) documentation.
 
-UMA Server source code:
+The UMA Server source code is available from here:
 
 ```
 https://svn.gluu.info/repository/openxdi/oxAuth/trunk/Server/src/main/java/org/xdi/oxauth/uma/ws/rs/
