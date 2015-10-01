@@ -11,6 +11,8 @@ The full suite of software is distributed as linux packages that support either 
 ## Deployment
 The Gluu Server can be deployed on any physical or virtual server. Both distributions of the Gluu Server--Community Edition and Cluster--are distributed as containers. Community edition uses `chroot` containers, while the Cluster Edition uses `docker` containers. Container distribution enables Gluu to make sure that all the pieces are working together. If you actually had to integrate all the components of the Gluu Server together, it would take you a long time. 
 
+[View our deployment guide](../deployment/index.md)
+
 #### Deployment Models:  
 **Single Server:** You can find deployment instructions for a single instance of the Gluu Server by following one of the links above for your preferred operating system. All single server deployments of the Gluu Server can be deployed in production with an unlimited number of users for free. Community support is available on our [public forum](http://support.gluu.org), or you can purchase [Basic Support](http://gluu.org/pricing) to open private tickets and enlist security and support consultations with Gluu engineers.   
 
