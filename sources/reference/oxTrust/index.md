@@ -3,7 +3,7 @@
 oxTrust is a [JBoss][jboss] Seam application that provides
 organizational cloud identity management services, including
 [REST][rest] service endpoints and a user friendly cloud identity
-management console (aka a GUI).
+management console aka a Graphical User Interface (GUI).
 
 oxTrust is tightly coupled with [oxAuth][oxauth]. oxAuth configuration
 is stored in [LDAP][ldap], and it would be hard to generate the right
@@ -19,6 +19,9 @@ display and authentication properties.
 
 ### General properties
 
+These properties control the general setup of oxTrust, and set several
+appliance-specific variables.
+
  * __applianceInum__ sets the [INum][inum] of the appliance
 
  * __orgInum__ sets the [INum][inum] of the organization
@@ -27,7 +30,7 @@ display and authentication properties.
 
  * __orgShortName__ holds the short name of the organization.
 
- * __idp.url__ holds the uri of the OpenID provider that is in use.
+ * __idp.url__ holds the uri of the [OpenID][openid] provider that is in use.
 
  * __appliance.url__ holds the uri of the appliance.
 
@@ -241,6 +244,8 @@ services:
 [ldap]: https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol "Lightweight Directory Access Protocol (LDAP), Wikipedia"
 
 [ldif]: https://en.wikipedia.org/wiki/LDAP_Data_Interchange_Format "LDAP Data Interchange Format (LDIF), Wikipedia"
+
+[openid]: https://en.wikipedia.org/wiki/OpenID "OpenID, Wikipedia"
 
 [oxauth]: http://www.gluu.org/docs/reference/oxAuth/ "oxAuth, Gluu Docs"
 
