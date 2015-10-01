@@ -24,6 +24,11 @@ pages:
 - [admin-guide/personal/index.md, Admin Guide, Personal]
 - [admin-guide/SCIM/index.md, Admin Guide, SCIM]
 
+# FAQ
+- [faq/index.md, FAQ, General]
+- [faq/cloud-faq.md, FAQ, Cloud Deployment]
+- [faq/azure.md, hidden]
+- [faq/troubleshooting.md, FAQ, Troubleshooting]
 
 # Reference Sections
 - [reference/api/index.md, Reference, API]
@@ -56,10 +61,7 @@ pages:
 - [articles/auth-script.md, Articles, How to Write a Custom Authn Script]
 - [articles/ubuntu-shib-apache.md, Articles, Super Quick Ubuntu Shib Apache Install]
 
-# FAQ
-- [faq/index.md, FAQ, General]
-- [faq/cloud-faq.md, FAQ, Cloud Deployment]
-- [faq/azure.md, hidden]
+
 # Deployment Sub-sections
 - [admin-guide/deployment/centos.md, hidden]
 - [admin-guide/deployment/setup_py.md, hidden]
