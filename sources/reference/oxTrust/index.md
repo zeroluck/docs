@@ -48,6 +48,9 @@ appliance-specific variables.
 
 ### SVN-related properties
 
+The following properties define settings that are related to the
+revision control system [SVN][svn].
+
  * __svn.configuration-store.root__ sets the root of the [SVN][svn]
    configuration store.
 
@@ -71,6 +74,8 @@ appliance-specific variables.
 
  * __baseDN__ set the base domain name of oxTrust. The default value is
    `o=gluu`.
+
+### Attribute schema definitions
 
  * __schema.add.attribute.attributeTypes__ `( %%s-oid NAME '%%s' EQUALITY caseIgnoreMatch ORDERING caseIgnoreOrderingMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 USAGE userApplications X-SCHEMA-FILE '100-user.ldif' X-ORIGIN 'gluu' )`
 
