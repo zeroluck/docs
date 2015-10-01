@@ -624,7 +624,16 @@ JSON Example:
 "customAttributes":[{"name":"oxTrustCustAttrA","values":["some random value1","some random value2"]}]
 ```
 
-Where “name” is the name of the LDAP attribute and “values” is its values , both single and multivalued attributes are supported , and custom attribute must be under “oxCustomAttributes” objectClass or they may be under the gluuPerson one , also in the “Attributes” LDAP node you will need to add an entry representation for the attribute , when“oxSCIMCustomAttribute” is set to true SCIM will look for that attribute in the person entry and if it has a value it will appear in the final result, when the attribute “oxMultivaluedAttribute” is set to true SCIM will know that this attribute is Multivalued , example:
+In the examples above "name" is the name of the LDAP attribute, and
+"values" are its values. Both single and multi-valued attributes are
+supported. Add custom attributes using the "oxCustomAttributes"
+objectClass, or they have to appear under the gluuPerson one. Also, in
+the "Attributes" LDAP node you will need to add an according entry
+representation for the attribute. If "oxSCIMCustomAttribute" is set to
+`true` SCIM will look for this attribute in the person entry, and if it
+has a value it will appear in the final result. If the attribute
+"oxMultivaluedAttribute" is set to `true` SCIM will know that this
+attribute is multi-valued, for example:
 
 ```
 dn: inum=@!1111!0005!8E7F,ou=attributes,o=@!1111,o=gluu
