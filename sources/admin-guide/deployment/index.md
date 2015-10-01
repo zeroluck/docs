@@ -30,7 +30,7 @@ The Gluu Server is very flexible, and can be used for a wide array of access man
 
 With that said, if you are running all the Gluu Server services on one server (i.e. SAML, OAuth2, LDAP), we would recommend at least 2 CPU units, 4 GB of RAM and around 30GB of disk space. Not enough memory may produce some really weird bugs. 
 
-From there, you may need to adjust the resources based on the requirements.  For an overview of Gluu performance considerations, see this [Gluu blog](http://www.gluu.org/blog/).
+From there, you may need to adjust the resources based on the requirements.  
 
 # Java
 The Gluu Server components have been tested with OpenJDK version 1.7 or later.
