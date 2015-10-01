@@ -136,21 +136,21 @@ These properties refer to authentication settings of oxTrust.
 
  * __configGeneration__ set this entry to control the automatic
    generation of the configuration file. Use `enabled` to allow that, 
-   and `DISABLED` otherwise (default value).
+   and `disabled` otherwise (default value).
 
- * __idp.securityCert__ holds the security certificate of the OpenID
-   provider.
+ * __idp.securityCert__ holds the security certificate of the
+   [OpenID][openid] provider.
 
- * __idp.securityKey__ holds the security key of the OpenID provider.
+ * __idp.securityKey__ holds the security key of the [OpenID][openid] provider.
 
  * __.securityCert__ holds the security certificate of the machine.
 
  * __idp.securityKeyPassword__ holds the security key password of the
-   OpenID provider.
+   [OpenID][openid] provider.
 
- * __idp.bindDN__ holds the domain name the OpenID provider is bind to.
+ * __idp.bindDN__ holds the domain name the [OpenID][openid] provider is bind to.
 
- * __idp.bindPassword__ holds the password the OpenID provider is bind to.
+ * __idp.bindPassword__ holds the password the [OpenID][openid] provider is bind to.
 
  * __idp.useSSL__ enables or disables a secure connection via
    [SSL][ssl]. Use `true` to enable (default value), or `false` to disable
