@@ -72,15 +72,9 @@ by customizing the messages, logo, favicon and colors.
 
 In oxTrust, this is under Configuration > Organization Configuration, and is the last section, titled Configuration. 
 
-![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/WebUI_modification/oxtrust/oxTrust_GUI_mod_configuration_overview.png?raw=true)
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_config_config.png)
 
-- `Title`: Web User Interface title can be modified with this link. 
-- `Display name`: Display Name of IDP in ldap. [ This change is not suggested to be done by Gluu Server Administrator. As it will change configuration in our central server. ]
-- `Short name`: Short Name of Org in ldap. [ This change is not suggested to be done by Gluu Server Administrator. As it will change configuration in our central server. ]
-- `Description`: A little description about Gluu Server.
-- `Login page message`: Login page is now using oxAuth, we will more features to support Login page modification through oxAuth. 
-- `Welcome Title Text`: Gluu Server Administrator can add custom Welcome Title Text with feature.
-- `Welcome Page Message`: Various message can be included here. Out of the box, Gluu Server includes these 1. Upload SSL Certificate, 2. Active attribute … etc. messages.
+- `Organization Name`: The name of the organization goes here.
 - `Organization Logo`: Organization logo can be uploaded and activated from here.
 You can upload your logo here, which will be shown in Gluu Server Administrative Control page. 
 - `Organization Favicon`: Organization favicon can be changed with this feature. 
