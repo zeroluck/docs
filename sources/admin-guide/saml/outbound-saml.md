@@ -48,25 +48,27 @@ The Gluu Server's SAML capabilities are tightly integrated with [Shibboleth](htt
 
 ## LDAP Attributes
 
-The Gluu Server releases all standard attributes. The server administrator is able to see attributes from the Web UI Configuration. 
+The Gluu Server releases all standard attributes. The server administrator is able to see attributes from the Web UI Configuration. The server administrator can click on the "attribute" tab from the left menu bar. 
+
+![attribute menu](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_menu_attribute.png)
 
 Other than standard attributes, the server administrator can create and map any custom attributes in LDAP from the attributes section in the UI:
 
-![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SamlIDPAdminGuide/Base_attributes.png?raw=true)
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_attribute_menu.png)
 
 An “Active” attribute list can be seen from the Configuration → Attributes section. 
 The Gluu Server has a large LDAP tree which includes all standard attributes. Not all are necessarily “Active”. Active Attributes can be sorted by clicking “Show only Active Attributes.”
 
-![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SamlIDPAdminGuide/LDAP_tree_Gluu_server.png?raw=true)
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_attribute_show.png)
 
 Organization can manage their required attributes from this big LDAP tree. Just
 select the attribute and make it active / inactive in the GUI. 
 
-![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SamlIDPAdminGuide/Active_inactive.png?raw=true)
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_config_attributemenu.png)
 
 If the organization needs more attributes or has custom attributes, they can be added from within the GUI. Click on “Add attribute” and a page like this will appear:
 
-![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SamlIDPAdminGuide/Add_new_attribute.png?raw=true)
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_attribute_add.png)
 
 * _Name_: Name of this custom attribute. It must be unique in Gluu Server LDAP tree.
 * _SAML1 URI_: SAML1 URI value for custom attribute.
@@ -92,9 +94,10 @@ In order to create a trust relationship with any SP:
 
 * Go to SAML → Trust Relationships
 * Click on “Add Relationship”
-![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/Add_Relationships.png?raw=true)
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_saml_create.png)
 * A new page will appear. Here, Gluu Server Administrator needs to provide all informations regarding SP to establish Trust Relationship from Gluu Server. 
-![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/TR_new_page.png?raw=true)
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_saml_newTR.png)
+
     * _Display Name_: Name of the Trust Relationship ( it should be unique for every trust relationship ) 
     * _Description_: Little description. Purpose and SSO link can be added here.
     * _Metadata Type_: Depending on trusted party’s metadata (SP), there are four available types in Gluu Server
@@ -103,21 +106,17 @@ In order to create a trust relationship with any SP:
         * _Generate_: Using Gluu Server to generate configuration files for SP is another big option when the SP is inhouse application or “Shibboleth SP” is installed or going to be installed in target application site (SP).  [How to install Shibboleth SP](http://www.gluu.org/docs/articles/apache-saml/) will help user to configure and install Shibboleth SP on their own area. Please note few things when you are going to use _Generate_ method for your SP. 
             * _URL_ : This is the `hostname of SP`
             * _Public certificate_ : You `must` have to provide the certificate which is Base64 encoded ASCII file and contain "-----BEGIN CERTIFICATE-----" and "-----END CERTIFICATE-----". This certificate `can not be password protected`. 
-            * After creating the Trust Relationship, download the generated configuration files from `Download Shibboleth2 configuration files` link and place these configuration files inside your SP configuration. 
+            * After creating the Trust Relationship, download the generated configuration files from `Download Shibboleth2 configuration files link and place these configuration files inside your SP configuration. 
 
         * _Federation_: If target application ( SP ) is affiliated with any Federation server (i.e: InCommon, NJEdge etc. ), this option of “Metadata Type” is required. 
         Select “Federation” in Metadata Type and another drop down menu called “Select Federation” will appear. From this drop menu select desired Federation. 
-        In order to create this documentation we took “InCommon” Federation as an example.
-![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/Federation_1.png?raw=true)
-
-After selecting the “Federation Name”, a new link named “Click to select entity id” will appear. From this link Gluu Server Administrator can select all SP’s entityIDs which are InCommon affiliated. Click on this link and another new SP entityID discovery page will appear like below image. 
         
-![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/Federation_2.png?raw=true)
+![image](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_saml_federation.png)
+
+After selecting the “Federation Name”, a new link named “Click to select entity id” will appear. From this link Gluu Server Administrator can select all SP’s entityIDs which are InCommon affiliated.
 
 Gluu Server Administrator can grab any SP’s entityID from “Filter” box. As for example, Gluu Server Administrator is looking for Educause entityID. 
         
-![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/Federation_3.png?raw=true)
-
 
 * Public certifiate: Upload public certificate for this SP server. Please note that: public certificate’s CN (common name) MUST maintain the hostname of the SP server. If the SP has no certificate then keep this option blank and the IdP will generate a self signed certificate.
 
@@ -126,8 +125,6 @@ Gluu Server Administrator can grab any SP’s entityID from “Filter” box. As
 * More configuration: If SP requires custom relying party and/or custom MetadataFilter configuration, that can be achieved using the following options: 
 * Configure MetadataFilters: Click on this option and Gluu Server will allow you to configure MetadataFilters inside the GUI.
 * Configure specific Relying Party: If the server admin “checks” this option a new link will appear which allows the server administrator to modify various relying party configurations like SAML2SSO, SAML2AttributeQuery, ShibbolethSSO etc. 
-
-![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/Relying_Party_Configuration.png)
 
 After adding a new Trust Relationship, the server administrator will observe a confirmation page like the one below. Please note that for testing purpose we did not provided any certificates. The IdP created the key and cert by itself. The image below shows a sample Trust Relationship after successful creation.
 
