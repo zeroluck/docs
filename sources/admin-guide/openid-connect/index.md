@@ -29,19 +29,13 @@ to the website (or mobile application). In OAuth2, scopes can be used for variou
 OpenID Connect uses OAuth2 scopes to "group" attributes. For example, we could have a scope called "address"
 that includes the street, city, state, and country user claims. The Gluu Server defines six scopes by default.
 
-![Scopes Screenshot](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_scope.png)
+![Scopes Screenshot](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_oauth2_scope.png)
 
-The Gluu Server Administrator can easily add more scopes in the GUI. Click *Add Scope* and you'll be presented with the following screen: 
-
-![Add Scopes](http://www.gluu.org/docs/img/openid_connect/oxtrust_scope_screenshot.png "Screenshot of oxTrust add OpenID Connect Scope")
+The Gluu Server Administrator can easily add more scopes in the GUI. Click *Add Scope* and you'll be presented with the following fields: 
 
 You'll have the ability to provide a Display Name, Description, whether or not the scope is provided by default, and the claims that are included in the scope. 
 
 Default Scope needs some further explanation. When a client uses dynamic client registration, the OpenID Connect specification says that the `openid` scope should always be released, which contains an identifier for that person, normally the username. If you want to release another scope automatically, set the Default Scope to `true` for that scope. You can always explicitly release a scope to a certain client later on, but this will require some manual intervention by the domain administrator. 
-
-To add more claims, simply click "Add Claim" and you'll be presented with the following screen:
-
-![Add Claims](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_scopeadd.png)
 
 # Client Registration
 
@@ -57,15 +51,15 @@ dynamic client registration, you can use the oxTrust admin GUI to manually add t
 
 Available **Clients** can be seen by hitting the **Search** button leaving the search box empty.
 
-![Client List](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_clientlist.png)
+![Client List](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_oauth2_clientlist.png)
 
 A new client can be added by clicking the **Add Client** link.
 
-![Add Client](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_addclient.png)
+![Add Client](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_oauth2_addclient.png)
 
 Clicking on the _Add Client_ link allows the Gluu Server Administrator to add new client. The search box can be used to look up previously added clients as well. The screenshot below shows the interface to add a new client.
 
-![Add new client](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_newclient.png)
+![Add new client](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_oauth2_newclient.png)
 
 * _Display Name:_ This contains the recognizable and unique display name of the client.
 
@@ -90,22 +84,22 @@ _Block Encryption Algorithms:_ A128CBC+HS256, A256CBC+HS612, A128GCM, A256GCM,
 * _Pre Authorization:_ Gluu server disables this option by default, but it is possible to allow the users to access any URL according to the Organization Policy by the Gluu Server Administrator.
 
 * _Redirect URI:_ The URI for native or web app can be added using this feature.
-![RedirectURI](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_adduri.png)
+![RedirectURI](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_oauth2_adduri.png)
 
 Clicking on *Add URI* will open a new box to put the hostname in and it is done.
 
 * _Add Group:_ This feature can be used to affiliate specific groups.
-![Add Group](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_addgroup.png)
+![Add Group](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_oauth2_addgroup.png)
 
 The existing groups can be listed by hitting the *Search* button keeping the search phrease blank.
 
 * _Add Scopes:_ This option can be used to add the required scopes in the Gluu Server.
-![Add Scopes](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_addscope.png)
+![Add Scopes](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_oauth2_addscope.png)
 
 The available scopes can be listed by hitting the *Search* button keeping the search phrase black and from this the Gluu Server Administrator can select the required scopes.
 
 * _Add Response Type:_ There are three types of responses in the Gluu Server and they are Code, Token and ID Token. The Gluu Server Administrator can select all of them for testing purposes.
-![Response Type](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_response.png)
+![Response Type](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_oauth2_response.png)
 
 ## Custom Client Registration
 
