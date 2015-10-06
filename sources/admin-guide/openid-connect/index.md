@@ -84,22 +84,18 @@ _Block Encryption Algorithms:_ A128CBC+HS256, A256CBC+HS612, A128GCM, A256GCM,
 * _Pre Authorization:_ Gluu server disables this option by default, but it is possible to allow the users to access any URL according to the Organization Policy by the Gluu Server Administrator.
 
 * _Redirect URI:_ The URI for native or web app can be added using this feature.
-![RedirectURI](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_oauth2_adduri.png)
 
 Clicking on *Add URI* will open a new box to put the hostname in and it is done.
 
 * _Add Group:_ This feature can be used to affiliate specific groups.
-![Add Group](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_oauth2_addgroup.png)
 
 The existing groups can be listed by hitting the *Search* button keeping the search phrease blank.
 
 * _Add Scopes:_ This option can be used to add the required scopes in the Gluu Server.
-![Add Scopes](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_oauth2_addscope.png)
 
 The available scopes can be listed by hitting the *Search* button keeping the search phrase black and from this the Gluu Server Administrator can select the required scopes.
 
 * _Add Response Type:_ There are three types of responses in the Gluu Server and they are Code, Token and ID Token. The Gluu Server Administrator can select all of them for testing purposes.
-![Response Type](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_oauth2_response.png)
 
 ## Custom Client Registration
 
@@ -110,15 +106,11 @@ To access the interface for custom scripts in oxTrust, navigate to Configuration
 Take a look at our [example client registration script](../../reference/interception-scripts/sample-client-registration-script.py) for a reference. 
 
 ## Search clients
-![](http://www.gluu.org/docs/img/openid_connect/oxtrust_search_clients.png "Screenshot of oxTrust browse / search clients")
-
+![image](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_oauth2_clientlist.png)
 ## View client
-
-![](http://www.gluu.org/docs/img/openid_connect/oxtrust_view_client.png "Screenshot of oxTrust view client")
-
+The client information can be viewed by clicking on the client name from the client list.
 
 # Session management
-
 Logout is a catch-22. There is no perfect answer to logout that satisfies all the requirements
 of all the domains on the Internet. For example, large OpenID Providers, like Google, need
 a totally stateless implementation--Google cannot track sessions on the server side for every
