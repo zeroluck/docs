@@ -57,6 +57,9 @@ The script manager reloads scripts automatically without needing to restart the 
 
 The `getApiVersion` method allows API changes in order to do transparent migration from an old script to a new API. Currently all scripts should return 1. For example, in the future we can extend the API of any script and call new method(s) only if API version > 2, etc. exists. 
 
+## Interception Script Logs
+The log files regarding interception scripts are not stored in the `wrapper.log` file. The logs are separated according to the module they affect. The oxAuth custom script logs are stored in `oxauth_script.log` and the oxTrust custom script logs are stored in the `oxtrust_script.log`. Please refer to these logs for any errors in the interception scripts or following the workflow of the script.
+
 # Application Session Management
 This script allows an admin to notify 3rd party systems about requests to end an OAuth session. This method is triggered by an oxAuth call to the `end_session` endpoint. It's possible to add multiple scripts with this type. The application should call all of them according to the level.
 
