@@ -1,5 +1,4 @@
 # Interception Scripts
-[TOC]
 
 The Gluu Server was designed to be very flexible. Gluu Server admins can use [Jython](http://www.jython.org/docs/tutorial/indexprogress.html) interception scripts to customize behavior.
 
@@ -76,6 +75,8 @@ This script can be used in oxAuth application only.
 
 # Authentication
 
+**For a list of pre-written, open source Gluu authentication scripts, view our [server integrations](https://github.com/GluuFederation/oxAuth/tree/master/Server/integrations)**
+
 An authentication script enables you to customize the user authentication experience. For example, you can write a script that enables a two-factor authentication mechnaism like Duo Security. By default oxAuth uses simple username/password authentication method. This scipt type allows an admin to implement more secure workflows to cover an organizations security requirements. It extends the base scipt type with the `init`, `destroy` and `getApiVersion` methods but also adds the following methods:    
 
 `def isValidAuthenticationMethod(self, usageType, configurationAttributes):`
@@ -145,8 +146,6 @@ This method has the following parameters:
 - `requestParameters` is `java.util.Map<String, String[]>`  
 
 This script can be used in oxAuth application only.
-
-**For a complete list of pre-written, open source Gluu authentication scripts, view our [server integrations](https://github.com/GluuFederation/oxAuth/tree/master/Server/integrations)**
 
 - [Sample Authentication Script](./sample-authentication-script.py) 
 
