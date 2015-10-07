@@ -117,9 +117,9 @@ These are standard properties however a resource description MAY contain custom 
 
 ## Register resource via oxTrust
 
-![oxTrust UMA Resources Interface](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/uma/uma_oxtrust_resources.png)
+![oxTrust UMA Resources Interface](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_uma_resource.png)
 
-![oxTrust UMA Add Resources Interface](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/uma/uma_oxtrust_resources_add.png)
+![oxTrust UMA Add Resources Interface](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_uma_resourceadd.png)
 # UMA Scopes
 
 UMA Scopes are bound to resource sets and are used by policies to check whether user the specified user has access to the resource.
@@ -142,9 +142,9 @@ The Scope JSON MAY contain custom properties which is out of scope of this docum
 
 ## Define UMA Scopes via oxTrust
 
-![oxTrust Scopes](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/uma/uma_oxtrust_scopes.png)
+![oxTrust Scopes](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_uma_scope.png)
 
-![Add oxTrust Scopes](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/uma/uma_oxtrust_scopes_add.png)
+![Add oxTrust Scopes](https://github.com/GluuFederation/docs/blob/master/sources/img/2.4/admin_uma_scopeadd.png)
 
 ## Implementation specificity
 
@@ -205,7 +205,7 @@ Within the oxTrust interface the Gluu Server admin can define UMA policies (pict
 
 You can find more information on crafting UMA policies as well as an example script [here](../../reference/interception-scripts/index.md#authorization)
 
-![Add UMA Policies](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/uma/uma_oxtrust_policy_add.png)
+![Add UMA Policies](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_uma_resourcepolicy.png)
 
 ## Algorithm
 
