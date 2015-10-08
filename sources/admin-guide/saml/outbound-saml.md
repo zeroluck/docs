@@ -94,8 +94,11 @@ In order to create a trust relationship with any SP:
 
 * Go to SAML → Trust Relationships
 * Click on “Add Relationship”
+
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_saml_create.png)
+
 * A new page will appear. Here, Gluu Server Administrator needs to provide all informations regarding SP to establish Trust Relationship from Gluu Server. 
+
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_saml_newTR.png)
 
     * _Display Name_: Name of the Trust Relationship ( it should be unique for every trust relationship ) 
