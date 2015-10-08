@@ -1,16 +1,18 @@
 # Overview 
+[TOC]
 
+# OpenID Connect
 Since [Interop 4](http://www.gluu.co/.fm8t) the Gluu Server has one of the most comprehensive
 implementations of OpenID Connect. The current results from [IntereOp 5](http://www.gluu.co/.iwjk),
 while not final, also put the Gluu Server at the top of the list.
 
 [OpenID Connect](http://openid.net/connect) ("Connect") is a standard profile of OAuth2 which defines a protocol to enable a website or mobile application to send a person to a domain for authentication and required attributes (e.g. email address, first name, last name, etc.). Connect also provides some of the plumbing around authentication to automate how this happens. If a person is visiting a website for the  first time, the process that OpenID Connect defines is 100% bootstrapable by the website.  This is really critical for Interet scalability. To visit someone's website, or to send someone email, you don't need to get the system administrators involved. Connect provides the same type of scalable infrastructure, and promises to define a base level domain identification.
 
-# New Jargon (taxonomy)
+## New Jargon (taxonomy)
 
 If you are familiar with SAML, there are many parallels in OpenID Connect, but the jargon (or "taxonomy") is different. For example, instead of attributes, we have "user claims". Instead of Service Provider (SP), we have "client". Instead of Identity Provider (IDP), its OpenID Provider (OP).  
 
-# Discovery 
+## Discovery 
 
 The first thing you want to know about any OAuth2 API is where are the endpoints (i.e. 
 what are the URLs where you call the APIs). OpenID Connect provides a very simple
@@ -21,7 +23,7 @@ a previous standard called [WebFinger](http://en.wikipedia.org/wiki/WebFinger).
 
 If you want to try a sample discovery request, you can make a GET request to [Gluu's OpenID Connect Discovery Page](https://idp.gluu.org/.well-known/openid-configuration)
 
-# Scopes
+## Scopes
 
 In SAML, the IDP releases attributes to the SP. OpenID Connect provides similar functionality, 
 with more flexibility in case the person needs to self-approve the release of information from the IDP 
@@ -43,7 +45,7 @@ To add more claims, simply click "Add Claim" and you'll be presented with the fo
 
 ![Add Claims](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_scopeadd.png)
 
-# Client Registration
+## Client Registration
 
 A client in OAuth2 could be either a website or mobile application. OpenID Connect has an API 
 for [Dynamic Client Registration](http://openid.net/specs/openid-connect-registration-1_0.html)
@@ -107,7 +109,7 @@ The available scopes can be listed by hitting the *Search* button keeping the se
 * _Add Response Type:_ There are three types of responses in the Gluu Server and they are Code, Token and ID Token. The Gluu Server Administrator can select all of them for testing purposes.
 ![Response Type](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_response.png)
 
-## Custom Client Registration
+### Custom Client Registration
 
 Using interception scripts you can customize client registration behavior. For example, by default oxAuth allows new clients access to default scopes only. With a custom client registration interception script it iss possible to allow access to more scopes. For instance, we can use redirect_uri to determine if we need to allow access to additional scopes or not. 
 
@@ -115,15 +117,15 @@ To access the interface for custom scripts in oxTrust, navigate to Configuration
 
 Take a look at our [example client registration script](../../reference/interception-scripts/sample-client-registration-script.py) for a reference. 
 
-## Search clients
+### Search clients
 ![](http://www.gluu.org/docs/img/openid_connect/oxtrust_search_clients.png "Screenshot of oxTrust browse / search clients")
 
-## View client
+### View client
 
 ![](http://www.gluu.org/docs/img/openid_connect/oxtrust_view_client.png "Screenshot of oxTrust view client")
 
 
-# Session management
+## Session management
 
 Logout is a catch-22. There is no perfect answer to logout that satisfies all the requirements
 of all the domains on the Internet. For example, large OpenID Providers, like Google, need
@@ -150,30 +152,30 @@ are important to you, so you will not be surprised by the behavior when you put 
 into production.
 
 
-# Testing with oxAuth RP
+## Testing with oxAuth RP
 
   - Go to https://seed.gluu.org/oxauth-rp
   - Or deploy oxAuth-rp.war
 
-## OpenID Connect Discovery
+### OpenID Connect Discovery
 
   - Enter an identifier, for example: https://seed.gluu.org or acct:mike@seed.gluu.org
   - Click submit.
 
 ![](http://www.gluu.org/docs/img/oxAuth-RP/openidconnectdiscovery.png "Screenshot of oxAuth-RP OpenID Connect Discovery")
 
-## Dynamic Client Registration
+### Dynamic Client Registration
 
 ![](http://www.gluu.org/docs/img/oxAuth-RP/dynamicclientregistration.png "Screenshot of oxAuth-RP Dynamic Client Registration")
 
-### Client Read
+#### Client Read
 
 ![](http://www.gluu.org/docs/img/oxAuth-RP/clientread.png "Screenshot of oxAuth-RP Client Read")
 
 
-## Authorization Endpoint
+### Authorization Endpoint
 
-### Request Authorization and receive the Authorization Code and ID Token
+#### Request Authorization and receive the Authorization Code and ID Token
 
   - Go to https://seed.gluu.org/oxauth-rp
   - Enter the Authorization Endpoint (eg: https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/authorize)
@@ -186,7 +188,7 @@ into production.
 
 ![](http://www.gluu.org/docs/img/oxAuth-RP/requestauthorizationcodegrant.png "Screenshot of oxAuth-RP Authorization Endpoint")
 
-### Request Access Token using the Authorization Code
+#### Request Access Token using the Authorization Code
 
   - Once redirected back to https://seed.gluu.org/oxauth-rp
   - Enter the Token Endpoint (eg: https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/token)
@@ -200,7 +202,7 @@ into production.
 
 ![](http://www.gluu.org/docs/img/oxAuth-RP/requestaccesstokenwithauthorizationcode.png "Screenshot of oxAuth-RP Token Endpoint")
 
-### Request new Access Token using the Refresh Token
+#### Request new Access Token using the Refresh Token
 
   - Go to https://seed.gluu.org/oxauth-rp
   - Enter the Token Endpoint (https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/token)
@@ -213,16 +215,22 @@ into production.
 ![](http://www.gluu.org/docs/img/oxAuth-RP/refreshtoken.png "Screenshot of oxAuth-RP Refresh Token")
 
 
-## UserInfo Endpoint
+### UserInfo Endpoint
 
 ![](http://www.gluu.org/docs/img/oxAuth-RP/userinfoendpoint.png "Screenshot of oxAuth-RP User Info Endpoint")
 
-## OpenID Connect Session Management
+### OpenID Connect Session Management
 
-### End Session Endpoint
+#### End Session Endpoint
 
 ![](http://www.gluu.org/docs/img/oxAuth-RP/endsession.png "Screenshot of oxAuth-RP End Session Endpoint")
 
-### Check Session iFrame
+#### Check Session iFrame
 
 ![](http://www.gluu.org/docs/img/oxAuth-RP/checksession.png "Screenshot of oxAuth-RP Check Session iFrame")
+
+# oAuth 2 Grants
+
+There are two additional flows that the Gluu Server supports for user and client authentication, which are not part of the OpenID Connect Spec. The flows are explained in the following page.
+
+* [oAuth 2 Grants](./oauth2grants.md)

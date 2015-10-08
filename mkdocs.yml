@@ -112,3 +112,6 @@ pages:
 - [articles/mod-auth-oidc/centos-installation.md, hidden]
 - [reference/mod_auth_oidc/ubuntu-installation.md, hidden]
 - [reference/mod_auth_oidc/centos-installation.md, hidden]
+
+# OpenID Connect Sub-section
+- [admin-guide/openid-connect/oauth2grants.md, hidden]
