@@ -18,7 +18,7 @@ Please review the [deployment guide](./index.md) for a list of available compone
 
 ## Installing GLUU Server with yum:
 
- RHEL 6:
+ RHEL 6:```
 `# wget http://repo.gluu.org/rhel/Gluu.repo -O /etc/yum.repos.d/Gluu.repo`
 
  RHEL 7:
