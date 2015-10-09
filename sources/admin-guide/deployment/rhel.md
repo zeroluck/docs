@@ -17,8 +17,10 @@ The Gluu Server Community Edition should be deployed on a VM with:
 Please review the [deployment guide](./index.md) for a list of available components during installation. 
 
 ## Installing GLUU Server with yum:
+
  RHEL 6:
 `# wget http://repo.gluu.org/rhel/Gluu.repo -O /etc/yum.repos.d/Gluu.repo`
+
  RHEL 7:
 `# wget http://repo.gluu.org/rhel/Gluu-7.repo -O /etc/yum.repos.d/Gluu-7.repo`
 
