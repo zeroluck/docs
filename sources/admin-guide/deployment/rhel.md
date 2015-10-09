@@ -10,15 +10,17 @@ To report issues or provide feedback about the installation process, please use 
 
 The Gluu Server Community Edition should be deployed on a VM with:
 
-* RHEL 6.5 
+* RHEL 6.5 and 7
 * 2 CPU Units and at least 2GB Physical Memory (more is always better, though)
 
 ## Available Components
 Please review the [deployment guide](./index.md) for a list of available components during installation. 
 
 ## Installing GLUU Server with yum:
-
+ RHEL 6:
 `# wget http://repo.gluu.org/rhel/Gluu.repo -O /etc/yum.repos.d/Gluu.repo`
+ RHEL 7:
+`# wget http://repo.gluu.org/rhel/Gluu-7.repo -O /etc/yum.repos.d/Gluu-7.repo`
 
 `# wget http://repo.gluu.org/rhel/RPM-GPG-KEY-GLUU -O /etc/pki/rpm-gpg/RPM-GPG-KEY-GLUU`
 
