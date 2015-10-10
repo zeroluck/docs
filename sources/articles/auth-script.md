@@ -9,6 +9,9 @@ But if you want to write your own script, this article is for you!
 To develop this article, I decided to write a script to use [Twilio](http://twilio.com) to
 send an SMS code to implement a two-step out-of-band authentication mechanism.
 
+## Custom Script Location
+Gluu Server User Interface allows the developer to specify the path to script rather than use the text box from oxTrust. The script will be loaded from the specified path. This feature will improve script development and there is an option to revert back to working script, if the script is faulty or needs futher development. The administrator can select `File` from the Script Location Type in oxTrust and the file input box will appear. The 'LDAP' option in the Scipt Location Type can be used to store the script in the LDAP tree once the development in complete, but remember that selecting the `LDAP` method, the script must be copied in the input box that appears upon LDAP selection.
+
 ## Suggested Development Environment
 
 Gluu Server custom scripts are written in [Jython](http://www.jython.org/). In this article, I'm going to recommend

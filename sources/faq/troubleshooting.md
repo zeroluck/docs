@@ -1,12 +1,12 @@
 # Troubleshooting
 
 ## Memory
-- Does the system have enough memory/CPU? For production environments it's required to provide at least 4GB of RAM for tomcat allocations, so the full amount of RAM assigned for the host shouldn't be lower than 6GB. 
+- Does the system have enough memory/CPU? For a production deployment, at least 4GB of RAM is required for tomcat and the full amount of RAM assigned for the host should be no less than 6GB. 
 
 ## OS
 - The Gluu Server must be installed on a 64 bit OS. If the host doesn't meet these requirements, it **will not** work. 
 
-- Is the Gluu Server installed on a supported OS? Please check here [TODO: <-insert link] for supported operating systems and versions. 
+- Is the Gluu Server installed on a supported OS? Please check our [deployment doc](../admin-guide/deployment/index.md#supported-operating-systems) for supported operating systems and versions. 
 
 ## Browser and your local OS
 - Is your browser updated to the most recent version available? Have you tried to access your Gluu instance with some other browser? Does it have any 3rd-party security-related add-ons installed? If it does you should try to switch them off and test the connection again.
@@ -23,11 +23,11 @@
 - Was it a freshly installed OS, or has it been / is it being used for other purposes? It should be a freshly installed OS and dedicated to the Gluu Server only.
 
 ## Diagnostic Commands to Gauge Health of Installation
-- Try running the command `sudo netstat -Inpt` 
+- Try running the command `sudo netstat -lnpt`. Next ports must be present in your output (unless you are running some heavily customized version of Gluu):
   - Ports 80 and 443 should be taken by Apache
-  - Ports 1389, 1636, 8005, 8009 should be taken by Java / Tomcat and must be present
-- Try running the command `service gluu-server status` from within chroot-ed container
-  - `/etc/init.d/tomcat status` and `/etc/init.d/opendj status`
+  - Ports 1389, 1636, 8005, 8009 should be taken by Java / Tomcat
+- Try running the command `service gluu-server status` from outside of chroot-ed container; try to stop and start the service with `service gluu-server start/stop` - you should see notifications that Apache/Tomcat/OpenDJ have been started/stopped successfully, respectively.
+- Try to run the commands `/etc/init.d/tomcat status` and `/etc/init.d/opendj status` from within chroot-ed container.
 - Try stopping the Gluu Service, then check ports again with `netstat` command shown above. 
   - Are some of the required ports still present in the output? 
 - Make sure that you have waited long enough after service was restarted (or just installed), especially on slow machines and VMs at problematic cloud providers. Often Gluu needs a minute or two to become fully operational (and until then it will return 404 error or blank pages) even on machines that meet all requirements, and on slow machines it will need even more time.

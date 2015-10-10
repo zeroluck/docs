@@ -1,5 +1,4 @@
 # Interception Scripts
-[TOC]
 
 The Gluu Server was designed to be very flexible. Gluu Server admins can use [Jython](http://www.jython.org/docs/tutorial/indexprogress.html) interception scripts to customize behavior.
 
@@ -58,6 +57,9 @@ The script manager reloads scripts automatically without needing to restart the 
 
 The `getApiVersion` method allows API changes in order to do transparent migration from an old script to a new API. Currently all scripts should return 1. For example, in the future we can extend the API of any script and call new method(s) only if API version > 2, etc. exists. 
 
+## Interception Script Logs
+The log files regarding interception scripts are not stored in the `wrapper.log` file. The logs are separated according to the module they affect. The oxAuth custom script logs are stored in `oxauth_script.log` and the oxTrust custom script logs are stored in the `oxtrust_script.log`. Please refer to these logs for any errors in the interception scripts or following the workflow of the script.
+
 # Application Session Management
 This script allows an admin to notify 3rd party systems about requests to end an OAuth session. This method is triggered by an oxAuth call to the `end_session` endpoint. It's possible to add multiple scripts with this type. The application should call all of them according to the level.
 
@@ -75,6 +77,8 @@ This script can be used in oxAuth application only.
 - [Sample Application Session Management Script](./sample-application-session-script.py)
 
 # Authentication
+
+**For a list of pre-written, open source Gluu authentication scripts, view our [server integrations](https://github.com/GluuFederation/oxAuth/tree/master/Server/integrations)**
 
 An authentication script enables you to customize the user authentication experience. For example, you can write a script that enables a two-factor authentication mechnaism like Duo Security. By default oxAuth uses simple username/password authentication method. This scipt type allows an admin to implement more secure workflows to cover an organizations security requirements. It extends the base scipt type with the `init`, `destroy` and `getApiVersion` methods but also adds the following methods:    
 
@@ -145,8 +149,6 @@ This method has the following parameters:
 - `requestParameters` is `java.util.Map<String, String[]>`  
 
 This script can be used in oxAuth application only.
-
-**For a complete list of pre-written, open source Gluu authentication scripts, view our [server integrations](https://github.com/GluuFederation/oxAuth/tree/master/Server/integrations)**
 
 - [Sample Authentication Script](./sample-authentication-script.py) 
 

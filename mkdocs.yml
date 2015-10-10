@@ -24,6 +24,11 @@ pages:
 - [admin-guide/personal/index.md, Admin Guide, Personal]
 - [admin-guide/SCIM/index.md, Admin Guide, SCIM]
 
+# FAQ
+- [faq/index.md, FAQ, General]
+- [faq/cloud-faq.md, FAQ, Cloud Deployment]
+- [faq/troubleshooting.md, FAQ, Troubleshooting]
+- [faq/azure.md, hidden]
 
 # Reference Sections
 - [reference/api/index.md, Reference, API]
@@ -56,10 +61,7 @@ pages:
 - [articles/auth-script.md, Articles, How to Write a Custom Authn Script]
 - [articles/ubuntu-shib-apache.md, Articles, Super Quick Ubuntu Shib Apache Install]
 
-# FAQ
-- [faq/index.md, FAQ, General]
-- [faq/cloud-faq.md, FAQ, Cloud Deployment]
-- [faq/azure.md, hidden]
+
 # Deployment Sub-sections
 - [admin-guide/deployment/centos.md, hidden]
 - [admin-guide/deployment/setup_py.md, hidden]
@@ -110,3 +112,6 @@ pages:
 - [articles/mod-auth-oidc/centos-installation.md, hidden]
 - [reference/mod_auth_oidc/ubuntu-installation.md, hidden]
 - [reference/mod_auth_oidc/centos-installation.md, hidden]
+
+# OpenID Connect Sub-section
+- [admin-guide/openid-connect/oauth2grants.md, hidden]
