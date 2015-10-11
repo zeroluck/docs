@@ -1,3 +1,4 @@
+[TOC]
 
 ## oxauth-config.xml
 
@@ -14,7 +15,8 @@ The general structure of the configuration file is like that:
 
     </configuration>
 
-The sections are listed according to their order in the configuration file.
+The sections are listed according to their order in the configuration
+file as it is delivered with the original package of the Gluu server.
 
 ### Basic settings
 
