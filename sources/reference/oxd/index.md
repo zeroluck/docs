@@ -154,7 +154,7 @@ A sample request-response pair looks like that:
         "app_type":"web",
         "grant_types":"authorization_code implicit",
         "contacts":"mike@gluu.org yuriy@gluu.org",
-        "jwks_uri":"https://seed.gluu.org/jwks"   
+        "jwks_uri":"https://seed.gluu.org/jwks"
     }
 }
 ```
@@ -187,7 +187,7 @@ consists of these fields:
     "command":"client_read",
     "params": {
         "registration_client_uri":"`<registration client uri>`",
-        "registration_access_token":"`<registration access token>`"        
+        "registration_access_token":"`<registration access token>`"
     }
 }
 ```
@@ -311,7 +311,8 @@ A sample request-response pair looks like that:
 
 ### Obtain AAT
 
-**Pattern**
+Using this command you obtain an OAuth Authorization API token (AAT). A
+full request-response-pair consists of these fields:
 
 * Request:
 
