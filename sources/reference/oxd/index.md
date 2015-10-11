@@ -52,20 +52,19 @@ indicates a command of 154 characters.
 
 ## Command Response Status
 
-Possible statuses are: ok, error.
-If error returned then "data" part contains error description.
+As a valid response status both `ok` and `error` a predefined. In case
+the value `error` is returned, the `data` part of the message contains
+the error description. An example error response looks like that:
 
-**Example of error response**
-
-	
-	{
-	    "status":"error",
-	    "data":{
-	        "error":"`<error code, e.g. authorization_server_not_found,>`"
-	        "error_description":`<error description as human-readable text>`
-	    }
+```
+{
+	"status":"error",
+	"data":{
+		"error":"`<error code, e.g. authorization_server_not_found,>`"
+		"error_description":`<error description as human-readable text>`
 	}
-
+}
+```
 
 ## Command Types
 
