@@ -35,11 +35,20 @@ Response:
 }
 ```
 
-oxD must provide:
- 1.  simultaneous requests handling for multiple plugins (one oxD for multiple apache plugins);
- 2.  one apache plugin can send multiple commands sequentially without input steam closing (resource reusing - better performance)
+oxD has to handle these issues:
 
-Streams are considered as characters streams (according to [Reader](http://docs.oracle.com/javase/6/docs/api/java/io/Reader.html)). To distinguish different commands sent from the same plugin (within the same session) length prefix is used. First 4 characters are always length of command that follows directly after it. (Example: 0154 - command consists of 154 characters). 
+1.  simultaneous requests handling for multiple plugins (one oxD for
+multiple Apache plugins)
+2.  one Apache plugin can send multiple commands sequentially without
+closing the input stream. The idea behind that is reusing of ressources
+to improve the performance of the network connection.
+
+According to the [JDK documentation][jdk6-documentation] data streams
+are considered as character streams. The `length` prefix is used to
+distinguish between the different commands sent from the same plugin
+within the same session. The first four characters represent the length
+of the command that follows directly after it. As an example, `0154`
+indicates a command of 154 characters.
 
 ## Command Response Status
 
@@ -841,6 +850,8 @@ Client registered by oxd has fallback values for following parameters if they ar
 	
 	}
 
+
+[jdk6-documentation]: http://docs.oracle.com/javase/6/docs/api/java/io/Reader.html "Java (JDK) Class Documentation"
 
 [json]: https://en.wikipedia.org/wiki/JSON "JSON, Wikipedia"
 
