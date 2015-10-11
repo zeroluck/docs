@@ -346,7 +346,7 @@ full request-response-pair consists of these fields:
 }
 ```
 
-**Sample**
+A sample request-response pair looks like that:
 
 * Sample request:
 
@@ -382,7 +382,10 @@ full request-response-pair consists of these fields:
 
 ### Obtain RPT
 
-**Pattern**
+Use this command to ask for a Requesting Party Token (RPT) with
+sufficient authorization data for access. As parameters, the command
+`obtain_rpt` needs an OAuth Authorization API token (AAT), and the
+hostname of the authorization server (AS).
 
 * Request:
 
@@ -407,7 +410,7 @@ full request-response-pair consists of these fields:
 }
 ```
 
-**Sample**
+A sample request-response pair looks like that:
 
 * Sample request:
 
