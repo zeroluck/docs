@@ -270,10 +270,12 @@ Response:
     }
 }
 ```
+
 A sample request-response pair looks like that:
 
-```
 Sample Request:
+
+```
 {
     "command":"obtain_pat",
     "params": {
@@ -281,13 +283,16 @@ Sample Request:
         "uma_discovery_url":"http://seed.gluu.org/.well-known/uma-configuration",
         "redirect_url":"https://rs.gluu.org/resources",
         "client_id":"@!1111!0008!0068.3E20",
-        "client_secret":"32c2fb17-409d-48a2-b793-a639c8ac6cb2",    
+        "client_secret":"32c2fb17-409d-48a2-b793-a639c8ac6cb2",
         "user_id":"yuriy",
-        "user_secret":"secret";    
+        "user_secret":"secret";
     }
 }
+```
 
 Sample Response:
+
+```
 {
     "status":"ok",
     "data": {
