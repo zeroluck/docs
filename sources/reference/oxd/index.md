@@ -779,39 +779,40 @@ A sample request-response pair looks like that:
 }
 ```
 
-
 ### Register permission ticket
 
 **Pattern**
 
+* Request:
+
 ```
-	
-	Request:
-	{
-	    "command":"register_ticket",
-	    "params": {
-	        "uma_discovery_url":"`<uma discovery url>`",
-	        "pat": "`<pat>`",
-	        "am_host": "`<Authorization Server host e.g. seed.gluu.org>`"
-	        "rs_host": "`<Resource Server host>`",
-	        "resource_set_id":"`<resource set id>`",
-	        "scopes": [
-	            `<scopes uris required by this permission>`
-	        ],
-	        "request_http_method":"`<http method>`",
-	        "request_url":"`<request url>`"
-	    }   
-	}
-	
-	Response:
-	{
-	    "status":"`<status>`",
-	    "data":{
-	        "ticket": "`<ticket>`",
-	    }
-	}
+{
+    "command":"register_ticket",
+    "params": {
+        "uma_discovery_url":"`<uma discovery url>`",
+        "pat": "`<pat>`",
+        "am_host": "`<Authorization Server host e.g. seed.gluu.org>`"
+        "rs_host": "`<Resource Server host>`",
+        "resource_set_id":"`<resource set id>`",
+        "scopes": [
+            `<scopes uris required by this permission>`
+        ],
+        "request_http_method":"`<http method>`",
+        "request_url":"`<request url>`"
+    }
+}
 ```
 
+* Response:
+
+```
+{
+    "status":"`<status>`",
+    "data":{
+        "ticket": "`<ticket>`",
+    }
+}
+```
 
 **Sample**
 
