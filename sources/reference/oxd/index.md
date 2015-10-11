@@ -501,8 +501,7 @@ A sample request-response pair looks like that:
 
 **Pattern**
 
-
-Request:
+* Request:
 
 ```
 {
@@ -514,11 +513,11 @@ Request:
         "scopes": [
             `<array of scopes for this resource>`
         ]
-    }   
+    }
 }
 ```
 
-Response:
+* Response:
 
 ```
 {
@@ -530,11 +529,11 @@ Response:
 }
 ```
 
-
 **Sample**
 
+* Sample request:
+
 ```
-Sample Request:
 {
     "command":"register_resource",
     "params": {
@@ -545,11 +544,11 @@ Sample Request:
             "http://photoz.example.com/dev/scopes/view",
             "http://photoz.example.com/dev/scopes/all"
         ]
-    }   
+    }
 }
 ```
 
-Sample Response:
+* Sample response:
 
 ```
 {
