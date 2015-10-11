@@ -734,7 +734,7 @@ A sample request-response pair looks like that:
         "discovery_url":"`<discovery url>`",
         "id_token": "`<id_token>`"
         "access_token": "`<access_token>`"
-    }   
+    }
 }
 ```
 
@@ -751,31 +751,32 @@ A sample request-response pair looks like that:
 }
 ```
 
-
 **Sample**
 
+* Sample request:
+
 ```
-	
-	Sample request:
-	{
-	    "command":"access_token_status",
-	    "params": {     
-	        "discovery_url":"https://seed.gluu.org/.well-known/openid-configuration",   
-	        "id_token":"NiIsImprdSI6Imh0dHBzOi8vc2VlZC5nbHV1Lm9yZy9veGF1dGgvc2VhbS9yZXNvdXJjZS9yZ"
-	        "access_token": "KV1MiLCJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vc2VlZC5nbHV1Lm9yZy9veGF1dGgvc2VhbS9yZXNvdXJjZS9yZXN0djEvb3hhd"
-	    }   
-	}
-	
-	Sample response:
-	
-	{
-	    "status":"ok",
-	    "data":{
-	        "active": true,
-	        "expires_at": 1256928856,
-	        "issued_at": 1256923456
-	    }
-	}
+{
+    "command":"access_token_status",
+    "params": {
+        "discovery_url":"https://seed.gluu.org/.well-known/openid-configuration",   
+        "id_token":"NiIsImprdSI6Imh0dHBzOi8vc2VlZC5nbHV1Lm9yZy9veGF1dGgvc2VhbS9yZXNvdXJjZS9yZ"
+        "access_token": "KV1MiLCJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vc2VlZC5nbHV1Lm9yZy9veGF1dGgvc2VhbS9yZXNvdXJjZS9yZXN0djEvb3hhd"
+    }
+}
+```
+
+* Sample response:
+
+```
+{
+    "status":"ok",
+    "data":{
+        "active": true,
+        "expires_at": 1256928856,
+        "issued_at": 1256923456
+    }
+}
 ```
 
 
