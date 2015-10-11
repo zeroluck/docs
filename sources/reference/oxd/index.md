@@ -816,36 +816,37 @@ A sample request-response pair looks like that:
 
 **Sample**
 
+* Sample request:
+
 ```
-	
-	Sample request:
-	{
-	    "command":"register_ticket",
-	    "params": {
-	        "uma_discovery_url":"https://seed.gluu.org/.well-known/uma-configuration",
-	        "pat": "eyJ0eXAiOiJKV1MiLCJhbGciOiJSUzI1NiIsImprdSI6Imh0",
-	        "am_host": "seed.gluu.org"
-	        "rs_host": "rs.gluu.org",
-	        "resource_set_id":"1366810445313",
-	        "scopes": [
-	            "http://photoz.example.com/dev/scopes/view",
-	            "http://photoz.example.com/dev/scopes/add"
-	        ],
-	        "request_http_method":"DELETE",
-	        "request_url":"http://example.com/object/1234"
-	        
-	    }   
-	}
-	
-	Sample response:
-	{
-	    "status":"ok",
-	    "data":{
-	        "ticket": "mcvmstkrkrdfskdjdasldf",
-	    }
-	}
-	
-	
+{
+    "command":"register_ticket",
+    "params": {
+        "uma_discovery_url":"https://seed.gluu.org/.well-known/uma-configuration",
+        "pat": "eyJ0eXAiOiJKV1MiLCJhbGciOiJSUzI1NiIsImprdSI6Imh0",
+        "am_host": "seed.gluu.org"
+        "rs_host": "rs.gluu.org",
+        "resource_set_id":"1366810445313",
+        "scopes": [
+            "http://photoz.example.com/dev/scopes/view",
+            "http://photoz.example.com/dev/scopes/add"
+        ],
+        "request_http_method":"DELETE",
+        "request_url":"http://example.com/object/1234"
+
+    }
+}
+```
+
+* Sample response:
+
+```
+{
+    "status":"ok",
+    "data":{
+        "ticket": "mcvmstkrkrdfskdjdasldf",
+    }
+}
 ```
 
 
