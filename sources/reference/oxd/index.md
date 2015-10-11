@@ -14,7 +14,6 @@ for return values:
 Request:
 
 ```
-Request:
 {
     "command":"`<command type>`",
     "params": {
@@ -26,7 +25,6 @@ Request:
 Response:
 
 ```
-Response:
 {
     "status":"`<status of command: ok or error>`",
     "data":{
@@ -95,8 +93,9 @@ Please see below for further command details.
 This command registers a client by oxD. A full request-response-pair
 consists of these fields:
 
-```
 Request:
+
+```
 {
     "command":"register_client",
     "params": {
@@ -111,8 +110,11 @@ Request:
         "jwks_uri":"`<jwks uri>`"
     }
 }
+```
 
 Response:
+
+```
 {
     "status":"`<command status>`",
     "data":{
@@ -135,8 +137,9 @@ they are not provided properly in the request:
 
 A sample request-response pair looks like that:
 
-```
 Sample request:
+
+```
 {
     "command":"register_client",
     "params": {
@@ -150,8 +153,11 @@ Sample request:
         "jwks_uri":"https://seed.gluu.org/jwks"   
     }
 }
+```
 
 Sample response:
+
+```
 {
     "status":"ok",
     "data":{
@@ -170,8 +176,9 @@ Sample response:
 This command reads the client information. A full request-response-pair
 consists of these fields:
 
-```
 Request:
+
+```
 {
     "command":"client_read",
     "params": {
@@ -179,8 +186,11 @@ Request:
         "registration_access_token":"`<registration access token>`"        
     }
 }
+```
 
 Response:
+
+```
 {
     "status":"`<command status>`",
     "data":{
@@ -196,8 +206,9 @@ Response:
 
 A sample request-response pair looks like that:
 
-```
 Sample request:
+
+```
 {
     "command":"client_read",
     "params": {
@@ -205,8 +216,11 @@ Sample request:
         "registration_access_token":"this.is.an.access.token.value.ffx83"    
     }
 }
+```
 
 Sample response:
+
+```
 {
     "status":"ok",
     "data":{
@@ -223,10 +237,11 @@ Sample response:
 ### Obtain PAT
 
 This command obtains the OAuth PAT. A full request-response-pair
-consists of these fields_
+consists of these fields:
+
+Request:
 
 ```
-Request:
 {
     "command":"obtain_pat",
     "params": {
@@ -234,13 +249,16 @@ Request:
         "uma_discovery_url":"`<uma discovery url>`",
         "redirect_url":"`<redirect url>`",
         "client_id":"`<client id e.g. @!1111!0008!0001>`",
-        "client_secret":"`<client secret>`",    
+        "client_secret":"`<client secret>`",
         "user_id":"`<user id>`",
-        "user_secret":"`<user secret>`";    
+        "user_secret":"`<user secret>`";
     }
 }
+```
 
 Response:
+
+```
 {
     "status":"ok",
     "data": {
@@ -286,6 +304,7 @@ Sample Response:
 
 **Pattern**
 
+```
 	
 	Request:
 	{
@@ -312,10 +331,12 @@ Sample Response:
 	        "scope":"`<scope>`"
 	    }
 	}
+```
 
 
 **Sample**
 
+```
 	
 	Sample Request:
 	{
@@ -342,12 +363,14 @@ Sample Response:
 	        "scope":"http://docs.kantarainitiative.org/uma/scopes/prot.json"
 	    }
 	}
+```
 
 
 ### Obtain RPT
 
 **Pattern**
 
+```
 	
 	Request:
 	{
@@ -365,10 +388,12 @@ Sample Response:
 	        "rpt_token":"`<rpt token>`"
 	    }
 	}
+```
 
 
 **Sample**
 
+```
 	
 	Sample Request:
 	{
@@ -386,12 +411,14 @@ Sample Response:
 	        "rpt_token":"32c2fb17-409d-48a2-b793-a639c8ac6cb2"
 	    }
 	}
+```
 
 
 ### Authorize RPT
 
 **Pattern**
 
+```
 	
 	Request:
 	{
@@ -419,10 +446,12 @@ Sample Response:
 	        "error_description":`<not allowed to authorize rpt>`
 	    }
 	}
+```
 
 
 **Sample**
 
+```
 	
 	Sample Request:
 	{
@@ -441,6 +470,7 @@ Sample Response:
 	    "status":"ok",
 	    "data":null
 	}
+```
 
 
 ### Register resource
@@ -469,10 +499,12 @@ Sample Response:
 	        "_rev": "<ETag of created resource set"
 	    }
 	}
+```
 
 
 **Sample**
 
+```
 	
 	Sample Request:
 	{
@@ -497,12 +529,14 @@ Sample Response:
 	        "_rev": "1"
 	    }
 	}
+```
 
 
 ### Check status of RPT
 
 **Pattern**
 
+```
 	
 	Request:
 	{
@@ -526,10 +560,12 @@ Sample Response:
 	        ]
 	    }
 	}
+```
 
 
 **Sample**
 
+```
 	
 	Sample request:
 	{
@@ -561,12 +597,14 @@ Sample Response:
 	        ]
 	    }
 	}
+```
 
 
 ### Check status of ID Token
 
 **Pattern**
 
+```
 	
 	Request:
 	{
@@ -589,10 +627,12 @@ Sample Response:
 	        }
 	    }
 	}
+```
 
 
 **Sample**
 
+```
 	
 	Sample request:
 	{
@@ -642,6 +682,7 @@ Sample Response:
 	        }
 	    }
 	}
+```
 
 
 ### Check status of Access Token
@@ -649,6 +690,7 @@ Sample Response:
 
 **Pattern**
 
+```
 	
 	Request:
 	{
@@ -669,10 +711,12 @@ Sample Response:
 	        "issued_at": `<access token issued at (date)>`
 	    }
 	}
+```
 
 
 **Sample**
 
+```
 	
 	Sample request:
 	{
@@ -694,12 +738,14 @@ Sample Response:
 	        "issued_at": 1256923456
 	    }
 	}
+```
 
 
 ### Register permission ticket
 
 **Pattern**
 
+```
 	
 	Request:
 	{
@@ -725,10 +771,12 @@ Sample Response:
 	        "ticket": "`<ticket>`",
 	    }
 	}
+```
 
 
 **Sample**
 
+```
 	
 	Sample request:
 	{
@@ -758,12 +806,14 @@ Sample Response:
 	}
 	
 	
+```
 
 
 ### Discovery
 
 **Pattern**
 
+```
 	
 	Request:
 	{
@@ -780,10 +830,12 @@ Sample Response:
 	        `<discovery data>`
 	    }
 	}
+```
 
 
 **Sample**
 
+```
 	
 	Request:
 	{
@@ -850,6 +902,7 @@ Sample Response:
 	    }
 	
 	}
+```
 
 
 [jdk6-documentation]: http://docs.oracle.com/javase/6/docs/api/java/io/Reader.html "Java (JDK) Class Documentation"
