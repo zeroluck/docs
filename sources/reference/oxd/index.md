@@ -473,9 +473,9 @@ A sample request-response pair looks like that:
 
 **Sample**
 
-```
+* Sample request:
 
-Sample Request:
+```
 {
     "command":"authorize_rpt",
     "params": {
@@ -486,14 +486,16 @@ Sample Request:
         "claims":{"uid":["user1"],"email":["user1@gluu.org","user1@gmail.com"]}
     }
 }
+```
 
-Sample Response:
+* Sample response:
+
+```
 {
     "status":"ok",
     "data":null
 }
 ```
-
 
 ### Register resource
 
