@@ -78,6 +78,8 @@ Currently, the following command types exist:
 
 5. __Obtain RPT__: `obtain_rpt`
 
+5. __Authorize RPT__: `authorize_rpt`
+
 6. __Register resource__: `register_resource`
 
 7. __Check status of RPT__: `rpt_status`
@@ -419,7 +421,7 @@ A sample request-response pair looks like that:
     "command":"obtain_rpt",
     "params": {
         "aat_token":"eyJ0eXAiOiJKV1MiLCJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vc2VlZC5nbHV1L",
-        "am_host":"seed.gluu.org"  
+        "am_host":"seed.gluu.org"
     }
 }
 ```
@@ -437,7 +439,8 @@ A sample request-response pair looks like that:
 
 ### Authorize RPT
 
-**Pattern**
+Use this command to aauthorize a Requesting Party Token (RPT). A
+full request-response-pair consists of these fields:
 
 * Request:
 
