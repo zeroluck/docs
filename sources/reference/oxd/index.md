@@ -877,75 +877,77 @@ A sample request-response pair looks like that:
 
 **Sample**
 
+* Request:
+
 ```
-	
-	Request:
-	{
-	    "command":"discovery",
-	    "params": {
-	        "discovery_url":"https://seed.gluu.org/.well-known/openid-configuration"
-	    }
-	}
-	
-	Response:
-	{
-	    "data": {
-	        "issuer": "https://seed.gluu.org",
-	        "authorization_endpoint": "https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/authorize",
-	        "token_endpoint": "https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/token",
-	        "userinfo_endpoint": "https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/userinfo",
-	        "clientinfo_endpoint": "https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/clientinfo",
-	        "check_session_iframe": "https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/check_session",
-	        "end_session_endpoint": "https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/end_session",
-	        "jwks_uri": "https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/jwks",
-	        "registration_endpoint": "https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/register",
-	        "validate_token_endpoint": "https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/validate",
-	        "federation_metadata_endpoint": "https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/federationmetadata",
-	        "federation_endpoint": "https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/federation",
-	        "id_generation_endpoint": "https://seed.gluu.org/oxauth/seam/resource/restv1/id",
-	        "scopes_supported": [
-	            "openid",
-	            "address",
-	            "clientinfo",
-	            "http://docs.kantarainitiative.org/uma/scopes/prot.json",
-	            "profile",
-	            "phone",
-	            "http://docs.kantarainitiative.org/uma/scopes/authz.json",
-	            "email"
-	        ],
-	        "response_types_supported": [
-	            "code",
-	            "code id_token",
-	            "token",
-	            "token id_token",
-	            "code token",
-	            "code token id_token",
-	            "id_token"
-	        ],
-	        "grant_types_supported": [
-	            "authorization_code",
-	            "implicit",
-	            "urn:ietf:params:oauth:grant-type:jwt-bearer"
-	        ],
-	        "subject_types_supported": [
-	            "public",
-	            "pairwise"
-	        ],
-	        ....`<SAVE SPACE: remove part of discovery response, see docs to take a look to full response>`................
-	        "service_documentation": "http://ox.gluu.org/doku.php?id=oxauth:home",
-	        "claims_locales_supported": ["en-US"],
-	            "ui_locales_supported": ["en-US"],
-	        "claims_parameter_supported": true,
-	        "request_parameter_supported": true,
-	        "request_uri_parameter_supported": true,
-	        "require_request_uri_registration": false,
-	        "op_policy_uri": "http://ox.gluu.org/doku.php?id=oxauth:policy",
-	        "op_tos_uri": "http://ox.gluu.org/doku.php?id=oxauth:tos"
-	    }
-	
-	}
+{
+    "command":"discovery",
+    "params": {
+        "discovery_url":"https://seed.gluu.org/.well-known/openid-configuration"
+    }
+}
 ```
 
+* Response:
+
+```
+{
+    "data": {
+        "issuer": "https://seed.gluu.org",
+        "authorization_endpoint": "https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/authorize",
+        "token_endpoint": "https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/token",
+        "userinfo_endpoint": "https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/userinfo",
+        "clientinfo_endpoint": "https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/clientinfo",
+        "check_session_iframe": "https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/check_session",
+        "end_session_endpoint": "https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/end_session",
+        "jwks_uri": "https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/jwks",
+        "registration_endpoint": "https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/register",
+        "validate_token_endpoint": "https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/validate",
+        "federation_metadata_endpoint": "https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/federationmetadata",
+        "federation_endpoint": "https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/federation",
+        "id_generation_endpoint": "https://seed.gluu.org/oxauth/seam/resource/restv1/id",
+        "scopes_supported": [
+            "openid",
+            "address",
+            "clientinfo",
+            "http://docs.kantarainitiative.org/uma/scopes/prot.json",
+            "profile",
+            "phone",
+            "http://docs.kantarainitiative.org/uma/scopes/authz.json",
+            "email"
+        ],
+        "response_types_supported": [
+            "code",
+            "code id_token",
+            "token",
+            "token id_token",
+            "code token",
+            "code token id_token",
+            "id_token"
+        ],
+        "grant_types_supported": [
+            "authorization_code",
+            "implicit",
+            "urn:ietf:params:oauth:grant-type:jwt-bearer"
+        ],
+        "subject_types_supported": [
+            "public",
+            "pairwise"
+        ],
+        ....`<SAVE SPACE: remove part of discovery response, see docs to take a look to full response>`................
+        "service_documentation": "http://ox.gluu.org/doku.php?id=oxauth:home",
+        "claims_locales_supported": ["en-US"],
+            "ui_locales_supported": ["en-US"],
+        "claims_parameter_supported": true,
+        "request_parameter_supported": true,
+        "request_uri_parameter_supported": true,
+        "require_request_uri_registration": false,
+        "op_policy_uri": "http://ox.gluu.org/doku.php?id=oxauth:policy",
+        "op_tos_uri": "http://ox.gluu.org/doku.php?id=oxauth:tos"
+    }
+
+}
+```
 
 [jdk6-documentation]: http://docs.oracle.com/javase/6/docs/api/java/io/Reader.html "Java (JDK) Class Documentation"
 
