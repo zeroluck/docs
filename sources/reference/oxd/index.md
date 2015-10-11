@@ -52,7 +52,7 @@ indicates a command of 154 characters.
 
 ## Command Response Status
 
-As a valid response status both `ok` and `error` a predefined. In case
+As a valid response status both `ok` and `error` are predefined. In case
 the value `error` is returned, the `data` part of the message contains
 the error description. An example error response looks like that:
 
@@ -68,26 +68,27 @@ the error description. An example error response looks like that:
 
 ## Command Types
 
-Command types:
-1.  Register client - register_client
- 
-2.  Client read - client_read
+Currently, the following command types exist:
 
-3.  Obtain PAT - obtain_pat
+1. __Register client__: `register_client`
 
-4.  Register resource - register_resource
+2. __Client read__: `client_read`
 
-5.  Check status of RPT - rpt_status
+3. __Obtain PAT__: `obtain_pat`
 
-6.  Check status of ID Token - id_token_status
+4. __Register resource__: `register_resource`
 
-7.  Check status of Access Token - access_token_status
+5. __Check status of RPT__: `rpt_status`
 
-8.  Register permission ticket - register_ticket
+6. __Check status of ID Token__: `id_token_status`
 
-9.  Discovery - discovery
+7. __Check status of Access Token__: `access_token_status`
 
-Please see below for Command details.
+8. __Register permission ticket__: `register_ticket`
+
+9. __Discovery__: `discovery`
+
+Please see below for further command details.
 
 ### Register client
 
