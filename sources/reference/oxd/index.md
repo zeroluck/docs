@@ -167,58 +167,57 @@ Sample response:
 
 ### Client read
 
-**Pattern**
+This command reads the client information. A full request-response-pair
+consists of these fields:
 
-	
-	Request:
-	{
-	    "command":"client_read",
-	    "params": {
-	        "registration_client_uri":"`<registration client uri>`",
-	        "registration_access_token":"`<registration access token>`"        
-	    }
-	}
-	
-	Response:
-	{
-	    "status":"`<command status>`",
-	    "data":{
-	        "client_id":"`<client id>`",
-	        "client_secret":"`<client secret>`",
-	        "registration_access_token":"`<registration access token>`",
-	        "client_secret_expires_at": "`<client secret expiration time>`",
-	        "registration_client_uri":"`<registration client uri>`",
-	        "client_id_issued_at":"`<client id issued at>`"        
-	    }
-	}
+```
+Request:
+{
+    "command":"client_read",
+    "params": {
+        "registration_client_uri":"`<registration client uri>`",
+        "registration_access_token":"`<registration access token>`"        
+    }
+}
 
+Response:
+{
+    "status":"`<command status>`",
+    "data":{
+        "client_id":"`<client id>`",
+        "client_secret":"`<client secret>`",
+        "registration_access_token":"`<registration access token>`",
+        "client_secret_expires_at": "`<client secret expiration time>`",
+        "registration_client_uri":"`<registration client uri>`",
+        "client_id_issued_at":"`<client id issued at>`"        
+    }
+}
 
-**Sample**
+A sample request-response pair looks like that:
 
-	
-	Sample request:
-	{
-	    "command":"client_read",
-	    "params": {
-	        "registration_client_uri":"https://seed.gluu.org/oxauth/rest1/register?client_id=23523534",
-	        "registration_access_token":"this.is.an.access.token.value.ffx83"    
-	    }
-	}
-	
-	Sample response:
-	
-	{
-	    "status":"ok",
-	    "data":{
-	        "client_id":"@!1111!0008!0001",
-	        "client_secret":"ZJYCqe3GGRvdrudKyZS0XhGv_Z45DuKhCUk0gBR1vZk",
-	        "registration_access_token":"this.is.an.access.token.value.ffx83",
-	        "client_secret_expires_at": 1577858400,
-	        "registration_client_uri":"https://seed.gluu.org/oxauth/rest1/register?client_id=23523534",
-	        "client_id_issued_at": 1577858300      
-	    }
-	}
+```
+Sample request:
+{
+    "command":"client_read",
+    "params": {
+        "registration_client_uri":"https://seed.gluu.org/oxauth/rest1/register?client_id=23523534",
+        "registration_access_token":"this.is.an.access.token.value.ffx83"    
+    }
+}
 
+Sample response:
+{
+    "status":"ok",
+    "data":{
+        "client_id":"@!1111!0008!0001",
+        "client_secret":"ZJYCqe3GGRvdrudKyZS0XhGv_Z45DuKhCUk0gBR1vZk",
+        "registration_access_token":"this.is.an.access.token.value.ffx83",
+        "client_secret_expires_at": 1577858400,
+        "registration_client_uri":"https://seed.gluu.org/oxauth/rest1/register?client_id=23523534",
+        "client_id_issued_at": 1577858300      
+    }
+}
+```
 
 ### Obtain PAT
 
