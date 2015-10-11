@@ -383,7 +383,7 @@ A sample request-response pair looks like that:
 
 **Pattern**
 
-Request:
+* Request:
 
 ```
 {
@@ -395,7 +395,7 @@ Request:
 }
 ```
 
-Response:
+* Response:
 
 ```
 {
@@ -405,11 +405,12 @@ Response:
     }
 }
 ```
+
 **Sample**
 
-```
+* Sample request:
 
-Sample Request:
+```
 {
     "command":"obtain_rpt",
     "params": {
@@ -417,8 +418,11 @@ Sample Request:
         "am_host":"seed.gluu.org"  
     }
 }
+```
 
-Sample Response:
+* Sample response:
+
+```
 {
     "status":"ok",
     "data": {
@@ -426,7 +430,6 @@ Sample Response:
     }
 }
 ```
-
 
 ### Authorize RPT
 
