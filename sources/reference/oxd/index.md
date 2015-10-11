@@ -192,6 +192,7 @@ Response:
         "client_id_issued_at":"`<client id issued at>`"        
     }
 }
+```
 
 A sample request-response pair looks like that:
 
