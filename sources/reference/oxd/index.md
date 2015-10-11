@@ -221,65 +221,65 @@ Sample response:
 
 ### Obtain PAT
 
-**Pattern**
+This command obtains the OAuth PAT. A full request-response-pair
+consists of these fields_
 
-	
-	Request:
-	{
-	    "command":"obtain_pat",
-	    "params": {
-	        "discovery_url":"`<discovery url>`",
-	        "uma_discovery_url":"`<uma discovery url>`",
-	        "redirect_url":"`<redirect url>`",
-	        "client_id":"`<client id e.g. @!1111!0008!0001>`",
-	        "client_secret":"`<client secret>`",    
-	        "user_id":"`<user id>`",
-	        "user_secret":"`<user secret>`";    
-	    }
-	}
-	
-	Response:
-	{
-	    "status":"ok",
-	    "data": {
-	        "pat_token":"`<pat token>`",
-	        "expires_in_seconds":"`<expires in seconds>`",
-	        "pat_refresh_token":"`<pat refresh token>`",
-	        "authorization_code:"`<authorization code>`",
-	        "scope":"`<scope>`"
-	    }
-	}
+```
+Request:
+{
+    "command":"obtain_pat",
+    "params": {
+        "discovery_url":"`<discovery url>`",
+        "uma_discovery_url":"`<uma discovery url>`",
+        "redirect_url":"`<redirect url>`",
+        "client_id":"`<client id e.g. @!1111!0008!0001>`",
+        "client_secret":"`<client secret>`",    
+        "user_id":"`<user id>`",
+        "user_secret":"`<user secret>`";    
+    }
+}
 
+Response:
+{
+    "status":"ok",
+    "data": {
+        "pat_token":"`<pat token>`",
+        "expires_in_seconds":"`<expires in seconds>`",
+        "pat_refresh_token":"`<pat refresh token>`",
+        "authorization_code:"`<authorization code>`",
+        "scope":"`<scope>`"
+    }
+}
+```
+A sample request-response pair looks like that:
 
-**Sample**
+```
+Sample Request:
+{
+    "command":"obtain_pat",
+    "params": {
+        "discovery_url":"https://seed.gluu.org/.well-known/openid-configuration",
+        "uma_discovery_url":"http://seed.gluu.org/.well-known/uma-configuration",
+        "redirect_url":"https://rs.gluu.org/resources",
+        "client_id":"@!1111!0008!0068.3E20",
+        "client_secret":"32c2fb17-409d-48a2-b793-a639c8ac6cb2",    
+        "user_id":"yuriy",
+        "user_secret":"secret";    
+    }
+}
 
-	
-	Sample Request:
-	{
-	    "command":"obtain_pat",
-	    "params": {
-	        "discovery_url":"https://seed.gluu.org/.well-known/openid-configuration",
-	        "uma_discovery_url":"http://seed.gluu.org/.well-known/uma-configuration",
-	        "redirect_url":"https://rs.gluu.org/resources",
-	        "client_id":"@!1111!0008!0068.3E20",
-	        "client_secret":"32c2fb17-409d-48a2-b793-a639c8ac6cb2",    
-	        "user_id":"yuriy",
-	        "user_secret":"secret";    
-	    }
-	}
-	
-	Sample Response:
-	{
-	    "status":"ok",
-	    "data": {
-	        "pat_token":"eyJ0eXAiOiJKV1MiLCJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vc2VlZC5nbHV1L",
-	        "expires_in_seconds":3599,
-	        "pat_refresh_token":"UzI1NiIsImprdSI6Imh0dHBzOi8vc2VlZC5nbHV",
-	        "authorization_code:"1e436c1a-6e96-4d98-81d6-8f4019ab4636",
-	        "scope":"http://docs.kantarainitiative.org/uma/scopes/prot.json"
-	    }
-	}
-
+Sample Response:
+{
+    "status":"ok",
+    "data": {
+        "pat_token":"eyJ0eXAiOiJKV1MiLCJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vc2VlZC5nbHV1L",
+        "expires_in_seconds":3599,
+        "pat_refresh_token":"UzI1NiIsImprdSI6Imh0dHBzOi8vc2VlZC5nbHV",
+        "authorization_code:"1e436c1a-6e96-4d98-81d6-8f4019ab4636",
+        "scope":"http://docs.kantarainitiative.org/uma/scopes/prot.json"
+    }
+}
+```
 
 ### Obtain AAT
 
