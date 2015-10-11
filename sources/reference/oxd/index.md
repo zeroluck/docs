@@ -604,7 +604,7 @@ This command checks the status of a Requesting Party Token (RPT).
 }
 ```
 
-**Sample**
+A sample request-response pair looks like that:
 
 * Sample request:
 
