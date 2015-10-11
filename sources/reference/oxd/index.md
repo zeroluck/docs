@@ -566,69 +566,72 @@ A sample request-response pair looks like that:
 
 **Pattern**
 
+* Request:
+
 ```
-	
-	Request:
-	{
-	    "command":"rpt_status",
-	    "params": {
-	        "uma_discovery_url":"`<uma discovery url>`"
-	        "pat": "`<pat>`",
-	        "rpt": "`<rpt>`"
-	    }   
-	}
-	
-	Response:
-	{
-	    "status":"ok",
-	    "data":{
-	        "active": "`<whether rpt is active (true|false)>`",
-	        "expires_at": `<rpt expires at (date)>`,
-	        "issued_at": `<rpt issued at (date)>`,
-	        "permissions":[
-	            `<permissions of rpt>`
-	        ]
-	    }
-	}
+{
+    "command":"rpt_status",
+    "params": {
+        "uma_discovery_url":"`<uma discovery url>`"
+        "pat": "`<pat>`",
+        "rpt": "`<rpt>`"
+    }
+}
 ```
 
+* Response:
+
+```
+{
+    "status":"ok",
+    "data":{
+        "active": "`<whether rpt is active (true|false)>`",
+        "expires_at": `<rpt expires at (date)>`,
+        "issued_at": `<rpt issued at (date)>`,
+        "permissions":[
+            `<permissions of rpt>`
+        ]
+    }
+}
+```
 
 **Sample**
 
+* Sample request:
+
 ```
-	
-	Sample request:
-	{
-	    "command":"rpt_status",
-	    "params": {
-	        "uma_discovery_url":"https://seed.gluu.org/.well-known/uma-configuration",
-	        "pat": "eyJ0eXAiOiJKV1MiLCJhbGciOiJSUzI1NiIsImprdSI6Imh0",
-	        "rpt": "KV1MiLCJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vc2VlZC5nbHV1Lm9yZy9veGF1dGgvc2VhbS9yZXNvdXJjZS9yZXN0djEvb3hhd"
-	    }   
-	}
-	
-	Sample response:
-	
-	{
-	    "status":"ok",
-	    "data":{
-	        "active": true,
-	        "expires_at": 1256928856,
-	        "issued_at": 1256923456,
-	        "permissions":[
-	            {
-	                 "resource_set_id": "112210f47de98100",
-	                 "scopes": [
-	                     "http://photoz.example.com/dev/actions/view",
-	                     "http://photoz.example.com/dev/actions/all"
-	                 ],
-	                 "expires_at" : "1256923456"
-	            }
-	        ]
-	    }
-	}
+{
+    "command":"rpt_status",
+    "params": {
+        "uma_discovery_url":"https://seed.gluu.org/.well-known/uma-configuration",
+        "pat": "eyJ0eXAiOiJKV1MiLCJhbGciOiJSUzI1NiIsImprdSI6Imh0",
+        "rpt": "KV1MiLCJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vc2VlZC5nbHV1Lm9yZy9veGF1dGgvc2VhbS9yZXNvdXJjZS9yZXN0djEvb3hhd"
+    }
+}
 ```
 
+* Sample response:
+
+```
+{
+    "status":"ok",
+    "data":{
+        "active": true,
+        "expires_at": 1256928856,
+        "issued_at": 1256923456,
+        "permissions":[
+            {
+                 "resource_set_id": "112210f47de98100",
+                 "scopes": [
+                     "http://photoz.example.com/dev/actions/view",
+                     "http://photoz.example.com/dev/actions/all"
+                 ],
+                 "expires_at" : "1256923456"
+            }
+        ]
+    }
+}
+```
 
 ### Check status of ID Token
 
