@@ -74,19 +74,21 @@ Currently, the following command types exist:
 
 3. __Obtain PAT__: `obtain_pat`
 
-3. __Obtain AAT__: `obtain_aat`
+4. __Obtain AAT__: `obtain_aat`
 
-4. __Register resource__: `register_resource`
+5. __Obtain RPT__: `obtain_rpt`
 
-5. __Check status of RPT__: `rpt_status`
+6. __Register resource__: `register_resource`
 
-6. __Check status of ID Token__: `id_token_status`
+7. __Check status of RPT__: `rpt_status`
 
-7. __Check status of Access Token__: `access_token_status`
+8. __Check status of ID Token__: `id_token_status`
 
-8. __Register permission ticket__: `register_ticket`
+9. __Check status of Access Token__: `access_token_status`
 
-9. __Discovery__: `discovery`
+10. __Register permission ticket__: `register_ticket`
+
+11. __Discovery__: `discovery`
 
 Please see below for further command details.
 
@@ -382,27 +384,28 @@ Sample Response:
 
 **Pattern**
 
+Request:
+
 ```
-	
-	Request:
-	{
-	    "command":"obtain_rpt",
-	    "params": {
-	        "aat_token":"`<AAT token>`",
-	        "am_host":"`<AS host>`"
-	    }
-	}
-	
-	Response:
-	{
-	    "status":"ok",
-	    "data": {
-	        "rpt_token":"`<rpt token>`"
-	    }
-	}
+{
+    "command":"obtain_rpt",
+    "params": {
+        "aat_token":"`<AAT token>`",
+        "am_host":"`<AS host>`"
+    }
+}
 ```
 
+Response:
 
+```
+{
+    "status":"ok",
+    "data": {
+        "rpt_token":"`<rpt token>`"
+    }
+}
+```
 **Sample**
 
 ```
