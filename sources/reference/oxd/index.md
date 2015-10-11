@@ -667,58 +667,59 @@ A sample request-response pair looks like that:
 
 **Sample**
 
+* Sample request:
+
 ```
-	
-	Sample request:
-	{
-	    "command":"id_token_status",
-	    "params": {
-	        "discovery_url":"https://seed.gluu.org/.well-known/openid-configuration",
-	        "id_token": "eyJ0eXAiOiJKV1MiLCJhbGciOiJSUzI1NiIsImprdSI6Imh0"
-	    }   
-	}
-	
-	Sample response:
-	
-	{
-	    "status":"ok",
-	    "data":{
-	        "active": true,
-	        "expires_at": 1256928856,
-	        "issued_at": 1256923456,
-	        "claims": {
-	            "oxValidationURI": [
-	                "https://seed.gluu.org/oxauth/opiframe.seam"
-	             ],
-	            "exp": [
-	                "1383836968"
-	            ],
-	            "sub": [
-	                "mike"
-	            ],
-	            "at_hash": [
-	                "fMdvIEy7RjdFy4Q-mGXOWw"
-	            ],
-	            "aud": [
-	                "@!1111!0008!FF81!2D39"
-	            ],
-	            "iss": [
-	                "https://seed.gluu.org"
-	            ],
-	            "oxOpenIDConnectVersion": [
-	                "openidconnect-1.0"
-	            ],
-	            "iat": [
-	                "1383833368"
-	            ],
-	            "oxInum": [
-	                "@!1111!0000!D4E7"
-	            ]
-	        }
-	    }
-	}
+{
+    "command":"id_token_status",
+    "params": {
+        "discovery_url":"https://seed.gluu.org/.well-known/openid-configuration",
+        "id_token": "eyJ0eXAiOiJKV1MiLCJhbGciOiJSUzI1NiIsImprdSI6Imh0"
+    }
+}
 ```
 
+* Sample response:
+
+```
+{
+    "status":"ok",
+    "data":{
+        "active": true,
+        "expires_at": 1256928856,
+        "issued_at": 1256923456,
+        "claims": {
+            "oxValidationURI": [
+                "https://seed.gluu.org/oxauth/opiframe.seam"
+             ],
+            "exp": [
+                "1383836968"
+            ],
+            "sub": [
+                "mike"
+            ],
+            "at_hash": [
+                "fMdvIEy7RjdFy4Q-mGXOWw"
+            ],
+            "aud": [
+                "@!1111!0008!FF81!2D39"
+            ],
+            "iss": [
+                "https://seed.gluu.org"
+            ],
+            "oxOpenIDConnectVersion": [
+                "openidconnect-1.0"
+            ],
+            "iat": [
+                "1383833368"
+            ],
+            "oxInum": [
+                "@!1111!0000!D4E7"
+            ]
+        }
+    }
+}
+```
 
 ### Check status of Access Token
 
