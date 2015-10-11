@@ -11,7 +11,7 @@ according parameters (`params` field), whereas the response request
 comes with a `status` field, and an according `data` section reserved
 for return values:
 
-Request:
+* Request:
 
 ```
 {
@@ -22,7 +22,7 @@ Request:
 }
 ```
 
-Response:
+* Response:
 
 ```
 {
@@ -97,7 +97,7 @@ Please see below for further command details.
 This command registers a client by oxD. A full request-response-pair
 consists of these fields:
 
-Request:
+* Request:
 
 ```
 {
@@ -116,7 +116,7 @@ Request:
 }
 ```
 
-Response:
+* Response:
 
 ```
 {
@@ -135,13 +135,13 @@ Response:
 The following request parameters have pre-defined fallback values if
 they are not provided properly in the request:
 
-*  `application_type`: `web`
+* `application_type`: `web`
 
-*  `response_types`: `code, id_token, token`
+* `response_types`: `code, id_token, token`
 
 A sample request-response pair looks like that:
 
-Sample request:
+* Sample request:
 
 ```
 {
@@ -159,7 +159,7 @@ Sample request:
 }
 ```
 
-Sample response:
+* Sample response:
 
 ```
 {
