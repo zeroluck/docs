@@ -1,27 +1,39 @@
 [TOC]
+
 # oxD Communication Protocol
 
 **state:** in progress (not finished yet)
 
-Communication is made in JSON format as request-response model. Since there is no HTTP involved command types, statuses are built-in in format itself as:
+The communication is made in [JSON format][json] following a
+request-response model. Both the request and the response have a similar
+data structure. The command request consists of a `command` field with
+according parameters (`params` field), whereas the response request
+comes with a `status` field, and an according `data` section reserved
+for return values:
 
-	
-	Request:
-	{
-	    "command":"`<command type>`",
-	    "params": {
-	        `<parameters of command>`
-	    }
-	}
-	
-	Response:
-	{
-	    "status":"`<status of command: ok or error>`",
-	    "data":{
-	        `<response data>`
-	    }
-	}
+Request:
 
+```
+Request:
+{
+    "command":"`<command type>`",
+    "params": {
+        `<parameters of command>`
+    }
+}
+```
+
+Response:
+
+```
+Response:
+{
+    "status":"`<status of command: ok or error>`",
+    "data":{
+        `<response data>`
+    }
+}
+```
 
 oxD must provide:
  1.  simultaneous requests handling for multiple plugins (one oxD for multiple apache plugins);
@@ -830,4 +842,5 @@ Client registered by oxd has fallback values for following parameters if they ar
 	}
 
 
+[json]: https://en.wikipedia.org/wiki/JSON "JSON, Wikipedia"
 
