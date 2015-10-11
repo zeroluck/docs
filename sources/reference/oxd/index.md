@@ -92,44 +92,47 @@ Please see below for further command details.
 
 ### Register client
 
-Client registered by oxd has fallback values for following parameters if they are not provided in request :
+This command registers a client by oxD. 
 
-*  application_type: web;
+A full request-response-pair consists of these fields:
 
-*  response_types: code, id_token, token
+```
+Request:
+{
+    "command":"register_client",
+    "params": {
+        "discovery_url":"`<discovery url>`",
+        "redirect_url":"`<redirect url>`",
+        "logout_redirect_url":"`<logout redirect url>`",
+        "client_name":"`<client name>`",
+        "response_types":"`<response types>`",
+        "app_type":"`<application type>`",
+        "grant_types":"`<grant types>`",
+        "contacts":"`<contacts>`",
+        "jwks_uri":"`<jwks uri>`"
+    }
+}
 
-**Pattern**
+Response:
+{
+    "status":"`<command status>`",
+    "data":{
+        "client_id":"`<client id>`",
+        "client_secret":"`<client secret>`",
+        "registration_access_token":"`<registration access token>`",
+        "client_secret_expires_at": "`<client secret expiration time>`",
+        "registration_client_uri":"`<registration client uri>`",
+        "client_id_issued_at":"`<client id issued at>`"
+    }
+}
+```
 
-	
-	Request:
-	{
-	    "command":"register_client",
-	    "params": {
-	        "discovery_url":"`<discovery url>`",
-	        "redirect_url":"`<redirect url>`",
-	        "logout_redirect_url":"`<logout redirect url>`",
-	        "client_name":"`<client name>`",
-	        "response_types":"`<response types>`",
-	        "app_type":"`<application type>`",
-	        "grant_types":"`<grant types>`",
-	        "contacts":"`<contacts>`",
-	        "jwks_uri":"`<jwks uri>`"        
-	    }
-	}
-	
-	Response:
-	{
-	    "status":"`<command status>`",
-	    "data":{
-	        "client_id":"`<client id>`",
-	        "client_secret":"`<client secret>`",
-	        "registration_access_token":"`<registration access token>`",
-	        "client_secret_expires_at": "`<client secret expiration time>`",
-	        "registration_client_uri":"`<registration client uri>`",
-	        "client_id_issued_at":"`<client id issued at>`"        
-	    }
-	}
+The following parameters have pre-defined fallback values if they are
+not provided properly in the request:
 
+*  `application_type`: `web`
+
+*  `response_types`: `code, id_token, token`
 
 **Sample**
 
