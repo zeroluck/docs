@@ -478,7 +478,7 @@ full request-response-pair consists of these fields:
 }
 ```
 
-**Sample**
+A sample request-response pair looks like that:
 
 * Sample request:
 
@@ -508,7 +508,7 @@ full request-response-pair consists of these fields:
 
 This command extends the list of registered resources by a new one. The
 request parameters describe the resource in more detail. In return, both
-an id of the created resource set, and an etag is created.
+an id of the created resource set, and a revision id is created.
 
 * Request:
 
@@ -538,7 +538,7 @@ an id of the created resource set, and an etag is created.
 }
 ```
 
-**Sample**
+A sample request-response pair looks like that:
 
 * Sample request:
 
@@ -573,7 +573,7 @@ an id of the created resource set, and an etag is created.
 
 ### Check status of RPT
 
-**Pattern**
+This command checks the status of a Requesting Party Token (RPT).
 
 * Request:
 
