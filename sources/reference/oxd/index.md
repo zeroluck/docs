@@ -409,23 +409,23 @@ Response:
 **Sample**
 
 ```
-	
-	Sample Request:
-	{
-	    "command":"obtain_rpt",
-	    "params": {
-	        "aat_token":"eyJ0eXAiOiJKV1MiLCJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vc2VlZC5nbHV1L",
-	        "am_host":"seed.gluu.org"  
-	    }
-	}
-	
-	Sample Response:
-	{
-	    "status":"ok",
-	    "data": {
-	        "rpt_token":"32c2fb17-409d-48a2-b793-a639c8ac6cb2"
-	    }
-	}
+
+Sample Request:
+{
+    "command":"obtain_rpt",
+    "params": {
+        "aat_token":"eyJ0eXAiOiJKV1MiLCJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vc2VlZC5nbHV1L",
+        "am_host":"seed.gluu.org"  
+    }
+}
+
+Sample Response:
+{
+    "status":"ok",
+    "data": {
+        "rpt_token":"32c2fb17-409d-48a2-b793-a639c8ac6cb2"
+    }
+}
 ```
 
 
@@ -434,57 +434,57 @@ Response:
 **Pattern**
 
 ```
-	
-	Request:
-	{
-	    "command":"authorize_rpt",
-	    "params": {
-	        "aat_token":"`<AAT token>`",
-	        "rpt_token":"`<RPT token>`"
-	        "am_host":"`<AS host>`",
-	        "ticket":"`<permission ticket>`",
-	        "claims":{`<user claims>`}
-	    }
-	}
-	
-	OK Response (authorized):
-	{
-	    "status":"ok",
-	    "data":null
-	}
-	
-	Error Response (not authorized):
-	{
-	    "status":"error",
-	    "data":{
-	        "error":"`<error code, e.g. not_allowed,>`"
-	        "error_description":`<not allowed to authorize rpt>`
-	    }
-	}
+
+Request:
+{
+    "command":"authorize_rpt",
+    "params": {
+        "aat_token":"`<AAT token>`",
+        "rpt_token":"`<RPT token>`"
+        "am_host":"`<AS host>`",
+        "ticket":"`<permission ticket>`",
+        "claims":{`<user claims>`}
+    }
+}
+
+OK Response (authorized):
+{
+    "status":"ok",
+    "data":null
+}
+
+Error Response (not authorized):
+{
+    "status":"error",
+    "data":{
+        "error":"`<error code, e.g. not_allowed,>`"
+        "error_description":`<not allowed to authorize rpt>`
+    }
+}
 ```
 
 
 **Sample**
 
 ```
-	
-	Sample Request:
-	{
-	    "command":"authorize_rpt",
-	    "params": {
-	        "aat_token":"eyJ0eXAiOiJKV1MiLCJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vc2VlZC5nbHV1L",
-	        "rpt_token":"fb17-409d-48a2-b793-a639c"
-	        "am_host":"seed.gluu.org",
-	        "ticket":"48a2-b793-a639c8ac6cb2",
-	        "claims":{"uid":["user1"],"email":["user1@gluu.org","user1@gmail.com"]}
-	    }
-	}
-	
-	Sample Response:
-	{
-	    "status":"ok",
-	    "data":null
-	}
+
+Sample Request:
+{
+    "command":"authorize_rpt",
+    "params": {
+        "aat_token":"eyJ0eXAiOiJKV1MiLCJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vc2VlZC5nbHV1L",
+        "rpt_token":"fb17-409d-48a2-b793-a639c"
+        "am_host":"seed.gluu.org",
+        "ticket":"48a2-b793-a639c8ac6cb2",
+        "claims":{"uid":["user1"],"email":["user1@gluu.org","user1@gmail.com"]}
+    }
+}
+
+Sample Response:
+{
+    "status":"ok",
+    "data":null
+}
 ```
 
 
@@ -492,58 +492,65 @@ Response:
 
 **Pattern**
 
-	
-	Request:
-	{
-	    "command":"register_resource",
-	    "params": {
-	        "uma_discovery_url":"`<uma discovery url>`",
-	        "pat":"`<pat token>`",
-	        "name": "`<name>`",
-	        "scopes": [
-	            `<array of scopes for this resource>`
-	        ]
-	    }   
-	}
-	
-	Response:
-	{
-	    "status":"`<status of command>`",
-	    "data":{
-	        "_id": "`<id of created resource set>`",
-	        "_rev": "<ETag of created resource set"
-	    }
-	}
+
+Request:
+
+```
+{
+    "command":"register_resource",
+    "params": {
+        "uma_discovery_url":"`<uma discovery url>`",
+        "pat":"`<pat token>`",
+        "name": "`<name>`",
+        "scopes": [
+            `<array of scopes for this resource>`
+        ]
+    }   
+}
+```
+
+Response:
+
+```
+{
+    "status":"`<status of command>`",
+    "data":{
+        "_id": "`<id of created resource set>`",
+        "_rev": "<ETag of created resource set"
+    }
+}
 ```
 
 
 **Sample**
 
 ```
-	
-	Sample Request:
-	{
-	    "command":"register_resource",
-	    "params": {
-	        "uma_discovery_url":"https://seed.gluu.org/.well-known/uma-configuration",
-	        "pat":"eyJ0eXAiOiJKV1MiLCJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vc2VlZC5nbHV1L",
-	        "name": "My Resource",
-	        "scopes": [
-	            "http://photoz.example.com/dev/scopes/view",
-	            "http://photoz.example.com/dev/scopes/all"
-	        ]
-	    }   
-	}
-	
-	Sample Response:
-	{
-	    "status":"ok",
-	    "data":{
-	        "status": "created",
-	        "_id": "1366810445313",
-	        "_rev": "1"
-	    }
-	}
+Sample Request:
+{
+    "command":"register_resource",
+    "params": {
+        "uma_discovery_url":"https://seed.gluu.org/.well-known/uma-configuration",
+        "pat":"eyJ0eXAiOiJKV1MiLCJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vc2VlZC5nbHV1L",
+        "name": "My Resource",
+        "scopes": [
+            "http://photoz.example.com/dev/scopes/view",
+            "http://photoz.example.com/dev/scopes/all"
+        ]
+    }   
+}
+```
+
+Sample Response:
+
+```
+{
+    "status":"ok",
+    "data":{
+        "status": "created",
+        "_id": "1366810445313",
+        "_rev": "1"
+    }
+}
 ```
 
 
