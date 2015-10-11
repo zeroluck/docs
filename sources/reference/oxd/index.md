@@ -849,30 +849,31 @@ A sample request-response pair looks like that:
 }
 ```
 
-
 ### Discovery
 
 **Pattern**
 
+* Request:
+
 ```
-	
-	Request:
-	{
-	    "command":"discovery",
-	    "params": {
-	        "discovery_url":"`<discovery url>`"
-	    }
-	}
-	
-	Response:
-	{
-	    "status":"`<command status>`",
-	    "data":{
-	        `<discovery data>`
-	    }
-	}
+{
+    "command":"discovery",
+    "params": {
+        "discovery_url":"`<discovery url>`"
+    }
+}
 ```
 
+* Response:
+
+```
+{
+    "status":"`<command status>`",
+    "data":{
+        `<discovery data>`
+    }
+}
+```
 
 **Sample**
 
