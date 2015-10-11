@@ -92,9 +92,8 @@ Please see below for further command details.
 
 ### Register client
 
-This command registers a client by oxD. 
-
-A full request-response-pair consists of these fields:
+This command registers a client by oxD. A full request-response-pair
+consists of these fields:
 
 ```
 Request:
@@ -127,45 +126,44 @@ Response:
 }
 ```
 
-The following parameters have pre-defined fallback values if they are
-not provided properly in the request:
+The following request parameters have pre-defined fallback values if
+they are not provided properly in the request:
 
 *  `application_type`: `web`
 
 *  `response_types`: `code, id_token, token`
 
-**Sample**
+A sample request-response pair looks like that:
 
-	
-	Sample request:
-	{
-	    "command":"register_client",
-	    "params": {
-	        "discovery_url":"https://seed.gluu.org/.well-known/openid-configuration",
-	        "redirect_url":"https://rs.gluu.org/resources",
-	        "client_name":"oxD Client",
-	        "response_types":"code id_token token",
-	        "app_type":"web",
-	        "grant_types":"authorization_code implicit",
-	        "contacts":"mike@gluu.org yuriy@gluu.org",
-	        "jwks_uri":"https://seed.gluu.org/jwks"   
-	    }
-	}
-	
-	Sample response:
-	
-	{
-	    "status":"ok",
-	    "data":{
-	        "client_id":"@!1111!0008!0001",
-	        "client_secret":"ZJYCqe3GGRvdrudKyZS0XhGv_Z45DuKhCUk0gBR1vZk",
-	        "registration_access_token":"this.is.an.access.token.value.ffx83",
-	        "client_secret_expires_at": 1577858400,
-	        "registration_client_uri":"https://seed.gluu.org/oxauth/rest1/register?client_id=23523534",
-	        "client_id_issued_at": 1577858300      
-	    }
-	}
+```
+Sample request:
+{
+    "command":"register_client",
+    "params": {
+        "discovery_url":"https://seed.gluu.org/.well-known/openid-configuration",
+        "redirect_url":"https://rs.gluu.org/resources",
+        "client_name":"oxD Client",
+        "response_types":"code id_token token",
+        "app_type":"web",
+        "grant_types":"authorization_code implicit",
+        "contacts":"mike@gluu.org yuriy@gluu.org",
+        "jwks_uri":"https://seed.gluu.org/jwks"   
+    }
+}
 
+Sample response:
+{
+    "status":"ok",
+    "data":{
+        "client_id":"@!1111!0008!0001",
+        "client_secret":"ZJYCqe3GGRvdrudKyZS0XhGv_Z45DuKhCUk0gBR1vZk",
+        "registration_access_token":"this.is.an.access.token.value.ffx83",
+        "client_secret_expires_at": 1577858400,
+        "registration_client_uri":"https://seed.gluu.org/oxauth/rest1/register?client_id=23523534",
+        "client_id_issued_at": 1577858300
+    }
+}
+```
 
 ### Client read
 
