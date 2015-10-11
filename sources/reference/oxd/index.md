@@ -74,6 +74,8 @@ Currently, the following command types exist:
 
 3. __Obtain PAT__: `obtain_pat`
 
+3. __Obtain AAT__: `obtain_aat`
+
 4. __Register resource__: `register_resource`
 
 5. __Check status of RPT__: `rpt_status`
@@ -309,65 +311,70 @@ Sample Response:
 
 **Pattern**
 
+Request:
+
 ```
-	
-	Request:
-	{
-	    "command":"obtain_aat",
-	    "params": {
-	        "discovery_url":"`<discovery url>`",
-	        "uma_discovery_url":"`<uma discovery url>`",
-	        "redirect_url":"`<redirect url>`",
-	        "client_id":"`<client id e.g. @!1111!0008!0001>`",
-	        "client_secret":"`<client secret>`",    
-	        "user_id":"`<user id>`",
-	        "user_secret":"`<user secret>`";    
-	    }
-	}
-	
-	Response:
-	{
-	    "status":"ok",
-	    "data": {
-	        "aat_token":"`<aat token>`",
-	        "expires_in_seconds":"`<expires in seconds>`",
-	        "aat_refresh_token":"`<aat refresh token>`",
-	        "authorization_code:"`<authorization code>`",
-	        "scope":"`<scope>`"
-	    }
-	}
+{
+    "command":"obtain_aat",
+    "params": {
+        "discovery_url":"`<discovery url>`",
+        "uma_discovery_url":"`<uma discovery url>`",
+        "redirect_url":"`<redirect url>`",
+        "client_id":"`<client id e.g. @!1111!0008!0001>`",
+        "client_secret":"`<client secret>`",
+        "user_id":"`<user id>`",
+        "user_secret":"`<user secret>`";
+    }
+}
+```
+
+Response:
+
+```
+{
+    "status":"ok",
+    "data": {
+        "aat_token":"`<aat token>`",
+        "expires_in_seconds":"`<expires in seconds>`",
+        "aat_refresh_token":"`<aat refresh token>`",
+        "authorization_code:"`<authorization code>`",
+        "scope":"`<scope>`"
+    }
+}
 ```
 
 
 **Sample**
 
+Sample Request:
+
 ```
-	
-	Sample Request:
-	{
-	    "command":"obtain_aat",
-	    "params": {
-	        "discovery_url":"https://seed.gluu.org/.well-known/openid-configuration",
-	        "uma_discovery_url":"http://seed.gluu.org/.well-known/uma-configuration",
-	        "redirect_url":"https://rs.gluu.org/resources",
-	        "client_id":"@!1111!0008!0068.3E20",
-	        "client_secret":"32c2fb17-409d-48a2-b793-a639c8ac6cb2",    
-	        "user_id":"yuriy",
-	        "user_secret":"secret";    
-	    }
-	}
-	
-	Sample Response:
-	{
-	    "status":"ok",
-	    "data": {
-	        "aat_token":"eyJ0eXAiOiJKV1MiLCJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vc2VlZC5nbHV1L",
-	        "expires_in_seconds":3599,
-	        "aat_refresh_token":"UzI1NiIsImprdSI6Imh0dHBzOi8vc2VlZC5nbHV",
-	        "authorization_code:"1e436c1a-6e96-4d98-81d6-8f4019ab4636",
-	        "scope":"http://docs.kantarainitiative.org/uma/scopes/prot.json"
-	    }
-	}
+{
+    "command":"obtain_aat",
+    "params": {
+        "discovery_url":"https://seed.gluu.org/.well-known/openid-configuration",
+        "uma_discovery_url":"http://seed.gluu.org/.well-known/uma-configuration",
+        "redirect_url":"https://rs.gluu.org/resources",
+        "client_id":"@!1111!0008!0068.3E20",
+        "client_secret":"32c2fb17-409d-48a2-b793-a639c8ac6cb2",
+        "user_id":"yuriy",
+        "user_secret":"secret";
+    }
+}
+```
+Sample Response:
+
+```
+{
+    "status":"ok",
+    "data": {
+        "aat_token":"eyJ0eXAiOiJKV1MiLCJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vc2VlZC5nbHV1L",
+        "expires_in_seconds":3599,
+        "aat_refresh_token":"UzI1NiIsImprdSI6Imh0dHBzOi8vc2VlZC5nbHV",
+        "authorization_code:"1e436c1a-6e96-4d98-81d6-8f4019ab4636",
+        "scope":"http://docs.kantarainitiative.org/uma/scopes/prot.json"
+    }
+}
 ```
 
 
