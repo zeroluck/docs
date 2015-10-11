@@ -180,7 +180,7 @@ A sample request-response pair looks like that:
 This command reads the client information. A full request-response-pair
 consists of these fields:
 
-Request:
+* Request:
 
 ```
 {
@@ -192,7 +192,7 @@ Request:
 }
 ```
 
-Response:
+* Response:
 
 ```
 {
@@ -210,19 +210,19 @@ Response:
 
 A sample request-response pair looks like that:
 
-Sample request:
+* Sample request:
 
 ```
 {
     "command":"client_read",
     "params": {
         "registration_client_uri":"https://seed.gluu.org/oxauth/rest1/register?client_id=23523534",
-        "registration_access_token":"this.is.an.access.token.value.ffx83"    
+        "registration_access_token":"this.is.an.access.token.value.ffx83"
     }
 }
 ```
 
-Sample response:
+* Sample response:
 
 ```
 {
@@ -233,7 +233,7 @@ Sample response:
         "registration_access_token":"this.is.an.access.token.value.ffx83",
         "client_secret_expires_at": 1577858400,
         "registration_client_uri":"https://seed.gluu.org/oxauth/rest1/register?client_id=23523534",
-        "client_id_issued_at": 1577858300      
+        "client_id_issued_at": 1577858300
     }
 }
 ```
@@ -243,7 +243,7 @@ Sample response:
 This command obtains the OAuth PAT. A full request-response-pair
 consists of these fields:
 
-Request:
+* Request:
 
 ```
 {
@@ -260,7 +260,7 @@ Request:
 }
 ```
 
-Response:
+* Response:
 
 ```
 {
@@ -277,7 +277,7 @@ Response:
 
 A sample request-response pair looks like that:
 
-Sample Request:
+* Sample request:
 
 ```
 {
@@ -294,7 +294,7 @@ Sample Request:
 }
 ```
 
-Sample Response:
+* Sample response:
 
 ```
 {
@@ -313,7 +313,7 @@ Sample Response:
 
 **Pattern**
 
-Request:
+* Request:
 
 ```
 {
@@ -330,7 +330,7 @@ Request:
 }
 ```
 
-Response:
+* Response:
 
 ```
 {
@@ -345,10 +345,9 @@ Response:
 }
 ```
 
-
 **Sample**
 
-Sample Request:
+* Sample request:
 
 ```
 {
@@ -364,7 +363,8 @@ Sample Request:
     }
 }
 ```
-Sample Response:
+
+* Sample response:
 
 ```
 {
@@ -378,7 +378,6 @@ Sample Response:
     }
 }
 ```
-
 
 ### Obtain RPT
 
