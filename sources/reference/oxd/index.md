@@ -435,9 +435,9 @@ A sample request-response pair looks like that:
 
 **Pattern**
 
-```
+* Request:
 
-Request:
+```
 {
     "command":"authorize_rpt",
     "params": {
@@ -448,14 +448,20 @@ Request:
         "claims":{`<user claims>`}
     }
 }
+```
 
-OK Response (authorized):
+* OK Response (authorized):
+
+```
 {
     "status":"ok",
     "data":null
 }
+```
 
-Error Response (not authorized):
+* Error response (not authorized):
+
+```
 {
     "status":"error",
     "data":{
@@ -464,7 +470,6 @@ Error Response (not authorized):
     }
 }
 ```
-
 
 **Sample**
 
