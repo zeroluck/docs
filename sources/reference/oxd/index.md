@@ -76,21 +76,21 @@ Currently, the following command types exist:
 
 4. __Obtain AAT__: `obtain_aat`
 
-5. __Obtain RPT__: `obtain_rpt`
+6. __Obtain RPT__: `obtain_rpt`
 
-5. __Authorize RPT__: `authorize_rpt`
+6. __Authorize RPT__: `authorize_rpt`
 
-6. __Register resource__: `register_resource`
+7. __Register resource__: `register_resource`
 
-7. __Check status of RPT__: `rpt_status`
+8. __Check status of RPT__: `rpt_status`
 
-8. __Check status of ID Token__: `id_token_status`
+9. __Check status of ID Token__: `id_token_status`
 
-9. __Check status of Access Token__: `access_token_status`
+10. __Check status of Access Token__: `access_token_status`
 
-10. __Register permission ticket__: `register_ticket`
+11. __Register permission ticket__: `register_ticket`
 
-11. __Discovery__: `discovery`
+12. __Discovery__: `discovery`
 
 Please see below for further command details.
 
@@ -506,7 +506,9 @@ full request-response-pair consists of these fields:
 
 ### Register resource
 
-**Pattern**
+This command extends the list of registered resources by a new one. The
+request parameters describe the resource in more detail. In return, both
+an id of the created resource set, and an etag is created.
 
 * Request:
 
