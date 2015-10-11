@@ -637,31 +637,33 @@ A sample request-response pair looks like that:
 
 **Pattern**
 
+* Request:
+
 ```
-	
-	Request:
-	{
-	    "command":"id_token_status",
-	    "params": {
-	        "discovery_url":"`<discovery url>`",
-	        "id_token": "`<id_token>`"
-	    }   
-	}
-	
-	Response:
-	{
-	    "status":"ok",
-	    "data":{
-	        "active": "`<whether id token is active (true|false)>`",
-	        "expires_at": `<id token expires at (date)>`,
-	        "issued_at": `<id token issued at (date)>`,
-	        "claims": {
-	            `<claim name>`:[`<claim values>`]
-	        }
-	    }
-	}
+{
+    "command":"id_token_status",
+    "params": {
+        "discovery_url":"`<discovery url>`",
+        "id_token": "`<id_token>`"
+    }
+}
 ```
 
+* Response:
+
+```
+{
+    "status":"ok",
+    "data":{
+        "active": "`<whether id token is active (true|false)>`",
+        "expires_at": `<id token expires at (date)>`,
+        "issued_at": `<id token issued at (date)>`,
+        "claims": {
+            `<claim name>`:[`<claim values>`]
+        }
+    }
+}
+```
 
 **Sample**
 
