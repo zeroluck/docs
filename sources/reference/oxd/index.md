@@ -723,30 +723,32 @@ A sample request-response pair looks like that:
 
 ### Check status of Access Token
 
-
 **Pattern**
 
+* Request:
+
 ```
-	
-	Request:
-	{
-	    "command":"access_token_status",
-	    "params": {
-	        "discovery_url":"`<discovery url>`",
-	        "id_token": "`<id_token>`"
-	        "access_token": "`<access_token>`"
-	    }   
-	}
-	
-	Response:
-	{
-	    "status":"ok",
-	    "data":{
-	        "active": "`<whether access token is active (true|false)>`",
-	        "expires_at": `<access token expires at (date)>`,
-	        "issued_at": `<access token issued at (date)>`
-	    }
-	}
+{
+    "command":"access_token_status",
+    "params": {
+        "discovery_url":"`<discovery url>`",
+        "id_token": "`<id_token>`"
+        "access_token": "`<access_token>`"
+    }   
+}
+```
+
+* Response:
+
+```
+{
+    "status":"ok",
+    "data":{
+        "active": "`<whether access token is active (true|false)>`",
+        "expires_at": `<access token expires at (date)>`,
+        "issued_at": `<access token issued at (date)>`
+    }
+}
 ```
 
 
