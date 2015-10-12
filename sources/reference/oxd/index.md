@@ -645,7 +645,8 @@ A sample request-response pair looks like that:
 
 ### Check status of ID Token
 
-**Pattern**
+In order to check the status of the ID token use the command
+`id_token_status`.
 
 * Request:
 
@@ -675,7 +676,7 @@ A sample request-response pair looks like that:
 }
 ```
 
-**Sample**
+A sample request-response pair looks like that:
 
 * Sample request:
 
