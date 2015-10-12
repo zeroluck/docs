@@ -38,7 +38,7 @@ oxD has to handle these issues:
 1.  simultaneous requests handling for multiple plugins (one oxD for
 multiple Apache plugins)
 2.  one Apache plugin can send multiple commands sequentially without
-closing the input stream. The idea behind that is reusing of ressources
+closing the input stream. The idea behind that is reusing of resources
 to improve the performance of the network connection.
 
 According to the [JDK documentation][jdk6-documentation] data streams
@@ -439,7 +439,7 @@ A sample request-response pair looks like that:
 
 ### Authorize RPT
 
-Use this command to aauthorize a Requesting Party Token (RPT). A
+Use this command to authorize a Requesting Party Token (RPT). A
 full request-response triple consists of these fields:
 
 * Request:
