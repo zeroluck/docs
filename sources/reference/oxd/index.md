@@ -509,7 +509,7 @@ that:
 
 This command extends the list of registered resources by a new one. The
 request parameters describe the resource in more detail. In return, both
-an id of the created resource set, and a revision id is created.
+an id of the created resource set, and a revision id tag is created.
 
 * Request:
 
@@ -570,7 +570,6 @@ A sample request-response pair looks like that:
     }
 }
 ```
-
 
 ### Check status of RPT
 
