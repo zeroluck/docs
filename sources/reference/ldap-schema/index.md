@@ -1,11 +1,11 @@
 # Schema
 
-Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS too:  
+Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for 389DS too:  
 
  * [OpenDJ](https://github.com/GluuFederation/community-edition-setup/tree/master/static/opendj)
  * [OpenLDAP](https://github.com/GluuFederation/community-edition-setup/tree/master/static/openldap)
 
-### Objectclass gluuAppliance
+### Object class gluuAppliance
  * __Description__ 
  * __blowfishPassword__ Blowfish crypted text
  * __c__ 
@@ -32,7 +32,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __gluuJiraEmail__ TODO - in use? Jira Alert Email Address
  * __gluuLastUpdate__ Monitors last time the server was able to connect to the monitoring system.
  * __gluuLifeRay__ None
- * __gluuLoadAvg__ Montior the average CPU load for a Gluu Server instance.
+ * __gluuLoadAvg__ Monitor the average CPU load for a Gluu Server instance.
  * __gluuManageIdentityPermission__ TODO - in use?
  * __gluuManager__ Used to specify if a person has the manager role
  * __gluuMaxLogSize__ Maximum Log File Size
@@ -59,7 +59,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __gluuSmtpRequiresSsl__ SMTP Requires SSL
  * __gluuSmtpUserName__ SMTP User Name
  * __gluuSslExpiry__ SAML Trust Relationship configuration
- * __gluuStatus__ Status of the entry, used by many objectclasses
+ * __gluuStatus__ Status of the entry, used by many object classes
  * __gluuSvnEmail__ SVN Alert Email Address
  * __gluuSystemUptime__ Monitors how long the Gluu Server instance has been running.
  * __gluuTargetRAM__ Monitors total available RAM on Gluu Server instance
@@ -91,13 +91,13 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __userPassword__ 
  * __oxTrustCacheRefreshServerIpAddress__ None
 
-### Objectclass gluuAttribute
+### Object class gluuAttribute
  * __Description__ 
  * __description__ 
  * __displayName__ 
  * __gluuAttributeEditType__ Specify in oxTrust who can update an attribute, admin or user
  * __gluuAttributeName__ Specify an identifier for an attribute. May be multi-value where an attribute has two names, like givenName and first-name.
- * __gluuAttributeOrigin__ Specify the person objectclass associated with the attribute, used for display purposes in oxTrust.
+ * __gluuAttributeOrigin__ Specify the person object class associated with the attribute, used for display purposes in oxTrust.
  * __gluuAttributeSystemEditType__ TODO - still required?
  * __gluuAttributeType__ Data type of attribute. Values can be string, photo, numeric, date
  * __gluuAttributeUsageType__ TODO - Usage? Value can be OpenID
@@ -105,7 +105,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __gluuCategory__ TODO - in use? Used to group attributes together.
  * __gluuSAML1URI__ SAML 1 uri of attribute
  * __gluuSAML2URI__ SAML 2 uri of attribute
- * __gluuStatus__ Status of the entry, used by many objectclasses
+ * __gluuStatus__ Status of the entry, used by many object classes
  * __iname__ None
  * __inum__ XRI i-number
  * __objectClass__ 
@@ -118,14 +118,14 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __urn__ None
  * __oxAuthClaimName__ Used by oxAuth in conjunction with gluuLdapAttributeName to map claims to attributes in LDAP.
 
-### Objectclass gluuGroup
+### Object class gluuGroup
  * __Description__ 
  * __c__ 
  * __description__ 
  * __displayName__ 
  * __gluuGroupType__ Type of Group. Not used.
  * __gluuGroupVisibility__ Group visibility. Not used.
- * __gluuStatus__ Status of the entry, used by many objectclasses
+ * __gluuStatus__ Status of the entry, used by many object classes
  * __iname__ None
  * __inum__ XRI i-number
  * __member__ 
@@ -133,9 +133,9 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __owner__ 
  * __seeAlso__ 
 
-### Objectclass gluuInumMap
+### Object class gluuInumMap
  * __Description__ 
- * __gluuStatus__ Status of the entry, used by many objectclasses
+ * __gluuStatus__ Status of the entry, used by many object classes
  * __inum__ XRI i-number
  * __primaryKeyAttrName__ Primary Key Attribute Name
  * __primaryKeyValue__ Primary Key Value
@@ -144,7 +144,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __tertiaryKeyAttrName__ Tertiary Key Attribute Name
  * __tertiaryKeyValue__ Tertiary Key Value
 
-### Objectclass gluuInvoice
+### Object class gluuInvoice
  * __Description__ 
  * __gluuInvoiceAmount__ TODO - in use?
  * __gluuInvoiceDate__ TODO - in use?
@@ -155,7 +155,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __gluuInvoiceStatus__ TODO - in use?
  * __inum__ XRI i-number
 
-### Objectclass gluuOrganization
+### Object class gluuOrganization
  * __Description__ 
  * __c__ 
  * __county__ ISO 3166-1 Alpha-2 Country Code
@@ -172,14 +172,14 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __gluuLogoImage__ Logo used by oxTrust for default look and feel.
  * __gluuManageIdentityPermission__ TODO - in use?
  * __gluuManager__ Used to specify if a person has the manager role
- * __gluuManagerGroup__ Used in organizatoin entry to specifies the dn of the group that has admin priviledges in oxTrust.
+ * __gluuManagerGroup__ Used in organization entry to specifies the dn of the group that has admin privileges in oxTrust.
  * __gluuOrgProfileMgt__ enable or disable profile management feature in oxTrust
  * __gluuOrgShortName__ Short description, as few letters as possible, no spaces.
  * __gluuOwnerGroup__ Deprecated. Use gluuManagerGroup
  * __gluuPaidUntil__ TODO - in use?
  * __gluuPaymentProcessorTimestamp__ TODO - in use?
  * __gluuProStoresUser__ TODO - remove
- * __gluuStatus__ Status of the entry, used by many objectclasses
+ * __gluuStatus__ Status of the entry, used by many object classes
  * __gluuTempFaviconImage__ Store location for upload of Favicon
  * __gluuThemeColor__ oxTrust login page configuration
  * __gluuWhitePagesEnabled__ None
@@ -210,13 +210,13 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __uid__ 
  * __userPassword__ 
 
-### Objectclass gluuPasswordResetRequest
+### Object class gluuPasswordResetRequest
  * __Description__ 
  * __creationDate__ Creation Date used for password reset requests
  * __oxGuid__ A random string to mark temporary tokens
  * __personInum__ Inum of a person
 
-### Objectclass gluuPerson
+### Object class gluuPerson
  * __Description__ 
  * __associatedClient__ 
  * __c__ 
@@ -224,7 +224,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __givenName__ 
  * __gluuManagedOrganizations__ Used to track with which organizations a person is associated
  * __gluuOptOuts__ White pages attributes restricted by person in oxTrust profile management
- * __gluuStatus__ Status of the entry, used by many objectclasses
+ * __gluuStatus__ Status of the entry, used by many object classes
  * __gluuWhitePagesListed__ Allow Publication
  * __iname__ None
  * __inum__ XRI i-number
@@ -282,17 +282,17 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __uid__ 
  * __userPassword__ 
 
-### Objectclass gluuSAMLconfig
+### Object class gluuSAMLconfig
  * __Description__ 
  * __description__ 
  * __displayName__ 
- * __federationRules__ Track rules for the federation in Gluu SAML config. Deprecated as multi-party federation management should move to Jagger.
+ * __federationRules__ Track rules for the federation in Gluu SAML configuration. Deprecated as multi-party federation management should move to Jagger.
  * __gluuContainerFederation__ SAML Trust Relationship federation info
  * __gluuEntityId__ Specifies SAML trust relationship entity ID
  * __gluuIsFederation__ Used in oxTrust to specify if a SAML Trust Relationship is a federation. It could also be a website
  * __gluuProfileConfiguration__ SAML Trust Relationship attribute
  * __gluuReleasedAttribute__ oxTrust reference for the dn of the released attribute
- * __gluuRulesAccepted__ TODO - use unknown for Gluu SAML config
+ * __gluuRulesAccepted__ TODO - use unknown for Gluu SAML configuration
  * __gluuSAMLMetaDataFilter__ Metadata filter in SAML trust relationship
  * __gluuSAMLTrustEngine__ SAML trust relationship configuration
  * __gluuSAMLmaxRefreshDelay__ SAML trust relationship refresh time
@@ -300,7 +300,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __gluuSAMLspMetaDataSourceType__ SAML Trust Relationship SP metadata type - file, URI, federation
  * __gluuSAMLspMetaDataURL__ SAML Trust Relationship URI location of metadata
  * __gluuSpecificRelyingPartyConfig__ SAML Trust Relationship configuration
- * __gluuStatus__ Status of the entry, used by many objectclasses
+ * __gluuStatus__ Status of the entry, used by many object classes
  * __gluuTrustContact__ oxTrust login page configuration
  * __gluuTrustDeconstruction__ TODO - in use?
  * __gluuValidationLog__ None
@@ -312,7 +312,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __oxAuthPostLogoutRedirectURI__ oxAuth Post Logout Redirect URI
  * __url__ None
 
-### Objectclass oxAuthClient
+### Object class oxAuthClient
  * __Description__ 
  * __associatedPerson__ Reference the dn of a person.
  * __displayName__ 
@@ -329,9 +329,9 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __oxAuthFederationId__ oxAuth Federation ID attribute
  * __oxAuthFederationMetadataURI__ oxAuth Federation metadata URI attribute
  * __oxAuthGrantType__ oxAuth Grant Type
- * __oxAuthIdTokenEncryptedResponseAlg__ oxAuth ID Token Encrypted Response Alg
- * __oxAuthIdTokenEncryptedResponseEnc__ oxAuth ID Token Encrypted Response Enc
- * __oxAuthIdTokenSignedResponseAlg__ oxAuth ID Token Signed Response Alg
+ * __oxAuthIdTokenEncryptedResponseAlg__ oxAuth ID Token Encrypted Response Algorithm
+ * __oxAuthIdTokenEncryptedResponseEnc__ oxAuth ID Token Encrypted Response Encoding
+ * __oxAuthIdTokenSignedResponseAlg__ oxAuth ID Token Signed Response Algorithm
  * __oxAuthInitiateLoginURI__ oxAuth Initiate Login URI
  * __oxAuthJwksURI__ oxAuth JWKs URI
  * __oxAuthLogoURI__ oxAuth Logo URI
@@ -339,23 +339,23 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __oxAuthPostLogoutRedirectURI__ oxAuth Post Logout Redirect URI
  * __oxAuthRedirectURI__ oxAuth Redirect URI
  * __oxAuthRegistrationAccessToken__ oxAuth Registration Access Token
- * __oxAuthRequestObjectSigningAlg__ oxAuth Request Object Signing Alg
+ * __oxAuthRequestObjectSigningAlg__ oxAuth Request Object Signing Algorithm
  * __oxAuthRequestURI__ oxAuth Request URI
  * __oxAuthRequireAuthTime__ oxAuth Require Authentication Time
  * __oxAuthResponseType__ oxAuth Response Type
  * __oxAuthScope__ oxAuth Attribute Scope
  * __oxAuthSectorIdentifierURI__ oxAuth Sector Identifier URI
- * __oxAuthSignedResponseAlg__ oxAuth Signed Response Alg
+ * __oxAuthSignedResponseAlg__ oxAuth Signed Response Algorithm
  * __oxAuthSubjectType__ oxAuth Subject Type
- * __oxAuthTokenEndpointAuthMethod__ oxAuth Token Endpoint Auth Method
- * __oxAuthTosURI__ oxAuth TOS URI
+ * __oxAuthTokenEndpointAuthMethod__ oxAuth Token Endpoint Authentication Method
+ * __oxAuthTosURI__ oxAuth Type of Service URI
  * __oxAuthTrustedClient__ oxAuth Trusted Client
- * __oxAuthUserInfoEncryptedResponseAlg__ oxAuth User Info Encrypted Response Alg
+ * __oxAuthUserInfoEncryptedResponseAlg__ oxAuth User Info Encrypted Response Algorithm
  * __oxAuthUserInfoEncryptedResponseEnc__ oxAuth User Info Encrypted Response Enc
  * __oxLastAccessTime__ Last access time
  * __oxLastLogonTime__ Last logon time
 
-### Objectclass oxAuthConfiguration
+### Object class oxAuthConfiguration
  * __Description__ 
  * __ou__ 
  * __oxAuthConfCustomAuthMethod__ Custom authentication method
@@ -366,7 +366,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __oxAuthConfStatic__ oxAuth Static Configuration
  * __oxAuthConfWebKeys__ oxAuth Web Keys Configuration
 
-### Objectclass oxAuthCustomScope
+### Object class oxAuthCustomScope
  * __Description__ 
  * __defaultScope__ Track the default scope for an custom OAuth2 Scope.
  * __description__ 
@@ -374,7 +374,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __inum__ XRI i-number
  * __oxAuthClaim__ oxAuth Attribute Claim
 
-### Objectclass oxAuthFederationMetadata
+### Object class oxAuthFederationMetadata
  * __Description__ 
  * __displayName__ 
  * __inum__ XRI i-number
@@ -383,7 +383,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __oxAuthFederationRP__ oxAuth Federation RP attribute
  * __oxAuthRedirectURI__ oxAuth Redirect URI
 
-### Objectclass oxAuthFederationOP
+### Object class oxAuthFederationOP
  * __Description__ 
  * __displayName__ 
  * __inum__ XRI i-number
@@ -392,7 +392,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __oxAuthX509PEM__ oxAuth x509 in PEM format
  * __oxAuthX509URL__ oxAuth x509 URL
 
-### Objectclass oxAuthFederationRP
+### Object class oxAuthFederationRP
  * __Description__ 
  * __displayName__ 
  * __inum__ XRI i-number
@@ -400,7 +400,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __oxAuthX509PEM__ oxAuth x509 in PEM format
  * __oxAuthX509URL__ oxAuth x509 URL
 
-### Objectclass oxAuthFederationRequest
+### Object class oxAuthFederationRequest
  * __Description__ 
  * __displayName__ 
  * __inum__ XRI i-number
@@ -409,7 +409,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __oxAuthFederationRequestType__ oxAuth Federation request type attribute
  * __oxAuthRedirectURI__ oxAuth Redirect URI
 
-### Objectclass oxAuthFederationTrust
+### Object class oxAuthFederationTrust
  * __Description__ 
  * __displayName__ 
  * __inum__ XRI i-number
@@ -420,7 +420,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __oxAuthReleasedScope__ oxAuth released scope attribute
  * __oxAuthSkipAuthorization__ oxAuth skip authorization attribute
 
-### Objectclass oxAuthSessionId
+### Object class oxAuthSessionId
  * __Description__ 
  * __lastModifiedTime__ 
  * __oxAuthAuthenticationTime__ oxAuth Authentication Time
@@ -429,7 +429,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __oxAuthUserDN__ oxAuth User DN
  * __uniqueIdentifier__ 
 
-### Objectclass oxAuthToken
+### Object class oxAuthToken
  * __Description__ 
  * __createTimestamp__ 
  * __oxAuthAuthenticationTime__ oxAuth Authentication Time
@@ -448,7 +448,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __oxAuthenticationMode__ None
  * __uniqueIdentifier__ 
 
-### Objectclass oxAuthUmaPolicy
+### Object class oxAuthUmaPolicy
  * __Description__ 
  * __description__ 
  * __displayName__ 
@@ -457,7 +457,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __oxPolicyScript__ ox policy script
  * __programmingLanguage__ programming language
 
-### Objectclass oxAuthUmaRPT
+### Object class oxAuthUmaRPT
  * __Description__ 
  * __oxAmHost__ am host
  * __oxAuthAuthenticationTime__ oxAuth Authentication Time
@@ -469,7 +469,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __oxUmaPermission__ ox uma permission
  * __uniqueIdentifier__ 
 
-### Objectclass oxAuthUmaResourceSet
+### Object class oxAuthUmaResourceSet
  * __Description__ 
  * __displayName__ 
  * __inum__ XRI i-number
@@ -483,7 +483,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __oxRevision__ Revision
  * __oxType__ ox type
 
-### Objectclass oxAuthUmaResourceSetPermission
+### Object class oxAuthUmaResourceSetPermission
  * __Description__ 
  * __oxAmHost__ am host
  * __oxAuthExpiration__ oxAuth Expiration
@@ -493,7 +493,7 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __oxResourceSetId__ ox resource set id
  * __oxTicket__ ox ticket
 
-### Objectclass oxAuthUmaScopeDescription
+### Object class oxAuthUmaScopeDescription
  * __Description__ 
  * __displayName__ 
  * __inum__ XRI i-number
@@ -506,13 +506,13 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __oxType__ ox type
  * __oxUrl__ ox url
 
-### Objectclass oxEntry
+### Object class oxEntry
  * __Description__ 
  * __displayName__ 
  * __iname__ None
  * __inum__ XRI i-number
 
-### Objectclass oxLink
+### Object class oxLink
  * __Description__ 
  * __description__ 
  * __oxGuid__ A random string to mark temporary tokens
@@ -523,18 +523,18 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __oxLinkModerators__ Link Moderators
  * __oxLinkPending__ Pending Registrations
 
-### Objectclass oxLiteralNode
+### Object class oxLiteralNode
  * __Description__ 
  * __literalBinaryValue__ OX literalValue
  * __literalValue__ OX literalValue
- * __organizationalOwner__ OX organizationalOwner
+ * __organizationalOwner__ OX organizational Owner
  * __owner__ 
  * __targetRelationalXdiStatement__ OX TargetRelationalXdiStatement
  * __x__ OX XRI Component
  * __xdiStatement__ OX xdiStatement
  * __xri__ OX XRI address
 
-### Objectclass oxNode
+### Object class oxNode
  * __Description__ 
  * __organizationalOwner__ OX organizationalOwner
  * __owner__ 
@@ -544,14 +544,14 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __xdiStatement__ OX xdiStatement
  * __xri__ OX XRI address
 
-### Objectclass oxProxAccessToken
+### Object class oxProxAccessToken
  * __Description__ 
  * __oxAuthCreation__ oxAuth Creation
  * __oxAuthExpiration__ oxAuth Expiration
  * __oxProxyAccessToken__ oxProx access token
  * __oxProxyClientId__ oxProx client id
 
-### Objectclass oxProxClient
+### Object class oxProxClient
  * __Description__ 
  * __displayName__ 
  * __inum__ XRI i-number
@@ -559,13 +559,13 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __oxProxyScope__ oxProx scope
  * __oxProxyToOpClientMapping__ oxProx client mapping to op client
 
-### Objectclass oxProxConfiguration
+### Object class oxProxConfiguration
  * __Description__ 
  * __ou__ 
  * __oxProxConf__ oxProx Configuration
  * __oxScriptDn__ Script object DN
 
-### Objectclass oxProxOp
+### Object class oxProxOp
  * __Description__ 
  * __c__ 
  * __displayName__ 
@@ -576,14 +576,14 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __oxX509PEM__ x509 in PEM format
  * __oxX509URL__ x509 URL
 
-### Objectclass oxPushApplication
+### Object class oxPushApplication
  * __Description__ 
  * __displayName__ 
  * __oxId__ Identifier
  * __oxName__ Name
  * __oxPushApplicationConf__ oxPush application configuration
 
-### Objectclass oxPushDevice
+### Object class oxPushDevice
  * __Description__ 
  * __oxAuthUserId__ oxAuth user id
  * __oxId__ Identifier
@@ -591,26 +591,26 @@ Below are schema for OpenDJ and OpenLDAP.  OpenDJ schema should work for 389DS t
  * __oxPushDeviceConf__ oxPush device configuration
  * __oxType__ ox type
 
-### Objectclass oxScript
+### Object class oxScript
  * __Description__ 
  * __inum__ XRI i-number
  * __oxScript__ Attribute that contains script (python, java script)
  * __oxScriptType__ Attribute that contains script type (e.g. python, java script)
 
-### Objectclass oxTrustConfiguration
+### Object class oxTrustConfiguration
  * __Description__ 
  * __ou__ 
  * __oxTrustConfApplication__ oxTrust Application Configuration
 
-### Objectclass vdDirectoryView
+### Object class vdDirectoryView
  * __Description__ 
  * __o__ 
 
-### Objectclass vdapcontainer
+### Object class vdapcontainer
  * __Description__ 
  * __ou__ 
 
-### Objectclass vdlabel
+### Object class vdlabel
  * __Description__ 
  * __o__ 
 
