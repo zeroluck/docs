@@ -1,5 +1,5 @@
 # Troubleshooting
-
+[TOC]
 ## Memory
 - Does the system have enough memory/CPU? For a production deployment, at least 4GB of RAM is required for tomcat and the full amount of RAM assigned for the host should be no less than 6GB. 
 
@@ -46,3 +46,59 @@ Server stores this in `/install/community-edition-setup/setup.properties.last` u
     # grep ldapPass= /install/community-edition-setup/*.last
 
 Of course for a production installation, you should remove this file. Wouldn't want to have your admin password sitting on the filesystem!
+
+## Add admin for gluu server
+
+Please follow this steps to restore your Gluu admin account (you will probably need to substitute actual port, bind names and hostnames with ones used by your installation):
+
+1) Login into Gluu's chroot environment with the command below:
+
+`service gluu-server login`
+
+2) Run this command:
+
+`/opt/opendj/bin/ldapsearch -p 1389 -D 'cn=directory manager' -w 'YOUR_BIND_PASSWORD' -b o=gluu gluuGroupType=gluuManagerGroup 1.1`
+
+and copy displayed dn of the Gluu Manager Group for future use
+
+3) Run this command:
+
+`/opt/opendj/bin/ldapsearch -p 1389 -D 'cn=directory manager' -w 'YOUR_BIND_PASSWORD' -b o=gluu ou=people 1.1`
+
+and copy displayed dn of the People ou for future use
+4) While staying in chrooted environment, create file "add_user.ldif" in your home ("~/") directory here using your favorite text editor, and copy the following lines to it:
+```
+dn: inum=tempadmin,ou=people,o=@!F9CC.D762.4778.1032!0001!2C72.BB87,o=gluu
+changetype: add
+uid: tempadmin
+objectClass: gluuPerson
+objectClass: top
+givenName: tempadmin
+sn: tempadmin
+inum: tempadmin
+gluuStatus: active
+userPassword: 1q2w3e
+```
+Please note the string's segment marked with bold: you will have to substitute it with dn of your own People ou which you've acquired on step 3)
+
+5) Run this command:
+
+`/opt/opendj/bin/ldapmodify -p 1389 -D 'cn=directory manager' -w 'YOUR_BIND_PASSWORD' -f ~/add_user.ldif`
+
+This will create new user tempadmin with attributes provided via file created on step 4)
+
+6) Now create file "add_2_group.ldif" in your home ("~/") directory and copy the following lines to it:
+```
+dn: inum=@!F9CC.D762.4778.1032!0001!2C72.BB87!0003!60B7,ou=groups,o=@!f9cc.d762.4778.1032!0001!2c72.bb87,o=gluu
+changetype: modify
+add: member
+member: inum=tempadmin,ou=people,o=@!f9cc.d762.4778.1032!0001!2c72.bb87,o=gluu
+```
+
+Please again note the strings' segment marked with bold: you will have to substitute contents of the "dn:" string with dn of your own Gluu Manager Group which you've acquired on step 2), and for "member:" string you will have to use the dn of tempadmin user (the one you specified in 1st line of the file in step 4)
+
+7) Run this command:
+
+`/opt/opendj/bin/ldapmodify -p 1389 -D 'cn=directory manager' -w 'YOUR_BIND_PASSWORD' -f ~/add_2_group.ldif`
+
+This will add tempadmin user to the IdP managers group and you can then login and assign another user to act as admin.
