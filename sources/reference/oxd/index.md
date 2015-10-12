@@ -646,7 +646,11 @@ A sample request-response pair looks like that:
 ### Check status of ID Token
 
 In order to check the status of the ID token use the command
-`id_token_status`.
+`id_token_status`. In return the reponse contains information about the
+state of the ID token -- whether it is active or not --, as well as the
+date it was issued, and the date it will expire. Furthermore, a list of
+referenced claims is added.
+
 
 * Request:
 
@@ -737,7 +741,7 @@ A sample request-response pair looks like that:
 The command `access_token_status` helps to obtain the current status of
 an Access Token. In return the reponse contains information about the
 state of the token -- whether it is active or not --, as well as the
-dates it was issued, and it will expire.
+date it was issued, and the date it will expire.
 
 * Request:
 
