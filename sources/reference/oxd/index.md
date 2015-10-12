@@ -864,7 +864,8 @@ like that:
 
 ### Discovery
 
-**Pattern**
+In order to retrieve the according endpoint information belonging to a
+registered resource use the command `discovery`.
 
 * Request:
 
@@ -888,7 +889,8 @@ like that:
 }
 ```
 
-**Sample**
+A sample request-response pair with a valid directory information as
+response looks like that:
 
 * Request:
 
