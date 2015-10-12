@@ -734,8 +734,10 @@ A sample request-response pair looks like that:
 
 ### Check status of Access Token
 
-The command `access_token_status` helps to obtain the status of an
-Access Token.
+The command `access_token_status` helps to obtain the current status of
+an Access Token. In return the reponse contains information about the
+state of the token -- whether it is active or not --, as well as the
+dates it was issued, and it will expire.
 
 * Request:
 
