@@ -38,3 +38,11 @@
 Contents of snapshot directory (for instances running Cache Refresh), Apache logs (keep in mind that Gluu usually defines it's own Apache log), etc. 
 
 Stop service, remove/rename wrapper.log and restart the application, then check the recreated wrapper.log (if something fails to start, records telling that may appear in this log)
+
+## Forgot the admin password! 
+
+Oh no, its been a few days since you booted your test Gluu Server, and you can't remember the admin password. No worries, the Gluu
+Server stores this in `/install/community-edition-setup/setup.properties.last` under the property `ldapPass`. Try 
+    # grep ldapPass= /install/community-edition-setup/*.last
+
+Of course for a production installation, you should remove this file. Wouldn't want to have your admin password sitting on the filesystem!
