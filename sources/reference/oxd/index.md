@@ -865,7 +865,9 @@ like that:
 ### Discovery
 
 In order to retrieve the according endpoint information belonging to a
-registered resource use the command `discovery`.
+registered resource use the command `discovery`. Furthermore, it returns
+the supported scopes as well as the response types, the grant types, and
+the subject types.
 
 * Request:
 
