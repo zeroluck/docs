@@ -440,7 +440,7 @@ A sample request-response pair looks like that:
 ### Authorize RPT
 
 Use this command to aauthorize a Requesting Party Token (RPT). A
-full request-response-pair consists of these fields:
+full request-response triple consists of these fields:
 
 * Request:
 
@@ -478,7 +478,8 @@ full request-response-pair consists of these fields:
 }
 ```
 
-A sample request-response pair looks like that:
+A sample request-response pair with a validity confirmation looks like
+that:
 
 * Sample request:
 
