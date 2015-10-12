@@ -826,7 +826,8 @@ To register a permission ticket, use the command `register_ticket`.
 }
 ```
 
-A sample request-response pair looks like that:
+A sample request-response pair with a valid ticket id as response looks
+like that:
 
 * Sample request:
 
