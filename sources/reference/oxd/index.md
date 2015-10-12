@@ -734,7 +734,8 @@ A sample request-response pair looks like that:
 
 ### Check status of Access Token
 
-**Pattern**
+The command `access_token_status` helps to obtain the status of an
+Access Token.
 
 * Request:
 
@@ -762,7 +763,7 @@ A sample request-response pair looks like that:
 }
 ```
 
-**Sample**
+A sample request-response pair looks like that:
 
 * Sample request:
 
@@ -792,7 +793,7 @@ A sample request-response pair looks like that:
 
 ### Register permission ticket
 
-**Pattern**
+To register a permission ticket, use the command `register_ticket`.
 
 * Request:
 
@@ -825,7 +826,7 @@ A sample request-response pair looks like that:
 }
 ```
 
-**Sample**
+A sample request-response pair looks like that:
 
 * Sample request:
 
