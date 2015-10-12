@@ -574,7 +574,11 @@ A sample request-response pair looks like that:
 
 ### Check status of RPT
 
-This command checks the status of a Requesting Party Token (RPT).
+This command checks the status of a Requesting Party Token (RPT). In
+return the reponse contains information about the state of the RPT token
+-- whether it is active or not --, as well as the date it was issued,
+and the date it will expire. Furthermore, a list of referenced
+permissions is added.
 
 * Request:
 
