@@ -1,17 +1,21 @@
 # LDAP Namespace 
 
-The LDAP Namespace, or Directory Information Tree (DIT) structure, is the convention for naming
-entries in LDAP so that they form a hierarchical tree structure.
+The LDAP Namespace, or Directory Information Tree (DIT) structure, is
+the convention for naming entries in LDAP so that they form a
+hierarchical tree structure.
 
-In general, the Gluu Server tries to keep the data pretty flat. But at times, we use the 
-namespace to store information that is relative to a certain entry. 
+In general, the Gluu Server tries to keep the data pretty flat. But at
+times, we use the namespace to store information that is relative to a
+certain entry.
 
-There are two root namespaces in the Gluu Server: `o=gluu` and `o=site`. The `o=gluu` namespace
-is used to store all the important configuration and entity data. The `o=site` DIT is used
-only when identities are being synchronized from an external LDAP server using the Gluu
-Server Cache Refresh feature.
+There are two root namespaces in the Gluu Server: `o=gluu` and `o=site`.
+The `o=gluu` namespace is used to store all the important configuration
+and entity data. The `o=site` DIT is used only when identities are being
+synchronized from an external LDAP server using the Gluu Server Cache
+Refresh feature.
 
-The following table has a list of all the major branches of the tree under `o=gluu`:
+The following table has a list of all the major branches of the tree
+under `o=gluu`:
 
 | base DN                                  | Description                                               |
 | ---------------------------------------- | --------------------------------------------------------- |
@@ -30,6 +34,5 @@ The following table has a list of all the major branches of the tree under `o=gl
 | oxAuthGrantId=grantId,inum=clientId,ou=clients,o=1234,o=gluu | Granted tokens |
 | ou=pairwiseIdentifiers,inum=personId,ou=people,o=1234,o=gluu | Pairwise Identifier for each Sector Identifier |
 |
-
 
 
