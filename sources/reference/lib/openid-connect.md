@@ -25,8 +25,10 @@ including an OAuth 2.0 authorization server, Simple Web Discovery,
 Dynamic Client Registration, JSON Web Tokens, and JSON Web Keys, and
 User Info Endpoint.
 
- - oxAuth Server, Client and RP [Source Code](https://github.com/GluuFederation/oxAuth).
- - oxAuth [OP](https://seed.gluu.org/oxauth), [RP](https://seed.gluu.org/oxauth-rp) and [Configuration Endpoint](https://seed.gluu.org/.well-known/openid-configuration).
+ - oxAuth-server (Download [Binary Packages](http://ox.gluu.org/maven/org/xdi/oxauth-server/) | Download [Source Code](https://github.com/GluuFederation/oxAuth))
+ - oxAuth-client (Download [Binary Packages](http://ox.gluu.org/maven/org/xdi/oxauth-client/) | Download [Source Code](https://github.com/GluuFederation/oxAuth/tree/master/Client))
+ - oxAuth-rp (Download [Binary Packages](http://ox.gluu.org/maven/org/xdi/oxauth-rp/) | Download [Source Code](https://github.com/GluuFederation/oxAuth/tree/master/RP))
+ - Live oxAuth [OP](https://seed.gluu.org/oxauth), [RP](https://seed.gluu.org/oxauth-rp) and [Configuration Endpoint](https://seed.gluu.org/.well-known/openid-configuration).
 
 ## References
 - [OpenID Connect Specifications](http://openid.net/connect/)
