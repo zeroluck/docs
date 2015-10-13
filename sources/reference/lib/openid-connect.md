@@ -25,6 +25,7 @@ including an OAuth 2.0 authorization server, Simple Web Discovery,
 Dynamic Client Registration, JSON Web Tokens, and JSON Web Keys, and
 User Info Endpoint.
 
+ - We have introduced [Gluu CE](http://www.gluu.org/docs/articles/gluu-server-ce/) (Community Edition) binaries to help you install your Gluu Server in minutes.
  - oxAuth-server (Download [Binary Packages](http://ox.gluu.org/maven/org/xdi/oxauth-server/) | Download [Source Code](https://github.com/GluuFederation/oxAuth))
  - oxAuth-client (Download [Binary Packages](http://ox.gluu.org/maven/org/xdi/oxauth-client/) | Download [Source Code](https://github.com/GluuFederation/oxAuth/tree/master/Client))
  - oxAuth-rp (Download [Binary Packages](http://ox.gluu.org/maven/org/xdi/oxauth-rp/) | Download [Source Code](https://github.com/GluuFederation/oxAuth/tree/master/RP))
