@@ -42,7 +42,7 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __gluuPaidUntil__ TODO - in use?
  * __gluuPaymentProcessorTimestamp__ TODO - in use?
  * __gluuPersonCount__ Monitor the number of people in the LDAP severs for a Gluu Server instance
- * __gluuPrivacyEmail__ Privacy Alert Email Address used by oxTrust.
+ * __gluuPrivacyEmail__ Privacy alert email address used by oxTrust
  * __gluuPrivate__ TODO - in use?
  * __gluuPublishIdpMetadata__ Gluu Server flag to publish the IDP metadata via the web server
  * __gluuResizeInitiated__ TODO - in use?
@@ -52,20 +52,20 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __gluuShibFailedAuth__ Monitors failed login attempts on Gluu Server Shibboleth IDP
  * __gluuShibSecurityEvents__ Monitors security events on Gluu Server Shibboleth IDP
  * __gluuShibSuccessfulAuths__ Monitors login attempts on Gluu Server Shibboleth IDP
- * __gluuSmtpFromEmailAddress__ SMTP From Email Address
- * __gluuSmtpFromName__ SMTP From Name
- * __gluuSmtpHost__ SMTP Host
- * __gluuSmtpPassword__ SMTP User Password
- * __gluuSmtpPort__ SMTP Port
- * __gluuSmtpRequiresAuthentication__ SMTP Requires Authentication
- * __gluuSmtpRequiresSsl__ SMTP Requires SSL
- * __gluuSmtpUserName__ SMTP User Name
- * __gluuSslExpiry__ SAML Trust Relationship configuration
+ * __gluuSmtpFromEmailAddress__ SMTP From email address
+ * __gluuSmtpFromName__ SMTP From name
+ * __gluuSmtpHost__ SMTP host
+ * __gluuSmtpPassword__ SMTP user password
+ * __gluuSmtpPort__ SMTP port
+ * __gluuSmtpRequiresAuthentication__ SMTP requires authentication
+ * __gluuSmtpRequiresSsl__ SMTP requires SSL
+ * __gluuSmtpUserName__ SMTP user name
+ * __gluuSslExpiry__ SAML trust relationship configuration
  * __gluuStatus__ Status of the entry, used by many object classes
- * __gluuSvnEmail__ SVN Alert Email Address
- * __gluuSystemUptime__ Monitors how long the Gluu Server instance has been running.
+ * __gluuSvnEmail__ SVN alert amail address
+ * __gluuSystemUptime__ Monitors how long the Gluu Server instance has been running
  * __gluuTargetRAM__ Monitors total available RAM on Gluu Server instance
- * __gluuUrl__ Gluu instance URL
+ * __gluuUrl__ Gluu instance uri
  * __gluuVDSenabled__ oxTrust VDS enabled or disabled
  * __gluuVDSstatus__ Gluu VDS configuration
  * __gluuVdsCacheRefreshEnabled__ None
@@ -75,8 +75,8 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __gluuVdsCacheRefreshProblemCount__ None
  * __gluuWhitePagesEnabled__ None
  * __iname__ None
- * __inum__ XRI i-number
- * __inumFN__ XRI i-number sans punctuation
+ * __inum__ XRI i-number (iNum)
+ * __inumFN__ XRI i-number (iNum) without punctuation
  * __o__ 
  * __oxAuthenticationLevel__ None
  * __oxAuthenticationMode__ None
