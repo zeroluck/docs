@@ -1,42 +1,59 @@
 # Interception Scripts
 
-The Gluu Server was designed to be very flexible. Gluu Server admins can use [Jython](http://www.jython.org/docs/tutorial/indexprogress.html) interception scripts to customize behavior.
+The Gluu Server was designed to be very flexible. Gluu Server admins can
+use [Jython](http://www.jython.org/docs/tutorial/indexprogress.html)
+interception scripts to customize behavior.
 
-Jython was chosen because an interpreted language facilitates dynamic creation of business logic, and makes it easier to distribute this logic to a cluster of Gluu servers.
+Jython was chosen because an interpreted language facilitates dynamic
+creation of business logic, and makes it easier to distribute this logic
+to a cluster of Gluu servers.
 
-Another advantage of Jython was that developers can use either Java or Python classes. Combined with the option of calling web services from Python or Java, this enables the Gluu Server to support any business-driven policy requirement.
+Another advantage of Jython was that developers can use either Java or
+Python classes. Combined with the option of calling web services from
+Python or Java, this enables the Gluu Server to support any
+business-driven policy requirement.
 
-To access custom scripts within oxTrust, navigate to Configuration > Manage Custom Scripts.
+To access custom scripts within oxTrust, navigate to Configuration >
+Manage Custom Scripts.
 
 # Overview
-There are currently 8 options that can be customized by using interception scripts.    
+There are currently 8 options that can be customized by using interception scripts.
 
-- [Application Session Management](#application-session-management)         
-- [Authentication](#authentication)     
-- [Authorization](#authorization)       
-- [Cache Refresh](#cache-refresh)       
-- [Client Registration](#client-registration)       
-- [ID Generation](#id-generation)       
-- [Update User](#update-user)       
-- [User Registration](#user-registration)       
+- [Application Session Management](#application-session-management)
+- [Authentication](#authentication)
+- [Authorization](#authorization)
+- [Cache Refresh](#cache-refresh)
+- [Client Registration](#client-registration)
+- [ID Generation](#id-generation)
+- [Update User](#update-user)
+- [User Registration](#user-registration)
 
-All script types inherit a base interface which has 3 methods:   
-    
-`def init(self, configurationAttributes):`      
+All script types inherit a base interface which has 3 methods:
 
-`def destroy(self, configurationAttributes):`       
-    
-`def getApiVersion(self):`      
+* `def init(self, configurationAttributes):`
 
-The `configurationAttributes` parameter is `java.util.Map<String, SimpleCustomProperty>` with properties specified in `oxConfigurationProperty` attributes.   
+* `def destroy(self, configurationAttributes):`
 
-The `init` and `destroy` methods are called only one time during the script initialization and script destroy events. The `init` method can be used to do global script initialization, initiate objects, etc. The `destroy` method can be used to free resources and objects created in the `init` method.    
-    
-The script manager only loads enabled scripts. Hence, after enabling a script, the script manager should trigger an event to load or destroy script. 
+* `def getApiVersion(self):`
 
-All scripts are stored in LDAP in the `ou=scripts,o=<org_inum>,o=gluu` branch.  
+The `configurationAttributes` parameter is `java.util.Map<String,
+SimpleCustomProperty>` with properties specified in
+`oxConfigurationProperty` attributes.
 
-This is a sample entry:     
+The `init` and `destroy` methods are called only one time during the
+script initialization and script destroy events. The `init` method can
+be used to do global script initialization, initiate objects, etc. The
+`destroy` method can be used to free resources and objects created in
+the `init` method.
+
+The script manager only loads enabled scripts. Hence, after enabling a
+script, the script manager should trigger an event to load or destroy
+script.
+
+All scripts are stored in LDAP in the `ou=scripts,o=<org_inum>,o=gluu`
+branch.
+
+This is a sample entry:
 
     dn: inum=@!1111!031C.4A65,ou=scripts,o=@!1111,o=gluu
     objectClass: oxCustomScript
@@ -53,24 +70,40 @@ This is a sample entry:
     oxScriptType: <script_type>
     programmingLanguage: python
 
-The script manager reloads scripts automatically without needing to restart the application once `oxRevision` is increased.
+The script manager reloads scripts automatically without needing to
+restart the application once `oxRevision` is increased.
 
-The `getApiVersion` method allows API changes in order to do transparent migration from an old script to a new API. Currently all scripts should return 1. For example, in the future we can extend the API of any script and call new method(s) only if API version > 2, etc. exists. 
+The `getApiVersion` method allows API changes in order to do transparent
+migration from an old script to a new API. Currently all scripts should
+return `1`. For example, in the future we can extend the API of any
+script and call new method(s) only if API version > 2, etc. exists.
 
 ## Interception Script Logs
-The log files regarding interception scripts are not stored in the `wrapper.log` file. The logs are separated according to the module they affect. The oxAuth custom script logs are stored in `oxauth_script.log` and the oxTrust custom script logs are stored in the `oxtrust_script.log`. Please refer to these logs for any errors in the interception scripts or following the workflow of the script.
+
+The log files regarding interception scripts are not stored in the
+`wrapper.log` file. The logs are separated according to the module they
+affect. The oxAuth custom script logs are stored in `oxauth_script.log`
+and the oxTrust custom script logs are stored in the
+`oxtrust_script.log`. Please refer to these logs for any errors in the
+interception scripts or following the workflow of the script.
 
 # Application Session Management
-This script allows an admin to notify 3rd party systems about requests to end an OAuth session. This method is triggered by an oxAuth call to the `end_session` endpoint. It's possible to add multiple scripts with this type. The application should call all of them according to the level.
 
-This script type adds only one method to base script type:    
+This script allows an admin to notify 3rd party systems about requests
+to end an OAuth session. This method is triggered by an oxAuth call to
+the `end_session` endpoint. It's possible to add multiple scripts with
+this type. The application should call all of them according to the
+level.
 
-`def endSession(self, httpRequest, authorizationGrant, configurationAttributes):`       
-        
-These are the types of parameters:    
-- `httpRequest` is `javax.servlet.http.HttpServletRequest`      
-- `authorizationGrant` is `org.xdi.oxauth.model.common.AuthorizationGrant`      
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`        
+This script type adds only one method to base script type:
+
+`def endSession(self, httpRequest, authorizationGrant, configurationAttributes):`
+
+These are the types of parameters:
+
+- `httpRequest` is `javax.servlet.http.HttpServletRequest`
+- `authorizationGrant` is `org.xdi.oxauth.model.common.AuthorizationGrant`
+- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
 
 This script can be used in oxAuth application only.
 
@@ -80,52 +113,74 @@ This script can be used in oxAuth application only.
 
 **For a list of pre-written, open source Gluu authentication scripts, view our [server integrations](https://github.com/GluuFederation/oxAuth/tree/master/Server/integrations)**
 
-An authentication script enables you to customize the user authentication experience. For example, you can write a script that enables a two-factor authentication mechanism like Duo Security. By default oxAuth uses simple username/password authentication method. This script type allows an admin to implement more secure workflows to cover an organizations security requirements. It extends the base script type with the `init`, `destroy` and `getApiVersion` methods but also adds the following methods:    
+An authentication script enables you to customize the user
+authentication experience. For example, you can write a script that
+enables a two-factor authentication mechanism like Duo Security. By
+default oxAuth uses simple username/password authentication method. This
+script type allows an admin to implement more secure workflows to cover
+an organizations security requirements. It extends the base script type
+with the `init`, `destroy` and `getApiVersion` methods but also adds the
+following methods:
 
-`def isValidAuthenticationMethod(self, usageType, configurationAttributes):`
+* `def isValidAuthenticationMethod(self, usageType, configurationAttributes):`
 
-`def getAlternativeAuthenticationMethod(self, usageType, configurationAttributes):`
+* `def getAlternativeAuthenticationMethod(self, usageType, configurationAttributes):`
 
-`def authenticate(self, configurationAttributes, requestParameters, step):`     
+* `def authenticate(self, configurationAttributes, requestParameters, step):`
 
-`def prepareForStep(self, configurationAttributes, requestParameters, step):`   
+* `def prepareForStep(self, configurationAttributes, requestParameters, step):`
 
-`def getCountAuthenticationSteps(self, configurationAttributes):`   
+* `def getCountAuthenticationSteps(self, configurationAttributes):`
 
-`def getExtraParametersForStep(self, configurationAttributes, step):`   
+* `def getExtraParametersForStep(self, configurationAttributes, step):`
 
-`def getPageForStep(self, configurationAttributes, step):`      
+* `def getPageForStep(self, configurationAttributes, step):`
 
-`def logout(self, configurationAttributes, requestParameters):`     
+* `def logout(self, configurationAttributes, requestParameters):`
 
-The `isValidAuthenticationMethod` method is used to check if the authentication method is in a valid state. For example we can check there if a 3rd party mechanism is available to authenticate users. As a result it should return `True` or `False`.
+The `isValidAuthenticationMethod` method is used to check if the
+authentication method is in a valid state. For example we can check
+there if a 3rd party mechanism is available to authenticate users. As a
+result it should return `True` or `False`.
 
-This method has the following parameters:    
-- `usageType` is `org.xdi.model.AuthenticationScriptUsageType`  
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`    
+This method has the following parameters:
 
-The `getAlternativeAuthenticationMethod` method is called only if the current authentication method is in an invalid state. Hence authenticator calls it only if `isValidAuthenticationMethod` returns `False`. As a result it should return the reserved authentication method name.
+- `usageType` is `org.xdi.model.AuthenticationScriptUsageType`
+- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
 
-This method has the following parameters:    
-- `usageType` is `org.xdi.model.AuthenticationScriptUsageType`  
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`    
+The `getAlternativeAuthenticationMethod` method is called only if the
+current authentication method is in an invalid state. Hence
+authenticator calls it only if `isValidAuthenticationMethod` returns
+`False`. As a result it should return the reserved authentication method
+name.
 
-The `authenticate` method is the key method within the person authentication script. It checks if the user has passed the specified step or not. As a result it should return `True` or `False`.
+This method has the following parameters:
 
-This method has the following parameters:    
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`    
+- `usageType` is `org.xdi.model.AuthenticationScriptUsageType`
+- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
+
+The `authenticate` method is the key method within the person
+authentication script. It checks if the user has passed the specified
+step or not. As a result it should return `True` or `False`.
+
+This method has the following parameters:
+
+- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
+- `requestParameters` is `java.util.Map<String, String[]>`
+- step is a java integer
+
+The `prepareForStep` method can be used to prepare variables needed to
+render login page and store them in event context. As a result it should
+return `True` or `False`.
+
+This method has the following parameters:
+
+- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
 - `requestParameters` is `java.util.Map<String, String[]>`  
 - step is a java integer
 
-The `prepareForStep` method can be used to prepare variables needed to render login page and store them in event context.
-As a result it should return `True` or `False`. 
-
-This method has the following parameters:    
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`    
-- `requestParameters` is `java.util.Map<String, String[]>`  
-- step is a java integer
-
-The `getCountAuthenticationSteps` method should return an integer value with the number of steps in the authentication workflow.
+The `getCountAuthenticationSteps` method should return an integer value
+with the number of steps in the authentication workflow.
 
 This method has the following parameters:    
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`    
