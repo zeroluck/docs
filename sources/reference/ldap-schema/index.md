@@ -391,46 +391,50 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
 
  * __Description__ 
  * __displayName__ 
- * __inum__ XRI i-number
+ * __inum__ XRI i-number (iNum)
  * __oxAuthFederationMetadataIntervalCheck__ oxAuth Federation metadata interval check attribute
  * __oxAuthFederationOP__ oxAuth Federation OP attribute
  * __oxAuthFederationRP__ oxAuth Federation RP attribute
  * __oxAuthRedirectURI__ oxAuth Redirect URI
 
 ### Object class oxAuthFederationOP
+
  * __Description__ 
  * __displayName__ 
  * __inum__ XRI i-number
  * __oxAuthFederationOpDomain__ oxAuth Federation OP domain attribute
  * __oxAuthFederationOpId__ oxAuth Federation OP ID attribute
  * __oxAuthX509PEM__ oxAuth x509 in PEM format
- * __oxAuthX509URL__ oxAuth x509 URL
+ * __oxAuthX509URL__ oxAuth x509 uri
 
 ### Object class oxAuthFederationRP
+
  * __Description__ 
  * __displayName__ 
- * __inum__ XRI i-number
- * __oxAuthRedirectURI__ oxAuth Redirect URI
+ * __inum__ XRI i-number (iNum)
+ * __oxAuthRedirectURI__ oxAuth redirect uri
  * __oxAuthX509PEM__ oxAuth x509 in PEM format
- * __oxAuthX509URL__ oxAuth x509 URL
+ * __oxAuthX509URL__ oxAuth x509 uri
 
 ### Object class oxAuthFederationRequest
+
  * __Description__ 
  * __displayName__ 
- * __inum__ XRI i-number
+ * __inum__ XRI i-number (iNum)
  * __oxAuthFederationOpDomain__ oxAuth Federation OP domain attribute
  * __oxAuthFederationOpId__ oxAuth Federation OP ID attribute
  * __oxAuthFederationRequestType__ oxAuth Federation request type attribute
- * __oxAuthRedirectURI__ oxAuth Redirect URI
+ * __oxAuthRedirectURI__ oxAuth redirect uri
 
 ### Object class oxAuthFederationTrust
+
  * __Description__ 
  * __displayName__ 
  * __inum__ XRI i-number
  * __oxAuthFederationId__ oxAuth Federation ID attribute
- * __oxAuthFederationMetadataURI__ oxAuth Federation metadata URI attribute
- * __oxAuthFederationTrustStatus__ oxAuth Federation Trust Status attribute
- * __oxAuthRedirectURI__ oxAuth Redirect URI
+ * __oxAuthFederationMetadataURI__ oxAuth Federation metadata uri attribute
+ * __oxAuthFederationTrustStatus__ oxAuth Federation trust status attribute
+ * __oxAuthRedirectURI__ oxAuth redirect uri
  * __oxAuthReleasedScope__ oxAuth released scope attribute
  * __oxAuthSkipAuthorization__ oxAuth skip authorization attribute
 
