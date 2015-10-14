@@ -223,19 +223,25 @@ This script can be used in oxAuth application only.
 - [Sample Authentication Script](./sample-authentication-script.py)
 
 # Authorization
-This is a special script for UMA. It allows an admin to protect UMA scopes with policies. It's possible to add more than one UMA policy to an UMA scope. On requesting access to a specified resource, the application should call specified UMA policies in order to grant/deny access.
 
-This script type adds only one method to base script type:    
+This is a special script for UMA. It allows an admin to protect UMA
+scopes with policies. It is possible to add more than one UMA policy to
+an UMA scope. On requesting access to a specified resource, the
+application should call specified UMA policies in order to grant or deny
+access.
 
-`def authorize(self, authorizationContext, configurationAttributes):`   
+This script type adds only one method to base script type:
 
-These are types of parameters:     
-- `authorizationContext` is `org.xdi.oxauth.service.uma.authorization.AuthorizationContext`     
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`        
+`def authorize(self, authorizationContext, configurationAttributes):`
+
+These are types of parameters:
+
+- `authorizationContext` is `org.xdi.oxauth.service.uma.authorization.AuthorizationContext`
+- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
 
 This script can be used in oxAuth application only.
 
-- [Sample Authorization Script](./sample-uma-authorization-script.py)   
+- [Sample Authorization Script](./sample-uma-authorization-script.py)
 
 # Cache Refresh
 In order to integrate with an existing authentication server oxTrust provides a mechanism called [Cache Refresh](../../admin-guide/configuration/index.md#cache-refresh) to copy user data to the local LDAP server. During this process it's possible to specify key attribute(s) and specify attribute name transformations. There are also cases when it can be used to overwrite attribute values or add new attributes based on other attributes values. 
