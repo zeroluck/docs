@@ -267,20 +267,29 @@ This script can be used in oxTrust application only.
 - [Sample Cache Refresh Script](./sample-cache-refresh-script.py)
 
 # Client Registration
-oxAuth implements the [OpenID Connect dynamic client registration](https://openid.net/specs/openid-connect-registration-1_0.html) specification. All new clients have the same default access scopes and attributes except password and client ID. The Client Registration script allows an admin to modify this limitation. In this script it's possible to get a registration request, analyze it, and apply customizations to registered clients. For example, a script can give access to specified scopes if `redirect_uri` belongs to a specified service or domain. 
 
-This script type adds only one method to base script type:    
+oxAuth implements the [OpenID Connect dynamic client
+registration](https://openid.net/specs/openid-connect-registration-1_0.html)
+specification. All new clients have the same default access scopes and
+attributes except password and client ID. The Client Registration script
+allows an admin to modify this limitation. In this script it is possible
+to get a registration request, analyze it, and apply customizations to
+registered clients. For example, a script can give access to specified
+scopes if `redirect_uri` belongs to a specified service or domain.
 
-`def updateClient(self, registerRequest, client, configurationAttributes):`     
+This script type adds only one method to base script type:
 
-These are types of parameters:     
-- `registerRequest` is `org.xdi.oxauth.client.RegisterRequest`      
-- `client` is `org.xdi.oxauth.model.registration.Client`        
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`        
+* `def updateClient(self, registerRequest, client, configurationAttributes):`
+
+These are types of parameters:
+
+- `registerRequest` is `org.xdi.oxauth.client.RegisterRequest`
+- `client` is `org.xdi.oxauth.model.registration.Client`
+- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
 
 This script can be used in oxAuth application only.
 
-- [Sample Client Registration Script](./sample-client-registration-script)      
+- [Sample Client Registration Script](./sample-client-registration-script)
 
 # ID Generation
 By default oxAuth/oxTrust uses an internal method to generate unique identifiers for new person/client, etc. entries. In most cases the format of the ID is:    
