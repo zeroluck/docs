@@ -344,17 +344,17 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __oxAuthIdTokenEncryptedResponseEnc__ oxAuth ID token encrypted response encoding
  * __oxAuthIdTokenSignedResponseAlg__ oxAuth ID token signed response algorithm
  * __oxAuthInitiateLoginURI__ oxAuth initiate login uri
- * __oxAuthJwksURI__ oxAuth JWKs URI
- * __oxAuthLogoURI__ oxAuth Logo URI
- * __oxAuthPolicyURI__ oxAuth Policy URI
- * __oxAuthPostLogoutRedirectURI__ oxAuth Post Logout Redirect URI
- * __oxAuthRedirectURI__ oxAuth Redirect URI
- * __oxAuthRegistrationAccessToken__ oxAuth Registration Access Token
- * __oxAuthRequestObjectSigningAlg__ oxAuth Request Object Signing Algorithm
- * __oxAuthRequestURI__ oxAuth Request URI
- * __oxAuthRequireAuthTime__ oxAuth Require Authentication Time
- * __oxAuthResponseType__ oxAuth Response Type
- * __oxAuthScope__ oxAuth Attribute Scope
+ * __oxAuthJwksURI__ uri for the oxAuth JWKs file
+ * __oxAuthLogoURI__ uri for the oxAuth logo file
+ * __oxAuthPolicyURI__ uri for the oxAuth policy
+ * __oxAuthPostLogoutRedirectURI__ uri for the oxAuth post logout redirect
+ * __oxAuthRedirectURI__ uri for the oxAuth redirect
+ * __oxAuthRegistrationAccessToken__ oxAuth registration access token
+ * __oxAuthRequestObjectSigningAlg__ oxAuth request object signing algorithm
+ * __oxAuthRequestURI__ oxAuth request uri
+ * __oxAuthRequireAuthTime__ oxAuth require authentication time
+ * __oxAuthResponseType__ oxAuth response type
+ * __oxAuthScope__ oxAuth attribute scope
  * __oxAuthSectorIdentifierURI__ oxAuth Sector Identifier URI
  * __oxAuthSignedResponseAlg__ oxAuth Signed Response Algorithm
  * __oxAuthSubjectType__ oxAuth Subject Type
