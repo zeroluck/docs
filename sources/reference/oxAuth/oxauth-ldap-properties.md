@@ -11,11 +11,11 @@ under control.
 
 We publish the latest schema in our community-edition-setup project. The
 schema that we publish for Gluu OpenDJ should also work for [Forgerock
-OpenDJ][forgerock-opendj], [UnboundID][unboundid] LDAP server, and
-[Oracle Directory Server Enterprise Edition (ODSEE)][odsee].
+OpenDJ][forgerock-opendj], [UnboundID][unboundid] LDAP server, and the
+[Oracle Directory Server Enterprise Edition (ODSEE)][odsee] as well.
 
-These are the properties [oxTrust][oxtrust] uses to connect to
-[Lightweight Directory Access Protocol (LDAP)][ldap]:
+These are the properties [oxTrust][oxtrust] uses to connect to an
+[Lightweight Directory Access Protocol (LDAP)][ldap] service:
 
  * __bindDN__
 
@@ -32,14 +32,14 @@ These are the properties [oxTrust][oxtrust] uses to connect to
  * __servers__
 
    Define both the server name and the according network port to use. 
-   The default value is `localhost:1636` for the local machine, and 
-   port `1636`.
+   The value `localhost:1636` refers to the local machine, and uses port
+   `1636`.
 
  * __useSSL__
 
    Enable an [SSL][ssl] connection for encrypted data transmission. For
-   this entry use either `TRUE` to enable [SSL][ssl], or `false` to
-   disable [SSL][ssl].
+   this entry use either `true` to enable [SSL][ssl] (default value), or
+   `false` to disable [SSL][ssl].
 
  * __maxconnections__
 

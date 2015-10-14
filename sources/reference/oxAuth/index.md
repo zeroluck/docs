@@ -1,5 +1,7 @@
 # oxAuth Configuration 
 
+The oxAuth configuration consists of these subsections:
+
 - [oxAuth LDAP properties](./oxauth-ldap-properties.md)
 
 - [oxAuth XML configuration](./oxauth-config.md)
