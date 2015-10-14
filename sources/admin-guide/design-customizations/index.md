@@ -5,16 +5,16 @@
 The look and feel of the Gluu Server can be edited to match your
 organizations branding and custom requirements.
 
-# Style customizations
+# Style Customizations
 
-Static style elements like css, js and images are packaged into separate
+Static style elements like CSS, js and images are packaged into separate
 jar named _\<ProjectName\>_ Static- _\<version\>_ .jar (e.g.
 oxTrustStatic-1.3.0.Final.jar and oxAuthStatic-1.4.0x.Final.jar) and is
 added to the deployable war during the build time.
 
 Post deployment, the structure of the jar allows its context to be
 accessible from the Web contextroot. For example, the default values of
-the css and js locations are *\<contextPath\>/stylesheet* and
+the CSS and js locations are *\<contextPath\>/stylesheet* and
 *\<contextPath\>/js* in the configuration file.
 
 It is possible to unpack the contents of the said jar into a folder
@@ -45,7 +45,7 @@ in `oxauth-config.xml`
 <imgLocation>=https://idp.gluu.org/static/img<imgLocation>
 ```
 
-# Page customizations
+# Page Customizations
 
 To change the content of the pages, you will need to edit the xhtml files. Be careful
 not to remove any of the important form elements. But you can add additional html
