@@ -439,15 +439,17 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __oxAuthSkipAuthorization__ oxAuth skip authorization attribute
 
 ### Object class oxAuthSessionId
+
  * __Description__ 
- * __lastModifiedTime__ 
- * __oxAuthAuthenticationTime__ oxAuth Authentication Time
- * __oxAuthPermissionGranted__ oxAuth Permission Granted
- * __oxAuthPermissionGrantedMap__ oxAuth Permission Granted Map
- * __oxAuthUserDN__ oxAuth User DN
- * __uniqueIdentifier__ 
+ * __lastModifiedTime__ timestamp of the last modification
+ * __oxAuthAuthenticationTime__ oxAuth authentication time
+ * __oxAuthPermissionGranted__ oxAuth permission granted
+ * __oxAuthPermissionGrantedMap__ oxAuth permission granted map
+ * __oxAuthUserDN__ oxAuth user DN
+ * __uniqueIdentifier__ an unique identifier for this object
 
 ### Object class oxAuthToken
+
  * __Description__ 
  * __createTimestamp__ 
  * __oxAuthAuthenticationTime__ oxAuth Authentication Time
