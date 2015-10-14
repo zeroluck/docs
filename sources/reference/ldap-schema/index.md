@@ -1,26 +1,28 @@
 # Schema
 
-Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for 389DS too:  
+Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
+389DS too:
 
  * [OpenDJ](https://github.com/GluuFederation/community-edition-setup/tree/master/static/opendj)
  * [OpenLDAP](https://github.com/GluuFederation/community-edition-setup/tree/master/static/openldap)
 
 ### Object class gluuAppliance
+
  * __Description__ 
  * __blowfishPassword__ Blowfish crypted text
  * __c__ 
  * __description__ 
  * __displayName__ 
  * __gluuAdditionalBandwidth__ Track bandwidth requirements for the Gluu Server instance
- * __gluuAdditionalMemory__ Track additional memory requirements for the Gluu Server instance.
- * __gluuApplianceDnsServer__ Persist the DNS server that should be used for the Gluu Server instance.
+ * __gluuAdditionalMemory__ Track additional memory requirements for the Gluu Server instance
+ * __gluuApplianceDnsServer__ Persist the DNS server that should be used for the Gluu Server instance
  * __gluuAppliancePollingInterval__ Set the frequency of the health status update of the Gluu Server
  * __gluuBandwidthRX__ Track data received by the Gluu Server
  * __gluuBandwidthTX__ Track data sent by the Gluu Server
- * __gluuBillingEmail__ Billing Alert Email Address
- * __gluuCentreonEmail__ TODO - in use? Email Address to send monitoring alerts
+ * __gluuBillingEmail__ Billing alert email address
+ * __gluuCentreonEmail__ TODO - in use? Email address to send monitoring alerts
  * __gluuDSstatus__ Monitor health of the instance LDAP server.
- * __gluuFederationHostingEnabled__ oxTrust flag for the federation feature. Values enabled or disabled.
+ * __gluuFederationHostingEnabled__ oxTrust flag for the federation feature. Values enabled or disabled
  * __gluuFreeDiskSpace__ Monitor free disk space on the Gluu Server instance
  * __gluuFreeMemory__ Monitor free memory on the Gluu Server instance
  * __gluuFreeSwap__ Monitor swap space on the Gluu Server instance
@@ -29,13 +31,13 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for 389DS to
  * __gluuHostname__ The hostname of the Gluu Server instance
  * __gluuInvoiceNo__ TODO - in use?
  * __gluuIpAddress__ IP address of the Gluu Server instance
- * __gluuJiraEmail__ TODO - in use? Jira Alert Email Address
- * __gluuLastUpdate__ Monitors last time the server was able to connect to the monitoring system.
+ * __gluuJiraEmail__ TODO - in use? Jira alert email address
+ * __gluuLastUpdate__ Monitors last time the server was able to connect to the monitoring system
  * __gluuLifeRay__ None
- * __gluuLoadAvg__ Monitor the average CPU load for a Gluu Server instance.
+ * __gluuLoadAvg__ Monitor the average CPU load for a Gluu Server instance
  * __gluuManageIdentityPermission__ TODO - in use?
  * __gluuManager__ Used to specify if a person has the manager role
- * __gluuMaxLogSize__ Maximum Log File Size
+ * __gluuMaxLogSize__ Maximum log file size
  * __gluuOrgProfileMgt__ enable or disable profile management feature in oxTrust
  * __gluuPaidUntil__ TODO - in use?
  * __gluuPaymentProcessorTimestamp__ TODO - in use?
