@@ -122,15 +122,16 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __oxAuthClaimName__ Used by oxAuth in conjunction with gluuLdapAttributeName to map claims to attributes in LDAP.
 
 ### Object class gluuGroup
+
  * __Description__ 
  * __c__ 
  * __description__ 
  * __displayName__ 
- * __gluuGroupType__ Type of Group. Not used.
- * __gluuGroupVisibility__ Group visibility. Not used.
+ * __gluuGroupType__ Type of group. Not used
+ * __gluuGroupVisibility__ Group visibility. Not used
  * __gluuStatus__ Status of the entry, used by many object classes
  * __iname__ None
- * __inum__ XRI i-number
+ * __inum__ XRI i-number (iNum)
  * __member__ 
  * __o__ 
  * __owner__ 
