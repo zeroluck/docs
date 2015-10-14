@@ -576,10 +576,10 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
 ### Object class oxProxAccessToken
 
  * __Description__ 
- * __oxAuthCreation__ oxAuth Creation
- * __oxAuthExpiration__ oxAuth Expiration
- * __oxProxyAccessToken__ oxProx access token
- * __oxProxyClientId__ oxProx client id
+ * __oxAuthCreation__ oxAuth creation
+ * __oxAuthExpiration__ oxAuth expiration
+ * __oxProxyAccessToken__ oxProxy access token
+ * __oxProxyClientId__ oxProxy client id
 
 ### Object class oxProxClient
  * __Description__ 
