@@ -634,20 +634,23 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __oxScriptType__ Attribute that contains the script type (e.g. python, java script)
 
 ### Object class oxTrustConfiguration
+
  * __Description__ 
  * __ou__ 
- * __oxTrustConfApplication__ oxTrust Application Configuration
+ * __oxTrustConfApplication__ oxTrust application configuration
 
 ### Object class vdDirectoryView
+
  * __Description__ 
  * __o__ 
 
 ### Object class vdapcontainer
+
  * __Description__ 
  * __ou__ 
 
 ### Object class vdlabel
+
  * __Description__ 
  * __o__ 
-
 
