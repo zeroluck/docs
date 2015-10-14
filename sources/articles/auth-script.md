@@ -18,7 +18,7 @@ Gluu Server custom scripts are written in [Jython](http://www.jython.org/). In t
 using Eclipse. You can't actually run the scripts from Eclipse, but it provides a nice editor
 which makes coding more enjoyable.
 
-Before you begin, install the following:
+Before you begin, install the following:    
  - [Python 2.7.x](https://www.python.org/downloads/)   
  - [Jython](http://www.jython.org/downloads.html)   
  - [Java Standard Edition](http://www.oracle.com/technetwork/java/javase/terms/products/index.html)   
