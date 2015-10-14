@@ -337,26 +337,37 @@ These are types of parameters:
 
 This script can be used in oxTrust application only.
 
-- [Sample Update User Script](./sample-update-user-script.py)       
+- [Sample Update User Script](./sample-update-user-script.py)
 
 # User Registration
-oxTrust allows users to perform self-registration. In order to control/validate user registrations there is the user registration script type.
 
-This script type adds three methods to the base script type:     
+oxTrust allows users to perform self-registration. In order to
+control/validate user registrations there is the user registration
+script type.
 
-`def initRegistration(self, user, requestParameters, configurationAttributes):`     
+This script type adds three methods to the base script type:
 
-`def preRegistration(self, user, requestParameters, configurationAttributes):`      
+* `def initRegistration(self, user, requestParameters, configurationAttributes):`
 
-`def postRegistration(self, user, requestParameters, configurationAttributes):`     
+* `def preRegistration(self, user, requestParameters, configurationAttributes):`
 
-All these methods expect the same parameters:      
-- `user` is `org.gluu.oxtrust.model.GluuCustomPerson`       
-- `requestParameters` is `java.util.Map<String, String[]>`      
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`        
+* `def postRegistration(self, user, requestParameters, configurationAttributes):`
 
-First oxTrust executes the `initRegistration` method to do initial user entry update. The `preRegistration` method is called  before persisting the user entry in LDAP. Hence in this script it's possible to validate the user entry. The `postRegistration` method is called after successfully persisting the user entry in LDAP. In this method, for example, the script can send an e-mail or send notifications to other organization systems about the new user entry.
+All these methods expect the same parameters:
 
-All three methods should return `True` or `False`.       
+- `user` is `org.gluu.oxtrust.model.GluuCustomPerson`
+- `requestParameters` is `java.util.Map<String, String[]>`
+- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
 
-- [Sample User Registration Script](./sample-user-registration-script.py)       
+First oxTrust executes the `initRegistration` method to do initial user
+entry update. The `preRegistration` method is called before persisting
+the user entry in LDAP. Hence in this script it is possible to validate
+the user entry. The `postRegistration` method is called after
+successfully persisting the user entry in LDAP. In this method, for
+example, the script can send an e-mail or send notifications to other
+organization systems about the new user entry.
+
+All three methods should return `True` or `False`.
+
+- [Sample User Registration Script](./sample-user-registration-script.py)
+
