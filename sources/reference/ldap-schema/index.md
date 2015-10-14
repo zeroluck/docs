@@ -551,14 +551,15 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __oxLinkPending__ pending ox registrations
 
 ### Object class oxLiteralNode
+
  * __Description__ 
- * __literalBinaryValue__ OX literalValue
- * __literalValue__ OX literalValue
- * __organizationalOwner__ OX organizational Owner
- * __owner__ 
- * __targetRelationalXdiStatement__ OX TargetRelationalXdiStatement
- * __x__ OX XRI Component
- * __xdiStatement__ OX xdiStatement
+ * __literalBinaryValue__ ox literal binary value
+ * __literalValue__ ox literal value
+ * __organizationalOwner__ ox organizational owner
+ * __owner__ ox owner
+ * __targetRelationalXdiStatement__ ox TargetRelationalXdiStatement
+ * __x__ ox XRI component
+ * __xdiStatement__ ox XDI statement
  * __xri__ OX XRI address
 
 ### Object class oxNode
