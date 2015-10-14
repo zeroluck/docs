@@ -150,6 +150,7 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __tertiaryKeyValue__ Tertiary key value
 
 ### Object class gluuInvoice
+
  * __Description__ 
  * __gluuInvoiceAmount__ TODO - in use?
  * __gluuInvoiceDate__ TODO - in use?
@@ -161,35 +162,36 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __inum__ XRI i-number
 
 ### Object class gluuOrganization
+
  * __Description__ 
  * __c__ 
- * __county__ ISO 3166-1 Alpha-2 Country Code
- * __deployedAppliances__ Track which appliances are deployed at an organization.
+ * __county__ ISO 3166-1 Alpha-2 country code
+ * __deployedAppliances__ Track which appliances are deployed at an organization
  * __description__ 
  * __displayName__ 
- * __gluuAddPersonCapability__ Organizational attribute to control whether new users can be added via the oxTrust GUI.
- * __gluuAdditionalUsers__ TODO : use unclear
+ * __gluuAddPersonCapability__ Organizational attribute to control whether new users can be added via the oxTrust GUI
+ * __gluuAdditionalUsers__ TODO: use unclear
  * __gluuApplianceUpdateRequestList__ Used by the Gluu Server to request an update
  * __gluuCustomMessage__ oxTrust custom welcome message
- * __gluuFaviconImage__ TODO - Stores URL of favicon
- * __gluuFederationHostingEnabled__ oxTrust flag for the federation feature. Values enabled or disabled.
+ * __gluuFaviconImage__ TODO - Stores uri of Gluu Server favicon
+ * __gluuFederationHostingEnabled__ oxTrust flag for the federation feature. Values enabled or disabled
  * __gluuInvoiceNo__ TODO - in use?
- * __gluuLogoImage__ Logo used by oxTrust for default look and feel.
+ * __gluuLogoImage__ Logo used by oxTrust for default look and feel
  * __gluuManageIdentityPermission__ TODO - in use?
  * __gluuManager__ Used to specify if a person has the manager role
- * __gluuManagerGroup__ Used in organization entry to specifies the dn of the group that has admin privileges in oxTrust.
+ * __gluuManagerGroup__ Used in organization entry to specifies the dn of the group that has admin privileges in oxTrust
  * __gluuOrgProfileMgt__ enable or disable profile management feature in oxTrust
- * __gluuOrgShortName__ Short description, as few letters as possible, no spaces.
+ * __gluuOrgShortName__ Short description, as few letters as possible, no spaces
  * __gluuOwnerGroup__ Deprecated. Use gluuManagerGroup
  * __gluuPaidUntil__ TODO - in use?
  * __gluuPaymentProcessorTimestamp__ TODO - in use?
  * __gluuProStoresUser__ TODO - remove
  * __gluuStatus__ Status of the entry, used by many object classes
- * __gluuTempFaviconImage__ Store location for upload of Favicon
+ * __gluuTempFaviconImage__ Store location for upload of the Gluu Server favicon
  * __gluuThemeColor__ oxTrust login page configuration
  * __gluuWhitePagesEnabled__ None
  * __iname__ None
- * __inum__ XRI i-number
+ * __inum__ XRI i-number (iNum)
  * __l__ 
  * __mail__ 
  * __memberOf__ None
@@ -201,12 +203,12 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __oxLinktrackEnabled__ Is Linktrack API configured
  * __oxLinktrackLogin__ Linktrack API login
  * __oxLinktrackPassword__ Linktrack API password
- * __oxRegistrationConfiguration__ Registration Configuration
+ * __oxRegistrationConfiguration__ Registration configuration
  * __postalCode__ 
  * __proStoresToken__ None
  * __prostoresTimestamp__ None
- * __scimAuthMode__ SCIM Authorization mode
- * __scimGroup__ scim Group
+ * __scimAuthMode__ SCIM authorization mode
+ * __scimGroup__ scim group
  * __scimStatus__ scim status
  * __st__ 
  * __street__ 
