@@ -176,36 +176,51 @@ return `True` or `False`.
 This method has the following parameters:
 
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
-- `requestParameters` is `java.util.Map<String, String[]>`  
+- `requestParameters` is `java.util.Map<String, String[]>`
 - step is a java integer
 
 The `getCountAuthenticationSteps` method should return an integer value
 with the number of steps in the authentication workflow.
 
-This method has the following parameters:    
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`    
+This method has the following parameters:
+- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
 
-The `getExtraParametersForStep` method provides a way to notify the authenticator that it should store specified event context parameters event in the oxAuth session. It's needed in few cases, for example when an authentication script redirects the user to a 3rd party authentication system and expects the workflow to resume after that. As a result it should return a java array of strings.
+The `getExtraParametersForStep` method provides a way to notify the
+authenticator that it should store specified event context parameters
+event in the oxAuth session. It's needed in few cases, for example when
+an authentication script redirects the user to a 3rd party
+authentication system and expects the workflow to resume after that. As
+a result it should return a java array of strings.
 
-This method has the following parameters:    
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`    
-- step is a java integer    
+This method has the following parameters:
 
-The `getPageForStep` method allows the admin to render a required page for a specified authentication step. It should return a string value with a path to an XHTML page. If the return value is empty or null, the authenticator should render the default log in page `/login.xhtml`.
+- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
+- step is a java integer
 
-This method has the following parameters:     
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`    
-- step is a java integer    
+The `getPageForStep` method allows the admin to render a required page
+for a specified authentication step. It should return a string value
+with a path to an XHTML page. If the return value is empty or null, the
+authenticator should render the default log in page `/login.xhtml`.
 
-The `logout` method is not mandatory. It can be used in cases when you need to execute specific logout logic within the authentication script when oxAuth receives an end session request. Also it allows oxAuth to stop processing the end session request workflow if it returns `False`. As result it should return `True` or `False`.
+This method has the following parameters:
 
-This method has the following parameters:     
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`    
-- `requestParameters` is `java.util.Map<String, String[]>`  
+- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
+- step is a java integer
+
+The `logout` method is not mandatory. It can be used in cases when you
+need to execute specific logout logic within the authentication script
+when oxAuth receives an end session request. Also it allows oxAuth to
+stop processing the end session request workflow if it returns `False`.
+As result it should return `True` or `False`.
+
+This method has the following parameters:
+
+- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
+- `requestParameters` is `java.util.Map<String, String[]>`
 
 This script can be used in oxAuth application only.
 
-- [Sample Authentication Script](./sample-authentication-script.py) 
+- [Sample Authentication Script](./sample-authentication-script.py)
 
 # Authorization
 This is a special script for UMA. It allows an admin to protect UMA scopes with policies. It's possible to add more than one UMA policy to an UMA scope. On requesting access to a specified resource, the application should call specified UMA policies in order to grant/deny access.
