@@ -218,12 +218,14 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __userPassword__ 
 
 ### Object class gluuPasswordResetRequest
+
  * __Description__ 
- * __creationDate__ Creation Date used for password reset requests
+ * __creationDate__ Creation date used for password reset requests
  * __oxGuid__ A random string to mark temporary tokens
  * __personInum__ Inum of a person
 
 ### Object class gluuPerson
+
  * __Description__ 
  * __associatedClient__ 
  * __c__ 
@@ -232,13 +234,13 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __gluuManagedOrganizations__ Used to track with which organizations a person is associated
  * __gluuOptOuts__ White pages attributes restricted by person in oxTrust profile management
  * __gluuStatus__ Status of the entry, used by many object classes
- * __gluuWhitePagesListed__ Allow Publication
+ * __gluuWhitePagesListed__ Allow publication
  * __iname__ None
- * __inum__ XRI i-number
+ * __inum__ XRI i-number (iNum)
  * __mail__ 
  * __memberOf__ None
  * __o__ 
- * __oxAuthPersistentJWT__ oxAuth Persistent JWT
+ * __oxAuthPersistentJWT__ oxAuth persistent JWT
  * __oxCreationTimestamp__ Registration time
  * __oxExternalUid__ None
  * __oxInviteCode__ Invite Code
@@ -263,29 +265,29 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __oxTrusthonorificPrefix__ None
  * __oxTrusthonorificSuffix__ None
  * __oxTrustx509Certificate__ None
- * __persistentId__ PersistentId
+ * __persistentId__ Persistent id
  * __middleName__ Middle name(s)
- * __nickname__ Casual name of the End-User
- * __preferredUsername__ Shorthand Name
- * __profile__ Profile page URL of the person
- * __picture__ Profile picture URL of the person
- * __website__ Web page or blog URL of the person
+ * __nickname__ Casual name of the end-user
+ * __preferredUsername__ Shorthand name
+ * __profile__ Profile page uri of the person
+ * __picture__ Profile picture uri of the person
+ * __website__ Web page or blog uri of the person
  * __emailVerified__ True if the e-mail address of the person has been verified; otherwise false
- * __gender__ Gender of the person either female or male
+ * __gender__ Gender of the person - either female or male
  * __birthdate__ Birthday of the person, represented as an ISO 8601:2004 [ISO8601â€‘2004] YYYY-MM-DD format
- * __zoneinfo__ time zone database representing the End-User
+ * __zoneinfo__ time zone database representing the end-user
  * __locale__ Locale of the person, represented as a BCP47 [RFC5646] language tag
  * __phoneNumberVerified__ True if the phone number of the person has been verified, otherwise false
  * __address__ OpenID Connect formatted JSON object representing the address of the person
  * __updatedAt__ Time the information of the person was last updated. Seconds from 1970-01-01T0:0:0Z
  * __preferredLanguage__ 
  * __role__ Role
- * __secretAnswer__ Secret Answer
- * __secretQuestion__ Secret Question
+ * __secretAnswer__ Secret answer
+ * __secretQuestion__ Secret question
  * __seeAlso__ 
  * __sn__ 
  * __cn__ 
- * __transientId__ TransientId
+ * __transientId__ Transient id
  * __uid__ 
  * __userPassword__ 
 
