@@ -582,12 +582,13 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __oxProxyClientId__ oxProxy client id
 
 ### Object class oxProxClient
+
  * __Description__ 
  * __displayName__ 
- * __inum__ XRI i-number
- * __oxProxyClaimMapping__ oxProx claim mapping
- * __oxProxyScope__ oxProx scope
- * __oxProxyToOpClientMapping__ oxProx client mapping to op client
+ * __inum__ XRI i-number (iNum)
+ * __oxProxyClaimMapping__ oxProxy claim mapping
+ * __oxProxyScope__ oxProxy scope
+ * __oxProxyToOpClientMapping__ oxProxy client mapping to op client
 
 ### Object class oxProxConfiguration
  * __Description__ 
