@@ -335,15 +335,15 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __oxAuthClientURI__ oxAuth client uri
  * __oxAuthClientUserGroup__ oxAuth client user group
  * __oxAuthContact__ oxAuth contact
- * __oxAuthDefaultAcrValues__ oxAuth Default Acr Values
- * __oxAuthDefaultMaxAge__ oxAuth Default Max Age
+ * __oxAuthDefaultAcrValues__ oxAuth default Acr values
+ * __oxAuthDefaultMaxAge__ oxAuth default maximum age
  * __oxAuthFederationId__ oxAuth Federation ID attribute
- * __oxAuthFederationMetadataURI__ oxAuth Federation metadata URI attribute
- * __oxAuthGrantType__ oxAuth Grant Type
- * __oxAuthIdTokenEncryptedResponseAlg__ oxAuth ID Token Encrypted Response Algorithm
- * __oxAuthIdTokenEncryptedResponseEnc__ oxAuth ID Token Encrypted Response Encoding
- * __oxAuthIdTokenSignedResponseAlg__ oxAuth ID Token Signed Response Algorithm
- * __oxAuthInitiateLoginURI__ oxAuth Initiate Login URI
+ * __oxAuthFederationMetadataURI__ oxAuth Federation metadata uri attribute
+ * __oxAuthGrantType__ oxAuth Grant type
+ * __oxAuthIdTokenEncryptedResponseAlg__ oxAuth ID token encrypted response algorithm
+ * __oxAuthIdTokenEncryptedResponseEnc__ oxAuth ID token encrypted response encoding
+ * __oxAuthIdTokenSignedResponseAlg__ oxAuth ID token signed response algorithm
+ * __oxAuthInitiateLoginURI__ oxAuth initiate login uri
  * __oxAuthJwksURI__ oxAuth JWKs URI
  * __oxAuthLogoURI__ oxAuth Logo URI
  * __oxAuthPolicyURI__ oxAuth Policy URI
