@@ -532,21 +532,23 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __oxUrl__ ox uri
 
 ### Object class oxEntry
+
  * __Description__ 
- * __displayName__ 
+ * __displayName__ (user) name that appears on the display
  * __iname__ None
- * __inum__ XRI i-number
+ * __inum__ XRI i-number (iNum)
 
 ### Object class oxLink
+
  * __Description__ 
  * __description__ 
- * __oxGuid__ A random string to mark temporary tokens
- * __oxLinkCreator__ Link Creator
- * __oxLinkExpirationDate__ Link Expiration Date
- * __oxLinkLinktrack__ Linktrack link
- * __oxLinkModerated__ Is Link Moderated?
- * __oxLinkModerators__ Link Moderators
- * __oxLinkPending__ Pending Registrations
+ * __oxGuid__ A random string to mark temporary ox tokens
+ * __oxLinkCreator__ ox link creator
+ * __oxLinkExpirationDate__ ox Link expiration date
+ * __oxLinkLinktrack__ ox linktrack link
+ * __oxLinkModerated__ is the ox link moderated?
+ * __oxLinkModerators__ ox link moderators
+ * __oxLinkPending__ pending ox registrations
 
 ### Object class oxLiteralNode
  * __Description__ 
