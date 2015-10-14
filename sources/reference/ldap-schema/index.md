@@ -292,21 +292,22 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __userPassword__ 
 
 ### Object class gluuSAMLconfig
+
  * __Description__ 
  * __description__ 
  * __displayName__ 
- * __federationRules__ Track rules for the federation in Gluu SAML configuration. Deprecated as multi-party federation management should move to Jagger.
- * __gluuContainerFederation__ SAML Trust Relationship federation info
+ * __federationRules__ Track rules for the federation in Gluu SAML configuration. Deprecated as multi-party federation management should move to Jagger
+ * __gluuContainerFederation__ SAML trust relationship federation info
  * __gluuEntityId__ Specifies SAML trust relationship entity ID
- * __gluuIsFederation__ Used in oxTrust to specify if a SAML Trust Relationship is a federation. It could also be a website
- * __gluuProfileConfiguration__ SAML Trust Relationship attribute
+ * __gluuIsFederation__ Used in oxTrust to specify if a SAML trust relationship is a federation. It could also be a website
+ * __gluuProfileConfiguration__ SAML trust relationship attribute
  * __gluuReleasedAttribute__ oxTrust reference for the dn of the released attribute
  * __gluuRulesAccepted__ TODO - use unknown for Gluu SAML configuration
  * __gluuSAMLMetaDataFilter__ Metadata filter in SAML trust relationship
  * __gluuSAMLTrustEngine__ SAML trust relationship configuration
  * __gluuSAMLmaxRefreshDelay__ SAML trust relationship refresh time
  * __gluuSAMLspMetaDataFN__ SAML Trust Relationship file location of metadata
- * __gluuSAMLspMetaDataSourceType__ SAML Trust Relationship SP metadata type - file, URI, federation
+ * __gluuSAMLspMetaDataSourceType__ SAML Trust Relationship SP metadata type - file, uri, federation
  * __gluuSAMLspMetaDataURL__ SAML Trust Relationship URI location of metadata
  * __gluuSpecificRelyingPartyConfig__ SAML Trust Relationship configuration
  * __gluuStatus__ Status of the entry, used by many object classes
@@ -318,7 +319,7 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __inum__ XRI i-number
  * __o__ 
  * __objectClass__ 
- * __oxAuthPostLogoutRedirectURI__ oxAuth Post Logout Redirect URI
+ * __oxAuthPostLogoutRedirectURI__ oxAuth post logout redirect uri
  * __url__ None
 
 ### Object class oxAuthClient
