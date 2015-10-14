@@ -563,16 +563,18 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __xri__ OX XRI address
 
 ### Object class oxNode
+
  * __Description__ 
- * __organizationalOwner__ OX organizationalOwner
- * __owner__ 
- * __sourceRelationalXdiStatement__ OX SourceRelationalXdiStatement
- * __targetRelationalXdiStatement__ OX TargetRelationalXdiStatement
- * __x__ OX XRI Component
- * __xdiStatement__ OX xdiStatement
- * __xri__ OX XRI address
+ * __organizationalOwner__ ox organizational owner
+ * __owner__ ox owner
+ * __sourceRelationalXdiStatement__ ox source relational XDI statement
+ * __targetRelationalXdiStatement__ ox target relational XDI statement
+ * __x__ ox XRI component
+ * __xdiStatement__ ox XDI statement
+ * __xri__ ox XRI address
 
 ### Object class oxProxAccessToken
+
  * __Description__ 
  * __oxAuthCreation__ oxAuth Creation
  * __oxAuthExpiration__ oxAuth Expiration
