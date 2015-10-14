@@ -1,8 +1,11 @@
 # oxAuth Cryptographic Key Management
 
-The Cryptographic keys are published in oxAUth in the JWK Endpoint. A JSON Web Key (JWK) is a JavaScript Object Notation (JSON) data structure that represents a cryptographic key.
+The cryptographic keys are published in oxAuth in the JWK endpoint. A
+JSON Web Key (JWK) is a JavaScript Object Notation (JSON) data structure
+that represents a cryptographic key.
 
-You can get JWK enpoint by using OpenID Connect Discovery and reading the OpenID Connect Configuration Endpoint. For example: 
+You can get JWK endpoint by using OpenID Connect Discovery and reading
+the OpenID Connect Configuration Endpoint. For example:
 
 http://seed.gluu.org/.well-known/openid-configuration
 
@@ -74,19 +77,23 @@ https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/jwks
         }
     ]}
 
-## Updating Cryptographic keys (JWS)
+## Updating Cryptographic Keys (JWS)
 
-In order to generate new Cryptographic keys, go to the oxAuth source directory and run:
+In order to generate new cryptographic keys, go to the oxAuth source
+directory and run the following command:
 
     $ mvn -Dtest=org.xdi.oxauth.ws.rs.SignatureTest -DfailIfNoTests=false test
 
-The command output will generate Cryptographic keys for the algorithms: RS256, RS384, RS512, ES256, ES384 and ES512.
+The command output will generate cryptographic keys for the algorithms:
+RS256, RS384, RS512, ES256, ES384 and ES512.
 
-Update or add the desired new Cryptographic keys in the configuration file at:
+Update or add the desired new cryptographic keys in the configuration
+file at this location:
 
     /opt/tomcat/conf/oxauth-web-keys.json
-    
-To force oxAuth to reload the configuration files:
 
- - Delete the LDAP configuration entries at: ou=configuration,o=ORGANIZATION_INUM,o=gluu        
- - Restart Tomcat       
+In order to force oxAuth to reload the configuration files these steps
+are needed:
+
+ - Delete the LDAP configuration entries at `ou=configuration,o=ORGANIZATION_INUM,o=gluu`
+ - Restart the Apache Tomcat service
