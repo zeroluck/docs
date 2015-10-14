@@ -292,26 +292,31 @@ This script can be used in oxAuth application only.
 - [Sample Client Registration Script](./sample-client-registration-script)
 
 # ID Generation
-By default oxAuth/oxTrust uses an internal method to generate unique identifiers for new person/client, etc. entries. In most cases the format of the ID is:    
 
-`'!' + idType.getInum() + '!' + four_random_HEX_characters + '.' + four_random_HEX_characters.`     
+By default oxAuth/oxTrust uses an internal method to generate unique
+identifiers for new person/client, etc. entries. In most cases the
+format of the ID is:
 
-The ID generation script enables an admin to implement custom ID generation rules. 
+`'!' + idType.getInum() + '!' + four_random_HEX_characters + '.' + four_random_HEX_characters.`
 
-This script type adds only one method to base script type:     
+The ID generation script enables an admin to implement custom ID
+generation rules.
 
-`def generateId(self, appId, idType, idPrefix, configurationAttributes):`       
+This script type adds only one method to base script type:
 
-These are types of parameters:     
-- `appId` is application ID     
-- `idType` is ID Type       
-- `idPrefix` is ID Prefix       
-- `user` is `org.gluu.oxtrust.model.GluuCustomPerson`       
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`        
+* `def generateId(self, appId, idType, idPrefix, configurationAttributes):`
 
-This script can be used in oxTrust application only.     
+These are types of parameters:
 
-- [Sample ID Generation Script](./sample-id-generation.py)      
+- `appId` is application ID
+- `idType` is ID Type
+- `idPrefix` is ID Prefix
+- `user` is `org.gluu.oxtrust.model.GluuCustomPerson`
+- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
+
+This script can be used in oxTrust application only.
+
+- [Sample ID Generation Script](./sample-id-generation.py)
 
 # Update User
 oxTrust allows an admin to add and modify users which belong to groups. In order to simplify this process and apply repeating actions, oxTrust supports an Update User script. In this script it's possible to modify a person entry before it is persisted in LDAP.
