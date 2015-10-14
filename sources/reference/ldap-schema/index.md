@@ -323,17 +323,18 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __url__ None
 
 ### Object class oxAuthClient
+
  * __Description__ 
  * __associatedPerson__ Reference the dn of a person.
  * __displayName__ 
- * __inum__ XRI i-number
- * __oxAuthAppType__ oxAuth App Type
- * __oxAuthClientIdIssuedAt__ oxAuth Client Issued At
- * __oxAuthClientSecret__ oxAuth Client Secret
- * __oxAuthClientSecretExpiresAt__ Date client expires
- * __oxAuthClientURI__ oxAuth Client URI
- * __oxAuthClientUserGroup__ oxAuth Client User group
- * __oxAuthContact__ oxAuth Contact
+ * __inum__ XRI i-number (iNum)
+ * __oxAuthAppType__ oxAuth app type
+ * __oxAuthClientIdIssuedAt__ oxAuth client id issued at
+ * __oxAuthClientSecret__ oxAuth client secret
+ * __oxAuthClientSecretExpiresAt__ the Date the oxAuth client secret expires
+ * __oxAuthClientURI__ oxAuth client uri
+ * __oxAuthClientUserGroup__ oxAuth client user group
+ * __oxAuthContact__ oxAuth contact
  * __oxAuthDefaultAcrValues__ oxAuth Default Acr Values
  * __oxAuthDefaultMaxAge__ oxAuth Default Max Age
  * __oxAuthFederationId__ oxAuth Federation ID attribute
