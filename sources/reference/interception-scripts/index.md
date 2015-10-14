@@ -319,18 +319,23 @@ This script can be used in oxTrust application only.
 - [Sample ID Generation Script](./sample-id-generation.py)
 
 # Update User
-oxTrust allows an admin to add and modify users which belong to groups. In order to simplify this process and apply repeating actions, oxTrust supports an Update User script. In this script it's possible to modify a person entry before it is persisted in LDAP.
 
-This script type adds only one method to base script type:     
+oxTrust allows an admin to add and modify users which belong to groups.
+In order to simplify this process and apply repeating actions, oxTrust
+supports an Update User script. In this script it is possible to modify
+a person entry before it is persisted in LDAP.
 
-`def updateUser(self, user, persisted, configurationAttributes):`       
+This script type adds only one method to base script type:
 
-These are types of parameters:     
-- `user` is `org.gluu.oxtrust.model.GluuCustomPerson`       
-- persisted is boolean value to specify if operation type: add/modify       
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`        
+* `def updateUser(self, user, persisted, configurationAttributes):`
 
-This script can be used in oxTrust application only.     
+These are types of parameters:
+
+- `user` is `org.gluu.oxtrust.model.GluuCustomPerson`
+- persisted is boolean value to specify if operation type: add/modify
+- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
+
+This script can be used in oxTrust application only.
 
 - [Sample Update User Script](./sample-update-user-script.py)       
 
