@@ -2,8 +2,8 @@
 
 These are instructions for **single server** Gluu Server deployments. 
 
-Commercial Gluu Server Cluster Packages are currently under development
-but not quite ready for primetime. You can learn more about the cluster
+Commercial Gluu Server Cluster Packages are currently under development.
+They not quite ready yet for primetime. You can learn more about the cluster
 project [here](http://gluu.org/docs-cluster).
 
 **Note:** Before deploying the Gluu Server, it may be helpful to review
