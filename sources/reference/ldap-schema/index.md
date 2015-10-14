@@ -482,27 +482,28 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
 
  * __Description__ 
  * __oxAmHost__ am host
- * __oxAuthAuthenticationTime__ oxAuth Authentication Time
- * __oxAuthClientId__ oxAuth Client id
- * __oxAuthCreation__ oxAuth Creation
- * __oxAuthExpiration__ oxAuth Expiration
- * __oxAuthTokenCode__ oxAuth Token Code
+ * __oxAuthAuthenticationTime__ oxAuth authentication time
+ * __oxAuthClientId__ oxAuth client id
+ * __oxAuthCreation__ oxAuth creation
+ * __oxAuthExpiration__ oxAuth expiration
+ * __oxAuthTokenCode__ oxAuth token code
  * __oxAuthUserId__ oxAuth user id
  * __oxUmaPermission__ ox uma permission
  * __uniqueIdentifier__ 
 
 ### Object class oxAuthUmaResourceSet
+
  * __Description__ 
- * __displayName__ 
- * __inum__ XRI i-number
+ * __displayName__ (user) name that appears on the display
+ * __inum__ XRI i-number (iNum)
  * __owner__ 
- * __oxAssociatedClient__ Associate the dn of an OAuth2 client with a person or UMA Resource Set.
- * __oxAuthUmaScope__ URI reference of scope descriptor
- * __oxFaviconImage__ URI for a graphic icon
+ * __oxAssociatedClient__ Associate the dn of an OAuth2 client with a person or UMA resource set
+ * __oxAuthUmaScope__ uri reference of scope descriptor
+ * __oxFaviconImage__ uri for the favicon
  * __oxGroup__ User group
  * __oxId__ Identifier
  * __oxResource__ Host path
- * __oxRevision__ Revision
+ * __oxRevision__ Revision number
  * __oxType__ ox type
 
 ### Object class oxAuthUmaResourceSetPermission
