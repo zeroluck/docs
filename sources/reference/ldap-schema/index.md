@@ -610,25 +610,28 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __oxX509URL__ ox x509 uri
 
 ### Object class oxPushApplication
+
  * __Description__ 
  * __displayName__ 
- * __oxId__ Identifier
- * __oxName__ Name
+ * __oxId__ ox identifier
+ * __oxName__ ox name
  * __oxPushApplicationConf__ oxPush application configuration
 
 ### Object class oxPushDevice
+
  * __Description__ 
  * __oxAuthUserId__ oxAuth user id
- * __oxId__ Identifier
+ * __oxId__ ox identifier
  * __oxPushApplication__ oxPush application DN
  * __oxPushDeviceConf__ oxPush device configuration
  * __oxType__ ox type
 
 ### Object class oxScript
+
  * __Description__ 
- * __inum__ XRI i-number
- * __oxScript__ Attribute that contains script (python, java script)
- * __oxScriptType__ Attribute that contains script type (e.g. python, java script)
+ * __inum__ XRI i-number (iNum)
+ * __oxScript__ Attribute that contains the script (python, java script)
+ * __oxScriptType__ Attribute that contains the script type (e.g. python, java script)
 
 ### Object class oxTrustConfiguration
  * __Description__ 
