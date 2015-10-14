@@ -19,10 +19,10 @@ using Eclipse. You can't actually run the scripts from Eclipse, but it provides 
 which makes coding more enjoyable.
 
 Before you begin, install the following:
- - [Python 2.7.x](https://www.python.org/downloads/)
- - [Jython](http://www.jython.org/downloads.html)
- - [Java Standard Edition](http://www.oracle.com/technetwork/java/javase/terms/products/index.html)
- - [Eclipse IDE for Java Developers](https://eclipse.org/downloads/)
+ - [Python 2.7.x](https://www.python.org/downloads/)   
+ - [Jython](http://www.jython.org/downloads.html)   
+ - [Java Standard Edition](http://www.oracle.com/technetwork/java/javase/terms/products/index.html)   
+ - [Eclipse IDE for Java Developers](https://eclipse.org/downloads/)   
 
 ### Install Eclipse Plugins
 
@@ -36,8 +36,8 @@ After this, you'll need to add the repositories for the software.
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/auth_article/02-Add-Repositories.jpg)
 
- - PyDev - http://download.jboss.org/jbosstools/mars/development/updates/
- - JBoss Tools - http://download.jboss.org/jbosstools/mars/development/updates/
+ - PyDev - http://download.jboss.org/jbosstools/mars/development/updates/   
+ - JBoss Tools - http://download.jboss.org/jbosstools/mars/development/updates/   
 
 Then select the respective repository in the "Work with" dropdown and check the box for the
 software you want to install, as in the images below.
@@ -61,10 +61,9 @@ project
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/auth_article/06-new-pydev-project.jpg)
 
 Now you'll want to create some files:
- - A Python file for your script
- - Zero or more XHTML files for if you have a custom form for your autethentication
- - Zero or more XML files (you'll need one for each XHTML file) that provides some information to
- the tomcat server about how to display the XHTML file.
+ - A Python file for your script    
+ - Zero or more XHTML files for if you have a custom form for your autethentication    
+ - Zero or more XML files (you'll need one for each XHTML file) that provides some information to the tomcat server about how to display the XHTML file.   
 
 ## Samples and Documentation
 
