@@ -367,25 +367,28 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __oxLastLogonTime__ Last logon time
 
 ### Object class oxAuthConfiguration
+
  * __Description__ 
  * __ou__ 
  * __oxAuthConfCustomAuthMethod__ Custom authentication method
- * __oxAuthConfDynamic__ oxAuth Dynamic Configuration
- * __oxAuthConfErrors__ oxAuth Errors Configuration
+ * __oxAuthConfDynamic__ oxAuth dynamic configuration
+ * __oxAuthConfErrors__ oxAuth errors configuration
  * __oxAuthConfIdPythonScript__ Custom id generation
  * __oxAuthConfLdapAuth__ LDAP authentication configuration
- * __oxAuthConfStatic__ oxAuth Static Configuration
- * __oxAuthConfWebKeys__ oxAuth Web Keys Configuration
+ * __oxAuthConfStatic__ oxAuth static configuration
+ * __oxAuthConfWebKeys__ oxAuth web keys configuration
 
 ### Object class oxAuthCustomScope
+
  * __Description__ 
- * __defaultScope__ Track the default scope for an custom OAuth2 Scope.
+ * __defaultScope__ Track the default scope for an custom OAuth2 scope
  * __description__ 
  * __displayName__ 
- * __inum__ XRI i-number
- * __oxAuthClaim__ oxAuth Attribute Claim
+ * __inum__ XRI i-number (iNum)
+ * __oxAuthClaim__ oxAuth attribute claim
 
 ### Object class oxAuthFederationMetadata
+
  * __Description__ 
  * __displayName__ 
  * __inum__ XRI i-number
