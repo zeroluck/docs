@@ -518,17 +518,18 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __oxTicket__ ox ticket
 
 ### Object class oxAuthUmaScopeDescription
+
  * __Description__ 
- * __displayName__ 
- * __inum__ XRI i-number
+ * __displayName__ (user) name that appears on the display
+ * __inum__ XRI i-number (iNum)
  * __owner__ 
- * __oxFaviconImage__ URI for a graphic icon
- * __oxIconUrl__ ox icon url
- * __oxId__ Identifier
- * __oxPolicyRule__ Revision
+ * __oxFaviconImage__ uri for the favicon
+ * __oxIconUrl__ uri for the ox icon
+ * __oxId__ ox identifier
+ * __oxPolicyRule__ ox policy rule
  * __oxRevision__ Revision
  * __oxType__ ox type
- * __oxUrl__ ox url
+ * __oxUrl__ ox uri
 
 ### Object class oxEntry
  * __Description__ 
