@@ -469,15 +469,17 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __uniqueIdentifier__ 
 
 ### Object class oxAuthUmaPolicy
+
  * __Description__ 
  * __description__ 
  * __displayName__ 
- * __inum__ XRI i-number
- * __oxAuthUmaScope__ URI reference of scope descriptor
+ * __inum__ XRI i-number (iNum)
+ * __oxAuthUmaScope__ uri reference of scope descriptor
  * __oxPolicyScript__ ox policy script
  * __programmingLanguage__ programming language
 
 ### Object class oxAuthUmaRPT
+
  * __Description__ 
  * __oxAmHost__ am host
  * __oxAuthAuthenticationTime__ oxAuth Authentication Time
