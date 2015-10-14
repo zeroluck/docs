@@ -507,10 +507,11 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __oxType__ ox type
 
 ### Object class oxAuthUmaResourceSetPermission
+
  * __Description__ 
  * __oxAmHost__ am host
- * __oxAuthExpiration__ oxAuth Expiration
- * __oxAuthUmaScope__ URI reference of scope descriptor
+ * __oxAuthExpiration__ oxAuth expiration
+ * __oxAuthUmaScope__ uri reference of scope descriptor
  * __oxConfigurationCode__ ox configuration code
  * __oxHost__ ox host
  * __oxResourceSetId__ ox resource set id
