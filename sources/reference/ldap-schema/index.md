@@ -94,6 +94,7 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __oxTrustCacheRefreshServerIpAddress__ None
 
 ### Object class gluuAttribute
+
  * __Description__ 
  * __description__ 
  * __displayName__ 
