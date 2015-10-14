@@ -1,10 +1,23 @@
 # Gluu Server Community Edition (CE) CentOS Configuration Guide
 
-`chroot` is a pre-Docker OS level container technology. Like Docker, the `chroot` distribution includes a full linux distribution. As a file system based "jail", when you login to the Gluu Server from the host linux system, the `/` directory in the Gluu Server is actually `/home/gluu-server` on the host. 
+`chroot` is a pre-Docker OS level container technology. Like Docker, the
+`chroot` distribution includes a full Linux distribution. As a file
+system based "jail", when you login to the Gluu Server from the host
+Linux system, the `/` directory in the Gluu Server is actually
+`/home/gluu-server` on the host.
 
-This strategy has its pluses and minuses. In certain circumstances, there are ways for a hacker to “break out of the jail”, and escalate to the host file system. (You don't want to make any file system links from the chroot'd server to the main host!) The benefit is ease of deployment (Docker not required...). We wanted a simple package that people could install and uninstall quickly.
+This strategy has its pluses and minuses. In certain circumstances,
+there are ways for a hacker to “break out of the jail”, and escalate to
+the host file system. (You don't want to make any file system links from
+the chroot'd server to the main host!) The benefit is ease of deployment
+(Docker not required...). We wanted a simple package that people could
+install and uninstall quickly.
 
-To report issues or provide feedback about the installation process, please use [GitHub](https://github.com/GluuFederation/community-edition-setup/issues) or register for an account on [Gluu Support Portal](https://support.gluu.org).
+To report issues or provide feedback about the installation process,
+please use
+[GitHub](https://github.com/GluuFederation/community-edition-setup/issues)
+or register for an account on [Gluu Support
+Portal](https://support.gluu.org).
 
 ## System Requirements
 
@@ -17,10 +30,10 @@ The Gluu Server Community Edition should be deployed on a VM with:
 Please review the [deployment guide](./index.md) for a list of available components during installation. 
 
 ## Installing GLUU Server with yum:
-  Centos 6.5:
+  CentOS 6.5:
 `# wget http://repo.gluu.org/centos/Gluu.repo -O /etc/yum.repos.d/Gluu.repo`
 
-  Centos 7:
+  CentOS 7:
 `# wget http://repo.gluu.org/centos/Gluu-7.repo -O /etc/yum.repos.d/Gluu7.repo`
 
 `# wget http://repo.gluu.org/centos/RPM-GPG-KEY-GLUU -O /etc/pki/rpm-gpg/RPM-GPG-KEY-GLUU`
@@ -37,7 +50,12 @@ Please review the [deployment guide](./index.md) for a list of available compone
 
 ## Gluu Server Configuration
 
-To perform the final configuration of the Gluu Server you need to provide some instance specific information, like the DNS hostname, and the information required to generate certificates. Post rpm installation, run the Gluu Server `setup.py` to complete the installation.  See [setup.py help](./setup_py.md) or run `./setup.py -h` to see the latest installation options.  
+To perform the final configuration of the Gluu Server you need to
+provide some instance specific information, like the DNS hostname, and
+the information required to generate certificates. Post rpm
+installation, run the Gluu Server `setup.py` to complete the
+installation.  See [setup.py help](./setup_py.md) or run `./setup.py -h`
+to see the latest installation options.
 
 * Login to Gluu Server container: 
 
@@ -50,15 +68,19 @@ To perform the final configuration of the Gluu Server you need to provide some i
 `# ./setup.py`
 
 
-After setup.py script successful execution, point your browser to `https://hostname` Login with the
-default user name “admin” and the LDAP password printed back in the confirmation (also 
-contained in `setup.properties.last`). If you want to see the full LDIF for the admin user,
-it is contained in `/opt/opendj/ldif/people.ldif`
+After setup.py script successful execution, point your browser to
+`https://hostname` Login with the default user name “admin” and the LDAP
+password printed back in the confirmation (also contained in
+`setup.properties.last`). If you want to see the full LDIF for the admin
+user, it is contained in `/opt/opendj/ldif/people.ldif`.
 
-Make sure you remove or encrypt `setup.properties.last` It has the clear text passwords for everything: LDAP, admin user, keystores, and 3DES salt.
+Make sure you remove or encrypt `setup.properties.last` It has the clear
+text passwords for everything: LDAP, admin user, keystores, and 3DES
+salt.
 
 If something goes wrong, check `setup.log` for a detailed step-by-step of the installation. Or check 
-`setup_errors.log` to just see the errors (or stderr output from the scripts).
+`setup_errors.log` to just see the errors (or stderr output from the
+scripts).
 
 <!--
 If you want to script the installation of the Gluu Server, user the `-f` option or just save the 
@@ -80,8 +102,8 @@ to suppress the interactive confirmation to proceed. For example, to re-run the 
 
 ## Gluu Server Uninstallation
 
-Exit from chroot environment to main linux. Stop the chroot environment, remove the Gluu Server,
-then remove the Gluu yum repository
+Exit from chroot environment to main Linux. Stop the chroot environment,
+remove the Gluu Server, then remove the Gluu yum repository
 
 `# service gluu-server stop`
 
@@ -96,9 +118,14 @@ or
 -->
 
 ## Troubleshooting
-Please see our [Cloud Deployment FAQ](../../faq/cloud-faq.md) for cloud specific notes and our [Troubleshooting FAQ](../../faq/troubleshooting.md) for resolutions to common issues.  
+Please see our [Cloud Deployment FAQ](../../faq/cloud-faq.md) for cloud
+specific notes and our [Troubleshooting
+FAQ](../../faq/troubleshooting.md) for resolutions to common issues.
 
 ## Support 
-Gluu offers both community and VIP support. Anyone can browse and open tickets on our [support portal](http://support.gluu.org). For private support, expedited assistance, and strategic consultations, please view [our pricing](http://gluu.org/pricing) and [schedule a meeting with us](http://gluu.org/booking) to discuss VIP support options.
-
+Gluu offers both community and VIP support. Anyone can browse and open
+tickets on our [support portal](http://support.gluu.org). For private
+support, expedited assistance, and strategic consultations, please view
+[our pricing](http://gluu.org/pricing) and [schedule a meeting with
+us](http://gluu.org/booking) to discuss VIP support options.
 
