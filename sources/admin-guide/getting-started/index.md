@@ -11,9 +11,9 @@ This document will show you how to get up and running with the Gluu Server. It i
 - [Web & API Access Management](#web--api-access-management)
 
 ## Overview
-The Gluu Server is an identity and access management suite comprised of free open source software (FOSS) components. Some of the software was written by Gluu (everything with an "ox" prefix, like "oxAuth"), and some of the software we forked from existing open source projects like the Shibboleth SAML identity provider, Forgerock community release of OpenDJ, the Asimba SAML proxy, the CAS authentication server and many more components that are part of the linux distributions. Learn more about each of the open source licenses in use [here](../introduction/index.md#licenses).
+The Gluu Server is an identity and access management suite comprised of free open source software (FOSS) components. Some of the software was written by Gluu (everything with an "ox" prefix, like "oxAuth"), and some of the software we forked from existing open source projects like the Shibboleth SAML identity provider, Forgerock community release of OpenDJ, the Asimba SAML proxy, the CAS authentication server and many more components that are part of the Linux distributions. Learn more about each of the open source licenses in use [here](../introduction/index.md#licenses).
 
-The full suite of software is distributed as linux packages that support either single server or clustered deployments. In order to deploy the clustered package to multiple locations, you'll need a commercial license. More about that topic below in [Deployment Models](#deployment-models).
+The full suite of software is distributed as Linux packages that support either single server or clustered deployments. In order to deploy the clustered package to multiple locations, you'll need a commercial license. More about that topic below in [Deployment Models](#deployment-models).
 
 ## Deployment
 The Gluu Server can be deployed on any physical or virtual server. Both distributions of the Gluu Server--Community Edition and Cluster--are distributed as containers. Community edition uses `chroot` containers, while the Cluster Edition uses `docker` containers. Container distribution enables Gluu to make sure that all the pieces are working together. If you actually had to integrate all the components of the Gluu Server together, it would take you a long time. 
@@ -40,7 +40,7 @@ The Gluu Server dashboard shows you metrics on the health and activity of your s
 Correctly identifying people--authentication--is fundamental to Web and mobile security. Using the oxTrust web UI, you can configure built-in or custom business logic for authentication. 
 
 #### Basic Authentication
-Passwords do not mitigate a lot of risk, but for many organizations, its still the place to start. With the Gluu Server you can use either an existing LDAP V3 respository like Active Directory,  or you can use the embedded Gluu Server OpenDJ server to store passwords. `Basic` is the [default](../configuration/index.md#manage-authentication) authentication mechanism shipped with every Gluu Server. 
+Passwords do not mitigate a lot of risk, but for many organizations, its still the place to start. With the Gluu Server you can use either an existing LDAP V3 repository like Active Directory,  or you can use the embedded Gluu Server OpenDJ server to store passwords. `Basic` is the [default](../configuration/index.md#manage-authentication) authentication mechanism shipped with every Gluu Server. 
 
 #### Custom Authentication
 `Custom Authentication` enables an organization to utilize [interception scripts](../../reference/interception-scripts/index.md#overview) to achieve advanced levels of authentication. Using authentication interception scripts, your organization can call third-party APIs to enable multi-factor authentication (MFA), intrusion detection systems, or make use of multiple backend servers for authentication. 
@@ -49,7 +49,7 @@ The Gluu Server currently ships with support for the FIDO U2F standard. Instruct
 
 
 ## Identity Management
-To keep the Gluu Server up-to-date with the latest user information (a.k.a. attributes or claims), your organization can either "push" or "pull" identity data. In the "pull" mode, otherwise known as [LDAP Syncronization or Cache Refresh](../../articles/cache-refresh.md), the Gluu Server can use an existing LDAP identity source like Microsoft Active Directory as the authoritative source of identity information. If you "push" identities to the Gluu Server, you can use the JSON/REST SCIM 1.1 or 2.0 API. 
+To keep the Gluu Server up-to-date with the latest user information (a.k.a. attributes or claims), your organization can either "push" or "pull" identity data. In the "pull" mode, otherwise known as [LDAP Synchronization or Cache Refresh](../../articles/cache-refresh.md), the Gluu Server can use an existing LDAP identity source like Microsoft Active Directory as the authoritative source of identity information. If you "push" identities to the Gluu Server, you can use the JSON/REST SCIM 1.1 or 2.0 API. 
 
 [Local user management](../user-management/index.md#local-user-management) can also be performed inside the Gluu Server management interface.
 
