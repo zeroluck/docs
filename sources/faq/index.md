@@ -2,18 +2,22 @@
 
 ## What can I do with a Gluu Server?
 
-People-employees, customers, and partners-need to be identified to interact electronically
-with an organization. Authentication (_authn_) and authorization (_authz_) is a challenge faced
-by almost every organization large enough to register an Internet domain. And its not just
-people that need to be authenticated and authorized. Clients are online agents that can
-interact with services on your behalf. With the emergence of the IoT and the API economy,
-developers and system administrators are urgently searching for standards based solutions and
+People-employees, customers, and partners-need to be identified to
+interact electronically with an organization. Authentication (_authn_)
+and authorization (_authz_) is a challenge faced by almost every
+organization large enough to register an Internet domain. And its not
+just people that need to be authenticated and authorized. Clients are
+online agents that can interact with services on your behalf. With the
+emergence of the IoT and the API economy, developers and system
+administrators are urgently searching for standards based solutions and
 best practices to improve the security of web and mobile applications.
 
-The Gluu Server is like a router for authentication and authorization. It speaks multiple dialects
-of SSO, and can help an organization manage both inbound and outbound authentication and authorization
-requirements.  The Gluu Server is very flexible. Through the use of "interception scripts",
-system administrators can mold the Gluu Server to solve the exact access management task at hand.
+The Gluu Server is like a router for authentication and authorization.
+It speaks multiple dialects of SSO, and can help an organization manage
+both inbound and outbound authentication and authorization requirements.
+The Gluu Server is very flexible. Through the use of "interception
+scripts", system administrators can mold the Gluu Server to solve the
+exact access management task at hand.
 
 ## How do I install the Gluu Server?
 
@@ -25,19 +29,31 @@ Licenses for the various components of the Gluu Server can be found [here](http:
 
 ## Can I contribute to the Gluu Server?
 
-Yes, please! Only with community involvement can the Gluu Server become the best free open source access management tool. You can fork the code on [GitHub](http://github.com/GluuFederation) and push us changes. Your input is greatly appreciated!
+Yes, please! Only with community involvement can the Gluu Server become
+the best free open source access management tool. You can fork the code
+on [GitHub](http://github.com/GluuFederation) and push us changes. Your
+input is greatly appreciated!
 
 ## Where can I report issues or feedback?
 
-Please feel free to either open issues on [GitHub](https://github.com/GluuFederation/docs/issues) or you can register for a free account on our [support portal](https://support.gluu.org). For more Enterprise support, training, and consultations, [VIP Support](http://gluu.org/pricing) can be purchased.
+Please feel free to either open issues on
+[GitHub](https://github.com/GluuFederation/docs/issues) or you can
+register for a free account on our [support
+portal](https://support.gluu.org). For more Enterprise support,
+training, and consultations, [VIP Support](http://gluu.org/pricing) can
+be purchased.
 
 ## Do you offer Enterprise Support?
 
-Yes! You can find more information on our [website](http://gluu.org/pricing).
+Yes! You can find more information on our
+[website](http://gluu.org/pricing).
 
 ## Does it work for mobile or api access management?
 
-Yes! The Gluu Server provides interfaces for UMA, a new standardized profile of OAuth2. [Using UMA](http://www.gluu.org/docs/admin-guide/uma/) you can protect web URLs like APIs and folders and enforce authorization policies for access.
+Yes! The Gluu Server provides interfaces for UMA, a new standardized
+profile of OAuth2. [Using
+UMA](http://www.gluu.org/docs/admin-guide/uma/) you can protect web URLs
+like APIs and folders and enforce authorization policies for access.
 
 ## How can the Gluu Server make the Internet a safer place?
 
@@ -47,9 +63,9 @@ providing a central identity hub-you can share a Google doc with someone
 only if they have a Google account. With a myriad of vendors producing
 hardware and software that interact on our behalf, we cannot build our society on
 central identity silos. Like enlightened despotism, it seems efficient. But
-over time, it undermines the design goal of the Internet--the resiliancy
+over time, it undermines the design goal of the Internet--the resiliency
 of autonomous entities cooperating to form one network.  The Internet
-was made possible by standards like tcp/ip, DNS, http and ssl. After 20 years,
+was made possible by standards like TCP/IP, DNS, HTTP and SSL. After 20 years,
 we have the standards on which to build the Internet's identity infrastructure.
 Free open source tools like the Gluu Server make these new identity standards
 accessible to the masses. Now any domain can authenticate like Google (or at
@@ -115,12 +131,12 @@ The Gluu Server has been leading the OpenID Connect Interop since [January 2013]
 We lead the development of the [Enterprise UMA](http://www.gluu.co/kantara) use case. We also participated
 in the design of the Juju Application Security Protocol, which defines the interfaces between web and mobile
 applications, and the open-standard based security components. We are leading an effort to standardize
-Oauth2 multi-party federation. We also have the first implemenation of an OpenID Connect Proxy.
+Oauth2 multi-party federation. We also have the first implementation of an OpenID Connect Proxy.
 
 The Gluu Server has always been ahead, and without the constraint of know-it-all venture capitalists, telling
 us how to run our business, we are free to develop not only what the market wants today, but we think
 it needs. And if someone else writes a free open source component that is better than what OX provides,
-we will abandon our OX component in its favor. This vaccuum cleaner approach to open source enables us
+we will abandon our OX component in its favor. This vacuum cleaner approach to open source enables us
 to stay a step ahead of our slow-footed enterprise competition, getting components to market faster and better.
 
 ## What will you learn if you read all the docs?
