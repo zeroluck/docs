@@ -355,14 +355,14 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __oxAuthRequireAuthTime__ oxAuth require authentication time
  * __oxAuthResponseType__ oxAuth response type
  * __oxAuthScope__ oxAuth attribute scope
- * __oxAuthSectorIdentifierURI__ oxAuth Sector Identifier URI
- * __oxAuthSignedResponseAlg__ oxAuth Signed Response Algorithm
- * __oxAuthSubjectType__ oxAuth Subject Type
- * __oxAuthTokenEndpointAuthMethod__ oxAuth Token Endpoint Authentication Method
- * __oxAuthTosURI__ oxAuth Type of Service URI
- * __oxAuthTrustedClient__ oxAuth Trusted Client
- * __oxAuthUserInfoEncryptedResponseAlg__ oxAuth User Info Encrypted Response Algorithm
- * __oxAuthUserInfoEncryptedResponseEnc__ oxAuth User Info Encrypted Response Enc
+ * __oxAuthSectorIdentifierURI__ oxAuth sector identifier uri
+ * __oxAuthSignedResponseAlg__ oxAuth signed response algorithm
+ * __oxAuthSubjectType__ oxAuth subject type
+ * __oxAuthTokenEndpointAuthMethod__ oxAuth token endpoint authentication method
+ * __oxAuthTosURI__ oxAuth type of service uri
+ * __oxAuthTrustedClient__ oxAuth trusted client
+ * __oxAuthUserInfoEncryptedResponseAlg__ oxAuth user info encrypted response algorithm
+ * __oxAuthUserInfoEncryptedResponseEnc__ oxAuth user info encrypted response encoding
  * __oxLastAccessTime__ Last access time
  * __oxLastLogonTime__ Last logon time
 
