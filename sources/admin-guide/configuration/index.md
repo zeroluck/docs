@@ -1,61 +1,90 @@
 **Table of Contents** 
 
-- [Configuration](#configuration)	
-- [Organization Configuration](#organization-configuration)	
-	- [System Configuration](#system-configuration)	
-	- [Manage Email Addresses](#manage-email-addresses)	
-	- [SMTP Server Configuration](#smtp-server-configuration)	
-	- [oxTrust Configuration](#oxtrust-configuration)	
-- [Manage Authentication](#manage-authentication)	
-	- [Default Authentication Method](#default-authentication-method)	
-- [Manage Custom Scripts](#manage-custom-scripts)	
-- [Manage Registration](#manage-registration)	
-	- [Activate Invitation Link](#activate-invitation-link)	
-	- [Disable Captcha for Registration Form](#disable-captcha-for-registration-form)	
-	- [Configure Registration Form Attributes](#configure-registration-form-attributes) 	
-- [Attributes](#attributes)	
-- [Cache Refresh Directory Integration](#cache-refresh)	
-	- [Customer Backend Key/Attributes](#customer-backend-key-and-attributes)	
-	- [Source Backend LDAP Servers](#source-backend-ldap-servers)	
-	- [Inum LDAP Server](#inum-ldap-server)	
-	- [Attributes Mapping](#attributes-mapping)	
-	- [Customizing Behavior](#customizing-behavior)	
-- [Configure Log Viewer](#configure-log-viewer)	
-- [View Log File](#view-log-file)		
-- [Status](#status)	
+- [Configuration](#configuration)
+- [Organization Configuration](#organization-configuration)
+	- [System Configuration](#system-configuration)
+	- [Manage Email Addresses](#manage-email-addresses)
+	- [SMTP Server Configuration](#smtp-server-configuration)
+	- [oxTrust Configuration](#oxtrust-configuration)
+- [Manage Authentication](#manage-authentication)
+	- [Default Authentication Method](#default-authentication-method)
+- [Manage Custom Scripts](#manage-custom-scripts)
+- [Manage Registration](#manage-registration)
+	- [Activate Invitation Link](#activate-invitation-link)
+	- [Disable Captcha for Registration Form](#disable-captcha-for-registration-form)
+	- [Configure Registration Form Attributes](#configure-registration-form-attributes)
+- [Attributes](#attributes)
+- [Cache Refresh Directory Integration](#cache-refresh)
+	- [Customer Backend Key/Attributes](#customer-backend-key-and-attributes)
+	- [Source Backend LDAP Servers](#source-backend-ldap-servers)
+	- [Inum LDAP Server](#inum-ldap-server)
+	- [Attributes Mapping](#attributes-mapping)
+	- [Customizing Behavior](#customizing-behavior)
+- [Configure Log Viewer](#configure-log-viewer)
+- [View Log File](#view-log-file)
+- [Status](#status)
 
-#Configuration
-This section of the documentation includes instructions for configuring a number of the components of the Gluu Server in order to make the server fit for your organizational needs. 
+# Configuration
+
+This section of the documentation includes instructions for configuring
+a number of the components of the Gluu Server in order to make the
+server fit to your organizational needs. 
 
 ![Configuration Menu](https://cloud.githubusercontent.com/assets/5271048/7146931/b1875eb0-e2bc-11e4-813b-8ffbfe4ae809.png)
 
 # Organization Configuration
-The organization configuration section contains the following options:    
-- [System Configuration](#system-configuration)		
-- [Manage Email Addresses](#manage-email-addresses)		
-- [SMTP Server Configuration](#smtp-server-configuration)		
-- [oxTrust Configuration](#oxtrust-configuration)		
+
+The organization configuration section contains the following options:
+
+- [System Configuration](#system-configuration)
+- [Manage Email Addresses](#manage-email-addresses)
+- [SMTP Server Configuration](#smtp-server-configuration)
+- [oxTrust Configuration](#oxtrust-configuration)
 
 ## System Configuration
-This feature allows the Gluu system administrator to customize and implement various options such as *Cache Refresh*, *Federation Hosting*, *SCIM Support* etc. 
+
+This feature allows the Gluu system administrator to customize and
+implement various options such as *Cache Refresh*, *Federation Hosting*,
+*SCIM Support* etc.
 
 ![System Configuration](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_system.png)
 
-* _White Pages:_ If the user intends to use the built-in White Pages of the Gluu Server, it can be enabled from the menu.
+* _White Pages:_ If the user intends to use the built-in White Pages of
+the Gluu Server, it can be enabled from the menu.
 
-* _Federation Hosting:_ The Federation hosting is enabled by default. However, the creation and management of federations can be complicated. Gluu offers an additional service called *Federation Registry* that makes the creation and management of identity federations simple and easy. 
+* _Federation Hosting:_ The Federation hosting is enabled by default.
+However, the creation and management of federations can be complicated.
+Gluu offers an additional service called *Federation Registry* that
+makes the creation and management of identity federations simple and
+easy.
 
-* _Self-Service Password Reset:_ The Self-Service Password Reset is disabled by default. For Self-Service Password Reset to work SMTP Server(see below) should be configured as well. Password reset link for your Gluu server should be something like: "https://your.idp.link/identity/person/passwordReminder.htm"
+* _Self-Service Password Reset:_ The Self-Service Password Reset is
+disabled by default. For Self-Service Password Reset to work SMTP Server
+(see below) should be configured as well. Password reset link for your
+Gluu server should be something like:
+`https://your.idp.link/identity/person/passwordReminder.htm`.
 
-* _Cache Refresh:_ This is the mechanism which pulls and synchonises user information from a remote LDAP/Active Directory with the local LDAP of Gluu server. The Gluu server administrator needs to provide sufficient information including username and password before enabling this option. Before configuring Cache Refresh, you should read the [overview here](../../articles/cache-refresh.md). After reading the overview, you can learn about the Cache Refresh GUI tools [here](#cache-refresh).
+* _Cache Refresh:_ This is the mechanism which pulls and synchonises
+user information from a remote LDAP/Active Directory with the local LDAP
+of the Gluu Server. The Gluu Server administrator needs to provide
+sufficient information including username and password before enabling
+this option. Before configuring Cache Refresh, you should read the
+[overview here](../../articles/cache-refresh.md). After reading the
+overview, you can learn about the Cache Refresh GUI tools
+[here](#cache-refresh).
 
-* _SCIM Support:_ If the organization already has an identity management or provisioning system in place, the SCIM protocol can be used to push and synchronise the existing identity data into the Gluu Server.
+* _SCIM Support:_ If the organization already has an identity management
+or provisioning system in place, the SCIM protocol can be used to push
+and synchronise the existing identity data into the Gluu Server.
 
 * _DNS Server:_ The address to the DNS Server goes in this field.
 
-* _Maximum Log Size:_ This option can be used to mitigate the space issues within the Gluu Server. The Gluu Server automatically zips any log file which is bigger than the defined value in this field. 
+* _Maximum Log Size:_ This option can be used to mitigate the space
+issues within the Gluu Server. The Gluu Server automatically zips any
+log file which is bigger than the defined value in this field.
 
 ## Manage Email Addresses
+
 This feature allows the Gluu Server Administrator to manage notifications for the IdP.
 
 ![Manage Email Addresses](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_email.png)
