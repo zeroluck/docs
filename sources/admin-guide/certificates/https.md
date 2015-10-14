@@ -6,7 +6,7 @@ SSO handling, it can be either a self signed certificate or a CA certified
 certificate, there is no hard rule. But in either case, the CN of the
 certificate MUST follow the HOSTNAME of the Gluu Server. 
 
-In order to access this feautre, go to Configuration --> Manage Certificate
+In order to access this feature, go to Configuration --> Manage Certificate
 
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Manage_SSL_cert.png?raw=true)
 
@@ -19,6 +19,6 @@ Please note that, private key cannot be password protected and certificate
 should be base64 with "crt" extension.  
 
 Upload private key and certificate with "Upload Key" and "Upload cert"
-respectively. "Update" the configuration and wait for 10 mins. Our configuration
+respectively. "Update" the configuration and wait for 10 minutes. Our configuration
 management system ( Puppet )  will place certificate in corresponding location
 automatically. 
