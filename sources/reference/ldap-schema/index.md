@@ -138,15 +138,16 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __seeAlso__ 
 
 ### Object class gluuInumMap
+
  * __Description__ 
  * __gluuStatus__ Status of the entry, used by many object classes
- * __inum__ XRI i-number
- * __primaryKeyAttrName__ Primary Key Attribute Name
- * __primaryKeyValue__ Primary Key Value
- * __secondaryKeyAttrName__ Secondary Key Attribute Name
- * __secondaryKeyValue__ Secondary Key Value
- * __tertiaryKeyAttrName__ Tertiary Key Attribute Name
- * __tertiaryKeyValue__ Tertiary Key Value
+ * __inum__ XRI i-number (iNum)
+ * __primaryKeyAttrName__ Primary key attribute name
+ * __primaryKeyValue__ Primary key value
+ * __secondaryKeyAttrName__ Secondary key attribute name
+ * __secondaryKeyValue__ Secondary key value
+ * __tertiaryKeyAttrName__ Tertiary key attribute name
+ * __tertiaryKeyValue__ Tertiary key value
 
 ### Object class gluuInvoice
  * __Description__ 
