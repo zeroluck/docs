@@ -452,17 +452,17 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
 
  * __Description__ 
  * __createTimestamp__ 
- * __oxAuthAuthenticationTime__ oxAuth Authentication Time
+ * __oxAuthAuthenticationTime__ oxAuth authentication time
  * __oxAuthAuthorizationCode__ oxAuth authorization code
- * __oxAuthCreation__ oxAuth Creation
- * __oxAuthExpiration__ oxAuth Expiration
+ * __oxAuthCreation__ oxAuth creation
+ * __oxAuthExpiration__ oxAuth expiration
  * __oxAuthGrantId__ oxAuth grant id
- * __oxAuthGrantType__ oxAuth Grant Type
- * __oxAuthJwtRequest__ oxAuth JWT Request
+ * __oxAuthGrantType__ oxAuth grant type
+ * __oxAuthJwtRequest__ oxAuth JWT request
  * __oxAuthNonce__ oxAuth nonce
- * __oxAuthScope__ oxAuth Attribute Scope
- * __oxAuthTokenCode__ oxAuth Token Code
- * __oxAuthTokenType__ oxAuth Token Type
+ * __oxAuthScope__ oxAuth attribute scope
+ * __oxAuthTokenCode__ oxAuth token code
+ * __oxAuthTokenType__ oxAuth token type
  * __oxAuthUserId__ oxAuth user id
  * __oxAuthenticationLevel__ None
  * __oxAuthenticationMode__ None
