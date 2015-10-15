@@ -1,10 +1,10 @@
 # Gluu Server Installation
 
-These are instructions for **single server** Gluu Server deployments. 
+These are instructions for **single server** Gluu Server deployments.
 
 Commercial Gluu Server Cluster Packages are currently under development.
-They are not quite ready yet for primetime. You can learn more about the cluster
-project [here](http://gluu.org/docs-cluster).
+They are not quite ready yet for primetime. You can learn more about the
+cluster project [here](http://gluu.org/docs-cluster).
 
 **Note:** Before deploying the Gluu Server, it may be helpful to review
 our [getting started](../getting-started/index.md) document.
@@ -13,9 +13,9 @@ our [getting started](../getting-started/index.md) document.
 
 We currently publish packages for the following operating systems:
 
-- [Centos](./centos.md)  
-- [Ubuntu](./ubuntu.md)   
-- [RHEL](./rhel.md)  
+- [Centos](./centos.md)
+- [Ubuntu](./ubuntu.md)
+- [RHEL](./rhel.md)
 
 # Available Components
 
@@ -95,7 +95,7 @@ Please see our [Cloud Deployment FAQ](../../faq/cloud-faq.md) for cloud
 specific notes and our [Troubleshooting
 FAQ](../../faq/troubleshooting.md) for resolutions to common issues.
 
-# Support 
+# Support
 Gluu offers both community and VIP support. Anyone can browse and open
 tickets on our [support portal](http://support.gluu.org). For private
 support, expedited assistance, and strategic consultations, please view
