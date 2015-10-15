@@ -20,7 +20,7 @@
 
 To keep the Gluu Server up-to-date with the latest user claims, your
 organization can either "push" or "pull" identity data. In the "pull"
-mode, otherwise known as LDAP Syncronization or Cache Refresh, the Gluu
+mode, otherwise known as LDAP Synchronization or Cache Refresh, the Gluu
 Server can use an existing LDAP identity source like Microsoft Active
 Directory as the authoritative source of identity information. If you
 "push" identities to the Gluu Server, you can use the JSON/REST SCIM
@@ -30,7 +30,7 @@ method is detailed below.
 # Cache Refresh
 
 Cache Refresh was built by Gluu to pull user information from a backend
-Active Directory/LDAP Server. Cache refresh dynamically synchronises
+Active Directory/LDAP Server. Cache refresh dynamically synchronizes
 user information from the backend data source to a local LDAP server in
 order to maximize performance. Cache refresh is documented in our
 [configuration section](../configuration/index.md#cache-refresh).
@@ -98,7 +98,7 @@ group. The list of available groups can be viewed by hitting the
 _Search_ button with a blank search box.
 ![Manage User Groups](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_users_managegroups.png)
 
-The Gluu Server Administrator can modify information such as Diplay
+The Gluu Server Administrator can modify information such as Display
 Name, Group Owner, Visibility type etc. The Server Administrator can
 also add or delete users within existing groups. The group information
 is represented as shown below.
@@ -250,7 +250,7 @@ Overview](http://ox.gluu.org/doku.php?id=oxtrust:scim:uma_authentication#ox_scim
             def getApiVersion(self):
                 return 1
 
-            # Authorizae access to resource
+            # Authorize access to resource
             #   authorizationContext is org.xdi.oxauth.service.uma.authorization.AuthorizationContext
             #   configurationAttributes is java.util.Map<String, SimpleCustomProperty>
             def authorize(self, authorizationContext, configurationAttributes):
@@ -281,7 +281,7 @@ Note: There is sample UMA Authorization Policy in CE. You can modify it instead 
  - Select “Scopes” tab and click “Add Scope Description”.
  - Select “Internal” type.
  - Fill the form.
- - Select policy which we aded in previous step.
+ - Select policy which we added in previous step.
  - Click “Add” button. Sample result entry:
 
             dn: inum=@!1111!D386.9FB1,ou=scopes,ou=uma,o=@!1111,o=gluu
