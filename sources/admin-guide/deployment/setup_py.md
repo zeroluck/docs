@@ -1,4 +1,4 @@
-# setup.py command line options
+# setup.py Command Line Options
 
 Use `setup.py` to configure your Gluu Server and to add initial data required for
 oxAuth and oxTrust to start. If `setup.properties` is found in this folder, these
