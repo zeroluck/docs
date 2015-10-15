@@ -107,14 +107,14 @@ In order to create a trust relationship with any SP:
 * Click on “Add Relationship”
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/Add_Relationships.png?raw=true)
 * A new page will appear. Here, Gluu Server Administrator needs to
-provide all informations regarding SP to establish Trust Relationship
+provide all information regarding SP to establish Trust Relationship
 from Gluu Server.
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/TR_new_page.png?raw=true)
     * _Display Name_: Name of the Trust Relationship (it should be unique for every trust relationship)
     * _Description_: Little description. Purpose and SSO link can be added here.
     * _Metadata Type_: Depending on trusted party’s metadata (SP), there are four available types in Gluu Server
         * _File_: If SP has uploadable metadata in XML format, this option works best.
-        * _URI_: If the metadata of SP has url link and accessible from internet, Gluu Server Administrator need to use this option. 
+        * _URI_: If the metadata of SP has uri link and accessible from internet, Gluu Server Administrator need to use this option. 
         * _Generate_: Using Gluu Server to generate configuration files for SP is another big option when the SP is inhouse application or “Shibboleth SP” is installed or going to be installed in target application site (SP).  [How to install Shibboleth SP](http://www.gluu.org/docs/articles/apache-saml/) will help user to configure and install Shibboleth SP on their own area. Please note few things when you are going to use _Generate_ method for your SP. 
             * _URL_ : This is the `hostname of SP`
             * _Public certificate_ : You `must` have to provide the certificate which is Base64 encoded ASCII file and contain "-----BEGIN CERTIFICATE-----" and "-----END CERTIFICATE-----". This certificate `can not be password protected`. 
@@ -139,7 +139,7 @@ entityID.
 
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/Federation_3.png?raw=true)
 
-* Public certifiate: Upload public certificate for this SP server.
+* Public certificate: Upload public certificate for this SP server.
 Please note that: public certificate’s CN (common name) MUST maintain
 the hostname of the SP server. If the SP has no certificate then keep
 this option blank and the IdP will generate a self signed certificate.
@@ -160,7 +160,7 @@ After adding a new Trust Relationship, the server administrator will observe a c
 # FAQ 
 
 * I have a new SP, what do I need to do to create a Trust Relationship from the Gluu Server? 
-    * Basically there are two types of single sign-on: IDP-inititate SSO and SP-initiated SSO. You need to know what kind of SSO it is. 
+    * Basically there are two types of single sign-on: IDP-initiated SSO and SP-initiated SSO. You need to know what kind of SSO it is. 
         * For SP-initiated SSO, you need to know: 
             * Required attributes by SP.  
             * Metadata of SP. 
@@ -176,7 +176,7 @@ After adding a new Trust Relationship, the server administrator will observe a c
     * Gluu Server IDP metadata is available online at: `https://<yourhostname>/idp/shibboleth`
 
 * What kind of certificates does the Gluu Server use? 
-    * [Certificates](../certificates/index.md) in Gluu Server             
+    * [Certificates](../certificates/index.md) in Gluu Server
 
 * How can I get the IDP's SAML cert? 
     * SAML certificate is available in your IDP's metadata. Metadata can be collected by following these [instructions](https://support.gluu.org/view/installation/idp-certificate-entityid-location-http-redirect-location-etc/265). 
