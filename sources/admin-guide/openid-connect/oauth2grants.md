@@ -3,7 +3,7 @@
 oAuth2 supports two additional grants other than the [OpenID Connect
 Specs](http://openid.net/developers/specs/). The grants are `Client
 Credentials Grant` and `Resource Owner Password Credentials Grant`. The
-grants are expained below.
+grants are explained below.
 
 ## Client Credentials Grant
 
