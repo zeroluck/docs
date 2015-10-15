@@ -100,7 +100,6 @@ The main documentation is organized into the following sections:
 # Articles
 - [Gluu CE](./articles/gluu-server-ce.md)
 - [Gluu CE Operations](./articles/operations/index.md)
-- [Cache Refresh Introduction](./articles/cache-refresh.md)
 - [Apache SAML](./articles/apache-saml.md)
 - [Benchmarking](./articles/benchmarking.md)
 - [Custom Attributes](./articles/custom-attributes.md)

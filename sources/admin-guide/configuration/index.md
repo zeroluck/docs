@@ -47,7 +47,11 @@ This feature allows the Gluu system administrator to customize and
 implement various options such as *Cache Refresh*, *Federation Hosting*,
 *SCIM Support* etc.
 
+<<<<<<< HEAD
+* _Cache Refresh:_ This is the mechanism which pulls and synchonises user information from a remote LDAP/Active Directory with the local LDAP of Gluu server. The Gluu server administrator needs to provide sufficient information including username and password before enabling this option. To learn more about the Cache Refresh GUI tools see the [Cache Refresh Section](#cache-refresh).
+=======
 ![System Configuration](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_system.png)
+>>>>>>> c069150258662f21a97093875580b8bc59520455
 
 * _White Pages:_ If the user intends to use the built-in White Pages of
 the Gluu Server, it can be enabled from the menu.
@@ -301,7 +305,11 @@ Additional attributes can be added from the Gluu Server GUI, oxTrust, by clickin
 
 # Cache Refresh
 
+<<<<<<< HEAD
+**Cache Refresh** was built by Gluu to pull user information from a backend customer Active Directory/LDAP Server. Cache refresh dynamically synchronises user information from the backend data source of the customer to the Gluu Server in order to maximize performance. This feature is sensitive in nature and any incorrect action may result in loss of data within the Gluu Server. Before configuring Cache Refresh, you should read the [overview here](../../admin-guide/cache-refresh/index.md). For any questions relating to Cache Refresh functionality, you can seek assistance from [Gluu Support](http://support.gluu.org). *For a successful Cache Refresh setup, you have to insert data in ALL FIELDS below.*
+=======
 **Cache Refresh** was built by Gluu to pull user information from a backend customer Active Directory/LDAP Server. Cache refresh dynamically synchronizes user information from the backend data source of the customer to the Gluu Server in order to maximize performance. This feature is sensitive in nature and any incorrect action may result in loss of data within the Gluu Server. Before configuring Cache Refresh, you should read the [overview here](../../articles/cache-refresh.md). For any questions relating to Cache Refresh functionality, you can seek assistance from [Gluu Support](http://support.gluu.org). *For a successful Cache Refresh setup, you have to insert data in ALL FIELDS below.*
+>>>>>>> c069150258662f21a97093875580b8bc59520455
 
 ![Cache Refresh Menu](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_menu.png)
 
