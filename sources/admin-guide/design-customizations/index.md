@@ -1,4 +1,4 @@
-**Table of Contents** 
+
 [TOC]
 #Design Customizations
 The look and feel of the Gluu Server can be edited to match your organizations branding and custom requirements.
@@ -85,3 +85,43 @@ In oxTrust, this is under Configuration > Organization Configuration, and is the
 You can upload your logo here, which will be shown in Gluu Server Administrative Control page. 
 - `Organization Favicon`: Organization favicon can be changed with this feature. 
 - `Menu Color`: It’s a color picker for Gluu Server. Gluu Server’s Web UI color can be changed with this option.
+
+# How to Add Custom Attributes to Gluu LDAP
+
+The following creaites a custom objectclass `svPerson` and an attribute called `svPermission` in the LDAP Schema. This procedure can also be used to create any other custom attribute.
+
+1. Create a file called `102-sv.ldif` in `/opt/opendj/config/schema/` folder with the following content:
+
+```
+dn: cn=schema
+objectClass: top
+objectClass: ldapSubentry
+objectClass: subschema
+cn: schema
+attributeTypes: ( svPermission-oid NAME 'svPermission'
+  SUBSTR caseIgnoreSubstringsMatch EQUALITY caseIgnoreMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+  X-ORIGIN 'SV custom attribute' )
+objectClasses: ( svPerson-oid NAME 'svPerson' SUP top AUXILIARY MAY ( svPermission) X-ORIGIN 'SV - Custom objectclass' )
+```
+	1. The oxTrust admin can also be used to add the custom attribute. Please see the [Attribute Section](http://www.gluu.org/docs/admin-guide/configuration/#attributes) for more information.
+ 
+2. Restart `opendj` and make sure that there is no error when `opendj` starts.
+
+3. Edit the `oxTrust.properties` file in `/opt/tomcat/conf/` folder and add the following.
+
+	1. Add `svPerson` to `person-objectClass-types`
+
+	2. Add `svPerson` to `person-objectClass-displayNames`
+
+4. Reload the oxTrust properties using `# touch /opt/tomcat/conf/oxtrust.config.reload`.
+
+5. Register this new attribute using the oxTrust admin interface, in the [Attributes](http://www.gluu.org/docs/admin-guide/configuration/#attributes) configuraiton page. 
+For SAML URI, you can use an https URI like `https://sv.com/schema/svPermission...` but it has no importance as SAML will not be used at all.
+
+It is also possible to use the attribute as a scope for OpenID Connect.
+
+1. Create a custom scope `svInfo` for OpenID Connect. Please see [OpenID Conncet Scopes](http://www.gluu.org/docs/admin-guide/openid-connect/#scopes) for instructions about custom scope creation.
+
+2. Add the `svPermission` userclaim to `svInfo` Scope. Make sure you release this scope to your registered clients.
+.

@@ -17,6 +17,7 @@ pages:
 - [admin-guide/configuration/index.md, Admin Guide, Configuration]
 - [admin-guide/design-customizations/index.md, Admin Guide, Design and Customizations]
 - [admin-guide/ldap/index.md, Admin Guide, LDAP]
+- [admin-guide/cache-refresh/index.md, Admin Guide, Cache Refresh]
 - [admin-guide/saml/index.md, Admin Guide, SAML]
 - [admin-guide/openid-connect/index.md, Admin Guide, OpenID Connect]
 - [admin-guide/uma/index.md, Admin Guide, UMA]
@@ -41,7 +42,7 @@ pages:
 - [reference/oxTrust/index.md, Reference, OxTrust]
 - [reference/mod_auth_oidc/index.md, Reference, Apache Module]
 # Articles Sections
-- [articles/cache-refresh.md, Articles, Cache Refresh Introduction]
+
 - [articles/apache-saml.md, Articles, Apache SAML SP Config]
 - [articles/google-saml.md, Articles, SAML SSO with Google]
 - [articles/salesforce-sso.md, Articles, SAML SSO with Salesforce]

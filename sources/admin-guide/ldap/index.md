@@ -1,7 +1,5 @@
-**Table of Contents**  
 [TOC]
 # LDAP Configuration
-
 This section has information about how the Gluu Server uses LDAP, and other LDAP recommendations.
 
 The Gluu Server uses LDAP for persistence to store information about things like configuration, user claims, and client claims. Currently Gluu ships with a forked version of OpenDJ. However, we hope to bolster support for OpenLDAP and 389DS. If you are an LDAP guru please help us by contributing documentation details!
