@@ -2,10 +2,24 @@
 [TOC]
 # Introduction
 
-User-Managed Access (UMA) is an OAuth-based web-based access management protocol. The protocol is defined in a [version 1.0 specification](https://kantarainitiative.org/confluence/display/uma/UMA+Protocol). A corresponding specification defines obligations of legally responsible parties that engage in UMA-conforming interactions. Although the primary use cases of UMA have centered on individual people (that is, the "users" who manage access to their own online resources), the UMA notion of authorization as a service also has relevance to modern enterprises that must secure APIs and other web resources in a developer-friendly way.
+User-Managed Access (UMA) is an OAuth-based web-based access management
+protocol. The protocol is defined in a [version 1.0
+specification](https://kantarainitiative.org/confluence/display/uma/UMA+Protocol).
+A corresponding specification defines obligations of legally responsible
+parties that engage in UMA-conforming interactions. Although the primary
+use cases of UMA have centered on individual people (that is, the
+"users" who manage access to their own online resources), the UMA notion
+of authorization as a service also has relevance to modern enterprises
+that must secure APIs and other web resources in a developer-friendly
+way.
 
 ##Enterprise UMA
-The Gluu Server implements UMA in a way that enables the protectection of any web resource. Through the oxTrust interface, the server admin can write custom [authorization interception scripts](../../reference/interception-scripts/index.md#authorization) which may contain logic to grant (or forbid) access. All terminology used by this page is borrowed from UMA and Connect specs.
+The Gluu Server implements UMA in a way that enables the protectection
+of any web resource. Through the oxTrust interface, the server admin can
+write custom [authorization interception
+scripts](../../reference/interception-scripts/index.md#authorization)
+which may contain logic to grant (or forbid) access. All terminology
+used by this page is borrowed from UMA and Connect specs.
 
 ## UMA in Action
 The diagrams below detail how the various UMA actors interact. 
@@ -34,9 +48,15 @@ Some helpul definitions:
 
 # Discovery
 
-The Gluu Server exposes an endpoint for discovering information about UMA Provider configuration. A resource server or client can perform an HTTP GET on `https://domain.com/.well-known/uma-configuration` to retrieve a JSON object indicating the UMA Provider configuration. 
+The Gluu Server exposes an endpoint for discovering information about
+UMA Provider configuration. A resource server or client can perform an
+HTTP GET on `https://domain.com/.well-known/uma-configuration` to
+retrieve a JSON object indicating the UMA Provider configuration.
 
-Gluu Server response for UMA configuration MAY contain standard properties (defined by UMA specification) as well as custom properties (extension that is out of scope of this document). Gluu Server guarantees property name uniqueness within response.
+Gluu Server response for UMA configuration MAY contain standard
+properties (defined by UMA specification) as well as custom properties
+(extension that is out of scope of this document). Gluu Server
+guarantees property name uniqueness within response.
 
 The following is an example of a GET request to the UMA configuration discovery endpoint: 
 
@@ -106,7 +126,8 @@ The JSON object returned includes the following configuration information:
 
 # Resource Registration
 
-To let the Gluu Server know which resources are protected by UMA they must be registered. Resources are described by following properties:
+To let the Gluu Server know which resources are protected by UMA they
+must be registered. Resources are described by following properties:
 
 - name: name of resource
 - scopes: scopes that are available for this resource
@@ -122,7 +143,8 @@ These are standard properties however a resource description MAY contain custom 
 ![oxTrust UMA Add Resources Interface](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/uma/uma_oxtrust_resources_add.png)
 # UMA Scopes
 
-UMA Scopes are bound to resource sets and are used by policies to check whether user the specified user has access to the resource.
+UMA Scopes are bound to resource sets and are used by policies to check
+whether user the specified user has access to the resource.
 
 An UMA Scope is described in JSON and has following properties:
 
@@ -191,7 +213,9 @@ oxIconUrl: http://seed.gluu.org/uma/icons/view_scope.png
 
 # UMA Policies
 
-UMA Policies protect UMA Resources. Protection of resources are made via scopes. Gluu server evaluates all policies (identified by scopes) in order to grant access.
+UMA Policies protect UMA Resources. Protection of resources are made via
+scopes. Gluu server evaluates all policies (identified by scopes) in
+order to grant access.
 
 UMA Policy main properties:
 
@@ -201,7 +225,9 @@ UMA Policy main properties:
 
 ## Define Policies
 
-Within the oxTrust interface the Gluu Server admin can define UMA policies (pictured below). To achieve this, navigate to Configuration > Manage Custom Scripts > UMA Authorization policies. 
+Within the oxTrust interface the Gluu Server admin can define UMA
+policies (pictured below). To achieve this, navigate to Configuration >
+Manage Custom Scripts > UMA Authorization policies.
 
 You can find more information on crafting UMA policies as well as an example script [here](../../reference/interception-scripts/index.md#authorization)
 
@@ -228,7 +254,9 @@ This section defines the OX claim profile for UMA. Following is a summary:
   - Security and privacy considerations: None additional.
   - Binding obligations: None additional.
 
-If an authorization server supports the OX claim profile, it MUST supply the "ox" value for one of its "claim_profiles_supported" values in its configuration data.
+If an authorization server supports the OX claim profile, it MUST supply
+the "ox" value for one of its "claim_profiles_supported" values in its
+configuration data.
 
 To conform to this option, the authorization server MUST do the following:
 
