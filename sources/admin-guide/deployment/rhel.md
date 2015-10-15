@@ -57,7 +57,7 @@ To perform the final configuration of the Gluu Server you need to
 provide some instance specific information, like the DNS hostname, and
 the information required to generate certificates. Post rpm
 installation, run the Gluu Server `setup.py` to complete the
-installation.  See [setup.py help](./setup_py.md) or run `./setup.py -h`
+installation. See [setup.py help](./setup_py.md) or run `./setup.py -h`
 to see the latest installation options.
 
 * Login to Gluu Server container: 
@@ -70,12 +70,11 @@ to see the latest installation options.
 
 `# ./setup.py`
 
-
-After setup.py script successful execution, point your browser to
-`https://hostname` Login with the default user name “admin” and the LDAP
-password printed back in the confirmation (also contained in
-`setup.properties.last`). If you want to see the full LDIF for the admin
-user, it is contained in `/opt/opendj/ldif/people.ldif.
+After the successful execution of the `setup.py` script, point your
+browser to `https://hostname`. Login with the default user name “admin”
+and the LDAP password printed back in the confirmation (also contained
+in `setup.properties.last`). If you want to see the full LDIF for the
+admin user, it is contained in `/opt/opendj/ldif/people.ldif`.
 
 Make sure you remove or encrypt `setup.properties.last`. It has the
 clear text passwords for everything: LDAP, admin user, keystores, and
@@ -86,9 +85,11 @@ of the installation. Or check `setup_errors.log` to just see the errors
 (or stderr output from the scripts).
 
 <!--
-If you want to script the installation of the Gluu Server, user the `-f` option or just save the 
-properties file as `setup.properties` and it will be automatically detected. Also use the `-n` option 
-to suppress the interactive confirmation to proceed. For example, to re-run the last installation:
+If you want to script the installation of the Gluu Server, user the `-f`
+option or just save the properties file as `setup.properties` and it
+will be automatically detected. Also use the `-n` option to suppress the
+interactive confirmation to proceed. For example, to re-run the last
+installation:
 
 `./setup.py -n -f setup.properties.last`
 -->
@@ -105,8 +106,8 @@ to suppress the interactive confirmation to proceed. For example, to re-run the 
 
 ## Gluu Server Uninstallation
 
-Exit from chroot environment to main Linux. Stop the chroot environment, remove the Gluu Server,
-then remove the Gluu yum repository
+Exit from chroot environment to main Linux. Stop the chroot environment,
+remove the Gluu Server, then remove the Gluu yum repository:
 
 `# service gluu-server stop`
 
