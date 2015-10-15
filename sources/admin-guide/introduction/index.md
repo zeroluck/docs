@@ -122,7 +122,7 @@ Siteminder access management framework.
 At OSCON 2014, Gluu introduced easier to install packages for the Gluu
 Server, and support for the Ubuntu Juju orchestration framework. The
 goal of these distributions was to promote adoption of OX in the major
-distributions of linux.
+distributions of Linux.
 
 # Design Goals
 
@@ -173,7 +173,7 @@ Gluu Server scale as much as needed.
 
 ## Extreme flexibility
 
-As Kent Beck says, "Embrace Change". The key to the Gluu Server's succes
+As Kent Beck says, "Embrace Change". The key to the Gluu Server's success
 has been its ability to handle all sorts of crazy requirements--quickly.
 Sometimes raw speed is needed, but equally important is the ability for
 the access management framework to be really smart.
