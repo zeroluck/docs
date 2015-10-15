@@ -11,14 +11,14 @@ loss of data within the Gluu Server.
 
 ## Overview
 When configured for Cache Refresh, oxTrust acts as a metadirectory. It
-periodically retreives the full data set from each source LDAP server,
+periodically retrieves the full data set from each source LDAP server,
 hashes the values, and stores this hash on the disk–a snapshot file.
 Subsequent results are compared with the last snapshot. Using set
 subtraction, oxTrust can calculate which entries have changed. Note:
-this method of syncrhonization requires periodic data integrity
+this method of synchronization requires periodic data integrity
 checking, as there is no assured messaging. Alternately, you can just
 remove the user data, and refresh it from the source. However, be
-careful if use updates are allowed for syncrhonized entries!
+careful if use updates are allowed for synchronized entries!
 
 The interval between data refresh is configurable in the oxTrust GUI.
 You can also enable an attribute transformation script if you need to
@@ -67,7 +67,7 @@ VDS setting if you're using the Radiant Logic Virtual Directory Server.
 * Use the oxTrust admin to browse users.
 
 * Use ldapsearch to check to see if results are starting to come in. The
-following comand will seach total number of users in the Gluu LDAP.
+following command will search total number of users in the Gluu LDAP.
 
 ```
 # /opt/opendj/bin/ldapsearch -h localhost -p 1636 -Z -X -D "cn=directory manager" -w 'pass_of_ldap_ -b 'ou=people,o=DA....,o=gluu' dn | grep "dn\:" | wc -l
