@@ -14,7 +14,7 @@ that must secure APIs and other web resources in a developer-friendly
 way.
 
 ##Enterprise UMA
-The Gluu Server implements UMA in a way that enables the protectection
+The Gluu Server implements UMA in a way that enables the protection
 of any web resource. Through the oxTrust interface, the server admin can
 write custom [authorization interception
 scripts](../../reference/interception-scripts/index.md#authorization)
@@ -24,7 +24,7 @@ used by this page is borrowed from UMA and Connect specs.
 ## UMA in Action
 The diagrams below detail how the various UMA actors interact. 
 
-Some helpul definitions:
+Some helpful definitions:
 - *Resource Owner (RO)*: An OAuth resource owner that is the "user" in User-Managed Access. This is typically an end-user (a natural person) but it can also be a corporation or other legal person.
 - *Resource Server (RS)*: Where the resources are held. 
 - *Authorization Server (AS)*: A server that governs access based on resource owner policies.
