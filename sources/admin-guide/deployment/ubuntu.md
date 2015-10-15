@@ -4,19 +4,21 @@
 
 The Gluu Server Community Edition should be deployed on a VM with:
 
-* Ubuntu Server 14.04(Trusty)	
-* 2 CPU Units and at least 4GB Physical Memory (more is always better, though)	
+* Ubuntu Server 14.04 (Trusty)	
+* 2 CPU Units and at least 4GB of physical memory (more is always better, though)
 
 ## Available Components
-Please review the [deployment guide](./index.md) for a list of available components during installation. 
+
+Please review the [deployment guide](./index.md) for a list of available
+components during installation.
 
 ## Install 
 
-Download and install Gluu-Server by following commands
+Download and install Gluu-Server by the following commands. Use the
+`.deb` installation to perform a base chroot installation with following
+Gluu Server Base Ubuntu requirements.
 
-Use the .deb installation to perform a base chroot installation with following Gluu Server Base Ubuntu requirements
-
-New alternative using our Gluu repo for ubuntu trusty:
+New alternative using our Gluu repo for Ubuntu Trusty:
 
 <code> # echo "deb http://repo.gluu.org/ubuntu/ trusty main" > /etc/apt/sources.list.d/gluu-repo.list </code>
 
@@ -34,14 +36,14 @@ New alternative using our Gluu repo for ubuntu trusty:
 
 <code> ./setup.py </code>
 
-After setup.py script successful execution, login to oxTrust, the policy
-administration point for Gluu by pointing your browser to 
-https://hostname
+After the successful execution of `setup.py` script, login to oxTrust,
+the policy administration point for Gluu by pointing your browser to
+`https://hostname`.
 
 Note: if you are not using a resolvable DNS host, you will need to add 
 the hostname to your hosts file on the server which is running your browser.
 Login with the default user name “admin” and the password printed back in 
-the confirmation (also conatained in setup.properties.last (`grep -i pass`)
+the confirmation (also contained in `setup.properties.last` (`grep -i pass`)
 and look for the LDAP password which is the same as the admin password.
 
 ## Starting and Stopping the Gluu Server
@@ -62,20 +64,25 @@ Or if you prefer...
 
 To perform the final configuration of the Gluu Server you need to provide 
 some Gluu Server appliance specific information, like the DNS hostname, and 
-the information required for an X.509 certificate. 
-We are always working to make the setup easier. After successful Gluu 
-Server installation, run the Gluu Server `setup.py` to complete the 
-installation. The script is installed in `/install`
+the information required for an X.509 certificate. We are always working
+to make the setup easier. After successful Gluu Server installation, run
+the Gluu Server `setup.py` to complete the installation. The script is
+installed in the directory `/install`.
 
 <code> ./setup.py </code>
 
-Make sure you remove or encrypt setup.properties.last It has the clear text passwords for everything: LDAP, admin user, keystores, and 3DES salt.
+Make sure you remove or encrypt `setup.properties.last`. It has the
+clear text passwords for everything: LDAP, admin user, keystores, and
+3DES salt.
 
-If something goes wrong, check setup.log for a detailed step-by-step of the installation. Or check setup_errors.log to just see the errors (or stderr output from the scripts).
+If something goes wrong, check `setup.log` for a detailed step-by-step
+of the installation. Or check `setup_errors.log` to just see the errors
+(or stderr output from the scripts).
 
 ### Scripted Installation
 
-If you want to script the installation of the Gluu Server, here is what you can do to achieve your target: 
+If you want to script the installation of the Gluu Server, here is what
+you can do to achieve your goal:
 
 * Save and backup your existing `setup.properties.last`
 * Uninstall existing Gluu-Server installation
@@ -88,7 +95,7 @@ If you want to script the installation of the Gluu Server, here is what you can 
 
 ## Uninstallation
 
-Exit from chroot environment to main linux.
+Exit from chroot environment to main Linux.
 
 Stop the chroot environment, which will unmount all chroot directories and after delete rpm. Please look at following commands.
 
@@ -98,16 +105,25 @@ Stop the chroot environment, which will unmount all chroot directories and after
 
 <code> # rm -rf /home/gluu-server </code>
 
-On installation, any modified files are saved in `/home/gluu-server.save`
-If you want to blow away all remnants of the install, `rm -rf /home/gluu-server.save'
+On installation, any modified files are saved in
+`/home/gluu-server.save`. If you want to blow away all remnants of the
+install, `rm -rf /home/gluu-server.save'.
 
-In some circumstances, the installation can be broken. In that case please 
-try following to force uninstall the package.
+In some circumstances, the installation can be broken. In that case
+please try following to force uninstall the package.
 
 <code> # dpkg --purge --force-all gluu-server </code>
 
 ## Troubleshooting
-Please see our [Cloud Deployment FAQ](../../faq/cloud-faq.md) for cloud specific notes and our [Troubleshooting FAQ](../../faq/troubleshooting.md) for resolutions to common issues.  
+
+Please see our [Cloud Deployment FAQ](../../faq/cloud-faq.md) for cloud
+specific notes and our [Troubleshooting
+FAQ](../../faq/troubleshooting.md) for resolutions to common issues.
 
 ## Support 
-Gluu offers both community and VIP support. Anyone can browse and open tickets on our [support portal](http://support.gluu.org). For private support, expedited assistance, and strategic consultations, please view [our pricing](http://gluu.org/pricing) and [schedule a meeting with us](http://gluu.org/booking) to discuss VIP support options.
+
+Gluu offers both community and VIP support. Anyone can browse and open
+tickets on our [support portal](http://support.gluu.org). For private
+support, expedited assistance, and strategic consultations, please view
+[our pricing](http://gluu.org/pricing) and [schedule a meeting with
+us](http://gluu.org/booking) to discuss VIP support options.
