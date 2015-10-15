@@ -34,7 +34,7 @@
 ## SCIM Overview
 
 The Simple Cloud Identity Management (SCIM) specification is a standard REST/JSON API to standardize user and group CRUD (create, read, update, delete). You can review the detailed specification at [http://www.simplecloud.info](http://www.simplecloud.info). 
-The specification seeks to build upon experience with existing schemas and deployments, placing specific emphasis on simplicity of development and integration, while applying existing authentication, authorization, and privacy models. It's intent is to reduce the cost and complexity of user management operations by providing a common user schema and extension model, as well as binding documents to provide patterns for exchanging this schema using standard protocols. In essence, make it fast, cheap, and easy to move users in to, out of, and around the cloud.
+The specification seeks to build upon experience with existing schemes and deployments, placing specific emphasis on simplicity of development and integration, while applying existing authentication, authorization, and privacy models. It's intent is to reduce the cost and complexity of user management operations by providing a common user schema and extension model, as well as binding documents to provide patterns for exchanging this schema using standard protocols. In essence, make it fast, cheap, and easy to move users in to, out of, and around the cloud.
 
 You can download a PDF copy of this guide from [HERE](https://github.com/GluuFederation/SCIM-Client/tree/master/doc/pdf).
 
@@ -464,7 +464,7 @@ ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,client
 
 This will create an oAuth instance of ScimClient where: `userName` and
 `passWord` are the user credentials , `clientID` and `clientSecret` are
-oxAuth client credentials , `domailURL` is the domain where SCIM client
+oxAuth client credentials , `domainURL` is the domain where SCIM client
 resides, for example:
 `http://localhost:8080/oxTrust/seam/resource/restv1` and `oxAuthDomain`
 is the `tokenURL` example
@@ -729,7 +729,7 @@ obtain AAT. Sample result entry:
             def getApiVersion(self):
                 return 1
 
-            # Authorizae access to resource
+            # Authorize access to resource
             #   authorizationContext is org.xdi.oxauth.service.uma.authorization.AuthorizationContext
             #   configurationAttributes is java.util.Map<String, SimpleCustomProperty>
             def authorize(self, authorizationContext, configurationAttributes):
@@ -760,7 +760,7 @@ obtain AAT. Sample result entry:
 	 - Select “Scopes” tab and click “Add Scope Description”.
 	 - Select “Internal” type.
 	 - Fill the form.
-	 - Select policy which we aded in previous step.
+	 - Select policy which we added in previous step.
 	 - Click “Add” button. Sample result entry:
 
             dn: inum=@!1111!D386.9FB1,ou=scopes,ou=uma,o=@!1111,o=gluu
