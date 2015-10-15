@@ -87,7 +87,6 @@ and is the last section, titled Configuration.
 
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/WebUI_modification/oxtrust/oxTrust_GUI_mod_configuration_overview.png?raw=true)
 
-<<<<<<< HEAD
 - `Title`: Web User Interface title can be modified with this link. 
 - `Display name`: Display Name of IDP in ldap. [ This change is not suggested to be done by Gluu Server Administrator. As it will change configuration in our central server. ]
 - `Short name`: Short Name of Org in ldap. [ This change is not suggested to be done by Gluu Server Administrator. As it will change configuration in our central server. ]
@@ -139,22 +138,3 @@ It is also possible to use the attribute as a scope for OpenID Connect.
 
 2. Add the `svPermission` userclaim to `svInfo` Scope. Make sure you release this scope to your registered clients.
 .
-=======
-- __Title__: Web User Interface title can be modified with this link. 
-- __Display name__: Display Name of IDP in LDAP. [ This change is not
-  suggested to be done by Gluu Server Administrator. As it will change
-configuration in our central server. ]
-- __Short name__: Short Name of the organization in LDAP. [ This change is not suggested to be done by Gluu Server Administrator. As it will change configuration in our central server. ]
-- __Description__: A little description about Gluu Server.
-- __Login page message__: Login page is now using oxAuth, we will add more features to support Login page modification through oxAuth. 
-- __Welcome Title Text__: Gluu Server Administrator can add custom Welcome Title Text with feature.
-- __Welcome Page Message__: Various message can be included here. Out of the box, Gluu Server includes these 1. Upload SSL Certificate, 2. Active attribute … etc. messages.
-- __Organization Logo__: Organization logo can be uploaded and activated
-  from here. You can upload your logo here, which will be shown in Gluu
-Server Administrative Control page.
-- __Organization Favicon__: Organization favicon can be changed with
-  this feature.
-- __Menu Color__: It’s a color picker for Gluu Server. Gluu Server’s Web
-  UI color can be changed with this option.
-
->>>>>>> c069150258662f21a97093875580b8bc59520455
