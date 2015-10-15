@@ -123,7 +123,7 @@ address or it can be any custom attribute.
 
 All our configurations are based on one Asimba configuration file named
 `asimba.xml`. It's also possible to configure Asimba with JDBC. For more info
-Asimba [wiki](http://sourceforge.net/p/asimba/wiki/Home/) is availalbe.
+Asimba [wiki](http://sourceforge.net/p/asimba/wiki/Home/) is available.
 
 * Required tools
     * Metadata of remote IDP
