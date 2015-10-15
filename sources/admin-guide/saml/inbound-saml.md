@@ -43,27 +43,36 @@ information, please review the [Asimba website](http://www.asimba.org/site/).
 * [SSL Certificate of Authentication Server](#ssl-certificate-of-authentication-server) 
 * [Required Attributes](#required-attributes)
 
-Above points are described breifly below. 
+Above points are described briefly below. 
 
 ## Metadata of Authentication Server
 
-Authentication server can be any remote / native SAML IDP such as the Shibboleth IDP or Microsoft ADFS. You need the metadata of this server to configure Asimba. After configuration, end user will be able to select their desired authentication server from Asimba's discovery page. Or, you can configure the "selector" which will automatically redirect user to desired IDP / ADFS. 
+Authentication server can be any remote / native SAML IDP such as the
+Shibboleth IDP or Microsoft ADFS. You need the metadata of this server
+to configure Asimba. After configuration, end user will be able to
+select their desired authentication server from Asimba's discovery page.
+Or, you can configure the "selector" which will automatically redirect
+user to desired IDP / ADFS.
 
 ## Metadata of Service Provider
 
-Just like the authentication server metadata, you will also need metadata from all websites ( SPs ) which will be connected.
+Just like the authentication server metadata, you will also need
+metadata from all websites (SPs) which will be connected.
 
 ## SAML Certificate of Service Provider
 
-Base64 encoded certificates are required to configure the Asimba trust store to connect / allow the inbound SAML request from the remote SP. 
+Base64 encoded certificates are required to configure the Asimba trust
+store to connect / allow the inbound SAML request from the remote SP.
 
 ## SSL Certificate of Authentication Server
 
-Base64 encoded certificates for the authentication server are also required. 
+Base64 encoded certificates for the authentication server are also required.
 
 ## Required Attributes
 
-Every organization has their own policy to release / pass attributes to service providers. It can be a standard attribute like UID or email address or it can be any custom attribute.  
+Every organization has their own policy to release / pass attributes to
+service providers. It can be a standard attribute like UID or email
+address or it can be any custom attribute.
 
 # Asimba Configuration 
 
@@ -231,7 +240,7 @@ Required Files:
 
 * Collect the metadata of SP and place in some location of your file system. Make sure that the metadata is in xml format and user tomcat readable.  
 * Add Requestor: Every SP is known as `requestor` to Asimba. There are couple of place where we need to configure this SP inside Asimba's `asimba.xml` file. 
-    * Requestor should be configured in <requestorpoolfactory\<requestors>\<requestor
+    * Requestor should be configured in `<requestorpoolfactory>\<requestors>\<requestor>`
     * `requestor id` should be the `entityID` of SP
     * `friendlyname` can be anything which is unique
 
@@ -243,7 +252,7 @@ A sample configuration should look like below:
                     enabled="true" />
 
 * Add profile of requestor: In this section the location of SP's metadata and some other configurations are done. 
-    * This configuration is configured in <profiles>\<websso\<requestors\<requestor
+    * This configuration is configured in `<profiles>\<websso>\<requestors>\<requestor>`
     * The `requestor id` is the entityID of SP
     * `metadata` location is a the absolute path
 
@@ -269,10 +278,10 @@ Sample command would be:
             -file sp_gluu_org.der -keystore asimba-keystore.jks
 
 
-## SP Restart Tomcat 
+## SP Restart Tomcat
 If everything was done correctly, the SP is now configured in Asimba. 
 
-# Configure SP 
+# Configure SP
 
 Now, it's time to configure your SP as it can send the request to Asimba server.
 The primary item to configure Asimba server in SP's configuration is `the
@@ -282,13 +291,13 @@ metadata of Asimba`. Which can be grabbed easily with
 
 ## Configure Remote IDP
 
-Remote IDP / AD FS also need to be configured for Asimba server as they can talk
-together. 
+Remote IDP / AD FS also need to be configured for Asimba server as they
+can talk together.
 
-If the remote authentication server is a Shibboleth IDP, it just require three
-things: 
+If the remote authentication server is a Shibboleth IDP, it just require
+three things:
 
-* Metadata of Asimba - which can be grabbed easily. 
+* Metadata of Asimba - which can be grabbed easily.
 * Name identifier attribute, which will be shared with Asimba - `persistentID`
 * `SAML2SSO` relying party configuration for this trust relationship with Asimba. Values should be: 
     * _includeAttributeStatement_ : true
@@ -304,6 +313,11 @@ things:
 
 The workflow of SAML Proxy is:
 
-End user hit the SP --> SP will take user to Asimba's discovery page to select IDP --> User will select IDP for authentication --> After successful authentication user will be logged into SP
+End user hit the SP --> SP will take user to Asimba's discovery page to
+select IDP --> User will select IDP for authentication --> After
+successful authentication user will be logged into SP.
 
-Gluu has an auto selector mechanism which automatically redirect user from specified SP to desired IDP for authentication. If you want have questions, please open a ticket on [support](http://support.gluu.org). 
+Gluu has an auto selector mechanism which automatically redirect user
+from specified SP to desired IDP for authentication. If you have
+questions, please open a ticket on [support](http://support.gluu.org).
+
