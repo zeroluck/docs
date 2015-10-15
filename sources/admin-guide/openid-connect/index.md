@@ -2,21 +2,38 @@
 [TOC]
 
 # OpenID Connect
-Since [Interop 4](http://www.gluu.co/.fm8t) the Gluu Server has one of the most comprehensive
-implementations of OpenID Connect. The current results from [IntereOp 5](http://www.gluu.co/.iwjk),
-while not final, also put the Gluu Server at the top of the list.
+Since [Interop 4](http://www.gluu.co/.fm8t) the Gluu Server has one of
+the most comprehensive implementations of OpenID Connect. The current
+results from [IntereOp 5](http://www.gluu.co/.iwjk), while not final,
+also put the Gluu Server at the top of the list.
 
-[OpenID Connect](http://openid.net/connect) ("Connect") is a standard profile of OAuth2 which defines a protocol to enable a website or mobile application to send a person to a domain for authentication and required attributes (e.g. email address, first name, last name, etc.). Connect also provides some of the plumbing around authentication to automate how this happens. If a person is visiting a website for the  first time, the process that OpenID Connect defines is 100% bootstrapable by the website.  This is really critical for Interet scalability. To visit someone's website, or to send someone email, you don't need to get the system administrators involved. Connect provides the same type of scalable infrastructure, and promises to define a base level domain identification.
+[OpenID Connect](http://openid.net/connect) ("Connect") is a standard
+profile of OAuth2 which defines a protocol to enable a website or mobile
+application to send a person to a domain for authentication and required
+attributes (e.g. email address, first name, last name, etc.). Connect
+also provides some of the plumbing around authentication to automate how
+this happens. If a person is visiting a website for the first time, the
+process that OpenID Connect defines is 100% bootstrapable by the
+website. This is really critical for Interet scalability. To visit
+someone's website, or to send someone email, you don't need to get the
+system administrators involved. Connect provides the same type of
+scalable infrastructure, and promises to define a base level domain
+identification.
 
 ## New Jargon (taxonomy)
 
-If you are familiar with SAML, there are many parallels in OpenID Connect, but the jargon (or "taxonomy") is different. For example, instead of attributes, we have "user claims". Instead of Service Provider (SP), we have "client". Instead of Identity Provider (IDP), its OpenID Provider (OP).  
+If you are familiar with SAML, there are many parallels in OpenID
+Connect, but the jargon (or "taxonomy") is different. For example,
+instead of attributes, we have "user claims". Instead of Service
+Provider (SP), we have "client". Instead of Identity Provider (IDP), its
+OpenID Provider (OP).
 
 ## Discovery 
 
-The first thing you want to know about any OAuth2 API is where are the endpoints (i.e. 
-what are the URLs where you call the APIs). OpenID Connect provides a very simple
-mechanism to accomlish this: make a GET request to `https://<domain>/.well-known/openid-configuration`
+The first thing you want to know about any OAuth2 API is where are the
+endpoints (i.e. what are the URLs where you call the APIs). OpenID
+Connect provides a very simple mechanism to accomlish this: make a GET
+request to `https://<domain>/.well-known/openid-configuration`
 
 [OpenID Connect Discovery](http://openid.net/specs/openid-connect-discovery-1_0.html) is based on 
 a previous standard called [WebFinger](http://en.wikipedia.org/wiki/WebFinger). 
@@ -25,23 +42,36 @@ If you want to try a sample discovery request, you can make a GET request to [Gl
 
 ## Scopes
 
-In SAML, the IDP releases attributes to the SP. OpenID Connect provides similar functionality, 
-with more flexibility in case the person needs to self-approve the release of information from the IDP 
-to the website (or mobile application). In OAuth2, scopes can be used for various purposes. 
-OpenID Connect uses OAuth2 scopes to "group" attributes. For example, we could have a scope called "address"
-that includes the street, city, state, and country user claims. The Gluu Server defines six scopes by default.
+In SAML, the IDP releases attributes to the SP. OpenID Connect provides
+similar functionality, with more flexibility in case the person needs to
+self-approve the release of information from the IDP to the website (or
+mobile application). In OAuth2, scopes can be used for various purposes.
+OpenID Connect uses OAuth2 scopes to "group" attributes. For example, we
+could have a scope called "address" that includes the street, city,
+state, and country user claims. The Gluu Server defines six scopes by
+default.
 
 ![Scopes Screenshot](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_scope.png)
 
-The Gluu Server Administrator can easily add more scopes in the GUI. Click *Add Scope* and you'll be presented with the following screen: 
+The Gluu Server Administrator can easily add more scopes in the GUI.
+Click *Add Scope* and you'll be presented with the following screen:
 
 ![Add Scopes](http://www.gluu.org/docs/img/openid_connect/oxtrust_scope_screenshot.png "Screenshot of oxTrust add OpenID Connect Scope")
 
-You'll have the ability to provide a Display Name, Description, whether or not the scope is provided by default, and the claims that are included in the scope. 
+You'll have the ability to provide a Display Name, Description, whether
+or not the scope is provided by default, and the claims that are
+included in the scope.
 
-Default Scope needs some further explanation. When a client uses dynamic client registration, the OpenID Connect specification says that the `openid` scope should always be released, which contains an identifier for that person, normally the username. If you want to release another scope automatically, set the Default Scope to `true` for that scope. You can always explicitly release a scope to a certain client later on, but this will require some manual intervention by the domain administrator. 
+Default Scope needs some further explanation. When a client uses dynamic
+client registration, the OpenID Connect specification says that the
+`openid` scope should always be released, which contains an identifier
+for that person, normally the username. If you want to release another
+scope automatically, set the Default Scope to `true` for that scope. You
+can always explicitly release a scope to a certain client later on, but
+this will require some manual intervention by the domain administrator.
 
-To add more claims, simply click "Add Claim" and you'll be presented with the following screen:
+To add more claims, simply click "Add Claim" and you'll be presented
+with the following screen:
 
 ![Add Claims](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_scopeadd.png)
 
