@@ -1,12 +1,26 @@
 # oAuth2 Grants
 [TOC]
-oAuth2 supports two additional grants other than the [OpenID Connect Specs](http://openid.net/developers/specs/). The grants are `Client Credentials Grant` and `Resource Owner Password Credentials Grant`. The grants are expained below.
+oAuth2 supports two additional grants other than the [OpenID Connect
+Specs](http://openid.net/developers/specs/). The grants are `Client
+Credentials Grant` and `Resource Owner Password Credentials Grant`. The
+grants are expained below.
 
 ## Client Credentials Grant
 
-The Client Credentials Grant allows resource owner to use  password credentials (i.e. username and password) as an authorization grant to obtain an access token. The credentials should only be used when there is a high degree of trust between the resource owner and the client (e.g. its device operating system or a highly privileged application), and when other authorization grant types are not available (such as an authorization code).
+The Client Credentials Grant allows resource owner to use password
+credentials (i.e. username and password) as an authorization grant to
+obtain an access token. The credentials should only be used when there
+is a high degree of trust between the resource owner and the client
+(e.g. its device operating system or a highly privileged application),
+and when other authorization grant types are not available (such as an
+authorization code).
 
-Even though this grant type requires direct client access to the resource owner credentials, the resource owner credentials are used for a single request and are exchanged for an access token. This grant type can eliminate the need for the client to store the resource owner credentials for future use, by exchanging the credentials with a long-lived access token or refresh token.
+Even though this grant type requires direct client access to the
+resource owner credentials, the resource owner credentials are used for
+a single request and are exchanged for an access token. This grant type
+can eliminate the need for the client to store the resource owner
+credentials for future use, by exchanging the credentials with a
+long-lived access token or refresh token.
 
 The flow is illustrated below:
 
@@ -20,12 +34,19 @@ The steps of the flow are:
 
 ### When Should the Client Credentials Flow Be Used?
 
-The Client Credentials flow should be used when the resources of or any application/service are stored externally in cloud storages such as Google Storage or Amazon S3 which can be accessed using API. In this case the application needs to read and update these resources, but acting on behalf of the app itself rather than any individual user.
-The application can ask the OAuth authorization server for an access token directly, without the involvement of any end user.
+The Client Credentials flow should be used when the resources of or any
+application/service are stored externally in cloud storages such as
+Google Storage or Amazon S3 which can be accessed using API. In this
+case the application needs to read and update these resources, but
+acting on behalf of the app itself rather than any individual user.
+The application can ask the OAuth authorization server for an access
+token directly, without the involvement of any end user.
 
 ### Example Flow
 
-The following is an example showing the messages between the client and the authorization server, also the example shows code fragments using the oxAuth-Client.jar API to interact with the authorization server.
+The following is an example showing the messages between the client and
+the authorization server, also the example shows code fragments using
+the oxAuth-Client.jar API to interact with the authorization server.
 
 #### Authenticate Client and Request Access Token
 
@@ -70,9 +91,19 @@ Pragma: no-cache
 
 ## Resource Owner Password Credentials Grant
 
-The resource owner password credentials (i.e. username and password) can be used directly as an authorization grant to obtain an access token. The credentials should only be used when there is a high degree of trust between the resource owner and the client (e.g. its device operating system or a highly privileged application), and when other authorization grant types are not available (such as an authorization code).
+The resource owner password credentials (i.e. username and password) can
+be used directly as an authorization grant to obtain an access token.
+The credentials should only be used when there is a high degree of trust
+between the resource owner and the client (e.g. its device operating
+system or a highly privileged application), and when other authorization
+grant types are not available (such as an authorization code).
 
-Even though this grant type requires direct client access to the resource owner credentials, the resource owner credentials are used for a single request and are exchanged for an access token. This grant type can eliminate the need for the client to store the resource owner credentials for future use, by exchanging the credentials with a long-lived access token or refresh token.
+Even though this grant type requires direct client access to the
+resource owner credentials, the resource owner credentials are used for
+a single request and are exchanged for an access token. This grant type
+can eliminate the need for the client to store the resource owner
+credentials for future use, by exchanging the credentials with a
+long-lived access token or refresh token.
 
 The flow is illustrated below:
 
@@ -86,21 +117,50 @@ The steps of the flow are:
 
 ### When Should the Resource Owner Password Flow Be Used?
 
-This flow should be used sparingly because the resource owner’s password is exposed to the application. It is recommended only for first-party “official” applications released by the API provider, and not opened up to wider third-party developer communities. If a user is asked to type their password into “official” applications, they may become accustomed to doing so and become vulnerable to phishing attempts by other apps. In order to mitigate this concern, developers and IT administrators should clearly educate their users how they should determine which apps are “official” and which are not.
+This flow should be used sparingly because the resource owner’s password
+is exposed to the application. It is recommended only for first-party
+“official” applications released by the API provider, and not opened up
+to wider third-party developer communities. If a user is asked to type
+their password into “official” applications, they may become accustomed
+to doing so and become vulnerable to phishing attempts by other apps. In
+order to mitigate this concern, developers and IT administrators should
+clearly educate their users how they should determine which apps are
+“official” and which are not.
 
 ### Security Properties
 
-There are some security benefits to using this flow against authenticating API calls with a username and password (via HTTP Basic access authentication or similar) although the application has access to the resource owner's password. With Basic authentication, an application needs to have continuous access to the user’s password in order to make API calls. If the user wants to revoke the access of the client, he must change the password and re-enter the password in all the applications that are allowed access to the resource.
+There are some security benefits to using this flow against
+authenticating API calls with a username and password (via HTTP Basic
+access authentication or similar) although the application has access to
+the resource owner's password. With Basic authentication, an application
+needs to have continuous access to the user’s password in order to make
+API calls. If the user wants to revoke the access of the client, he must
+change the password and re-enter the password in all the applications
+that are allowed access to the resource.
 
-However, if the OAuth Resource Owner Password flow is used, the application only needs access to the user’s credentials once: on first use when the credentials are exchanged for an access token. This means there’s no requirement for the app to store these credentials within the application or on the device, and revoking access is easy as well.
+However, if the OAuth Resource Owner Password flow is used, the
+application only needs access to the user’s credentials once: on first
+use when the credentials are exchanged for an access token. This means
+there’s no requirement for the app to store these credentials within the
+application or on the device, and revoking access is easy as well.
 
 ### User Experience
 
-The user experience for this flow is identical to typical password-based access requests. The application asks the user for their username and password and the user provides the information. The application then makes either a server-side or client-side request to the API provider’s authorization server, without any user-facing interface changes. If the API provider does not issue a refresh_token and the issued access_token is short-lived, the application will likely store the username and password for future authentication attempts. Unfortunately, this defeats some of the benefit of this flow.
+The user experience for this flow is identical to typical password-based
+access requests. The application asks the user for their username and
+password and the user provides the information. The application then
+makes either a server-side or client-side request to the API provider’s
+authorization server, without any user-facing interface changes. If the
+API provider does not issue a refresh_token and the issued access_token
+is short-lived, the application will likely store the username and
+password for future authentication attempts. Unfortunately, this defeats
+some of the benefit of this flow.
 
 ### Example Flow
 
-The following is an example showing the messages between the client and the authorization server, also the example shows code fragments using the oxAuth-Client.jar API to interact with the authorization server.
+The following is an example showing the messages between the client and
+the authorization server, also the example shows code fragments using
+the oxAuth-Client.jar API to interact with the authorization server.
 
 ```
 // Parameters
@@ -138,3 +198,4 @@ Pragma: no-cache
 
 {"access_token":"26d55e4b-6c61-40ea-9763-3282f5db0f0e","token_type":"bearer","expires_in":3599,"refresh_token":"aba91bd9-aa10-4fca-952b-50a9a9afac28","scope":"openid","id_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc2VlZC5nbHV1Lm9yZyIsInVzZXJfaWQiOiJtaWtlIiwiYXVkIjoiQCExMTExITAwMDghRkY4MSEyRDM5IiwiZXhwIjoxMzM5MTk2ODgxMzAzLCJveEludW0iOiJAITExMTEhMDAwMCFENEU3Iiwib3hWYWxpZGF0aW9uVVJJIjoiaHR0cHM6XC9cL3NlZWQuZ2x1dS5vcmdcL294YXV0aFwvc2VhbVwvcmVzb3VyY2VcL3Jlc3R2MVwvb3hhdXRoXC9jaGVja19zZXNzaW9uIiwib3hPcGVuSURDb25uZWN0VmVyc2lvbiI6Im9wZW5pZGNvbm5lY3QtMS4wIn0.SzWfJsmlz62qTRw1lEJZ8PygY9eRupgmsbXLCQwPVDQ"}
 ```
+
