@@ -1,4 +1,3 @@
-**Table of Contents**  
 [TOC]
 # LDAP Configuration
 
