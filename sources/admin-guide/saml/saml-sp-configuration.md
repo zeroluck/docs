@@ -1,5 +1,8 @@
 # Install Shibolleth SP Package
-The Shibboleth Service Provider(SP) software runs a system service, and it is configured via an apache module. For CentOS it is necessary to add shib.repo to /etc/yum/repos.d and install with yum.
+
+The Shibboleth Service Provider(SP) software runs a system service, and
+it is configured via an apache module. For CentOS it is necessary to add
+shib.repo to /etc/yum/repos.d and install with yum.
 
 *$ yum install shibboleth*
 
@@ -7,7 +10,9 @@ The Shibboleth Service Provider(SP) software runs a system service, and it is co
 
 *$ chkconfig shibd on*
 
-For other systems, please follow the instructions on the [Shibboleth SP Installation](https://spaces.internet2.edu/display/SHIB2/NativeSPLinuxInstall) page.
+For other systems, please follow the instructions on the [Shibboleth SP
+Installation](https://spaces.internet2.edu/display/SHIB2/NativeSPLinuxInstall)
+page.
 
 ## Copy Files From Archive
 
@@ -23,12 +28,14 @@ Please copy the following files to the */etc/shibboleth* folder.
 
 > **Note**
 
-> IdP and SP metadata filenames are unique for each IdP and SP. The SP metadata is based on the i-number for the trust relationship.
+> IdP and SP metadata filenames are unique for each IdP and SP. The SP
+> metadata is based on the i-number for the trust relationship. 
 > The IdP metadata is based on the i-number for the organization.
 
 ## Add Server Certificate to Metadata
 
-Please update the server certificate in shibboleth2.xml at the following location.
+Please update the server certificate in `shibboleth2.xml` at the
+following location:
 
 *$ vi /etc/shibboleth/shibboleth2.xml*
 
@@ -44,7 +51,8 @@ Please update the server certificate in shibboleth2.xml at the following locatio
 
 ## Update Hostnames and Ports in Configuration File
 
-Please edit the hostname in secure session section in _shibboleth2.xml_ file.
+Please edit the hostname in secure session section in `shibboleth2.xml`
+file:
 
 *$ vi /etc/shibboleth/shibboleth2.xml*
 
@@ -58,13 +66,13 @@ Please edit the hostname in secure session section in _shibboleth2.xml_ file.
 
 > Hostname and port should match the ServerName and Port directives of Apache
 
-Edit the _httpd.conf_ file to set UseCanonicalName On:
+Edit the `httpd.conf` file to set UseCanonicalName On:
 
 	UseCanonicalName: On
 
 ## Protect Folder with Shibboleth SSO
 
-Add the following to _httpsd.conf_ file to protect directories.
+Add the following to `httpsd.conf` file to protect directories.
 
 *$ vi /etc/httpd/conf/httpd.conf*
 
@@ -86,18 +94,22 @@ Add the following to _httpsd.conf_ file to protect directories.
 
 *$ service shibd restart*
 
-Try to access _https://hostname/Shibboleth.sso/Status_
+Try to access `https://hostname/Shibboleth.sso/Status`
 
 # Shibboleth SP for Windows
 
-1. Download the MSI of [Shibboleth-SP](http://www.shibboleth.net/downloads/service-provider/latest)
+1. Download the MSI of
+[Shibboleth-SP](http://www.shibboleth.net/downloads/service-provider/latest)
 
 2. Start installation by double clicking the MSI.
 ![Click Screen](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_click.png)
 
-3.Agree the License Agreement
+3.Agree to the License Agreement
 
-4. Select the destination folder; by default it is **c:\opt\shibboleth-sp\.** A different directory can be selected from this screen, but it is recommended to follow the tree **\opt\shibboleth-sp\.**
+4. Select the destination folder; by default it is
+**c:\opt\shibboleth-sp\.** A different directory can be selected from
+this screen, but it is recommended to follow the tree
+**\opt\shibboleth-sp\.**.
 ![Destination](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_destination.png).
 
 5. Select Shibboleth Daemon port: default is **1600**, you can keep it for local testing.
@@ -105,7 +117,7 @@ Try to access _https://hostname/Shibboleth.sso/Status_
 
 6. Now, there are two options here, and you have to follow any one (not both) for your existing infrastructure.
 
-  1. Option 1: Installaiton for Microsoft IIS Web Server.
+  1. Option 1: Installation for Microsoft IIS Web Server.
 ![Microsoft IIS Server](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_microsoft.png)
 > For Microsoft IIS Web Server, you have to Check "Install ISAPI filter and configure IIS", and remember to put the file Extension ".sso". This is very important.
 
