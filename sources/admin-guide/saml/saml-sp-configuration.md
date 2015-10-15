@@ -138,7 +138,7 @@ UAC of Windows 7 may block the program, so accept it.
 3. Select Destination. You can keep the default destination for your local testing. But, please make sure that there is no other "Apache Software Foundation" directory in your current "C:\Program Files\" location.
 ![Apache Location](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_apachedestination.png)
 
-4. Insert Server Informations. For local testing, **localdomain/localhost** can be used.
+4. Insert Server Information. For local testing, **localdomain/localhost** can be used.
 ![Server info](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_serverinfo.png)
 
 5. Test if Apache is installed or not. Open your web browser and use **localhost** as the address. If the screen resembles the screenshot below, then you are done.
@@ -175,9 +175,9 @@ If the screen below resembles the screen on your browser, then you are done with
 
 1. Start --> Control Panel --> Programs --> **"Turn Windows Features on or off"**
 
-Select (i) IIS, (ii) Web Management Tools, (iii) II6 Management Compatiability, (iv) IIS Management Console, (v) IIS Management Scripts and Tools, (vi) IIS Management Service
+Select (i) IIS, (ii) Web Management Tools, (iii) II6 Management Compatibility, (iv) IIS Management Console, (v) IIS Management Scripts and Tools, (vi) IIS Management Service
 
-Select (i) World Wide Web Service, (ii) CGI, (iii) ISAPI Filters, (iv) ISAPI Extenstions and press **OK**.
+Select (i) World Wide Web Service, (ii) CGI, (iii) ISAPI Filters, (iv) ISAPI Extensions and press **OK**.
 ![IIS Setup](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_iis7setup.png)
 
 2. Test if IIS7 is installed in your system with **127.0.0.1** in the web browser.
@@ -223,7 +223,7 @@ Select (i) World Wide Web Service, (ii) CGI, (iii) ISAPI Filters, (iv) ISAPI Ext
 
 6. Check Status
 
-Check your status by typing **"http://127.0.0.1/Shibboleth.sso/Status"** in the Web Browser. If it diplays an XML document, then the Shibboleth SP Installation in Windows IIS7 is complete.
+Check your status by typing **"http://127.0.0.1/Shibboleth.sso/Status"** in the Web Browser. If it displays an XML document, then the Shibboleth SP Installation in Windows IIS7 is complete.
 ![Check Status](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_checkstatus.png)
 
 > If you want to establish SSO with your site, then you need an Identity Provider, their metadata and certificates.
