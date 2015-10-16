@@ -156,16 +156,20 @@ of user action.
 
 ## Adding Libraries
 
-If you have some pure Python libraries, you can add them to `/opt/tomcat/conf/python`,
-jar files can be added to `/opt/tomcat/endorsed`
+If you have some pure Python libraries, you can add them to
+`/opt/tomcat/conf/python`, jar files can be added to
+`/opt/tomcat/endorsed`.
 
 ## Testing
 
-So you think you're done with your script, its time to test it! Print statements are sent to
-`/opt/tomcat/wrapper.log` If you prefix your logs, you can use `tail -f | grep <prefix>`
-to just see your script output while you try to login to test your script. In the Twilio test
-script I wrote a special method called `printOut` to make it easier to add this prefix.
+So you think you're done with your script, it is time to test it! Print
+statements are sent to `/opt/tomcat/wrapper.log` If you prefix your
+logs, you can use `tail -f | grep <prefix>` to just see your script
+output while you try to login to test your script. In the Twilio test
+script I wrote a special method called `printOut` to make it easier to
+add this prefix.
 
-Also, remember that putting all your code in a `try / catch` is a good practice to avoid
-unhandled exceptions. But when you're debugging, sometimes those exceptions may give you
-a hint as to what's going wrong.
+Also, remember that putting all your code in a `try / catch` is a good
+practice to avoid unhandled exceptions. But when you're debugging,
+sometimes those exceptions may give you a hint as to what's going wrong.
+
