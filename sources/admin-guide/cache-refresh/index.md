@@ -3,7 +3,7 @@
 # Introduction
 
 Cache Refresh was built by Gluu to pull user information from a backend
-customer Active Directory/LDAP Server. Cache refresh dynamically
+customer Active Directory/[LDAP][ldap] Server. Cache refresh dynamically
 synchronizes user information from the backend data source of the
 customer to the Gluu Server in order to maximize performance. This
 feature is sensitive in nature and any incorrect action may result in
@@ -31,7 +31,8 @@ For each source LDAP server, the Gluu Server deployer needs to know the
 LDAP connection details, and have credentials for a user with read
 access (as needed) to the LDAP tree. At a minimum: host, port, bind DN,
 bind password, base DN for search, and object class of person entry.
-Please note that the usage of LDAPS is strongly recommended.
+Please note that the usage of [LDAPS (LDAP over SSL)][ldap] is strongly
+recommended.
 
 ![Cahce_refresh_diagram](https://cloud.githubusercontent.com/assets/5271048/8237617/4df7d88e-15b6-11e5-98eb-5bb0376b9750.png)
 
@@ -144,3 +145,4 @@ can 'Update' this setup.
 4. Open a new browser and try to log into Gluu Server with you AD
 credential. If you fail, check logs for failure.
 
+[ldap]: https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol "Lightweight Directory Access Protocol (LDAP), Wikpedia"
