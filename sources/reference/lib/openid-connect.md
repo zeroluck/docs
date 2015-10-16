@@ -1,37 +1,29 @@
-# OpenID Connect
+# OpenID Connect Libraries
 
-## Introduction
+## Gluu Core Libraries
 
-OpenID Connect 1.0 is a simple identity layer on top of the OAuth 2.0
-protocol. It allows clients to verify the identity of the end-user based
-on the authentication performed by an Authorization Server, as well as
-to obtain basic profile information about the end-user in an
-interoperable and REST-like manner.
+The Gluu Server's OpenID Connect components are all MIT open source. That means you can use either our server or
+client libraries in your product or project, even if its a part of a commercial product!
 
-OpenID Connect allows clients of all types, including web-based, mobile,
-and JavaScript clients, to request and receive information about
-authenticated sessions and end-users. The specification suite is
-extensible, allowing participants to use optional features such as
-encryption of identity data, discovery of OpenID Providers, and session
-management, when it makes sense for them.
+ - oxAuth-Server: [Source Code](https://github.com/GluuFederation/oxAuth/tree/master/Server).
+ - oxAuth-Client: Download [Binary Packages](http://ox.gluu.org/maven/org/xdi/oxauth-client/)
+   [Source Code](https://github.com/GluuFederation/oxAuth/tree/master/Client).
+ - oxAuth-RP: A sample Web based OpenID Connect Relying Party developed using our oxAuth-Client libraries.
+ Download [Binary Packages](http://ox.gluu.org/maven/org/xdi/oxauth-rp/)
+  [Source Code](https://github.com/GluuFederation/oxAuth/tree/master/RP).
+ - Core JavaDocs are [here](http://ox.gluu.org/oxauth-javadocs/apidocs/)
+ 
+## OXD
 
-## oxAuth
+For developers who want to enable OpenID Connect authentication on their website with a minimal amount 
+of programming, Gluu has developed a "mediator" called oxd. Oxd is actually a web server--it contains jetty--and it 
+handles much of the communication with the OpenID Provider. 
 
-oxAuth is an open source OpenID Provider that implements the OpenID
-Connect 1.0 stack of REST services. The project also includes OpenID
-Connect Client code which can be used by websites to validate tokens. It
-currently implements all required aspects of the OpenID Connect stack,
-including an OAuth 2.0 authorization server, Simple Web Discovery,
-Dynamic Client Registration, JSON Web Tokens, and JSON Web Keys, and
-User Info Endpoint.
+!(https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxd/oxd-rp.png)
 
- - We have introduced [Gluu CE](http://www.gluu.org/docs/articles/gluu-server-ce/) (Community Edition) binaries to help you install your Gluu Server in minutes.
- - oxAuth-Server: Download [Binary Packages](http://ox.gluu.org/maven/org/xdi/oxauth-server/), Download [Source Code](https://github.com/GluuFederation/oxAuth).
- - oxAuth-Client: Download [Binary Packages](http://ox.gluu.org/maven/org/xdi/oxauth-client/), Download [Source Code](https://github.com/GluuFederation/oxAuth/tree/master/Client).
- - oxAuth-RP: Download [Binary Packages](http://ox.gluu.org/maven/org/xdi/oxauth-rp/), Download [Source Code](https://github.com/GluuFederation/oxAuth/tree/master/RP).
- - Live oxAuth [OP](https://seed.gluu.org/oxauth), [RP](https://seed.gluu.org/oxauth-rp) and [Configuration Endpoint](https://seed.gluu.org/.well-known/openid-configuration).
+oxd has a very simple web API, which enables either a java, python or php app to use openid connect by implementing
+only a small number of methods. For more information, see
+ - [oxd-python](https://github.com/GluuFederation/oxd-python)
+ - [oxd-php](https://github.com/GluuFederation/oxd-php)
+ - [oxd-java](https://github.com/GluuFederation/oxd/tree/master/oxd-client)
 
-## References
-- [OpenID Connect Specifications](http://openid.net/connect/)
-- [The OAuth 2.0 Authorization Framework](http://tools.ietf.org/html/rfc6749)
-- [Frequently Asked Questions about OpenID Connect](http://openid.net/connect/faq/)
