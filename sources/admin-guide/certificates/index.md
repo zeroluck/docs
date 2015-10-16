@@ -1,17 +1,24 @@
 # Certificates 
 
-Many of the components of the Gluu Server have cyrpto keys and X.509 certificates. There are many key formats, and keystore formats. Navigate to the sections below to find what you need for each of the Gluu Server components.
+Many of the components of the Gluu Server have cyrpto keys and X.509
+certificates. There are many key formats, and keystore formats. Navigate
+to the sections below to find what you need for each of the Gluu Server
+components.
 
-- [Asimba](#asimba)   
-- [Apache](#apache)   
-- [OpenDJ](#opendj)     
-- [oxAuth](#oxauth)   
-- [Shibboleth IDP](#shibboleth-idp)   
+- [Asimba](#asimba)
+- [Apache](#apache)
+- [OpenDJ](#opendj)
+- [oxAuth](#oxauth)
+- [Shibboleth IDP](#shibboleth-idp)
 
-## Asimba 
-`asimba.crt`, `asimba.csr`, `asimba.key`, `asimba.key.orig`, `asimba.pkcs12 and asimbaIDP.jks` are associated with the Asimba SAML Proxy Server. If you install SAML Proxy Server ( Asimba ) in your Gluu Server, you have to deal with these cert and key. 
+## Asimba
+`asimba.crt`, `asimba.csr`, `asimba.key`, `asimba.key.orig`,
+`asimba.pkcs12 and asimbaIDP.jks` are associated with the
+[asmiba][Asimba SAML Proxy Server]. If you install the SAML Proxy Server
+(Asimba) in your Gluu Server, you have to deal with these certificate
+and key.
 
-## Apache 
+## Apache
 `httpd.crt`, `httpd.csr`, `httpd.key`, `httpd.key.orig` are SSL Apache related certs and keys. If you want to update your Apache SSL cert don't worry about the `.csr` and `.key.orig`.  
 
 ## OpenDJ
@@ -50,3 +57,5 @@ X.509. For example, in order to update Apache SSL cert:
 - [HTTPS](./https.md)   
 - [SAML](./saml.md)   
 - [OpenID Connect](./openid-connect.md)   
+
+[asimba]: http://sourceforge.net/projects/asimba/ "Access Management and Single Signon platform (Asimba), Sourceforge"
