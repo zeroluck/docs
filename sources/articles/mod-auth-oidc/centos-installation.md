@@ -1,7 +1,7 @@
 **Table of Contents** 
 
-- [SetUp Apache2](#setup-apache2)
-	- [Add EPEL Repo](#add-epel-repo)
+- [Setup Apache2](#setup-apache2)
+	- [Add EPEL Repository](#add-epel-repo)
 	- [Setup Apache2 SSL](#setup-apache2-ssl)
 - [Client Registration](#client-registration)
 	- [Dynamic Client Registration](#dynamic-client-registration)
@@ -12,28 +12,33 @@
 # mod_auth_oidc Installation Guide
 
 
-### SetUp Apache2
+### Setup Apache2
 
-We're assuming that all the hostnames will be dns resolvable. If not, then you should consider making entries in **/etc/hosts.**
+We assume that all the hostnames will be dns resolvable. If not, then
+add the according entries in `/etc/hosts`, please.
 
-##### Add EPEL Repo
+##### Add EPEL Repository
 
 Run the following command to __Add EPEL Repo__.
 
-* rpm -ivh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+* `rpm -ivh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm`
 
 ##### Setup Apache2 SSL
 
 Now, to setup __Apache2 SSL__, run the following commands:
 
+```
+yum install httpd mod_ssl
+yum install curl hiredis jansson
+rpm -ivh https://github.com/pingidentity/mod_auth_openidc/releases/download/v1.8.2/mod_auth_openidc-1.8.2-1.el6.x86_64.rpm
+```
 
-* yum install httpd mod_ssl
-* yum install curl hiredis jansson
-* rpm -ivh https://github.com/pingidentity/mod_auth_openidc/releases/download/v1.8.2/mod_auth_openidc-1.8.2-1.el6.x86_64.rpm
+Note: In case of having difficulties in installing hiredis and jansson,
+try to update the package database of your system using this command:
 
-Note: In case of having difficulties in installing hiredis and jansson, try to update system using:
-
-* yum upgrade
+```
+yum upgrade
+```
 
 Confirm presence of the the mod file as below:
 
