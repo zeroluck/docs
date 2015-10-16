@@ -19,7 +19,7 @@ For developers who want to enable OpenID Connect authentication on their website
 of programming, Gluu has developed a "mediator" called oxd. Oxd is actually a web server--it contains jetty--and it 
 handles much of the communication with the OpenID Provider. 
 
-!(https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxd/oxd-rp.png)
+![oxd overview](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxd/oxd-rp.png)
 
 oxd has a very simple web API, which enables either a java, python or php app to use openid connect by implementing
 only a small number of methods. For more information, see
