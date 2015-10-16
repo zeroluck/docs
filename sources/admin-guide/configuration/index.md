@@ -491,15 +491,24 @@ server. The default BindDN for Gluu Server is `cn=directory manager`.
 * _Enabled:_ Enabling this feature saves the values inside the Gluu
   Server.
 
-* _Change Bind Password:_ This option can be used to bind/change the password to connect to the internal LDAP of the Gluu Server. Bind Password is the same password which you inserted during installation of Gluu Server
+* _Change Bind Password:_ This option can be used to bind/change the
+  password to connect to the internal LDAP of the Gluu Server. Bind
+  Password is the same password which you inserted during installation of
+  Gluu Server.
 
-* _Refresh Method:_ The Gluu Server allows the Server Administrator to apply two types of Cache Refresh mechanism (i) VDS Method and (ii) Copy Method.
+* _Refresh Method:_ The Gluu Server allows the Server Administrator to
+  apply two types of Cache Refresh mechanism--(1) VDS Method, and (2) Copy
+  Method.
 
-  1. _VDS Method:_ Any organization with a database like *mysql* can use the VDS method. This option can be enabled via the dropdown menu in Refresh Method option.
+  1. _VDS Method:_ Any organization with a database like *mysql* can use
+  the VDS method. This option can be enabled via the dropdown menu in
+  Refresh Method option.
 
 ![Refresh VDS](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_refresh_vds.png)
 
-  2. _Copy Method:_ If the organization has any kind of Active Directory/LDAP server, they are strongly recommended to use the *Copy Method* from the dropdown menu.
+  2. _Copy Method:_ If the organization has any kind of Active
+  Directory/LDAP server, they are strongly recommended to use the *Copy
+  Method* from the dropdown menu.
 
 ![Refresh Copy](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_refresh_copy.png)
 
