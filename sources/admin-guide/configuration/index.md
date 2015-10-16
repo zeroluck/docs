@@ -284,18 +284,35 @@ methods are covered within the [User
 Management](../user-management/index.md) portion of the documentation.
 
 ## Activate Invitation Link
-When active, the Invitation Links feature allows the server admin to control who can register an account by issuing a unique registration link and sending it to the desired new users.
+When active, the Invitation Links feature allows the server admin to
+control who can register an account by issuing a unique registration
+link and sending it to the desired new users.
 
-Any person who knows the link will be able to register an account (as long as the link is not expired). Expired Links are deleted according to "invite codes expiration process" policy, together with any unconfirmed accounts if said link is moderated.
+Any person who knows the link will be able to register an account (as
+long as the link is not expired). Expired Links are deleted according to
+"invite codes expiration process" policy, together with any unconfirmed
+accounts if said link is moderated.
 
-Invitation Links can be optionally made "moderated" and a number of moderators can be assigned to the link from among registered users. In this case any newly registered users who used this link will not be immediately able to use their account until their registration is approved by the moderator of their link.
+As an option, Invitation Links can be set to be "moderated", and a
+number of moderators can be assigned to the link. The moderators come
+from the list of registered users. In this case any newly registered
+user who uses this link will not be immediately able to use his account
+until his registration is approved by the moderator of his link.
 
-Upon activating Invitation Links Management within the interface, you will be presented with the following option:    
+Upon activating Invitation Links Management within the interface, you
+will be presented with the following option:
 
-- **Run invite codes expiration process every**: This feature allows you to configure how often oxTrust will purge expired invitation links from the system. 
-- **Enable registration without invitation**: Allows public registration even when Invitation Links are used.
-- **Enable account expiration**: Allows the admin to configure an expiration policy for registered accounts. 
-	- **Accounts expire after**: Provides interface to set account expiration period and how often to run the expiration process. After this period registered accounts will be subject to invalidation during the next account expiration process run.
+- __Run invite codes expiration process every__: This feature allows you
+  to configure how often oxTrust will purge expired invitation links
+  from the system.
+- __Enable registration without invitation__: Allows public registration
+  even when Invitation Links are used.
+- __Enable account expiration__: Allows the admin to configure an
+  expiration policy for registered accounts.
+- __Accounts expire after__: Provides an interface to set the account
+  expiration period and how often to run the expiration process. After
+  this period registered accounts will be subject to invalidation during
+  the next account expiration process run.
 
 ## Disable captcha for registration form
 Upon activating this feature, the default Captcha will be removed from the registration form. 
