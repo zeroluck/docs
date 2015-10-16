@@ -28,7 +28,7 @@
 
 This section of the documentation includes instructions for configuring
 a number of the components of the Gluu Server in order to make the
-server fit to your organizational needs. 
+server fit to your organizational needs.
 
 ![Configuration Menu](https://cloud.githubusercontent.com/assets/5271048/7146931/b1875eb0-e2bc-11e4-813b-8ffbfe4ae809.png)
 
@@ -47,7 +47,12 @@ This feature allows the Gluu system administrator to customize and
 implement various options such as *Cache Refresh*, *Federation Hosting*,
 *SCIM Support* etc.
 
-* _Cache Refresh:_ This is the mechanism which pulls and synchonises user information from a remote LDAP/Active Directory with the local LDAP of Gluu server. The Gluu server administrator needs to provide sufficient information including username and password before enabling this option. To learn more about the Cache Refresh GUI tools see the [Cache Refresh Section](#cache-refresh).
+* _Cache Refresh:_ This is the mechanism which pulls and synchonises
+user information from a remote LDAP/Active Directory with the local LDAP
+of Gluu Server. The Gluu Server administrator needs to provide
+sufficient information including username and password before enabling
+this option. To learn more about the Cache Refresh GUI tools see the
+[Cache Refresh Section](#cache-refresh).
 
 * _White Pages:_ If the user intends to use the built-in White Pages of
 the Gluu Server, it can be enabled from the menu.
@@ -59,9 +64,9 @@ makes the creation and management of identity federations simple and
 easy.
 
 * _Self-Service Password Reset:_ The Self-Service Password Reset is
-disabled by default. For Self-Service Password Reset to work SMTP Server
-(see below) should be configured as well. Password reset link for your
-Gluu server should be something like:
+disabled by default. For Self-Service Password Reset to work the SMTP
+Server (see below) should be configured as well. Password reset link for
+your Gluu server should be something like
 `https://your.idp.link/identity/person/passwordReminder.htm`.
 
 * _Cache Refresh:_ This is the mechanism which pulls and synchronizes
@@ -69,9 +74,8 @@ user information from a remote LDAP/Active Directory with the local LDAP
 of the Gluu Server. The Gluu Server administrator needs to provide
 sufficient information including username and password before enabling
 this option. Before configuring Cache Refresh, you should read the
-[overview here](../../articles/cache-refresh.md). After reading the
-overview, you can learn about the Cache Refresh GUI tools
-[here](#cache-refresh).
+[overview here](../../articles/cache-refresh.md). After that you can
+learn about the Cache Refresh GUI tools [here](#cache-refresh).
 
 * _SCIM Support:_ If the organization already has an identity management
 or provisioning system in place, the SCIM protocol can be used to push
@@ -94,7 +98,7 @@ notifications for the IdP.
 Gluu. The email address in this field shall receive various
 notifications from Centreon.
 
-* _Email for Jira:_ The customers are not provided the jira access, and
+* _Email for Jira:_ The customers are not provided the Jira access, and
 it will be removed from oxTrust soon. Please visit [Gluu
 Support](https://support.gluu.org) for customer support.
 
@@ -104,14 +108,14 @@ billing invoices from Gluu.
 * _Email for Privacy:_ This email address will receive news and updates
 about the privacy related matters of Gluu.
 
-* _Email for SVN:_ The IdP related configuration files are are saved in
-the [Gluu SVN](https://svn.gluu.info). Configuration files are generally
+* _Email for SVN:_ The IdP related configuration files are saved in the
+[Gluu SVN](https://svn.gluu.info). Configuration files are generally
 saved under */opt/* and */etc/httpd/*. The email address will get access
 to the checked-in files section of the corresponding IdP.
 
 ## SMTP Server Configuration
 
-The Gluu server can communicate to any SMTP server specified in these
+The Gluu Server can communicate to any SMTP server specified in these
 fields. All Gluu Server related informats *(cron daemon/logwatch/crash
 reports etc.)* can be pushed to the desired Gluu Server Administrator
 using this feature.
@@ -125,7 +129,8 @@ using this feature.
 * _From Email Address:_ Email Address of the Gluu Server Administrator.
 
 * _Required Authentication:_ If the SMTP server requires authentication
-every access, then please enable this option by ticking the checkbox.
+for every access, then please enable this option by ticking the
+according checkbox.
 
 * _SMTP User Name:_ The username for the SMTP server goes in this field.
 
