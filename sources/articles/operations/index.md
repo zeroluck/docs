@@ -64,28 +64,30 @@ Stopped Tomcat Servlet Container.
 * Stopping web server apache2                                                                                                                                           * 
 ```
 
-# Restarting OpenDJ service
+# Restarting OpenDJ Service
 
 To restart the OpenDJ service, use the command:
 
-`/etc/init.d/opendj restart` 
+```
+/etc/init.d/opendj restart
+```
 
 Sample result of running the command is as follows:
 
-	GLUU.root@DA855F9895A1CA3B00020B185D7A:~# /etc/init.d/opendj restart
-	[26/Aug/2014:20:12:00 +0000] category=BACKEND severity=NOTICE msgID=9896306 msg=The backend inumDB is now taken offline
-	[26/Aug/2014:20:12:00 +0000] category=BACKEND severity=NOTICE msgID=9896306 msg=The backend userRoot is now taken offline
-	[26/Aug/2014:20:12:00 +0000] category=CORE severity=NOTICE msgID=458955 msg=The Directory Server is now stopped
-	
-	GLUU.root@DA855F9895A1CA3B00020B185D7A:~# telnet localhost 1636
-	Trying ::1...
-	Connected to localhost.
-	Escape character is '^]'.
-	quit
-	Connection closed by foreign host.
-	GLUU.root@DA855F9895A1CA3B00020B185D7A:~# 
-	
+```
+GLUU.root@DA855F9895A1CA3B00020B185D7A:~# /etc/init.d/opendj restart
+[26/Aug/2014:20:12:00 +0000] category=BACKEND severity=NOTICE msgID=9896306 msg=The backend inumDB is now taken offline
+[26/Aug/2014:20:12:00 +0000] category=BACKEND severity=NOTICE msgID=9896306 msg=The backend userRoot is now taken offline
+[26/Aug/2014:20:12:00 +0000] category=CORE severity=NOTICE msgID=458955 msg=The Directory Server is now stopped
 
+GLUU.root@DA855F9895A1CA3B00020B185D7A:~# telnet localhost 1636
+Trying ::1...
+Connected to localhost.
+Escape character is '^]'.
+quit
+Connection closed by foreign host.
+GLUU.root@DA855F9895A1CA3B00020B185D7A:~# 
+```
 
 # Restarting Apache service 
 
