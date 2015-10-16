@@ -80,16 +80,15 @@ You can use any of the methods to register the client.
 
 For dynamic client registration, we'll name the server: **dynamic.gluu.org.**
 
-Create a directory **dynamic** inside **/var/www/html**, that is:
-
-
-* mkdir /var/www/html/dynamcic
-
-
-Now, create a file named **index.html**, and add following content:
+Create a directory named `dynamic` inside the directory `/var/www/html`, that is:
 
 ```
+mkdir /var/www/html/dynamcic
+```
 
+Now, create a file named `index.html`, and add the following content:
+
+```
 <html>
 	<title>
 		Protected URL
@@ -98,7 +97,6 @@ Now, create a file named **index.html**, and add following content:
 		Nice to see the protected url via Dynamic Registration
 	</body>
 </html>
-
 ```
 
 Create another directory **metadeta** inside above directory to hold metadata.
