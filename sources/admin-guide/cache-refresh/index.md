@@ -2,12 +2,12 @@
 
 # Introduction
 
-Cache Refresh was built by Gluu to pull user information from a backend
-customer Active Directory/[LDAP][ldap] Server. Cache refresh dynamically
-synchronizes user information from the backend data source of the
-customer to the Gluu Server in order to maximize performance. This
-feature is sensitive in nature and any incorrect action may result in
-loss of data within the Gluu Server.
+Cache Refresh (CR) was built by Gluu to pull user information from a
+backend customer Active Directory/[LDAP][ldap] Server. Cache refresh
+dynamically synchronizes user information from the backend data source
+of the customer to the Gluu Server in order to maximize performance.
+This feature is sensitive in nature and any incorrect action may result
+in loss of data within the Gluu Server.
 
 ## Overview
 When configured for Cache Refresh, oxTrust acts as a metadirectory. It
@@ -46,12 +46,12 @@ will halt the users ability to log into the system.
 # Using Cache Refresh
 
 The Gluu Server has two LDAP integrations: (1) authentication and (2)
-identity mapping. Only sometimes is it the same LDAP server. To
+identity mapping. Only sometimes it is the same LDAP server. To
 synchronize user accounts from an external LDAP directory server, you
 can use the built-in oxTrust features for ”Cache Refresh”, which support
 mapping identities from n number of source directory servers.
 
-After configuring cache refresh, you should give it some time to run,
+After configuring Cache Refresh, you should give it some time to run,
 and populate the LDAP server. Here are some tips before you get started:
 
 * Enable 'Keep External Person' during CR setup. This will allow your
@@ -67,8 +67,9 @@ VDS setting if you're using the Radiant Logic Virtual Directory Server.
 
 * Use the oxTrust admin to browse users.
 
-* Use ldapsearch to check to see if results are starting to come in. The
-following command will search total number of users in the Gluu LDAP.
+* Use `ldapsearch` to check to see if results are starting to come in.
+The following command will search total number of users in the Gluu
+LDAP:
 
 ```
 # /opt/opendj/bin/ldapsearch -h localhost -p 1636 -Z -X -D "cn=directory manager" -w 'pass_of_ldap_ -b 'ou=people,o=DA....,o=gluu' dn | grep "dn\:" | wc -l
