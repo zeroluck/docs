@@ -164,15 +164,25 @@ user from OAuth when a user logs out from LifeRay)
 gluu.openidconnect.idp.logout=https://idp.gluu.org/identity/logout
 ```
 
-* LifeRay server callback url that will be handling response by oAuth Server after authentication:
-	* Replace the localhost:8080 with your liferay domain name.
-`gluu.openidconnect.client.redirect.url=http://localhost:8080/openidconnect/callback`
-This page would be invoked when the user does not exist in liferay database but it getting authenticated from oAuth Server.
+* LifeRay server callback uri that will be used as a handling response
+by the OAuth server after authentication:
+   * replace the `localhost:8080` with your LifeRay domain name:
 
-* Typical create a liferay page with /no-such-user-found or Redirect to liferay registration page url
-`gluu.openidconnect.no.such.user.redirect.url=http://localhost:8080/no-such-user-found `
+```
+gluu.openidconnect.client.redirect.url=http://localhost:8080/openidconnect/callback
+```
+     This page will be invoked when the user does not exist in the
+     LifeRay database, but gets authenticated from the OAuth Server.
 
-Restart LifeRay Server after editing `portal-ext.properties` 
+* Typically, create a LifeRay page with the name `/no-such-user-found`,
+  or redirect to the LifeRay registration page uri:
+
+```
+gluu.openidconnect.no.such.user.redirect.url=http://localhost:8080/no-such-user-found
+```
+
+Restart the LifeRay server after editing the file
+`portal-ext.properties`.
 
 ### Login using LifeRay Front End
 
