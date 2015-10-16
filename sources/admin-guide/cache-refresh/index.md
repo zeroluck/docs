@@ -80,18 +80,18 @@ Gluu Server to use the correct LDAP server for authentication.
 
 ## Configuring 'Cache Refresh Engine' in Gluu Server
 The deployer needs to know various values of his own backend AD to
-configure this part. For example, host & port, binDN user information,
+configure this part. For example, host & port, bindDN user information,
 bindDN password, Objectclasses, attributes whose information will be
 pulled etc.
 
 In addition, the deployer also needs to know generic information of his
 Gluu Server's LDAP. By default, deployer can use 'localhost:1636',
 'cn=directory manager', 'password what he chose during installation',
-'ou=people,o=site' as server information, binDN, bindDN password and
+'ou=people,o=site' as server information, bindDN, bindDN password and
 baseDN respectively.
 
-After collecting this information, deployer can move forward with Cache
-Refresh Engine setup.
+After collecting this information, deployer can move forward with the
+setup of the Cache Refresh engine.
 
 ## Configuring 'Authentication Manager' in Gluu Server
 This manager knows where to search for users when a request comes in.
