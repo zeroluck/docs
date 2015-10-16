@@ -54,17 +54,20 @@ generate the LifeRay-compiled deployable `war` file. It will be placed
 within your <liferay-bundle-folder>/deploy directory, and the hot
 deployable process will start.
 
-### Using LifeRay Plugin SDK with ant
+### Using LifeRay Plugin SDK with Ant
 
-Prerequisite: Assume you have plugin sdk installed and configured with liferay bundle.
+This requires a prerequisite: we assume that you have the plugin SDK
+both installed and configured with LifeRay bundle.
 
-1.  checkout the gluu-openid-connect-hook plugin src from repository and place in your local plugin-sdk under `\liferay-plugins-sdk-6.2.0-ce-ga1\hooks` directory. 
+1. Checkout the gluu-openid-connect-hook plugin source from the
+repository, and place these files in your local directory for the plugin
+sdk. Usually, this is `liferay-plugins-sdk-6.2.0-ce-ga1/hooks`.
 
-2. Goto command prompt inside `\liferay-plugins-sdk-6.2.0-ce-ga1\hooks\gluu-openid-connect-hook` and run following command 
+2. Run the following command in the folder `liferay-plugins-sdk-6.2.0-ce-ga1/hooks/gluu-openid-connect-hook`:
 
-    `ant clean deploy`
-
-
+```
+ant clean deploy
+```
 ### Using binary from Repository
 
 You can download already compiled binary in standard liferay deployable war from following location. 
