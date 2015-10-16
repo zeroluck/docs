@@ -42,27 +42,29 @@ Stop the firewall
 ```
 
 #### Configuration
-Edit 'httpd.conf' with following changes.
+
+Edit `httpd.conf` with following changes.
 
 * Change ServerName directive to the server name of the SP
 
 * UseCanonicalName = On
 
-* Restart httpd
+* Restart the httpd service
 
 #### Httpd Testing
 
-* Create a "index.html" file inside /var/www/html
+* Create a `index.html` file inside the directory `/var/www/html`
 
-* Restart httpd
+* Restart the httpd service
 
 * Check from your browser
 
 #### SP Key Certificate
 
-* Create private key and certificate and place those in /etc/shibboleth
+* Create both a private key and a certificate, and place those in
+  `/etc/shibboleth`
 
-* Change permission
+* Change the permissions
 
 ### Shibboleth SP Configuration
 
