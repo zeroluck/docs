@@ -151,12 +151,19 @@ gluu.openidconnect.client.secret=65777eb7-87a8-4d60-9dbc-d31d43971f2b
 gluu.openidconnect.idp.domain=https://idp.gluu.org`
 ```
 
-* oAuth Server Auto discovery url
-`gluu.openidconnect.url.discovery=https://idp.gluu.org/.well-known/openid-configuration`
+* OAuth server auto discovery uri
 
-* Your oAuth Server Logout URL (Typically this will be used to logout user from oAuth when user logout in liferay)
-`gluu.openidconnect.idp.logout=https://idp.gluu.org/identity/logout`
-     
+```
+gluu.openidconnect.url.discovery=https://idp.gluu.org/.well-known/openid-configuration
+```
+
+* Your OAuth server logout uri (typically, this will be used to logout a
+user from OAuth when a user logs out from LifeRay)
+
+```
+gluu.openidconnect.idp.logout=https://idp.gluu.org/identity/logout
+```
+
 * LifeRay server callback url that will be handling response by oAuth Server after authentication:
 	* Replace the localhost:8080 with your liferay domain name.
 `gluu.openidconnect.client.redirect.url=http://localhost:8080/openidconnect/callback`
