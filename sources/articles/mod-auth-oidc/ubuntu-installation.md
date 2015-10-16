@@ -145,19 +145,18 @@ Let's create the Apache config file now. Create a file named
 </VirtualHost>
 ```
 
-Here, cert and key files are pre-existing on the server. You can use your own too.
+Here, both certificate and key files already exist on the server. You
+can use your own, too. Next, enable the site by running the
+`a2ensite`command, and restart the Apache service as:
 
-Enable the site by running this command:
+```
+a2ensite dynamic.conf
+service httpd restart
+```
 
-* a2ensite  dynamic.conf
-
-Now, restart the apache service as:
-
-
-* service httpd restart
- 
-
-Now, try to access [this page](https://dynamic.gluu.org:44443/dynamic), and You'll be presented with a discovery page, enter `admin@ce.gluu.org`
+Now, try to access [this page](https://dynamic.gluu.org:44443/dynamic),
+and you'll be presented with a discovery page. To access this page,
+enter `admin@ce.gluu.org`.
 
 ![IMAGE](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/mod_auth_oidc/dynamic_discovery.png)
 
