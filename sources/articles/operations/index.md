@@ -58,7 +58,7 @@ Sample result of running the command is as follows:
  	* Stopping web server apache2                                                                                                                                           * 
 # Restarting OpenDJ service
 
-To restart the opendj service, use the command:
+To restart the OpenDJ service, use the command:
 
 `/etc/init.d/opendj restart` 
 
@@ -81,13 +81,13 @@ Sample result of running the command is as follows:
 
 # Restarting Apache service 
 
-The apache service in ubuntu is known as apache2 and for CentOS it's called httpd.
+The Apache service in Ubuntu is known as Apache2 and for CentOS it's called httpd.
 
-## Restart apache in Ubuntu
+## Restart Apache in Ubuntu
 
 `/etc/init.d/apache2 restart`
 
-## Restart apache in CentOS
+## Restart Apache in CentOS
 
 `/etc/init.d/httpd restart`
 
