@@ -180,17 +180,16 @@ Now, let's create another file named `index.html` with this content:
 </html>
 ```
 
-
-Now, change the ownerships by using this command:
-
-
-* chown -R apache:apache /var/www/html
-
-
-Create a file named **/etc/httpd/conf.d/static.conf** with the contents as below: 
+Then, change the ownerships by using this command:
 
 ```
+chown -R apache:apache /var/www/html
+```
 
+Create a file named `/etc/httpd/conf.d/static.conf` with the contents as
+below:
+
+```
 <VirtualHost *:44443>
 	ServerName static.gluu.org
 	DocumentRoot /var/www/html
@@ -216,7 +215,6 @@ Create a file named **/etc/httpd/conf.d/static.conf** with the contents as below
 	SSLCertificateFile /etc/pki/tls/certs/localhost.crt
 	SSLCertificateKeyFile /etc/pki/tls/private/localhost.key
 </VirtualHost>
-
 ```
 
 Instead of pre-existing cert and key files, feel free to use your own.
