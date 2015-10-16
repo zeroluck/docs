@@ -1,10 +1,18 @@
 # oxRay
+
 LifeRay OpenID Connect plugin to authenticate users using Gluu IdP.
 [TOC]
 
 ## Overview
-oxAuth Liferay plugin is used to authenticate and auto-log users from Gluu Server into Liferay with same credentails. It is built on top of oxAuth, the OpenID Connect provider by Gluu. 
-oxAuth plugin intercepts any attempt to login from anywhere in the Liferay and redirects the request and the user to an oxAuth server where the identification takes place. If the user has authorized the server to share some of his basic information with oxAuth plugin , the user will be redirected back to the Liferay CMS automatically logged in.
+oxAuth LifeRay plugin is used to authenticate and auto-log users from
+Gluu Server into LifeRay with the same credentials. It is built on top
+of oxAuth, the OpenID Connect provider by Gluu.
+
+oxAuth plugin intercepts any attempt to login from anywhere in the
+LifeRay and redirects the request and the user to an oxAuth server where
+the identification takes place. If the user has authorized the server to
+share some of his basic information with oxAuth plugin, the user will
+be redirected back to the LifeRay CMS automatically logged in.
  
 The goal of this project is to use the LifeRay CMS as the basis for an organizational personal data store service.
 
@@ -14,7 +22,7 @@ Note: This plugin doesn't support auto-user creation from information supplied f
 
 Plugin is provided in 2 variant maven and ant. You can either use maven or liferay-plugin-sdk to build and deploy as standard liferay hot deployable war.
 
-### Deployting WAR file using Maven
+### Deploying WAR file using Maven
 
 Prerequisite: Make sure you have maven installed on your system to build this plugin.
  
