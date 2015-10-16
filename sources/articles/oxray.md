@@ -26,8 +26,8 @@ extending the plugin.
 ## Deployment
 
 The plugin is provided in two variants--[Maven][maven] and [Ant][ant].
-You can either use Maven or the LifeRay lugin SDK to build and deploy as
-standard LifeRay hot deployable war.
+You can either use Maven or the LifeRay plugin SDK to build and deploy
+this plugin as a standard LifeRay hot deployable WAR file.
 
 ### Deploying WAR file using Maven
 
@@ -39,7 +39,7 @@ Repository](https://github.com/Gluufederation/oxRay/6.2.x/maven).
 
 2. Open the file `pom.xml` in `gluu-openid-connect-hook`, and update
 your local LifeRay Tomcat bundle path. This is required for building the
-`war` file and deploying to the LifeRay Tomcat bundle.
+WAR file and deploying to the LifeRay Tomcat bundle.
 
 ![configure_pom_xml](https://raw.githubusercontent.com/GluuFederation/oxRay/master/img/configure_pom_xml.jpg)
 
@@ -61,16 +61,18 @@ both installed and configured with LifeRay bundle.
 
 1. Checkout the gluu-openid-connect-hook plugin source from the
 repository, and place these files in your local directory for the plugin
-sdk. Usually, this is `liferay-plugins-sdk-6.2.0-ce-ga1/hooks`.
+SDK. Usually, this is `liferay-plugins-sdk-6.2.0-ce-ga1/hooks`.
 
 2. Run the following command in the folder `liferay-plugins-sdk-6.2.0-ce-ga1/hooks/gluu-openid-connect-hook`:
 
 ```
 ant clean deploy
 ```
-### Using binary from Repository
 
-You can download already compiled binary in standard liferay deployable war from following location. 
+### Using Binary From Repository
+
+You can also download a compiled binary as a standard LifeRay deployable
+WAR file from the following location:
 
 [oxRay LifeRay Deployable War File](https://github.com/Gluufederation/oxRay/6.2.x/binary/gluu-openid-connect-hook-6.2.0.1.war)
 
