@@ -4,23 +4,30 @@ LifeRay OpenID Connect plugin to authenticate users using Gluu IdP.
 [TOC]
 
 ## Overview
-oxAuth LifeRay plugin is used to authenticate and auto-log users from
-Gluu Server into LifeRay with the same credentials. It is built on top
-of oxAuth, the OpenID Connect provider by Gluu.
 
-oxAuth plugin intercepts any attempt to login from anywhere in the
+The oxAuth LifeRay plugin is used to authenticate and auto-log users
+from Gluu Server into LifeRay with the same credentials. It is built on
+top of oxAuth, the OpenID Connect provider by Gluu.
+
+The oxAuth plugin intercepts any attempt to login from anywhere in the
 LifeRay and redirects the request and the user to an oxAuth server where
-the identification takes place. If the user has authorized the server to
-share some of his basic information with oxAuth plugin, the user will
-be redirected back to the LifeRay CMS automatically logged in.
- 
-The goal of this project is to use the LifeRay CMS as the basis for an organizational personal data store service.
+the identification takes place, actually. If the user has authorized the
+server to share some of his basic information with the oxAuth plugin,
+the user will be redirected back to the LifeRay CMS, and logged in,
+automatically.
 
-Note: This plugin doesn't support auto-user creation from information supplied from oxAuth Plugin. But it can be implemented by extending plugin.
+The goal of this project is to use the LifeRay CMS as the basis for an
+organizational personal data store service.
+
+Note: This plugin does not support auto-user creation from information
+supplied by the oxAuth Plugin. Instead, it can be implemented by
+extending the plugin.
 
 ## Deployment
 
-Plugin is provided in 2 variant maven and ant. You can either use maven or liferay-plugin-sdk to build and deploy as standard liferay hot deployable war.
+The plugin is provided in two variants--[Maven][maven] and [Ant][ant].
+You can either use Maven or the LifeRay lugin SDK to build and deploy as
+standard LifeRay hot deployable war.
 
 ### Deploying WAR file using Maven
 
@@ -36,7 +43,7 @@ Prerequisite: Make sure you have maven installed on your system to build this pl
 
 This will take few seconds to download the dependency `jar` files and generate liferay compiled deployable `war` file which will be placed within your <liferay-bundle-folder>/deploy directory and hot deployable process will start.
 
-### Using Liferay Plugin SDK with ant
+### Using LifeRay Plugin SDK with ant
 
 Prerequisite: Assume you have plugin sdk installed and configured with liferay bundle.
 
@@ -51,7 +58,7 @@ Prerequisite: Assume you have plugin sdk installed and configured with liferay b
 
 You can download already compiled binary in standard liferay deployable war from following location. 
 
-[oxRay Liferay Deployable War File](https://github.com/Gluufederation/oxRay/6.2.x/binary/gluu-openid-connect-hook-6.2.0.1.war)
+[oxRay LifeRay Deployable War File](https://github.com/Gluufederation/oxRay/6.2.x/binary/gluu-openid-connect-hook-6.2.0.1.war)
 
 Copy and paste this war in your liferay bundle `\liferay-portal-6.2.0-ce-ga1\deploy` directory.
 
@@ -61,7 +68,7 @@ Once plugin is deployed as war using either maven or ant, you will see following
 
 ### Client Registration
 
-Liferay application need to be register with Authorization server before initiating authentication request/response with oAuth IDP server.
+LifeRay application need to be register with Authorization server before initiating authentication request/response with oAuth IDP server.
  
 Following steps are necessary, to obtain client id and client secret that will be used with liferay portal-ext.properties.
 
@@ -77,7 +84,7 @@ Following steps are necessary, to obtain client id and client secret that will b
 5. Select the Response Types: CODE
 6. Select the Application Type: WEB
 7. For development purpose use : NATIVE (if your testing on local machine with localhost:8080 domain)
-8. Enter Client Name: Liferay App
+8. Enter Client Name: LifeRay App
 	* You can choose any name here. 
 9. All other options can be left as DEFAULT
 Please see the attached screenshot..  
@@ -86,7 +93,7 @@ Please see the attached screenshot..
 10. Click `Submit` and the following `Registration Request` and `Registration Response` will appear.
 ![json-request-response](https://raw.githubusercontent.com/GluuFederation/oxRay/master/img/json-request-response.jpg)
 
-11. Save the Registration Response to your local system. Parameters `client_id` and `client_secret` is used in Liferay when configuring `portal-ext.properties`. 
+11. Save the Registration Response to your local system. Parameters `client_id` and `client_secret` is used in LifeRay when configuring `portal-ext.properties`. 
 #### Modifying portal.properties
 
 It is necessary to modify `portal-ext.properties` file to reflect oxAuth server client credentials and server's URL. It can accomplished by navigating into `liferay-portal-6.2.0-ce-ga1\` folder , where `portal-ext.properties` resides.
@@ -109,7 +116,7 @@ gluu.openidconnect.client.secret=65777eb7-87a8-4d60-9dbc-d31d43971f2b
 * Your oAuth Server Logout URL (Typically this will be used to logout user from oAuth when user logout in liferay)
 `gluu.openidconnect.idp.logout=https://idp.gluu.org/identity/logout`
      
-* Liferay server callback url that will be handling response by oAuth Server after authentication:
+* LifeRay server callback url that will be handling response by oAuth Server after authentication:
 	* Replace the localhost:8080 with your liferay domain name.
 `gluu.openidconnect.client.redirect.url=http://localhost:8080/openidconnect/callback`
 This page would be invoked when the user does not exist in liferay database but it getting authenticated from oAuth Server.
@@ -117,9 +124,9 @@ This page would be invoked when the user does not exist in liferay database but 
 * Typical create a liferay page with /no-such-user-found or Redirect to liferay registration page url
 `gluu.openidconnect.no.such.user.redirect.url=http://localhost:8080/no-such-user-found `
 
-Restart Liferay Server after editing `portal-ext.properties` 
+Restart LifeRay Server after editing `portal-ext.properties` 
 
-### Login using Liferay Front End
+### Login using LifeRay Front End
 
 * Server Bootup
 	* Once liferay server is restarted. Open browser and hit 
@@ -146,6 +153,10 @@ Note: You can edit the theme code and link the login url as http://localhost:808
  
 `http://localhost:8080/openidconnect/callback?code=xxx`
  
-This will intercepted by our oxAuth Liferay plugin and upon validation of token with Gluu IDP internally, it will auto login user to Liferay and users will be redirected to respective home page.
+This will intercepted by our oxAuth LifeRay plugin and upon validation of token with Gluu IDP internally, it will auto login user to LifeRay and users will be redirected to respective home page.
 
 ![liferay_success_login](https://raw.githubusercontent.com/GluuFederation/oxRay/master/img/liferay_success_login.jpg)
+
+[maven]: https://en.wikipedia.org/wiki/Apache_Maven "Apache Maven, Wikipedia"
+
+[ant]: https://en.wikipedia.org/wiki/Apache_Ant "Apache Ant, Wikipedia"
