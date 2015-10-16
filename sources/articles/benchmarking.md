@@ -36,24 +36,24 @@ recommended to give enough memory via JVM system properties.
 dsconfig -n set-backed-prop --backend-name userRoot --set db-cache-percent:50
 ```
 
-### Tomcat
+### Apache Tomcat
 
-  1. Set maximum for parallel requests.
+1. Set maximum for parallel requests.
 
-Connector parameters in server.xml:
+Connector parameters in `server.xml`:
 
 - maxThreads="10000"
 - maxConnections="10000"
 
-  2. Set memory settings via JAVA_OPTS
+2. Set memory settings via JAVA_OPTS
 
 set "JAVA_OPTS=-Xms1456m -Xmx7512m -XX:MaxPermSize=256m -XX:+DisableExplicitGC"
 
   3. Operating time
 
-Check via Tomcat monitor whether requests are handled or just "hangs" because there no enough resources
-
-Here is sample when processing time increase due to lack of resources:
+Check via Tomcat monitor whether requests are handled or just "hangs"
+because there are not enough resources. Here is sample when processing
+time increase due to lack of resources:
 
 ![Alt text](http://gluu.org/docs/img/benchmark/tomcatStatus.png "Tomcat status")
 
