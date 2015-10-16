@@ -4,8 +4,8 @@
 - [Stopping Gluu Server chroot environment](#stopping-gluu-server-chroot-environment)
 - [Restarting OpenDJ service](#restarting-opendj-service)
 - [Restarting Apache service](#restarting-apache-service)
-	- [Restart apache in Ubuntu](#restart-apache-in-ubuntu)
-	- [Restart apache in CentOS](#restart-apache-in-centos)
+	- [Restart Apache in Debian or Ubuntu](#restart-apache-in-ubuntu)
+	- [Restart Apache in CentOS](#restart-apache-in-centos)
 - [Restarting Tomcat service](#restarting-tomcat-service)
 
 # Starting Gluu Server chroot environment
@@ -89,20 +89,24 @@ Connection closed by foreign host.
 GLUU.root@DA855F9895A1CA3B00020B185D7A:~# 
 ```
 
-# Restarting Apache service 
+# Restarting Apache Service 
 
-The Apache service in Ubuntu is known as Apache2 and for CentOS it's called httpd.
+The Apache service in both Debian and Ubuntu is known as Apache2 and for
+CentOS it's called httpd.
 
-## Restart Apache in Ubuntu
+## Restart Apache in Debian or Ubuntu
 
-`/etc/init.d/apache2 restart`
+```
+/etc/init.d/apache2 restart
+```
 
 ## Restart Apache in CentOS
 
-`/etc/init.d/httpd restart`
+```
+/etc/init.d/httpd restart`
+```
 
-
-# Restarting Tomcat service
+# Restarting Tomcat Service
 
 The tomcat service is restarted in same way in both CentOS and Ubuntu.
 Below is the command:
