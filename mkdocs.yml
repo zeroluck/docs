@@ -38,7 +38,7 @@ pages:
 - [reference/ldap-schema/index.md, Reference, LDAP Schema]
 - [reference/lib/index.md, Reference, Gluu Library]
 - [reference/oxAuth/index.md, Reference, OxAuth]
-- [reference/oxd/index.md, Reference, OxD]
+- [reference/oxd/index.md, hidden]
 - [reference/oxTrust/index.md, Reference, OxTrust]
 - [reference/mod_auth_oidc/index.md, Reference, Apache Module]
 # Articles Sections

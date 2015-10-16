@@ -94,7 +94,6 @@ The main documentation is organized into the following sections:
 	  - [SCIM](./reference/lib/scim.md)
 	  - [UMA](./reference/lib/uma.md)
 - [oxAuth](./reference/oxAuth/index.md) 
-- [oxd](./reference/oxd/index.md)
 - [oxTrust](./reference/oxTrust/index.md)
 
 # Articles
