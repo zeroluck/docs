@@ -83,7 +83,7 @@ sudo service apache2 restart
 There are two methods for client registration:
 
 1. Dynamic Client Registration
-2. Manual Cient Registration
+2. Manual Client Registration
 
 You can use any of the methods to register the client.
 
@@ -95,7 +95,7 @@ For dynamic client registration, we'll name the server: **dynamic.gluu.org.**
 Create a directory named `dynamic` inside the directory `/var/www/html`, that is:
 
 ```
-mkdir /var/www/html/dynamcic
+sudo mkdir /var/www/html/dynamic
 ```
 
 Now, create a file named `index.html`, and add the following content:
@@ -116,10 +116,10 @@ above to hold further metadata. Then, change the ownership of this
 directory using this command:
 
 ```
-chown -R apache:apache /var/www/html
+sudo chown -R apache:apache /var/www/html
 ```
 
-Let's create the Apache config file now. Create a file named
+Let's create the Apache configuration file now. Create a file named
 `/etc/apache2/sites-available/dynamic.conf` with the content as below:
 
 ```
@@ -150,8 +150,8 @@ can use your own, too. Next, enable the site by running the
 `a2ensite`command, and restart the Apache service as:
 
 ```
-a2ensite dynamic.conf
-service httpd restart
+sudo a2ensite dynamic.conf
+sudo service httpd restart
 ```
 
 Now, try to access [this page](https://dynamic.gluu.org:44443/dynamic),
@@ -178,7 +178,7 @@ Create a directory named `/var/www/html/static`, i. e. with this
 command:
 
 ```
-mkdir /var/www/html/static
+sudo mkdir /var/www/html/static
 ```
 
 Now, let's create another file named `index.html` with this content:
@@ -197,7 +197,7 @@ Now, let's create another file named `index.html` with this content:
 Then, change the ownerships by using this command:
 
 ```
-chown -R apache:apache /var/www/html
+sudo chown -R apache:apache /var/www/html
 ```
 
 Create a file named `/etc/apache2/sites-available/static.conf` with the
@@ -236,8 +236,8 @@ Next, enable the static site by running the `a2ensite` command, and
 restart the Apache service as below:
 
 ```
-a2ensite static.conf
-service httpd restart
+sudo a2ensite static.conf
+sudo service httpd restart
 ```
 
 Now, try to access [this page](https://static.gluu.org:44443/static),
@@ -265,7 +265,7 @@ To solve this problem, log into the gluuCE server by running the
 following command:
 
 ```
-service gluu-server login
+sudo service gluu-server login
 ```
 
 ### Getting DN from Client ID
@@ -293,7 +293,7 @@ Then, run the `ldapmodify` command to insert the
 __oxAuthSubjectIdentifier__ as below:
 
 ```
-/opt/opendj/bin/ldapmodify -Z -X -h localhost -p 1636 -D "cn=Directory Manager" -j /root/.pw -f /root/mod.ldif
+sudo /opt/opendj/bin/ldapmodify -Z -X -h localhost -p 1636 -D "cn=Directory Manager" -j /root/.pw -f /root/mod.ldif
 ```
 
 The command may vary depending upon your installation. Next, access
