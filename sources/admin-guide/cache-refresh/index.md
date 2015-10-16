@@ -12,13 +12,13 @@ loss of data within the Gluu Server.
 ## Overview
 When configured for Cache Refresh, oxTrust acts as a metadirectory. It
 periodically retrieves the full data set from each source LDAP server,
-hashes the values, and stores this hash on the disk–a snapshot file.
+hashes the values, and stores this hash on the disk--a snapshot file.
 Subsequent results are compared with the last snapshot. Using set
-subtraction, oxTrust can calculate which entries have changed. Note:
-this method of synchronization requires periodic data integrity
-checking, as there is no assured messaging. Alternately, you can just
-remove the user data, and refresh it from the source. However, be
-careful if use updates are allowed for synchronized entries!
+subtraction, oxTrust can calculate which entries have changed. Please
+note that this method of synchronization requires periodic data
+integrity checking, as there is no assured messaging. Alternately, you
+can just remove the user data, and refresh it from the source. However,
+be careful if updates are allowed for synchronized entries!
 
 The interval between data refresh is configurable in the oxTrust GUI.
 You can also enable an attribute transformation script if you need to
@@ -30,8 +30,8 @@ new attributes, or even change the value of existing attributes.
 For each source LDAP server, the Gluu Server deployer needs to know the
 LDAP connection details, and have credentials for a user with read
 access (as needed) to the LDAP tree. At a minimum: host, port, bind DN,
-bind password, base dn for search, objectclass of person entry. Note:
-LDAPS should always be used.
+bind password, base DN for search, and object class of person entry.
+Please note that the usage of LDAPS is strongly recommended.
 
 ![Cahce_refresh_diagram](https://cloud.githubusercontent.com/assets/5271048/8237617/4df7d88e-15b6-11e5-98eb-5bb0376b9750.png)
 
