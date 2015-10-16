@@ -1,6 +1,6 @@
 **Table of Contents** 
 
-- [SetUp Apache2](#setup-apache2)
+- [Setup Apache2](#setup-apache2)
 - [Client Registration](#client-registration)
 	- [Dynamic Client Registration](#dynamic-client-registration)
 	- [Manual Client Registration](#manual-client-registration)
@@ -8,51 +8,59 @@
 
 # mod_auth_oidc Installation Guide
 
-### SetUp Apache2
+### Setup Apache2
 
-We're assuming that all the hostnames will be dns resolvable. If not, then you should consider making entries in **/etc/hosts.** Install apache2 and enable module ssl by running following commands: 
-
-* sudo apt-get install apache2
-* sudo a2enmod ssl
-* service apache2 restart
-
-If you are encountered with a problem saying:
+We assume that all the hostnames will be dns resolvable. If not, then
+add the according entries in `/etc/hosts`, please. Install Apache2 and
+enable the SSL module by running the following commands:
 
 ```
- * Restarting web server apache2                                               [fail]
+sudo apt-get install apache2
+sudo a2enmod ssl
+service apache2 restart
 ```
 
-Then you need to enter following commands (These commands will solve the issues regarding pre-occupied Port), if there is no error, then continue to the procedure about downloading mod_auth_openidc deb files.
+In case that restarting the Apache web server failed:
 
-* sudo /etc/init.d/apache2 stop
-* sudo killall apache2
-* sudo netstat -l|grep www
-* sudo /etc/init.d/apache2 restart
+```
+Restarting web server apache2                                               [fail]
+```
 
-Download *mod_auth_openidc* deb file as below. If the binary is not available, refer to [this page](https://github.com/pingidentity/mod_auth_openidc/wiki). Then, use *dpkg* to install the binary.
+... you will have to stop the Apache service, manually. The following
+commands help you solving that situation:
 
-* sudo wget http://ftp.us.debian.org/debian/pool/main/liba/libapache2-mod-auth-openidc/libapache2-mod-auth-openidc_1.6.0-1_amd64.deb
-* dpkg -i libapache2-mod-auth-openidc_1.6.0-1_amd64.deb
+```
+sudo /etc/init.d/apache2 stop
+sudo killall apache2
+sudo netstat -l|grep www
+sudo /etc/init.d/apache2 restart
+```
 
-Here, for some machines, you need to have following packages installed:
+Now, you can continue with the [auth_openidc module][openidc]. This
+module is available as a native deb package from the Debian/Ubuntu
+repositories. Download and install the `libapache2--mod_auth_openidc`
+package as described below.
 
-- libhiredis0.10
-- libpcre3
-- libjansson4
+Note: if the binary package is not available, refer to [this
+page](https://github.com/pingidentity/mod_auth_openidc/wiki) for the
+sources. 
 
-These packages can be installed using command:
+Then, use `apt-get` to install the binary package.
 
-* sudo apt-get install *package-name*
+```
+sudo apt-get install libapache2-mod-auth-openidc
+```
 
-If you are encountered with errors having "Unmet dependency", then you can use following command:
+This package depends on these libraries--`libhiredis0.10`, `libpcre3`,
+and `libjansson4`. `apt-get` will resolve this dependencies,
+automatically, and will retrieve the packages as well.
 
-* sudo apt-get -f install
+Next, enable the Apache module, and restart the Apache web server:
 
-Now, enable the mod as shown below, and restart the server:
-
-* a2enmod auth_openidc
-* service apache2 restart
-
+```
+sudo a2enmod auth_openidc
+sudo service apache2 restart
+```
 
 Now, since we want to run this apache at port __44443__ ssl and __8000__ for non-ssl, we need to edit three files. The changes are done to avoid conflict with the gluu-server's apache ports. But, if the gluu-server server and apache servers are different, no need to change the ports. Change port numbers in the file: 
 
@@ -297,4 +305,4 @@ The command may vary depending upon your using.
 
 Then again access [this page](https://static.gluu.org:44443/static) and you should see the success message.
 
-
+[openidc]: https://github.com/pingidentity/mod_auth_openidc/wiki "Wiki for mod_auth_openidc"
