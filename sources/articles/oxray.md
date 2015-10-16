@@ -43,10 +43,16 @@ your local LifeRay Tomcat bundle path. This is required for building the
 
 ![configure_pom_xml](https://raw.githubusercontent.com/GluuFederation/oxRay/master/img/configure_pom_xml.jpg)
 
-3. Goto command prompt - under gluu\6.2.x\maven\gluu-openid-connect-hook directory and Run
-     `mvn clean install package liferay:deploy` 
+3. Run the following command in `gluu/6.2.x/maven/gluu-openid-connect-hook` directory:
 
-This will take few seconds to download the dependency `jar` files and generate liferay compiled deployable `war` file which will be placed within your <liferay-bundle-folder>/deploy directory and hot deployable process will start.
+```
+mvn clean install package liferay:deploy
+```
+
+This will take a few seconds to download the dependency `jar` files, and
+generate the LifeRay-compiled deployable `war` file. It will be placed
+within your <liferay-bundle-folder>/deploy directory, and the hot
+deployable process will start.
 
 ### Using LifeRay Plugin SDK with ant
 
