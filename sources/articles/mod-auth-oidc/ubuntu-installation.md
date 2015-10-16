@@ -119,11 +119,10 @@ directory using this command:
 chown -R apache:apache /var/www/html
 ```
 
-Let's create the apache config file now. Create a file named **/etc/apache2/sites-available/dynamic.conf**  with the contents as below :
-
+Let's create the Apache config file now. Create a file named
+`/etc/apache2/sites-available/dynamic.conf` with the content as below:
 
 ```
-
 <VirtualHost *:44443>
 	ServerName dynamic.gluu.org
 	DocumentRoot /var/www/html
@@ -144,7 +143,6 @@ Let's create the apache config file now. Create a file named **/etc/apache2/site
 	SSLCertificateFile /etc/pki/tls/certs/localhost.crt
 	SSLCertificateKeyFile /etc/pki/tls/private/localhost.key
 </VirtualHost>
-
 ```
 
 Here, cert and key files are pre-existing on the server. You can use your own too.
