@@ -50,11 +50,11 @@ mvn clean install package liferay:deploy
 ```
 
 This will take a few seconds to download the dependency `jar` files, and
-generate the LifeRay-compiled deployable `war` file. It will be placed
+generate the LifeRay-compiled deployable WAR file. It will be placed
 within your <liferay-bundle-folder>/deploy directory, and the hot
 deployable process will start.
 
-### Using LifeRay Plugin SDK with Ant
+### Using LifeRay Plugin SDK With Ant
 
 This requires a prerequisite: we assume that you have the plugin SDK
 both installed and configured with LifeRay bundle.
@@ -76,9 +76,11 @@ WAR file from the following location:
 
 [oxRay LifeRay Deployable War File](https://github.com/Gluufederation/oxRay/6.2.x/binary/gluu-openid-connect-hook-6.2.0.1.war)
 
-Copy and paste this war in your liferay bundle `\liferay-portal-6.2.0-ce-ga1\deploy` directory.
+Copy this WAR file in your LifeRay bundle. Usually, this is located at
+`liferay-portal-6.2.0-ce-ga1/deploy`.
 
-Once plugin is deployed as war using either maven or ant, you will see following success message in your liferay tomcat server.
+Once the plugin is deployed as a WAR file either using Maven or Ant, you
+will see the following success message in your LifeRay Tomcat server:
 
 ![deploy_success](https://raw.githubusercontent.com/GluuFederation/oxRay/master/img/deploy_success.jpg)
 
