@@ -19,28 +19,36 @@ components.
 and key.
 
 ## Apache
-`httpd.crt`, `httpd.csr`, `httpd.key`, `httpd.key.orig` are SSL Apache related certs and keys. If you want to update your Apache SSL cert don't worry about the `.csr` and `.key.orig`.  
+`httpd.crt`, `httpd.csr`, `httpd.key`, `httpd.key.orig` are SSL Apache
+related certs and keys. If you want to update your Apache SSL cert don't
+worry about the `.csr` and `.key.orig`.
 
 ## OpenDJ
-`opendj.crt` is the public cert being used by oxAuth to make a connection to the internal Gluu-LDAP.
+`opendj.crt` is the public cert being used by oxAuth to make a
+connection to the internal Gluu-LDAP.
 
 ## oxAuth
-`oxauth-web-keys.json` is being used by Gluu's OpenID Connect & UMA server. 
+`oxauth-web-keys.json` is being used by Gluu's OpenID Connect & UMA
+server.
 
 ## Shibboleth IDP
-`shibIDP.crt`, `shibIDP.csr`, `shibIDP.jks`, `shibIDP.key`, `shibIDP.key.orig`, `shibIDP.pkcs12` are required if you use the Gluu Server's Shibboleth SAML server for SAML transactions. 
+`shibIDP.crt`, `shibIDP.csr`, `shibIDP.jks`, `shibIDP.key`,
+`shibIDP.key.orig`, `shibIDP.pkcs12` are required if you use the Gluu
+Server's Shibboleth SAML server for SAML transactions.
 
 # Updating Certs
 
-If you're using the Gluu Server CE binaries or latest Gluu Servers, you need to
-manually update certificates and keys from `/etc/certs/`. Please note that your
-private key `can not be password protected` and public key should be base64
-X.509. For example, in order to update Apache SSL cert:
+If you are using the Gluu Server CE binaries or latest Gluu Servers, you
+need to manually update certificates and keys from `/etc/certs/`. Please
+note that your private key cannot be password protected, and the public
+key should be base64 X.509. For example, follow these steps in order to
+update the Apache SSL cert:
 
-- Push latest SSL httpd key and cert in `/etc/certs`.   
-- Rename them to `httpd.key` and `httpd.crt` respectively.    
-- Import the DER format of your cert in "cacert" ( location in RHEL/CentOS CE: `/etc/pki/java/`, location in Ubuntu CE: `/etc/ssl/certs/java` ).    
-- Restart your Gluu-server from outside the chroot container.   
+- push latest SSL httpd key and certificate in the file `/etc/certs`.
+- rename them to `httpd.key` and `httpd.crt`, respectively.
+- import the DER format of your certificate in "cacert" (the location in
+  RHEL/CentOS CE is `/etc/pki/java/`, and in Ubuntu CE is `/etc/ssl/certs/java`).
+- restart your Gluu Server from outside the chroot container.
 
 # Installing Intermediate Certificates
 
