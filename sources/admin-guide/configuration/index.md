@@ -194,32 +194,50 @@ server.
 
 ![Manage LDAP Authentication](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_manage_ldap.png)
 
-* _Deactivate:_ This button *Deactivates/Activates* the Gluu Server accessibility for authentication.
+* _Deactivate:_ This button *Deactivates/Activates* the Gluu Server
+  accessibility for authentication.
 
 * _Name:_ This field contains the name of the authentication server.
 
-* _Bind DN:_ The *Username* for the authentication server (local LDAP/remote LDAP/remote Active Directory) goes here.
+* _Bind DN:_ The *Username* for the authentication server (local
+  LDAP/remote LDAP/remote Active Directory) goes here.
 
-* _Use SSL:_ If the authentication server requires a secured port (i.e. 636) then this option should be activated using the checkbox.
+* _Use SSL:_ If the authentication server requires a secured port (i.e.
+  636) then activate this option.
 
-* _Max Connections:_ This option can be used to define the total number of simultaneous connections allowed for reading local LDAP/remote Active Directory/remote LDAP.
+* _Max Connections:_ This option defines the total number of
+  simultaneous connections allowed for reading local LDAP/remote Active
+  Directory/remote LDAP.
 
-* _Server:_ The unique name of the authentication server and port number (i.e. auth.company.org:636) goes here.
+* _Server:_ The unique name of the authentication server and port number
+  goes here. An example is `auth.company.org:636`.
 
-* _Base DN:_ Add base DNs in this field to allow the Gluu Server to connect and search the LDAP server. Every directory tree should be added separately using the *Add Base DN* option.
+* _Base DN:_ Add base DNs in this field to allow the Gluu Server to
+  connect and search the LDAP server. Every directory tree should be added
+  separately using the *Add Base DN* option.
 
-* _Primary Key:_ This field contains the primary key to connect to the authentication server (i.e. SAMAccountName/uid/mail etc).
+* _Primary Key:_ This field contains the primary key to connect to the
+  authentication server. An example is `SAMAccountName/uid/mail`.
 
-* _Local Primary Key:_ This field contains the internal LDAP primary key of the Gluu Server. Gere rally the key is either the *uid* or the *mail*.
+* _Local Primary Key:_ This field contains the internal LDAP primary key
+  of the Gluu Server. In general, the key is either *uid*, or *mail*.
 
-* _Enabled:_ This checkbox is used to enable the keys that are inserted in their respective fields.
+* _Enabled:_ This checkbox is used to enable the keys that are inserted
+  in their respective fields.
 
 * _Change Bind Password:_ This button can be used to assign a password to authenticate the *Authentication Server*.
 
-* _Test LDAP Connection:_ This button checks whether the provided information can connect to the authentication server. The scan is real time and it is advised to use it for the Gluu Server Administrators.
+* _Test LDAP Connection:_ Based on the provided information, this button
+  checks whether the connection to the authentication server works fine.
+  The scan runs in real time, and it is advised to use it for the Gluu
+  Server Administrators.
 
 ## Default Authentication Method
-This allows the Gluu Server Administrator to select the default authentication mode and level for person authentication. Both are set to "Default" until additional authentication mechanisms are enabled via [custom scripts](#manage-custom-scripts). 
+
+This allows the Gluu Server Administrator to select the default
+authentication mode and level for person authentication. Both are set to
+"Default" until additional authentication mechanisms are enabled via
+[custom scripts](#manage-custom-scripts).
 
 ![Default Authentication Method](https://cloud.githubusercontent.com/assets/5271048/7147219/f72536f2-e2be-11e4-8259-a52ce0051b12.png)
 
