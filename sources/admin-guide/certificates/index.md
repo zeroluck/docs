@@ -52,11 +52,13 @@ update the Apache SSL cert:
 
 # Installing Intermediate Certificates
 
-1. Log into your Gluu Server container
-2. Keep your intermediate cert in `/etc/certs/`
-3. `https_gluu.conf` modification ( location: `/etc/httpd/conf.d` )
-    3.1 Add `SSLCertificateChainFile /etc/certs/name_of_your_interm_root_cert.crt`
-4. Restart `httpd`
+To install intermediate certificates follow these steps:
+
+1. log into your Gluu Server container
+2. keep your intermediate certificate in the file `/etc/certs/`
+3. modify `/etc/httpd/conf.d/https_gluu.conf`, and add
+   `SSLCertificateChainFile /etc/certs/name_of_your_interm_root_cert.crt`
+4. restart the service of the httpd server
 
 # Older Gluu Server Versions
 
