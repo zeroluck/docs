@@ -92,17 +92,15 @@ You can use any of the methods to register the client.
 
 For dynamic client registration, we'll name the server: **dynamic.gluu.org.**
 
-
-Create a directory **dynamic** inside **/var/www/html**, that is:
-
-
-* mkdir /var/www/html/dynamcic
-
-
-Now, create a file named **index.html**, and all following content:
+Create a directory named `dynamic` inside the directory `/var/www/html`, that is:
 
 ```
+mkdir /var/www/html/dynamcic
+```
 
+Now, create a file named `index.html`, and add the following content:
+
+```
 <html>
 	<title>
 		Protected URL
@@ -111,16 +109,15 @@ Now, create a file named **index.html**, and all following content:
 		Nice to see the protected url via Dynamic Registration
 	</body>
 </html>
-
 ```
 
-Create another directory **metadeta** inside above directory to hold metadata.
+Create another directory named `metadata` inside the directory from
+above to hold further metadata. Then, change the ownership of this
+directory using this command:
 
-Now, change the ownership of directory, so that apache can write metadata inside the directory.
-
-
-* chown -R www-data:www-data /var/www/html
-
+```
+chown -R apache:apache /var/www/html
+```
 
 Let's create the apache config file now. Create a file named **/etc/apache2/sites-available/dynamic.conf**  with the contents as below :
 
