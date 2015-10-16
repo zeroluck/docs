@@ -52,7 +52,8 @@ Next, create an **Apache _conf_** file for loading this module.
 cat "LoadModule auth_openidc_module modules/mod_auth_openidc.so" > /etc/httpd/conf.d/mod_auth_openidc.conf
 ```
 
-The file xxx will contain these lines:
+The file `/etc/httpd/conf.d/mod_auth_openidc.conf` will now contain
+these two lines:
 
 ```
 LoadModule auth_openidc_module modules/mod_auth_openidc.so
