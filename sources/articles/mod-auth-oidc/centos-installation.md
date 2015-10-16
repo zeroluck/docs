@@ -99,17 +99,18 @@ Now, create a file named `index.html`, and add the following content:
 </html>
 ```
 
-Create another directory **metadeta** inside above directory to hold metadata.
-
-Now, change the ownership of directory using:
-
-* chown -R apache:apache /var/www/html
-
-Let's create the apache config file now. Create a file named **/etc/httpd/conf.d/dynamic.conf** with the contents as below:
-
+Create another directory named `metadata` inside the directory from
+above to hold further metadata. Then, change the ownership of this
+directory using this command:
 
 ```
+chown -R apache:apache /var/www/html
+```
 
+Let's create the Apache config file now. Create a file named
+`/etc/httpd/conf.d/dynamic.conf` with the content as below:
+
+```
 <VirtualHost *:44443>
 	ServerName dynamic.gluu.org
 	DocumentRoot /var/www/html
@@ -130,28 +131,29 @@ Let's create the apache config file now. Create a file named **/etc/httpd/conf.d
 	SSLCertificateFile /etc/pki/tls/certs/localhost.crt
 	SSLCertificateKeyFile /etc/pki/tls/private/localhost.key
 </VirtualHost>
-
 ```
 
-Here, cert and key files are pre-existing on the server. You can use your own too.
+Here, both certificate and key files already exist on the server. You
+can use your own, too. Next, restart the Apache service as:
 
-Now, restart the apache service as:
+```
+service httpd restart
+```
 
-
-* service httpd restart
- 
-
-Now, try to access [this page](https://dynamic.gluu.org:44443/dynamic), and You'll be presented with a discovery page, enter `admin@ce.gluu.org`
+Now, try to access [this page](https://dynamic.gluu.org:44443/dynamic),
+and you'll be presented with a discovery page. To access this page,
+enter `admin@ce.gluu.org`.
 
 ![IMAGE](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/mod_auth_oidc/dynamic_discovery.png)
 
+The usual choice as per present used uris is: `admin@ce.gluu.org`. Note
+that you have to use an existing user at the gluuCE along with an
+existing uri. An example is `existing_user*@your.gluu.ce.server`.
 
-The usual choice as per present used urls is: **admin@ce.gluu.org**. But you must use the existing user at the gluuCE along with existing url i.e *existing_user*@your.gluu.ce.server
-
-After this we are presented with the *oxAuth* page from gluuCE where we enter the credentials for authentication. 
+After this the *oxAuth* page from gluuCE is displayed where you enter
+the credentials for authentication.
 
 ![IMAGE](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/mod_auth_oidc/oxauth_authentication.png)
-
 
 #### Manual Client Registration
 
