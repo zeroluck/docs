@@ -451,13 +451,19 @@ Directory/LDAP server of the organization.
   organization has a failover server, click **Add Server** and more
   hostnames with the according port.
 
-* _Base DN:_ This contains the location of the Active Directory/LDAP tree from where the Gluu Server shall read the user information.
+* _Base DN:_ This contains the location of the Active Directory/LDAP
+  tree from where the Gluu Server shall read the user information.
 
-* _Enabled:_ This checkbox is to save and push the changes and only to be used when the server administrator has entered all the required values.
+* _Enabled:_ This checkbox is to save and push the changes and only to
+  be used when the server administrator has entered all the required
+  values.
 
-* _Change Bind Password:_ This can be used for a new password or to change any existing password.
+* _Change Bind Password:_ This can be used for a new password or to
+  change any existing password.
 
-If any organization has multiple Active Directory/LDAP server, click on **Add source LDAP server** and add the additional server information. Please remember that a *failover server* is not a new server.
+If any organization has multiple Active Directory/LDAP server, click on
+**Add source LDAP server** and add the additional server information.
+Please remember that a *failover server* is not a new server.
 
 ## Inum LDAP Server
 
