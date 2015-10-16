@@ -414,28 +414,42 @@ setup, you have to insert data in ALL FIELDS below.*
 
 * _Key Attribute:_ This is the unique key attribute of backend Active Directory/LDAP Server such as SAMAccountname for any Active Directory.
 
-* _Object Class:_ This contains the Object Classes of the backend Active Directory/LDAP which has permission to talk to Gluu Server Cache Refresh such as person, organizationalPerson, user etc.
+* _Object Class:_ This contains the object classes of the backend Active
+  Directory/LDAP which have permission to talk to the Gluu Server Cache
+  Refresh such as person, organizationalPerson, user etc.
 
-* _Source Attribute:_ This contains the list of attributes which will be pulled and read by the Gluu Server.
+* _Source Attribute:_ This contains the list of attributes which will be
+  pulled and read by the Gluu Server.
 
-* _Custom LDAP Filter:_ If there is any custom search required, this filtering mechanism can be used such as "sn=*" where the value of this field ensures that every user must contain an attribute named SN.
+* _Custom LDAP Filter:_ If there is any custom search required, this
+filtering mechanism can be used such as `sn=*` where the value of this
+field ensures that every user must contain an attribute named SN.
 
 ## Source Backend LDAP Servers
+
 ![Source Backend](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_sourcebackend.png)
 
-This section allows the Gluu Server to connect to the backend Active Directory/LDAP server of the organization.
+This section allows the Gluu Server to connect to the backend Active
+Directory/LDAP server of the organization.
 
 * _Name:_ Please input **source** as the value.
 
 * _Use Anonymous Bind:_ Some customers do now allow username/password connections to their backend server. Enable this option if this applies to your organization.
 
-* _Bind DN:_ This contains the username to connect to the backend server. You need to use full DN here. As for example, _cn=gluu,dc=company,dc=org_
+* _Bind DN:_ This contains the username to connect to the backend
+  server. You need to use full DN here. As for example,
+  `cn=gluu,dc=company,dc=org`.
 
 * _Use SSL:_ Use this feature if the backend server allows SSL connectivity.
 
-* _Max Connections:_ This value defines the maximum number of connection that are allowed to read the backend Active Directory/LDAP server. It is recommended to keep the value 2 or three.
+* _Max Connections:_ This value defines the maximum number of
+  connections that are allowed to read the backend Active Directory/LDAP
+  server. It is recommended to keep the value 2 or 3.
 
-* _Server:_ This contains the backend Active Directory/LDAP server hostname with port i.e. backend.organization.com:389. If organization has a failover server, click **Add Server** and more hostnames with port.
+* _Server:_ This contains the backend Active Directory/LDAP server
+  hostname with port, i.e. `backend.organization.com:389`. If your
+  organization has a failover server, click **Add Server** and more
+  hostnames with the according port.
 
 * _Base DN:_ This contains the location of the Active Directory/LDAP tree from where the Gluu Server shall read the user information.
 
