@@ -184,34 +184,44 @@ gluu.openidconnect.no.such.user.redirect.url=http://localhost:8080/no-such-user-
 Restart the LifeRay server after editing the file
 `portal-ext.properties`.
 
-### Login using LifeRay Front End
+### Login Using the LifeRay Front End
 
 * Server Bootup
-	* Once liferay server is restarted. Open browser and hit 
-`http://localhost:8080`
- 
-* Login URL
-	* Once liferay page successfully loaded paste following url in the browser and hit `enter`.
-`http://localhost:8080/openidconnect/login`
- 
-Note: You can edit the theme code and link the login url as http://localhost:8080/openidconnect/login, so user will always redirect to oAuth Server for authentication.
- 
-* oAuth Authentication
-	* Above liferay login url will redirect users to oAuth IDP server for user authentication, internally passing oAuth client id as following screen 
+	* Once the LifeRay server is restarted, open your browser and
+      navigate to the uri `http://localhost:8080`.
+
+* Login uri
+	* Once the LifeRay page successfully loaded navigate to the OpenID
+      connect page at `http://localhost:8080/openidconnect/login`.
+
+Note: you can edit the theme code, and link to the login uri as
+`http://localhost:8080/openidconnect/login`. In result the user will
+always redirect to the OAuth server for authentication.
+
+* OAuth authentication
+	* The LifeRay login uri will redirect users to the OAuth IdP server
+      for user authentication. Internally, passing the oAuth client id 
+      as the following screen:
 
 ![oauth-login](https://raw.githubusercontent.com/GluuFederation/oxRay/master/img/oauth_login.jpg)
 
-* Request for Permission
-	* This screen is configurable depending upon your oAuth Server Implementation.
+* Request for permission
+	* This screen can be configured depending upon your OAuth Server
+      implementation.
 
 ![oauth_info_confirm](https://raw.githubusercontent.com/GluuFederation/oxRay/master/img/oauth_info_confirm.jpg)
 
-* oAuth Callback (User auto-login to liferay)
-	* After successful authentication with oAuth server, IDP will send callback to liferay with code as parameter
- 
-`http://localhost:8080/openidconnect/callback?code=xxx`
- 
-This will intercepted by our oxAuth LifeRay plugin and upon validation of token with Gluu IDP internally, it will auto login user to LifeRay and users will be redirected to respective home page.
+* OAuth callback (user auto-login to LifeRay)
+	* After a successful authentication with the OAuth server, IdP will
+send a callback to LifeTay with a specific code as a parameter:
+
+```
+http://localhost:8080/openidconnect/callback?code=xxx`
+```
+
+This will be intercepted by our oxAuth LifeRay plugin. Upon validation
+of the token with the Gluu IdP, it will result in login of the user to
+the LifeRay. The user will be redirected to hist respective start page.
 
 ![liferay_success_login](https://raw.githubusercontent.com/GluuFederation/oxRay/master/img/liferay_success_login.jpg)
 
