@@ -31,11 +31,16 @@ standard LifeRay hot deployable war.
 
 ### Deploying WAR file using Maven
 
-Prerequisite: Make sure you have maven installed on your system to build this plugin.
- 
-1. Checkout maven source from [oxRay Repository](https://github.com/Gluufederation/oxRay/6.2.x/maven)
+This requires a prerequisite: make sure that you have [Maven][maven]
+installed on your system to build this plugin from source.
 
-2. Open pom.xml in gluu-openid-connect-hook and update your local liferay tomcat bundle path. This is required for building `war` file and deploying to liferay tomcat bundle.  
+1. Checkout the Maven source from the [oxRay
+Repository](https://github.com/Gluufederation/oxRay/6.2.x/maven).
+
+2. Open the file `pom.xml` in `gluu-openid-connect-hook`, and update
+your local LifeRay Tomcat bundle path. This is required for building the
+`war` file and deploying to the LifeRay Tomcat bundle.
+
 ![configure_pom_xml](https://raw.githubusercontent.com/GluuFederation/oxRay/master/img/configure_pom_xml.jpg)
 
 3. Goto command prompt - under gluu\6.2.x\maven\gluu-openid-connect-hook directory and Run
