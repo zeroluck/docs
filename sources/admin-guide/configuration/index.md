@@ -573,28 +573,44 @@ upgraded sections here:
   operation and integrity of any custom script such as a Jython Script.
 
 ## Customizing Behavior
-Specifics about the behavior of Cache Refresh can be customized within the custom scripts section. Please see more information [here](../../reference/interception-scripts/index.md#cache-refresh)
+
+Specifics about the behavior of Cache Refresh can be customized within
+the custom scripts section. Please see more information
+[here](../../reference/interception-scripts/index.md#cache-refresh).
 
 # Configure Log Viewer
 
-Gluu Server has the facility to read log files using the GUI. The log file can be displayed from the Web UI with a few clicks of the mouse. This feature can be enabled from the configuration menu clicking **Configuration --> Configure Log Viewer.**
+The Gluu Server has the facility to read log files using the GUI. The
+log file can be displayed from the Web UI with a few clicks of the
+mouse. This feature can be enabled from the configuration menu clicking
+**Configuration --> Configure Log Viewer**.
 
 ![Configure Log Viewer](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_logviewer.png)
 
-Clicking on **Add log template** will bring two boxes. The boxes on the left contains the name/description of the log file, and the right boxes contain the path of the log file such as _/opt/tomcat/logs/demo.log._
+Clicking on **Add log template** will bring two boxes. The box on the
+left contains the name/description of the log file, and the right box
+contains the path of the log file such as `/opt/tomcat/logs/demo.log`.
 
 # View Log File
 
-The log files configured in the earlier section can be viewed using the **View log file** feature. This feature can be accessed through the configuration menu using **Configuration --> View Log File.**
+The log files configured in the earlier section can be viewed using the
+**View log file** feature. This feature can be accessed through the
+configuration menu using **Configuration --> View Log File**.
 
 ![View Log File](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_view_log.png)
 
-The **Display last lines count** field contains the lines that will be displayed in the Web GUI. If the field contains the value **400**, then the Gluu Server will show the last 400 lines of the log in the GUI. The screenshot below shows an example.
+The **Display last lines count** field contains the lines that will be
+displayed in the Web GUI. If the field contains the value **400**, then
+the Gluu Server will show the last 400 lines of the log in the GUI. The
+screenshot below shows an example.
 
 ![Log file tail](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_view_logtail.png)
 
 # Status
 
 ![Status](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_status.png)
-The Status section provides a high level overview of server metrics. The included values are straightforward and shouldn't require any further explanation. 
+
+The Status section provides a high level overview of server metrics. The
+included values are straightforward and shouldn't require any further
+explanation.
 
