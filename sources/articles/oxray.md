@@ -86,9 +86,13 @@ will see the following success message in your LifeRay Tomcat server:
 
 ### Client Registration
 
-LifeRay application need to be register with Authorization server before initiating authentication request/response with oAuth IDP server.
- 
-Following steps are necessary, to obtain client id and client secret that will be used with liferay portal-ext.properties.
+A LifeRay application needs to be registered with the Authorization
+server before initiating an authentication request/response with OAuth
+IdP server.
+
+The following steps are necessary to obtain both a client id and a
+client secret. These data will be used within the LifeRay portal
+properties.
 
 1. Go to `https://seed.gluu.org/oxauth-rp/home.seam`
 2. You will see Dynamic Client Registration Section
