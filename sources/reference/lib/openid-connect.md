@@ -3,15 +3,15 @@
 ## Gluu Core Libraries
 
 The Gluu Server's OpenID Connect components are all MIT open source. That means you can use either our server or
-client libraries in your product or project, even if its a part of a commercial product!
+client libraries in your project, even if its a part of a commercial product!
 
- - oxAuth-Server: [Source Code](https://github.com/GluuFederation/oxAuth/tree/master/Server).
- - oxAuth-Client: Download [Binary Packages](http://ox.gluu.org/maven/org/xdi/oxauth-client/)
-   [Source Code](https://github.com/GluuFederation/oxAuth/tree/master/Client).
- - oxAuth-RP: A sample Web based OpenID Connect Relying Party developed using our oxAuth-Client libraries.
- Download [Binary Packages](http://ox.gluu.org/maven/org/xdi/oxauth-rp/)
-  [Source Code](https://github.com/GluuFederation/oxAuth/tree/master/RP).
- - Core JavaDocs are [here](http://ox.gluu.org/oxauth-javadocs/apidocs/)
+- oxAuth-Server: [Source Code](https://github.com/GluuFederation/oxAuth/tree/master/Server).
+- oxAuth-Client: Download [Binary Packages](http://ox.gluu.org/maven/org/xdi/oxauth-client/)
+[Source Code](https://github.com/GluuFederation/oxAuth/tree/master/Client).
+- oxAuth-RP: A sample Web based OpenID Connect Relying Party developed using our oxAuth-Client libraries.
+Download [Binary Packages](http://ox.gluu.org/maven/org/xdi/oxauth-rp/)
+[Source Code](https://github.com/GluuFederation/oxAuth/tree/master/RP).
+- Core JavaDocs are [here](http://ox.gluu.org/oxauth-javadocs/apidocs/)
  
 ## OXD
 
@@ -23,7 +23,7 @@ handles much of the communication with the OpenID Provider.
 
 oxd has a very simple web API, which enables either a java, python or php app to use openid connect by implementing
 only a small number of methods. For more information, see
- - [oxd-python](https://github.com/GluuFederation/oxd-python)
- - [oxd-php](https://github.com/GluuFederation/oxd-php)
- - [oxd-java](https://github.com/GluuFederation/oxd/tree/master/oxd-client)
+- [oxd-python](https://github.com/GluuFederation/oxd-python)
+- [oxd-php](https://github.com/GluuFederation/oxd-php)
+- [oxd-java](https://github.com/GluuFederation/oxd/tree/master/oxd-client)
 
