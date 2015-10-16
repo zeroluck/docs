@@ -161,9 +161,11 @@ Interface. However, this option is yet to be tested properly.
 
 * _Description:_ This feature is yet to be tested for any change in the IdP.
 
-* _Login Page Message:_ The login page now uses oxAuth Web UI and the changes made in this field will not affect the IdP.
+* _Login Page Message:_ The login page now uses oxAuth Web UI. The
+  changes made in this field will not affect the IdP.
 
-* _Welcome Title Text:_ The Gluu Server Administrator can add custom welcome text tile with this feature.
+* _Welcome Title Text:_ With this feature, the Gluu Server Administrator
+  can add custom welcome text here.
 
 ![Welcome Title Text](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_config_welcome.png)
 
@@ -171,16 +173,24 @@ Interface. However, this option is yet to be tested properly.
 
 ![Welcome Page Message](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_config_message.png)
 
-* _Manager Group:_ Gluu server has a single manager group. The users under the manager group can use the Web User Interface to operate the Gluu Server. There is no limit to the users that can be added to the manager group.
+* _Manager Group:_ Gluu Server has a single manager group. The users
+that belong to the manager group can use the Web User Interface to
+operate the Gluu Server. There is no limit to the number of users that
+can belong to the manager group.
 
 * _Organization Logo:_ The organization logo can be uploaded and activated from the configuration menu.
 
 * _Organization Favicon:_ This feature can be used to change the organization favicon, if necessary.
 
-* _Menu Color:_ This is the menu color picker for the Gluu Server User Interface. The color used in the demo screenshots is Green.
+* _Menu Color:_ This is the menu color picker for the Gluu Server User Interface. The color used in the demo screenshots is green.
 
 # Manage Authentication
-This section allows the Gluu Server Administrator to define how and where the server should connect to authenticate users. If it is a remote LDAP/Active Directory server, the values are required. Put the details of the data source that you are trying to connect with Gluu Server. The data source can your back-end Active Directory or local LDAP server. 
+This section allows the Gluu Server Administrator to define how and
+where the server should connect to authenticate users. If it is a remote
+LDAP/Active Directory server, the values are required. Put the details
+of the data source that you are trying to connect with Gluu Server. The
+data source can be your back-end Active Directory or your local LDAP
+server.
 
 ![Manage LDAP Authentication](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_manage_ldap.png)
 
