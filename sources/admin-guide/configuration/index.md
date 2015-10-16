@@ -356,17 +356,18 @@ appear:
 
 * _Name:_ This field defines the name of the custom attribute which must be unique in the Gluu Server LDAP tree.
 
-* _SAML1 URI:_ This field contains the SAML1 URI for the custom attribute.
+* _SAML1 URI:_ This field contains the SAML1 uri for the custom attribute.
 
-* _SAML2 URI:_ This field contains the SAML2 URI for the custom attribute.
+* _SAML2 URI:_ This field contains the SAML2 uri for the custom attribute.
 
 * _Display Name:_ This display name can be anything that is human readable.
 
-* _Type:_ The attribute type should be selected from the drop-down menu. There are four attribute types supported by Gluu:    
-  1. Text	
-  2. Numeric	
-  3. Photo	
-  4. Date	
+* _Type:_ The attribute type should be selected from the drop-down menu. There are four attribute types supported by Gluu:
+
+  1. text
+  2. numeric
+  3. photo
+  4. date
 
 * _Edit Type:_ This field defines the user who has access to edit the specific attribute.
 
@@ -376,11 +377,13 @@ appear:
 
 * _Multivalued:_ Please select multivalue in this field if the attribute contains more than one value.
 
-* _SCIM Attributes:_ If the attribute is a part of SCIM architecture select true.
+* _SCIM Attributes:_ If the attribute is a part of SCIM architecture
+  select `true` from the list of options.
 
 * _Description:_ This contains a few words to describe the attribute.
 
-* _Status:_ The status, when selected active, will release and publish the attribute in IdP. The status, when selected active, will release and publish the attribute in IdP.
+* _Status:_ The status, when selected active, will release and publish
+  the attribute in IdP.
 
 # Cache Refresh
 
