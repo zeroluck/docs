@@ -126,19 +126,30 @@ screenshot:
 
 #### Modifying portal.properties
 
-It is necessary to modify `portal-ext.properties` file to reflect oxAuth server client credentials and server's URL. It can accomplished by navigating into `liferay-portal-6.2.0-ce-ga1\` folder , where `portal-ext.properties` resides.
+It is necessary to modify `portal-ext.properties` file to reflect oxAuth
+server client credentials and server's URL. It can be accomplished by
+navigating into the `liferay-portal-6.2.0-ce-ga1` folder, where the file
+`portal-ext.properties` is stored.
 
-Note: To activate or deactivate oxAuth plugin put `true` to activate and `false` to deactivate.
-    
-`gluu.openidconnect.auth.enabled=true`
-     
-* oxAuth client ID and Client Secret.
+Note: To either activate or deactivate the oxAuth plugin put the value
+`true` (to activate) or `false` (to deactivate), respectively.
+
+```
+gluu.openidconnect.auth.enabled=true
+```
+
+* oxAuth client ID and client secret:
+
 ```
 gluu.openidconnect.client.id=@!1111!0008!51CE.1E59
 gluu.openidconnect.client.secret=65777eb7-87a8-4d60-9dbc-d31d43971f2b
 ```
-* oAuth Server Domain  
-`gluu.openidconnect.idp.domain=https://idp.gluu.org`
+
+* OAuth server domain
+
+```
+gluu.openidconnect.idp.domain=https://idp.gluu.org`
+```
 
 * oAuth Server Auto discovery url
 `gluu.openidconnect.url.discovery=https://idp.gluu.org/.well-known/openid-configuration`
