@@ -10,30 +10,32 @@
 
 # Starting Gluu Server chroot environment
 
-To start the the Gluu Server chroot environment, use the command:
+To start the Gluu Server chroot environment, use the command:
 
-`/etc/init.d/gluu-chroot start` 
+```
+/etc/init.d/gluu-chroot start
+```
 
 Sample result of running the command is as follows:
 
-	root@gluu:~# /etc/init.d/gluu-chroot start
-	Starting Gluu Chroot Server: Starting OpenDJ: 
-	Rather than invoking init scripts through /etc/init.d, use the service(8)
-	utility, e.g. service S20cron start
-	initctl: Unknown job: S20cron
-	
-	Since the script you are attempting to invoke has been converted to an
-	Upstart job, you may also use the start(8) utility, e.g. start S20cron
-	Starting Tomcat Servlet Container...
-	Waiting for Tomcat Servlet Container......
-	running: PID:11767
- 	* Starting NTP server ntpd                                                                                                                                      [ OK ] 
- 	* Starting web server apache2                                                                                                                                          AH00557: apache2: apr_sockaddr_info_get() failed for DA855F9895A1CA3B00020B185D7A.gluu.info
-	AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.0.1. Set the 'ServerName' directive globally to suppress this message
- 	* 
+```
+root@gluu:~# /etc/init.d/gluu-chroot start
+Starting Gluu Chroot Server: Starting OpenDJ: 
+Rather than invoking init scripts through /etc/init.d, use the service(8)
+utility, e.g. service S20cron start
+initctl: Unknown job: S20cron
 
-
-# Stopping Gluu Server chroot environment
+Since the script you are attempting to invoke has been converted to an
+Upstart job, you may also use the start(8) utility, e.g. start S20cron
+Starting Tomcat Servlet Container...
+Waiting for Tomcat Servlet Container......
+running: PID:11767
+* Starting NTP server ntpd                                                                                                                                      [ OK ] 
+* Starting web server apache2                                                                                                                                          AH00557: apache2: apr_sockaddr_info_get() failed for DA855F9895A1CA3B00020B185D7A.gluu.info
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.0.1. Set the 'ServerName' directive globally to suppress this message
+*
+```
+# Stopping Gluu Server chroot Environment
 
 To stop Gluu Server chroot environment, we simply issue the command::
 
