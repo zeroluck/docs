@@ -2,7 +2,8 @@
 
 ## Performance Tuning
 
-Gluu Server has stateless architecture, it scales quite easy. However to get high-performant server it must be tuned accordingly.
+Gluu Server has a stateless architecture, it scales quite easy. However
+to get high-performant server it must be tuned accordingly.
 
 Tuning consists of:
 
@@ -12,29 +13,32 @@ Tuning consists of:
 
 ### LDAP Server
 
-(For convenience all samples sticks to OpenDJ however general recommendations are the same for other LDAP Servers)
+(For convenience all samples stick to OpenDJ however general recommendations are the same for other LDAP Servers)
 
-1. Maximum allowed connections
+1. Maximum number of allowed connections
 
-If there is not enough connections to serve the client, connection is put "on hold" and waits. To avoid delays it's recommended to provide expected maximum allowed connections.
+If there are not enough connections to serve the client, a connection is
+put "on hold" and waits. To avoid delays it's recommended to provide
+expected maximum allowed connections.
 
 ```
- max-allowed-client-connections=1000
+max-allowed-client-connections=1000
 ```
 
 2. Provide enough resources to LDAP Server
 
-For example OpenDJ use JVM for running, for high performance it's recommended to give enough memory via JVM system properties.
+For example OpenDJ use JVM for running, for high performance it's
+recommended to give enough memory via JVM system properties.
 
 3. Allow LDAP Server use cache as much as possible.
 
 ```
-    dsconfig -n set-backed-prop --backend-name userRoot --set db-cache-percent:50
+dsconfig -n set-backed-prop --backend-name userRoot --set db-cache-percent:50
 ```
 
 ### Tomcat
 
-  1. Set maxmimum for parallel requests.
+  1. Set maximum for parallel requests.
 
 Connector parameters in server.xml:
 
