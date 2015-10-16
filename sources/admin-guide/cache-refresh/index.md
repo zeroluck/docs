@@ -135,15 +135,15 @@ enable 'Keep External Person', your 'admin' user including all other
 test users will be gone after the first Cache Refresh iteration.
 
 2. Test if you were able to successfully import all your users
-information into the Gluu Server or not. After 10-30 mins, check user's
-information in the Gluu Server. If everything looks good you can move
-forward.
+information into the Gluu Server or not. After 10-30 minutes, check
+user's information in the Gluu Server. If everything looks good you can
+move forward.
 
 3. Configure Authentication Manager. Provide your backend information
 here. Test LDAP connection. If both look good and work as expected, you
 can 'Update' this setup.
 
-4. Open a new browser and try to log into Gluu Server with you AD
-credential. If you fail, check logs for failure.
+4. Open a new browser and try to log into Gluu Server with your AD
+credentials. If you fail, check the log files for failure information.
 
 [ldap]: https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol "Lightweight Directory Access Protocol (LDAP), Wikpedia"
