@@ -4,9 +4,9 @@
 
 ### System Preparation
 
-__Add Shibboleth repo for CentOS__
+__Add Shibboleth repository for CentOS__
 
-* Contents of shib.repo
+* Contents of `shib.repo`
 
 ```
 [security_shibboleth]
@@ -18,24 +18,28 @@ gpgkey=http://download.opensuse.org/repositories/security:/shibboleth/CentOS_Cen
 enabled=1
 ```
 
-* http://download.opensuse.org/repositories/security:/shibboleth/CentOS_CentOS-6/security:shibboleth.repo
+* `http://download.opensuse.org/repositories/security:/shibboleth/CentOS_CentOS-6/security:shibboleth.repo`
 
 ### Shibboleth SP Installation
+
 Please run the following commands to install the Shibboleth SP.
 
-* yum install shibboleth
-* service shibd start
-* chkconfig shibd on
+```
+yum install shibboleth
+service shibd start
+chkconfig shibd on
+```
 
 ### Install and Configure httpd
 #### Installation
 
-The following commands will install and start the Apache server on your machine/linux environment.
+The following commands will install and start the Apache server on your machine/Linux environment.
 
-* yum install httpd
-* service httpd start
-* Stop the firewall
-
+```
+yum install httpd
+service httpd start
+Stop the firewall
+```
 
 #### Configuration
 Edit 'httpd.conf' with following changes.
@@ -105,11 +109,11 @@ This section describes how to configure "shibboleth2.xml" file.
 
 	* EntityID of SP: `ApplicationDefaults entityID="http://hostname/secure"`
 
-	* Privide EntityID of IDP: `SSO entityID="https://idp.gluu.org/idp/shibboleth"`
+	* Provide EntityID of IDP: `SSO entityID="https://idp.gluu.org/idp/shibboleth"`
 
 	* Metadata Provider, IDP: `MetadataProvider type="XML" uri="https://idp.gluu.org/idp/shibboleth"`
 
-* Restart shibd and apache2
+* Restart shibd and Apache2
 
 * Create Trust Relationship for this SP in your desired IdP.
 
@@ -180,7 +184,7 @@ a![IMAGE](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/i
 
 3. 'Shibboleth2.xml' configuration
 
-	1. Change: Host name=“localhost” ( for local testging )
+	1. Change: Host name=“localhost” ( for local testing )
     
 	2. Change: entityID=“https://localhost/shibboleth” ( for local testing )
     
