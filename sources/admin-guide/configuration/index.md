@@ -269,11 +269,19 @@ comprehensively go over [how to use
 them](../../reference/interception-scripts/index.md).
 
 # Manage Registration
+
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/registration/ManageRegistrationStart.jpg?raw=true)
 
-From the Manage Registration interface, the Gluu Server admin can customize the self-registration workflow. Each option will be covered individually below.
+From the Manage Registration interface, the Gluu Server admin can
+customize the self-registration workflow. Each option will be covered
+individually below.
 
-There are other ways of creating accounts within the Gluu Server, including: SCIM, Cache Refresh, Manual User Management, and Automatic Enrollment as part of custom authentication (Inbound SAML). Except Cache Refresh, which is covered [here](#cache-refresh), those additional methods are covered within the [User Management](../user-management/index.md) portion of the documentation.
+There are other ways of creating accounts within the Gluu Server. This
+includes SCIM, Cache Refresh, Manual User Management, and Automatic
+Enrollment as part of custom authentication (Inbound SAML). Except Cache
+Refresh, which is covered [here](#cache-refresh), those additional
+methods are covered within the [User
+Management](../user-management/index.md) portion of the documentation.
 
 ## Activate Invitation Link
 When active, the Invitation Links feature allows the server admin to control who can register an account by issuing a unique registration link and sending it to the desired new users.
