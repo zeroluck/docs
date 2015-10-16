@@ -135,9 +135,11 @@ Let's create the Apache config file now. Create a file named
 ```
 
 Here, both certificate and key files already exist on the server. You
-can use your own, too. Next, restart the Apache service as:
+can use your own, too. Next, enable the site by running the
+`a2ensite`command, and restart the Apache service as:
 
 ```
+a2ensite dynamic.conf
 service httpd restart
 ```
 
@@ -219,11 +221,14 @@ below:
 ```
 
 Instead of pre-existing cert and key files, feel free to use your own.
-Next, restart the Apache service as below:
+Next, enable the static site by running the `a2ensite` command, and
+restart the Apache service as below:
 
 ```
+a2ensite static.conf
 service httpd restart
 ```
+
 Now, try to access [this page](https://static.gluu.org:44443/static),
 and you should see the oxAuth page from gluuCE where you enter the
 credentials for authentication.

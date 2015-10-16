@@ -232,19 +232,17 @@ contents as below:
 ```
 
 Instead of pre-existing cert and key files, feel free to use your own.
+Next, enable the site by running this command, and restart the Apache
+service as below:
 
-Enable the site by running this command:
+```
+a2ensite static.conf
+service httpd restart
+```
 
-* a2ensite  dynamic.conf
-
-
-Now, restart the apache service as below:
-
-
-* service httpd restart
-
-
-Now, try to access [this page](https://static.gluu.org:44443/static), and you should see the oxAuth page from gluuCE where we enter the credentials for authentication. 
+Now, try to access [this page](https://static.gluu.org:44443/static),
+and you should see the oxAuth page from gluuCE where you enter the
+credentials for authentication.
 
 ![IMAGE](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/mod_auth_oidc/oxauth_authentication.png)
 
