@@ -218,75 +218,68 @@ below:
 ```
 
 Instead of pre-existing cert and key files, feel free to use your own.
+Next, restart the Apache service as below:
 
-
-Now, restart the apache service as below:
-
-
-* service httpd restart
-
-
-Now, try to access [this page](https://static.gluu.org:44443/static), and you should see the oxAuth page from gluuCE where we enter the credentials for authentication. 
+```
+service httpd restart
+```
+Now, try to access [this page](https://static.gluu.org:44443/static),
+and you should see the oxAuth page from gluuCE where you enter the
+credentials for authentication.
 
 ![IMAGE](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/mod_auth_oidc/oxauth_authentication.png)
 
-Chances are there that you'll see the below error after logging in: 
-
+Chances are there that you'll see this error after logging in: 
 
 ```
-
 Error:
 
 The OpenID Connect Provider returned an error: Error in handling response type.
-
 ```
 
-And that, the apache log at the client side as below:
+The according Apache log looks like that:
 
 ```
-
 [Fri Jun 05 14:48:28 2015] [error] [client 124.253.60.123] oidc_proto_validate_idtoken: id_token JSON payload did not contain the required-by-spec "sub" string value, referer: https://static.gluu.org:44443/static/fake_redirect_uri
 [Fri Jun 05 14:48:28 2015] [error] [client 124.253.60.123] oidc_proto_parse_idtoken: id_token payload could not be validated, aborting, referer: https://static.gluu.org:44443/static/fake_redirect_uri
-
 ```
 
+To solve this problem, log into the gluuCE server by running the
+following command:
 
-To solve this problem, log into the gluuCE server by running following command:
-
-
-* service gluu-server login
-
-
+```
+service gluu-server login
+```
 
 ### Getting DN from Client ID
 
-We get the client id from the search performed in gluu-server's Web UI. So, to get the DN part we perform the below command. The ldap password can be stored in /root/.pw or at any convenient location. In our case the command was:
-
-
-* /opt/opendj/bin/ldapsearch -T -X -Z -p 1636 -D "cn=Directory Manager" -j /root/.pw -s sub -b "o=gluu" 'inum=@!C648.9803.5565.E5CB!0001!0DB0.EEDB!0008!7728.5650' 
-
-
-Create a file named __mod.ldif__ with the contents given below. The DN part to be used in __mod.ldif__ is obtained from above command's output.
-
+We get the client id from the search performed in gluu-server's Web UI.
+So, to get the DN part we perform the below command. The LDAP password
+can be stored in `/root/.pw` or at any other location that is convenient
+for you. In our case the command is:
 
 ```
+/opt/opendj/bin/ldapsearch -T -X -Z -p 1636 -D "cn=Directory Manager" -j /root/.pw -s sub -b "o=gluu" 'inum=@!C648.9803.5565.E5CB!0001!0DB0.EEDB!0008!7728.5650'
+```
+Create a file named `mod.ldif` with the contents given below. The DN
+part to be used in `mod.ldif` is obtained from output of the command
+above:
 
+```
 dn: inum=@!C648.9803.5565.E5CB!0001!0DB0.EEDB!0008!7728.5650,ou=clients,o=@!C648.9803.5565.E5CB!0001!0DB0.EEDB,o=gluu
 changetype: modify
 add: oxAuthSubjectIdentifier
 oxAuthSubjectIdentifier: @!C648.9803.5565.E5CB!0001!0DB0.EEDB!0008!7728.5650
+```
 
-``` 
+Then, run the `ldapmodify` command to insert the
+__oxAuthSubjectIdentifier__ as below:
 
+```
+/opt/opendj/bin/ldapmodify -Z -X -h localhost -p 1636 -D "cn=Directory Manager" -j /root/.pw -f /root/mod.ldif
+```
 
-Then run the __ldapmodify__ command to insert the __oxAuthSubjectIdentifier__ as below:
-
-
-* /opt/opendj/bin/ldapmodify -Z -X -h localhost -p 1636 -D "cn=Directory Manager" -j /root/.pw -f /root/mod.ldif
-
-
-
-The command may vary depending upon your using.
-
-Then again access [this page](https://static.gluu.org:44443/static) and you should see the success message.
+The command may vary depending upon your installation. Next, access
+[this page](https://static.gluu.org:44443/static), and the success
+message should be visible.
 
