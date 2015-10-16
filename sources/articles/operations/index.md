@@ -108,16 +108,22 @@ CentOS it's called httpd.
 
 # Restarting Tomcat Service
 
-The tomcat service is restarted in same way in both CentOS and Ubuntu.
-Below is the command:
-`/etc/init.d/tomcat  restart` 
+The Tomcat service is restarted in the same way in CentOS, Debian, and
+Ubuntu. Below is the command:
+
+```
+/etc/init.d/tomcat restart
+```
 
 The sample run is as follow:
 
-	GLUU.root@DA855F9895A1CA3B00020B185D7A:~# /etc/init.d/tomcat restart
-	Stopping Tomcat Servlet Container...
-	Stopped Tomcat Servlet Container.
-	Starting Tomcat Servlet Container...
-	Waiting for Tomcat Servlet Container......
-	running: PID:6967
-	GLUU.root@DA855F9895A1CA3B00020B185D7A:~# 
+```
+GLUU.root@DA855F9895A1CA3B00020B185D7A:~# /etc/init.d/tomcat restart
+Stopping Tomcat Servlet Container...
+Stopped Tomcat Servlet Container.
+Starting Tomcat Servlet Container...
+Waiting for Tomcat Servlet Container......
+running: PID:6967
+GLUU.root@DA855F9895A1CA3B00020B185D7A:~#
+```
+
