@@ -40,20 +40,31 @@ try to update the package database of your system using this command:
 yum upgrade
 ```
 
-Confirm presence of the the mod file as below:
+Next, make sure that the following shared-object file exists:
 
+```
+ls -l /usr/lib64/httpd/modules/mod_auth_openidc.so
+```
 
-* ls -l /usr/lib64/httpd/modules/mod_auth_openidc.so 
+Next, create an **Apache _conf_** file for loading this module.
 
+```
+cat "LoadModule auth_openidc_module modules/mod_auth_openidc.so" > /etc/httpd/conf.d/mod_auth_openidc.conf
+```
 
-Next, create an **apache _conf_** file for loading this module, and start the apache service (running gluuCE at **ce.gluu.org**).
+The file xxx will contain these lines:
 
+```
+LoadModule auth_openidc_module modules/mod_auth_openidc.so
+Listen 44443
+```
 
-* cat "LoadModule auth_openidc_module modules/mod_auth_openidc.so" > /etc/httpd/conf.d/mod_auth_openidc.conf
-* service httpd start
+This Apache mod should now be listening on port **44443**. To enable
+this, start the Apache service (running gluuCE at **ce.gluu.org**):
 
-
-Apache mod should be using port **44443**.
+```
+service httpd start
+```
 
 ### Client Registration
 
