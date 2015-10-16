@@ -232,8 +232,8 @@ contents as below:
 ```
 
 Instead of pre-existing cert and key files, feel free to use your own.
-Next, enable the site by running this command, and restart the Apache
-service as below:
+Next, enable the static site by running the `a2ensite` command, and
+restart the Apache service as below:
 
 ```
 a2ensite static.conf
@@ -246,33 +246,27 @@ credentials for authentication.
 
 ![IMAGE](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/mod_auth_oidc/oxauth_authentication.png)
 
-Chances are there that you'll see the below error after logging in: 
-
+Chances are there that you'll see this error after logging in: 
 
 ```
-
 Error:
 
 The OpenID Connect Provider returned an error: Error in handling response type.
-
 ```
 
-And that, the apache log at the client side as below:
+The according Apache log looks like that:
 
 ```
-
 [Fri Jun 05 14:48:28 2015] [error] [client 124.253.60.123] oidc_proto_validate_idtoken: id_token JSON payload did not contain the required-by-spec "sub" string value, referer: https://static.gluu.org:44443/static/fake_redirect_uri
 [Fri Jun 05 14:48:28 2015] [error] [client 124.253.60.123] oidc_proto_parse_idtoken: id_token payload could not be validated, aborting, referer: https://static.gluu.org:44443/static/fake_redirect_uri
-
 ```
 
+To solve this problem, log into the gluuCE server by running the
+following command:
 
-To solve this problem, log into the gluuCE server by running following command:
-
-
-* service gluu-server login
-
-
+```
+service gluu-server login
+```
 
 ### Getting DN from Client ID
 
