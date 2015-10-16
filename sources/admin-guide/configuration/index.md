@@ -469,21 +469,27 @@ Please remember that a *failover server* is not a new server.
 
 ![Inum LDAP Server](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_inum.png)
 
-This section of the application allows the server administrator to connect to the internal LDAP of the Gluu Server.
+This section of the application allows the server administrator to
+connect to the internal LDAP of the Gluu Server.
 
-* _Name:_ This contains the name of the Gluu LDAP server. i.e. 'inumdb'
+* _Name:_ This contains the name of the Gluu LDAP server, i.e. `inumdb`.
 
-* _Bind DN:_ This field contains the username to connect to the internal server. Default BindDN for Gluu Server is: 'cn=directory manager' 
+* _Bind DN:_ This field contains the username to connect to the internal
+server. The default BindDN for Gluu Server is `cn=directory manager`.
 
-* _Use SSL:_ Please tick the checkbox because the SSL must be activated. 
+* _Use SSL:_ Please tick the checkbox because the SSL has to be
+  activated.
 
 * _Max Connections:_ The recommended number of connections is 2.
 
-* _Server:_ The hostname of the server with IP should be put here. Default Server address for Gluu Server is: localhost:1636
+* _Server:_ The hostname of the server with IP should be put here. The
+  default server address for the Gluu Server is `localhost:1636`.
 
-* _Base DN:_ This contains the Gluu Server LDAP tree which is allowed to access the user information. Default Base DN: ou=people,o=site
+* _Base DN:_ This contains the Gluu Server LDAP tree which is allowed to
+  access the user information. The default Base DN is `ou=people,o=site`.
 
-* _Enabled:_ Enabling this feature saves the values inside the Gluu server.
+* _Enabled:_ Enabling this feature saves the values inside the Gluu
+  Server.
 
 * _Change Bind Password:_ This option can be used to bind/change the password to connect to the internal LDAP of the Gluu Server. Bind Password is the same password which you inserted during installation of Gluu Server
 
