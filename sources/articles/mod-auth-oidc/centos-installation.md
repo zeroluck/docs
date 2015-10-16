@@ -149,7 +149,7 @@ enter `admin@ce.gluu.org`.
 
 The usual choice as per present used uris is: `admin@ce.gluu.org`. Note
 that you have to use an existing user at the gluuCE along with an
-existing uri. An example is `existing_user*@your.gluu.ce.server`.
+existing uri. An example is `existing_user@your.gluu.ce.server`.
 
 After this the *oxAuth* page from gluuCE is displayed where you enter
 the credentials for authentication.

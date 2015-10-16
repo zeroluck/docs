@@ -160,10 +160,12 @@ enter `admin@ce.gluu.org`.
 
 ![IMAGE](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/mod_auth_oidc/dynamic_discovery.png)
 
+The usual choice as per present used uris is: `admin@ce.gluu.org`. Note
+that you have to use an existing user at the gluuCE along with an
+existing uri. An example is `existing_user@your.gluu.ce.server`.
 
-The usual choice as per present used urls is: **admin@ce.gluu.org**. But you must use the existing user at the gluuCE along with existing url i.e *existing_user*@your.gluu.ce.server
-
-After this we are presented with the *oxAuth* page from gluuCE where we enter the credentials for authentication. 
+After this the *oxAuth* page from gluuCE is displayed where you enter
+the credentials for authentication.
 
 ![IMAGE](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/mod_auth_oidc/oxauth_authentication.png)
 
