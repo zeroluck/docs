@@ -94,28 +94,36 @@ The following steps are necessary to obtain both a client id and a
 client secret. These data will be used within the LifeRay portal
 properties.
 
-1. Go to `https://seed.gluu.org/oxauth-rp/home.seam`
-2. You will see Dynamic Client Registration Section
-3. Enter the Registration Endpoint Url eg: `https://idp.example.org/oxauth/seam/resource/restv1/oxauth/authorize`
-	* You can get this url from your idp auto-discovery url
-`https://<Your IDP Server Domain>/.well-known/openid-configuration`
-	* You can search for registration_endpoint and copy paste that url here.
-4. Enter the Redirect URI's as http://localhost:8080/openidconnect/callback
-	* Replace your domain name with localhost:8080
-	* This would be your liferay handler for autologging user to liferay, when redirect comes back from oAuth server. 
+1. Go to the location `https://seed.gluu.org/oxauth-rp/home.seam`.
+2. You will see the Dynamic Client Registration Section.
+3. Enter the Registration Endpoint uri, for example
+`https://idp.example.org/oxauth/seam/resource/restv1/oxauth/authorize`.
+	* You can derive this uri from your IdP auto-discovery uri which is
+like that: `https://<Your IDP Server Domain>/.well-known/openid-configuration`.
+	* You can search for the registration endpoint, and copy that uri here.
+4. Enter the redirect uris as `http://localhost:8080/openidconnect/callback`:
+	* Replace your domain name with `localhost:8080`
+	* This will be your LifeRay handler for logging a user into LifeRay,
+automatically, when a redirect comes back from the OAuth server.
 5. Select the Response Types: CODE
 6. Select the Application Type: WEB
-7. For development purpose use : NATIVE (if your testing on local machine with localhost:8080 domain)
-8. Enter Client Name: LifeRay App
-	* You can choose any name here. 
-9. All other options can be left as DEFAULT
-Please see the attached screenshot..  
+7. For development purposes use: NATIVE (if you are testing on a local
+machine with `localhost:8080` domain)
+8. Enter Client Name: LifeRay App (you can choose any name here).
+9. All other options can be left as they are--please see the attached
+screenshot:
+
 ![client_registration](https://raw.githubusercontent.com/GluuFederation/oxRay/master/img/dynamic_client_registration_screen1.jpg)
 
-10. Click `Submit` and the following `Registration Request` and `Registration Response` will appear.
+10. Click `Submit`, and both the following `Registration Request` and
+`Registration Response` will be displayed:
+
 ![json-request-response](https://raw.githubusercontent.com/GluuFederation/oxRay/master/img/json-request-response.jpg)
 
-11. Save the Registration Response to your local system. Parameters `client_id` and `client_secret` is used in LifeRay when configuring `portal-ext.properties`. 
+11. Save the Registration Response to your local system. The parameters
+`client_id` and `client_secret` are used in LifeRay when configuring
+`portal-ext.properties`.
+
 #### Modifying portal.properties
 
 It is necessary to modify `portal-ext.properties` file to reflect oxAuth server client credentials and server's URL. It can accomplished by navigating into `liferay-portal-6.2.0-ce-ga1\` folder , where `portal-ext.properties` resides.
