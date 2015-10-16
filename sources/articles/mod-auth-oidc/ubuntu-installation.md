@@ -62,13 +62,21 @@ sudo a2enmod auth_openidc
 sudo service apache2 restart
 ```
 
-Now, since we want to run this apache at port __44443__ ssl and __8000__ for non-ssl, we need to edit three files. The changes are done to avoid conflict with the gluu-server's apache ports. But, if the gluu-server server and apache servers are different, no need to change the ports. Change port numbers in the file: 
+Now, since we would like to run our Apache web server at port __44443__
+(for SSL), and __8000__ (for non-SSL), we need to edit three files. The
+changes are done to avoid a conflict with the Gluu Server's Apache
+ports. But, if the Gluu Server and the Apache server are different, no
+need to change the ports. Change port numbers in these files: 
 
-* /etc/apache2/ports.conf 
-* /etc/apache2/sites-available/000-default.conf
-* /etc/apache2/sites-available/default-ssl.conf
+* `/etc/apache2/ports.conf`
+* `/etc/apache2/sites-available/000-default.conf`
+* `/etc/apache2/sites-available/default-ssl.conf`
 
-And, restart apache2 service as mentioned above (last command). 
+Next, restart Apache 2 service:
+
+```
+sudo service apache2 restart
+```
 
 ### Client Registration
 
