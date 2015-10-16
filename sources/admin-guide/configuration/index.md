@@ -315,25 +315,42 @@ will be presented with the following option:
   the next account expiration process run.
 
 ## Disable captcha for registration form
-Upon activating this feature, the default Captcha will be removed from the registration form. 
+
+Upon activating this feature, the default Captcha will be removed from
+the registration form.
 
 ## Configure Registration Form Attributes
-By default, there are a limited number of fields present in the self-registration form. If more attributes are needed they can be added in this section of Registration Management. Once you activate this feature, just start typing the attribute name in the Attributes Filter and then add desired attributes to the right column and click "Update". 
+
+By default, there are a limited number of fields present in the
+self-registration form. If more attributes are needed they can be added
+in this section of Registration Management. Once you activate this
+feature, just start typing the attribute name in the Attributes Filter,
+add desired attributes to the right column, and click "Update" to
+complete this step.
 
 # Attributes
-An *Active* attribute list can be seen from the Configuration > Attributes section.
+
+An *Active* attribute list can be seen from the Configuration >
+Attributes section.
 
 ![Attribute Menu](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_attribute_menu.png)
 
-The Gluu Server has a large LDAP tree which includes all standard attributes. It is not necessary for all of them to be *Active*. The active LDAP trees can be sorted using the *Show only Active Attributes* link.
+The Gluu Server has a large LDAP tree which includes all standard
+attributes. It is not necessary for all of them to be *Active*. The
+active LDAP trees can be sorted using the *Show only Active Attributes*
+link.
 
 ![Show Active Attribute](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_attribute_show.png)
 
-The Gluu Server Administrator can make changes, such as changing the status to active/inactive, to an attribute after clicking on it.
+The Gluu Server Administrator can make modifications, such as changing
+the state of an attribute to active/inactive by clicking on the
+according attribute.
 
 ![Attributes](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_attribute_attribute.png)
 
-Additional attributes can be added from the Gluu Server GUI, oxTrust, by clicking the **Add Attribute** button. On clicking the **Add Attribute** button, the following screen shall appear.
+Additional attributes can be added from the Gluu Server GUI, oxTrust, by
+clicking on the **Add Attribute** button. The following screen will
+appear:
 
 ![Add Attribute Screen](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_attribute_add.png)
 
