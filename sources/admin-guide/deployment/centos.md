@@ -78,14 +78,16 @@ Make sure you remove or encrypt `setup.properties.last` It has the clear
 text passwords for everything: LDAP, admin user, keystores, and 3DES
 salt.
 
-If something goes wrong, check `setup.log` for a detailed step-by-step of the installation. Or check 
-`setup_errors.log` to just see the errors (or stderr output from the
-scripts).
+If something goes wrong, check `setup.log` for a detailed step-by-step
+of the installation. Or check `setup_errors.log` to just see the errors
+(or stderr output from the scripts).
 
 <!--
-If you want to script the installation of the Gluu Server, user the `-f` option or just save the 
-properties file as `setup.properties` and it will be automatically detected. Also use the `-n` option 
-to suppress the interactive confirmation to proceed. For example, to re-run the last installation:
+If you want to script the installation of the Gluu Server, user the `-f`
+option or just save the properties file as `setup.properties` and it
+will be automatically detected. Also use the `-n` option to suppress the
+interactive confirmation to proceed. For example, to re-run the last
+installation:
 
 `./setup.py -n -f setup.properties.last`
 -->

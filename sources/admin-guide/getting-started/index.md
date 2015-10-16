@@ -108,18 +108,16 @@ be found
 [here](../../reference/interception-scripts/index.md#authentication).
 
 ## Identity Management
-<<<<<<< HEAD
-To keep the Gluu Server up-to-date with the latest user information (a.k.a. attributes or claims), your organization can either "push" or "pull" identity data. In the "pull" mode, otherwise known as [LDAP Syncronization or Cache Refresh](../../admin-guide/cache-refresh/index.md), the Gluu Server can use an existing LDAP identity source like Microsoft Active Directory as the authoritative source of identity information. If you "push" identities to the Gluu Server, you can use the JSON/REST SCIM 1.1 or 2.0 API. 
-=======
+
 To keep the Gluu Server up-to-date with the latest user information
 (a.k.a. attributes or claims), your organization can either "push" or
 "pull" identity data. In the "pull" mode, otherwise known as [LDAP
-Synchronization or Cache Refresh](../../articles/cache-refresh.md), the
-Gluu Server can use an existing LDAP identity source like Microsoft
-Active Directory as the authoritative source of identity information. If
-you "push" identities to the Gluu Server, you can use the JSON/REST SCIM
-1.1 or 2.0 API.
->>>>>>> c069150258662f21a97093875580b8bc59520455
+Syncronization or Cache
+Refresh](../../admin-guide/cache-refresh/index.md), the Gluu Server can
+use an existing LDAP identity source like Microsoft Active Directory as
+the authoritative source of identity information. If you "push"
+identities to the Gluu Server, you can use the JSON/REST SCIM 1.1 or 2.0
+API.
 
 [Local user management](../user-management/index.md#local-user-management) 
 can also be performed inside the Gluu Server management interface.

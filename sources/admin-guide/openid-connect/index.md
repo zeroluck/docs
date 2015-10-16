@@ -2,21 +2,38 @@
 [TOC]
 
 # OpenID Connect
-Since [Interop 4](http://www.gluu.co/.fm8t) the Gluu Server has one of the most comprehensive
-implementations of OpenID Connect. The current results from [IntereOp 5](http://www.gluu.co/.iwjk),
-while not final, also put the Gluu Server at the top of the list.
+Since [Interop 4](http://www.gluu.co/.fm8t) the Gluu Server has one of
+the most comprehensive implementations of OpenID Connect. The current
+results from [IntereOp 5](http://www.gluu.co/.iwjk), while not final,
+also put the Gluu Server at the top of the list.
 
-[OpenID Connect](http://openid.net/connect) ("Connect") is a standard profile of OAuth2 which defines a protocol to enable a website or mobile application to send a person to a domain for authentication and required attributes (e.g. email address, first name, last name, etc.). Connect also provides some of the plumbing around authentication to automate how this happens. If a person is visiting a website for the  first time, the process that OpenID Connect defines is 100% bootstrapable by the website.  This is really critical for Interet scalability. To visit someone's website, or to send someone email, you don't need to get the system administrators involved. Connect provides the same type of scalable infrastructure, and promises to define a base level domain identification.
+[OpenID Connect](http://openid.net/connect) ("Connect") is a standard
+profile of OAuth2 which defines a protocol to enable a website or mobile
+application to send a person to a domain for authentication and required
+attributes (e.g. email address, first name, last name, etc.). Connect
+also provides some of the plumbing around authentication to automate how
+this happens. If a person is visiting a website for the first time, the
+process that OpenID Connect defines is 100% bootstrapable by the
+website. This is really critical for Internet scalability. To visit
+someone's website, or to send someone email, you don't need to get the
+system administrators involved. Connect provides the same type of
+scalable infrastructure, and promises to define a base level domain
+identification.
 
 ## New Jargon (taxonomy)
 
-If you are familiar with SAML, there are many parallels in OpenID Connect, but the jargon (or "taxonomy") is different. For example, instead of attributes, we have "user claims". Instead of Service Provider (SP), we have "client". Instead of Identity Provider (IDP), its OpenID Provider (OP).  
+If you are familiar with SAML, there are many parallels in OpenID
+Connect, but the jargon (or "taxonomy") is different. For example,
+instead of attributes, we have "user claims". Instead of Service
+Provider (SP), we have "client". Instead of Identity Provider (IDP), its
+OpenID Provider (OP).
 
 ## Discovery 
 
-The first thing you want to know about any OAuth2 API is where are the endpoints (i.e. 
-what are the URLs where you call the APIs). OpenID Connect provides a very simple
-mechanism to accomlish this: make a GET request to `https://<domain>/.well-known/openid-configuration`
+The first thing you want to know about any OAuth2 API is where are the
+endpoints (i.e. what are the URLs where you call the APIs). OpenID
+Connect provides a very simple mechanism to accomplish this: make a GET
+request to `https://<domain>/.well-known/openid-configuration`
 
 [OpenID Connect Discovery](http://openid.net/specs/openid-connect-discovery-1_0.html) is based on 
 a previous standard called [WebFinger](http://en.wikipedia.org/wiki/WebFinger). 
@@ -25,23 +42,36 @@ If you want to try a sample discovery request, you can make a GET request to [Gl
 
 ## Scopes
 
-In SAML, the IDP releases attributes to the SP. OpenID Connect provides similar functionality, 
-with more flexibility in case the person needs to self-approve the release of information from the IDP 
-to the website (or mobile application). In OAuth2, scopes can be used for various purposes. 
-OpenID Connect uses OAuth2 scopes to "group" attributes. For example, we could have a scope called "address"
-that includes the street, city, state, and country user claims. The Gluu Server defines six scopes by default.
+In SAML, the IDP releases attributes to the SP. OpenID Connect provides
+similar functionality, with more flexibility in case the person needs to
+self-approve the release of information from the IDP to the website (or
+mobile application). In OAuth2, scopes can be used for various purposes.
+OpenID Connect uses OAuth2 scopes to "group" attributes. For example, we
+could have a scope called "address" that includes the street, city,
+state, and country user claims. The Gluu Server defines six scopes by
+default.
 
 ![Scopes Screenshot](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_scope.png)
 
-The Gluu Server Administrator can easily add more scopes in the GUI. Click *Add Scope* and you'll be presented with the following screen: 
+The Gluu Server Administrator can easily add more scopes in the GUI.
+Click *Add Scope* and you'll be presented with the following screen:
 
 ![Add Scopes](http://www.gluu.org/docs/img/openid_connect/oxtrust_scope_screenshot.png "Screenshot of oxTrust add OpenID Connect Scope")
 
-You'll have the ability to provide a Display Name, Description, whether or not the scope is provided by default, and the claims that are included in the scope. 
+You'll have the ability to provide a Display Name, Description, whether
+or not the scope is provided by default, and the claims that are
+included in the scope.
 
-Default Scope needs some further explanation. When a client uses dynamic client registration, the OpenID Connect specification says that the `openid` scope should always be released, which contains an identifier for that person, normally the username. If you want to release another scope automatically, set the Default Scope to `true` for that scope. You can always explicitly release a scope to a certain client later on, but this will require some manual intervention by the domain administrator. 
+Default Scope needs some further explanation. When a client uses dynamic
+client registration, the OpenID Connect specification says that the
+`openid` scope should always be released, which contains an identifier
+for that person, normally the username. If you want to release another
+scope automatically, set the Default Scope to `true` for that scope. You
+can always explicitly release a scope to a certain client later on, but
+this will require some manual intervention by the domain administrator.
 
-To add more claims, simply click "Add Claim" and you'll be presented with the following screen:
+To add more claims, simply click "Add Claim" and you'll be presented
+with the following screen:
 
 ![Add Claims](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_scopeadd.png)
 
@@ -71,7 +101,7 @@ Clicking on the _Add Client_ link allows the Gluu Server Administrator to add ne
 
 * _Display Name:_ This contains the recognizable and unique display name of the client.
 
-* _Client Secret:_ This is the Data Encryption Standard scheme used by Confidential Clients to authenticate the token endpoints. The value for the secret can be inserted manually, but it is highly recommened to use the Dynamic Client Registration Endpoint. The Gluu oxAuth provides a random, generated Client Secret in the Dynamic Client Registration procedure.
+* _Client Secret:_ This is the Data Encryption Standard scheme used by Confidential Clients to authenticate the token endpoints. The value for the secret can be inserted manually, but it is highly recommended to use the Dynamic Client Registration Endpoint. The Gluu oxAuth provides a random, generated Client Secret in the Dynamic Client Registration procedure.
 
 * _Application Type:_ There are two types of applications, Web and Native. The different configuration for the different application types are given below.
 
@@ -99,7 +129,7 @@ Clicking on *Add URI* will open a new box to put the hostname in and it is done.
 * _Add Group:_ This feature can be used to affiliate specific groups.
 ![Add Group](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_addgroup.png)
 
-The existing groups can be listed by hitting the *Search* button keeping the search phrease blank.
+The existing groups can be listed by hitting the *Search* button keeping the search phrase blank.
 
 * _Add Scopes:_ This option can be used to add the required scopes in the Gluu Server.
 ![Add Scopes](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_addscope.png)
@@ -111,7 +141,7 @@ The available scopes can be listed by hitting the *Search* button keeping the se
 
 ### Custom Client Registration
 
-Using interception scripts you can customize client registration behavior. For example, by default oxAuth allows new clients access to default scopes only. With a custom client registration interception script it iss possible to allow access to more scopes. For instance, we can use redirect_uri to determine if we need to allow access to additional scopes or not. 
+Using interception scripts you can customize client registration behavior. For example, by default oxAuth allows new clients access to default scopes only. With a custom client registration interception script it is possible to allow access to more scopes. For instance, we can use redirect_uri to determine if we need to allow access to additional scopes or not. 
 
 To access the interface for custom scripts in oxTrust, navigate to Configuration > Custom Scripts > Custom Client Registration. 
 
@@ -135,7 +165,7 @@ a convenient solution to cleaning up resources.
 
 The OpenID Connect [Session Management](http://openid.net/specs/openid-connect-session-1_0.html) is
 still marked as draft, and new mechanisms for logout are in the works. The current specification 
-requires Javascript to detect that the session has been ended in the browswer. It works... unless
+requires Javascript to detect that the session has been ended in the browser. It works... unless
 the tab with the Javascript happens to be closed when the logout event happens on another tab. Also,
 inserting Javascript into every page is not feasible for some applications. A new proposal is under
 discussion where the OpenID Connect logout API would return `IMG` HTML tags to the browser

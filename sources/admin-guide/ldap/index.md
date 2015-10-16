@@ -1,14 +1,20 @@
 [TOC]
 # LDAP Configuration
-This section has information about how the Gluu Server uses LDAP, and other LDAP recommendations.
 
-The Gluu Server uses LDAP for persistence to store information about things like configuration, user claims, and client claims. Currently Gluu ships with a forked version of OpenDJ. However, we hope to bolster support for OpenLDAP and 389DS. If you are an LDAP guru please help us by contributing documentation details!
+This section has information about how the Gluu Server uses LDAP, and
+other LDAP recommendations.
+
+The Gluu Server uses LDAP for persistence to store information about
+things like configuration, user claims, and client claims. Currently
+Gluu ships with a forked version of OpenDJ. However, we hope to bolster
+support for OpenLDAP and 389DS. If you are an LDAP guru please help us
+by contributing documentation details!
 
 # Indexing
 
 All databases need proper indexing to function. This is particularly true for LDAP servers. 
 There should never be any `sub` or `one` scoped searches to the LDAP server that are not
-properly indexed. Because indexing is implemenation specific, the following guidelines 
+properly indexed. Because indexing is implementation specific, the following guidelines 
 should provide a good starting point. The LDAP server logs should be periodically analyzed to
 identify un-indexed searches. The exact indexing requirements may vary based on custom attributes,
 and custom authentication and authorization requirements.
@@ -52,9 +58,21 @@ For o=site cache refresh will search on the 'Primary Key'. So it will not be pos
 
 ## Configuring LDAP indexing to improve OX applications performance
 
-In order to keep optimal server load it's necessary to configure indexing for OpenDJ LDAP server. OpenDJ support these index types: approximate, equality, ordering, presence, substring, virtual list view, extensible matching rule. There is more information about index types in [OpenDJ Admin Guide](http://opendj.forgerock.org/opendj-server/doc/admin-guide/#indexes-overview). It's possible to add them for any LDAP attribute. OpenDJ will use them during searching result entries.
+In order to keep optimal server load it is necessary to configure
+indexing for OpenDJ LDAP server. OpenDJ support these index types:
+approximate, equality, ordering, presence, substring, virtual list view,
+extensible matching rule. There is more information about index types in
+[OpenDJ Admin
+Guide](http://opendj.forgerock.org/opendj-server/doc/admin-guide/#indexes-overview).
+It is possible to add them for any LDAP attribute. OpenDJ will use them
+during searching result entries.
 
-Default OpenDJ installation has few preconfigured indexes for these attributes: aci, cn, dn2id, ds-sync-conflict, ds-sync-hist, entryUUID, givenName, id2children, id2subtree, mail, member, objectClass, sn, telephone­Number, uid, unique­Member. This table contains definition of these indexes: [default Indexes](http://opendj.forgerock.org/opendj-server/doc/admin-guide/#default-indexes).
+Default OpenDJ installation has few preconfigured indexes for these
+attributes: aci, cn, dn2id, ds-sync-conflict, ds-sync-hist, entryUUID,
+givenName, id2children, id2subtree, mail, member, objectClass, sn,
+telephone­Number, uid, unique­Member. This table contains definition of
+these indexes: [default
+Indexes](http://opendj.forgerock.org/opendj-server/doc/admin-guide/#default-indexes).
 
 ## oxAuth filters
 
@@ -91,11 +109,16 @@ oxAuth has a few parts which allows custom LDAP filters:
 	    `</client-auth-filter-->`
 	`</client-auth-filters>`
 
-oxAuth uses them to find clients. Hence it's necessary to configure indexing for these filters. If there are no indexes for the filter attributes OpenDJ might use an unindexed search.
+oxAuth uses them to find clients. Hence it is necessary to configure
+indexing for these filters. If there are no indexes for the filter
+attributes OpenDJ might use an unindexed search.
 
 ## Determining what needs indexing
 
-OpenDJ has built in functionality to help the admin find unindexed searches. More information about this is available in the OpenDJ Admin Guide [Determining What Needs Indexing](http://opendj.forgerock.org/opendj-server/doc/admin-guide/#debug-search-indexes).
+OpenDJ has built in functionality to help the admin find unindexed
+searches. More information about this is available in the OpenDJ Admin
+Guide [Determining What Needs
+Indexing](http://opendj.forgerock.org/opendj-server/doc/admin-guide/#debug-search-indexes).
 
 ## Sample commands to add indexes
 
@@ -159,9 +182,10 @@ Determine current status of indexes.
 
 # Replication
 
-The Gluu Server was designed to take advantage of LDAP replication. Each server has its 
-own special configuration for replication. Below are some pointers to the respective platform's 
-documentation on how to manage replication.
+The Gluu Server was designed to take advantage of LDAP replication. Each
+server has its own special configuration for replication. Below are some
+pointers to the respective platform's documentation on how to manage
+replication.
 
 ## OpenDJ
 

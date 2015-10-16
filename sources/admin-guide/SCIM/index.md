@@ -34,14 +34,16 @@
 ## SCIM Overview
 
 The Simple Cloud Identity Management (SCIM) specification is a standard REST/JSON API to standardize user and group CRUD (create, read, update, delete). You can review the detailed specification at [http://www.simplecloud.info](http://www.simplecloud.info). 
-The specification seeks to build upon experience with existing schemas and deployments, placing specific emphasis on simplicity of development and integration, while applying existing authentication, authorization, and privacy models. It's intent is to reduce the cost and complexity of user management operations by providing a common user schema and extension model, as well as binding documents to provide patterns for exchanging this schema using standard protocols. In essence, make it fast, cheap, and easy to move users in to, out of, and around the cloud.
+The specification seeks to build upon experience with existing schemes and deployments, placing specific emphasis on simplicity of development and integration, while applying existing authentication, authorization, and privacy models. It's intent is to reduce the cost and complexity of user management operations by providing a common user schema and extension model, as well as binding documents to provide patterns for exchanging this schema using standard protocols. In essence, make it fast, cheap, and easy to move users in to, out of, and around the cloud.
 
 You can download a PDF copy of this guide from [HERE](https://github.com/GluuFederation/SCIM-Client/tree/master/doc/pdf).
 
 
 ## Specification
 
-SCIM is integrated as a service of oxTrust. To start operating with SCIM’s web service, you need to send a request to one of SCIM’s endpoints. 
+SCIM is integrated as a service of oxTrust. To start operating with
+SCIM’s web service, you need to send a request to one of SCIM’s
+endpoints.
 
 ### Available Endpoints
 
@@ -59,9 +61,16 @@ for **group operations**:
 
 ### Authentications
 
-You need to have a the right credentials and roles in order for you to access the endpoint example, which is for oxTrust means that you are a member of the Owner or Manager group specified in the organization entry. 
-Gluu’s SCIM web service uses both **Basic authentication** and **oAuth 2.0 authentication**. For the basic type of authentication you need to specify the user and password (base64 encoded) in the HTTP request HTTP header in order to be authenticated 
-Example :
+You need to have a the right credentials and roles in order for you to
+access the endpoint example, which is for oxTrust means that you are a
+member of the Owner or Manager group specified in the organization
+entry.
+Gluu’s SCIM web service uses both **Basic authentication** and **oAuth
+2.0 authentication**. For the basic type of authentication you need to
+specify the user and password (base64 encoded) in the HTTP request HTTP
+header in order to be authenticated.
+
+Example:
 
 ```
 POST https://localhost:8080/oxTrust/seam/resource/restv1/Users/ 
@@ -70,7 +79,10 @@ Authorization: Basic bWlrZTpzZWNyZXQ=
 ```
 Here we have sent user (Basic) and password (bWlrZTpzZWNyZXQ=) for basic authentication.
 
-For oAuth **2.0 authentication** you need to request an access token via the SCIM client API in order for you to be able to get authenticated, the example below shows how an access token is sent to SCIM webservice as a header:
+For oAuth **2.0 authentication** you need to request an access token via
+the SCIM client API in order to be able to get authenticated. The
+example below shows how an access token is sent to SCIM webservice as a
+header:
 
 ```
 POST https://localhost:8080/oxTrust/seam/resource/restv1/Users/ 
@@ -80,8 +92,8 @@ Authorization: Bearer 91732a27-fd00-487a-9dde-a6ed2fac6949
 
 ### Data representation formats
 
-A user is represented in two formats, JSON and XML and you can specify what kind of format you want to use by indicating that in your HTTP request .
-
+A user is represented in two formats, JSON and XML. You can specify what
+kind of format you want to use by indicating that in your HTTP request.
 
 * For JSON:
 
@@ -114,7 +126,6 @@ Now, we'll discuss possible SCIM operations in detail.
 
 In this example we will try to add a user in JSON and XML format: 
 
-
 * JSON request
 * Header
 
@@ -124,7 +135,7 @@ Accept: application/json
 Authorization: Bearer 91732a27-fd00-487a-9dde-a6ed2fac6949
 ```
 
-* Request content
+* Request Content
 
 ```
 {"schemas":["urn:scim:schemas:core:1.0"],"externalId":"john ","userName":"john ","name":{"givenName":"John","familyName":"Smith","middleName":"N/A","honorificPrefix":"N/A","honorificSuffix":"N/A"},"displayName":"John Smith","nickName":"Sensei","profileUrl":"http://www.gluu.org/","emails":[{"value":"john @gluu.org","type":"work","primary":"true"},{"value":"john 2@gluu.org","type":"home","primary":"false"}],"addresses":[{"type":"work","streetAddress":"621 East 6th Street Suite 200","locality":"Austin","region":"TX","postalCode":"78701","country":"US","formatted":"621 East 6th Street Suite 200 Austin , TX 78701 US","primary":"true"}],"phoneNumbers":[{"value":"646-234-5678","type":"work"}],"ims":[{"value":"nynyjohn ","type":"Skype"}],"photos":[{"value":"http://www.gluu.org/wp-content/themes/SaaS-II/images/logo.png","type":"gluu photo"}],"userType":"CEO","title":"CEO","preferredLanguage":"en-us","locale":"en_US","timezone":"America/Chicago","active":"true","password":"secret","groups":[{"display":"Gluu Manager Group","value":"@!1111!0003!B2C6"},{"display":"Gluu Owner Group","value":"@!1111!0003!D9B4"}],"roles":[{"value":"Owner"}],"entitlements":[{"value":"full access"}],"x509Certificates":[{"value":"MIIDQzCCAqygAwIBAgICEAAwDQYJKoZIhvcNAQEFBQAwTjELMAkGA1UEBhMCVVMxEzARBgNVBAgMCkNhbGlmb3JuaWExFDASBgNVBAoMC2V4YW1wbGUuY29tMRQwEgYDVQQDDAtleGFtcGxlLmNvbTAeFw0xMTEwMjIwNjI0MzFaFw0xMjEwMDQwNjI0MzFaMH8xCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRQwEgYDVQQKDAtleGFtcGxlLmNvbTEhMB8GA1UEAwwYTXMuIEJhcmJhcmEgSiBKZW5zZW4gSUlJMSIwIAYJKoZIhvcNAQkBFhNiamVuc2VuQGV4YW1wbGUuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7Kr+Dcds/JQ5GwejJFcBIP682X3xpjis56AK02bc1FLgzdLI8auoR+cC9/Vrh5t66HkQIOdA4unHh0AaZ4xL5PhVbXIPMB5vAPKpzz5iPSi8xO8SL7I7SDhcBVJhqVqr3HgllEG6UClDdHO7nkLuwXq8HcISKkbT5WFTVfFZzidPl8HZ7DhXkZIRtJwBweq4bvm3hM1Os7UQH05ZS6cVDgweKNwdLLrT51ikSQG3DYrl+ft781UQRIqxgwqCfXEuDiinPh0kkvIi5jivVu1Z9QiwlYEdRbLJ4zJQBmDrSGTMYn4lRc2HgHO4DqB/bnMVorHB0CC6AV1QoFK4GPe1LwIDAQABo3sweTAJBgNVHRMEAjAAMCwGCWCGSAGG+EIBDQQfFh1PcGVuU1NMIEdlbmVyYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQU8pD0U0vsZIsaA16lL8En8bx0F/gwHwYDVR0jBBgwFoAUdGeKitcaF7gnzsNwDx708kqaVt0wDQYJKoZIhvcNAQEFBQADgYEAA81SsFnOdYJtNg5Tcq+/ByEDrBgnusx0jloUhByPMEVkoMZ3J7j1ZgI8rAbOkNngX8+pKfTiDz1RC4+dx8oU6Za+4NJXUjlL5CvV6BEYb1+QAEJwitTVvxB/A67g42/vzgAtoRUeDov1+GFiBZ+GNF/cAYKcMtGcrs2i97ZkJMo="}],"meta":{"created":"2010-01-23T04:56:22Z","lastModified":"2011-05-13T04:42:34Z","version":"W\\\"b431af54f0671a2\"","location":"http://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7"}}
@@ -140,7 +151,7 @@ Location: https://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!
 Content-Type: application/json
 ```
 
-* response Content
+* Response Content
 
 ```
 {"schemas":["urn:scim:schemas:core:1.0"],"id":"@!1111!0000!D4E7","externalId":"john ","userName":"john ","name":{"givenName":"John","familyName":"Smith","middleName":"N/A","honorificPrefix":"N/A","honorificSuffix":"N/A"},"displayName":"John Smith","nickName":"Sensei","profileUrl":"http://www.gluu.org/","emails":[{"value":"john@gluu.org","type":"work","primary":"true"},{"value":"john 2@gluu.org","type":"home","primary":"false"}],"addresses":[{"type":"work","streetAddress":"621 East 6th Street Suite 200","locality":"Austin","region":"TX","postalCode":"78701","country":"US","formatted":"621 East 6th Street Suite 200 Austin , TX 78701 US","primary":"true"}],"phoneNumbers":[{"value":"646-234-5678","type":"work"}],"ims":[{"value":"nynyjohn ","type":"Skype"}],"photos":[{"value":"http://www.gluu.org/wp-content/themes/SaaS-II/images/logo.png","type":"gluu photo"}],"userType":"CEO","title":"CEO","preferredLanguage":"en-us","locale":"en_US","timezone":"America/Chicago","active":"true","password":"Hiden for Privacy Reasons","groups":[{"display":"Gluu Manager Group","value":"@!1111!0003!B2C6"},{"display":"Gluu Owner Group","value":"@!1111!0003!D9B4"}],"roles":[{"value":"Owner"}],"entitlements":[{"value":"full access"}],"x509Certificates":[{"value":"MIIDQzCCAqygAwIBAgICEAAwDQYJKoZIhvcNAQEFBQAwTjELMAkGA1UEBhMCVVMxEzARBgNVBAgMCkNhbGlmb3JuaWExFDASBgNVBAoMC2V4YW1wbGUuY29tMRQwEgYDVQQDDAtleGFtcGxlLmNvbTAeFw0xMTEwMjIwNjI0MzFaFw0xMjEwMDQwNjI0MzFaMH8xCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRQwEgYDVQQKDAtleGFtcGxlLmNvbTEhMB8GA1UEAwwYTXMuIEJhcmJhcmEgSiBKZW5zZW4gSUlJMSIwIAYJKoZIhvcNAQkBFhNiamVuc2VuQGV4YW1wbGUuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7Kr+Dcds/JQ5GwejJFcBIP682X3xpjis56AK02bc1FLgzdLI8auoR+cC9/Vrh5t66HkQIOdA4unHh0AaZ4xL5PhVbXIPMB5vAPKpzz5iPSi8xO8SL7I7SDhcBVJhqVqr3HgllEG6UClDdHO7nkLuwXq8HcISKkbT5WFTVfFZzidPl8HZ7DhXkZIRtJwBweq4bvm3hM1Os7UQH05ZS6cVDgweKNwdLLrT51ikSQG3DYrl+ft781UQRIqxgwqCfXEuDiinPh0kkvIi5jivVu1Z9QiwlYEdRbLJ4zJQBmDrSGTMYn4lRc2HgHO4DqB/bnMVorHB0CC6AV1QoFK4GPe1LwIDAQABo3sweTAJBgNVHRMEAjAAMCwGCWCGSAGG+EIBDQQfFh1PcGVuU1NMIEdlbmVyYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQU8pD0U0vsZIsaA16lL8En8bx0F/gwHwYDVR0jBBgwFoAUdGeKitcaF7gnzsNwDx708kqaVt0wDQYJKoZIhvcNAQEFBQADgYEAA81SsFnOdYJtNg5Tcq+/ByEDrBgnusx0jloUhByPMEVkoMZ3J7j1ZgI8rAbOkNngX8+pKfTiDz1RC4+dx8oU6Za+4NJXUjlL5CvV6BEYb1+QAEJwitTVvxB/A67g42/vzgAtoRUeDov1+GFiBZ+GNF/cAYKcMtGcrs2i97ZkJMo="}],"meta":{"created":"2010-01-23T04:56:22Z","lastModified":"2011-05-13T04:42:34Z","version":"W\\\"b431af54f0671a2\"","location":"http://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7"}}
@@ -239,7 +250,7 @@ Accept: application/json
 Authorization: Bearer 91732a27-fd00-487a-9dde-a6ed2fac6949
 ```
 
-* Request content
+* Request Content
 
 ```
 {"schemas":["urn:scim:schemas:core:1.0"],"externalId":"mike24","password":"Qb587QBJ"}
@@ -439,27 +450,44 @@ Content-Type: application/xml
 
 ## SCIM-Client API
 
-SCIM-Client API is a tool Gluu developed to make the communication with a SCIM server an easy task. It can be used to build an application that sends request and receives responses from a SCIM server seamlessly.
+SCIM-Client API is a tool Gluu developed to make the communication with
+a SCIM server an easy task. It can be used to build an application that
+sends request and receives responses from a SCIM server seamlessly.
 
 You can checkout SCIM-client from our GIT repository : https://github.com/GluuFederation/SCIM-Client 
 
-Below is an example on how to create a ScimClient instance
+Below is an example on how to create a ScimClient instance:
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
 ```
 
-This will create an oAuth instance of ScimClient where: `userName` and `passWord` are the user credentials , `clientID` and `clientSecret` are oxAuth client credentials , `domailURL` is the domain where SCIM client resides, for example : `http://localhost:8080/oxTrust/seam/resource/restv1` and `oxAuthDomain` is the `tokenURL` example `http://localhost:8080/oxauth/seam/resource/restv1/oxauth/token`
+This will create an oAuth instance of ScimClient where: `userName` and
+`passWord` are the user credentials , `clientID` and `clientSecret` are
+oxAuth client credentials , `domainURL` is the domain where SCIM client
+resides, for example:
+`http://localhost:8080/oxTrust/seam/resource/restv1` and `oxAuthDomain`
+is the `tokenURL` example
+`http://localhost:8080/oxauth/seam/resource/restv1/oxauth/token`.
 
 ```
 ScimClient client = ScimClient.basicInstance(userName, passWord, domainURL);
 ```
 
-As mentioned in the authentication part, for the basic authentication you only need the user’s credentials userName and passWord and the domain URL.
+As mentioned in the authentication part, for the basic authentication
+you only need the user’s credentials userName and passWord and the
+domain URL.
 
 ### Adding an entity
 
-In this example we will show you how to add a person or a group using SCIM-Client, SCIM-Client API comes with two methods to accomplish this task, i. e. “createPerson” and “createPersonString”, with createPerson method you pass the person you want to add as ScimPerson object and you specify the desired media type format “XML/JSON” and SCIM-client API will parse the ScimPerson object into XML or JSON and send your request. Similarly for groups, you can use createGroup with ScimGroup as a parameter or createGroupString.
+In this example we will show you how to add a person or a group using
+SCIM-Client, SCIM-Client API comes with two methods to accomplish this
+task, i. e. “createPerson” and “createPersonString”, with createPerson
+method you pass the person you want to add as ScimPerson object and you
+specify the desired media type format “XML/JSON” and SCIM-client API
+will parse the ScimPerson object into XML or JSON and send your request.
+Similarly for groups, you can use createGroup with ScimGroup as a
+parameter or createGroupString.
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
@@ -472,7 +500,9 @@ response.getStatusCode() // this will give you the Status code
 String result = response.getResponseBodyString(); // this will give you Response body 
 ```
 
-Similarly for groups, you can use createGroup with ScimGroup as a parameter or createGroupString. In this 2nd example we will use createPersonString:
+Similarly for groups, you can use createGroup with ScimGroup as a
+parameter or createGroupString. In this 2nd example we will use
+createPersonString:
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
@@ -483,7 +513,13 @@ String result = response.getResponseBodyString(); // this will give you Response
 
 ### Modifying an entity
 
-In this example we will show you how to modify a person or a group using SCIM-Client, SCIM-Client API comes with two methods to accomplish that, i. e. “updatePerson” and “updatePersonString”, for updatePerson method, you pass the person you want to update as ScimPerson object and its uid as a String and you specify the desired media type format “XML/JSON” and SCIM-client API will parse the ScimPerson object into XML or JSON and send your request. 
+In this example we will show you how to modify a person or a group using
+SCIM-Client, SCIM-Client API comes with two methods to accomplish that,
+i. e. “updatePerson” and “updatePersonString”, for updatePerson method,
+you pass the person you want to update as ScimPerson object and its uid
+as a String and you specify the desired media type format “XML/JSON” and
+SCIM-client API will parse the ScimPerson object into XML or JSON and
+send your request.
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
@@ -492,7 +528,8 @@ response.getStatusCode() // this will give you the Status code
 String result = response.getResponseBodyString(); // this will give you Response body 
 ```
 
-Same applies for groups, you can use updateGroupString with ScimGroup as a parameter or createGroupString.
+Same applies for groups, you can use updateGroupString with ScimGroup as
+a parameter or createGroupString.
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
@@ -503,7 +540,8 @@ String result = response.getResponseBodyString(); // this will give you Response
 
 ## Deleting an entity
 
-To delete an entity you simply pass it’s ID as a String parameter into “deletePerson” or “deleteGroup” methods.
+To delete an entity you simply pass it’s ID as a String parameter into
+“deletePerson” or “deleteGroup” methods.
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
@@ -519,7 +557,9 @@ response.getStatusCode() // this will give you the Status code
 
 ## Retrieving an entity
 
-To retrieve a person or a group you can use “retrievePerson” or “retrieveGroup” method by passing the Entity’s id as a parameter and the desired media type.
+To retrieve a person or a group you can use “retrievePerson” or
+“retrieveGroup” method by passing the Entity’s id as a parameter and the
+desired media type.
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
@@ -537,7 +577,10 @@ String result = response.getResponseBodyString(); // this will give you Response
 
 ## Bulk operations
 
-To use Bulk operation you pass the operation as a ScimBulkOperation object into “bulkOperation” method or as a JSON/XML string into “bulkOperationString” method and without forgetting to specify the desired media type.
+To use Bulk operation you pass the operation as a ScimBulkOperation
+object into “bulkOperation” method or as a JSON/XML string into
+“bulkOperationString” method and without forgetting to specify the
+desired media type.
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
@@ -555,7 +598,10 @@ String result = response.getResponseBodyString(); // this will give you Response
 
 ## oxAuth Client Creation
 
-It’s possible to create an oxAuth client dynamically using SCIM-Client, this option is available using the static *create* method of the class `OxAuthClientCreator`, where `applicationName` is the name of the desired client, `registerUrl` is the client registration url example : 
+It’s possible to create an oxAuth client dynamically using SCIM-Client,
+this option is available using the static *create* method of the class
+`OxAuthClientCreator`, where `applicationName` is the name of the
+desired client, `registerUrl` is the client registration url example:
 `http://localhost:8080/oxauth/seam/resource/restv1/oxauth/register`
 and `redirectUris` is a space separated String containing the desired redirect urls.
 
@@ -569,8 +615,13 @@ response.getExpiresAt(); // the expiration date of the client
 
 ## Bulk requests from Excel files
 
-Excel spreadsheets are widely used by individuals and companies of different backgrounds. Gluu have embedded SCIM-client with methods that can help you turn an Excel file into a ScimBulkOperation object .
-For that reason we made two methods available, one for generation bulk users request *mapUsers* method and the other for generating bulk group requests *mapGroups* method, both methods take the path to the “XLS” file as a parameter, methods are available at “ExcelMapper” class:
+Excel spreadsheets are widely used by individuals and companies of
+different backgrounds. Gluu have embedded SCIM-client with methods that
+can help you turn an Excel file into a ScimBulkOperation object. For
+that reason we made two methods available, one for generation bulk users
+request *mapUsers* method and the other for generating bulk group
+requests *mapGroups* method, both methods take the path to the “XLS”
+file as a parameter, methods are available at “ExcelMapper” class:
 
 ```
 ScimBulkOperation usersOperation = ExcelMapper.mapUsers(excelFileLocationUsers);
@@ -585,15 +636,18 @@ For groups you can always add more groups to the spreadsheet following the same 
 
 ## SCIM Resource Management
 
-Gluu supports SCIM 1.1 and 2.0 for user management. By using SCIM services, you can create and manage Users as well as Groups for your organization automatically. 
-
+Gluu supports SCIM 1.1 and 2.0 for user management. By using SCIM
+services, you can create and manage Users as well as Groups for your
+organization automatically.
 
 At the moment, SCIM endpoints allow two types of Authentication modes:
 
 1. SCIM UMA Authentication
 2. SCIM oxAuth Authentication
 
-To use any of the given authentication mode, we need to create user instance with specified authentication mode. We'll discuss each of the methods here:
+To use any of the given authentication mode, we need to create user
+instance with specified authentication mode. We'll discuss each of the
+methods here:
 
 ### SCIM UMA User Authentication
 
@@ -601,7 +655,14 @@ This is step by step guide to configure UMA for oxTrust and SCIM client.
 
 #### Base Configuration: Create oxAuth Clients, Policies
 
-1. Register oxAuth client with scope “uma_protection”. Property “oxAuthTokenEndpointAuthMethod” of this client should has value “client_secret_basic”. It's possible to do that using few methods: [Client Registration](http://ox.gluu.org/doku.php?id=oxauth:clientregistration), using [oxTrust](http://ox.gluu.org/doku.php?id=oxtrust:home) GUI, manually add entry to LDAP. oxTrust will use this oxAuth client to obtain PAT. Sample result entry:
+1. Register oxAuth client with scope “uma_protection”. Property
+“oxAuthTokenEndpointAuthMethod” of this client should has value
+“client_secret_basic”. It's possible to do that using few methods:
+[Client
+Registration](http://ox.gluu.org/doku.php?id=oxauth:clientregistration),
+using [oxTrust](http://ox.gluu.org/doku.php?id=oxtrust:home) GUI,
+manually add entry to LDAP. oxTrust will use this oxAuth client to
+obtain PAT. Sample result entry:
 
         dn: inum=@!1111!0008!F781.80AF,ou=clients,o=@!1111,o=gluu
         objectClass: oxAuthClient
@@ -614,7 +675,14 @@ This is step by step guide to configure UMA for oxTrust and SCIM client.
         oxAuthScope: inum=@!1111!0009!6D96,ou=scopes,o=@!1111,o=gluu
         oxAuthTokenEndpointAuthMethod: client_secret_basic
 
-2. Register oxAuth client with scope “uma_authorization”. Property “oxAuthTokenEndpointAuthMethod” of this client should has value “client_secret_basic”. It's possible to do that using few methods: [Client Registration](http://ox.gluu.org/doku.php?id=oxauth:clientregistration), using [oxTrust](http://ox.gluu.org/doku.php?id=oxtrust:home) GUI, manually add entry to LDAP. SCIM Client will use this oxAuth client to obtain AAT. Sample result entry:
+2. Register oxAuth client with scope “uma_authorization”. Property
+“oxAuthTokenEndpointAuthMethod” of this client should has value
+“client_secret_basic”. It's possible to do that using few methods:
+[Client
+Registration](http://ox.gluu.org/doku.php?id=oxauth:clientregistration),
+using [oxTrust](http://ox.gluu.org/doku.php?id=oxtrust:home) GUI,
+manually add entry to LDAP. SCIM Client will use this oxAuth client to
+obtain AAT. Sample result entry:
 
         dn: inum=@!1111!0008!FDC0.0FF5,ou=clients,o=@!1111,o=gluu
         objectClass: oxAuthClient
@@ -661,7 +729,7 @@ This is step by step guide to configure UMA for oxTrust and SCIM client.
             def getApiVersion(self):
                 return 1
 
-            # Authorizae access to resource
+            # Authorize access to resource
             #   authorizationContext is org.xdi.oxauth.service.uma.authorization.AuthorizationContext
             #   configurationAttributes is java.util.Map<String, SimpleCustomProperty>
             def authorize(self, authorizationContext, configurationAttributes):
@@ -692,7 +760,7 @@ This is step by step guide to configure UMA for oxTrust and SCIM client.
 	 - Select “Scopes” tab and click “Add Scope Description”.
 	 - Select “Internal” type.
 	 - Fill the form.
-	 - Select policy which we aded in previous step.
+	 - Select policy which we added in previous step.
 	 - Click “Add” button. Sample result entry:
 
             dn: inum=@!1111!D386.9FB1,ou=scopes,ou=uma,o=@!1111,o=gluu
@@ -706,7 +774,10 @@ This is step by step guide to configure UMA for oxTrust and SCIM client.
             oxRevision: 1
             oxType: internal
 
-5. Register UMA resource set. It's possible to do that via Rest API or via oxTrust GUI. Sample code: [https://github.com/GluuFederation/oxAuth/blob/master/Client/src/test/java/org/xdi/oxauth/ws/rs/uma/RegisterResourceSetFlowHttpTest.java) These are list of steps which allows to add new resource set:
+5. Register UMA resource set. It's possible to do that via Rest API or
+via oxTrust GUI. Sample code:
+[https://github.com/GluuFederation/oxAuth/blob/master/Client/src/test/java/org/xdi/oxauth/ws/rs/uma/RegisterResourceSetFlowHttpTest.java)
+These are list of steps which allows to add new resource set:
 
 	 - Log with administrative privileges into oxTrust.
 	 - Open menu “OAuth2→UMA”.
@@ -778,13 +849,19 @@ Values from these example correspond to entries from first section.
 
 ### SCIM oxAuth Authentication
 
-This is a step by step guide to configure oxTrust and SCIM client for oxAuth authentication. 
+This is a step by step guide to configure oxTrust and SCIM client for
+oxAuth authentication.
 
 #### Base Configuration: Create oxAuth Client
-In order to access SCIM endpoints, an oxAuth client should be registered with scopes "openid" and "user_name".
-Authentication method (or LDAP Property “oxAuthTokenEndpointAuthMethod”) of this client should have value “client_secret_basic”.
+In order to access SCIM endpoints, an oxAuth client should be registered
+with scopes "openid" and "user_name". Authentication method (or LDAP
+Property “oxAuthTokenEndpointAuthMethod”) of this client should have
+value “client_secret_basic”.
  
-A new client can be created through various methods: [Client Registration](http://ox.gluu.org/doku.php?id=oxauth:clientregistration), using [oxTrust](http://ox.gluu.org/doku.php?id=oxtrust:home) GUI, or manually adding an entry to LDAP. 
+A new client can be created through various methods: [Client
+Registration](http://ox.gluu.org/doku.php?id=oxauth:clientregistration),
+using [oxTrust](http://ox.gluu.org/doku.php?id=oxtrust:home) GUI, or
+manually adding an entry to LDAP.
 
 Sample result entry:
 
@@ -802,11 +879,13 @@ Sample result entry:
 
 ####  Configuration (Resource Server)
 
-It's possible to enable/disable SCIM endpoints in oxTrust under "Organization Configuration" page.
+It's possible to enable/disable SCIM endpoints in oxTrust under
+"Organization Configuration" page.
 
 #### SCIM Client (Requesting Party) Sample Code
 
-This is a sample SCIM Client code which requests user information from server.
+This is a sample SCIM Client code which requests user information from
+server.
 
     package gluu.scim.client.dev.local;
     
@@ -829,6 +908,6 @@ This is a sample SCIM Client code which requests user information from server.
     
     }
 
-Values in this example are correspond to client entry fields from  first section.
-
+Values in this example are correspond to client entry fields from first
+section.
 

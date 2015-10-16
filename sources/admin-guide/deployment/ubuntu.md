@@ -4,7 +4,7 @@
 
 The Gluu Server Community Edition should be deployed on a VM with:
 
-* Ubuntu Server 14.04 (Trusty)	
+* Ubuntu Server 14.04 (Trusty)
 * 2 CPU Units and at least 4GB of physical memory (more is always better, though)
 
 ## Available Components
@@ -18,7 +18,7 @@ Download and install Gluu-Server by the following commands. Use the
 `.deb` installation to perform a base chroot installation with following
 Gluu Server Base Ubuntu requirements.
 
-New alternative using our Gluu repo for Ubuntu Trusty:
+As an alternative, use our Gluu repository for Ubuntu Trusty:
 
 <code> # echo "deb http://repo.gluu.org/ubuntu/ trusty main" > /etc/apt/sources.list.d/gluu-repo.list </code>
 
@@ -40,10 +40,11 @@ After the successful execution of `setup.py` script, login to oxTrust,
 the policy administration point for Gluu by pointing your browser to
 `https://hostname`.
 
-Note: if you are not using a resolvable DNS host, you will need to add 
+Note: if you are not using a resolvable DNS host, you will need to add
 the hostname to your hosts file on the server which is running your browser.
-Login with the default user name “admin” and the password printed back in 
-the confirmation (also contained in `setup.properties.last` (`grep -i pass`)
+Login with the default user name “admin” and the password printed back in
+the confirmation (also contained in `setup.properties.last` (use the
+Unix command `grep --color -i pass` to find the according line quickly)
 and look for the LDAP password which is the same as the admin password.
 
 ## Starting and Stopping the Gluu Server
@@ -56,18 +57,18 @@ and look for the LDAP password which is the same as the admin password.
 
 <code> # service gluu-server login </code>
 
-Or if you prefer... 
+Or if you prefer...
 
 <code> chroot /home/gluu-server/ su - </code>
 
 ## Running the latest setup
 
-To perform the final configuration of the Gluu Server you need to provide 
-some Gluu Server appliance specific information, like the DNS hostname, and 
-the information required for an X.509 certificate. We are always working
-to make the setup easier. After successful Gluu Server installation, run
-the Gluu Server `setup.py` to complete the installation. The script is
-installed in the directory `/install`.
+To perform the final configuration of the Gluu Server you need to
+provide some Gluu Server appliance specific information, like the DNS
+hostname, and the information required for an X.509 certificate. We are
+always working to make the setup easier. After successful Gluu Server
+installation, run the Gluu Server `setup.py` to complete the
+installation. The script is installed in the directory `/install`.
 
 <code> ./setup.py </code>
 
@@ -97,7 +98,10 @@ you can do to achieve your goal:
 
 Exit from chroot environment to main Linux.
 
-Stop the chroot environment, which will unmount all chroot directories and after delete rpm. Please look at following commands.
+Stop the chroot environment, which will unmount all chroot directories.
+After that, delete both the Gluu Server packages that are installed, and
+the home directory of the Gluu Server user. The following commands
+illustrate the single steps:
 
 <code> # service gluu-server stop </code>
 
@@ -107,10 +111,11 @@ Stop the chroot environment, which will unmount all chroot directories and after
 
 On installation, any modified files are saved in
 `/home/gluu-server.save`. If you want to blow away all remnants of the
-install, `rm -rf /home/gluu-server.save'.
+installation, delete these files with the command `rm -rf
+/home/gluu-server.save'.
 
 In some circumstances, the installation can be broken. In that case
-please try following to force uninstall the package.
+please try the following to force uninstall the package.
 
 <code> # dpkg --purge --force-all gluu-server </code>
 
@@ -118,7 +123,7 @@ please try following to force uninstall the package.
 
 Please see our [Cloud Deployment FAQ](../../faq/cloud-faq.md) for cloud
 specific notes and our [Troubleshooting
-FAQ](../../faq/troubleshooting.md) for resolutions to common issues.
+FAQ](../../faq/troubleshooting.md) for solutions to common issues.
 
 ## Support 
 

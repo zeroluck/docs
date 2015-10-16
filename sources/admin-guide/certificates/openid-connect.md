@@ -82,9 +82,11 @@ https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/jwks
 In order to generate new cryptographic keys, go to the oxAuth source
 directory and run the following command:
 
-    $ mvn -Dtest=org.xdi.oxauth.ws.rs.SignatureTest -DfailIfNoTests=false test
+```
+$ mvn -Dtest=org.xdi.oxauth.ws.rs.SignatureTest -DfailIfNoTests=false test
+```
 
-The command output will generate cryptographic keys for the algorithms:
+The command output will generate cryptographic keys for the algorithms
 RS256, RS384, RS512, ES256, ES384 and ES512.
 
 Update or add the desired new cryptographic keys in the configuration
@@ -95,5 +97,7 @@ file at this location:
 In order to force oxAuth to reload the configuration files these steps
 are needed:
 
- - Delete the LDAP configuration entries at `ou=configuration,o=ORGANIZATION_INUM,o=gluu`
- - Restart the Apache Tomcat service
+ - delete the LDAP configuration entries at `ou=configuration,o=ORGANIZATION_INUM,o=gluu`
+ - restart the Apache Tomcat service
+
+
