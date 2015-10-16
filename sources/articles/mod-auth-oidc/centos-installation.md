@@ -157,18 +157,19 @@ the credentials for authentication.
 
 #### Manual Client Registration
 
-Considering __manual client registration__ case, we'll name the server: **static.gluu.org.**
+Considering the __manual client registration__ case, we will name the
+server `static.gluu.org`, instead.
 
-Create a directory named *static* inside /var/www/html, i. e.
-
-
-* mkdir /var/www/html/static 
- 
-
-Now, let's create another file named *index.html* with content:
+Create a directory named `/var/www/html/static`, i. e. with this
+command:
 
 ```
+mkdir /var/www/html/static
+```
 
+Now, let's create another file named `index.html` with this content:
+
+```
 <html>
 	<title>
 		Protected URL
@@ -177,7 +178,6 @@ Now, let's create another file named *index.html* with content:
 		Nice to see the protected url via Manual registration
 	</body>
 </html>
-
 ```
 
 
