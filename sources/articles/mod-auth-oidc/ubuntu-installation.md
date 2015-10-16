@@ -270,31 +270,34 @@ service gluu-server login
 
 ### Getting DN from Client ID
 
-We get the client id from the search performed in gluu-server's Web UI. So, to get the DN part we perform the below command. The ldap password can be stored in /root/.pw or at any convenient location. In our case the command was:  
-
-
-* /opt/opendj/bin/ldapsearch -T -X -Z -p 1636 -D "cn=Directory Manager" -j /root/.pw -s sub -b "o=gluu" 'inum=@!1962.E949.50EE.BCB7!0001!B312.DB22!0008!24F8.303C'
-
-
-Create a file named __mod.ldif__ with the contents given below. Here, **oxAuthSubjectIdentifier** is same as the client id. Since it's missing initially when we register the client manually, so we have to add it later. The DN part to be used in __mod.ldif__ is obtained from above command's output.
-
+We get the client id from the search performed in Gluu Server's Web UI.
+So, to get the DN part we perform the below command. The LDAP password
+can be stored in `/root/.pw` or at any other location that is convenient
+for you. In our case the command is:
 
 ```
-dn: inum=@!1962.E949.50EE.BCB7!0001!B312.DB22!0008!24F8.303C,ou=clients,o=@!C648.9803.5565.E5CB!0001!0DB0.EEDB,o=gluu
+/opt/opendj/bin/ldapsearch -T -X -Z -p 1636 -D "cn=Directory Manager" -j /root/.pw -s sub -b "o=gluu" 'inum=@!C648.9803.5565.E5CB!0001!0DB0.EEDB!0008!7728.5650'
+```
+Create a file named `mod.ldif` with the contents given below. The DN
+part to be used in `mod.ldif` is obtained from output of the command
+above:
+
+```
+dn: inum=@!C648.9803.5565.E5CB!0001!0DB0.EEDB!0008!7728.5650,ou=clients,o=@!C648.9803.5565.E5CB!0001!0DB0.EEDB,o=gluu
 changetype: modify
 add: oxAuthSubjectIdentifier
-oxAuthSubjectIdentifier: @!1962.E949.50EE.BCB7!0001!B312.DB22!0008!24F8.303C
+oxAuthSubjectIdentifier: @!C648.9803.5565.E5CB!0001!0DB0.EEDB!0008!7728.5650
 ```
 
-Then run the __ldapmodify__ command to insert the __oxAuthSubjectIdentifier__ as below:
+Then, run the `ldapmodify` command to insert the
+__oxAuthSubjectIdentifier__ as below:
 
+```
+/opt/opendj/bin/ldapmodify -Z -X -h localhost -p 1636 -D "cn=Directory Manager" -j /root/.pw -f /root/mod.ldif
+```
 
-* /opt/opendj/bin/ldapmodify -Z -X -h localhost -p 1636 -D "cn=Directory Manager" -j /root/.pw -f /root/mod.ldif
-
-
-
-The command may vary depending upon your using.
-
-Then again access [this page](https://static.gluu.org:44443/static) and you should see the success message.
+The command may vary depending upon your installation. Next, access
+[this page](https://static.gluu.org:44443/static), and the success
+message should be visible.
 
 [openidc]: https://github.com/pingidentity/mod_auth_openidc/wiki "Wiki for mod_auth_openidc"

@@ -259,7 +259,7 @@ service gluu-server login
 
 ### Getting DN from Client ID
 
-We get the client id from the search performed in gluu-server's Web UI.
+We get the client id from the search performed in Gluu Server's Web UI.
 So, to get the DN part we perform the below command. The LDAP password
 can be stored in `/root/.pw` or at any other location that is convenient
 for you. In our case the command is:
