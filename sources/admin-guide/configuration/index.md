@@ -225,7 +225,8 @@ server.
 * _Enabled:_ This checkbox is used to enable the keys that are inserted
   in their respective fields.
 
-* _Change Bind Password:_ This button can be used to assign a password to authenticate the *Authentication Server*.
+* _Change Bind Password:_ This button can be used to assign a password
+  to authenticate the *Authentication Server*.
 
 * _Test LDAP Connection:_ Based on the provided information, this button
   checks whether the connection to the authentication server works fine.
@@ -241,24 +242,31 @@ authentication mode and level for person authentication. Both are set to
 
 ![Default Authentication Method](https://cloud.githubusercontent.com/assets/5271048/7147219/f72536f2-e2be-11e4-8259-a52ce0051b12.png)
 
-# Manage Custom Scripts  
-  
-The latest edition of the Gluu Server introduced a new Configuration section called _Manage Custom Scripts_. This is a single place where the server administrator can manage and implement interception scripts to customize the behavior of the Gluu Server. 
+# Manage Custom Scripts
+
+The latest edition of the Gluu Server introduced a new configuration
+section called _Manage Custom Scripts_. This is a single place where the
+server administrator can manage and implement interception scripts to
+customize the behavior of the Gluu Server.
 
 ![Custom Authentication Scritp](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_auth_custom.png)
 
-Currently, there are interception scripts to customize the following functionalities:      
+Currently, there are interception scripts to customize the following
+functionalities:
 
-- [Application Session Management](../../reference/interception-scripts/index.md#application-session-management)    	
-- [Authentication](../../reference/interception-scripts/index.md#authentication)	 
-- [Authorization](../../reference/interception-scripts/index.md#authorization)	
-- [Cache Refresh](../../reference/interception-scripts/index.md#cache-refresh)	
-- [Client Registration](../../reference/interception-scripts/index.md#client-registration)	
-- [ID Generation](../../reference/interception-scripts/index.md#id-generation)	
-- [Update User](../../reference/interception-scripts/index.md#update-user)	
-- [User Registration](../../reference/interception-scripts/index.md#user-registration)	
+- [Application Session Management](../../reference/interception-scripts/index.md#application-session-management)
+- [Authentication](../../reference/interception-scripts/index.md#authentication)
+- [Authorization](../../reference/interception-scripts/index.md#authorization)
+- [Cache Refresh](../../reference/interception-scripts/index.md#cache-refresh)
+- [Client Registration](../../reference/interception-scripts/index.md#client-registration)
+- [ID Generation](../../reference/interception-scripts/index.md#id-generation)
+- [Update User](../../reference/interception-scripts/index.md#update-user)
+- [User Registration](../../reference/interception-scripts/index.md#user-registration)
 
-Due to the significance of custom interception scripts in the Gluu Server, we have dedicated a separate folder within the docs to more comprehensively go over [how to use them](../../reference/interception-scripts/index.md). 
+Due to the significance of custom interception scripts in the Gluu
+Server, we have dedicated a separate folder within the docs to more
+comprehensively go over [how to use
+them](../../reference/interception-scripts/index.md).
 
 # Manage Registration
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/registration/ManageRegistrationStart.jpg?raw=true)
