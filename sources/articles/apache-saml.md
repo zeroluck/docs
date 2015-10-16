@@ -68,7 +68,7 @@ Edit `httpd.conf` with following changes.
 
 ### Shibboleth SP Configuration
 
-This section describes how to configure "shibboleth2.xml" file.
+This section describes how to configure `shibboleth2.xml` file.
 
 * Provide "entityID" of SP in:
 	
