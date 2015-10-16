@@ -72,7 +72,7 @@ service httpd start
 There are two methods for client registration:
 
 1. Dynamic Client Registration
-2. Manual Cient Registration
+2. Manual Client Registration
 
 You can use any of the methods to register the client.
 
@@ -84,7 +84,7 @@ For dynamic client registration, we'll name the server: **dynamic.gluu.org.**
 Create a directory named `dynamic` inside the directory `/var/www/html`, that is:
 
 ```
-mkdir /var/www/html/dynamcic
+mkdir /var/www/html/dynamic
 ```
 
 Now, create a file named `index.html`, and add the following content:
@@ -108,7 +108,7 @@ directory using this command:
 chown -R apache:apache /var/www/html
 ```
 
-Let's create the Apache config file now. Create a file named
+Let's create the Apache configuration file now. Create a file named
 `/etc/httpd/conf.d/dynamic.conf` with the content as below:
 
 ```
