@@ -46,10 +46,18 @@ Currently, the easiest installation options are:
 
 ## OpenID Connect RP Libraries
 
-In order to protect your app with OpenID Connect, you will need to call the OpenID Connect APIs from within your application. Depending on what language your using, you'll need to implement those [client libraries](http://openid.net/developers/libraries/). Here's Gluu's [java libraries](https://github.com/GluuFederation/oxAuth).
-  
+In order to protect your app with OpenID Connect, you will need to call
+the OpenID Connect APIs from within your application. Depending on what
+language your using, you'll need to implement those [client
+libraries](http://openid.net/developers/libraries/). Here's Gluu's [java
+libraries](https://github.com/GluuFederation/oxAuth).
 
 ## Support
 
-If you have questions or issues, you can browse our [public knowledge base](http://support.gluu.org) and [register](https://idp.gluu.org/identity/register?redirectUri=https://support.gluu.org) to create public tickets. [VIP support](http://gluu.org/pricing) can be purchased for priority assistance, private support and ad hoc consultations. 
+If you have questions or issues, you can browse our [public knowledge
+base](http://support.gluu.org) and
+[register](https://idp.gluu.org/identity/register?redirectUri=https://support.gluu.org)
+to create public tickets. [VIP support](http://gluu.org/pricing) can be
+purchased for priority assistance, private support and adhoc
+consultations.
 
