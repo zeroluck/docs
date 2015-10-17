@@ -1,24 +1,26 @@
 # Custom Attributes
 
-LDAP attributes, SAML attributes, OpenID Connect user claims--whatever you call
-them--many organizations have business-specific information about people that needs
-to be shared with applications. For simplicity, this article will refer to them as
-"attributes." Existing standard schemas like the LDAP `inetOrgPerson` standard, or
-the OpenID Connect `id_token` user claims define attributes like first name, last
-name and email address. Where possible, we recommend you use these. But what if
-there is an attribute that is just not in any standard schema? This article will
-explain what you need to do to configure the Gluu Server to support your new
-attributes, and give you some advice along the way with regard to best practices.
-We'll use fictional Company Acme Inc., which has requirements
-for "acmeCustNumber" and "acmeStateLicenseNumber"
+LDAP attributes, SAML attributes, OpenID Connect user claims--whatever
+you call them--many organizations have business-specific information
+about people that needs to be shared with applications. For simplicity,
+this article will refer to them as "attributes." Existing standard
+schemas like the LDAP `inetOrgPerson` standard, or the OpenID Connect
+`id_token` user claims define attributes like first name, last name and
+email address. Where possible, we recommend you use these. But what if
+there is an attribute that is just not in any standard schema? This
+article will explain what you need to do to configure the Gluu Server to
+support your new attributes, and give you some advice along the way with
+regard to best practices. We will use fictional Company Acme Inc., which
+has requirements for "acmeCustNumber" and "acmeStateLicenseNumber".
 
 ## LDAP Schema
 
-The first step is to make sure that your LDAP server can persist these attributes.
-Each LDAP server implementation manages schema in its own way. The most common
-LDAP server backend for the Gluu Server is OpenDJ, so this article will use this
-platform as an example. This schema should also work for 389DS. If you are using
-OpenLDAP or another platform, just refer to the respective documentation.
+The first step is to make sure that your LDAP server can persist these
+attributes. Each LDAP server implementation manages schema in its own
+way. The most common LDAP server backend for the Gluu Server is OpenDJ,
+so this article will use this platform as an example. This schema should
+also work for 389DS. If you are using OpenLDAP or another platform, just
+refer to the respective documentation.
 
 In LDAP, "schema" refers to the `attribute` and `objectclass` definitions.
 In OpenDJ, schema is stored in `{opendj-home}/config/schema`. If your company has
@@ -28,7 +30,7 @@ would store the schema in a default file, `100-user.ldif` in OpenDJ. Don't stres
 about the OID value in the schema definition. If your company has a standard
 OID management process in place, by all means use it. But otherwise just make
 sure the OID is unique. Be careful about defining attributes as single-value
-(you may change your mind later). Also, in your objectclasses, avoid
+(you may change your mind later). Also, in your object classes, avoid
 requiring attributes with `MUST`.
 
 Below is a sample schema file for fictional OpenDJ. For more information see
@@ -59,7 +61,7 @@ performing a Gluu Server base installation, you will see that many commonly
 used attributes are already there. When an LDAP entry exists for your attribute,
 it is considered to be "registered."
 
-There are two ways you can regsiter an attribute. If you are an LDAP geek, you
+There are two ways you can register an attribute. If you are an LDAP geek, you
 can just create an LDIF file with the correct information, and load it in the
 LDAP server that is storing your configuration. If you want to quickly spool
 up new Gluu Servers, this is probably the quickest way to handle it.
