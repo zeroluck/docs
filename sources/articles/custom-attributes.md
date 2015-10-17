@@ -22,19 +22,20 @@ so this article will use this platform as an example. This schema should
 also work for 389DS. If you are using OpenLDAP or another platform, just
 refer to the respective documentation.
 
-In LDAP, "schema" refers to the `attribute` and `objectclass` definitions.
-In OpenDJ, schema is stored in `{opendj-home}/config/schema`. If your company has
-custom schema, it may be simpler to make a separate file that contains your
-definitions (rather than using the built-in attribute management features, which
-would store the schema in a default file, `100-user.ldif` in OpenDJ. Don't stress
-about the OID value in the schema definition. If your company has a standard
-OID management process in place, by all means use it. But otherwise just make
-sure the OID is unique. Be careful about defining attributes as single-value
-(you may change your mind later). Also, in your object classes, avoid
-requiring attributes with `MUST`.
+In LDAP, "schema" refers to the `attribute` and `objectclass`
+definitions. In OpenDJ, schema is stored in
+`{opendj-home}/config/schema`. If your company has a custom schema, it
+may be simpler to make a separate file that contains your definitions
+rather than using the built-in attribute management features, which
+would store the schema in a default file, `100-user.ldif` in OpenDJ. Do
+not stress about the OID value in the schema definition. If your company
+has a standard OID management process in place, by all means use it. But
+otherwise just make sure the OID is unique. Be careful about defining
+attributes as single-value (you may change your mind later). Also, in
+your object classes, avoid requiring attributes with `MUST`.
 
 Below is a sample schema file for fictional OpenDJ. For more information see
-the [documentation](http://opendj.forgerock.org/opendj-server/doc/admin-guide/#chap-schema)
+the [documentation](http://opendj.forgerock.org/opendj-server/doc/admin-guide/#chap-schema).
 
 ``101-acme.ldif``
 
@@ -54,12 +55,12 @@ the [documentation](http://opendj.forgerock.org/opendj-server/doc/admin-guide/#c
 
 ## Register Attribute in the Gluu Server
 
-The Gluu Server needs to know which attributes are available. Each attribute that
-you want to make available must have a corresponding LDAP entry under
-`ou=attributes,o=<org-inum>,o=gluu`. If you browse your LDAP server after
-performing a Gluu Server base installation, you will see that many commonly
-used attributes are already there. When an LDAP entry exists for your attribute,
-it is considered to be "registered."
+The Gluu Server needs to know which attributes are available. Each
+attribute that you want to make available must have a corresponding LDAP
+entry under `ou=attributes,o=<org-inum>,o=gluu`. If you browse your LDAP
+server after performing a Gluu Server base installation, you will see
+that many commonly used attributes are already there. When an LDAP entry
+exists for your attribute, it is considered to be "registered".
 
 There are two ways you can register an attribute. If you are an LDAP geek, you
 can just create an LDIF file with the correct information, and load it in the
