@@ -144,12 +144,13 @@ names (user claims) that Google+ returns which map to local attributes
 in the `gplus_local_attributes_list` property. It is mandatory only if
 `gplus_deployment_type` is set to 'enroll'.
 
-4. _gplus_local_attributes_list_ - Comma separated list of Gluu Server ldap attribute names
-   returns are mapped to Google user claims from the `gplus_remote_attributes_list` property.
-   It's mandatory only if `gplus_deployment_type` is 'enroll'.
+4. __gplus_local_attributes_list__ - Comma-separated list of Gluu Server
+LDAP attribute names that are mapped to Google user claims from the
+`gplus_remote_attributes_list` property. It is mandatory only if
+`gplus_deployment_type` is set to 'enroll'.
 
-5. _extension_module_ - Optional property to specify the full path of an external module that
-implements two methods:
+5. __extension_module__ - Optional property to specify the full path of
+an external module that implements two methods:
 
 ```python
     # This is called when the authentication script initializes
