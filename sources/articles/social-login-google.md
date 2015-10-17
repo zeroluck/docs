@@ -103,24 +103,27 @@ github](https://raw.githubusercontent.com/GluuFederation/oxAuth/master/Server/in
 
 You'll also need to add some custom properties:
 
- * __gplus_client_secrets_file__ : /opt/tomcat/conf/google.json
- * __gplus_deployment_type__ : enroll
- * __gplus_remote_attributes_list__ : email, email, given_name, family_name, given_name, locale
- * __gplus_local_attributes_list__ : uid, mail, givenName, sn, cn, preferredLanguage
+ * __gplus_client_secrets_file__: `/opt/tomcat/conf/google.json`
+ * __gplus_deployment_type__: enroll
+ * __gplus_remote_attributes_list__: email, given_name, family_name, and locale
+ * __gplus_local_attributes_list__: uid, mail, givenName, sn, cn, preferredLanguage
 
-1. _gplus_client_secrets_file_ - It's mandatory property. It's path to application configuration file downloaded from Google console for application.
-Example: `/etc/certs/gplus_client_secrets.json`
-These are steps needed to get it:
-    a) Log into: https://console.developers.google.com/project
+1. __gplus_client_secrets_file__ - It is a mandatory property that holds
+   the path to the application configuration file downloaded from Google
+   console for application. An example is `/etc/certs/gplus_client_secrets.json`.
+   These are the single steps needed to get it:
+    a) Log into: `https://console.developers.google.com/project`
     b) Click "Create project" and enter project name
     c) Open new project "API & auth -> Credentials" menu item in configuration navigation tree
     d) Click "Add credential" with type "OAuth 2.0 client ID"
     e) Select "Web application" application type
-    f) Enter "Authorized JavaScript origins". It should be CE server DNS name. Example: https://gluu.info
+    f) Enter "Authorized JavaScript origins". It should be CE server DNS
+       name, for example `https://gluu.info`.
     g) Click "Create" and Click "OK" in next dialog
-    h) Click "Download JSON" in order to download gplus_client_secrets.json file
-Also it's mandatory to enable Google+ API:
-    a) Log into: https://console.developers.google.com/project
+    h) Click "Download JSON" in order to download
+       `gplus_client_secrets.json` file.
+    Also it is mandatory to enable Google+ API:
+    a) Log into `https://console.developers.google.com/project`
     b) Select project and enter project name
     c) Open new project "API & auth -> API" menu item in configuration navigation tree
     d) Click "Google+ API"
