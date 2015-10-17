@@ -19,42 +19,50 @@ relationship can be created easily using the following form.
 
 ![Add empty form](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_saml_newTR.png)
 
-	1. Display Name: This field contains the display name of the trust relationship. We have used “Test Hobsons-Radius TR” as an example.
+	1. __Display Name__: This field contains the display name of the 
+    Trust Relationship. In the example below we use “Test Hobsons-Radius TR”.
 
-	2. Description: A small description of Hobsons can be input here.
+	2. __Description__: A small description of Hobsons can be input here.
 
-	3. Metadata Type: Please select URI from the dropdown menu.
+	3. __Metadata Type__: Please select the uri from the dropdown menu.
 
-	4. SP Metadata URL: The metadata URL provided by Hobsons goes in this field.
+	4. __SP Metadata URL__: The metadata uri provided by Hobsons goes here.
 
-	5. SP Logout URL: This should be ideally supplied by the Hobsons staff; if you have not received any logout URL, then leave it blank.
+	5. __SP Logout URL__: This uri is meant to be supplied by the
+    Hobsons staff. If you did not receiv any logout uri yet, leave it blank.
 
-	4. Released: The necessary attributes, Transientid and the eduPersonPrincipalName, were selected from the attribute list.
- 
+	6. __Released__: The two necessary attributes--`Transientid` and the
+    `eduPersonPrincipalName`--were selected from the attribute list.
+
 ![hobsons-tr](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/hobsons-tr.jpg)
 
-	5. Finally click on "Add" to finish creating the trust relationship.
+	7. Finally, click "Add" to finish creating the Trust Relationship.
 
 ## Configuring Hobsons Trust Relationship
 
-Please ensure that the new trust relationship status is "active", else click on the trust relationship and activate it before configuring it.
+Please ensure that the new Trust Relationship status is "active".
+Otherwise click on the Trust Relationship, and activate it before
+configuring it.
 
 ![hobsons-tr-active](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/hobsons-tr-active.jpg)
 
-The configuration screen can be accessed by clicking on the Hobsons Trust Relationship.
+The configuration screen opens by clicking on the Hobsons Trust Relationship.
 
-1. Configure Metadata Filters: Do not make any changes.
+1. __Configure Metadata Filters__: Do not make any changes.
 
-2. Configure specific Relying Party: Check this option and a link "Configure Relying Party" will appear.
+2. __Configure specific Relying Party__: Check this option and a link "Configure Relying Party" will appear.
 
-3. Configure Relying Party: Click the link and a new window shall appear.
+3. __Configure Relying Party__: Click on the link, and a new window opens:
 
-	* Select SAML2SSO from the list and click the "Add" button.
+	* Select SAML2SSO from the list and click on the "Add" button.
 
-	* Set "signResponses", "signAssertions", "signRequests" and "encryptAssertions" to Conditional from the drop-down menu.
+	* Set "signResponses", "signAssertions", "signRequests" and
+    "encryptAssertions" to `Conditional` from the drop-down menu.
 
-	* Set "encryptNameIds" to Never from the drop-down menu and click "Save".
+	* Set "encryptNameIds" to `Never` from the drop-down menu, and click
+    "Save".
 
 ![hobsons-tr-update](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/hobsons-tr-update.jpg)
 
-4. Click "Update" to finish the Trust Relationship.
+4. Click "Update" to finish the configuration of the Trust Relationship.
+
