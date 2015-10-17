@@ -1,13 +1,14 @@
 # oxRay
 
-LifeRay OpenID Connect plugin to authenticate users using Gluu IdP.
+[LifeRay][liferay] OpenID Connect plugin to authenticate users using
+Gluu IdP.
 [TOC]
 
 ## Overview
 
 The oxAuth LifeRay plugin is used to authenticate and auto-log users
-from Gluu Server into LifeRay with the same credentials. It is built on
-top of oxAuth, the OpenID Connect provider by Gluu.
+from Gluu Server into [LifeRay][liferay] with the same credentials. It
+is built on top of oxAuth, the OpenID Connect provider by Gluu.
 
 The oxAuth plugin intercepts any attempt to login from anywhere in the
 LifeRay and redirects the request and the user to an oxAuth server where
@@ -34,8 +35,7 @@ this plugin as a standard LifeRay hot deployable WAR file.
 This requires a prerequisite: make sure that you have [Maven][maven]
 installed on your system to build this plugin from source.
 
-1. Checkout the Maven source from the [oxRay
-Repository](https://github.com/Gluufederation/oxRay/6.2.x/maven).
+1. Checkout the Maven source from the [oxRay Repository][oxray].
 
 2. Open the file `pom.xml` in `gluu-openid-connect-hook`, and update
 your local LifeRay Tomcat bundle path. This is required for building the
@@ -43,7 +43,8 @@ WAR file and deploying to the LifeRay Tomcat bundle.
 
 ![configure_pom_xml](https://raw.githubusercontent.com/GluuFederation/oxRay/master/img/configure_pom_xml.jpg)
 
-3. Run the following command in `gluu/6.2.x/maven/gluu-openid-connect-hook` directory:
+3. Run the following command in the `gluu/6.2.x/maven/gluu-openid-connect-hook` 
+directory:
 
 ```
 mvn clean install package liferay:deploy
@@ -51,7 +52,7 @@ mvn clean install package liferay:deploy
 
 This will take a few seconds to download the dependency `jar` files, and
 generate the LifeRay-compiled deployable WAR file. It will be placed
-within your <liferay-bundle-folder>/deploy directory, and the hot
+within your `<liferay-bundle-folder>/deploy` directory, and the hot
 deployable process will start.
 
 ### Using LifeRay Plugin SDK With Ant
@@ -225,6 +226,10 @@ the LifeRay. The user will be redirected to hist respective start page.
 
 ![liferay_success_login](https://raw.githubusercontent.com/GluuFederation/oxRay/master/img/liferay_success_login.jpg)
 
+[ant]: https://en.wikipedia.org/wiki/Apache_Ant "Apache Ant, Wikipedia"
+
+[liferay]: https://en.wikipedia.org/wiki/Liferay "LifeRay, Wikipedia"
+
 [maven]: https://en.wikipedia.org/wiki/Apache_Maven "Apache Maven, Wikipedia"
 
-[ant]: https://en.wikipedia.org/wiki/Apache_Ant "Apache Ant, Wikipedia"
+[oxray]: https://github.com/Gluufederation/oxRay/6.2.x/maven "oxRay repository"
