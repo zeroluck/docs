@@ -80,6 +80,7 @@ valid credentials!):
 ```
 
 The last step is to enable Google+ API's:
+
  - Navigate back to the Google API [console](https://console.developers.google.com/project)
  - Select project and enter project name
  - Open new project "API & auth -> API" menu item in configuration navigation tree
@@ -88,16 +89,17 @@ The last step is to enable Google+ API's:
 
 ## Configure Gluu Server
 
-Login to oxTrust and navigate to "Configure Custom Scripts"
+Login to oxTrust, and navigate to "Configure Custom Scripts".
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/google_login/06-manage-custom-scripts.png)
 
-And at the bottom of the page, click on the little link for "Add custom script configuration"
+At the bottom of the page, click on the link to "Add custom script
+configuration".
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/google_login/07-add_custom_script.png)
 
-In the main body of the "Custom Script" section, paste the
-[code from github](https://raw.githubusercontent.com/GluuFederation/oxAuth/master/Server/integrations/gplus/GooglePlusExternalAuthenticator.py)
+In the main body of the "Custom Script" section, paste the [code from
+github](https://raw.githubusercontent.com/GluuFederation/oxAuth/master/Server/integrations/gplus/GooglePlusExternalAuthenticator.py).
 
 You'll also need to add some custom properties:
 
