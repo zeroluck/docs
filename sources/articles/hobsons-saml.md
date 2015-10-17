@@ -1,17 +1,21 @@
 # SAML Trust Relationship with Hobsons Education Solutions Co
 
-This guide has been prepared to connect the Hobsons Service Provider (SP) with the Gluu Server for SP-inititated SSO.
-The connection is extablished through the creation of a Trust Relationship using the Gluu Server UI, oxTrust.
+This guide has been prepared to connect the Hobsons Service Provider
+(SP) with the Gluu Server for SP-initiated SSO. The connection is
+established through the creation of a Trust Relationship using the Gluu
+Server UI, oxTrust.
 
 ## Creating Hobsons Trust Relationship
 
-* Log in to your Gluu Server using admin credentials.
+* Log in to your Gluu Server using your admin credentials.
 
-* Click on the SAML tab and select Trust Relationships. Then click on the Add Relationship button.
+* Next, click on the SAML tab, and select the option Trust
+Relationships. Then, click on the `Add Relationship` button.
 
 ![Add Relationship](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_saml_create.png)
 
-* The add relationship button will open the following page, the trust relationship can be created easily using the following form.
+* The button `Add Relationship` will open the following page, the trust
+relationship can be created easily using the following form.
 
 ![Add empty form](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_saml_newTR.png)
 
@@ -41,7 +45,7 @@ The configuration screen can be accessed by clicking on the Hobsons Trust Relati
 
 1. Configure Metadata Filters: Do not make any changes.
 
-2. Configure specific Relying Pary: Check this option and a link "Configure Relying Party" will appear.
+2. Configure specific Relying Party: Check this option and a link "Configure Relying Party" will appear.
 
 3. Configure Relying Party: Click the link and a new window shall appear.
 
