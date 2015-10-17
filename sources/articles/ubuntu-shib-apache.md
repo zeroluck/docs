@@ -71,10 +71,11 @@ for item in k:
 print "</BODY></HTML>"
 ```
 
-# Configure the Shibboleth SP 
-    
-Use this for shibboleth2.xml and replace `minnow.gluu.info` with the hostname of your SP, and
-`brookie.gluu.info` with the hostname of your IDP.
+# Configure the Shibboleth SP
+
+Use this for `shibboleth2.xml` and replace `minnow.gluu.info` with the
+hostname of your SP, and `brookie.gluu.info` with the hostname of your
+IDP.
 
     <SPConfig xmlns="urn:mace:shibboleth:2.0:native:sp:config"
         xmlns:conf="urn:mace:shibboleth:2.0:native:sp:config"
@@ -177,8 +178,8 @@ Use this for shibboleth2.xml and replace `minnow.gluu.info` with the hostname of
             </Policy>
         </SecurityPolicies>
     </SPConfig>
-        
-Copy this file into /etc/shibboleth/attribute-map.xml
+
+Copy this file into `/etc/shibboleth/attribute-map.xml`:
 
     <Attributes xmlns="urn:mace:shibboleth:2.0:attribute-map" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
         <Attribute name="urn:mace:dir:attribute-def:eduPersonPrincipalName" id="eppn">
@@ -220,18 +221,17 @@ Copy this file into /etc/shibboleth/attribute-map.xml
     
     </Attributes>
 
-Now you need to create a trust relationship in your Gluu Server. Login, go to SAML / Trust Relationships,
-and "Add Relationship" 
+Now you need to create a Trust Relationship in your Gluu Server. Login,
+go to SAML / Trust Relationships, and "Add Relationship":
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/ubuntu-shib-apache/minnow-saml-trust-relationship-shibboleth-sp.png)
 
-Then configure for SAML2SSO profile
-
-Click on the checkbox to "Configure specific RelyingParty" 
+Then, configure for SAML2SSO profile. Click on the checkbox to
+"Configure specific RelyingParty":
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/ubuntu-shib-apache/configure_rp.png)
 
-And then click add the SAML2SSO profile
+Then, click to add the SAML2SSO profile:
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/ubuntu-shib-apache/saml_sso-profile.png)
 
