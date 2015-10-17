@@ -19,32 +19,37 @@ Further documentation is available at the Salesforce.com site.
   * Wait for some time. Salesforce.com will register this domain name
   for you. As an example we use `testgluu-dev-ed.my.salesforce.com` here.
 
-  ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/salesforce/My_Domain.png) 
-  
-  
-*  Register your 'Gluu Server' information here in Salesforce
-   * Go to _Security Controls_ –> _Single Sign On Settings_ 
-   * Click _New_ 
+  ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/salesforce/My_Domain.png)
+
+* Register your Gluu Server information in Salesforce.com
+   * Go to _Security Controls_ –> _Single Sign On Settings_
+   * Click _New_
+
   ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/salesforce/SSO_Settings.png)
-   * Now you need to add your Gluu Server's information here
-     * _Name_: Anything, whichever is easier for you to recognize this setup. i.e. 'Gluu Server'
-     * _API Name_: Gluu Server. 
-     * _Issuer_: EntityID of your Gluu Server. i.e. https://test.gluu.org/idp/shibboleth 
-     * _EntityID_: Your Salesforce custom domain name. i.e. https://testgluu-dev-ed.my.salesforce.com
-     * _Identity Provider Certificate_: Grab your Gluu Server's SAML certificate. SAML certificate can be grabbed from your Gluu Sever's [metadata](https://support.gluu.org/view/application-integration/how-can-i-get-my-idps-metadata/216). Save the certificate and upload it. 
-     * _Request Signing Certificate_: Default Certificate
+
+   * Now you need to add the information of your Gluu Server here
+     * _Name_: Anything, whichever is easier for you to recognize this
+       setup, i.e. `Gluu Server`
+     * _API Name_: Gluu Server.
+     * _Issuer_: EntityID of your Gluu Server, i.e. `https://test.gluu.org/idp/shibboleth`
+     * _EntityID_: Your Salesforce.com custom domain name as chosen
+       above, i.e. `https://testgluu-dev-ed.my.salesforce.com`
+     * _Identity Provider Certificate_: Grab your Gluu Server's SAML
+       certificate. SAML certificate can be grabbed from your Gluu Sever's
+       [metadata](https://support.gluu.org/view/application-integration/how-can-i-get-my-idps-metadata/216). Save the certificate and upload it.
+     * _Request Signing Certificate_: Default certificate
      * _Request Signature Method_: RSA-SHA1
-     * _Assertion Decryption Certificate_: Assertion not encrypted. 
-     * _SAML Identity Type_: Assertion contains User's salesforce.com username
+     * _Assertion Decryption Certificate_: Assertion not encrypted.
+     * _SAML Identity Type_: Assertion contains user's Salesforce.com username
      * _SAML Identity Location_: Identity is in an Attribute element
      * _Attribute Name_: Provide 'SAML2 URI' of your attribute. For our test case we are using Gluu Server's Email attribute. How to check the information of your attribute is available [here](http://www.gluu.org/docs/admin-guide/configuration/#attributes).
-     * _NameID Format_: Keep it blank
-     * _Identity Provider Login URL_: https://test.gluu.org/idp/profile/SAML2/Redirect/SSO
+     * _NameID Format_: Leave this field empty.
+     * _Identity Provider Login URL_: `https://test.gluu.org/idp/profile/SAML2/Redirect/SSO`
      * _Service Provider Initiated Request Binding_: HTTP-Redirect
-     * Here is how our final setup looks like: 
+     * Here is how our example setup looks like:
+
      ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/salesforce/Final_setup.png)
-     
-     
+
 ## Prepare Gluu Server
 
 * How to create SAML trust relationship is available [here](http://www.gluu.org/docs/admin-guide/saml/outbound-saml/#saml-trust-relationship). 
