@@ -1,18 +1,36 @@
-# Gluu Server CE QuickStart 
+# Gluu Server CE Quick Start 
 
-So you want to try out the Gluu Server. The Community Edition (CE) is a great place to start. This article will provide an overview of deployment and testing so you'll be ready to start using your new Gluu Server ASAP. 
+So you want to try out the Gluu Server. The Community Edition (CE) is a
+great place to start. This article will provide an overview of
+deployment and testing so you'll be ready to start using your new Gluu
+Server ASAP.
 
 ## What's included in CE?
 
-When you deploy CE, you have the option to include the following components:
+When you deploy CE, you have the option to include the following
+components:
 
-* **CAS** is an enterprise Single Sign-On solution for web services. CAS should only be used to connect legacy applications. OpenID Connect and SAML are preferred for new application integrations.
-* **Shibboleth** one of the most dependable and heavily tested open source SAML single sign-on servers available. Shibboleth is used in production environments at more than 5,000 organization’s worldwide.
-* **oxAuth:** an inter-op leading [OpenID Connect](http://www.gluu.org/docs/admin-guide/openid-connect/) Provider and a production ready implementation of [UMA](http://www.gluu.org/docs/admin-guide/uma/), a new profile of OAuth2 that defines RESTful, JSON-based, standardized flows and constructs for coordinating the protection of any API or web resource.
+* **CAS** is an enterprise Single Sign-On solution for web services. CAS
+should only be used to connect legacy applications. OpenID Connect and
+SAML are preferred for the integration of new applications.
+
+* **Shibboleth** one of the most dependable and heavily tested open
+source SAML single sign-on servers available. Shibboleth is used in
+production environments at more than 5,000 organizations worldwide.
+
+* **oxAuth:** an inter-op leading [OpenID
+Connect](http://www.gluu.org/docs/admin-guide/openid-connect/) Provider
+and a production ready implementation of
+[UMA](http://www.gluu.org/docs/admin-guide/uma/), a new profile of
+OAuth2 that defines RESTful, JSON-based, standardized flows and
+constructs for coordinating the protection of any API or web resource.
+
 * **oxTrust:** the server management interface.
-* **LDAP:** included for local storage of user information and configuration data.
 
-Inclusion of the Asimba SAML proxy is in progress. 
+* **LDAP:** included for local storage of user information and
+configuration data.
+
+The inclusion of the Asimba SAML proxy is in progress, currently.
 
 ##Licenses
 
