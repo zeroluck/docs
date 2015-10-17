@@ -29,44 +29,48 @@ These are the steps to configure your Apache webserver properly:
 Download `minnow-metadata.xml` to your machine. You will need this file
 later when you create the Trust Relationship in the Gluu Server.
 
-    # mkdir protected
-    # touch /var/www/protected/printHeaders.py
-    # chmod ugo+x /var/www/protected/printHeaders.py
-    
-Edit the default site
+```
+# mkdir protected
+# touch /var/www/protected/printHeaders.py
+# chmod ugo+x /var/www/protected/printHeaders.py
+```
 
-    # vi /etc/apache2/sites-available/default-ssl.conf
-    
-Add this part:
+Edit the default site at `/etc/apache2/sites-available/default-ssl.conf`, 
+and add this part:
 
-                ScriptAlias /protected/ /var/www/protected/
-                <Directory /var/www/protected>
-                        AddHandler cgi-script .py
-                        Options +ExecCGI
-                        SSLOptions +StdEnvVars
-                        AuthType shibboleth
-                        ShibRequestSetting requireSession 1
-                        Require valid-user
-                </Directory>
-                   
-Edit printHeaders.py, adding this simple script which will show you the HTTP Headers:
-    
-    #!/usr/bin/python
-    
-    import os
-    
-    d = os.environ
-    k = d.keys()
-    k.sort()
-    
-    print "Content-type: text/html\n\n"
-    
-    print "<HTML><HEAD><TITLE>Print Env Variables</TITLE></Head><BODY>"
-    print "<h1>Environment Variables</H1>"
-    for item in k:
-        print "<p><B>%s</B>: %s </p>" % (item, d[item])
-    print "</BODY></HTML>"
-    
+```
+ScriptAlias /protected/ /var/www/protected/
+<Directory /var/www/protected>
+	AddHandler cgi-script .py
+	Options +ExecCGI
+	SSLOptions +StdEnvVars
+	AuthType shibboleth
+	ShibRequestSetting requireSession 1
+	Require valid-user
+</Directory>
+```
+
+Edit `printHeaders.py`, and add this simple script. It will show you the
+HTTP headers:
+
+```
+#!/usr/bin/python
+
+import os
+
+d = os.environ
+k = d.keys()
+k.sort()
+
+print "Content-type: text/html\n\n"
+
+print "<HTML><HEAD><TITLE>Print Env Variables</TITLE></Head><BODY>"
+print "<h1>Environment Variables</H1>"
+for item in k:
+	print "<p><B>%s</B>: %s </p>" % (item, d[item])
+print "</BODY></HTML>"
+```
+
 # Configure the Shibboleth SP 
     
 Use this for shibboleth2.xml and replace `minnow.gluu.info` with the hostname of your SP, and
