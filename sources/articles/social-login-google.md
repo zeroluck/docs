@@ -139,9 +139,10 @@ in id_token. If this property has a 'map' value the script allows to map
 uses properties from both gplus_remote_attributes_list and
 gplus_local_attributes_list. The allowed values are map and enroll.
 
-3. _gplus_remote_attributes_list_ - Comma separated list of attribute names (user claims) that Google+
-   returns which map to local attributes attributes in the `gplus_local_attributes_list` property.
-   It's mandatory only if `gplus_deployment_type` is 'enroll'.
+3. __gplus_remote_attributes_list__ - Comma-separated list of attribute
+names (user claims) that Google+ returns which map to local attributes
+in the `gplus_local_attributes_list` property. It is mandatory only if
+`gplus_deployment_type` is set to 'enroll'.
 
 4. _gplus_local_attributes_list_ - Comma separated list of Gluu Server ldap attribute names
    returns are mapped to Google user claims from the `gplus_remote_attributes_list` property.
