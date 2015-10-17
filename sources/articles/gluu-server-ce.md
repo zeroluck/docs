@@ -34,12 +34,12 @@ The inclusion of the Asimba SAML proxy is in progress, currently.
 
 ##Licenses
 
-Each component of the Gluu Server is free to use in production. All OX products are MIT License. Learn more  [here](http://www.gluu.org/docs/admin-guide/introduction/licenses/). 
+Each component of the Gluu Server is free to use in production. All OX products are MIT License. Learn more [here](http://www.gluu.org/docs/admin-guide/introduction/licenses/).
 
 ## Installation
 
-Gluu will publish binaries for as many OS's as possible. Currently, the 
-easiest installation option is:  
+Gluu will publish binaries for as many operating systems as possible.
+Currently, the easiest installation options are:
 
 - [CentOS](../admin-guide/deployment/centos.md)
 - [Ubuntu](../admin-guide/deployment/ubuntu.md)
