@@ -1,21 +1,23 @@
-# Using SAML to get SSO with Google Apps
+# Using SAML To Get SSO With Google Apps
 
+Google Apps will work as a Service Provider (SP) and we need to
+"introduce" Gluu Server with Google Apps as Gluu Server so that it can
+work as an Identity Provider (IDP).
 
-Google Apps will work as Service Provide ( SP ) and we need to "introduce" Gluu Server with Google Apps as Gluu Server can work as Identity Provider ( IDP ).
+NOTE: It is highly recommended to use Google staging apps setup before
+Google production migration. If you have any question or confusion,
+please feel free to let us know.
 
-NOTE: It is highly recommended to use Google staging apps setup before Google
-production migration. If you have any question or confusion, please feel free to
-let us know.
+We need to configure Google Apps and Gluu Server so that both parties
+can talk to each other.
 
-We need to configure both parties ( Google Apps and Gluu Server ) as they can talk to each other.
-
-## Configuring Google Apps with Google dashboard:
+## Configuring Google Apps With Google Dashboard:
 
 * Login to dashboard.
 
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/GoogleAppSSO/admin_console.png)
 
-* Click "Security" tab.
+* Choose the "Security" tab.
 
 * A new page will appear from where you need to select `Set up single sign-on(SSO)`
 
@@ -47,12 +49,12 @@ If you want to know more about Google SSO. [This](https://support.google.com/a/a
 
 ## Configuration in Gluu Server:
 
-Now we need to create a Trust Relationship in Gluu Server as IDP can start its
-SAML transaction with SP ( in this case: Google Apps ). 
+Now we need to create a Trust Relationship in Gluu Server as IDP can
+start its SAML transaction with SP (in this case: Google Apps).
 
-In order to create a Trust Relationship, we need to grab the metadata of Google
-Apps. This metadata can be collected from Google. It's generally specific to
-organization account. 
+In order to create a Trust Relationship, we need to grab the metadata of
+Google Apps. This metadata can be collected from Google. It's generally
+specific to an organization account.
 
 Got the metadata? Great, we are ready to move forward. 
 
@@ -69,7 +71,4 @@ Got the metadata? Great, we are ready to move forward.
         * signRequests: conditional
         * encryptAssertions: never
         * encryptNameIds: never 
-
-
-
 
