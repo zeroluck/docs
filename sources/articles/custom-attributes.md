@@ -92,15 +92,16 @@ for an explanation of all these fields.
 
 ## OpenID Scopes
 
-In SAML, attributes are released directly to websites, so there is not much
-you need to do. In OpenID Connect, there is a little more complexity. OpenID
-Connect defines scopes, which let you group attributes together, and to provide
-a human understandable description of the attributes. This improves usability
-when you need to prompt a person to approve the disclosure of attributes to
-a third party. For example, instead of asking the user if its ok to release
-her address, city, state, and country, and providing a description of each
-attribute, it may be easier to ask the person if its ok to release "mailing
-address information." In situations where the attributes may confuse the person,
+In SAML, attributes are released directly to websites, so there is not
+much you need to do. In OpenID Connect, there is a little more
+complexity. OpenID Connect defines scopes, which let you group
+attributes together, and to provide a human understandable description
+of the attributes. This improves usability when you need to prompt a
+person to approve the disclosure of attributes to a third party. For
+example, instead of asking the user if its ok to release her address,
+city, state, and country, and providing a description of each attribute,
+it may be easier to ask the person if its ok to release "mailing address
+information." In situations where the attributes may confuse the person,
 OpenID Scopes are a really good thing.
 
 An example of the default Gluu Server authorization request:
