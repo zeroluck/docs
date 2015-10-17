@@ -164,9 +164,11 @@ an external module that implements two methods:
         return True    # or return False
 ```
 
-6. _gplus_client_configuration_attribute_ - Optional property to specify client entry attribute name
-    which can override `gplus_client_secrets_file file` content. It can be used in cases when all
-    clients should use separate `gplus_client_secrets.json` configuration.
+6. __gplus_client_configuration_attribute__ - Optional property to
+specify the client entry attribute name which can override
+`gplus_client_secrets_file file` content. It can be used in cases when
+all clients should use a separate `gplus_client_secrets.json`
+configuration.
 
 ## Testing
 
