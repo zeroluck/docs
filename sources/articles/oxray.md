@@ -176,7 +176,7 @@ gluu.openidconnect.client.redirect.url=http://localhost:8080/openidconnect/callb
      LifeRay database, but gets authenticated from the OAuth Server.
 
 * Typically, create a LifeRay page with the name `/no-such-user-found`,
-  or redirect to the LifeRay registration page uri:
+  or redirect to the LifeRay registration page uri like that:
 
 ```
 gluu.openidconnect.no.such.user.redirect.url=http://localhost:8080/no-such-user-found
@@ -214,15 +214,15 @@ always redirect to the OAuth server for authentication.
 
 * OAuth callback (user auto-login to LifeRay)
 	* After a successful authentication with the OAuth server, IdP will
-send a callback to LifeTay with a specific code as a parameter:
+send a callback to LifeRay with a specific code as a parameter:
 
 ```
 http://localhost:8080/openidconnect/callback?code=xxx`
 ```
 
 This will be intercepted by our oxAuth LifeRay plugin. Upon validation
-of the token with the Gluu IdP, it will result in login of the user to
-the LifeRay. The user will be redirected to hist respective start page.
+of the token with the Gluu IdP, it will result in a login of the user to
+the LifeRay. The user will be redirected to his respective start page.
 
 ![liferay_success_login](https://raw.githubusercontent.com/GluuFederation/oxRay/master/img/liferay_success_login.jpg)
 
