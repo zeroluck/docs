@@ -129,13 +129,15 @@ You'll also need to add some custom properties:
     d) Click "Google+ API"
     e) Click "Enable API" button
 
-2. _gplus_deployment_type_ - Specify deployment mode. It's optional property. If this property isn't specified script
-   tries to find user in local LDAP by 'subject_identifier' claim specified in id_token. If this property has 'map' value script
-   allow to map 'subject_identifier' to local user account. If this property has 'enroll' value script should add new user to local LDAP
-   with status 'active'. In order to map IDP attributes to local attributes it uses properties gplus_remote_attributes_list and
-   gplus_local_attributes_list.
-   Allowed values: map/enroll
-   Example: enroll
+2. __gplus_deployment_type__ - Specify the deployment mode. It is an
+optional property. If this property isn't specified the script tries to
+find the user in the local LDAP by 'subject_identifier' claim specified
+in id_token. If this property has a 'map' value the script allows to map
+'subject_identifier' to the local user account. If this property has an
+'enroll' value the script adds a new user to the local LDAP with status
+'active'. In order to map the IDP attributes to the local attributes it
+uses properties from both gplus_remote_attributes_list and
+gplus_local_attributes_list. The allowed values are map and enroll.
 
 3. _gplus_remote_attributes_list_ - Comma separated list of attribute names (user claims) that Google+
    returns which map to local attributes attributes in the `gplus_local_attributes_list` property.
