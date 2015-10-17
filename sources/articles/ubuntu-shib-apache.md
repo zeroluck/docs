@@ -1,28 +1,33 @@
 # Super Quick Ubuntu Shib Apache Install
 
-Need to protect a test Apache folder using SAML on an Ubuntu server? Hate to read? This article is for you.
-Replace "minnow" and "minnow.gluu.info" with your website hostname.
+Need to protect a test Apache folder using SAML on an Ubuntu server?
+Hate to read? This article is for you. Replace both `minnow` and
+`minnow.gluu.info` with your desired website hostname.
 
 ## Configure Apache
 
-    # apt-get install apache2 libshibsp6 libapache2-mod-shib2
-    # a2enmod cgi
-    # a2enmod ssl
-    # a2enmod shib2
-    # a2ensite default-ssl
-    # mkdir /etc/certs
-    # cd /etc/certs
-    # openssl genrsa -des3 -out minnow.key 2048
-    # openssl rsa -in minnow.key -out minnow.key.insecure
-    # mv minnow.key.insecure minnow.key
-    # openssl req -new -key minnow.key -out minnow.csr
-    # openssl x509 -req -days 365 -in minnow.csr -signkey minnow.key -out minnow.crt
-    # shib-metagen -c /etc/certs/minnow.crt -h minnow.gluu.info > /etc/shibboleth/minnow-metadata.xml
-    # service apache2 start
-    # service shibd start
-    
-Download `minnow-metadata.xml` to your PC... you'll need it later when you create the Trust Relationship
-in the Gluu Server
+These are the steps to configure your Apache webserver properly:
+
+```
+# apt-get install apache2 libshibsp6 libapache2-mod-shib2
+# a2enmod cgi
+# a2enmod ssl
+# a2enmod shib2
+# a2ensite default-ssl
+# mkdir /etc/certs
+# cd /etc/certs
+# openssl genrsa -des3 -out minnow.key 2048
+# openssl rsa -in minnow.key -out minnow.key.insecure
+# mv minnow.key.insecure minnow.key
+# openssl req -new -key minnow.key -out minnow.csr
+# openssl x509 -req -days 365 -in minnow.csr -signkey minnow.key -out minnow.crt
+# shib-metagen -c /etc/certs/minnow.crt -h minnow.gluu.info > /etc/shibboleth/minnow-metadata.xml
+# service apache2 start
+# service shibd start
+```
+
+Download `minnow-metadata.xml` to your machine. You will need this file
+later when you create the Trust Relationship in the Gluu Server.
 
     # mkdir protected
     # touch /var/www/protected/printHeaders.py
@@ -233,7 +238,7 @@ stop and start tomcat.
 
 Test the cgi script: `https://minnow.gluu.info/protected/printHeaders.py`
 
-Enter the a valid username password (like `admin` and your inital admin password).
+Enter the a valid username password (like `admin` and your initial admin password).
 
 The display should return something like this:
 
@@ -319,12 +324,12 @@ The display should return something like this:
     
 ## Troubleshooting 
 
- - Make sure you update your hosts file on the Gluu Server, apache server, and your workstation--this won't work with 
+ - Make sure you update your hosts file on the Gluu Server, Apache server, and your workstation--this won't work with 
  just IP addresses.
  
  - Check the Shibboleth logs if you don't see the headers or REMOTE_USER environment variables: 
  `/opt/idp/logs/idp-process.log`  Also you may want to `# service tomcat stop` and `# service tomcat start`
  to make sure the new Shibboleth IDP xml files were loaded.
  
- - Clear the cookies in your browser for both the apache site and the Gluu Server if you are logging in and 
+ - Clear the cookies in your browser for both the Apache site and the Gluu Server if you are logging in and 
  logging out a lot with lots of server restarts.
