@@ -62,10 +62,11 @@ server after performing a Gluu Server base installation, you will see
 that many commonly used attributes are already there. When an LDAP entry
 exists for your attribute, it is considered to be "registered".
 
-There are two ways you can register an attribute. If you are an LDAP geek, you
-can just create an LDIF file with the correct information, and load it in the
-LDAP server that is storing your configuration. If you want to quickly spool
-up new Gluu Servers, this is probably the quickest way to handle it.
+There are two ways you can register an attribute. If you are an LDAP
+geek, you can just create an LDIF file with the correct information, and
+load it in the LDAP server that is storing your configuration. If you
+want to quickly spool up new Gluu Servers, this is probably the quickest
+way to handle it.
 
     dn: inum=@!1111!0005!2B29,ou=attributes,o=@!1111,o=gluu
     objectClass: top
@@ -83,9 +84,11 @@ up new Gluu Servers, this is probably the quickest way to handle it.
     gluuAttributeViewType: user
     gluuAttributeViewType: admin
 
-If you just have a couple of attributes, you can also use the oxTrust Web
-interface to add the attributes. See screenshot below, and refer to the
-oxTrust [documentation](http://www.gluu.org/docs/admin-guide/configuration/#attributes) for an explanation of all these fields.
+If you just have a couple of attributes, you can also use the oxTrust
+Web interface to add the attributes. See the screenshot below, and refer
+to the oxTrust
+[documentation](http://www.gluu.org/docs/admin-guide/configuration/#attributes)
+for an explanation of all these fields.
 
 ## OpenID Scopes
 
