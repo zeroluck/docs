@@ -240,11 +240,9 @@ stop and start tomcat.
 
 ## Test
 
-Test the cgi script: `https://minnow.gluu.info/protected/printHeaders.py`
-
-Enter the a valid username password (like `admin` and your initial admin password).
-
-The display should return something like this:
+Test the CGI script at `https://minnow.gluu.info/protected/printHeaders.py`.
+Enter both the valid username and password (like `admin` and your
+initial admin password). The output will contain something like this:
 
     **Environment Variables**
     
@@ -328,12 +326,16 @@ The display should return something like this:
     
 ## Troubleshooting 
 
- - Make sure you update your hosts file on the Gluu Server, Apache server, and your workstation--this won't work with 
- just IP addresses.
- 
- - Check the Shibboleth logs if you don't see the headers or REMOTE_USER environment variables: 
- `/opt/idp/logs/idp-process.log`  Also you may want to `# service tomcat stop` and `# service tomcat start`
- to make sure the new Shibboleth IDP xml files were loaded.
- 
- - Clear the cookies in your browser for both the Apache site and the Gluu Server if you are logging in and 
- logging out a lot with lots of server restarts.
+ - Make sure you update your hosts file on the Gluu Server, Apache
+   server, and your workstation--this won't work with IP addresses,
+   only.
+
+ - Check the Shibboleth log file `/opt/idp/logs/idp-process.log` if you
+   don't see the headers or REMOTE_USER environment variables. Also,
+   restart the Apache Tomcat service by `service tomcat restart` to 
+   make sure the new Shibboleth IDP xml files were loaded.
+
+ - Clear the cookies in your web browser for both the Apache site, and 
+   the Gluu Server if you are logging in and logging out a lot with 
+   lots of server restarts.
+
