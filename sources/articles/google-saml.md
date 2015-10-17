@@ -53,9 +53,10 @@ options.
    * Save your data using the `Save changes` button on the lower right
      of the page.
 
-If you want to know more about Google SSO. [This](https://support.google.com/a/answer/60224?hl=en) might help you. 
+If you want to know more about Google SSO,
+[this](https://support.google.com/a/answer/60224?hl=en) helps you.
 
-## Configuration in Gluu Server:
+## Configuration In Gluu Server:
 
 Now we need to create a Trust Relationship in Gluu Server as IDP can
 start its SAML transaction with SP (in this case: Google Apps).
