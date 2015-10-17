@@ -1,21 +1,24 @@
 #SAML integration of Salesforce.com with Gluu Server
 
 By default Salesforce suggest deployers to implement IDP-initiated SSO.
-The initialization of IDP-initiated SSO is little complex as it require a big hostname
-which includes IDP's SSO link as well as SP's login url. So we prefer
-SP-initiated SSO and here in this documentation we are presenting a very simple
-SP-initiated SSO steps with Salesforce and Gluu Server. You can still go for IDP-initiated SSO if you prefer, documentation is available in Salesforce.com site. 
-
+The initialization of IDP-initiated SSO is little bit complex as it
+requires a big hostname which includes IDP's SSO link as well as SP's
+login uri. So we prefer SP-initiated SSO and here in this documentation
+we are presenting a very simple SP-initiated SSO steps with Salesforce
+and Gluu Server. Still, you can go for IDP-initiated SSO if you prefer.
+Further documentation is available at the Salesforce.com site.
 
 ## Prepare Salesforce.com
 
+* Log into Salesforce.com with your administrative account.
+* Click on _Setup_ in the right upper corner of the page.
+* You need to add a custom domain name for your Salesforce.com site if
+  you do not have any yet.
+  * Go to _Domain Management_ –> _My Domain_
+  * Add your custom domain
+  * Wait for some time. Salesforce.com will register this domain name
+  for you. As an example we use `testgluu-dev-ed.my.salesforce.com` here.
 
-* Log into Salesforce.com with your administrative account. 
-* Click on _Setup_ [ right upper corner ] 
-* You need to add a custom Domain name for your salesforce site if you don't have any yet. 
-  * Go to _Domain Management_ –> _My Domain_ 
-  * Add your custom domain 
-  * Wait for some time. Salesforce will register this domain name for you. As for example we got something like 'testgluu-dev-ed.my.salesforce.com' for our testing. 
   ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/salesforce/My_Domain.png) 
   
   
