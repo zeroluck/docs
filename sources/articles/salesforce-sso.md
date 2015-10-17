@@ -53,18 +53,19 @@ Further documentation is available at the Salesforce.com site.
 ## Prepare Gluu Server
 
 * How to create SAML trust relationship is available [here](http://www.gluu.org/docs/admin-guide/saml/outbound-saml/#saml-trust-relationship). 
-* Grab Salesforce metadata from Salesforce site. There is an option named 'Download Metadata' there. 
-  * Modify Salesforce metadata a bit: 
-    * Remove _AuthnRequestsSigned=“true”_ from metadata. 
+* Grab Salesforce.com metadata from the Salesforce.com website. There is
+  an option named 'Download Metadata':
+  * Modify Salesforce.com metadata a bit:
+    * Remove _AuthnRequestsSigned=“true”_ from metadata.
     * Save metadata
-* Create Trust Relationship: 
-  * _Display Name_: Anything, whichever is easier for you to recognize this trust relationship. 
+* Create Trust Relationship:
+  * _Display Name_: Anything, whichever is easier for you to recognize this trust relationship.
   * _Description_: Anything, whichever is easier for you to recognize this trust relationship
-  * _Metadata Type_: 'File' 
-  * Upload salesforce's metadata ( your modified one )
+  * _Metadata Type_: 'File'
+  * Upload salesforce's metadata (your modified one)
   * Releases attributes: TransientID and Email
   * 'Add' this trust
-  * Configure Specific Relying: It can be done from Gluu Server's GUI ( named: oxTrust )
+  * Configure Specific Relying: It can be done from Gluu Server's GUI (named: oxTrust)
     * Select 'SAML2SSO'
         * includeAttributeStatement: Enabled
         * assertionLifetime: keep the default one
@@ -76,23 +77,28 @@ Further documentation is available at the Salesforce.com site.
         * encryptNameIds: never
         * Save it
   * 'Update' the trust relationship
-  * Here is how it looks like for our test setup: 
+  * Here is how it looks like in our example setup:
+
   ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/salesforce/Gluu_Server.png)
-  
-  
+
 ## Test SSO
 
 * Go back to Salesforce.com setup
 * Security Controls –> Single Sign On Settings
-* Enable 'Federated Single Sign-On Using SAML' 
+* Enable 'Federated Single Sign-On Using SAML'
 * Go to 'Domain Management'
 * Configure 'Authentication Configuration'
-  * Select 'Gluu Server' 
+  * Select 'Gluu Server'
   * Save it
-  * Here is how 'Authentication Configuration' looks like: 
+  * Here is how the 'Authentication Configuration' looks like:
+
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/salesforce/Authentication_Configuration.png)
-* This is SP-initiate SSO. So hit your Salesforce website link to initiate the SSO. 
-* [Here](https://www.youtube.com/watch?v=VehuRJr647E&feature=youtu.be) is video link of this SSO. 
+
+* This is SP-initiate SSO. So hit your Salesforce.com website link to
+initiate the SSO.
+
+* [Here](https://www.youtube.com/watch?v=VehuRJr647E&feature=youtu.be)
+is a video link of this SSO.
 
 
 
