@@ -17,33 +17,41 @@ can talk to each other.
 
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/GoogleAppSSO/admin_console.png)
 
-* Choose the "Security" tab.
+* From the list of options choose the "Security" tab.
 
-* A new page will appear from where you need to select `Set up single sign-on(SSO)`
+* A new page will open. Select `Set up single sign-on(SSO)` from the
+options.
 
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/GoogleAppSSO/security_setting.png)
 
-* The final Single Sign-On setting page will appear. 
+* Finally, the Single Sign-On setting page will appear. 
 
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/GoogleAppSSO/final_setup.png)
 
-   * `Enable` _Setup SSO with third party Identity Provider_, this case your Gluu Server. 
+  This page contains a number of selection, and entry fields.
 
-   * Sign-in Page URL: https://idp_hostname/profile/SAML2/Redirect/SSO
+   * __Setup SSO with third party Identity Provider__: This
+     refers to your Gluu Server instance. Enable this box.
 
-   * Sign-out Page URL: https://idp_hostname/idp/logout.jsp
+   * __Sign-in Page URL__: Enter the uri of the sign-in page, for
+     example `https://idp_hostname/profile/SAML2/Redirect/SSO`.
 
-   * Change Password URL: Organization should provide this link if they have any link for end users.
+   * __Sign-out Page URL__: Enter the uri of the logout page, for
+     example `https://idp_hostname/idp/logout.jsp`.
 
-   * Verification certificate: Upload the  SAML certificate of your Gluu Server
+   * __Change Password URL__: The uri an user is redirected if he wants
+     to change his password. It is recommended that an organization 
+     provides such a link for its end users.
 
-       * How to get the SAML cert of your Gluu Server? [Here](https://support.gluu.org/view/installation/certificates-in-idp/275) it is. 
+   * __Verification certificate__: Upload the SAML certificate of your
+     Gluu Server. To get the SAML certificate of your Gluu Server, have
+     a look [here](https://support.gluu.org/view/installation/certificates-in-idp/275).
 
-   * `Enable` _Use a domain specific issuer_
-    
-   * Save it
+   * __Use a domain specific issuer__: Enable this box to use a
+     domain-specific issuer.
 
-
+   * Save your data using the `Save changes` button on the lower right
+     of the page.
 
 If you want to know more about Google SSO. [This](https://support.google.com/a/answer/60224?hl=en) might help you. 
 
