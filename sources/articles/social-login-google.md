@@ -172,44 +172,59 @@ configuration.
 
 ## Testing
 
-One simple way to test is to use oxTrust for testing. In the "Configure Authentication" menu dropdown, select
-"Google" (or whatever you entered as the "Name" of the custom authentication script--as the default
-authentication method.
+One simple way to test the configuration is to use oxTrust. In the
+"Configure Authentication" dropdown menu, select "Google" (or whatever
+you entered as the "Name" of the custom authentication script--as the
+default authentication method.
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/google_login/08-select_default_authentication.png)
 
-After you login and logout, you should be presented with a new login form that has the Google Login button:
+After you login and logout, you should be presented with a new login
+form that has the Google login button:
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/google_login/09-google-authentication-button.png)
 
-After clicking the Google Login button, you should be presented for authorization--Google needs to make sure
-its ok to release attributes to the Gluu Server:
+After clicking the Google login button, you are presented for
+authorization--Google needs to make sure its ok to release attributes to
+the Gluu Server:
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/google_login/10-google-authorization.png)
 
-If the script doesn't work, and you locked yourself out of oxTrust, don't worry! You can create an ldif file,
-for example `revert.ldif`, to set back the default authentication method, like this:
+If the script doesn't work, and you locked yourself out of oxTrust,
+don't worry! You can create an LDIF file, for example `revert.ldif`, to
+set back the default authentication method, like this:
 
-    dn: inum=@!1E3B.F133.14FA.5062!0002!4B66.CF9C,ou=appliances,o=gluu
-    changetype: modify
-    replace: oxAuthenticationMode
-    oxAuthenticationMode: internal
+```
+dn: inum=@!1E3B.F133.14FA.5062!0002!4B66.CF9C,ou=appliances,o=gluu
+changetype: modify
+replace: oxAuthenticationMode
+oxAuthenticationMode: internal
+```
 
-oxAuthenticationMode corresponds to the 'Name' of the customer authentication script in oxTrust, use
-`internal` to revert to the default ldap authentication. You'll have to change the `inum` with the `inum`
-for your installation. You can find it an ldapsearch like this:
+oxAuthenticationMode corresponds to the 'Name' of the customer
+authentication script in oxTrust. Use `internal` to revert to the
+default LDAP authentication. You'll have to change the `inum` with the
+`inum` of your installation. You can find it using ldapsearch like this:
 
-    /opt/opendj/bin/ldapsearch -h localhost -p 1389 -D "cn=directory manager" -j ~/.pw \
-    -b "ou=appliances,o=gluu" -s one "objectclass=*" inum
+```
+/opt/opendj/bin/ldapsearch -h localhost -p 1389 -D "cn=directory manager" -j ~/.pw -b "ou=appliances,o=gluu" -s one "objectclass=*" inum
+```
 
-where `~/.pw` is a file with your Directory Manager password. If you don't remember it, try
-    grep ldapPass= /install/community-edition-setup/setup.properties.last
+`~/.pw` is a file with your Directory Manager password. If you don't
+remember it, try to find it using `grep`: 
 
-Once your ldif looks ok, then use ldapmodify to revert back to password authentication:
+```
+grep ldapPass= /install/community-edition-setup/setup.properties.last
+```
 
-    /opt/opendj/bin/ldapmodify -h localhost -p 1389 -D "cn=directory manager" -j ~/.pw -f revert.ldif
+Once your LDIF looks ok, then use `ldapmodify` to revert back to
+password authentication:
 
-If things go wrong, it can leave the sessions in your browser in a bad state. If things get really weird,
-remove the cookies in your browser for the hostname of your Gluu Server.
+```
+/opt/opendj/bin/ldapmodify -h localhost -p 1389 -D "cn=directory manager" -j ~/.pw -f revert.ldif
+```
 
+If things go wrong, it can leave the sessions in your browser in a bad
+state. If things get really weird, remove the cookies in your browser
+for the hostname of your Gluu Server.
 
