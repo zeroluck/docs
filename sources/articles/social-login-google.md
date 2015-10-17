@@ -1,38 +1,46 @@
 # Social Login with Google
 
-So you want to use Google for authentication? Its a nice option to offer to your customers
-who may not want to maintain a password in your domain. Sometimes you may even want to let
-employees use Google for authentication--everyone's got a Google account right?
+So you want to use Google for authentication? Its a nice option to offer
+to your customers who may not want to maintain a password in your
+domain. Sometimes you may even want to let employees use Google for
+authentication--everyone's got a Google account right?
 
-Google is an external "identity provider" or IDP. You need to consider the situation that there
-may be users who have Google credentials, but don't yet have an account in your domain. You have
-two options: (1) don't let the users login; (2) dynamically add the users to your Gluu
-Server LDAP server, which is what we call "dynamic enrollment."
+Google is an external "identity provider" or IDP. You need to consider
+the situation that there may be users who have Google credentials, but
+don't have an account in your domain, yet. You have two options: (1)
+don't let the users login; (2) dynamically add the users to your Gluu
+Server LDAP server, which is what we call "dynamic enrollment".
 
-Using a Gluu Server
-[authentication interception script](../reference/interception-scripts/index.md),
-you can implement any kind of business logic. Gluu has contributed an interception script to handle
-Google login on
+Using a Gluu Server [authentication interception
+script](../reference/interception-scripts/index.md), you can implement
+any kind of business logic. Gluu has contributed an interception script
+to handle Google login on
 [Github](https://github.com/GluuFederation/oxAuth/blob/master/Server/integrations/gplus/GooglePlusExternalAuthenticator.py).
-This article will provide step-by-step instructions on howto install and configure this script.
+This article will provide step-by-step instructions on howto install and
+configure this script.
 
 ## Configure Google
 
-In order to call Google API's, you need to register as a developer and create client credentials.
-Here are some [instructions](https://developers.google.com/identity/protocols/OAuth2)
+In order to call Google API's, you need to register as a developer and
+create client credentials. Here are some
+[instructions](https://developers.google.com/identity/protocols/OAuth2)
+for these steps.
 
 The first thing you'll need to do is Create a Project on Google to obtain
-client credentials. Click "Create project" and enter project name
+client credentials. Click "Create project" and enter your desired
+project name.
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/google_login/01-create-project.png)
 
-Then click on your newly created project from the listing on the dashboard, and under the Credentials section,
-you'll need to create a new "OAuth2 2.0 client ID."
+Then click on your newly created project from the listing on the
+dashboard, and under the Credentials section, create a new "OAuth2 2.0
+client ID". 
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/google_login/02-create-oauth2-creds.png)
 
-Google will ask you to configure your consent screen, to add your logo and other information displayed to the
-user to authorize Google to release information.
+Google will ask you to configure your consent screen, to add your logo
+and other information displayed to the user to authorize Google to
+release information.
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/google_login/03-create-oauth2-creds.png)
 
@@ -40,18 +48,21 @@ Fill out the form...
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/google_login/04-configure-authorization-page.png)
 
-Now you're ready to create the credentials. Enter "Authorized JavaScript origins". It should be
-the URL of your Gluu Server for example `https://idp.example.com`
+Now you're ready to create the credentials. Enter "Authorized JavaScript
+origins". It should be the uri of your Gluu Server--for example
+`https://idp.example.com`.
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/google_login/05-create-oauth2-creds.png)
 
-Google will display the client-id and secret... ignore it. What you want to do is download the JSON which
-you are going to upload into your Gluu Server.
+Google will display the client-id and the according secret ... ignore
+it. Instead, download the JSON file which you are going to upload into
+your Gluu Server, next.
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/google_login/06-download_json.png)
 
-Move this file to `/opt/tomcat/conf/google.json` The JSON will look something like this
-(no... these aren't aren't valid creds!):
+Move this file to the location `/opt/tomcat/conf/google.json`. The JSON
+file will look something like this example (no... these data are not
+valid credentials!):
 
 ```json
 {
@@ -116,7 +127,7 @@ Also it's mandatory to enable Google+ API:
 2. _gplus_deployment_type_ - Specify deployment mode. It's optional property. If this property isn't specified script
    tries to find user in local LDAP by 'subject_identifier' claim specified in id_token. If this property has 'map' value script
    allow to map 'subject_identifier' to local user account. If this property has 'enroll' value script should add new user to local LDAP
-   with status 'acrtive'. In order to map IDP attributes to local attributes it uses properties gplus_remote_attributes_list and
+   with status 'active'. In order to map IDP attributes to local attributes it uses properties gplus_remote_attributes_list and
    gplus_local_attributes_list.
    Allowed values: map/enroll
    Example: enroll
@@ -187,7 +198,7 @@ Once your ldif looks ok, then use ldapmodify to revert back to password authenti
 
     /opt/opendj/bin/ldapmodify -h localhost -p 1389 -D "cn=directory manager" -j ~/.pw -f revert.ldif
 
-If things go wrong, it can leave the sessions in your browswer in a bad state. If things get really weird,
+If things go wrong, it can leave the sessions in your browser in a bad state. If things get really weird,
 remove the cookies in your browser for the hostname of your Gluu Server.
 
 
