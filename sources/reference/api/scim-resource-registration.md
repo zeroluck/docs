@@ -1,20 +1,20 @@
 ## API Document
 
-### /host/seam/resource/restv1/resource_set
+### /host/seam/resource/restv1/Users
 
 #### Overview
 
 
-#### `/host/seam/resource/restv1/resource_set{rsid}`
+#### `/host/seam/resource/restv1/Users{rsid}`
 
-##### deleteResourceSet
+##### deleteUser
 
-**DELETE** `/host/seam/resource/restv1/resource_set{rsid}`
+**DELETE** `/host/seam/resource/restv1/Users{rsid}`
 
 Deletes a previously registered resource set description on the basis of provided id as parameter (Id tells the system which resource set is desired to be deleted).
 
 ###### URL
-    http://gluu.org/host/seam/resource/restv1/resource_set{rsid}
+    http://gluu.org/host/seam/resource/restv1/Users{rsid}
 
 ##### Request
 ###### Parameters
@@ -80,13 +80,13 @@ Deletes a previously registered resource set description on the basis of provide
 
 - - -
 ##### getResourceSet
-**GET** `/host/seam/resource/restv1/resource_set{rsid}`
+**GET** `/host/seam/resource/restv1/Users{rsid}`
 
 Returns a resource set on the basis of provided id as path parameter. The resource MUST be already registered with the mentioned id.
 
 
 ###### URL
-    http://gluu.org/host/seam/resource/restv1/resource_set{rsid}
+    http://gluu.org/host/seam/resource/restv1/Users{rsid}
 
 ##### Request
 ###### Parameters
@@ -165,12 +165,12 @@ Returns a resource set on the basis of provided id as path parameter. The resour
 
 - - -
 ##### updateResourceSet
-**PUT** `/host/seam/resource/restv1/resource_set{rsid}`
+**PUT** `/host/seam/resource/restv1/Users{rsid}`
 
 Updates a previously registered resource set description on the basis of given id using the PUT method. 
 
 ###### URL
-    http://gluu.org/host/seam/resource/restv1/resource_set{rsid}
+    http://gluu.org/host/seam/resource/restv1/Users{rsid}
 
 ##### Request
 ###### Parameters
