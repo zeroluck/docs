@@ -4,7 +4,7 @@
 
 1. Start --> Control Panel --> Programs --> "Turn Windows features on or off"
 
-2. Select (i) IIS (ii) Web Management Tools (iii) II6 Management Compatiability (iv) IIS Management Console (v) IIS Management Scripts and Tools (vi) IIS Management Service
+2. Select (i) IIS (ii) Web Management Tools (iii) II6 Management Compatibility (iv) IIS Management Console (v) IIS Management Scripts and Tools (vi) IIS Management Service
 
 3. Select (i) World Wide Web Services (ii) CGI (iii) ISAPI Filters (iv) ISAPI Extensions --> Press OK.
 ![IIS 7 Setup](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_iis7setup.png)
@@ -130,7 +130,7 @@
 
 ### Trust Relationship in IdP
 
-1. Create a Trust Relationship for the new SP in the IdP. It is necessary to upload the Public Certificate of the new SP in teh IdP. Please note that the CN of the public certificate MUST BE the same as _Hostname_ of the SP. Hit "Add".
+1. Create a Trust Relationship for the new SP in the IdP. It is necessary to upload the Public Certificate of the new SP in the IdP. Please note that the CN of the public certificate MUST BE the same as _Hostname_ of the SP. Hit "Add".
 
 ![Add TR](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/iis_setup_addtr.png)
 

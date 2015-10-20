@@ -52,7 +52,8 @@ Next, create an **Apache _conf_** file for loading this module.
 cat "LoadModule auth_openidc_module modules/mod_auth_openidc.so" > /etc/httpd/conf.d/mod_auth_openidc.conf
 ```
 
-The file xxx will contain these lines:
+The file `/etc/httpd/conf.d/mod_auth_openidc.conf` will now contain
+these two lines:
 
 ```
 LoadModule auth_openidc_module modules/mod_auth_openidc.so
@@ -71,7 +72,7 @@ service httpd start
 There are two methods for client registration:
 
 1. Dynamic Client Registration
-2. Manual Cient Registration
+2. Manual Client Registration
 
 You can use any of the methods to register the client.
 
@@ -83,7 +84,7 @@ For dynamic client registration, we'll name the server: **dynamic.gluu.org.**
 Create a directory named `dynamic` inside the directory `/var/www/html`, that is:
 
 ```
-mkdir /var/www/html/dynamcic
+mkdir /var/www/html/dynamic
 ```
 
 Now, create a file named `index.html`, and add the following content:
@@ -107,7 +108,7 @@ directory using this command:
 chown -R apache:apache /var/www/html
 ```
 
-Let's create the Apache config file now. Create a file named
+Let's create the Apache configuration file now. Create a file named
 `/etc/httpd/conf.d/dynamic.conf` with the content as below:
 
 ```
@@ -134,9 +135,11 @@ Let's create the Apache config file now. Create a file named
 ```
 
 Here, both certificate and key files already exist on the server. You
-can use your own, too. Next, restart the Apache service as:
+can use your own, too. Next, enable the site by running the
+`a2ensite`command, and restart the Apache service as:
 
 ```
+a2ensite dynamic.conf
 service httpd restart
 ```
 
@@ -148,7 +151,7 @@ enter `admin@ce.gluu.org`.
 
 The usual choice as per present used uris is: `admin@ce.gluu.org`. Note
 that you have to use an existing user at the gluuCE along with an
-existing uri. An example is `existing_user*@your.gluu.ce.server`.
+existing uri. An example is `existing_user@your.gluu.ce.server`.
 
 After this the *oxAuth* page from gluuCE is displayed where you enter
 the credentials for authentication.
@@ -218,11 +221,14 @@ below:
 ```
 
 Instead of pre-existing cert and key files, feel free to use your own.
-Next, restart the Apache service as below:
+Next, enable the static site by running the `a2ensite` command, and
+restart the Apache service as below:
 
 ```
+a2ensite static.conf
 service httpd restart
 ```
+
 Now, try to access [this page](https://static.gluu.org:44443/static),
 and you should see the oxAuth page from gluuCE where you enter the
 credentials for authentication.
@@ -253,7 +259,7 @@ service gluu-server login
 
 ### Getting DN from Client ID
 
-We get the client id from the search performed in gluu-server's Web UI.
+We get the client id from the search performed in Gluu Server's Web UI.
 So, to get the DN part we perform the below command. The LDAP password
 can be stored in `/root/.pw` or at any other location that is convenient
 for you. In our case the command is:

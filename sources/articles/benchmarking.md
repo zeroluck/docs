@@ -2,7 +2,8 @@
 
 ## Performance Tuning
 
-Gluu Server has stateless architecture, it scales quite easy. However to get high-performant server it must be tuned accordingly.
+Gluu Server has a stateless architecture, it scales quite easy. However
+to get high-performant server it must be tuned accordingly.
 
 Tuning consists of:
 
@@ -12,44 +13,47 @@ Tuning consists of:
 
 ### LDAP Server
 
-(For convenience all samples sticks to OpenDJ however general recommendations are the same for other LDAP Servers)
+(For convenience all samples stick to OpenDJ however general recommendations are the same for other LDAP Servers)
 
-1. Maximum allowed connections
+1. Maximum number of allowed connections
 
-If there is not enough connections to serve the client, connection is put "on hold" and waits. To avoid delays it's recommended to provide expected maximum allowed connections.
+If there are not enough connections to serve the client, a connection is
+put "on hold" and waits. To avoid delays it's recommended to provide
+expected maximum allowed connections.
 
 ```
- max-allowed-client-connections=1000
+max-allowed-client-connections=1000
 ```
 
 2. Provide enough resources to LDAP Server
 
-For example OpenDJ use JVM for running, for high performance it's recommended to give enough memory via JVM system properties.
+For example OpenDJ use JVM for running, for high performance it's
+recommended to give enough memory via JVM system properties.
 
 3. Allow LDAP Server use cache as much as possible.
 
 ```
-    dsconfig -n set-backed-prop --backend-name userRoot --set db-cache-percent:50
+dsconfig -n set-backed-prop --backend-name userRoot --set db-cache-percent:50
 ```
 
-### Tomcat
+### Apache Tomcat
 
-  1. Set maxmimum for parallel requests.
+1. Set maximum for parallel requests.
 
-Connector parameters in server.xml:
+Connector parameters in `server.xml`:
 
 - maxThreads="10000"
 - maxConnections="10000"
 
-  2. Set memory settings via JAVA_OPTS
+2. Set memory settings via JAVA_OPTS
 
 set "JAVA_OPTS=-Xms1456m -Xmx7512m -XX:MaxPermSize=256m -XX:+DisableExplicitGC"
 
   3. Operating time
 
-Check via Tomcat monitor whether requests are handled or just "hangs" because there no enough resources
-
-Here is sample when processing time increase due to lack of resources:
+Check via Tomcat monitor whether requests are handled or just "hangs"
+because there are not enough resources. Here is sample when processing
+time increase due to lack of resources:
 
 ![Alt text](http://gluu.org/docs/img/benchmark/tomcatStatus.png "Tomcat status")
 

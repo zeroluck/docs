@@ -1,71 +1,81 @@
 # Super Quick Ubuntu Shib Apache Install
 
-Need to protect a test Apache folder using SAML on an Ubuntu server? Hate to read? This article is for you.
-Replace "minnow" and "minnow.gluu.info" with your website hostname.
+Need to protect a test Apache folder using SAML on an Ubuntu server?
+Hate to read? This article is for you. Replace both `minnow` and
+`minnow.gluu.info` with your desired website hostname.
 
 ## Configure Apache
 
-    # apt-get install apache2 libshibsp6 libapache2-mod-shib2
-    # a2enmod cgi
-    # a2enmod ssl
-    # a2enmod shib2
-    # a2ensite default-ssl
-    # mkdir /etc/certs
-    # cd /etc/certs
-    # openssl genrsa -des3 -out minnow.key 2048
-    # openssl rsa -in minnow.key -out minnow.key.insecure
-    # mv minnow.key.insecure minnow.key
-    # openssl req -new -key minnow.key -out minnow.csr
-    # openssl x509 -req -days 365 -in minnow.csr -signkey minnow.key -out minnow.crt
-    # shib-metagen -c /etc/certs/minnow.crt -h minnow.gluu.info > /etc/shibboleth/minnow-metadata.xml
-    # service apache2 start
-    # service shibd start
-    
-Download `minnow-metadata.xml` to your PC... you'll need it later when you create the Trust Relationship
-in the Gluu Server
+These are the steps to configure your Apache webserver properly:
 
-    # mkdir protected
-    # touch /var/www/protected/printHeaders.py
-    # chmod ugo+x /var/www/protected/printHeaders.py
-    
-Edit the default site
+```
+# apt-get install apache2 libshibsp6 libapache2-mod-shib2
+# a2enmod cgi
+# a2enmod ssl
+# a2enmod shib2
+# a2ensite default-ssl
+# mkdir /etc/certs
+# cd /etc/certs
+# openssl genrsa -des3 -out minnow.key 2048
+# openssl rsa -in minnow.key -out minnow.key.insecure
+# mv minnow.key.insecure minnow.key
+# openssl req -new -key minnow.key -out minnow.csr
+# openssl x509 -req -days 365 -in minnow.csr -signkey minnow.key -out minnow.crt
+# shib-metagen -c /etc/certs/minnow.crt -h minnow.gluu.info > /etc/shibboleth/minnow-metadata.xml
+# service apache2 start
+# service shibd start
+```
 
-    # vi /etc/apache2/sites-available/default-ssl.conf
-    
-Add this part:
+Download `minnow-metadata.xml` to your machine. You will need this file
+later when you create the Trust Relationship in the Gluu Server.
 
-                ScriptAlias /protected/ /var/www/protected/
-                <Directory /var/www/protected>
-                        AddHandler cgi-script .py
-                        Options +ExecCGI
-                        SSLOptions +StdEnvVars
-                        AuthType shibboleth
-                        ShibRequestSetting requireSession 1
-                        Require valid-user
-                </Directory>
-                   
-Edit printHeaders.py, adding this simple script which will show you the HTTP Headers:
-    
-    #!/usr/bin/python
-    
-    import os
-    
-    d = os.environ
-    k = d.keys()
-    k.sort()
-    
-    print "Content-type: text/html\n\n"
-    
-    print "<HTML><HEAD><TITLE>Print Env Variables</TITLE></Head><BODY>"
-    print "<h1>Environment Variables</H1>"
-    for item in k:
-        print "<p><B>%s</B>: %s </p>" % (item, d[item])
-    print "</BODY></HTML>"
-    
-# Configure the Shibboleth SP 
-    
-Use this for shibboleth2.xml and replace `minnow.gluu.info` with the hostname of your SP, and
-`brookie.gluu.info` with the hostname of your IDP.
+```
+# mkdir protected
+# touch /var/www/protected/printHeaders.py
+# chmod ugo+x /var/www/protected/printHeaders.py
+```
+
+Edit the default site at `/etc/apache2/sites-available/default-ssl.conf`, 
+and add this part:
+
+```
+ScriptAlias /protected/ /var/www/protected/
+<Directory /var/www/protected>
+	AddHandler cgi-script .py
+	Options +ExecCGI
+	SSLOptions +StdEnvVars
+	AuthType shibboleth
+	ShibRequestSetting requireSession 1
+	Require valid-user
+</Directory>
+```
+
+Edit `printHeaders.py`, and add this simple script. It will show you the
+HTTP headers:
+
+```
+#!/usr/bin/python
+
+import os
+
+d = os.environ
+k = d.keys()
+k.sort()
+
+print "Content-type: text/html\n\n"
+
+print "<HTML><HEAD><TITLE>Print Env Variables</TITLE></Head><BODY>"
+print "<h1>Environment Variables</H1>"
+for item in k:
+	print "<p><B>%s</B>: %s </p>" % (item, d[item])
+print "</BODY></HTML>"
+```
+
+# Configure the Shibboleth SP
+
+Use this for `shibboleth2.xml` and replace `minnow.gluu.info` with the
+hostname of your SP, and `brookie.gluu.info` with the hostname of your
+IDP.
 
     <SPConfig xmlns="urn:mace:shibboleth:2.0:native:sp:config"
         xmlns:conf="urn:mace:shibboleth:2.0:native:sp:config"
@@ -168,8 +178,8 @@ Use this for shibboleth2.xml and replace `minnow.gluu.info` with the hostname of
             </Policy>
         </SecurityPolicies>
     </SPConfig>
-        
-Copy this file into /etc/shibboleth/attribute-map.xml
+
+Copy this file into `/etc/shibboleth/attribute-map.xml`:
 
     <Attributes xmlns="urn:mace:shibboleth:2.0:attribute-map" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
         <Attribute name="urn:mace:dir:attribute-def:eduPersonPrincipalName" id="eppn">
@@ -211,18 +221,17 @@ Copy this file into /etc/shibboleth/attribute-map.xml
     
     </Attributes>
 
-Now you need to create a trust relationship in your Gluu Server. Login, go to SAML / Trust Relationships,
-and "Add Relationship" 
+Now you need to create a Trust Relationship in your Gluu Server. Login,
+go to SAML / Trust Relationships, and "Add Relationship":
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/ubuntu-shib-apache/minnow-saml-trust-relationship-shibboleth-sp.png)
 
-Then configure for SAML2SSO profile
-
-Click on the checkbox to "Configure specific RelyingParty" 
+Then, configure for SAML2SSO profile. Click on the checkbox to
+"Configure specific RelyingParty":
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/ubuntu-shib-apache/configure_rp.png)
 
-And then click add the SAML2SSO profile
+Then, click to add the SAML2SSO profile:
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/ubuntu-shib-apache/saml_sso-profile.png)
 
@@ -231,11 +240,9 @@ stop and start tomcat.
 
 ## Test
 
-Test the cgi script: `https://minnow.gluu.info/protected/printHeaders.py`
-
-Enter the a valid username password (like `admin` and your inital admin password).
-
-The display should return something like this:
+Test the CGI script at `https://minnow.gluu.info/protected/printHeaders.py`.
+Enter both the valid username and password (like `admin` and your
+initial admin password). The output will contain something like this:
 
     **Environment Variables**
     
@@ -319,12 +326,16 @@ The display should return something like this:
     
 ## Troubleshooting 
 
- - Make sure you update your hosts file on the Gluu Server, apache server, and your workstation--this won't work with 
- just IP addresses.
- 
- - Check the Shibboleth logs if you don't see the headers or REMOTE_USER environment variables: 
- `/opt/idp/logs/idp-process.log`  Also you may want to `# service tomcat stop` and `# service tomcat start`
- to make sure the new Shibboleth IDP xml files were loaded.
- 
- - Clear the cookies in your browser for both the apache site and the Gluu Server if you are logging in and 
- logging out a lot with lots of server restarts.
+ - Make sure you update your hosts file on the Gluu Server, Apache
+   server, and your workstation--this won't work with IP addresses,
+   only.
+
+ - Check the Shibboleth log file `/opt/idp/logs/idp-process.log` if you
+   don't see the headers or REMOTE_USER environment variables. Also,
+   restart the Apache Tomcat service by `service tomcat restart` to 
+   make sure the new Shibboleth IDP xml files were loaded.
+
+ - Clear the cookies in your web browser for both the Apache site, and 
+   the Gluu Server if you are logging in and logging out a lot with 
+   lots of server restarts.
+

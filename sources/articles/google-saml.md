@@ -1,58 +1,71 @@
-# Using SAML to get SSO with Google Apps
+# Using SAML To Get SSO With Google Apps
 
+Google Apps will work as a Service Provider (SP) and we need to
+"introduce" Gluu Server with Google Apps as Gluu Server so that it can
+work as an Identity Provider (IDP).
 
-Google Apps will work as Service Provide ( SP ) and we need to "introduce" Gluu Server with Google Apps as Gluu Server can work as Identity Provider ( IDP ).
+NOTE: It is highly recommended to use Google staging apps setup before
+Google production migration. If you have any question or confusion,
+please feel free to let us know.
 
-NOTE: It is highly recommended to use Google staging apps setup before Google
-production migration. If you have any question or confusion, please feel free to
-let us know.
+We need to configure Google Apps and Gluu Server so that both parties
+can talk to each other.
 
-We need to configure both parties ( Google Apps and Gluu Server ) as they can talk to each other.
-
-## Configuring Google Apps with Google dashboard:
+## Configuring Google Apps With Google Dashboard:
 
 * Login to dashboard.
 
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/GoogleAppSSO/admin_console.png)
 
-* Click "Security" tab.
+* From the list of options choose the "Security" tab.
 
-* A new page will appear from where you need to select `Set up single sign-on(SSO)`
+* A new page will open. Select `Set up single sign-on(SSO)` from the
+options.
 
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/GoogleAppSSO/security_setting.png)
 
-* The final Single Sign-On setting page will appear. 
+* Finally, the Single Sign-On setting page will appear. 
 
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/GoogleAppSSO/final_setup.png)
 
-   * `Enable` _Setup SSO with third party Identity Provider_, this case your Gluu Server. 
+  This page contains a number of selection, and entry fields.
 
-   * Sign-in Page URL: https://idp_hostname/profile/SAML2/Redirect/SSO
+   * __Setup SSO with third party Identity Provider__: This
+     refers to your Gluu Server instance. Enable this box.
 
-   * Sign-out Page URL: https://idp_hostname/idp/logout.jsp
+   * __Sign-in Page URL__: Enter the uri of the sign-in page, for
+     example `https://idp_hostname/profile/SAML2/Redirect/SSO`.
 
-   * Change Password URL: Organization should provide this link if they have any link for end users.
+   * __Sign-out Page URL__: Enter the uri of the logout page, for
+     example `https://idp_hostname/idp/logout.jsp`.
 
-   * Verification certificate: Upload the  SAML certificate of your Gluu Server
+   * __Change Password URL__: The uri an user is redirected if he wants
+     to change his password. It is recommended that an organization 
+     provides such a link for its end users.
 
-       * How to get the SAML cert of your Gluu Server? [Here](https://support.gluu.org/view/installation/certificates-in-idp/275) it is. 
+   * __Verification certificate__: Upload the SAML certificate of your
+     Gluu Server. To get the SAML certificate of your Gluu Server, have
+     a look [here](https://support.gluu.org/view/installation/certificates-in-idp/275).
 
-   * `Enable` _Use a domain specific issuer_
-    
-   * Save it
+   * __Use a domain specific issuer__: Enable this box to use a
+     domain-specific issuer.
 
+   * Save your data using the `Save changes` button on the lower right
+     of the page.
 
+If you want to know more about Google SSO,
+[this](https://support.google.com/a/answer/60224?hl=en) helps you.
 
-If you want to know more about Google SSO. [This](https://support.google.com/a/answer/60224?hl=en) might help you. 
+## Configuration In Gluu Server:
 
-## Configuration in Gluu Server:
+Now we need to create a Trust Relationship in Gluu Server. Trust
+Relationships are created so that the IdP can authorize/authenticate the
+user to the service provider (SP). In this specific case, the SP is
+Google Apps, and the protocol used is SAML.
 
-Now we need to create a Trust Relationship in Gluu Server as IDP can start its
-SAML transaction with SP ( in this case: Google Apps ). 
-
-In order to create a Trust Relationship, we need to grab the metadata of Google
-Apps. This metadata can be collected from Google. It's generally specific to
-organization account. 
+In order to create a Trust Relationship, we need to grab the metadata of
+Google Apps. This metadata can be collected from Google. It's generally
+specific to an organization account.
 
 Got the metadata? Great, we are ready to move forward. 
 
@@ -69,7 +82,4 @@ Got the metadata? Great, we are ready to move forward.
         * signRequests: conditional
         * encryptAssertions: never
         * encryptNameIds: never 
-
-
-
 
