@@ -78,6 +78,7 @@ The main documentation is organized into the following sections:
 	  - [OpenID Connect Token](./reference/api/oic-token.md)
 	  - [OpenID Connect User Info](./reference/api/oic-userinfo.md)
 	  - [UMA Discovery](./reference/api/uma-discovery.md)
+	  - [SCIM resource registration](./reference/api/scim-resource-registration.md)
 - [Interception Scripts](reference/interception-scripts/index.md)
 	  - [Application Session Management](reference/interception-scripts/index.md#application-session-management)
 	  - [Authentication](reference/interception-scripts/index.md#authentication)

@@ -116,10 +116,16 @@ above to hold further metadata. Then, change the ownership of this
 directory using this command:
 
 ```
-sudo chown -R apache:apache /var/www/html
+sudo chown -R www-data:www-data /var/www/html
 ```
 
-Let's create the Apache configuration file now. Create a file named
+Create the according certificate for SSL with the following command:
+
+```
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/apachessl.key -out /etc/apache2/ssl/apachessl.crt
+```
+
+Then, create the Apache configuration file now. Create a file named
 `/etc/apache2/sites-available/dynamic.conf` with the content as below:
 
 ```
@@ -140,8 +146,8 @@ Let's create the Apache configuration file now. Create a file named
 	</Location>
 
 	SSLEngine On
-	SSLCertificateFile /etc/pki/tls/certs/localhost.crt
-	SSLCertificateKeyFile /etc/pki/tls/private/localhost.key
+	SSLCertificateFile /etc/apache2/ssl/apachessl.crt
+	SSLCertificateKeyFile /etc/apache2/ssl/apachessl.key
 </VirtualHost>
 ```
 

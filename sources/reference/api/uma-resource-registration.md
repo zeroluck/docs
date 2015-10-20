@@ -9,7 +9,6 @@
 ##### deleteResourceSet
 **DELETE** `/host/rsrc/resource_set{rsid}`
 
-Deletes a previously registered resource set description using the DELETE method.
 Deletes a previously registered resource set description using the DELETE method, thereby removing it from the authorization server's protection regime.
 
 ###### URL
@@ -69,7 +68,6 @@ Deletes a previously registered resource set description using the DELETE method
 ##### getResourceSet
 **GET** `/host/rsrc/resource_set{rsid}`
 
-Reads a previously registered resource set description using the GET method.
 Reads a previously registered resource set description using the GET method. If the request is successful, the authorization server MUST respond with a status message that includes a body containing the referenced resource set description, along with an "_id" property.
 
 ###### URL
@@ -129,7 +127,6 @@ Reads a previously registered resource set description using the GET method. If 
 ##### updateResourceSet
 **PUT** `/host/rsrc/resource_set{rsid}`
 
-Updates a previously registered resource set description using the PUT method
 Updates a previously registered resource set description using the PUT method. If the request is successful, the authorization server MUST respond with a status message that includes an "_id" property.
 
 ###### URL
@@ -267,7 +264,6 @@ The resource server uses this method as a first step in checking whether its und
 ##### createResourceSet
 **POST** `/host/rsrc/resource_set`
 
-Adds a new resource set description using the POST method
 Adds a new resource set description using the POST method. If the request is successful, the authorization server MUST respond with a status message that includes an _id property.
 
 ###### URL

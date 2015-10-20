@@ -89,6 +89,7 @@ pages:
 - [reference/api/uma-resource-registration.md, hidden]
 - [reference/api/uma-rpt-status.md, hidden]
 - [reference/api/uma-authorization-endpoint.md, hidden]
+- [reference/api/scim-resource-registration.md, hidden]
 
 # oxAuth Sub-section
 - [reference/oxAuth/oxauth-config.md, hidden]

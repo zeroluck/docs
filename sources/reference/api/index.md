@@ -17,6 +17,8 @@
 - [UMA RPT Introspection Endpoint](./uma-rpt-status.md)
 - [UMA Authorization Endpoint](./uma-authorization-endpoint.md)
 
+## SCIM
+- [SCIM Resource Registration Endpoint](./scim-resource-registration.md)
 
 ## Custom Gluu Endpoints
 
