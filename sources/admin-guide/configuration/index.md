@@ -47,13 +47,6 @@ This feature allows the Gluu system administrator to customize and
 implement various options such as *Cache Refresh*, *Federation Hosting*,
 *SCIM Support* etc.
 
-* _Cache Refresh:_ This is the mechanism which pulls and synchonises
-user information from a remote LDAP/Active Directory with the local LDAP
-of Gluu Server. The Gluu Server administrator needs to provide
-sufficient information including username and password before enabling
-this option. To learn more about the Cache Refresh GUI tools see the
-[Cache Refresh Section](#cache-refresh).
-
 * _White Pages:_ If the user intends to use the built-in White Pages of
 the Gluu Server, it can be enabled from the menu.
 
