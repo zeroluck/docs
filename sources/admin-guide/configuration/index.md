@@ -395,8 +395,7 @@ feature is sensitive in nature and any incorrect action may result in
 loss of data within the Gluu Server. 
 
 Before configuring Cache Refresh,
-you should read the [overview
-here](../../admin-guide/cache-refresh/index.md). For any questions
+you should [read the overview](../../admin-guide/cache-refresh/index.md). For any questions
 relating to Cache Refresh functionality, you can seek assistance from
 [Gluu Support](http://support.gluu.org). *For a successful Cache Refresh
 setup, you have to insert data in ALL FIELDS below.*
