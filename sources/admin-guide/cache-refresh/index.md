@@ -1,5 +1,3 @@
-[TOC]
-
 # Introduction
 
 Cache Refresh (CR) was built by Gluu to pull user information from a
