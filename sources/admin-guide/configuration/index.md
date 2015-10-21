@@ -73,8 +73,8 @@ your Gluu server should be something like
 user information from a remote LDAP/Active Directory with the local LDAP
 of the Gluu Server. The Gluu Server administrator needs to provide
 sufficient information including username and password before enabling
-this option. Before configuring Cache Refresh, you should read the
-[overview here](../../admin-guide/cache-refresh/index.md). After that you can
+this option. Before configuring Cache Refresh, you should [read the
+overview](../../admin-guide/cache-refresh/index.md). After that you can
 learn about the Cache Refresh GUI tools [here](#cache-refresh).
 
 * _SCIM Support:_ If the organization already has an identity management
