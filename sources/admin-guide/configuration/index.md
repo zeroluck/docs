@@ -68,7 +68,7 @@ of the Gluu Server. The Gluu Server administrator needs to provide
 sufficient information including username and password before enabling
 this option. Before configuring Cache Refresh, you should [read the
 overview](../../admin-guide/cache-refresh/index.md). After that you can
-learn about the Cache Refresh GUI tools [here](#cache-refresh).
+learn about the [Cache Refresh GUI tools](#cache-refresh).
 
 * _SCIM Support:_ If the organization already has an identity management
 or provisioning system in place, the SCIM protocol can be used to push
