@@ -392,7 +392,9 @@ backend customer Active Directory/LDAP Server. Cache refresh dynamically
 synchronises user information from the backend data source of the
 customer to the Gluu Server in order to maximize performance. This
 feature is sensitive in nature and any incorrect action may result in
-loss of data within the Gluu Server. Before configuring Cache Refresh,
+loss of data within the Gluu Server. 
+
+Before configuring Cache Refresh,
 you should read the [overview
 here](../../admin-guide/cache-refresh/index.md). For any questions
 relating to Cache Refresh functionality, you can seek assistance from
