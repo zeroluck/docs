@@ -18,6 +18,8 @@
 - [UMA Authorization Endpoint](./uma-authorization-endpoint.md)
 
 ## SCIM
+- [SCIM 1.1](./scim-1.1.md)
+- [SCIM 2.0](./scim-2.0.md)
 - [SCIM Resource Registration Endpoint](./scim-resource-registration.md)
 
 ## Custom Gluu Endpoints
