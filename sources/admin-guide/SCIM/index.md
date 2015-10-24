@@ -450,9 +450,7 @@ Content-Type: application/xml
 
 ## SCIM-Client API
 
-SCIM-Client API is a tool Gluu developed to make the communication with
-a SCIM server an easy task. It can be used to build an application that
-sends request and receives responses from a SCIM server seamlessly.
+SCIM-Client API is a tool Gluu developed to make the communication with a SCIM server an easy task. It can be used to build an application that sends request and receives responses from a SCIM server seamlessly.
 
 You can checkout SCIM-client from our GIT repository : https://github.com/GluuFederation/SCIM-Client 
 
