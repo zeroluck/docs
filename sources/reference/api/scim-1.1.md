@@ -15,10 +15,10 @@ You can see the detailed SCIM 1.1 specification documents [here](http://www.simp
 
 ### /seam/resource/restv1/Users
 - - -
-##### getResourceSet
+##### getUser
 **GET** `/host/seam/resource/restv1/Users{rsid}`
 
-Returns a resource set on the basis of provided id as path parameter. The resource MUST be already registered with the mentioned id.
+Returns a user on the basis of provided id as path parameter. The resource MUST be already registered with the mentioned id.
 
 
 ###### URL
@@ -94,7 +94,7 @@ Returns a resource set on the basis of provided id as path parameter. The resour
 		<tr>
 		    <th>404</th>
 		    <td>NOT FOUND</td>
-		    <td>Specified resource (e.g., Group) does not exist</td>
+		    <td>Specified User does not exist</td>
 		</tr>
 	</table>
 
@@ -102,7 +102,383 @@ Returns a resource set on the basis of provided id as path parameter. The resour
 
 ## Group Endpoint
 
+### /seam/resource/restv1/Groups
+- - -
+##### getGroup
+**GET** `/host/seam/resource/restv1/Groups{rsid}`
+
+Returns a group on the basis of provided id as path parameter. The group MUST be already registered with the mentioned id.
+
+
+###### URL
+    http://gluu.org/host/seam/resource/restv1/Groups{rsid}
+
+##### Request
+###### Parameters
+- Following are the details about parameters:
+    <table border="1">
+        <tr>
+            <th>Parameter</th>
+            <th>Location</th>    
+	    <th>Required</th>
+            <th>Description</th>
+            <th>Data Type</th>
+        </tr>
+        <tr>
+            <th>rsid</th>
+	    <td>path</td>            
+	    <td>TRUE</td>
+            <td>Resource set description ID</td>
+            <td>string</td>
+        </tr>
+	<tr>
+            <th>Authorization</th>
+	    <td>header</td>            
+	    <td>FALSE</td>
+            <td></td>
+            <td>string</td>
+        </tr>
+    </table>
+
+##### Response
+**Content Type:**  application/json, application/xml
+
+###### Success
+-	<table border="1">
+	    <tr>
+			<th>Status Code</th>
+			<th>Reason</th>
+			<th>Description</th>
+	    </tr>
+	    <tr>
+			<th>200</th>
+			<th>Successful Operation</th>
+			<th>Group returned successfully</th>
+	    </tr>
+	</table>
+
+###### Errors
+-	<table border="1">
+	    <tr>
+			<th>Status Code</th>
+			<th>Reason</th>
+			<th>Description</th>
+	    </tr>
+		<tr>
+		    <th>400</th>
+		    <td>BAD REQUEST</td>
+		    <td>Request is unparsable, syntactically incorrect, or violates schema</td>
+		</tr>
+		<tr>
+		    <th>401</th>
+		    <td>UNAUTHORIZED</td>
+		    <td>Authorization header is invalid or missing</td>
+		</tr>
+		<tr>
+		    <th>403</th>
+		    <td>FORBIDDEN</td>
+		    <td>Operation is not permitted based on the supplied authorization</td>
+		</tr>
+		<tr>
+		    <th>404</th>
+		    <td>NOT FOUND</td>
+		    <td>Specified User does not exist</td>
+		</tr>
+	</table>
+
+- - -
+
 
 ## Bulk Operation Endpoint
 
+### /seam/resource/restv1/Bulk
+- - -
+
+### POST
+
+
+<a id="bulkOperation">Bulk Operation</a>
+
+SCIM Bulk Operation enables Consumers to work with potentially large collection (Bulk) of Resource operations in a single request. Body of a bulk operation may contain set of HTTP Resource operations using one of the API supported HTTP methods; i.e., POST, PUT, PATCH or DELETE. (http://www.simplecloud.info/specs/draft-scim-api-01.html#bulk-resources)
+
+#### Security
+
+* Authorization
+
+#### Request
+
+
+**Content-Type:** application/json, application/xml
+
+##### Parameters
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Located in</th>
+        <th>Required</th>
+        <th>Description</th>
+        <th>Default</th>
+        <th>Schema</th>
+    </tr>
+
+
+
+<tr>
+    <th>Authorization</th>
+    <td>header</td>
+    <td>no</td>
+    <td></td>
+    <td> - </td>
+
+    
+            <td>string </td>
+    
+
+</tr>
+
+<tr>
+    <th>body</th>
+    <td>body</td>
+    <td>no</td>
+    <td>BulkRequest</td>
+    <td> - </td>
+
+    <td>
+    
+    <a href="#/definitions/BulkRequest">BulkRequest</a> 
+    </td>
+
+</tr>
+
+
+</table>
+
+
+
+#### Response
+
+**Content-Type: ** application/json, application/xml
+
+
+| Status Code | Reason      | Response Model |
+|-------------|-------------|----------------|
+| 200    | successful operation | <a href="#/definitions/BulkResponse">BulkResponse</a>|
+
+- - -
+
+## Definitions
+
+## <a name="/definitions/BulkOperation">BulkOperation</a>
+
+<table border="1">
+    <tr>
+        <th>name</th>
+        <th>type</th>
+        <th>required</th>
+        <th>description</th>
+        <th>example</th>
+    </tr>
+    
+        <tr>
+            <td>bulkId</td>
+            <td>
+                
+                    
+                    string
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>version</td>
+            <td>
+                
+                    
+                    string
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>method</td>
+            <td>
+                
+                    
+                    string
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>path</td>
+            <td>
+                
+                    
+                    string
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>location</td>
+            <td>
+                
+                    
+                    string
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>data</td>
+            <td>
+                
+                    
+                    object
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>status</td>
+            <td>
+                
+                    
+                    string
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>response</td>
+            <td>
+                
+                    
+                    object
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+</table>
+
+
+## <a name="/definitions/BulkRequest">BulkRequest</a>
+
+<table border="1">
+    <tr>
+        <th>name</th>
+        <th>type</th>
+        <th>required</th>
+        <th>description</th>
+        <th>example</th>
+    </tr>
+    
+        <tr>
+            <td>schemas</td>
+            <td>
+                
+                
+                array[string]
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>failOnErrors</td>
+            <td>
+                
+                    
+                    integer (int32)
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>operations</td>
+            <td>
+                
+                
+                    array[<a href="#/definitions/BulkOperation">BulkOperation</a>]
+                
+                
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+</table>
+
+## <a name="/definitions/BulkResponse">BulkResponse</a>
+
+<table border="1">
+    <tr>
+        <th>name</th>
+        <th>type</th>
+        <th>required</th>
+        <th>description</th>
+        <th>example</th>
+    </tr>
+    
+        <tr>
+            <td>schemas</td>
+            <td>
+                
+                
+                array[string]
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>operations</td>
+            <td>
+                
+                
+                    array[<a href="#/definitions/BulkOperation">BulkOperation</a>]
+                
+                
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+</table>
 
