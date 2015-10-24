@@ -194,9 +194,6 @@ Returns a group on the basis of provided id as path parameter. The group MUST be
 ### /seam/resource/restv1/Bulk
 - - -
 
-### POST
-
-
 <a id="bulkOperation">Bulk Operation</a>
 
 SCIM Bulk Operation enables Consumers to work with potentially large collection (Bulk) of Resource operations in a single request. Body of a bulk operation may contain set of HTTP Resource operations using one of the API supported HTTP methods; i.e., POST, PUT, PATCH or DELETE. (http://www.simplecloud.info/specs/draft-scim-api-01.html#bulk-resources)
