@@ -555,8 +555,7 @@ response.getStatusCode() // this will give you the Status code
 
 ## Retrieving an entity
 
-To retrieve a person or a group you can use “retrievePerson” or
-“retrieveGroup” method by passing the Entity’s id as a parameter and the
+To retrieve a person or a group you can use “retrievePerson” or “retrieveGroup” method by passing the Entity’s id as a parameter and the
 desired media type.
 
 ```
