@@ -108,8 +108,8 @@ pages:
 # Gluu Library Sub-sections
 - [reference/lib/openid-connect.md, hidden]
 - [reference/lib/saml.md, hidden]
-- [reference/lib/scim/index.md, hidden]
-- [reference/lib/scim/using-scim.md, hidden]
+- [reference/lib/scim.md, hidden]
+- [reference/lib/using-scim.md, hidden]
 - [reference/lib/uma.md, hidden]
 # mod_auth_oid Sub-section
 - [articles/mod-auth-oidc/ubuntu-installation.md, hidden]
