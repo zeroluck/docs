@@ -12,7 +12,7 @@ sudo a2enmod ssl
 service apache2 restart
 ```
 
-### Restart Apache Manually
+### Manual Restart for Apache
 If Apache Web Server fails and the following error is shown, then Apache Server needs to be stopped manually.
 
 `Restarting web server apache2                                               [fail]`
@@ -68,6 +68,11 @@ Change port numbers to **44443** (for SSL) and **8000** (for non-SSL) in these t
 
 * /etc/apache2/sites-available/default-ssl.conf
 
+## Authentication Module (auth_openidc)
+The configuration file for this module is located in `/etc/apache2/mods-available/auth_openidc.conf` and `/etc/apache2/mods-enabled/auth_openidc.conf`. The file in `/mods-available/` should be edited before enabling, and `/mods-enabled/` after enabling the module. Please see the respective client registration for configuration details.
+
+Add the following lines in `/etc/apache2/mods-available/auth_openidc.conf`
+
 # Client Registration
 There are two methods for client registration:
 
@@ -77,12 +82,7 @@ There are two methods for client registration:
 The example configuration uses `dynamic.gluu.org` as the server name and `ce.gluu.org` as the Gluu Server name.
 
 ## Dynamic Client Registration
-The following example shows the configuration for dynamic client registration. 
-
-### Preparing auth_openidc Module
-Please add the following lines in the `auth_openidc` configuration file.
-
-Add the following lines in `/etc/apache2/mods-available/auth_openidc.conf`
+The following example shows the configuration for dynamic client registration. Please add the following lines in the `auth_openidc` configuration file.
 
 ```
 OIDCMetadataDir /var/cache/apache2/mod_auth_openidc/metadata
@@ -93,12 +93,10 @@ OIDCSSLValidateServer Off
 ```
 
 The default `metadata` folder is used in this example but it can be changed to any other convenient location as well.
-Run the following command to enable the module:
 
-`sudo a2enmod auth_openidc`
+The following example shows how to prepare the server to serve an `index.html` file protected by Gluu Server Community Edition.
 
 ### Preparing Protected Resource
-
 Create a directory named `dynamic` inside the `/var/www/html` directory using the following command:
 
 `sudo mkdir /var/www/html/dynamic`
@@ -120,6 +118,7 @@ Change the ownership of the `html` directory using the following command:
 
 `sudo chown -R www-data:www-data /var/www/html`
 
+### Apache Configuration
 Create the apache configuration file named `dynamic.conf` in the `/etc/apache2/sites-available/` folder and add the following lines in the file:
 
 ```
@@ -144,7 +143,6 @@ Create the apache configuration file named `dynamic.conf` in the `/etc/apache2/s
 The `dynamic` site is enabled using the `a2ensite` command. Run the commands below to enable the site and restart Apache Server:
 
 `sudo a2ensite dynamic.conf`
-
 `sudo service apache2 restart`
 
 ### Access Site
@@ -164,124 +162,3 @@ the credentials for authentication.
 
 ![IMAGE](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/mod_auth_oidc/oxauth_authentication.png)
 
-## Manual Client Registration
-The following example shows the configuration for manual client registration.
-
-### Preparing auth_openidc Module
-Please add the following lines in the `auth_openidc` configuration file.
-
-Add the following lines in `/etc/apache2/mods-available/auth_openidc.conf`
-
-```
-    OIDCRedirectURI https://static.gluu.org:44443/static/fake_redirect_uri
-    OIDCCryptoPassphrase newsecret
-
-    OIDCProviderMetadataURL https://ce.gluu.org/.well-known/openid-configuration
-    OIDCClientID @!C648.9803.5565.E5CB!0001!0DB0.EEDB!0008!7728.5650
-    OIDCClientSecret newsecret
-    OIDCResponseType id_token
-    OIDCProviderTokenEndpointAuth client_secret_basic
-
-    OIDCProviderIssuer  https://ce.gluu.org
-    OIDCSSLValidateServer Off
-```
-
-Run the following command to enable the module:
-
-`sudo a2enmod auth_openidc`
-
-### Preparing Protected Resource
-Create a directory named `static` inside the `/var/www/html` directory using the following command:
-
-`sudo mkdir /var/www/html/static`
-
-Create a file named `index.html` in the `static` folder and add the following content:
-
-```
-<html>
-    <title>
-        Protected URL
-    </title>
-    <body>
-        Nice to see the protected url via Dynamic Registration
-    </body>
-</html>
-```
-
-Change the ownership of the html directory using the following command:
-
-`sudo chown -R www-data:www-data /var/www/html`
-
-Create the apache configuration file named static.conf in the `/etc/apache2/sites-available/` folder and add the following lines in the file:
-
-```
-<VirtualHost *:44443>
-    ServerName static.gluu.org
-    DocumentRoot /var/www/html
-
-    <Location /static/>
-        AuthType openid-connect
-        Require valid-user
-    </Location>
-
-    SSLEngine On
-    SSLCertificateFile /etc/ssl/certs/ssl-cert-snakeoil.pem
-    SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
-</VirtualHost>
-```
-
-**Note:** The default certificate location for the SSL module is used in this example. Please change the locaiton if you use your own certificate.
-
-### Enable Site
-The dynamic site is enabled using the `a2ensite` command. Run the commands below to enable the site and restart Apache Server:
-
-`sudo a2ensite static.conf`
-
-`sudo service apache2 restart`
-
-### Access Site
-The `static` site can be accessed from the following URL:
-
-`https://static.gluu.org:44443/static`
-
-This link will lead to the oxAuth page from gluuCE where you enter the credentials for authentication.
-![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/mod_auth_oidc/oxauth_authentication.png)
-
-There is a possibility that you will see the following error upon login:
-
-```
-Error:
-
-The OpenID Connect Provider returned an error: Error in handling response type.
-```
-
-The apache log will contain the following:
-
-```
-[Fri Jun 05 14:48:28 2015] [error] [client 124.253.60.123] oidc_proto_validate_idtoken: id_token JSON payload did not contain the required-by-spec "sub" string value, referer: https://static.gluu.org:44443/static/fake_redirect_uri
-[Fri Jun 05 14:48:28 2015] [error] [client 124.253.60.123] oidc_proto_parse_idtoken: id_token payload could not be validated, aborting, referer: https://static.gluu.org:44443/static/fake_redirect_uri
-```
-
-### Getting DN from Client ID
-Log into the gluuCE server by running the following command:
-
-`sudo service gluu-server login`
-
-We get the client id from the search performed in Gluu Server's Web UI. So, to get the DN part we perform the below command. The LDAP password can be stored in /root/.pw or at any other location that is convenient for you. In our case the command is:
-
-`/opt/opendj/bin/ldapsearch -T -X -Z -p 1636 -D "cn=Directory Manager" -j /root/.pw -s sub -b "o=gluu" 'inum=@!C648.9803.5565.E5CB!0001!0DB0.EEDB!0008!7728.5650'`
-
-Create a file named `mod.ldif` with the contents given below. The DN part to be used in mod.ldif is obtained from output of the command above:
-
-```
-dn: inum=@!C648.9803.5565.E5CB!0001!0DB0.EEDB!0008!7728.5650,ou=clients,o=@!C648.9803.5565.E5CB!0001!0DB0.EEDB,o=gluu
-changetype: modify
-add: oxAuthSubjectIdentifier
-oxAuthSubjectIdentifier: @!C648.9803.5565.E5CB!0001!0DB0.EEDB!0008!7728.5650
-```
-
-Then, run the `ldapmodify` command to insert the **oxAuthSubjectIdentifier** as below:
-
-`sudo /opt/opendj/bin/ldapmodify -Z -X -h localhost -p 1636 -D "cn=Directory Manager" -j /root/.pw -f /root/mod.ldif`
-
-The command may vary depending upon your installation. Next, access [this page](https://static.gluu.org:44443/static), and the success message should be visible.
