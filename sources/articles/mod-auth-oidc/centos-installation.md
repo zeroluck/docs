@@ -1,46 +1,38 @@
-**Table of Contents** 
-
-- [Setup Apache2](#setup-apache2)
-	- [Add EPEL Repository](#add-epel-repo)
-	- [Setup Apache2 SSL](#setup-apache2-ssl)
-- [Client Registration](#client-registration)
-	- [Dynamic Client Registration](#dynamic-client-registration)
-	- [Manual Client Registration](#manual-client-registration)
-- [Getting DN from Client ID](#getting-dn-from-client-id)
-
-
-# mod_auth_oidc Installation Guide
-
-
-### Setup Apache2
+[TOC]
+# Installation
 
 We assume that all the hostnames will be dns resolvable. If not, then
 add the according entries in `/etc/hosts`, please.
 
-##### Add EPEL Repository
+### Add EPEL Repository
 
 Run the following command to __Add EPEL Repo__.
 
 * `rpm -ivh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm`
 
-##### Setup Apache2 SSL
-
-Now, to setup __Apache2 SSL__, run the following commands:
+## Apache Web Server
+To setup __Apache2 SSL__, run the following commands:
 
 ```
 yum install httpd mod_ssl
 yum install curl hiredis jansson
+```
+
+## Authentication Module (mod_auth_openidc)
+Run the following command to install the `mod_auth_openidc` module:
+
+```
 rpm -ivh https://github.com/pingidentity/mod_auth_openidc/releases/download/v1.8.2/mod_auth_openidc-1.8.2-1.el6.x86_64.rpm
 ```
 
-Note: In case of having difficulties in installing hiredis and jansson,
-try to update the package database of your system using this command:
+**Note:** If there are any difficulties installing `hiredis` and `jansson`,
+try to update the package database of your system using the following command:
 
 ```
 yum upgrade
 ```
-
-Next, make sure that the following shared-object file exists:
+### Load Authentication Module 
+Please make sure that the following shared-object file exists by running the following command:
 
 ```
 ls -l /usr/lib64/httpd/modules/mod_auth_openidc.so
@@ -49,7 +41,7 @@ ls -l /usr/lib64/httpd/modules/mod_auth_openidc.so
 Next, create an **Apache _conf_** file for loading this module.
 
 ```
-cat "LoadModule auth_openidc_module modules/mod_auth_openidc.so" > /etc/httpd/conf.d/mod_auth_openidc.conf
+echo -e "LoadModule auth_openidc_module modules/mod_auth_openidc.so\nListen 44443" > /etc/httpd/conf.d/mod_auth_openidc.conf
 ```
 
 The file `/etc/httpd/conf.d/mod_auth_openidc.conf` will now contain
@@ -67,7 +59,7 @@ this, start the Apache service (running gluuCE at **ce.gluu.org**):
 service httpd start
 ```
 
-### Client Registration
+# Client Registration
 
 There are two methods for client registration:
 
@@ -77,7 +69,7 @@ There are two methods for client registration:
 You can use any of the methods to register the client.
 
 
-#### Dynamic Client Registration
+## Dynamic Client Registration
 
 For dynamic client registration, we'll name the server: **dynamic.gluu.org.**
 
@@ -158,7 +150,7 @@ the credentials for authentication.
 
 ![IMAGE](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/mod_auth_oidc/oxauth_authentication.png)
 
-#### Manual Client Registration
+## Manual Client Registration
 
 Considering the __manual client registration__ case, we will name the
 server `static.gluu.org`, instead.
