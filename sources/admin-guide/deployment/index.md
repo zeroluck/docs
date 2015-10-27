@@ -17,6 +17,8 @@ We currently publish packages for the following **64-bit** operating systems:
 - [Ubuntu](./ubuntu.md)
 - [RHEL](./rhel.md)
 
+*Note:* 32-bit operating system's are **not** supported. 
+
 # Available Components
 
 When you deploy the Gluu Server, you will have the opportunity to
