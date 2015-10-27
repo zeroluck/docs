@@ -4,7 +4,7 @@
 - Does the system have enough memory/CPU? For a production deployment, at least 4GB of RAM is required for tomcat and the full amount of RAM assigned for the host should be no less than 6GB. 
 
 ## OS
-- The Gluu Server must be installed on a 64 bit OS. If the host doesn't meet these requirements, it **will not** work. 
+- The Gluu Server must be installed on a **64-bit** OS. If the host doesn't meet these requirements, it will not work. 
 
 - Is the Gluu Server installed on a supported OS? Please check our [deployment doc](../admin-guide/deployment/index.md#supported-operating-systems) for supported operating systems and versions. 
 
