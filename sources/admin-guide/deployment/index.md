@@ -11,7 +11,7 @@ our [getting started](../getting-started/index.md) document.
 
 # Supported Operating Systems
 
-We currently publish packages for the following **64 bit** operating systems:
+We currently publish packages for the following **64-bit** operating systems:
 
 - [Centos](./centos.md)
 - [Ubuntu](./ubuntu.md)
