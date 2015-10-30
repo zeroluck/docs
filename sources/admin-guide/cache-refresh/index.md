@@ -32,8 +32,6 @@ bind password, base DN for search, and object class of person entry.
 Please note that the usage of [LDAPS (LDAP over SSL)][ldap] is strongly
 recommended.
 
-![Cahce_refresh_diagram](https://cloud.githubusercontent.com/assets/5271048/8237617/4df7d88e-15b6-11e5-98eb-5bb0376b9750.png)
-
 As you can see in the above diagram, 'Cache Refresh Engine' and
 'Authentication Manager' are each connected separately to the backend
 AD/LDAP. Both Engine and Manager need to know how and where to search
