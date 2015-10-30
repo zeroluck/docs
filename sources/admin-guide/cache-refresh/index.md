@@ -40,7 +40,7 @@ kind of single sign-on operation. Any failure in these two connections
 will halt the users ability to log into the system.
 
 # Using Cache Refresh
-Cache Refresh must be enabled from the [System Configuration](http://www.gluu.org/docs/admin-guide/configuration/#system-configuration) of the [Organization Configuration](http://www.gluu.org/docs/admin-guide/configuration/#organization-configuration) under Configuration menu.
+Cache Refresh **must be enabled** from the [System Configuration](http://www.gluu.org/docs/admin-guide/configuration/#system-configuration) of the [Organization Configuration](http://www.gluu.org/docs/admin-guide/configuration/#organization-configuration) under Configuration menu.
 
 The Gluu Server has two LDAP integrations: (1) authentication and (2)
 identity mapping. Only sometimes it is the same LDAP server. To
