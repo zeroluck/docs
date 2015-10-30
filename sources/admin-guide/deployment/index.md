@@ -90,7 +90,7 @@ single sign-on.
 For more information, please check our [OpenID Connect
 docs](../openid-connect/index.md).
 
-__Note: * implies that the software should *always* be deployed.__
+*__Note:__* * implies that the software should *always* be deployed.
 
 # Troubleshooting
 Please see our [Cloud Deployment FAQ](../../faq/cloud-faq.md) for cloud
