@@ -27,8 +27,8 @@ the number of concurrent transactions you want to support, you may need
 more or less memory or CPU capacity.
 
 With that said, if you are running all the Gluu Server services on one
-server (i.e. SAML, OAuth2, LDAP), we would recommend at least 2 CPU
-units, 4 GB of RAM and around 30GB of disk space. Not enough memory may
+server (i.e. SAML, OAuth2, LDAP), we recommend **at least 2 CPU
+units, 4 GB of RAM and around 30GB of disk space.** Not enough memory may
 produce some really weird bugs.
 
 From there, you may need to adjust the resources based on the
