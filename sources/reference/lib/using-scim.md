@@ -8,6 +8,8 @@
 		- [Deleting an entity](#deleting-an-entity)
 		- [Retrieving an entity](#retrieving-an-entity)
 		- [Bulk operations](#bulk-operations)
+	- [SCIM 2.0](#scim-2.0)
+
 
 # Working with SCIM Client
 - - -
@@ -23,7 +25,7 @@ You can checkout SCIM-client from our GIT repository : https://github.com/GluuFe
 Below is an example on how to create a ScimClient instance:
 
 ```
-ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
+ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
 ```
 
 This will create an oAuth instance of ScimClient where: `userName` and `passWord` are the user credentials, `clientID` and `clientSecret` are oxAuth client credentials, `domainURL` is the domain where SCIM client resides, for example:
@@ -174,4 +176,22 @@ response.getStatusCode() // this will give you the Status code
 String result = response.getResponseBodyString(); // this will give you Response body 
 ```
 -->
+- - -
 
+## SCIM 2.0
+Following is the guide to work with SCIM client 2.0:
+
+You can checkout SCIM-client from Gluu's GIT repository : https://github.com/GluuFederation/SCIM-Client 
+
+### Creating SCIM client instance
+Following is an example code to create a SCIM client instance:
+
+```
+ScimClient client = ScimClient.oAuthInstance("admin", "pwd", "@!0035.934F.1A51.77B0!0001!402D.66D0!0008!5BAD.32E4", "9e9fef43-0d97-4383-863f-0e828ff0a408", "http://localhost:8085/oxtrust-server/seam/resource/restv1", "http://localhost:8085/oxauth/seam/resource/restv1/oxauth/token");
+```
+
+In the mentioned example, we have used the following constructor to create the client instance (Signature):
+```
+public static ScimClient oAuthInstance(String userName, String passWord, String clientID, String clientSecret, String domain,
+String oAuthTokenEndpoint)
+```
