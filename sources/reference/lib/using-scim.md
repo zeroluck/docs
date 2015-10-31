@@ -8,7 +8,9 @@
 		- [Deleting an entity](#deleting-an-entity)
 		- [Retrieving an entity](#retrieving-an-entity)
 		- [Bulk operations](#bulk-operations)
-	- [SCIM 2.0](#scim-2.0)
+	- [SCIM 2.0](#scim-version-2)
+		- [Creating SCIM client instance](#creating-scim-2-client-instance)
+		- [Adding an entity](#adding-an-entity-using-scim2)
 
 
 # Working with SCIM Client
@@ -40,7 +42,7 @@ For the basic authentication you only need the user’s credentials (userName, p
 
 ### Adding an entity
 
-SCIM-Client API comes with two methods to add an entity, i. e. “createPerson” and “createPersonString”, for both of the methods (createPerson, createPersonString), you pass the person you want to add as ScimPerson object and you specify the desired media type format “XML/JSON” and SCIM-client API will parse the ScimPerson object into XML or JSON and send your request.
+SCIM-Client API comes with two methods to add an entity, i. e. “createPerson” and “createPersonString”, for createPerson, you pass the person you want to add as ScimPerson object and you specify the desired media type format “XML/JSON” and SCIM-client API will parse the ScimPerson object into XML or JSON and send your request.
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
@@ -178,20 +180,62 @@ String result = response.getResponseBodyString(); // this will give you Response
 -->
 - - -
 
-## SCIM 2.0
+## SCIM version 2
 Following is the guide to work with SCIM client 2.0:
 
 You can checkout SCIM-client from Gluu's GIT repository : https://github.com/GluuFederation/SCIM-Client 
 
-### Creating SCIM client instance
+### Creating SCIM 2 client instance
 Following is an example code to create a SCIM client instance:
 
 ```
-ScimClient client = ScimClient.oAuthInstance("admin", "pwd", "@!0035.934F.1A51.77B0!0001!402D.66D0!0008!5BAD.32E4", "9e9fef43-0d97-4383-863f-0e828ff0a408", "http://localhost:8085/oxtrust-server/seam/resource/restv1", "http://localhost:8085/oxauth/seam/resource/restv1/oxauth/token");
+Scim2Client client = Scim2Client.oAuthInstance("admin", "pwd", "@!0035.934F.1A51.77B0!0001!402D.66D0!0008!5BAD.32E4", "9e9fef43-0d97-4383-863f-0e828ff0a408", "http://localhost:8085/oxtrust-server/seam/resource/restv1", "http://localhost:8085/oxauth/seam/resource/restv1/oxauth/token");
 ```
 
 In the mentioned example, we have used the following constructor to create the client instance (Signature):
 ```
-public static ScimClient oAuthInstance(String userName, String passWord, String clientID, String clientSecret, String domain,
+public static Scim2Client oAuthInstance(String userName, String passWord, String clientID, String clientSecret, String domain,
 String oAuthTokenEndpoint)
 ```
+
+### Adding an entity using SCIM2
+
+SCIM-Client API comes with two methods to add an entity, i. e. “createPerson” and “createPersonString”, for createPerson, you pass the person you want to add as ScimPerson object and you specify the desired media type format “XML/JSON” and SCIM-client API will parse the ScimPerson object into XML or JSON and send your request. 
+
+```
+ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
+ScimPerson person = new ScimPerson() ;
+person.setUserName("sunny");
+person.setName.setGivenName("GName");
+person.setName.setLastName("LName");
+ScimResponse response = client.createPerson(person, MediaType.APPLICATION_JSON);
+response.getStatusCode() // this will give you the Status code
+String result = response.getResponseBodyString(); // this will give you Response body 
+```
+
+Another method of using createPerson is to pass a 'User' to this method, like:
+```
+User newUser = new User();
+Name name = new Name();
+name.setGivenName("Usman");
+name.setFamilyName("Khalid");
+newUser.setName(name);
+newUser.setUserName("usman");
+newUser.setDisplayName("Muhammad Usman");
+newUser.setTitle("Mr");
+newUser.setPassword("password");
+newUser.setActive(true);
+
+List<Role> roles = new ArrayList<Role>();
+Role role = new Role();
+role.setDisplay("ADMIN");
+role.setOperation("Operation");
+role.setValue("ADMIN");
+roles.add(role);
+newUser.setRoles(roles);
+ScimResponse response1 = scimClient.createPerson(newUser, MediaType.APPLICATION_JSON);		// scimClient is of type Scim2Client
+System.out.println("response status:" + response1.getStatus());
+System.out.println(response1.getResponseBodyString());
+
+```
+
