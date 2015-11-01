@@ -8,10 +8,13 @@
 		- [Deleting an entity](#deleting-an-entity)
 		- [Retrieving an entity](#retrieving-an-entity)
 		- [Bulk operations](#bulk-operations)
-	- [SCIM 2.0](#scim-version-2)
+	- [SCIM 2.0](#scim-20)
 		- [Creating SCIM client instance](#creating-scim-2-client-instance)
-		- [Adding an entity](#adding-an-entity-using-scim2)
-
+		- [Adding an entity](#adding-an-entity-using-scim-20)
+		- [Modifying an entity](#modifying-an-entity-using-scim-20)
+		- [Deleting an entity](#deleting-an-entity-scim-20)
+		- [Retrieving an entity](#retrieving-an-entity-scim-20)
+		- [Bulk operations](#bulk-operations-scim-20)
 
 # Working with SCIM Client
 - - -
@@ -180,13 +183,13 @@ String result = response.getResponseBodyString(); // this will give you Response
 -->
 - - -
 
-## SCIM version 2
+## SCIM 2.0
 Following is the guide to work with SCIM client 2.0:
 
 You can checkout SCIM-client from Gluu's GIT repository : https://github.com/GluuFederation/SCIM-Client 
 
 ### Creating SCIM 2 client instance
-Following is an example code to create a SCIM client instance:
+Following is an example code to create a SCIM 2.0 client instance:
 
 ```
 Scim2Client client = Scim2Client.oAuthInstance("admin", "pwd", "@!0035.934F.1A51.77B0!0001!402D.66D0!0008!5BAD.32E4", "9e9fef43-0d97-4383-863f-0e828ff0a408", "http://localhost:8085/oxtrust-server/seam/resource/restv1", "http://localhost:8085/oxauth/seam/resource/restv1/oxauth/token");
@@ -198,12 +201,12 @@ public static Scim2Client oAuthInstance(String userName, String passWord, String
 String oAuthTokenEndpoint)
 ```
 
-### Adding an entity using SCIM2
+### Adding an entity using SCIM 2.0
 
-SCIM-Client API comes with two methods to add an entity, i. e. “createPerson” and “createPersonString”, for createPerson, you pass the person you want to add as ScimPerson object and you specify the desired media type format “XML/JSON” and SCIM-client API will parse the ScimPerson object into XML or JSON and send your request. 
+SCIM 2.0 client API comes with two methods to add an entity using createPerson method. For **createPerson**, firstly, you can pass the person you want to add as *ScimPerson* object and you specify the desired media type format “XML/JSON” and SCIM-client API will parse the ScimPerson object into XML or JSON and send your request. 
 
 ```
-ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
+Scim2Client client = Scim2Client.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
 ScimPerson person = new ScimPerson() ;
 person.setUserName("sunny");
 person.setName.setGivenName("GName");
@@ -213,7 +216,7 @@ response.getStatusCode() // this will give you the Status code
 String result = response.getResponseBodyString(); // this will give you Response body 
 ```
 
-Another method of using createPerson is to pass a 'User' to this method, like:
+Another method of using createPerson is to pass a *'User'* to this method, like:
 ```
 User newUser = new User();
 Name name = new Name();
@@ -236,6 +239,198 @@ newUser.setRoles(roles);
 ScimResponse response1 = scimClient.createPerson(newUser, MediaType.APPLICATION_JSON);		// scimClient is of type Scim2Client
 System.out.println("response status:" + response1.getStatus());
 System.out.println(response1.getResponseBodyString());
+
+```
+
+Similarly for groups, you can use **createGroup** with object of *ScimGroup* as a parameter, or object of *Group* as a parameter.
+
+``` 
+Scim2Client client = Scim2Client.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
+ScimGroup groupToAdd = new ScimGroup();
+groupToAdd.setDisplayName("ScimObjecttesting");
+ScimResponse response = client.createGroup(groupToAdd, MediaType.APPLICATION_JSON);
+String responseStr = response.getResponseBodyString();
+```
+
+```
+Group newGroup = new Group();
+newGroup.setDisplayName("NewTestGroup");
+ScimResponse response1 = scimClient.createGroup(newGroup, MediaType.APPLICATION_JSON);	// scimClient is of type Scim2Client
+System.out.println("Response status:" + response1.getStatus());
+System.out.println(response1.getResponseBodyString());
+```
+
+- - -
+
+### Modifying an entity using SCIM 2.0
+
+In this example we will show you how to modify a person or a group using SCIM 2.0 client. SCIM-Client API comes with two methods to accomplish this using updatePerson. For **updatePerson** method, you can pass the person you want to update as ScimPerson object and its uid as a String and you specify the desired media type format “XML/JSON” and SCIM-client API will parse the ScimPerson object into XML or JSON and send your request.
+
+```
+Scim2Client client = Scim2Client.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
+ScimPerson person = new ScimPerson();
+person.setUserName("test");
+person.setName.setGivenName("Given");
+person.setName.setLastName("Last");
+String uid = person.getId();
+ScimResponse response = client.updatePerson(person, uid, MediaType.APPLICATION_JSON);
+response.getStatusCode() // this will give you the Status code
+String result = response.getResponseBodyString(); // this will give you Response body 
+```
+Another method of using updatePerson is to pass *User* object to this method:
+
+```
+User newUser = new User();
+Name name = new Name();
+name.setGivenName("Updated");
+name.setFamilyName("User");
+newUser.setName(name);
+newUser.setUserName("test");
+newUser.setDisplayName("Updated User");
+newUser.setTitle("Mr");
+newUser.setPassword("password");
+newUser.setActive(true);
+
+List<Role> roles = new ArrayList<Role>();
+Role role = new Role();
+role.setDisplay("ADMIN");
+role.setOperation("Operation");
+role.setValue("ADMIN");
+roles.add(role);
+newUser.setRoles(roles);
+ScimResponse response1 = scimClient.updatePerson(newUser, "@!0035.934F.1A51.77B0!0001!402D.66D0!0000!B865.F744",, MediaType.APPLICATION_JSON);			// scimClient is of type Scim2Client
+System.out.println("response status:" + response1.getStatus());
+System.out.println(response1.getResponseBodyString());
+```
+The signatures of the methods we have used to update a person are as follows:
+
+```
+public ScimResponse updatePerson(User person, String uid, String mediaType) throws JsonGenerationException, JsonMappingException,
+UnsupportedEncodingException, IOException, JAXBException
+```
+
+```
+public ScimResponse updatePerson(ScimPerson person, String uid, String mediaType) throws JsonGenerationException, JsonMappingException,
+UnsupportedEncodingException, IOException, JAXBException
+```
+
+Similarly, if you want to update a group, then you can use **updateGroup** in two of the following manners:
+First one is to pass a ScimGroup object to this method:
+
+``` 
+Scim2Client client = Scim2Client.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
+ScimGroup groupToUpdate = new ScimGroup();
+groupToUpdate.setDisplayName("ScimObjecttesting");
+ScimResponse response = client.updateGroup(groupToUpdate, "@!0035.934F.1A51.77B0!0001!402D.66D0!0003!4E80.079E", MediaType.APPLICATION_JSON);
+String responseStr = response.getResponseBodyString();
+```
+The other option is to pass a *Group* object to this method:
+
+```
+Group newGroup = new Group();
+newGroup.setDisplayName("UpdatedGroup");
+ScimResponse response1 = scimClient.updateGroup(newGroup, "@!0035.934F.1A51.77B0!0001!412D.66D0!0003!4E80.079E",
+MediaType.APPLICATION_JSON);
+System.out.println("response status:" + response1.getStatus());
+System.out.println(response1.getResponseBodyString());
+```
+
+- - - 
+
+### Deleting an entity SCIM 2.0
+
+To delete an entity, you simply pass it’s ID as a String parameter into “deletePerson” or “deleteGroup” methods. For both cases, i. e. Person and Group, entity MUST be already registered in the system with an ID.
+
+``` 
+Scim2Client client = Scim2Client.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
+ScimPerson person = new ScimPerson();
+ScimResponse response = client.deletePerson(person.getId()); // Here we have person object of type ScimPerson
+response.getStatusCode() // this will give you the Status code
+```
+
+```
+Scim2Client client = Scim2Client.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
+ScimGroup testGroup = new ScimGroup();
+ScimResponse response = client.deleteGroup(testGroup.getId());
+response.getStatusCode() // this will give you the Status code
+```
+- - -
+
+### Retrieving an entity SCIM 2.0
+
+To retrieve a person or a group you can use “retrievePerson” or “retrieveGroup” method by passing the Entity’s id as a parameter and the
+desired media type. For both cases, i. e. Person and Group, entity MUST be already registered in the system with an ID.
+
+```
+Scim2Client client = Scim2Client.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
+ScimPerson person = new ScimPerson();
+ScimResponse response = client.retrievePerson(person.getId(), MediaType.APPLICATION_JSON);
+response.getStatusCode() // this will give you the Status code
+String result = response.getResponseBodyString(); // this will give you Response body 
+```
+
+```
+Scim2Client client = Scim2Client.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
+ScimGroup testGroup = new ScimGroup();
+ScimResponse response = client.retrieveGroup(testGroup.getId(), MediaType.APPLICATION_JSON);
+response.getStatusCode() // this will give you the Status code
+String result = response.getResponseBodyString(); // this will give you Response body 
+```
+- - -
+
+### Bulk operations SCIM 2.0
+
+To perform multiple operations (in a bulk), you pass the operation as a *ScimBulkOperation* or *BulkRequest* object into “bulkOperation” method.
+
+```
+BulkRequest bulkRequest = new BulkRequest();
+
+User user=new User();
+user.setDisplayName("Test User");
+Name name = new Name();
+name.setGivenName("GivenName");
+name.setFamilyName("FamilyName");
+user.setName(name);
+user.setUserName("Test");
+user.setTitle("Mr.");
+user.setPassword("pwd");
+user.setActive(true);
+
+List<Email> emails = new ArrayList<Email>();
+email = new Email();
+email.setDisplay("Usman");
+email.setValue("osman.khalid333@gmail.com");
+emails.add(email);
+user.setEmails(emails);
+
+List<Role> roles = new ArrayList<Role>();
+Role role = new Role();
+role.setDisplay("ADMIN");
+role.setOperation("Operation");
+role.setValue("ADMIN");
+roles.add(role);
+user.setRoles(roles);
+
+BulkOperation createUser = new BulkOperation();
+createUser.setBulkId("abcd");
+createUser.setMethod("POST");
+createUser.setPath("/Users");
+createUser.setData(user);
+bulkRequest.getOperations().add(createUser);
+
+BulkOperation cerateGroup = new BulkOperation();
+cerateGroup.setBulkId("abcdefg");
+cerateGroup.setMethod("POST");
+cerateGroup.setPath("/Groups");
+
+Group group = new Group();
+group.setDisplayName("Bulk Group");
+group.setExternalId("externalid");
+cerateGroup.setData(group);
+bulkRequest.getOperations().add(cerateGroup);
+
+ScimResponse response = scimClient.bulkOperation(bulkRequest, MediaType.APPLICATION_JSON);
+System.out.println(response.getResponseBodyString());
 
 ```
 
