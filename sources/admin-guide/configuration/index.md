@@ -12,7 +12,7 @@ The organization configuration section contains the following options:
 
 - [System Configuration](#system-configuration)
 - [SMTP Server Configuration](#smtp-server-configuration)
-- [oxTrust Configuration](#oxtrust-configuration)
+- [oxTrust Settings](#oxtrust-settings)
 
 ## System Configuration
 
@@ -82,7 +82,7 @@ this option by ticking the checkbox.
 
 * _SMTP Port:_ The SMTP Host server port number must be listed here.
 
-## oxTrust Configuration
+## oxTrust Settings
 
 This feature provides options to add various changes in the Gluu Server
 User Interface. Gluu Server Administrator can add Title, Display Name or
