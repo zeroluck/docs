@@ -1,4 +1,3 @@
-[TOC]
 # Configuration
 
 This section of the documentation includes instructions for configuring
@@ -12,7 +11,6 @@ server fit to your organizational needs.
 The organization configuration section contains the following options:
 
 - [System Configuration](#system-configuration)
-- [Manage Email Addresses](#manage-email-addresses)
 - [SMTP Server Configuration](#smtp-server-configuration)
 - [oxTrust Configuration](#oxtrust-configuration)
 
@@ -54,32 +52,6 @@ and synchronize the existing identity data into the Gluu Server.
 * _Maximum Log Size:_ This option can be used to mitigate the space
 issues within the Gluu Server. The Gluu Server automatically zips any
 log file which is bigger than the defined value in this field.
-
-## Manage Email Addresses
-
-This feature allows the Gluu Server Administrator to manage
-notifications for the IdP.
-
-![Manage Email Addresses](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_email.png)
-
-* _Email for Centreon:_ Centreon is the server monitoring system used by
-Gluu. The email address in this field shall receive various
-notifications from Centreon.
-
-* _Email for Jira:_ The customers are not provided the Jira access, and
-it will be removed from oxTrust soon. Please visit [Gluu
-Support](https://support.gluu.org) for customer support.
-
-* _Email for Billing:_ The email address in this field will receive the
-billing invoices from Gluu.
-
-* _Email for Privacy:_ This email address will receive news and updates
-about the privacy related matters of Gluu.
-
-* _Email for SVN:_ The IdP related configuration files are saved in the
-[Gluu SVN](https://svn.gluu.info). Configuration files are generally
-saved under */opt/* and */etc/httpd/*. The email address will get access
-to the checked-in files section of the corresponding IdP.
 
 ## SMTP Server Configuration
 
