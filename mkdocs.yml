@@ -38,11 +38,12 @@ pages:
 - [reference/ldap-schema/index.md, Reference, LDAP Schema]
 - [reference/lib/index.md, Reference, Gluu Library]
 - [reference/oxAuth/index.md, Reference, OxAuth]
-- [reference/oxd/index.md, hidden]
 - [reference/oxTrust/index.md, Reference, OxTrust]
 - [reference/mod_auth_oidc/index.md, Reference, Apache Module]
-# Articles Sections
+- [reference/api/scim-1.1.md, Reference, SCIM 1.1 API]
+- [reference/api/scim-2.0.md, Reference, SCIM 2.0 API]
 
+# Articles Sections
 - [articles/apache-saml.md, Articles, Apache SAML SP Config]
 - [articles/google-saml.md, Articles, SAML SSO with Google]
 - [articles/salesforce-sso.md, Articles, SAML SSO with Salesforce]
@@ -62,12 +63,12 @@ pages:
 - [articles/auth-script.md, Articles, How to Write a Custom Authn Script]
 - [articles/ubuntu-shib-apache.md, Articles, Super Quick Ubuntu Shib Apache Install]
 
-
 # Deployment Sub-sections
 - [admin-guide/deployment/centos.md, hidden]
 - [admin-guide/deployment/setup_py.md, hidden]
 - [admin-guide/deployment/ubuntu.md, hidden]
 - [admin-guide/deployment/rhel.md, hidden]
+
 # Certificates Sub-sections
 - [admin-guide/certificates/https.md, hidden]
 - [admin-guide/certificates/openid-connect.md, hidden]
@@ -89,13 +90,12 @@ pages:
 - [reference/api/uma-resource-registration.md, hidden]
 - [reference/api/uma-rpt-status.md, hidden]
 - [reference/api/uma-authorization-endpoint.md, hidden]
-- [reference/api/scim-1.1.md, Reference,API]
-- [reference/api/scim-2.0.md, Reference,API]
-
 # oxAuth Sub-section
 - [reference/oxAuth/oxauth-config.md, hidden]
 - [reference/oxAuth/oxauth-ldap-properties.md, hidden]
 - [reference/oxAuth/oxauth-scope-to-claims-mapping-file.md, hidden]
+- [reference/oxd/index.md, hidden]
+
 # Interception Scripts Sub-sections
 - [reference/interception-scripts/sample-application-session-script.py, hidden]
 - [reference/interception-scripts/sample-authentication-script.py, hidden]
