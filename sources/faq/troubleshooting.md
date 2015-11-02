@@ -1,5 +1,5 @@
-# Troubleshooting
 [TOC]
+# Troubleshooting
 ## Memory
 - Does the system have enough memory/CPU? For a production deployment, at least 4GB of RAM is required for tomcat and the full amount of RAM assigned for the host should be no less than 6GB. 
 
@@ -47,7 +47,7 @@ Server stores this in `/install/community-edition-setup/setup.properties.last` u
 
 Of course for a production installation, you should remove this file. Wouldn't want to have your admin password sitting on the filesystem!
 
-## Add admin for gluu server
+# Add admin for gluu server
 
 Please follow this steps to restore your Gluu admin account (you will probably need to substitute actual port, bind names and hostnames with ones used by your installation):
 
@@ -102,3 +102,8 @@ Please again note the strings' segment marked with bold: you will have to substi
 `/opt/opendj/bin/ldapmodify -p 1389 -D 'cn=directory manager' -w 'YOUR_BIND_PASSWORD' -f ~/add_2_group.ldif`
 
 This will add tempadmin user to the IdP managers group and you can then login and assign another user to act as admin.
+
+# Revert Authentication Method
+It is possible to get locked out of Gluu Server if the authentication script is faulty or for various other reasons. It is possible to modify the authentication method to revert back to the older method using `ldap` commands. The follwing guide will help you to revert back to the default authentication method.
+
+* [Revert Authentication Method](http://www.gluu.org/docs/articles/auth-script/#reverting-authentication-method)
