@@ -15,7 +15,9 @@
 - [SCIM Client API](#scim-client-api)
 	- [oxAuth Client Creation](#oxauth-client-creation)
 	- [Bulk requests from Excel files](#bulk-requests-from-excel-files)
-- [SCIM Resource Management](#scim-resource-management) 
+- [SCIM Developers Guide](#scim-developers-guide)
+	
+<!--- [SCIM Resource Management](#scim-resource-management) 
 	- [SCIM UMA User Authentication](#scim-uma-user-authentication)
 		- [Base Configuration: Create oxAuth Clients, Policies](#base-configuration-create-oxauth-clients-policies)
 		- [oxTrust configuration (Resource Server)](#oxtrust-configuration-resource-server) 
@@ -25,6 +27,7 @@
 		- [configuration (Resource Server)](#configuration-resource-server)
 		- [SCIM Client (Requesting Party) sample code](#scim-client-requesting-party-sample-code)
 	
+-->
 
 ## SCIM Overview
 
@@ -481,7 +484,14 @@ https://github.com/GluuFederation/SCIM-Client/tree/master/doc/SampleXLS
 Excel files must follow the exact structure, the “Operation” cell defines the type of the operation ”Add,Update,delete” .
 For groups you can always add more groups to the spreadsheet following the same structure.
 
+- - - 
 
+## SCIM Developers Guide
+SCIM provides the developers and standardize way to retrieve (or update) user profile information from a data source. To elaborate, developers have no need to manage connections to the SQL tables at back-end.
+Gluu's implementation of SCIM also facilitates the developers in performing User, Group and Bulk CRUD operations. Complete developer guide can be found [Here](http://www.gluu.org/docs/reference/lib/using-scim/).
+
+
+<!--
 ## SCIM Resource Management
 
 Gluu supports SCIM 1.1 and 2.0 for user management. By using SCIM
@@ -758,4 +768,4 @@ server.
 
 Values in this example are correspond to client entry fields from first
 section.
-
+-->
