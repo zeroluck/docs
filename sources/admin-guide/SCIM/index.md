@@ -33,29 +33,31 @@
 
 The Simple Cloud Identity Management (SCIM) specification is a standard REST/JSON API to standardize user and group CRUD (create, read, update, delete). You can review the detailed specification at [http://www.simplecloud.info](http://www.simplecloud.info). 
 The specification seeks to build upon experience with existing schemes and deployments, placing specific emphasis on simplicity of development and integration, while applying existing authentication, authorization, and privacy models. It's intent is to reduce the cost and complexity of user management operations by providing a common user schema and extension model, as well as binding documents to provide patterns for exchanging this schema using standard protocols. In essence, make it fast, cheap, and easy to move users in to, out of, and around the cloud.
-
+<!--
 You can download a PDF copy of this guide from [HERE](https://github.com/GluuFederation/SCIM-Client/tree/master/doc/pdf).
-
+-->
 
 ## Specification
 
-SCIM is integrated as a service of oxTrust. To start operating with
-SCIM’s web service, you need to send a request to one of SCIM’s
+SCIM is integrated as a service of oxTrust. To start operating with SCIM’s web service, you need to send a request to one of SCIM’s
 endpoints.
 
 ### Available Endpoints
 
-For example, if you want to **add a user** you need to send an HTTP request to this endpoint url :
+| Resource   | Endpoint           | Operations    | Description     				|
+-------------|:------------------:|:-------------:|:--------------------------------------------|
+| User       | /Users             | GET           | Retrieve/Add/Modify	Users			|
+|            |                    | POST	  | 		      				|
+|            |                    | PUT           |                 				|
+|            |                    | DELETE	  |                 				|
+| Group      | /Groups            | GET           | Retrieve/Add/Modify	Groups			|
+|            |                    | POST	  | 		    				|
+|            |                    | PUT           |                				|
+|            |                    | DELETE	  |                 				|
+| Bulk       | /Bulk              | 	          | Adding/Modifying  resources in bulk    |
+|            |                    | 		  | 				       |
 
-`https://localhost:8080/oxTrust/seam/resource/restv1/Users/`
 
-for **bulk operations** (adding modifying and deleting multiple users ) you have to send a request to the bulk endpoint:
-
-`https://localhost:8080/oxTrust/seam/resource/restv1/Bulk/`
-
-for **group operations**:
-
-`https://localhost:8080/oxTrust/seam/resource/restv1/Groups/`
 
 ### Authentications
 
