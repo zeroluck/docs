@@ -31,7 +31,9 @@ that includes the street, city, state, and country user claims. The Gluu Server 
 
 ![Scopes Screenshot](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_oauth2_scope.png)
 
-The Gluu Server Administrator can easily add more scopes in the GUI. Click *Add Scope* and you'll be presented with the following fields: 
+The Gluu Server Administrator can easily add more scopes in the GUI. Click *Add Scope* and you'll be presented with the following screen:
+
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_oauth2_scopeadd.png)
 
 You'll have the ability to provide a Display Name, Description, whether or not the scope is provided by default, and the claims that are included in the scope. 
 
