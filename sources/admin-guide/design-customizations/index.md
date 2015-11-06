@@ -101,7 +101,7 @@ You can upload your logo here, which will be shown in Gluu Server Administrative
 
 # How to Add Custom Attributes to Gluu LDAP
 
-The following creaites a custom objectclass `svPerson` and an attribute called `svPermission` in the LDAP Schema. This procedure can also be used to create any other custom attribute.
+The following creates a custom objectclass `svPerson` and an attribute called `svPermission` in the LDAP Schema. This procedure can also be used to create any other custom attribute.
 
 1. Create a file called `102-sv.ldif` in `/opt/opendj/config/schema/` folder with the following content:
 
