@@ -15,7 +15,7 @@ pages:
 - [admin-guide/deployment/index.md, Admin Guide, Deployment]
 - [admin-guide/certificates/index.md, Admin Guide, Certificates]
 - [admin-guide/configuration/index.md, Admin Guide, Configuration]
-- [admin-guide/design-customizations/index.md, Admin Guide, Design and Customizations]
+- [admin-guide/design-customizations/index.md, Admin Guide, Design Customizations]
 - [admin-guide/ldap/index.md, Admin Guide, LDAP]
 - [admin-guide/cache-refresh/index.md, Admin Guide, Cache Refresh]
 - [admin-guide/saml/index.md, Admin Guide, SAML]
