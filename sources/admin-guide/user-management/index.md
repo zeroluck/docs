@@ -7,6 +7,11 @@
 	- [People](#people)
 	- [Groups](#groups)
 	- [Attributes](#attributes)
+
+<!--
+
+				********** This part needs some maintenance **********
+
 - [SCIM oxAuth Authentication](#scim-oxauth-authentication)
 	- [Base configuration: create oxAuth client](#base-configuration-create-oxauth-client)
 	- [configuration (Resource Server)](#configuration-resource-server)
@@ -15,6 +20,8 @@
 	- [Base configuration: Create oxAuth Clients, Policies](#base-configuration-create-oxauth-clients-policies)
 	- [oxTrust configuration (Resource Server)](#oxtrust-configuration-resource-server)
 	- [SCIM Client (Requesting Party) sample code](#scim-client-requesting-party-sample-code)
+
+-->
 
 # User Management
 
@@ -116,6 +123,10 @@ Attributes section. By default, only active attributes are shown. To see
 inactive attributes, click the "Show All Attributes" link above the
 table. To edit an attribute simply click on the Display Name. Learn more
 about Attributes management [here](../configuration/index.md#attributes).
+
+<!--
+
+				********** This part needs some maintenance **********
 
 # SCIM oxAuth Authentication
 
@@ -360,3 +371,6 @@ This is sample SCIM Client code which request user information from server.
     }
 
 Values from these example correspond to entries from first section.
+
+-->
+

@@ -17,7 +17,10 @@
 	- [Bulk requests from Excel files](#bulk-requests-from-excel-files)
 - [SCIM Developers Guide](#scim-developers-guide)
 	
-<!--- [SCIM Resource Management](#scim-resource-management) 
+<!--- 
+				********** This part needs some maintenance **********
+
+[SCIM Resource Management](#scim-resource-management) 
 	- [SCIM UMA User Authentication](#scim-uma-user-authentication)
 		- [Base Configuration: Create oxAuth Clients, Policies](#base-configuration-create-oxauth-clients-policies)
 		- [oxTrust configuration (Resource Server)](#oxtrust-configuration-resource-server) 
@@ -494,6 +497,9 @@ Gluu's implementation of SCIM also facilitates the developers in performing User
 
 
 <!--
+
+				********** This part needs some maintenance **********
+
 ## SCIM Resource Management
 
 Gluu supports SCIM 1.1 and 2.0 for user management. By using SCIM
