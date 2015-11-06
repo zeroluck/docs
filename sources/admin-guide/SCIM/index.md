@@ -15,6 +15,8 @@
 - [SCIM Client API](#scim-client-api)
 	- [oxAuth Client Creation](#oxauth-client-creation)
 	- [Bulk requests from Excel files](#bulk-requests-from-excel-files)
+	- [SCIM 1.1 API](#scim-11-api)
+	- [SCIM 2.0 API](#scim-20-api)
 - [SCIM Developers Guide](#scim-developers-guide)
 	
 <!--- 
@@ -486,8 +488,14 @@ ScimBulkOperation groupsOperation = ExcelMapper.mapGroups(excelFileLocationGroup
 You can download the Excel file models from here: 
 https://github.com/GluuFederation/SCIM-Client/tree/master/doc/SampleXLS
 
-Excel files must follow the exact structure, the “Operation” cell defines the type of the operation ”Add,Update,delete” .
+Excel files must follow the exact structure, the “Operation” cell defines the type of the operation ”Add, Update, Delete” .
 For groups you can always add more groups to the spreadsheet following the same structure.
+
+### SCIM 1.1 API
+Detailed APIs for our implementation of SCIM can be found [here.](http://www.gluu.org/docs/reference/api/scim-1.1/)
+
+### SCIM 2.0 API
+APIs for the updated implementation of SCIM, i. e. SCIM 2.0 are [here.](http://www.gluu.org/docs/reference/api/scim-2.0/)
 
 - - - 
 
