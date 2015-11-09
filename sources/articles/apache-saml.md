@@ -199,19 +199,20 @@ a![IMAGE](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/i
 
 #### Shibboleth and Apache Configuration
 
-1. Change the permission of the Apache Installation Directory, provide “write” access
+1. Change the permission of the Apache installation directory, and
+   provide “write” access.
 
-2. 'httpd.conf' configuration
+2. `httpd.conf` configuration
 
-	1. Change: “ServerName localhost:80” (for your local testing)
+	1. Change “ServerName localhost:80” (for your local testing)
 
-	2. Copy apache22.conf from the Shibboleth directory to ~/apache/conf/extra/
+	2. Copy `apache22.conf` from the Shibboleth directory to `~/apache/conf/extra/`
 
-3. 'Shibboleth2.xml' configuration
+3. `Shibboleth2.xml` configuration
 
-	1. Change: Host name=“localhost” ( for local testing )
+	1. Change: Host name=“localhost” (for local testing)
     
-	2. Change: entityID=“https://localhost/shibboleth” ( for local testing )
+	2. Change: entityID=“https://localhost/shibboleth” (for local testing)
     
 	3. Change: ApplicationOverride id=“admin” entityID=“https://localhost/shibboleth/”
 
