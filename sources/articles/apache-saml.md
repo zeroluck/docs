@@ -220,7 +220,9 @@ a![IMAGE](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/i
 
 ##### Test SP Installation with Windows and Apache
 
-1. Open Web browser and provide the address: localhost/Shibboleth.sso/Status
-2. If you can see some XML page like the one shown below, you are done with your SP installation in Windows through Apache2.
+1. Open the web browser, and provide the address:
+   `localhost/Shibboleth.sso/Status`
+2. If you can see some XML page like the one shown below--you are done
+   with your SP installation in Windows through Apache2.
 
  a![IMAGE](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_checkstatus.png)
