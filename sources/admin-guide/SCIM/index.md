@@ -1,3 +1,5 @@
+<!--- 
+				********** This part needs some maintenance **********
 **Table of Contents**
 
 - [SCIM Overview](#scim-overview)
@@ -18,9 +20,6 @@
 	- [SCIM 1.1 API](#scim-11-api)
 	- [SCIM 2.0 API](#scim-20-api)
 - [SCIM Developers Guide](#scim-developers-guide)
-	
-<!--- 
-				********** This part needs some maintenance **********
 
 [SCIM Resource Management](#scim-resource-management) 
 	- [SCIM UMA User Authentication](#scim-uma-user-authentication)
@@ -36,435 +35,79 @@
 
 ## SCIM Overview
 
-The Simple Cloud Identity Management (SCIM) specification is a standard REST/JSON API to standardize user and group CRUD (create, read, update, delete). You can review the detailed specification at [http://www.simplecloud.info](http://www.simplecloud.info). 
-The specification seeks to build upon experience with existing schemes and deployments, placing specific emphasis on simplicity of development and integration, while applying existing authentication, authorization, and privacy models. It's intent is to reduce the cost and complexity of user management operations by providing a common user schema and extension model, as well as binding documents to provide patterns for exchanging this schema using standard protocols. In essence, make it fast, cheap, and easy to move users in to, out of, and around the cloud.
-<!--
-You can download a PDF copy of this guide from [HERE](https://github.com/GluuFederation/SCIM-Client/tree/master/doc/pdf).
--->
+The Simple Cloud Identity Management (SCIM) specification is a standard REST/JSON API to standardize user and group CRUD 
+(create, read, update, delete). You can review the detailed specification at 
+[http://www.simplecloud.info](http://www.simplecloud.info). The standard got started when coders from Google and 
+Salesforce started wondering if they could combine their similar endpoints for user management, reducing the 
+frustration of the community. Identity Management vendors, who were writing connectors to both (and many other 
+SaaS providers) also liked the idea and contributed to the effort. The standard has two major releases: 1.1 and 2.0.
+As of Gluu Server 2.4, we support both, although 1.1 will be deprecated soon.
 
 ## Specification
 
-SCIM is integrated as a service of oxTrust. To start operating with SCIM’s web service, you need to send a request to one of SCIM’s
-endpoints.
+SCIM is integrated as a service of oxTrust. To start operating with SCIM’s web service, you need to send a request to 
+one of SCIM’s endpoints.
 
 ### Available Endpoints
 
-| Resource   | Endpoint           | Operations    | Description     				|
+| Resource   | Endpoint           | Operations    | Description     				            |
 -------------|:------------------:|:-------------:|:--------------------------------------------|
-| User       | /Users             | GET           | Retrieve/Add/Modify	Users			|
-|            |                    | POST	  | 		      				|
-|            |                    | PUT           |                 				|
-|            |                    | DELETE	  |                 				|
-| Group      | /Groups            | GET           | Retrieve/Add/Modify	Groups			|
-|            |                    | POST	  | 		    				|
-|            |                    | PUT           |                				|
-|            |                    | DELETE	  |                 				|
-| Bulk       | /Bulk              | 	          | Adding/Modifying  resources in bulk    |
-|            |                    | 		  | 				       |
+| User       | /Users             | GET           | Retrieve/Add/Modify	Users			        |
+|            |                    | POST	      | 		      				                |
+|            |                    | PUT           |                 				            |
+|            |                    | DELETE	      |                 				            |
+| Group      | /Groups            | GET           | Retrieve/Add/Modify	Groups			        |
+|            |                    | POST	      | 		    				                |
+|            |                    | PUT           |                				                |
+|            |                    | DELETE	      |                 				            |
+| Bulk       | /Bulk              | 	          | Adding/Modifying resources in bulk          |
+|            |                    | 		      | 			                        	    |
 
+### Access Managmement
 
-
-### Authentications
-
-You need to have a the right credentials and roles in order for you to
-access the endpoint example, which is for oxTrust means that you are a
-member of the Owner or Manager group specified in the organization
-entry.
-Gluu’s SCIM web service uses both **Basic authentication** and **oAuth
-2.0 authentication**. For the basic type of authentication you need to
-specify the user and password (base64 encoded) in the HTTP request HTTP
-header in order to be authenticated.
+SCIM API's are very powerful. While the SCIM API's don't say two specifically how you protect them--
+its considered to be outside the scope of the document--it does say that OAuth2 is one of the options.
+So it made sense for Gluu to use the UMA API's to issue tokens which are required to call the SCIM
+API's. 
 
 Example:
 
 ```
-POST https://localhost:8080/oxTrust/seam/resource/restv1/Users/ 
-Accept: application/json 
-Authorization: Basic bWlrZTpzZWNyZXQ=
-```
-Here we have sent user (Basic) and password (bWlrZTpzZWNyZXQ=) for basic authentication.
-
-For oAuth **2.0 authentication** you need to request an access token via
-the SCIM client API in order to be able to get authenticated. The
-example below shows how an access token is sent to SCIM webservice as a
-header:
-
-```
-POST https://localhost:8080/oxTrust/seam/resource/restv1/Users/ 
+POST https://idp.example.com/identity/seam/resource/restv1/Users/ 
 Accept: application/json 
 Authorization: Bearer 91732a27-fd00-487a-9dde-a6ed2fac6949
 ```
 
-### Data representation formats
+How do you get one of these bearer tokens? You'll need to read up on the UMA protocol. 
+Basically, the first time you call the SCIM API's, oxTrust will return a 403 and permission 
+ticket. Your UMA client will have to present this permission ticket to the oxAuth UMA Authorization API
+endpoints (the rpt_endpoint) to obtain a token.
 
-A user is represented in two formats, JSON and XML. You can specify what
-kind of format you want to use by indicating that in your HTTP request.
+From the Gluu Server admin perspective, you'll need to make sure there is an UMA Scope created,
+and that this scope is associated with a policy that enables the client to call the SCIM API's. For example, 
+out of the box, the Gluu Server ships with a policy for an client id white list.  
 
-* For JSON:
+For more information, see the Gluu Server UMA documentation. Just remember for SCIM, oxTrust is the "UMA Resource 
+Sever", and the SCIM client is the UMA Client.
 
-```
-Accept: application/json 
-```
+## SCIM REST API Reference
+ 
+For API documentation, you should see the reference section:
 
-* For XML
+ * [SCIM 1.1 API Reference](../../reference/api/scim-1.1.md)
+ * [SCIM 2.0 API Reference](../../reference/api/scim-2.0.md)
 
-```
-Accept: application/xml 
-```
+## SCIM Client Library
 
-* Example of JSON representation
-
-```
-{"schemas":["urn:scim:schemas:core:1.0"],"id":"@!1111!0000!D4E7","externalId":"john ","userName":"john ","name":{"givenName":"John","familyName":"Smith","middleName":"N/A","honorificPrefix":"N/A","honorificSuffix":"N/A"},"displayName":"John Smith","nickName":"Sensei","profileUrl":"http://www.gluu.org/","emails":[{"value":"john @gluu.org","type":"work","primary":"true"},{"value":"john 2@gluu.org","type":"home","primary":"false"}],"addresses":[{"type":"work","streetAddress":"621 East 6th Street Suite 200","locality":"Austin","region":"TX","postalCode":"78701","country":"US","formatted":"621 East 6th Street Suite 200 Austin , TX 78701 US","primary":"true"}],"phoneNumbers":[{"value":"646-234-5678","type":"work"}],"ims":[{"value":"nynyjohn ","type":"Skype"}],"photos":[{"value":"http://www.gluu.org/wp-content/themes/SaaS-II/images/logo.png","type":"gluu photo"}],"userType":"CEO","title":"CEO","preferredLanguage":"en-us","locale":"en_US","timezone":"America/Chicago","active":"true","password":"Hiden for Privacy Reasons","groups":[{"display":"Gluu Manager Group","value":"@!1111!0003!B2C6"},{"display":"Gluu Owner Group","value":"@!1111!0003!D9B4"}],"roles":[{"value":"Owner"}],"entitlements":[{"value":"full access"}],"x509Certificates":[{"value":"MIIDQzCCAqygAwIBAgICEAAwDQYJKoZIhvcNAQEFBQAwTjELMAkGA1UEBhMCVVMxEzARBgNVBAgMCkNhbGlmb3JuaWExFDASBgNVBAoMC2V4YW1wbGUuY29tMRQwEgYDVQQDDAtleGFtcGxlLmNvbTAeFw0xMTEwMjIwNjI0MzFaFw0xMjEwMDQwNjI0MzFaMH8xCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRQwEgYDVQQKDAtleGFtcGxlLmNvbTEhMB8GA1UEAwwYTXMuIEJhcmJhcmEgSiBKZW5zZW4gSUlJMSIwIAYJKoZIhvcNAQkBFhNiamVuc2VuQGV4YW1wbGUuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7Kr+Dcds/JQ5GwejJFcBIP682X3xpjis56AK02bc1FLgzdLI8auoR+cC9/Vrh5t66HkQIOdA4unHh0AaZ4xL5PhVbXIPMB5vAPKpzz5iPSi8xO8SL7I7SDhcBVJhqVqr3HgllEG6UClDdHO7nkLuwXq8HcISKkbT5WFTVfFZzidPl8HZ7DhXkZIRtJwBweq4bvm3hM1Os7UQH05ZS6cVDgweKNwdLLrT51ikSQG3DYrl+ft781UQRIqxgwqCfXEuDiinPh0kkvIi5jivVu1Z9QiwlYEdRbLJ4zJQBmDrSGTMYn4lRc2HgHO4DqB/bnMVorHB0CC6AV1QoFK4GPe1LwIDAQABo3sweTAJBgNVHRMEAjAAMCwGCWCGSAGG+EIBDQQfFh1PcGVuU1NMIEdlbmVyYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQU8pD0U0vsZIsaA16lL8En8bx0F/gwHwYDVR0jBBgwFoAUdGeKitcaF7gnzsNwDx708kqaVt0wDQYJKoZIhvcNAQEFBQADgYEAA81SsFnOdYJtNg5Tcq+/ByEDrBgnusx0jloUhByPMEVkoMZ3J7j1ZgI8rAbOkNngX8+pKfTiDz1RC4+dx8oU6Za+4NJXUjlL5CvV6BEYb1+QAEJwitTVvxB/A67g42/vzgAtoRUeDov1+GFiBZ+GNF/cAYKcMtGcrs2i97ZkJMo="}],"meta":{"created":"2010-01-23T04:56:22Z","lastModified":"2011-05-13T04:42:34Z","version":"W\\\"b431af54f0671a2\"","location":"http://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7"}} 
-```
-
-* XML format Example
-
-```
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><User xmlns="urn:scim:schemas:core:1.0"><id>@!1111!0000!D4E7</id><externalId>john </externalId><userName>john </userName><name><givenName>John</givenName><familyName>Smith</familyName><middleName>N/A</middleName><honorificPrefix>N/A</honorificPrefix><honorificSuffix>N/A</honorificSuffix></name><displayName>John Smith</displayName><nickName>Sensei</nickName><profileUrl>http://www.gluu.org/</profileUrl><emails><email><value>john @gluu.org</value><type>work</type><primary>true</primary></email><email><value>john 2@gluu.org</value><type>home</type><primary>false</primary></email></emails><addresses><address><type>work</type><streetAddress>621 East 6th Street Suite 200</streetAddress><locality>Austin</locality><region>TX</region><postalCode>78701</postalCode><country>US</country><formatted>621 East 6th Street Suite 200 Austin , TX 78701 US</formatted><primary>true</primary></address></addresses><PhoneNumbers><PhoneNumber><value>646-234-5678</value><type>work</type></PhoneNumber></PhoneNumbers><ims><im><value>nynyjohn </value><type>Skype</type></im></ims><photos><photo><value>http://www.gluu.org/wp-content/themes/SaaS-II/images/logo.png</value><type>gluu photo</type></photo></photos><userType>CEO</userType><title>CEO</title><preferredLanguage>en-us</preferredLanguage><locale>en_US</locale><timezone>America/Chicago</timezone><active>true</active><password>Hiden for Privacy Reasons</password><groups><group><display>Gluu Manager Group</display><value>@!1111!0003!B2C6</value></group><group><display>Gluu Owner Group</display><value>@!1111!0003!D9B4</value></group></groups><roles><role><value>Owner</value></role></roles><entitlements><entitlement><value>full access</value></entitlement></entitlements><x509Certificates><x509Certificate><value>MIIDQzCCAqygAwIBAgICEAAwDQYJKoZIhvcNAQEFBQAwTjELMAkGA1UEBhMCVVMxEzARBgNVBAgMCkNhbGlmb3JuaWExFDASBgNVBAoMC2V4YW1wbGUuY29tMRQwEgYDVQQDDAtleGFtcGxlLmNvbTAeFw0xMTEwMjIwNjI0MzFaFw0xMjEwMDQwNjI0MzFaMH8xCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRQwEgYDVQQKDAtleGFtcGxlLmNvbTEhMB8GA1UEAwwYTXMuIEJhcmJhcmEgSiBKZW5zZW4gSUlJMSIwIAYJKoZIhvcNAQkBFhNiamVuc2VuQGV4YW1wbGUuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7Kr+Dcds/JQ5GwejJFcBIP682X3xpjis56AK02bc1FLgzdLI8auoR+cC9/Vrh5t66HkQIOdA4unHh0AaZ4xL5PhVbXIPMB5vAPKpzz5iPSi8xO8SL7I7SDhcBVJhqVqr3HgllEG6UClDdHO7nkLuwXq8HcISKkbT5WFTVfFZzidPl8HZ7DhXkZIRtJwBweq4bvm3hM1Os7UQH05ZS6cVDgweKNwdLLrT51ikSQG3DYrl+ft781UQRIqxgwqCfXEuDiinPh0kkvIi5jivVu1Z9QiwlYEdRbLJ4zJQBmDrSGTMYn4lRc2HgHO4DqB/bnMVorHB0CC6AV1QoFK4GPe1LwIDAQABo3sweTAJBgNVHRMEAjAAMCwGCWCGSAGG+EIBDQQfFh1PcGVuU1NMIEdlbmVyYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQU8pD0U0vsZIsaA16lL8En8bx0F/gwHwYDVR0jBBgwFoAUdGeKitcaF7gnzsNwDx708kqaVt0wDQYJKoZIhvcNAQEFBQADgYEAA81SsFnOdYJtNg5Tcq+/ByEDrBgnusx0jloUhByPMEVkoMZ3J7j1ZgI8rAbOkNngX8+pKfTiDz1RC4+dx8oU6Za+4NJXUjlL5CvV6BEYb1+QAEJwitTVvxB/A67g42/vzgAtoRUeDov1+GFiBZ+GNF/cAYKcMtGcrs2i97ZkJMo=</value></x509Certificate></x509Certificates><meta><created>2010-01-23T04:56:22Z</created><lastModified>2011-05-13T04:42:34Z</lastModified><version>W\&quot;b431af54f0671a2&quot;</version><location>http://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7</location></meta></User>
-```
-## SCIM Operations
-
-Now, we'll discuss possible SCIM operations in detail. 
-
-### Adding a new User
-
-In this example we will try to add a user in JSON and XML format: 
-
-* JSON request
-* Header
-
-```
-POST https://localhost:8080/oxTrust/seam/resource/restv1/Users/ 
-Accept: application/json 
-Authorization: Bearer 91732a27-fd00-487a-9dde-a6ed2fac6949
-```
-
-* Request Content
-
-```
-{"schemas":["urn:scim:schemas:core:1.0"],"externalId":"john ","userName":"john ","name":{"givenName":"John","familyName":"Smith","middleName":"N/A","honorificPrefix":"N/A","honorificSuffix":"N/A"},"displayName":"John Smith","nickName":"Sensei","profileUrl":"http://www.gluu.org/","emails":[{"value":"john @gluu.org","type":"work","primary":"true"},{"value":"john 2@gluu.org","type":"home","primary":"false"}],"addresses":[{"type":"work","streetAddress":"621 East 6th Street Suite 200","locality":"Austin","region":"TX","postalCode":"78701","country":"US","formatted":"621 East 6th Street Suite 200 Austin , TX 78701 US","primary":"true"}],"phoneNumbers":[{"value":"646-234-5678","type":"work"}],"ims":[{"value":"nynyjohn ","type":"Skype"}],"photos":[{"value":"http://www.gluu.org/wp-content/themes/SaaS-II/images/logo.png","type":"gluu photo"}],"userType":"CEO","title":"CEO","preferredLanguage":"en-us","locale":"en_US","timezone":"America/Chicago","active":"true","password":"secret","groups":[{"display":"Gluu Manager Group","value":"@!1111!0003!B2C6"},{"display":"Gluu Owner Group","value":"@!1111!0003!D9B4"}],"roles":[{"value":"Owner"}],"entitlements":[{"value":"full access"}],"x509Certificates":[{"value":"MIIDQzCCAqygAwIBAgICEAAwDQYJKoZIhvcNAQEFBQAwTjELMAkGA1UEBhMCVVMxEzARBgNVBAgMCkNhbGlmb3JuaWExFDASBgNVBAoMC2V4YW1wbGUuY29tMRQwEgYDVQQDDAtleGFtcGxlLmNvbTAeFw0xMTEwMjIwNjI0MzFaFw0xMjEwMDQwNjI0MzFaMH8xCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRQwEgYDVQQKDAtleGFtcGxlLmNvbTEhMB8GA1UEAwwYTXMuIEJhcmJhcmEgSiBKZW5zZW4gSUlJMSIwIAYJKoZIhvcNAQkBFhNiamVuc2VuQGV4YW1wbGUuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7Kr+Dcds/JQ5GwejJFcBIP682X3xpjis56AK02bc1FLgzdLI8auoR+cC9/Vrh5t66HkQIOdA4unHh0AaZ4xL5PhVbXIPMB5vAPKpzz5iPSi8xO8SL7I7SDhcBVJhqVqr3HgllEG6UClDdHO7nkLuwXq8HcISKkbT5WFTVfFZzidPl8HZ7DhXkZIRtJwBweq4bvm3hM1Os7UQH05ZS6cVDgweKNwdLLrT51ikSQG3DYrl+ft781UQRIqxgwqCfXEuDiinPh0kkvIi5jivVu1Z9QiwlYEdRbLJ4zJQBmDrSGTMYn4lRc2HgHO4DqB/bnMVorHB0CC6AV1QoFK4GPe1LwIDAQABo3sweTAJBgNVHRMEAjAAMCwGCWCGSAGG+EIBDQQfFh1PcGVuU1NMIEdlbmVyYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQU8pD0U0vsZIsaA16lL8En8bx0F/gwHwYDVR0jBBgwFoAUdGeKitcaF7gnzsNwDx708kqaVt0wDQYJKoZIhvcNAQEFBQADgYEAA81SsFnOdYJtNg5Tcq+/ByEDrBgnusx0jloUhByPMEVkoMZ3J7j1ZgI8rAbOkNngX8+pKfTiDz1RC4+dx8oU6Za+4NJXUjlL5CvV6BEYb1+QAEJwitTVvxB/A67g42/vzgAtoRUeDov1+GFiBZ+GNF/cAYKcMtGcrs2i97ZkJMo="}],"meta":{"created":"2010-01-23T04:56:22Z","lastModified":"2011-05-13T04:42:34Z","version":"W\\\"b431af54f0671a2\"","location":"http://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7"}}
-```
-
-* JSON response
-* Header
-
-```
-201 CREATED
-Server: Apache-Coyote/1.1
-Location: https://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7
-Content-Type: application/json
-```
-
-* Response Content
-
-```
-{"schemas":["urn:scim:schemas:core:1.0"],"id":"@!1111!0000!D4E7","externalId":"john ","userName":"john ","name":{"givenName":"John","familyName":"Smith","middleName":"N/A","honorificPrefix":"N/A","honorificSuffix":"N/A"},"displayName":"John Smith","nickName":"Sensei","profileUrl":"http://www.gluu.org/","emails":[{"value":"john@gluu.org","type":"work","primary":"true"},{"value":"john 2@gluu.org","type":"home","primary":"false"}],"addresses":[{"type":"work","streetAddress":"621 East 6th Street Suite 200","locality":"Austin","region":"TX","postalCode":"78701","country":"US","formatted":"621 East 6th Street Suite 200 Austin , TX 78701 US","primary":"true"}],"phoneNumbers":[{"value":"646-234-5678","type":"work"}],"ims":[{"value":"nynyjohn ","type":"Skype"}],"photos":[{"value":"http://www.gluu.org/wp-content/themes/SaaS-II/images/logo.png","type":"gluu photo"}],"userType":"CEO","title":"CEO","preferredLanguage":"en-us","locale":"en_US","timezone":"America/Chicago","active":"true","password":"Hiden for Privacy Reasons","groups":[{"display":"Gluu Manager Group","value":"@!1111!0003!B2C6"},{"display":"Gluu Owner Group","value":"@!1111!0003!D9B4"}],"roles":[{"value":"Owner"}],"entitlements":[{"value":"full access"}],"x509Certificates":[{"value":"MIIDQzCCAqygAwIBAgICEAAwDQYJKoZIhvcNAQEFBQAwTjELMAkGA1UEBhMCVVMxEzARBgNVBAgMCkNhbGlmb3JuaWExFDASBgNVBAoMC2V4YW1wbGUuY29tMRQwEgYDVQQDDAtleGFtcGxlLmNvbTAeFw0xMTEwMjIwNjI0MzFaFw0xMjEwMDQwNjI0MzFaMH8xCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRQwEgYDVQQKDAtleGFtcGxlLmNvbTEhMB8GA1UEAwwYTXMuIEJhcmJhcmEgSiBKZW5zZW4gSUlJMSIwIAYJKoZIhvcNAQkBFhNiamVuc2VuQGV4YW1wbGUuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7Kr+Dcds/JQ5GwejJFcBIP682X3xpjis56AK02bc1FLgzdLI8auoR+cC9/Vrh5t66HkQIOdA4unHh0AaZ4xL5PhVbXIPMB5vAPKpzz5iPSi8xO8SL7I7SDhcBVJhqVqr3HgllEG6UClDdHO7nkLuwXq8HcISKkbT5WFTVfFZzidPl8HZ7DhXkZIRtJwBweq4bvm3hM1Os7UQH05ZS6cVDgweKNwdLLrT51ikSQG3DYrl+ft781UQRIqxgwqCfXEuDiinPh0kkvIi5jivVu1Z9QiwlYEdRbLJ4zJQBmDrSGTMYn4lRc2HgHO4DqB/bnMVorHB0CC6AV1QoFK4GPe1LwIDAQABo3sweTAJBgNVHRMEAjAAMCwGCWCGSAGG+EIBDQQfFh1PcGVuU1NMIEdlbmVyYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQU8pD0U0vsZIsaA16lL8En8bx0F/gwHwYDVR0jBBgwFoAUdGeKitcaF7gnzsNwDx708kqaVt0wDQYJKoZIhvcNAQEFBQADgYEAA81SsFnOdYJtNg5Tcq+/ByEDrBgnusx0jloUhByPMEVkoMZ3J7j1ZgI8rAbOkNngX8+pKfTiDz1RC4+dx8oU6Za+4NJXUjlL5CvV6BEYb1+QAEJwitTVvxB/A67g42/vzgAtoRUeDov1+GFiBZ+GNF/cAYKcMtGcrs2i97ZkJMo="}],"meta":{"created":"2010-01-23T04:56:22Z","lastModified":"2011-05-13T04:42:34Z","version":"W\\\"b431af54f0671a2\"","location":"http://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7"}}
-```
-
-* XML request
-* Header
-
-```
-POST https://localhost:8080/oxTrust/seam/resource/restv1/Users/ 
-Accept: application/xml 
-Authorization: Bearer 91732a27-fd00-487a-9dde-a6ed2fac6949
-```
-
-* Request Content
-
-```
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><User xmlns="urn:scim:schemas:core:1.0"><externalId>mike</externalId><userName>mike</userName><name><givenName>John</givenName><familyName>Smith</familyName><middleName>N/A</middleName><honorificPrefix>N/A</honorificPrefix><honorificSuffix>N/A</honorificSuffix></name><displayName>John Smith</displayName><nickName>Sensei</nickName><profileUrl>http://www.gluu.org/</profileUrl><emails><email><value>mike@gluu.org</value><type>work</type><primary>true</primary></email><email><value>mike2@gluu.org</value><type>home</type><primary>false</primary></email></emails><addresses><address><type>work</type><streetAddress>621 East 6th Street Suite 200</streetAddress><locality>Austin</locality><region>TX</region><postalCode>78701</postalCode><country>US</country><formatted>621 East 6th Street Suite 200  Austin , TX 78701 US</formatted><primary>true</primary></address></addresses><PhoneNumbers><PhoneNumber><value>646-234-5678</value><type>work</type></PhoneNumber></PhoneNumbers><ims><im><value>nynymike</value><type>Skype</type></im></ims><photos><photo><value>http://www.gluu.org/wp-content/themes/SaaS-II/images/logo.png</value><type>gluu photo</type></photo></photos><userType>CEO</userType><title>CEO</title><preferredLanguage>en-us</preferredLanguage><locale>en_US</locale><timezone>America/Chicago</timezone><active>true</active><password>secret</password><groups><group><display>Gluu Manager Group</display><value>@!1111!0003!B2C6</value></group><group><display>Gluu Owner Group</display><value>@!1111!0003!D9B4</value></group></groups><roles><role><value>Owner</value></role></roles><entitlements><entitlement><value>full access</value></entitlement></entitlements><x509Certificates><x509Certificate><value>MIIDQzCCAqygAwIBAgICEAAwDQYJKoZIhvcNAQEFBQAwTjELMAkGA1UEBhMCVVMxEzARBgNVBAgMCkNhbGlmb3JuaWExFDASBgNVBAoMC2V4YW1wbGUuY29tMRQwEgYDVQQDDAtleGFtcGxlLmNvbTAeFw0xMTEwMjIwNjI0MzFaFw0xMjEwMDQwNjI0MzFaMH8xCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRQwEgYDVQQKDAtleGFtcGxlLmNvbTEhMB8GA1UEAwwYTXMuIEJhcmJhcmEgSiBKZW5zZW4gSUlJMSIwIAYJKoZIhvcNAQkBFhNiamVuc2VuQGV4YW1wbGUuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7Kr+Dcds/JQ5GwejJFcBIP682X3xpjis56AK02bc1FLgzdLI8auoR+cC9/Vrh5t66HkQIOdA4unHh0AaZ4xL5PhVbXIPMB5vAPKpzz5iPSi8xO8SL7I7SDhcBVJhqVqr3HgllEG6UClDdHO7nkLuwXq8HcISKkbT5WFTVfFZzidPl8HZ7DhXkZIRtJwBweq4bvm3hM1Os7UQH05ZS6cVDgweKNwdLLrT51ikSQG3DYrl+ft781UQRIqxgwqCfXEuDiinPh0kkvIi5jivVu1Z9QiwlYEdRbLJ4zJQBmDrSGTMYn4lRc2HgHO4DqB/bnMVorHB0CC6AV1QoFK4GPe1LwIDAQABo3sweTAJBgNVHRMEAjAAMCwGCWCGSAGG+EIBDQQfFh1PcGVuU1NMIEdlbmVyYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQU8pD0U0vsZIsaA16lL8En8bx0F/gwHwYDVR0jBBgwFoAUdGeKitcaF7gnzsNwDx708kqaVt0wDQYJKoZIhvcNAQEFBQADgYEAA81SsFnOdYJtNg5Tcq+/ByEDrBgnusx0jloUhByPMEVkoMZ3J7j1ZgI8rAbOkNngX8+pKfTiDz1RC4+dx8oU6Za+4NJXUjlL5CvV6BEYb1+QAEJwitTVvxB/A67g42/vzgAtoRUeDov1+GFiBZ+GNF/cAYKcMtGcrs2i97ZkJMo=</value></x509Certificate></x509Certificates><meta><created>2010-01-23T04:56:22Z</created><lastModified>2011-05-13T04:42:34Z</lastModified><version>W\&quot;b431af54f0671a2&quot;</version><location>http://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7</location></meta></User>
-```
-
-* XML response
-* header
-
-```
-201 CREATED
-Server: Apache-Coyote/1.1
-Location: https://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7
-Content-Type: application/xml
-```
-
-* Response Content
-
-```
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><User xmlns="urn:scim:schemas:core:1.0"><id>@!1111!0000!D4E7</id><externalId>mike</externalId><userName>mike</userName><name><givenName>John</givenName><familyName>Smith</familyName><middleName>N/A</middleName><honorificPrefix>N/A</honorificPrefix><honorificSuffix>N/A</honorificSuffix></name><displayName>John Smith</displayName><nickName>Sensei</nickName><profileUrl>http://www.gluu.org/</profileUrl><emails><email><value>mike@gluu.org</value><type>work</type><primary>true</primary></email><email><value>mike2@gluu.org</value><type>home</type><primary>false</primary></email></emails><addresses><address><type>work</type><streetAddress>621 East 6th Street Suite 200</streetAddress><locality>Austin</locality><region>TX</region><postalCode>78701</postalCode><country>US</country><formatted>621 East 6th Street Suite 200  Austin , TX 78701 US</formatted><primary>true</primary></address></addresses><PhoneNumbers><PhoneNumber><value>646-234-5678</value><type>work</type></PhoneNumber></PhoneNumbers><ims><im><value>nynymike</value><type>Skype</type></im></ims><photos><photo><value>http://www.gluu.org/wp-content/themes/SaaS-II/images/logo.png</value><type>gluu photo</type></photo></photos><userType>CEO</userType><title>CEO</title><preferredLanguage>en-us</preferredLanguage><locale>en_US</locale><timezone>America/Chicago</timezone><active>true</active><password>Hiden for Privacy Reasons</password><groups><group><display>Gluu Manager Group</display><value>@!1111!0003!B2C6</value></group><group><display>Gluu Owner Group</display><value>@!1111!0003!D9B4</value></group></groups><roles><role><value>Owner</value></role></roles><entitlements><entitlement><value>full access</value></entitlement></entitlements><x509Certificates><x509Certificate><value>MIIDQzCCAqygAwIBAgICEAAwDQYJKoZIhvcNAQEFBQAwTjELMAkGA1UEBhMCVVMxEzARBgNVBAgMCkNhbGlmb3JuaWExFDASBgNVBAoMC2V4YW1wbGUuY29tMRQwEgYDVQQDDAtleGFtcGxlLmNvbTAeFw0xMTEwMjIwNjI0MzFaFw0xMjEwMDQwNjI0MzFaMH8xCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRQwEgYDVQQKDAtleGFtcGxlLmNvbTEhMB8GA1UEAwwYTXMuIEJhcmJhcmEgSiBKZW5zZW4gSUlJMSIwIAYJKoZIhvcNAQkBFhNiamVuc2VuQGV4YW1wbGUuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7Kr+Dcds/JQ5GwejJFcBIP682X3xpjis56AK02bc1FLgzdLI8auoR+cC9/Vrh5t66HkQIOdA4unHh0AaZ4xL5PhVbXIPMB5vAPKpzz5iPSi8xO8SL7I7SDhcBVJhqVqr3HgllEG6UClDdHO7nkLuwXq8HcISKkbT5WFTVfFZzidPl8HZ7DhXkZIRtJwBweq4bvm3hM1Os7UQH05ZS6cVDgweKNwdLLrT51ikSQG3DYrl+ft781UQRIqxgwqCfXEuDiinPh0kkvIi5jivVu1Z9QiwlYEdRbLJ4zJQBmDrSGTMYn4lRc2HgHO4DqB/bnMVorHB0CC6AV1QoFK4GPe1LwIDAQABo3sweTAJBgNVHRMEAjAAMCwGCWCGSAGG+EIBDQQfFh1PcGVuU1NMIEdlbmVyYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQU8pD0U0vsZIsaA16lL8En8bx0F/gwHwYDVR0jBBgwFoAUdGeKitcaF7gnzsNwDx708kqaVt0wDQYJKoZIhvcNAQEFBQADgYEAA81SsFnOdYJtNg5Tcq+/ByEDrBgnusx0jloUhByPMEVkoMZ3J7j1ZgI8rAbOkNngX8+pKfTiDz1RC4+dx8oU6Za+4NJXUjlL5CvV6BEYb1+QAEJwitTVvxB/A67g42/vzgAtoRUeDov1+GFiBZ+GNF/cAYKcMtGcrs2i97ZkJMo=</value></x509Certificate></x509Certificates><meta><created>2010-01-23T04:56:22Z</created><lastModified>2011-05-13T04:42:34Z</lastModified><version>W\&quot;b431af54f0671a2&quot;</version><location>http://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7</location></meta></User>
-```
-
-### Getting a user
-
-* JSON request
-* Header
-
-```
-GET https://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7
-Accept: application/json 
-Authorization: Bearer 91732a27-fd00-487a-9dde-a6ed2fac6949
-```
-
-* JSON response
-* Header
-
-```
-200 OK
-Server: Apache-Coyote/1.1
-Location: https://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7
-Content-Type: application/json
-```
-
-* Response Content
-
-```
-{"schemas":["urn:scim:schemas:core:1.0"],"id":"@!1111!0000!D4E7","externalId":"mike","userName":"mike","name":{"givenName":"John","familyName":"Smith","middleName":"N/A","honorificPrefix":"N/A","honorificSuffix":"N/A"},"displayName":"John Smith","nickName":"Sensei","profileUrl":"http://www.gluu.org/","emails":[{"value":"mike@gluu.org","type":"work","primary":"true"},{"value":"mike2@gluu.org","type":"home","primary":"false"}],"addresses":[{"type":"work","streetAddress":"621 East 6th Street Suite 200","locality":"Austin","region":"TX","postalCode":"78701","country":"US","formatted":"621 East 6th Street Suite 200 Austin , TX 78701 US","primary":"true"}],"phoneNumbers":[{"value":"646-234-5678","type":"work"}],"ims":[{"value":"nynymike","type":"Skype"}],"photos":[{"value":"http://www.gluu.org/wp-content/themes/SaaS-II/images/logo.png","type":"gluu photo"}],"userType":"CEO","title":"CEO","preferredLanguage":"en-us","locale":"en_US","timezone":"America/Chicago","active":"true","password":"Hiden for Privacy Reasons","groups":[{"display":"Gluu Manager Group","value":"@!1111!0003!B2C6"},{"display":"Gluu Owner Group","value":"@!1111!0003!D9B4"}],"roles":[{"value":"Owner"}],"entitlements":[{"value":"full access"}],"x509Certificates":[{"value":"MIIDQzCCAqygAwIBAgICEAAwDQYJKoZIhvcNAQEFBQAwTjELMAkGA1UEBhMCVVMxEzARBgNVBAgMCkNhbGlmb3JuaWExFDASBgNVBAoMC2V4YW1wbGUuY29tMRQwEgYDVQQDDAtleGFtcGxlLmNvbTAeFw0xMTEwMjIwNjI0MzFaFw0xMjEwMDQwNjI0MzFaMH8xCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRQwEgYDVQQKDAtleGFtcGxlLmNvbTEhMB8GA1UEAwwYTXMuIEJhcmJhcmEgSiBKZW5zZW4gSUlJMSIwIAYJKoZIhvcNAQkBFhNiamVuc2VuQGV4YW1wbGUuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7Kr+Dcds/JQ5GwejJFcBIP682X3xpjis56AK02bc1FLgzdLI8auoR+cC9/Vrh5t66HkQIOdA4unHh0AaZ4xL5PhVbXIPMB5vAPKpzz5iPSi8xO8SL7I7SDhcBVJhqVqr3HgllEG6UClDdHO7nkLuwXq8HcISKkbT5WFTVfFZzidPl8HZ7DhXkZIRtJwBweq4bvm3hM1Os7UQH05ZS6cVDgweKNwdLLrT51ikSQG3DYrl+ft781UQRIqxgwqCfXEuDiinPh0kkvIi5jivVu1Z9QiwlYEdRbLJ4zJQBmDrSGTMYn4lRc2HgHO4DqB/bnMVorHB0CC6AV1QoFK4GPe1LwIDAQABo3sweTAJBgNVHRMEAjAAMCwGCWCGSAGG+EIBDQQfFh1PcGVuU1NMIEdlbmVyYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQU8pD0U0vsZIsaA16lL8En8bx0F/gwHwYDVR0jBBgwFoAUdGeKitcaF7gnzsNwDx708kqaVt0wDQYJKoZIhvcNAQEFBQADgYEAA81SsFnOdYJtNg5Tcq+/ByEDrBgnusx0jloUhByPMEVkoMZ3J7j1ZgI8rAbOkNngX8+pKfTiDz1RC4+dx8oU6Za+4NJXUjlL5CvV6BEYb1+QAEJwitTVvxB/A67g42/vzgAtoRUeDov1+GFiBZ+GNF/cAYKcMtGcrs2i97ZkJMo="}],"meta":{"created":"2010-01-23T04:56:22Z","lastModified":"2011-05-13T04:42:34Z","version":"W\\\"b431af54f0671a2\"","location":"http://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7"}}
-```
-
-* XML request
-* Header
-
-```
-GET https://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7
-Accept: application/json 
-Authorization: Bearer 91732a27-fd00-487a-9dde-a6ed2fac6949
-```
-
-* XML response
-* Header
-
-```
-200 OK
-Server: Apache-Coyote/1.1
-Location: https://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7
-Content-Type: application/xml
-```
-
-```
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><User xmlns="urn:scim:schemas:core:1.0"><id>@!1111!0000!D4E7</id><externalId>mike</externalId><userName>mike</userName><name><givenName>John</givenName><familyName>Smith</familyName><middleName>N/A</middleName><honorificPrefix>N/A</honorificPrefix><honorificSuffix>N/A</honorificSuffix></name><displayName>John Smith</displayName><nickName>Sensei</nickName><profileUrl>http://www.gluu.org/</profileUrl><emails><email><value>mike@gluu.org</value><type>work</type><primary>true</primary></email><email><value>mike2@gluu.org</value><type>home</type><primary>false</primary></email></emails><addresses><address><type>work</type><streetAddress>621 East 6th Street Suite 200</streetAddress><locality>Austin</locality><region>TX</region><postalCode>78701</postalCode><country>US</country><formatted>621 East 6th Street Suite 200  Austin , TX 78701 US</formatted><primary>true</primary></address></addresses><PhoneNumbers><PhoneNumber><value>646-234-5678</value><type>work</type></PhoneNumber></PhoneNumbers><ims><im><value>nynymike</value><type>Skype</type></im></ims><photos><photo><value>http://www.gluu.org/wp-content/themes/SaaS-II/images/logo.png</value><type>gluu photo</type></photo></photos><userType>CEO</userType><title>CEO</title><preferredLanguage>en-us</preferredLanguage><locale>en_US</locale><timezone>America/Chicago</timezone><active>true</active><password>Hiden for Privacy Reasons</password><groups><group><display>Gluu Manager Group</display><value>@!1111!0003!B2C6</value></group><group><display>Gluu Owner Group</display><value>@!1111!0003!D9B4</value></group></groups><roles><role><value>Owner</value></role></roles><entitlements><entitlement><value>full access</value></entitlement></entitlements><x509Certificates><x509Certificate><value>MIIDQzCCAqygAwIBAgICEAAwDQYJKoZIhvcNAQEFBQAwTjELMAkGA1UEBhMCVVMxEzARBgNVBAgMCkNhbGlmb3JuaWExFDASBgNVBAoMC2V4YW1wbGUuY29tMRQwEgYDVQQDDAtleGFtcGxlLmNvbTAeFw0xMTEwMjIwNjI0MzFaFw0xMjEwMDQwNjI0MzFaMH8xCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRQwEgYDVQQKDAtleGFtcGxlLmNvbTEhMB8GA1UEAwwYTXMuIEJhcmJhcmEgSiBKZW5zZW4gSUlJMSIwIAYJKoZIhvcNAQkBFhNiamVuc2VuQGV4YW1wbGUuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7Kr+Dcds/JQ5GwejJFcBIP682X3xpjis56AK02bc1FLgzdLI8auoR+cC9/Vrh5t66HkQIOdA4unHh0AaZ4xL5PhVbXIPMB5vAPKpzz5iPSi8xO8SL7I7SDhcBVJhqVqr3HgllEG6UClDdHO7nkLuwXq8HcISKkbT5WFTVfFZzidPl8HZ7DhXkZIRtJwBweq4bvm3hM1Os7UQH05ZS6cVDgweKNwdLLrT51ikSQG3DYrl+ft781UQRIqxgwqCfXEuDiinPh0kkvIi5jivVu1Z9QiwlYEdRbLJ4zJQBmDrSGTMYn4lRc2HgHO4DqB/bnMVorHB0CC6AV1QoFK4GPe1LwIDAQABo3sweTAJBgNVHRMEAjAAMCwGCWCGSAGG+EIBDQQfFh1PcGVuU1NMIEdlbmVyYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQU8pD0U0vsZIsaA16lL8En8bx0F/gwHwYDVR0jBBgwFoAUdGeKitcaF7gnzsNwDx708kqaVt0wDQYJKoZIhvcNAQEFBQADgYEAA81SsFnOdYJtNg5Tcq+/ByEDrBgnusx0jloUhByPMEVkoMZ3J7j1ZgI8rAbOkNngX8+pKfTiDz1RC4+dx8oU6Za+4NJXUjlL5CvV6BEYb1+QAEJwitTVvxB/A67g42/vzgAtoRUeDov1+GFiBZ+GNF/cAYKcMtGcrs2i97ZkJMo=</value></x509Certificate></x509Certificates><meta><created>2010-01-23T04:56:22Z</created><lastModified>2011-05-13T04:42:34Z</lastModified><version>W\&quot;b431af54f0671a2&quot;</version><location>http://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7</location></meta></User>
-```
-
-### Modifying a user
-
-
-* JSON request
-* Header
-
-```
-PUT https://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7
-Accept: application/json 
-Authorization: Bearer 91732a27-fd00-487a-9dde-a6ed2fac6949
-```
-
-* Request Content
-
-```
-{"schemas":["urn:scim:schemas:core:1.0"],"externalId":"mike24","password":"Qb587QBJ"}
-```
-
-* JSON response
-* Header
-
-```
-200 OK
-Server: Apache-Coyote/1.1
-Location: https://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7
-Content-Type: application/json
-```
-
-* Response Content
-
-```
-{"schemas":["urn:scim:schemas:core:1.0"],"id":"@!1111!0000!D4E7","externalId":"mike24","userName":"mike","name":{"givenName":"John","familyName":"Smith","middleName":"N/A","honorificPrefix":"N/A","honorificSuffix":"N/A"},"displayName":"John Smith","nickName":"Sensei","profileUrl":"http://www.gluu.org/","emails":[{"value":"mike@gluu.org","type":"work","primary":"true"},{"value":"mike2@gluu.org","type":"home","primary":"false"}],"addresses":[{"type":"work","streetAddress":"621 East 6th Street Suite 200","locality":"Austin","region":"TX","postalCode":"78701","country":"US","formatted":"621 East 6th Street Suite 200 Austin , TX 78701 US","primary":"true"}],"phoneNumbers":[{"value":"646-234-5678","type":"work"}],"ims":[{"value":"nynymike","type":"Skype"}],"photos":[{"value":"http://www.gluu.org/wp-content/themes/SaaS-II/images/logo.png","type":"gluu photo"}],"userType":"CEO","title":"CEO","preferredLanguage":"en-us","locale":"en_US","timezone":"America/Chicago","active":"true","password":"Hiden for Privacy Reasons","groups":[{"display":"Gluu Manager Group","value":"@!1111!0003!B2C6"},{"display":"Gluu Owner Group","value":"@!1111!0003!D9B4"}],"roles":[{"value":"Owner"}],"entitlements":[{"value":"full access"}],"x509Certificates":[{"value":"MIIDQzCCAqygAwIBAgICEAAwDQYJKoZIhvcNAQEFBQAwTjELMAkGA1UEBhMCVVMxEzARBgNVBAgMCkNhbGlmb3JuaWExFDASBgNVBAoMC2V4YW1wbGUuY29tMRQwEgYDVQQDDAtleGFtcGxlLmNvbTAeFw0xMTEwMjIwNjI0MzFaFw0xMjEwMDQwNjI0MzFaMH8xCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRQwEgYDVQQKDAtleGFtcGxlLmNvbTEhMB8GA1UEAwwYTXMuIEJhcmJhcmEgSiBKZW5zZW4gSUlJMSIwIAYJKoZIhvcNAQkBFhNiamVuc2VuQGV4YW1wbGUuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7Kr+Dcds/JQ5GwejJFcBIP682X3xpjis56AK02bc1FLgzdLI8auoR+cC9/Vrh5t66HkQIOdA4unHh0AaZ4xL5PhVbXIPMB5vAPKpzz5iPSi8xO8SL7I7SDhcBVJhqVqr3HgllEG6UClDdHO7nkLuwXq8HcISKkbT5WFTVfFZzidPl8HZ7DhXkZIRtJwBweq4bvm3hM1Os7UQH05ZS6cVDgweKNwdLLrT51ikSQG3DYrl+ft781UQRIqxgwqCfXEuDiinPh0kkvIi5jivVu1Z9QiwlYEdRbLJ4zJQBmDrSGTMYn4lRc2HgHO4DqB/bnMVorHB0CC6AV1QoFK4GPe1LwIDAQABo3sweTAJBgNVHRMEAjAAMCwGCWCGSAGG+EIBDQQfFh1PcGVuU1NMIEdlbmVyYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQU8pD0U0vsZIsaA16lL8En8bx0F/gwHwYDVR0jBBgwFoAUdGeKitcaF7gnzsNwDx708kqaVt0wDQYJKoZIhvcNAQEFBQADgYEAA81SsFnOdYJtNg5Tcq+/ByEDrBgnusx0jloUhByPMEVkoMZ3J7j1ZgI8rAbOkNngX8+pKfTiDz1RC4+dx8oU6Za+4NJXUjlL5CvV6BEYb1+QAEJwitTVvxB/A67g42/vzgAtoRUeDov1+GFiBZ+GNF/cAYKcMtGcrs2i97ZkJMo="}],"meta":{"created":"2010-01-23T04:56:22Z","lastModified":"2011-05-13T04:42:34Z","version":"W\\\"b431af54f0671a2\"","location":"http://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7"}}
-```
-
-* XML request
-* header
-
-```
-PUT https://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7
-Accept: application/xml 
-Authorization: Bearer 91732a27-fd00-487a-9dde-a6ed2fac6949
-```
-
-* Request Content
-
-```
-`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>``<User xmlns="urn:scim:schemas:core:1.0">``<externalId>`mike26`</externalId>``<password>`Qb587QBJ`</password>``</user>`
-```
-
-* XML response
-* Header
-
-```
-200 OK
-Server: Apache-Coyote/1.1
-Location: https://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7
-Content-Type: application/xml
-```
-
-* Response Content
-
-```
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><User xmlns="urn:scim:schemas:core:1.0"><id>@!1111!0000!D4E7</id><externalId>mike26</externalId><userName>mike</userName><name><givenName>John</givenName><familyName>Smith</familyName><middleName>N/A</middleName><honorificPrefix>N/A</honorificPrefix><honorificSuffix>N/A</honorificSuffix></name><displayName>John Smith</displayName><nickName>Sensei</nickName><profileUrl>http://www.gluu.org/</profileUrl><emails><email><value>mike@gluu.org</value><type>work</type><primary>true</primary></email><email><value>mike2@gluu.org</value><type>home</type><primary>false</primary></email></emails><addresses><address><type>work</type><streetAddress>621 East 6th Street Suite 200</streetAddress><locality>Austin</locality><region>TX</region><postalCode>78701</postalCode><country>US</country><formatted>621 East 6th Street Suite 200  Austin , TX 78701 US</formatted><primary>true</primary></address></addresses><PhoneNumbers><PhoneNumber><value>646-234-5678</value><type>work</type></PhoneNumber></PhoneNumbers><ims><im><value>nynymike</value><type>Skype</type></im></ims><photos><photo><value>http://www.gluu.org/wp-content/themes/SaaS-II/images/logo.png</value><type>gluu photo</type></photo></photos><userType>CEO</userType><title>CEO</title><preferredLanguage>en-us</preferredLanguage><locale>en_US</locale><timezone>America/Chicago</timezone><active>true</active><password>Hiden for Privacy Reasons</password><groups><group><display>Gluu Manager Group</display><value>@!1111!0003!B2C6</value></group><group><display>Gluu Owner Group</display><value>@!1111!0003!D9B4</value></group></groups><roles><role><value>Owner</value></role></roles><entitlements><entitlement><value>full access</value></entitlement></entitlements><x509Certificates><x509Certificate><value>MIIDQzCCAqygAwIBAgICEAAwDQYJKoZIhvcNAQEFBQAwTjELMAkGA1UEBhMCVVMxEzARBgNVBAgMCkNhbGlmb3JuaWExFDASBgNVBAoMC2V4YW1wbGUuY29tMRQwEgYDVQQDDAtleGFtcGxlLmNvbTAeFw0xMTEwMjIwNjI0MzFaFw0xMjEwMDQwNjI0MzFaMH8xCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRQwEgYDVQQKDAtleGFtcGxlLmNvbTEhMB8GA1UEAwwYTXMuIEJhcmJhcmEgSiBKZW5zZW4gSUlJMSIwIAYJKoZIhvcNAQkBFhNiamVuc2VuQGV4YW1wbGUuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7Kr+Dcds/JQ5GwejJFcBIP682X3xpjis56AK02bc1FLgzdLI8auoR+cC9/Vrh5t66HkQIOdA4unHh0AaZ4xL5PhVbXIPMB5vAPKpzz5iPSi8xO8SL7I7SDhcBVJhqVqr3HgllEG6UClDdHO7nkLuwXq8HcISKkbT5WFTVfFZzidPl8HZ7DhXkZIRtJwBweq4bvm3hM1Os7UQH05ZS6cVDgweKNwdLLrT51ikSQG3DYrl+ft781UQRIqxgwqCfXEuDiinPh0kkvIi5jivVu1Z9QiwlYEdRbLJ4zJQBmDrSGTMYn4lRc2HgHO4DqB/bnMVorHB0CC6AV1QoFK4GPe1LwIDAQABo3sweTAJBgNVHRMEAjAAMCwGCWCGSAGG+EIBDQQfFh1PcGVuU1NMIEdlbmVyYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQU8pD0U0vsZIsaA16lL8En8bx0F/gwHwYDVR0jBBgwFoAUdGeKitcaF7gnzsNwDx708kqaVt0wDQYJKoZIhvcNAQEFBQADgYEAA81SsFnOdYJtNg5Tcq+/ByEDrBgnusx0jloUhByPMEVkoMZ3J7j1ZgI8rAbOkNngX8+pKfTiDz1RC4+dx8oU6Za+4NJXUjlL5CvV6BEYb1+QAEJwitTVvxB/A67g42/vzgAtoRUeDov1+GFiBZ+GNF/cAYKcMtGcrs2i97ZkJMo=</value></x509Certificate></x509Certificates><meta><created>2010-01-23T04:56:22Z</created><lastModified>2011-05-13T04:42:34Z</lastModified><version>W\&quot;b431af54f0671a2&quot;</version><location>http://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7</location></meta></User>
-```
-
-### Delete a user
-
-* JSON header request
-
-```
-DELETE https://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7
-Accept: application/json 
-Authorization: Bearer 91732a27-fd00-487a-9dde-a6ed2fac6949
-```
-
-* JSON header response
-
-```
-HTTP/1.1 200 OK
-```
-
-* XML header request
-
-```
-DELETE https://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7
-Accept: application/xml 
-Authorization: Bearer 91732a27-fd00-487a-9dde-a6ed2fac6949
-```
-
-* XML header response
-
-```
-HTTP/1.1 200 OK
-```
-
-### Bulk request
-
-
-* JSON Request
-* Header
-
-```
-POST https://localhost:8080/oxTrust/seam/resource/restv1/Bulk/ 
-Accept: application/json 
-Authorization: Bearer 91732a27-fd00-487a-9dde-a6ed2fac6949
-```
-
-* Request Content
-
-```
-{"schemas":["urn:scim:schemas:core:1.0"],"Operations":[{"method":"POST","path":"/Users","data":{"schemas":["urn:scim:schemas:core:1.0"],"externalId":"bulk","userName":"bulk","name":{"givenName":"bulk","familyName":"bulk","middleName":"N/A","honorificPrefix":"N/A","honorificSuffix":"N/A"},"displayName":"bulk bulk","nickName":"bulk","profileUrl":"http://www.gluu.org/","emails":[{"value":"bulk@gluu.org","type":"work","primary":"true"},{"value":"bulk2@gluu.org","type":"home","primary":"false"}],"addresses":[{"type":"work","streetAddress":"621 East 6th Street Suite 200","locality":"Austin","region":"TX","postalCode":"78701","country":"US","formatted":"621 East 6th Street Suite 200 Austin , TX 78701 US","primary":"true"}],"phoneNumbers":[{"value":"646-234-5678","type":"work"}],"ims":[{"value":"nynymike","type":"Skype"}],"photos":[{"value":"http://www.gluu.org/wp-content/themes/SaaS-II/images/logo.png","type":"gluu photo"}],"userType":"CEO","title":"CEO","preferredLanguage":"en-us","locale":"en_US","timezone":"America/Chicago","active":"true","password":"secret","groups":[{"display":"Gluu Manager Group","value":"@!1111!0003!B2C6"},{"display":"Gluu Owner Group","value":"@!1111!0003!D9B4"}],"roles":[{"value":"Owner"}],"entitlements":[{"value":"full access"}],"x509Certificates":[{"value":"MIIDQzCCAqygAwIBAgICEAAwDQYJKoZIhvcNAQEFBQAwTjELMAkGA1UEBhMCVVMxEzARBgNVBAgMCkNhbGlmb3JuaWExFDASBgNVBAoMC2V4YW1wbGUuY29tMRQwEgYDVQQDDAtleGFtcGxlLmNvbTAeFw0xMTEwMjIwNjI0MzFaFw0xMjEwMDQwNjI0MzFaMH8xCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRQwEgYDVQQKDAtleGFtcGxlLmNvbTEhMB8GA1UEAwwYTXMuIEJhcmJhcmEgSiBKZW5zZW4gSUlJMSIwIAYJKoZIhvcNAQkBFhNiamVuc2VuQGV4YW1wbGUuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7Kr+Dcds/JQ5GwejJFcBIP682X3xpjis56AK02bc1FLgzdLI8auoR+cC9/Vrh5t66HkQIOdA4unHh0AaZ4xL5PhVbXIPMB5vAPKpzz5iPSi8xO8SL7I7SDhcBVJhqVqr3HgllEG6UClDdHO7nkLuwXq8HcISKkbT5WFTVfFZzidPl8HZ7DhXkZIRtJwBweq4bvm3hM1Os7UQH05ZS6cVDgweKNwdLLrT51ikSQG3DYrl+ft781UQRIqxgwqCfXEuDiinPh0kkvIi5jivVu1Z9QiwlYEdRbLJ4zJQBmDrSGTMYn4lRc2HgHO4DqB/bnMVorHB0CC6AV1QoFK4GPe1LwIDAQABo3sweTAJBgNVHRMEAjAAMCwGCWCGSAGG+EIBDQQfFh1PcGVuU1NMIEdlbmVyYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQU8pD0U0vsZIsaA16lL8En8bx0F/gwHwYDVR0jBBgwFoAUdGeKitcaF7gnzsNwDx708kqaVt0wDQYJKoZIhvcNAQEFBQADgYEAA81SsFnOdYJtNg5Tcq+/ByEDrBgnusx0jloUhByPMEVkoMZ3J7j1ZgI8rAbOkNngX8+pKfTiDz1RC4+dx8oU6Za+4NJXUjlL5CvV6BEYb1+QAEJwitTVvxB/A67g42/vzgAtoRUeDov1+GFiBZ+GNF/cAYKcMtGcrs2i97ZkJMo="}],"meta":{"created":"2010-01-23T04:56:22Z","lastModified":"2011-05-13T04:42:34Z","version":"W\\\"b431af54f0671a2\"","location":"http://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7"}},"bulkId":"onebunk"},{"method":"PUT","path":"/Users/@!1111!0000!C4C4", "version":"oneversion","data":{"schemas":["urn:scim:schemas:core:1.0"],"displayName":"bulk person","externalId":"bulk"}},{"method":"DELETE","path":"/Users/@!1111!0000!C3C3","version":"oneversion"}]}
-```
-
-* JSON response
-* Header
-
-```
-200 OK
-Server: Apache-Coyote/1.1
-Location: https://localhost:8080/oxTrust/seam/resource/restv1/Bulk/
-Content-Type: application/json
-```
-
-* Response Content
-
-```
-{"schemas":["urn:scim:schemas:core:1.0"],"Operations":[{"method":"POST","location":"http://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!F8A1","version":"","status":{"description":"","code":"201"},"bulkId":"onebunk"},{"method":"PUT","location":"http://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!C4C4","version":"oneversion","status":{"description":"","code":"200"},"bulkId":""},{"method":"DELETE","location":"http://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!C3C3","version":"","status":{"description":"","code":"200"},"bulkId":""}]}
-```
-
-* XML request
-* Header
-
-```
-POST https://localhost:8080/oxTrust/seam/resource/restv1/Bulk/ 
-Accept: application/xml 
-Authorization: Bearer 91732a27-fd00-487a-9dde-a6ed2fac6949
-```
-
-* Request Content
-
-```
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Bulk xmlns="urn:scim:schemas:core:1.0"><Operations><operation><bulkId>onebunk</bulkId><data><externalId>bulk</externalId><userName>bulk</userName><name><givenName>bulk</givenName><familyName>bulk</familyName><middleName>N/A</middleName><honorificPrefix>N/A</honorificPrefix><honorificSuffix>N/A</honorificSuffix></name><displayName>bulk bulk</displayName><nickName>bulk</nickName><profileUrl>http://www.gluu.org/</profileUrl><emails><email><value>bulk@gluu.org</value><type>work</type><primary>true</primary></email><email><value>bulk2@gluu.org</value><type>home</type><primary>false</primary></email></emails><addresses><address><type>work</type><streetAddress>621 East 6th Street Suite 200</streetAddress><locality>Austin</locality><region>TX</region><postalCode>78701</postalCode><country>US</country><formatted>621 East 6th Street Suite 200  Austin , TX 78701 US</formatted><primary>true</primary></address></addresses><PhoneNumbers><PhoneNumber><value>646-234-5678</value><type>work</type></PhoneNumber></PhoneNumbers><ims><im><value>nynymike</value><type>Skype</type></im></ims><photos><photo><value>http://www.gluu.org/wp-content/themes/SaaS-II/images/logo.png</value><type>gluu photo</type></photo></photos><userType>CEO</userType><title>CEO</title><preferredLanguage>en-us</preferredLanguage><locale>en_US</locale><timezone>America/Chicago</timezone><active>true</active><password>secret</password><groups><group><display>Gluu Manager Group</display><value>@!1111!0003!B2C6</value></group><group><display>Gluu Owner Group</display><value>@!1111!0003!D9B4</value></group></groups><roles><role><value>Owner</value></role></roles><entitlements><entitlement><value>full access</value></entitlement></entitlements><x509Certificates><x509Certificate><value>MIIDQzCCAqygAwIBAgICEAAwDQYJKoZIhvcNAQEFBQAwTjELMAkGA1UEBhMCVVMxEzARBgNVBAgMCkNhbGlmb3JuaWExFDASBgNVBAoMC2V4YW1wbGUuY29tMRQwEgYDVQQDDAtleGFtcGxlLmNvbTAeFw0xMTEwMjIwNjI0MzFaFw0xMjEwMDQwNjI0MzFaMH8xCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRQwEgYDVQQKDAtleGFtcGxlLmNvbTEhMB8GA1UEAwwYTXMuIEJhcmJhcmEgSiBKZW5zZW4gSUlJMSIwIAYJKoZIhvcNAQkBFhNiamVuc2VuQGV4YW1wbGUuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7Kr+Dcds/JQ5GwejJFcBIP682X3xpjis56AK02bc1FLgzdLI8auoR+cC9/Vrh5t66HkQIOdA4unHh0AaZ4xL5PhVbXIPMB5vAPKpzz5iPSi8xO8SL7I7SDhcBVJhqVqr3HgllEG6UClDdHO7nkLuwXq8HcISKkbT5WFTVfFZzidPl8HZ7DhXkZIRtJwBweq4bvm3hM1Os7UQH05ZS6cVDgweKNwdLLrT51ikSQG3DYrl+ft781UQRIqxgwqCfXEuDiinPh0kkvIi5jivVu1Z9QiwlYEdRbLJ4zJQBmDrSGTMYn4lRc2HgHO4DqB/bnMVorHB0CC6AV1QoFK4GPe1LwIDAQABo3sweTAJBgNVHRMEAjAAMCwGCWCGSAGG+EIBDQQfFh1PcGVuU1NMIEdlbmVyYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQU8pD0U0vsZIsaA16lL8En8bx0F/gwHwYDVR0jBBgwFoAUdGeKitcaF7gnzsNwDx708kqaVt0wDQYJKoZIhvcNAQEFBQADgYEAA81SsFnOdYJtNg5Tcq+/ByEDrBgnusx0jloUhByPMEVkoMZ3J7j1ZgI8rAbOkNngX8+pKfTiDz1RC4+dx8oU6Za+4NJXUjlL5CvV6BEYb1+QAEJwitTVvxB/A67g42/vzgAtoRUeDov1+GFiBZ+GNF/cAYKcMtGcrs2i97ZkJMo=</value></x509Certificate></x509Certificates><meta><created>2010-01-23T04:56:22Z</created><lastModified>2011-05-13T04:42:34Z</lastModified><version>aversion</version><location>http://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7</location></meta></data><location></location><method>POST</method><path>/Users</path><version></version></operation><operation><bulkId></bulkId><data><externalId>bulk</externalId><userName></userName><name><givenName></givenName><familyName></familyName><middleName></middleName><honorificPrefix></honorificPrefix><honorificSuffix></honorificSuffix></name><displayName>bulk person</displayName><nickName></nickName><profileUrl></profileUrl><emails/><addresses/><PhoneNumbers/><ims/><photos/><userType></userType><title></title><locale></locale><password></password><groups/><roles/><entitlements/><x509Certificates/><meta><created></created><lastModified></lastModified><version></version><location></location></meta></data><location></location><method>PUT</method><path>/Users/@!1111!0000!C4C4</path><version>oneversion</version></operation><operation><bulkId></bulkId><data><externalId></externalId><userName></userName><name><givenName></givenName><familyName></familyName><middleName></middleName><honorificPrefix></honorificPrefix><honorificSuffix></honorificSuffix></name><nickName></nickName><profileUrl></profileUrl><emails/><addresses/><PhoneNumbers/><ims/><photos/><userType></userType><title></title><locale></locale><password></password><groups/><roles/><entitlements/><x509Certificates/><meta><created></created><lastModified></lastModified><version></version><location></location></meta></data><location></location><method>DELETE</method><path>/Users/@!1111!0000!C3C3</path><version>oneversion</version></operation></Operations></Bulk>
-```
-
-* XML Response
-* Header
-
-```
-200 OK
-Server: Apache-Coyote/1.1
-Location: https://localhost:8080/oxTrust/seam/resource/restv1/Bulk/
-Content-Type: application/xml
-```
-
-* Response Content
-
-```
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Bulk xmlns="urn:scim:schemas:core:1.0"><Operations><operation><bulkId>onebunk</bulkId><location>http://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E0</location><method>POST</method><status><Code>201</Code><description></description></status><version></version></operation><operation><bulkId></bulkId><location>http://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!C4C4</location><method>PUT</method><status><Code>200</Code><description></description></status><version>oneversion</version></operation><operation><bulkId></bulkId><location>http://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!C3C3</location><method>DELETE</method><status><Code>200</Code><description></description></status><version></version></operation></Operations></Bulk>
-```
-
-### Getting list of users
-
-* JSON Request
-* Header
-
-```
-GET https://localhost:8080/oxTrust/seam/resource/restv1/Users/
-Accept: application/json 
-Authorization: Bearer 91732a27-fd00-487a-9dde-a6ed2fac6949
-```
-
-* JSON response
-* Header
-
-```
-200 OK
-Server: Apache-Coyote/1.1
-Location: https://localhost:8080/oxTrust/seam/resource/restv1/Users/
-Content-Type: application/json
-```
-
-* Response Content
-
-```
-{"totalResults":4,"schemas":["urn:scim:schemas:core:1.0"],"resources":[{"schemas":["urn:scim:schemas:core:1.0"],"id":"@!1111!0000!9711","externalId":"random","userName":"erik","name":{"givenName":"Erik","familyName":"Hartog","middleName":"N/A","honorificPrefix":"N/A","honorificSuffix":"N/A"},"displayName":"Erik Hartog","nickName":"Erik","profileUrl":"http://www.gluu.org/","emails":[{"value":"random@gluu.org","type":"work","primary":"true"},{"value":"random2@gluu.org","type":"home","primary":"false"}],"addresses":[{"type":"work","streetAddress":"621 East 6th Street Suite 200","locality":"Austin","region":"TX","postalCode":"78701","country":"US","formatted":"621 East 6th Street Suite 200  Austin , TX 78701 US","primary":"true"}],"phoneNumbers":[{"value":"646-234-5678","type":"work"}],"ims":[{"value":"erikk","type":"Skype"}],"photos":[{"value":"http://www.gluu.org/wp-content/themes/SaaS-II/images/logo.png","type":"gluu photo"}],"userType":"user","title":"user","preferredLanguage":"en-us","locale":"en_US","timezone":"America/Chicago","active":"true","password":"Hidden for Privacy Reasons","groups":[{"display":"Gluu Manager Group","value":"@!1111!0003!B2C6"},{"display":"Gluu Owner Group","value":"@!1111!0003!D9B4"}],"roles":[{"value":"user"}],"entitlements":[{"value":"limited access"}],"x509Certificates":[{"value":"MIIDQzCCAqygAwIBAgICEAAwDQYJKoZIhvcNAQEFBQAwTjELMAkGA1UEBhMCVVMxEzARBgNVBAgMCkNhbGlmb3JuaWExFDASBgNVBAoMC2V4YW1wbGUuY29tMRQwEgYDVQQDDAtleGFtcGxlLmNvbTAeFw0xMTEwMjIwNjI0MzFaFw0xMjEwMDQwNjI0MzFaMH8xCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRQwEgYDVQQKDAtleGFtcGxlLmNvbTEhMB8GA1UEAwwYTXMuIEJhcmJhcmEgSiBKZW5zZW4gSUlJMSIwIAYJKoZIhvcNAQkBFhNiamVuc2VuQGV4YW1wbGUuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7Kr+Dcds/JQ5GwejJFcBIP682X3xpjis56AK02bc1FLgzdLI8auoR+cC9/Vrh5t66HkQIOdA4unHh0AaZ4xL5PhVbXIPMB5vAPKpzz5iPSi8xO8SL7I7SDhcBVJhqVqr3HgllEG6UClDdHO7nkLuwXq8HcISKkbT5WFTVfFZzidPl8HZ7DhXkZIRtJwBweq4bvm3hM1Os7UQH05ZS6cVDgweKNwdLLrT51ikSQG3DYrl+ft781UQRIqxgwqCfXEuDiinPh0kkvIi5jivVu1Z9QiwlYEdRbLJ4zJQBmDrSGTMYn4lRc2HgHO4DqB/bnMVorHB0CC6AV1QoFK4GPe1LwIDAQABo3sweTAJBgNVHRMEAjAAMCwGCWCGSAGG+EIBDQQfFh1PcGVuU1NMIEdlbmVyYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQU8pD0U0vsZIsaA16lL8En8bx0F/gwHwYDVR0jBBgwFoAUdGeKitcaF7gnzsNwDx708kqaVt0wDQYJKoZIhvcNAQEFBQADgYEAA81SsFnOdYJtNg5Tcq+/ByEDrBgnusx0jloUhByPMEVkoMZ3J7j1ZgI8rAbOkNngX8+pKfTiDz1RC4+dx8oU6Za+4NJXUjlL5CvV6BEYb1+QAEJwitTVvxB/A67g42/vzgAtoRUeDov1+GFiBZ+GNF/cAYKcMtGcrs2i97ZkJMo="}],"meta":{"created":"2010-01-23T04:56:22Z","lastModified":"2011-05-13T04:42:34Z","version":"W\\\"b431af54f0671a2\"","location":"http://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7"}},{"schemas":["urn:scim:schemas:core:1.0"],"id":"@!1111!0000!D4E7","externalId":"mike","userName":"mike","name":{"givenName":"John","familyName":"Smith","middleName":"N/A","honorificPrefix":"N/A","honorificSuffix":"N/A"},"displayName":"John Smith","nickName":"Sensei","profileUrl":"http://www.gluu.org/","emails":[{"value":"mike@gluu.org","type":"work","primary":"true"},{"value":"mike2@gluu.org","type":"home","primary":"false"}],"addresses":[{"type":"work","streetAddress":"621 East 6th Street Suite 200","locality":"Austin","region":"TX","postalCode":"78701","country":"US","formatted":"621 East 6th Street Suite 200  Austin , TX 78701 US","primary":"true"}],"phoneNumbers":[{"value":"646-234-5678","type":"work"}],"ims":[{"value":"nynymike","type":"Skype"}],"photos":[{"value":"http://www.gluu.org/wp-content/themes/SaaS-II/images/logo.png","type":"gluu photo"}],"userType":"CEO","title":"CEO","preferredLanguage":"en-us","locale":"en_US","timezone":"America/Chicago","active":"true","password":"Hidden for Privacy Reasons","groups":[{"display":"Gluu Manager Group","value":"@!1111!0003!B2C6"},{"display":"Gluu Owner Group","value":"@!1111!0003!D9B4"}],"roles":[{"value":"Owner"}],................................................the response is too long intentionally skipped some content for demo sake................................................,"version":"W\\\"b431af54f0671a2\"","location":"http://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7"}}]}
-```
-
-* XML request
-* Header
-
-```
-GET https://localhost:8080/oxTrust/seam/resource/restv1/Users/
-Accept: application/xml 
-Authorization: Bearer 91732a27-fd00-487a-9dde-a6ed2fac6949
-```
-
-* XML response
-* Header
-
-```
-200 OK
-Server: Apache-Coyote/1.1
-Location: https://localhost:8080/oxTrust/seam/resource/restv1/Users/
-Content-Type: application/xml
-```
-
-```
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Resources xmlns="urn:scim:schemas:core:1.0"><totalResults>4</totalResults><Resources><Resource><id>@!1111!0000!9711</id><externalId>random</externalId><userName>erik</userName><name><givenName>Erik</givenName><familyName>Hartog</familyName><middleName>N/A</middleName><honorificPrefix>N/A</honorificPrefix><honorificSuffix>N/A</honorificSuffix></name><displayName>Erik Hartog</displayName><nickName>Erik</nickName><profileUrl>http://www.gluu.org/</profileUrl><emails><email><value>random@gluu.org</value><type>work</type><primary>true</primary></email><email><value>random2@gluu.org</value><type>home</type><primary>false</primary></email></emails><addresses><address><type>work</type><streetAddress>621 East 6th Street Suite 200</streetAddress><locality>Austin</locality><region>TX</region><postalCode>78701</postalCode><country>US</country><formatted>621 East 6th Street Suite 200  Austin , TX 78701 US</formatted><primary>true</primary></address></addresses><PhoneNumbers><PhoneNumber><value>646-234-5678</value><type>work</type></PhoneNumber></PhoneNumbers><ims><im><value>erikk</value><type>Skype</type></im></ims><photos><photo><value>http://www.gluu.org/wp-content/themes/SaaS-II/images/logo.png</value><type>gluu photo</type></photo></photos><userType>user</userType><title>user</title><preferredLanguage>en-us</preferredLanguage><locale>en_US</locale><timezone>................................................the response is too long intentionally skipped some content for demo sake................................................</version><location>http://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7</location></meta></Resource></Resources></Resources>
-```
-
-## SCIM Client API
-
-SCIM-Client API is a tool Gluu developed to make the communication with a SCIM server an easy task. It can be used to build an application that sends request and receives responses from a SCIM server seamlessly.
-
-You can checkout SCIM-client from our GIT repository: 
-https://github.com/GluuFederation/SCIM-Client 
-
+SCIM-Client library is a Java SDK facilitate SCIM development. It can be found on Gluu's Github repository: 
+ * [https://github.com/GluuFederation/SCIM-Client](https://github.com/GluuFederation/SCIM-Client)
 
 ### oxAuth Client Creation
 
-It’s possible to create an oxAuth client dynamically using SCIM-Client, this option is available using the static *create* method of the class `OxAuthClientCreator`, where `applicationName` is the name of the desired client, `registerUrl` is the client registration url example:
-`http://localhost:8080/oxauth/seam/resource/restv1/oxauth/register`
+It’s possible to create an oxAuth client dynamically using SCIM-Client, this option is available using the 
+static *create* method of the class `OxAuthClientCreator`, where `applicationName` is the name of the desired client, 
+`registerUrl` is the client registration url example:
+`https://idp.example.com/oxauth/seam/resource/restv1/oxauth/register`
 and `redirectUris` is a space separated String containing the desired redirect urls.
 
 ```
@@ -477,8 +120,10 @@ response.getExpiresAt(); // the expiration date of the client
 
 ### Bulk requests from Excel files
 
-Excel spreadsheets are widely used by individuals and companies of different backgrounds. Gluu have embedded SCIM-client with methods that
-can help you turn an Excel file into a ScimBulkOperation object. For that reason we made two methods available, one for generation bulk users request *mapUsers* method and the other for generating bulk group requests *mapGroups* method, both methods take the path to the “XLS” file as a parameter, methods are available at “ExcelMapper” class:
+Spreadsheets can be handy. Gluu have embedded SCIM-client with methods that can help you turn an Excel file into a 
+ScimBulkOperation object. For that reason we made two methods available, one for generation bulk users request 
+*mapUsers* method and the other for generating bulk group requests *mapGroups* method, both methods take the path to 
+the “XLS” file as a parameter, methods are available at “ExcelMapper” class:
 
 ```
 ScimBulkOperation usersOperation = ExcelMapper.mapUsers(excelFileLocationUsers);
@@ -491,22 +136,15 @@ https://github.com/GluuFederation/SCIM-Client/tree/master/doc/SampleXLS
 Excel files must follow the exact structure, the “Operation” cell defines the type of the operation ”Add, Update, Delete” .
 For groups you can always add more groups to the spreadsheet following the same structure.
 
-### SCIM 1.1 API
-Detailed APIs for our implementation of SCIM can be found [here.](http://www.gluu.org/docs/reference/api/scim-1.1/)
-
-### SCIM 2.0 API
-APIs for the updated implementation of SCIM, i. e. SCIM 2.0 are [here.](http://www.gluu.org/docs/reference/api/scim-2.0/)
-
-- - - 
-
-## SCIM Developers Guide
-SCIM provides the developers and standardize way to retrieve (or update) user profile information from a data source. To elaborate, developers have no need to manage connections to the SQL tables at back-end.
-Gluu's implementation of SCIM also facilitates the developers in performing User, Group and Bulk CRUD operations. Complete developer guide can be found [Here](http://www.gluu.org/docs/reference/lib/using-scim/).
-
 
 <!--
-
 				********** This part needs some maintenance **********
+
+## SCIM Developers Guide
+SCIM provides the developers and standardize way to retrieve (or update) user profile information from a data source. 
+To elaborate, developers have no need to manage connections to the SQL tables at back-end.
+Gluu's implementation of SCIM also facilitates the developers in performing User, Group and Bulk CRUD operations. 
+Complete developer guide can be found [Here](http://www.gluu.org/docs/reference/lib/using-scim/).
 
 ## SCIM Resource Management
 
