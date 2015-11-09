@@ -115,27 +115,33 @@ This section describes how to configure the file `shibboleth2.xml`.
 
 * configure `shibboleth2.xml`
 
-	* EntityID of SP: `ApplicationDefaults entityID="http://hostname/secure"`
+	* Set the EntityID of the SP: `ApplicationDefaults entityID="http://hostname/secure"`
 
-	* Provide EntityID of IDP: `SSO entityID="https://idp.gluu.org/idp/shibboleth"`
+	* Provide the EntityID of the IDP: `SSO entityID="https://idp.gluu.org/idp/shibboleth"`
 
-	* Metadata Provider, IDP: `MetadataProvider type="XML" uri="https://idp.gluu.org/idp/shibboleth"`
+	* Set both the Metadata Provider, and the IDP: `MetadataProvider type="XML" uri="https://idp.gluu.org/idp/shibboleth"`
 
-* Restart shibd and Apache2
+* Restart both shibd and Apache2 using these lines:
 
-* Create Trust Relationship for this SP in your desired IdP.
+  ```
+  service shibd restart
+  service httpd restart
+  ```
+
+* Create a Trust Relationship for this SP in your desired IdP.
 
 ## Configuring Apache Shibboleth SP in Windows
 
 ### Shibboleth SP Installation
 
-1. Download the MSI of Shibboleth-SP from :http://www.shibboleth.net/downloads/service-provider/latest/
+1. Download the MSI of Shibboleth-SP from:
+   http://www.shibboleth.net/downloads/service-provider/latest/ .
 
 2. Start the installation
 
 ![IMAGE](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_click.png)
 
-3. Destination folder (by default it is: C:\opt\shibboleth-sp).
+3. Define the destination folder (by default it is: C:\opt\shibboleth-sp).
 
 ![IMAGE](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_destination.png)
 
