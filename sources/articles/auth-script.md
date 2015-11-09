@@ -1,3 +1,5 @@
+[TOC]
+
 # Writing a Custom Authentication Script
 
 One of the coolest things about the Gluu Server is that you can write
@@ -173,3 +175,29 @@ Also, remember that putting all your code in a `try / catch` is a good
 practice to avoid unhandled exceptions. But when you're debugging,
 sometimes those exceptions may give you a hint as to what's going wrong.
 
+# Reverting Authentication Method
+It is not unlikely that you will lock yourself out of Gluu Server while testing the authentication script, if there is any problem in it. In such a case the following method can be used to revert back the older authentication method.
+
+1. Run the following command to collect the `inum` for the Gluu Server installation.
+
+`/opt/opendj/bin/ldapsearch -h localhost -p 1389 -D "cn=directory 
+manager" -j ~/.pw -b "ou=appliances,o=gluu" -s one "objectclass=*" 
+oxAuthenticationMode`
+
+2. Create a `LDIF` file with the contents below:
+
+```
+dn: inum=@!1E3B.F133.14FA.5062!0002!4B66.CF9C,ou=appliances,o=gluu
+changetype: modify
+replace: oxAuthenticationMode
+oxAuthenticationMode: internal
+```
+
+As an example, we shall call this file `changeAuth.ldif`.
+
+**Note:** Replace the `inum` from the example above with the `inum` of the Gluu Server from the `ldapsearch` command.
+
+
+3. Replace the the authentication mode using `ldapmodify` command.
+
+`/opt/opendj/bin/ldapmodify -p 1389 -D 'cn=directory manager' -w 'YOUR_BIND_PASSWORD' -f ~/changeAuth.ldif

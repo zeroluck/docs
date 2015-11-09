@@ -4,6 +4,22 @@
 
 #### Overview
 
+Use the following types to specify what type you are generating. The `prefix` is used in the 
+inum to make it possible to know the type of object just by looking at the identifier.
+
+| `prefix` | `type`               | `description`                          |
+| -------- | -------------------- | -------------------------------------- |
+| 0000     | people               | Person object                          |
+| 0001     | organization         | Organization object                    |
+| 0002     | appliance            | Appliance object                       |
+| 0003     | group                | Group object                           |
+| 0004     | server               | Server object                          |
+| 0005     | attribute            | User attribute (claim) object          |
+| 0006     | tRelationship        | SAML Trust Relationship object         |
+| 0008     | client               | OAuth2 Client object                   |
+| 0009     | scope                | OAuth2 Scope Object                    |
+| 0010     | uma-resource-set     | UMA Resource Set Object                |
+| 0011     | interception-script  | Gluu Server interception script object |
 
 #### `/id/{prefix}/{type}/`
 ##### generateHtmlInum

@@ -12,15 +12,17 @@
 	- [Delete a user](#delete-a-user)
 	- [Bulk Request](#bulk-request)
 	- [Getting list of users](#getting-list-of-users)
-- [SCIM-Client API](scim-client-api)
-	- [Adding an entity](#adding-an-entity)
-	- [Modifying an entity](#modifying-an-entity)
-	- [Deleting an entity](#deleting-an-entity)
-	- [Retrieving an entity](#retrieving-an-entity)
-	- [Bulk operations](#bulk-operations)
+- [SCIM Client API](#scim-client-api)
 	- [oxAuth Client Creation](#oxauth-client-creation)
 	- [Bulk requests from Excel files](#bulk-requests-from-excel-files)
-- [SCIM Resource Management](#scim-resource-management) 
+	- [SCIM 1.1 API](#scim-11-api)
+	- [SCIM 2.0 API](#scim-20-api)
+- [SCIM Developers Guide](#scim-developers-guide)
+	
+<!--- 
+				********** This part needs some maintenance **********
+
+[SCIM Resource Management](#scim-resource-management) 
 	- [SCIM UMA User Authentication](#scim-uma-user-authentication)
 		- [Base Configuration: Create oxAuth Clients, Policies](#base-configuration-create-oxauth-clients-policies)
 		- [oxTrust configuration (Resource Server)](#oxtrust-configuration-resource-server) 
@@ -30,34 +32,37 @@
 		- [configuration (Resource Server)](#configuration-resource-server)
 		- [SCIM Client (Requesting Party) sample code](#scim-client-requesting-party-sample-code)
 	
+-->
 
 ## SCIM Overview
 
 The Simple Cloud Identity Management (SCIM) specification is a standard REST/JSON API to standardize user and group CRUD (create, read, update, delete). You can review the detailed specification at [http://www.simplecloud.info](http://www.simplecloud.info). 
 The specification seeks to build upon experience with existing schemes and deployments, placing specific emphasis on simplicity of development and integration, while applying existing authentication, authorization, and privacy models. It's intent is to reduce the cost and complexity of user management operations by providing a common user schema and extension model, as well as binding documents to provide patterns for exchanging this schema using standard protocols. In essence, make it fast, cheap, and easy to move users in to, out of, and around the cloud.
-
+<!--
 You can download a PDF copy of this guide from [HERE](https://github.com/GluuFederation/SCIM-Client/tree/master/doc/pdf).
-
+-->
 
 ## Specification
 
-SCIM is integrated as a service of oxTrust. To start operating with
-SCIM’s web service, you need to send a request to one of SCIM’s
+SCIM is integrated as a service of oxTrust. To start operating with SCIM’s web service, you need to send a request to one of SCIM’s
 endpoints.
 
 ### Available Endpoints
 
-For example, if you want to **add a user** you need to send an HTTP request to this endpoint url :
+| Resource   | Endpoint           | Operations    | Description     				|
+-------------|:------------------:|:-------------:|:--------------------------------------------|
+| User       | /Users             | GET           | Retrieve/Add/Modify	Users			|
+|            |                    | POST	  | 		      				|
+|            |                    | PUT           |                 				|
+|            |                    | DELETE	  |                 				|
+| Group      | /Groups            | GET           | Retrieve/Add/Modify	Groups			|
+|            |                    | POST	  | 		    				|
+|            |                    | PUT           |                				|
+|            |                    | DELETE	  |                 				|
+| Bulk       | /Bulk              | 	          | Adding/Modifying  resources in bulk    |
+|            |                    | 		  | 				       |
 
-`https://localhost:8080/oxTrust/seam/resource/restv1/Users/`
 
-for **bulk operations** (adding modifying and deleting multiple users ) you have to send a request to the bulk endpoint:
-
-`https://localhost:8080/oxTrust/seam/resource/restv1/Bulk/`
-
-for **group operations**:
-
-`https://localhost:8080/oxTrust/seam/resource/restv1/Groups/`
 
 ### Authentications
 
@@ -448,160 +453,17 @@ Content-Type: application/xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?><Resources xmlns="urn:scim:schemas:core:1.0"><totalResults>4</totalResults><Resources><Resource><id>@!1111!0000!9711</id><externalId>random</externalId><userName>erik</userName><name><givenName>Erik</givenName><familyName>Hartog</familyName><middleName>N/A</middleName><honorificPrefix>N/A</honorificPrefix><honorificSuffix>N/A</honorificSuffix></name><displayName>Erik Hartog</displayName><nickName>Erik</nickName><profileUrl>http://www.gluu.org/</profileUrl><emails><email><value>random@gluu.org</value><type>work</type><primary>true</primary></email><email><value>random2@gluu.org</value><type>home</type><primary>false</primary></email></emails><addresses><address><type>work</type><streetAddress>621 East 6th Street Suite 200</streetAddress><locality>Austin</locality><region>TX</region><postalCode>78701</postalCode><country>US</country><formatted>621 East 6th Street Suite 200  Austin , TX 78701 US</formatted><primary>true</primary></address></addresses><PhoneNumbers><PhoneNumber><value>646-234-5678</value><type>work</type></PhoneNumber></PhoneNumbers><ims><im><value>erikk</value><type>Skype</type></im></ims><photos><photo><value>http://www.gluu.org/wp-content/themes/SaaS-II/images/logo.png</value><type>gluu photo</type></photo></photos><userType>user</userType><title>user</title><preferredLanguage>en-us</preferredLanguage><locale>en_US</locale><timezone>................................................the response is too long intentionally skipped some content for demo sake................................................</version><location>http://localhost:8080/oxTrust/seam/resource/restv1/Users/@!1111!0000!D4E7</location></meta></Resource></Resources></Resources>
 ```
 
-## SCIM-Client API
+## SCIM Client API
 
-SCIM-Client API is a tool Gluu developed to make the communication with
-a SCIM server an easy task. It can be used to build an application that
-sends request and receives responses from a SCIM server seamlessly.
+SCIM-Client API is a tool Gluu developed to make the communication with a SCIM server an easy task. It can be used to build an application that sends request and receives responses from a SCIM server seamlessly.
 
-You can checkout SCIM-client from our GIT repository : https://github.com/GluuFederation/SCIM-Client 
+You can checkout SCIM-client from our GIT repository: 
+https://github.com/GluuFederation/SCIM-Client 
 
-Below is an example on how to create a ScimClient instance:
 
-```
-ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
-```
+### oxAuth Client Creation
 
-This will create an oAuth instance of ScimClient where: `userName` and
-`passWord` are the user credentials , `clientID` and `clientSecret` are
-oxAuth client credentials , `domainURL` is the domain where SCIM client
-resides, for example:
-`http://localhost:8080/oxTrust/seam/resource/restv1` and `oxAuthDomain`
-is the `tokenURL` example
-`http://localhost:8080/oxauth/seam/resource/restv1/oxauth/token`.
-
-```
-ScimClient client = ScimClient.basicInstance(userName, passWord, domainURL);
-```
-
-As mentioned in the authentication part, for the basic authentication
-you only need the user’s credentials userName and passWord and the
-domain URL.
-
-### Adding an entity
-
-In this example we will show you how to add a person or a group using
-SCIM-Client, SCIM-Client API comes with two methods to accomplish this
-task, i. e. “createPerson” and “createPersonString”, with createPerson
-method you pass the person you want to add as ScimPerson object and you
-specify the desired media type format “XML/JSON” and SCIM-client API
-will parse the ScimPerson object into XML or JSON and send your request.
-Similarly for groups, you can use createGroup with ScimGroup as a
-parameter or createGroupString.
-
-```
-ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
-ScimPerson person = new ScimPerson() ;
-person.setUserName (String username );
-person.setName.setGivenName(String firstName );
-person.setName.setLastName(String lastName);
-ScimResponse response = client.createPerson(person, MediaType.APPLICATION_JSON);
-response.getStatusCode() // this will give you the Status code
-String result = response.getResponseBodyString(); // this will give you Response body 
-```
-
-Similarly for groups, you can use createGroup with ScimGroup as a
-parameter or createGroupString. In this 2nd example we will use
-createPersonString:
-
-```
-ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
-ScimResponse response = client.createPersonString(String person, MediaType.APPLICATION_JSON);
-response.getStatusCode() // this will give you the Status code
-String result = response.getResponseBodyString(); // this will give you Response body 
-```
-
-### Modifying an entity
-
-In this example we will show you how to modify a person or a group using
-SCIM-Client, SCIM-Client API comes with two methods to accomplish that,
-i. e. “updatePerson” and “updatePersonString”, for updatePerson method,
-you pass the person you want to update as ScimPerson object and its uid
-as a String and you specify the desired media type format “XML/JSON” and
-SCIM-client API will parse the ScimPerson object into XML or JSON and
-send your request.
-
-```
-ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
-ScimResponse response = client.updatePersonString(String person, String uid, MediaType.APPLICATION_JSON);
-response.getStatusCode() // this will give you the Status code
-String result = response.getResponseBodyString(); // this will give you Response body 
-```
-
-Same applies for groups, you can use updateGroupString with ScimGroup as
-a parameter or createGroupString.
-
-```
-ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
-ScimResponse response = client.updateGroupString(String group, String id, MediaType.APPLICATION_JSON);
-response.getStatusCode() // this will give you the Status code
-String result = response.getResponseBodyString(); // this will give you Response body 
-```
-
-## Deleting an entity
-
-To delete an entity you simply pass it’s ID as a String parameter into
-“deletePerson” or “deleteGroup” methods.
-
-```
-ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
-ScimResponse response = client.deletePerson(String uid);
-response.getStatusCode() // this will give you the Status code
-```
-
-```
-ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
-ScimResponse response = client.deleteGroup(String id);
-response.getStatusCode() // this will give you the Status code
-```
-
-## Retrieving an entity
-
-To retrieve a person or a group you can use “retrievePerson” or
-“retrieveGroup” method by passing the Entity’s id as a parameter and the
-desired media type.
-
-```
-ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
-ScimResponse response = client.retrievePerson(String uid, MediaType.APPLICATION_JSON);
-response.getStatusCode() // this will give you the Status code
-String result = response.getResponseBodyString(); // this will give you Response body 
-```
-
-```
-ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
-ScimResponse response = client.retrieveGroup(String id, MediaType.APPLICATION_JSON);
-response.getStatusCode() // this will give you the Status code
-String result = response.getResponseBodyString(); // this will give you Response body 
-```
-
-## Bulk operations
-
-To use Bulk operation you pass the operation as a ScimBulkOperation
-object into “bulkOperation” method or as a JSON/XML string into
-“bulkOperationString” method and without forgetting to specify the
-desired media type.
-
-```
-ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
-ScimResponse response = client.bulkOperationString(String operation, MediaType.APPLICATION_JSON);
-response.getStatusCode() // this will give you the Status code
-String result = response.getResponseBodyString(); // this will give you Response body 
-```
-
-```
-ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
-ScimResponse response = client.bulkOperation(String operation, ScimBulkOperation operation, MediaType.APPLICATION_JSON);
-response.getStatusCode() // this will give you the Status code
-String result = response.getResponseBodyString(); // this will give you Response body 
-```
-
-## oxAuth Client Creation
-
-It’s possible to create an oxAuth client dynamically using SCIM-Client,
-this option is available using the static *create* method of the class
-`OxAuthClientCreator`, where `applicationName` is the name of the
-desired client, `registerUrl` is the client registration url example:
+It’s possible to create an oxAuth client dynamically using SCIM-Client, this option is available using the static *create* method of the class `OxAuthClientCreator`, where `applicationName` is the name of the desired client, `registerUrl` is the client registration url example:
 `http://localhost:8080/oxauth/seam/resource/restv1/oxauth/register`
 and `redirectUris` is a space separated String containing the desired redirect urls.
 
@@ -613,26 +475,38 @@ response.getClientSecret(); // the generated clientSecret
 response.getExpiresAt(); // the expiration date of the client
 ```
 
-## Bulk requests from Excel files
+### Bulk requests from Excel files
 
-Excel spreadsheets are widely used by individuals and companies of
-different backgrounds. Gluu have embedded SCIM-client with methods that
-can help you turn an Excel file into a ScimBulkOperation object. For
-that reason we made two methods available, one for generation bulk users
-request *mapUsers* method and the other for generating bulk group
-requests *mapGroups* method, both methods take the path to the “XLS”
-file as a parameter, methods are available at “ExcelMapper” class:
+Excel spreadsheets are widely used by individuals and companies of different backgrounds. Gluu have embedded SCIM-client with methods that
+can help you turn an Excel file into a ScimBulkOperation object. For that reason we made two methods available, one for generation bulk users request *mapUsers* method and the other for generating bulk group requests *mapGroups* method, both methods take the path to the “XLS” file as a parameter, methods are available at “ExcelMapper” class:
 
 ```
 ScimBulkOperation usersOperation = ExcelMapper.mapUsers(excelFileLocationUsers);
 ScimBulkOperation groupsOperation = ExcelMapper.mapGroups(excelFileLocationGroups);
 ```
 
-You can download the Excel file models from here : https://github.com/GluuFederation/SCIM-Client/tree/master/doc/SampleXLS
+You can download the Excel file models from here: 
+https://github.com/GluuFederation/SCIM-Client/tree/master/doc/SampleXLS
 
-Excel files must follow the exact structure, the “Operation” cell defines the type of the operation ”Add,Update,delete” .
+Excel files must follow the exact structure, the “Operation” cell defines the type of the operation ”Add, Update, Delete” .
 For groups you can always add more groups to the spreadsheet following the same structure.
 
+### SCIM 1.1 API
+Detailed APIs for our implementation of SCIM can be found [here.](http://www.gluu.org/docs/reference/api/scim-1.1/)
+
+### SCIM 2.0 API
+APIs for the updated implementation of SCIM, i. e. SCIM 2.0 are [here.](http://www.gluu.org/docs/reference/api/scim-2.0/)
+
+- - - 
+
+## SCIM Developers Guide
+SCIM provides the developers and standardize way to retrieve (or update) user profile information from a data source. To elaborate, developers have no need to manage connections to the SQL tables at back-end.
+Gluu's implementation of SCIM also facilitates the developers in performing User, Group and Bulk CRUD operations. Complete developer guide can be found [Here](http://www.gluu.org/docs/reference/lib/using-scim/).
+
+
+<!--
+
+				********** This part needs some maintenance **********
 
 ## SCIM Resource Management
 
@@ -910,4 +784,4 @@ server.
 
 Values in this example are correspond to client entry fields from first
 section.
-
+-->

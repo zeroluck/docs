@@ -47,6 +47,12 @@ the confirmation (also contained in `setup.properties.last` (use the
 Unix command `grep --color -i pass` to find the according line quickly)
 and look for the LDAP password which is the same as the admin password.
 
+## Troubleshooting
+
+Please see our [Cloud Deployment FAQ](../../faq/cloud-faq.md) for cloud
+specific notes and our [Troubleshooting
+FAQ](../../faq/troubleshooting.md) for solutions to common issues. In addition, you can browse our [support site](https://support.gluu.org) for solutions to many common problems. 
+
 ## Starting and Stopping the Gluu Server
 
 <code> service gluu-server start </code>
@@ -119,16 +125,6 @@ please try the following to force uninstall the package.
 
 <code> # dpkg --purge --force-all gluu-server </code>
 
-## Troubleshooting
 
-Please see our [Cloud Deployment FAQ](../../faq/cloud-faq.md) for cloud
-specific notes and our [Troubleshooting
-FAQ](../../faq/troubleshooting.md) for solutions to common issues.
 
-## Support 
 
-Gluu offers both community and VIP support. Anyone can browse and open
-tickets on our [support portal](http://support.gluu.org). For private
-support, expedited assistance, and strategic consultations, please view
-[our pricing](http://gluu.org/pricing) and [schedule a meeting with
-us](http://gluu.org/booking) to discuss VIP support options.

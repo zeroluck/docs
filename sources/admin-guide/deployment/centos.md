@@ -23,7 +23,7 @@ Portal](https://support.gluu.org).
 
 The Gluu Server Community Edition should be deployed on a VM with:
 
-* CentOS 6.5 or 7
+* CentOS 6.5
 * 2 CPU Units and at least 4GB Physical Memory (more is always better, though)
 
 ## Available Components
@@ -32,9 +32,6 @@ Please review the [deployment guide](./index.md) for a list of available compone
 ## Installing GLUU Server with yum:
   CentOS 6.5:
 `# wget http://repo.gluu.org/centos/Gluu.repo -O /etc/yum.repos.d/Gluu.repo`
-
-  CentOS 7:
-`# wget http://repo.gluu.org/centos/Gluu-7.repo -O /etc/yum.repos.d/Gluu7.repo`
 
 `# wget http://repo.gluu.org/centos/RPM-GPG-KEY-GLUU -O /etc/pki/rpm-gpg/RPM-GPG-KEY-GLUU`
 
@@ -120,14 +117,10 @@ or
 -->
 
 ## Troubleshooting
+
 Please see our [Cloud Deployment FAQ](../../faq/cloud-faq.md) for cloud
 specific notes and our [Troubleshooting
-FAQ](../../faq/troubleshooting.md) for resolutions to common issues.
+FAQ](../../faq/troubleshooting.md) for solutions to common issues. In addition, you can browse our [support site](https://support.gluu.org) for solutions to many common problems. 
 
-## Support 
-Gluu offers both community and VIP support. Anyone can browse and open
-tickets on our [support portal](http://support.gluu.org). For private
-support, expedited assistance, and strategic consultations, please view
-[our pricing](http://gluu.org/pricing) and [schedule a meeting with
-us](http://gluu.org/booking) to discuss VIP support options.
+
 

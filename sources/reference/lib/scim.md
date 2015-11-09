@@ -9,4 +9,5 @@ You can download complete Gluu guide about SCIM from [HERE](https://github.com/G
 - [SCIM 1.1 Client library binary](http://ox.gluu.org/maven/gluu/scim/client/SCIM-Client/1.1.0.Final/)
 - [Latest SCIM Client library binary](http://ox.gluu.org/maven/gluu/scim/client/SCIM-Client/2.3.4.Final/)
 - [GitHub Project for the SCIM client](https://github.com/GluuFederation/SCIM-Client)
-
+- [SCIM javadocs](http://ox.gluu.org/scim-javadocs)
+- [Working with SCIM client](./using-scim.md)
