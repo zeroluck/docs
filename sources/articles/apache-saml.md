@@ -72,21 +72,22 @@ Edit the file `httpd.conf`, and do the following changes:
 
 ### Shibboleth SP Configuration
 
-This section describes how to configure `shibboleth2.xml` file.
+This section describes how to configure the file `shibboleth2.xml`.
 
-* Provide "entityID" of SP in:
+* Provide the `entityID` of the according SP in:
 	
 	* `<ApplicationDefaults entityID="http://sp.example.org/Shibboleth"> section`
 
-* Provide "entityID" of IdP in:
+* Provide the `entityID` of the IdP in:
 
 	* `<SSO entityID="https://idp.gluu.org/idp/shibboleth"> section`
 
-* Point the metadata provider, in most cases it is Gluu IdP metadata link:
+* Adjust the entry of the metadata provider. In most cases this is the
+  Gluu IdP metadata link:
 
 	* `<MetadataProvider type="XML" uri="https://idp.gluu.org/idp/shibboleth"> section`
 
-* Provide the key and cert of SP in:
+* Provide both the key and certificate of the SP in:
 
 	* `<CredentialResolver type="File" key="spkey.key" certificate="spcrt.crt"> section`
 
