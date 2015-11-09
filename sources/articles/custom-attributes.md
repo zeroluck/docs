@@ -13,46 +13,6 @@ support your new attributes, and give you some advice along the way with
 regard to best practices. We will use fictional Company Acme Inc., which
 has requirements for "acmeCustNumber" and "acmeStateLicenseNumber".
 
-## LDAP Schema
-
-The first step is to make sure that your LDAP server can persist these
-attributes. Each LDAP server implementation manages schema in its own
-way. The most common LDAP server backend for the Gluu Server is OpenDJ,
-so this article will use this platform as an example. This schema should
-also work for 389DS. If you are using OpenLDAP or another platform, just
-refer to the respective documentation.
-
-In LDAP, "schema" refers to the `attribute` and `objectclass`
-definitions. In OpenDJ, schema is stored in
-`{opendj-home}/config/schema`. If your company has a custom schema, it
-may be simpler to make a separate file that contains your definitions
-rather than using the built-in attribute management features, which
-would store the schema in a default file, `100-user.ldif` in OpenDJ. Do
-not stress about the OID value in the schema definition. If your company
-has a standard OID management process in place, by all means use it. But
-otherwise just make sure the OID is unique. Be careful about defining
-attributes as single-value (you may change your mind later). Also, in
-your object classes, avoid requiring attributes with `MUST`.
-
-Below is a sample schema file for fictional OpenDJ. For more information see
-the [documentation](http://opendj.forgerock.org/opendj-server/doc/admin-guide/#chap-schema).
-
-``101-acme.ldif``
-
-    dn: cn=schema
-    objectClass: top
-    objectClass: ldapSubentry
-    objectClass: subschema
-    cn: schema
-    attributeTypes: ( acmeCustNumber-oid NAME 'acmeCustNumber' EQUALITY
-      caseIgnoreMatch ORDERING caseIgnoreOrderingMatch SUBSTR caseIgnoreSubstringsMatch
-      SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
-    attributeTypes: ( acmeStateLicenseNumber-oid NAME 'acmeStateLicenseNumber' EQUALITY
-      caseIgnoreMatch ORDERING caseIgnoreOrderingMatch SUBSTR caseIgnoreSubstringsMatch
-      SYNTAX 1.3.6.1.4.1.1466.115.121.1.15)
-    objectClasses:  ( teaperson-oid NAME 'teaPerson' SUP top
-      MAY ( acmeCustNumber $ acmeStateLicenseNumber ) )
-
 ## Register Attribute in the Gluu Server
 
 The Gluu Server needs to know which attributes are available. Each
