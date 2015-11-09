@@ -93,15 +93,16 @@ This section describes how to configure the file `shibboleth2.xml`.
 
 ### Shibboleth Manual Configuration (one Physical SP):
 
-* Create a directory named "secure" under /var/www/
+* Create a directory named under `/var/www/secure`.
 
-* Change permission for directory "secure" to www-data:www-data
+* Change the permissions for that directory `secure` to
+  `www-data:www-data` (owner and group of the web server).
 
-* httpd.conf
+* `httpd.conf`
 
-	* ServerName `<hostname_of_server>`
+	* change the ServerName `<hostname_of_server>`
 
-	* Set Location:
+	* Define the Location, and the authorization type:
 
 		```
 		<Location /secure>
@@ -112,7 +113,7 @@ This section describes how to configure the file `shibboleth2.xml`.
 		</Location>
 		```
 
-* shibboleth2.xml configuration
+* configure `shibboleth2.xml`
 
 	* EntityID of SP: `ApplicationDefaults entityID="http://hostname/secure"`
 
