@@ -6,7 +6,7 @@
 
 __Add Shibboleth repository for CentOS__
 
-* Contents of `shib.repo`
+* The file `shib.repo` contains the following entry:
 
 ```
 [security_shibboleth]
@@ -18,11 +18,13 @@ gpgkey=http://download.opensuse.org/repositories/security:/shibboleth/CentOS_Cen
 enabled=1
 ```
 
-* `http://download.opensuse.org/repositories/security:/shibboleth/CentOS_CentOS-6/security:shibboleth.repo`
+* Download the Shibboleth security security:
+
+`http://download.opensuse.org/repositories/security:/shibboleth/CentOS_CentOS-6/security:shibboleth.repo`
 
 ### Shibboleth SP Installation
 
-Please run the following commands to install the Shibboleth SP.
+To install the Shibboleth SP, run the following commands in a terminal:
 
 ```
 yum install shibboleth
@@ -33,7 +35,8 @@ chkconfig shibd on
 ### Install and Configure httpd
 #### Installation
 
-The following commands will install and start the Apache server on your machine/Linux environment.
+The following commands will both install, and start the Apache web
+server on your machine/Linux environment:
 
 ```
 yum install httpd
@@ -43,28 +46,29 @@ Stop the firewall
 
 #### Configuration
 
-Edit `httpd.conf` with following changes.
+Edit the file `httpd.conf`, and do the following changes:
 
-* Change ServerName directive to the server name of the SP
+* Change the `ServerName` directive to the server name of the SP.
 
-* UseCanonicalName = On
+* Set `UseCanonicalName = On`.
 
-* Restart the httpd service
+* Restart the httpd service using the command `service httpd restart`.
 
 #### Httpd Testing
 
-* Create a `index.html` file inside the directory `/var/www/html`
+* Create an `index.html` file inside the directory `/var/www/html`.
 
-* Restart the httpd service
+* Restart the httpd service using the command `service httpd restart`.
 
 * Check from your browser
 
 #### SP Key Certificate
 
-* Create both a private key and a certificate, and place those in
-  `/etc/shibboleth`
+* Create both a private key, and a certificate, and place those in the
+  file `/etc/shibboleth`.
 
-* Change the permissions
+* Change the permissions of these files so that the web server can read
+  the files.
 
 ### Shibboleth SP Configuration
 
