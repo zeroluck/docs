@@ -145,22 +145,27 @@ This section describes how to configure the file `shibboleth2.xml`.
 
 ![IMAGE](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_destination.png)
 
-4. Select Shibboleth Daemon port: default is 1600, you can keep it for local testing
+4. Select the Shibboleth Daemon port. By default it is 1600, and you may
+   keep it for testing it, locally.
 
 ![IMAGE](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_port.png)
 
-5. Now, there are two options here. You have to follow either one (but not both) according to your target.
+5. Now, there are two options. According to your target you will have to
+choose one.
 
-	1. Option 1: If you are installing Shibboleth for Apache Web Server
+	1. Option 1: If you install Shibboleth for the Apache Web Server
 
-	2. Option 2: If you are installing Shibboleth for Microsoft IIS Web Server
+	2. Option 2: If you install Shibboleth for Microsoft IIS Web Server
 
-		a. For Microsoft IIS Web Server, CHECK “Install ISAPI filter and configure IIS”, remember to put the file Extension ”.sso”; this 		    is necessary
+		a. For the Microsoft IIS Web Server, CHECK “Install ISAPI filter
+		and configure IIS”. Remember to put the file Extension ”.sso” --
+		this is necessary.
 
 ![IMAGE](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_microsoft.png)
 
 		
-		b. For Apache Web Server, UNCHECK "Install ISAPI filter and configure IIS".
+		b. For the Apache Web Server, UNCHECK "Install ISAPI filter and
+		configure IIS".
 
 ![IMAGE](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_apachesetup.png)
 
@@ -170,19 +175,25 @@ This section describes how to configure the file `shibboleth2.xml`.
 
 ### Apache Configuration
 
-1. Download the Apache HTTP server MSI Installer with OpenSSL: http://httpd.apache.org/download.cgi#apache22
+1. Download the Apache HTTP server MSI Installer with OpenSSL:
+   http://httpd.apache.org/download.cgi#apache22 .
 
 ![IMAGE](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_apacheclick.png)
-		
-2. Select Destination. You can keep the default destination for your local testing. But, make sure that there is no other “Apache Software Foundation” directory in your current “C:\Program Files\” location.
+
+2. Select the destination. You can keep the default destination for your
+local testing. But, make sure that there is no other “Apache Software
+Foundation” directory in your current “C:\Program Files\” location.
 
 ![IMAGE](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_apachedestination.png)
 
-3. Provide Server Information. For local testing, you can use “localdomain/localhost”
+3. Provide the Server Information. For local testing you can use
+   `localdomain/localhost`.
 
 ![IMAGE](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_serverinfo.png)
 
-4. Test whether Apache is installed or not. Open your web browser and use “localhost”. If you see something like image shown below; you are done!
+4. Test whether the Apache web server is installed or not. Open your web
+browser and use `localhost`. If you see something like the image shown
+below--you are done!
 
 a![IMAGE](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/sp_setup/admin_sp_apachetest.png)
 
