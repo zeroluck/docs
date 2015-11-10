@@ -115,11 +115,14 @@ be found on Gluu's Github repository:
 
 ### oxAuth Client Creation
 
-It’s possible to create an oxAuth client dynamically using SCIM-Client, this option is available using the 
-static *create* method of the class `OxAuthClientCreator`, where `applicationName` is the name of the desired client, 
-`registerUrl` is the client registration url example:
-`https://idp.example.com/oxauth/seam/resource/restv1/oxauth/register`
-and `redirectUris` is a space separated String containing the desired redirect urls.
+It is possible to create an oxAuth client using the SCIM-Client,
+dynamically. This option is available using the static *create* method
+of the class `OxAuthClientCreator`, whereas the `applicationName` is the
+name of the desired client, and `registerUrl` is the client registration
+uri, for example
+`https://idp.example.com/oxauth/seam/resource/restv1/oxauth/register`.
+The value `redirectUris` is a space-separated string that contains the
+desired redirect uris.
 
 ```
 CreationResult response = OxAuthClientCreator.create( applicationName, registerUrl, redirectUris);
