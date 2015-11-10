@@ -93,14 +93,18 @@ UID, or an email address. In general, it can be any custom attribute.
         * What is the name of your State or Province?: State name
         * What is the two-letter country code for this unit?: US
 * Adding IDP/ADFS in Asimba: 
-    * Gather metadata of IDP / ADFS and keep them in some place under /tomcat/webapps/asimba-saml-proxy/WEB-INF/ 
-    * Collect certificate of IDP / ADFS and import them in Asimba truststore JKS
+    * Gather metadata of IDP/ADFS and keep them in some place under
+      `/tomcat/webapps/asimba-saml-proxy/WEB-INF/`.
+    * Collect the certificate of the IDP/ADFS, and import them in Asimba
+      truststore JKS.
 
 * Adding SP in Asimba: 
-    * Gather metadata of SP and keep them in some place under /tomcat/webapps/asimba-saml-proxy/WEB-INF/
-    * Collect certificate of SP and import them in Asimba truststore JKS
+    * Gather the metadata of the SP and keep them in some place under
+      `/tomcat/webapps/asimba-saml-proxy/WEB-INF/`.
+    * Collect certificate of the SP and import them in Asimba truststore
+      JKS.
 
-* Restart tomcat
+* Restart the Tomcat service.
 
 ## Asimba Apache Configuration
 
