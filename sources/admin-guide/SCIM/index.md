@@ -100,15 +100,17 @@ remember for SCIM, oxTrust is the "UMA Resource Server", and the SCIM
 client is the UMA Client.
 
 ## SCIM REST API Reference
- 
-For API documentation, you should see the reference section:
+
+For API documentation, have a look at the reference section:
 
  * [SCIM 1.1 API Reference](../../reference/api/scim-1.1.md)
  * [SCIM 2.0 API Reference](../../reference/api/scim-2.0.md)
 
 ## SCIM Client Library
 
-SCIM-Client library is a Java SDK facilitate SCIM development. It can be found on Gluu's Github repository: 
+SCIM Client library is a Java SDK to facilitate SCIM development. It can
+be found on Gluu's Github repository:
+
  * [https://github.com/GluuFederation/SCIM-Client](https://github.com/GluuFederation/SCIM-Client)
 
 ### oxAuth Client Creation
