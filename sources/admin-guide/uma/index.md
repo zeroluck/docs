@@ -285,7 +285,8 @@ The algorithm follows theses rules:
 
 # Requesting party trust elevation
 
-This section defines the OX claim profile for UMA. Following is a summary:
+This section defines the OX claim profile for UMA. Following is a
+summary:
 
   - Identifying URI: http://gluu.org/uma/profiles/uma-claim-gluu-1.0
   - Profile author and contact information: Michael Schwartz and Yuriy Zabrovarnyy (info@gluu.org)
