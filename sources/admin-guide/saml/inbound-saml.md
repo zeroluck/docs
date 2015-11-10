@@ -247,31 +247,34 @@ If everything was done correctly, the new IDP is configured with Asimba
  
 # Add New Service Provider 
 
-Required Files: 
-    
+The required Files are:
+
 * Metadata of SP
 * SAML certificate of SP
 
-
 ## Configure `asimba.xml`:
 
-* Collect the metadata of SP and place in some location of your file system. Make sure that the metadata is in xml format and user tomcat readable.  
-* Add Requestor: Every SP is known as `requestor` to Asimba. There are couple of place where we need to configure this SP inside Asimba's `asimba.xml` file. 
-    * Requestor should be configured in `<requestorpoolfactory>\<requestors>\<requestor>`
-    * `requestor id` should be the `entityID` of SP
-    * `friendlyname` can be anything which is unique
+* Collect the metadata of the SP and place them in some location of your
+  file system. Make sure that the metadata is in XML format, and readable
+  for the user `tomcat`.
+* Add Requestor: Every SP is known as `requestor` to Asimba. There are
+  couple of places where we need to configure this SP inside Asimba's
+  `asimba.xml` file.
+    * Requestor should be configured in `<requestorpoolfactory>\<requestors>\<requestor>`.
+    * `requestor id` should be the `entityID` of SP.
+    * `friendlyname` can be anything which is unique, and reflects the service.
 
-A sample configuration should look like below: 
+A sample configuration looks like that:
 
+```
+<requestor id="http://sptest2.gluu.org/secure" friendlyname="Gluu Test SP" enabled="true" />
+```
 
-            <requestor id="http://sptest2.gluu.org/secure"
-                    friendlyname="Gluu Test SP"
-                    enabled="true" />
-
-* Add profile of requestor: In this section the location of SP's metadata and some other configurations are done. 
-    * This configuration is configured in `<profiles>\<websso>\<requestors>\<requestor>`
-    * The `requestor id` is the entityID of SP
-    * `metadata` location is a the absolute path
+* Add a profile of the requestor: in this section both the location of
+  SP's metadata, and some other configurations are set. 
+    * This configuration is configured in `<profiles>\<websso>\<requestors>\<requestor>`.
+    * The `requestor id` is the entityID of SP.
+    * The `metadata` location is a the absolute path.
 
 A sample configuration of requestor's profile configuration: 
 
