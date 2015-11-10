@@ -317,14 +317,14 @@ wget -c https://<HOSTNAME>/asimba-saml-proxy/profiles/saml2
 
 ## Configure Remote IDP
 
-Remote IDP / AD FS also need to be configured for Asimba server as they
-can talk together.
+The remote IDP/AD FS also needs to be configured for the Asimba server
+so that they can talk to each other.
 
-If the remote authentication server is a Shibboleth IDP, it just require
-three things:
+If the remote authentication server is a Shibboleth IDP, it just
+requires three things:
 
-* Metadata of Asimba - which can be grabbed easily.
-* Name identifier attribute, which will be shared with Asimba - `persistentID`
+* Metadata of Asimba--which can be grabbed easily.
+* Name identifier attribute, which will be shared with Asimba - `persistentID`.
 * `SAML2SSO` relying party configuration for this trust relationship with Asimba. Values should be: 
     * _includeAttributeStatement_ : true
     * _assertionLifetime_ : 300000
