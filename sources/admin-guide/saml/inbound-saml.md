@@ -31,9 +31,10 @@
 
 # Inbound SAML in Gluu Server
 
-The main use case for Asimba is to enable websites to use a single IDP for single sign-on (SSO)
-even when the organization may have a number of IDPs that are trusted. For more
-information, please review the [Asimba website](http://www.asimba.org/site/).
+The main use case for Asimba is to enable websites to use a single IDP
+for single sign-on (SSO) even when the organization may have a number of
+IDPs that are trusted. For more information, please review the [Asimba
+website](http://www.asimba.org/site/).
 
 # Requirements for Inbound SAML 
 
@@ -43,16 +44,16 @@ information, please review the [Asimba website](http://www.asimba.org/site/).
 * [SSL Certificate of Authentication Server](#ssl-certificate-of-authentication-server) 
 * [Required Attributes](#required-attributes)
 
-Above points are described briefly below. 
+Above points are described below, briefly. 
 
 ## Metadata of Authentication Server
 
-Authentication server can be any remote / native SAML IDP such as the
+An authentication server can be any remote/native SAML IDP such as the
 Shibboleth IDP or Microsoft ADFS. You need the metadata of this server
-to configure Asimba. After configuration, end user will be able to
+to configure Asimba. After configuration, the end user will be able to
 select their desired authentication server from Asimba's discovery page.
-Or, you can configure the "selector" which will automatically redirect
-user to desired IDP / ADFS.
+As an alternative, you can configure the "selector" which will
+automatically redirect user to desired IDP/ADFS.
 
 ## Metadata of Service Provider
 
@@ -62,17 +63,18 @@ metadata from all websites (SPs) which will be connected.
 ## SAML Certificate of Service Provider
 
 Base64 encoded certificates are required to configure the Asimba trust
-store to connect / allow the inbound SAML request from the remote SP.
+store to connect/allow the inbound SAML request from the remote SP.
 
 ## SSL Certificate of Authentication Server
 
-Base64 encoded certificates for the authentication server are also required.
+Base64 encoded certificates for the authentication server are also
+required:
 
 ## Required Attributes
 
-Every organization has their own policy to release / pass attributes to
-service providers. It can be a standard attribute like UID or email
-address or it can be any custom attribute.
+Every organization has their own policy to both release and pass
+attributes to service providers. It can be a standard attribute like
+UID, or an email address. In general, it can be any custom attribute.
 
 # Asimba Configuration 
 
@@ -80,7 +82,7 @@ address or it can be any custom attribute.
 
 * Get the war for Asimba from [http://asimba.org](http://asimba.org)
 * Copy the war file in `/opt/tomcat/webapps`
-* Restart tomcat, it will extract the Asimba
+* Restart the Tomcat service. It will extract the Asimba, automatically.
 * Get the `asimba.conf` template from Gluu
 * Generate the keystore for your Asimba server:
     * Command: `keytool -genkeypair -keyalg RSA -alias "<ALIAS_OF_KEYSTORE>" -keypass <PASSWORD> -keystore <NAME_OF_JKS>.jks -storepass <PASSWORD>`
@@ -90,7 +92,7 @@ address or it can be any custom attribute.
         * What is the name of your City or Locality?: city name
         * What is the name of your State or Province?: State name
         * What is the two-letter country code for this unit?: US
-* Adding IDP / ADFS in Asimba: 
+* Adding IDP/ADFS in Asimba: 
     * Gather metadata of IDP / ADFS and keep them in some place under /tomcat/webapps/asimba-saml-proxy/WEB-INF/ 
     * Collect certificate of IDP / ADFS and import them in Asimba truststore JKS
 
