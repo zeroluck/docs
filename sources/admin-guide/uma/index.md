@@ -186,7 +186,8 @@ An example of a typical JSON document of scope can be seen here:
 }
 ```
 
-The Scope JSON MAY contain custom properties which is out of scope of this document.
+The scope JSON MAY contain custom properties which are out of scope of
+this document.
 
 ## Define UMA Scopes via oxTrust
 
@@ -196,21 +197,25 @@ The Scope JSON MAY contain custom properties which is out of scope of this docum
 
 ## Implementation specificity
 
-Scopes types:
+The following types of scopes exist:
 
-- internal: hosted on oxAuth (must provide scope description);
-- external: hosted on other servers;
-- external_auto: scope hosted on other server but which is automatically added during resource set registration or update.
+- internal: hosted on oxAuth (must provide a scope description)
+- external: hosted on other servers
+- external_auto: a scope hosted on another server but which is
+  automatically added during resource set registration or update.
 
-**Note:** there is no url for internal scope because it is configurable and depends on oxAuth hosting.
+**Note:** there is no uri for an internal scope because it is
+configurable and depends on oxAuth hosting.
 
 UMA url = uma_scopes_endpoint + "/" + oxId;
 
 http://gluu.org/uma/scopes/view = http://gluu.org/uma/scopes + "/" + view
 
-Under http://gluu.org/uma/scopes/view server must provide scope description as JSON document:
+A server has to provide a scope description as JSON document. The
+following uri is in use: http://gluu.org/uma/scopes/view
 
-**Note:** The Scope endpoint must be present in UMA configuration to make it discoverable.
+**Note:** The scope endpoint has to be present in UMA configuration to
+make it discoverable.
 
 #### External sample ldif
 
