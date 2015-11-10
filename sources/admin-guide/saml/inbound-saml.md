@@ -278,12 +278,13 @@ A sample configuration looks like that:
 
 A sample configuration of requestor's profile configuration: 
 
-            <requestor id="http://sptest2.gluu.org/secure"
-                signing="FALSE">
-                    <metadata>
-                        <file>${webapp.root}/WEB-INF/metadata/sp/sptest2_gluu_org.xml</file>
-                    </metadata>
-            </requestor>
+```
+<requestor id="http://sptest2.gluu.org/secure" signing="FALSE">
+	<metadata>
+		<file>${webapp.root}/WEB-INF/metadata/sp/sptest2_gluu_org.xml</file>
+	</metadata>
+</requestor>
+```
 
 ## Work on SP Keystore
 
