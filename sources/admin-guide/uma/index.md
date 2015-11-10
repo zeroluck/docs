@@ -73,7 +73,8 @@ properties (defined by UMA specification) as well as custom properties
 (extension that is out of scope of this document). Gluu Server
 guarantees property name uniqueness within response.
 
-The following is an example of a GET request to the UMA configuration discovery endpoint: 
+The following is an example of a GET request to the UMA configuration
+discovery endpoint:
 
 ``` json
 {
@@ -109,47 +110,58 @@ The following is an example of a GET request to the UMA configuration discovery 
 }
 ```
 
-The JSON object returned includes the following configuration information:
+The JSON object returned includes the following configuration
+information:
 
-`version`: The supported UMA core protocol version.
+`version`: the supported UMA core protocol version.
 
-`issuer`: The URI of the issuing authorization server.
+`issuer`: the URI of the issuing authorization server.
 
-`pat_profiles_supported`: The supported OAuth token types used for issuing Protection API Tokens (PATs).
+`pat_profiles_supported`: the supported OAuth token types used for
+issuing Protection API Tokens (PATs).
 
-`aat_profiles_supported`: The supported OAuth token types used for issuing Authorization API Tokens (AATs).
+`aat_profiles_supported`: the supported OAuth token types used for
+issuing Authorization API Tokens (AATs).
 
-`rpt_profiles_supported`: The supported Requesting Party Token (RPT) profiles.
+`rpt_profiles_supported`: the supported Requesting Party Token (RPT)
+profiles.
 
-`pat_grant_types_supported`: The supported OAuth grant types used for issuing PATs.
+`pat_grant_types_supported`: the supported OAuth grant types used for
+issuing PATs.
 
-`aat_grant_types_supported`: The supported OAuth grant types used for issuing AATs.
+`aat_grant_types_supported`: the supported OAuth grant types used for
+issuing AATs.
 
-`token_endpoint`: The URI to request a PAT or AAT.
+`token_endpoint`: the URI to request a PAT or AAT.
 
-`authorization_endpoint`: The URI to request authorization for issuing a PAT or AAT.
+`authorization_endpoint`: the URI to request authorization for issuing a
+PAT or AAT.
 
-`introspection_endpoint`: The URI to introspect an RPT.
+`introspection_endpoint`: the URI to introspect an RPT.
 
-`resource_set_registration_endpoint`: The URI for a resource server to register a resource set.
+`resource_set_registration_endpoint`: the URI for a resource server to
+register a resource set.
 
-`permission_registration_endpoint`: The URI for a resource server to register a requested permission.
+`permission_registration_endpoint`: the URI for a resource server to
+register a requested permission.
 
-`rpt_endpoint`: The URI for the client to request authorization data.
+`rpt_endpoint`: the URI for the client to request authorization data.
 
-`dynamic_client_endpoint`: The URI for registering a dynamic client.
+`dynamic_client_endpoint`: the URI for registering a dynamic client.
 
 # Resource Registration
 
 To let the Gluu Server know which resources are protected by UMA they
-must be registered. Resources are described by following properties:
+must be registered. Resources are described by the following properties:
 
 - name: name of resource
 - scopes: scopes that are available for this resource
-- type:  type of resource (it can be string, uri or what ever, basically it is up to Resource Server what type it should be).
+- type: type of resource (it can be string, uri or what ever, basically
+  it is up to Resource Server what type it should be).
 - icon_uri: uri to the icon.
 
-These are standard properties however a resource description MAY contain custom properties.
+These are standard properties however a resource description MAY contain
+custom properties.
 
 ## Register resource via oxTrust
 
