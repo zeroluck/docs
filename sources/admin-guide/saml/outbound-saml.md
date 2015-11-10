@@ -35,10 +35,10 @@ shown and tested from Gluu Server oxTrust GUI.
 
 ## Required attribute of website:
 
-Every organization has their own policy to release / share attributes
-with any IDP or SP. Gluu Server support and can be configured for
-standard or custom attribute. All can be done from Gluu Server oxTrust
-GUI.
+Every organization has their own policy to release/share attributes with
+any IDP or SP. The Gluu Server supports, and can be configured for
+standard or custom attributes. This can be done from the Gluu Server
+oxTrust GUI.
 
 ## SSO testing endpoint of website:
 
