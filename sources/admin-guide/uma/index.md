@@ -262,7 +262,9 @@ Within the oxTrust interface the Gluu Server admin can define UMA
 policies (pictured below). To achieve this, navigate to Configuration >
 Manage Custom Scripts > UMA Authorization policies.
 
-You can find more information on crafting UMA policies as well as an example script [here](../../reference/interception-scripts/index.md#authorization)
+You can find more information on crafting UMA policies as well as an
+example script
+[here](../../reference/interception-scripts/index.md#authorization).
 
 ![Add UMA Policies](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/uma/uma_oxtrust_policy_add.png)
 
