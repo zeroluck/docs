@@ -115,7 +115,7 @@ information:
 
 `version`: the supported UMA core protocol version.
 
-`issuer`: the URI of the issuing authorization server.
+`issuer`: the uri of the issuing authorization server.
 
 `pat_profiles_supported`: the supported OAuth token types used for
 issuing Protection API Tokens (PATs).
@@ -132,22 +132,22 @@ issuing PATs.
 `aat_grant_types_supported`: the supported OAuth grant types used for
 issuing AATs.
 
-`token_endpoint`: the URI to request a PAT or AAT.
+`token_endpoint`: the uri to request a PAT or AAT.
 
-`authorization_endpoint`: the URI to request authorization for issuing a
+`authorization_endpoint`: the uri to request authorization for issuing a
 PAT or AAT.
 
-`introspection_endpoint`: the URI to introspect an RPT.
+`introspection_endpoint`: the uri to introspect an RPT.
 
-`resource_set_registration_endpoint`: the URI for a resource server to
+`resource_set_registration_endpoint`: the uri for a resource server to
 register a resource set.
 
-`permission_registration_endpoint`: the URI for a resource server to
+`permission_registration_endpoint`: the uri for a resource server to
 register a requested permission.
 
-`rpt_endpoint`: the URI for the client to request authorization data.
+`rpt_endpoint`: the uri for the client to request authorization data.
 
-`dynamic_client_endpoint`: the URI for registering a dynamic client.
+`dynamic_client_endpoint`: the uri for registering a dynamic client.
 
 # Resource Registration
 
@@ -288,7 +288,7 @@ The algorithm follows theses rules:
 This section defines the OX claim profile for UMA. Following is a
 summary:
 
-  - Identifying URI: http://gluu.org/uma/profiles/uma-claim-gluu-1.0
+  - Identifying uri: http://gluu.org/uma/profiles/uma-claim-gluu-1.0
   - Profile author and contact information: Michael Schwartz and Yuriy Zabrovarnyy (info@gluu.org)
   - Updates or obsoletes: None; this profile is new.
   - Syntax and semantics of claim data: As defined below.
