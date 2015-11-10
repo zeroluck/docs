@@ -22,13 +22,18 @@ which may contain logic to grant (or forbid) access. All terminology
 used by this page is borrowed from UMA and Connect specs.
 
 ## UMA in Action
-The diagrams below detail how the various UMA actors interact. 
+The diagrams below detail how the various UMA actors interact.
 
 Some helpful definitions:
-- *Resource Owner (RO)*: An OAuth resource owner that is the "user" in User-Managed Access. This is typically an end-user (a natural person) but it can also be a corporation or other legal person.
-- *Resource Server (RS)*: Where the resources are held. 
-- *Authorization Server (AS)*: A server that governs access based on resource owner policies.
-- *Requesting Party (RP)*: An end-user, or a corporation or other legal person, that uses a client to seek access to a protected resource. The requesting party may or may not be the same party as the resource owner.
+- *Resource Owner (RO)*: An OAuth resource owner that is the "user" in
+  User-Managed Access. This is typically an end-user (a natural person)
+  but it can also be a corporation or other legal person.
+- *Resource Server (RS)*: Where the resources are held.
+- *Authorization Server (AS)*: A server that governs access based on
+  resource owner policies.
+- *Requesting Party (RP)*: An end-user, or a corporation or other legal
+  person, that uses a client to seek access to a protected resource. The
+  requesting party may or may not be the same party as the resource owner.
 - *Client*: A web or native app that is used to access a digital resource. 
 - *Protection API Token (PAT)*: An entity seeking protection API access MUST have the scope "uma_protection". An access token with at least this scope is called a protection API token (PAT) and an entity that can acquire an access token with this scope is by definition a resource server.
 - *Requesting Party Token (RPT)*: the token that a client presents to a resource server when trying to access a protected resource.
@@ -182,7 +187,7 @@ UMA url = uma_scopes_endpoint + "/" + oxId;
 
 http://gluu.org/uma/scopes/view = http://gluu.org/uma/scopes + "/" + view
 
-Under http://gluu.org/uma/scopes/view server must provide scope description as json document:
+Under http://gluu.org/uma/scopes/view server must provide scope description as JSON document:
 
 **Note:** The Scope endpoint must be present in UMA configuration to make it discoverable.
 
