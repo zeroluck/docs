@@ -159,32 +159,37 @@ entityID.
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/Relying_Party_Configuration.png)
 
-After adding a new Trust Relationship, the server administrator will observe a confirmation page like the one below. Please note that for testing purpose we did not provided any certificates. The IdP created the key and cert by itself. The image below shows a sample Trust Relationship after successful creation.
+After adding a new Trust Relationship, the server administrator will
+observe a confirmation page like the one below. Please note that for
+testing purposes we did not provide any certificates. The IdP created
+both the key and certificate by itself. The image below shows a sample
+Trust Relationship after successful creation.
 
 # FAQ 
 
 * I have a new SP, what do I need to do to create a Trust Relationship from the Gluu Server? 
-    * Basically there are two types of single sign-on: IDP-initiated SSO and SP-initiated SSO. You need to know what kind of SSO it is. 
-        * For SP-initiated SSO, you need to know: 
-            * Required attributes by SP.  
-            * Metadata of SP. 
-            * SSO endpoint / testing endpoint which end user will use to log
-            into SP.   
+    * Basically there are two types of single sign-on: IDP-initiated SSO
+      and SP-initiated SSO. You need to know what kind of SSO it is.
+        * For SP-initiated SSO, you need to know:
+            * Required attributes by SP.
+            * Metadata of SP.
+            * SSO endpoint/testing endpoint which end user will use to log into SP.
 
-        * For IDP-initiated SSO, you need to know: 
-            * Required attribute by SP. 
-            * Metadata of SP ( if possible )
-            * SSO endpoint ( if possible )
+        * For IDP-initiated SSO, you need to know:
+            * Required attribute by SP.
+            * Metadata of SP (if possible)
+            * SSO endpoint (if possible)
 
-* Where I can find my IDP's metadata? 
+* Where I can find my IDP's metadata?
     * Gluu Server IDP metadata is available online at: `https://<yourhostname>/idp/shibboleth`
 
-* What kind of certificates does the Gluu Server use? 
+* What kind of certificates does the Gluu Server use?
     * [Certificates](../certificates/index.md) in Gluu Server
 
-* How can I get the IDP's SAML cert? 
-    * SAML certificate is available in your IDP's metadata. Metadata can be collected by following these [instructions](https://support.gluu.org/view/installation/idp-certificate-entityid-location-http-redirect-location-etc/265). 
-
+* How can I get the IDP's SAML cert?
+    * SAML certificate is available in your IDP's metadata. Metadata can
+      be collected by following these
+[instructions](https://support.gluu.org/view/installation/idp-certificate-entityid-location-http-redirect-location-etc/265).
 
 * I need to update metadata for one Service Provider. How is it possible? 
     * This is pretty easy. Just follow the instructions listed [here](https://support.gluu.org/view/maintenance/update-metadata-for-service-provider/1446). 
