@@ -138,22 +138,24 @@ wiki](http://sourceforge.net/p/asimba/wiki/Home/).
     * Metadata of remote IDP
     * SAML certificate of remote IDP
 
-* Configuring `asimba.xml`: 
-    * Grab the metadata of remote IDP and save it in some place. Make sure that user tomcat can read this xml copy. 
-        * Specify this metadata in  `<websso>\<method>\<idps>` section. 
+* Configuring `asimba.xml`:
+    * Grab the metadata of the remote IDP and save it in some place.
+      Make sure that user `tomcat` can read this xml copy.
+        * Specify this metadata in the `<websso>\<method>\<idps>` section.
             * `idp id` must follow the entityID of this metadata.
             * `scoping` should be "false"
-            * Add the static path of metadata inside `<file>` section. 
-    
-A sample configuration should look like below:
+            * Add the static path of metadata inside the `<file>` section.
 
-            <idp id="https://idp.gluu.org/idp/shibboleth" friendlyname="Gluu IDP" scoping="false" 
-                avoid_subjectconfirmation="false">
-                    <nameidpolicy enabled="false" />
-                        <metadata>
-                            <file>${webapp.root}/WEB-INF/metadata/idp/idp_gluu_org.xml</file>
-                        <metadata>
-            </idp>
+A sample configuration looks like that:
+
+```
+<idp id="https://idp.gluu.org/idp/shibboleth" friendlyname="Gluu IDP" scoping="false" avoid_subjectconfirmation="false">
+	<nameidpolicy enabled="false" />
+	<metadata>
+		<file>${webapp.root}/WEB-INF/metadata/idp/idp_gluu_org.xml</file>
+	</metadata>
+</idp>
+```
 
 # Configure Asimba SAML Proxy
 
