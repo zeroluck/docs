@@ -42,8 +42,9 @@ oxTrust GUI.
 
 ## SSO testing endpoint of website:
 
-Every website (SP) should have staging and production URL endpoint which
-can be checked for SSO, where user will hit to log into that SP.
+Every website (SP) should have both a staging and a production uri
+endpoint which can be checked for SSO, where the user will access to log
+into that SP.
 
 # Configuring Outbound SAML SSO
 
