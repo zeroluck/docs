@@ -303,10 +303,16 @@ configuration data.
 
 To conform to this option, the authorization server MUST do the following:
 
-  - send "need_reauthentication" error in case AAT does not correspond to authentication level and (or) mode of authorization policy. Together with error authorization server MUST provide:
-      - domain_auth_level - REQUIRED. authentication level required to satisfy authorization policy
-      - domain_auth_mode - REQUIRED. authentication mode required to satisfy authorization policy
-      - authentication_uri - OPTIONAL. authorization server authentication uri for re-authentication with required authentication level and mode
+  - send "need_reauthentication" error in case AAT does not correspond
+    to authentication level and (or) mode of authorization policy.
+    Together with error authorization server MUST provide:
+      - domain_auth_level - REQUIRED. authentication level required to
+        satisfy authorization policy.
+      - domain_auth_mode - REQUIRED. authentication mode required to
+        satisfy authorization policy.
+      - authentication_uri - OPTIONAL. authorization server
+        authentication uri for re-authentication with required
+        authentication level and mode
 
 For example:
 
