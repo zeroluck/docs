@@ -199,8 +199,8 @@ this document.
 
 The following types of scopes exist:
 
-- internal: hosted on oxAuth (must provide a scope description)
-- external: hosted on other servers
+- internal: hosted on oxAuth (must provide a scope description).
+- external: hosted on other servers.
 - external_auto: a scope hosted on another server but which is
   automatically added during resource set registration or update.
 
@@ -244,15 +244,17 @@ oxIconUrl: http://seed.gluu.org/uma/icons/view_scope.png
 
 # UMA Policies
 
-UMA Policies protect UMA Resources. Protection of resources are made via
-scopes. Gluu server evaluates all policies (identified by scopes) in
+UMA Policies protect UMA Resources. The protection of resources are made
+via scopes. Gluu Server evaluates all policies (identified by scopes) in
 order to grant access.
 
-UMA Policy main properties:
+The UMA Policy main properties are:
 
 - scopes: policy protects resources by scopes.
-- authorization script: script that is evaluated in order to grant or deny access (script basically returns true of false to server).
-- name: it is best to provide an easily understandable name to the policy so that it is clear what the policy protects.  
+- authorization script: script that is evaluated in order to grant or
+  deny access (script basically returns true or false to the server).
+- name: it is best to provide an easily understandable name to the
+  policy so that it is clear what the policy protects.
 
 ## Define Policies
 
