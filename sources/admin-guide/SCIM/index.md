@@ -35,18 +35,23 @@
 
 ## SCIM Overview
 
-The Simple Cloud Identity Management (SCIM) specification is a standard REST/JSON API to standardize user and group CRUD 
-(create, read, update, delete). You can review the detailed specification at 
-[http://www.simplecloud.info](http://www.simplecloud.info). The standard got started when coders from Google and 
-Salesforce started wondering if they could combine their similar endpoints for user management, reducing the 
-frustration of the community. Identity Management vendors, who were writing connectors to both (and many other 
-SaaS providers) also liked the idea and contributed to the effort. The standard has two major releases: 1.1 and 2.0.
-As of Gluu Server 2.4, we support both, although 1.1 will be deprecated soon.
+The Simple Cloud Identity Management (SCIM) specification is a standard
+REST/JSON API to standardize user and group CRUD (create, read, update,
+delete). You can review the detailed specification at
+[http://www.simplecloud.info](http://www.simplecloud.info). The standard
+got started when coders from Google and Salesforce started wondering if
+they could combine their similar endpoints for user management, reducing
+the frustration of the community. Identity Management vendors, who were
+writing connectors to both (and many other SaaS providers) also liked
+the idea and contributed to the effort. The standard has two major
+releases: 1.1 and 2.0. As of Gluu Server 2.4, we support both, although
+1.1 will be deprecated soon.
 
 ## Specification
 
-SCIM is integrated as a service of oxTrust. To start operating with SCIM’s web service, you need to send a request to 
-one of SCIM’s endpoints.
+SCIM is integrated as a service of oxTrust. To start operating with
+SCIM’s web service, you need to send a request to one of SCIM’s
+endpoints.
 
 ### Available Endpoints
 
@@ -63,12 +68,13 @@ one of SCIM’s endpoints.
 | Bulk       | /Bulk              | 	          | Adding/Modifying resources in bulk          |
 |            |                    | 		      | 			                        	    |
 
-### Access Managmement
+### Access Management
 
-SCIM API's are very powerful. While the SCIM API's don't say two specifically how you protect them--
-its considered to be outside the scope of the document--it does say that OAuth2 is one of the options.
-So it made sense for Gluu to use the UMA API's to issue tokens which are required to call the SCIM
-API's. 
+SCIM APIs are very powerful. While the SCIM APIs do not specify how you
+protect them--its considered to be outside the scope of the document--it
+does say that OAuth2 is one of the options. So it made sense for Gluu to
+use the UMA APIs to issue tokens which are required to call the SCIM
+APIs.
 
 Example:
 
@@ -78,37 +84,45 @@ Accept: application/json
 Authorization: Bearer 91732a27-fd00-487a-9dde-a6ed2fac6949
 ```
 
-How do you get one of these bearer tokens? You'll need to read up on the UMA protocol. 
-Basically, the first time you call the SCIM API's, oxTrust will return a 403 and permission 
-ticket. Your UMA client will have to present this permission ticket to the oxAuth UMA Authorization API
-endpoints (the rpt_endpoint) to obtain a token.
+How do you get one of these bearer tokens? You'll need to read up on the
+UMA protocol. Basically, the first time you call the SCIM API, oxTrust
+will return both a 403 error code, and permission ticket. Your UMA
+client will have to present this permission ticket to the oxAuth UMA
+Authorization API endpoints (the rpt_endpoint) to obtain a valid token.
 
-From the Gluu Server admin perspective, you'll need to make sure there is an UMA Scope created,
-and that this scope is associated with a policy that enables the client to call the SCIM API's. For example, 
-out of the box, the Gluu Server ships with a policy for an client id white list.  
+From the Gluu Server admin perspective, you will need to make sure there
+is an UMA Scope created, and that this scope is associated with a policy
+that enables the client to call the SCIM APIs. For example, out of the
+box, the Gluu Server ships with a policy for an client id white list.
 
-For more information, see the Gluu Server UMA documentation. Just remember for SCIM, oxTrust is the "UMA Resource 
-Sever", and the SCIM client is the UMA Client.
+For more information, see the Gluu Server UMA documentation. Just
+remember for SCIM, oxTrust is the "UMA Resource Server", and the SCIM
+client is the UMA Client.
 
 ## SCIM REST API Reference
- 
-For API documentation, you should see the reference section:
+
+For API documentation, have a look at the reference section:
 
  * [SCIM 1.1 API Reference](../../reference/api/scim-1.1.md)
  * [SCIM 2.0 API Reference](../../reference/api/scim-2.0.md)
 
 ## SCIM Client Library
 
-SCIM-Client library is a Java SDK facilitate SCIM development. It can be found on Gluu's Github repository: 
+SCIM Client library is a Java SDK to facilitate SCIM development. It can
+be found on Gluu's Github repository:
+
  * [https://github.com/GluuFederation/SCIM-Client](https://github.com/GluuFederation/SCIM-Client)
 
 ### oxAuth Client Creation
 
-It’s possible to create an oxAuth client dynamically using SCIM-Client, this option is available using the 
-static *create* method of the class `OxAuthClientCreator`, where `applicationName` is the name of the desired client, 
-`registerUrl` is the client registration url example:
-`https://idp.example.com/oxauth/seam/resource/restv1/oxauth/register`
-and `redirectUris` is a space separated String containing the desired redirect urls.
+It is possible to create an oxAuth client using the SCIM-Client,
+dynamically. This option is available using the static *create* method
+of the class `OxAuthClientCreator`, whereas the `applicationName` is the
+name of the desired client, and `registerUrl` is the client registration
+uri, for example
+`https://idp.example.com/oxauth/seam/resource/restv1/oxauth/register`.
+The value `redirectUris` is a space-separated string that contains the
+desired redirect uris.
 
 ```
 CreationResult response = OxAuthClientCreator.create( applicationName, registerUrl, redirectUris);
@@ -120,10 +134,12 @@ response.getExpiresAt(); // the expiration date of the client
 
 ### Bulk requests from Excel files
 
-Spreadsheets can be handy. Gluu have embedded SCIM-client with methods that can help you turn an Excel file into a 
-ScimBulkOperation object. For that reason we made two methods available, one for generation bulk users request 
-*mapUsers* method and the other for generating bulk group requests *mapGroups* method, both methods take the path to 
-the “XLS” file as a parameter, methods are available at “ExcelMapper” class:
+Spreadsheets can be handy. Gluu has an embedded SCIM client with methods
+that can help you turn an Excel file into a ScimBulkOperation object.
+For that reason two methods are available--one for generation bulk users
+request named *mapUsers*, and the other one for generating bulk group
+requests named *mapGroups*. Both methods take the path to the “XLS” file
+as a parameter. These methods are available at “ExcelMapper” class:
 
 ```
 ScimBulkOperation usersOperation = ExcelMapper.mapUsers(excelFileLocationUsers);
@@ -133,18 +149,21 @@ ScimBulkOperation groupsOperation = ExcelMapper.mapGroups(excelFileLocationGroup
 You can download the Excel file models from here: 
 https://github.com/GluuFederation/SCIM-Client/tree/master/doc/SampleXLS
 
-Excel files must follow the exact structure, the “Operation” cell defines the type of the operation ”Add, Update, Delete” .
-For groups you can always add more groups to the spreadsheet following the same structure.
-
+Excel files have to follow the exact structure using an “Operation”
+cell. This cell defines the type of the operation. As an operation
+"Add", "Update", and "Delete” are available. For groups you can always
+add more groups to the spreadsheet following the same structure.
 
 <!--
 				********** This part needs some maintenance **********
 
 ## SCIM Developers Guide
-SCIM provides the developers and standardize way to retrieve (or update) user profile information from a data source. 
-To elaborate, developers have no need to manage connections to the SQL tables at back-end.
-Gluu's implementation of SCIM also facilitates the developers in performing User, Group and Bulk CRUD operations. 
-Complete developer guide can be found [Here](http://www.gluu.org/docs/reference/lib/using-scim/).
+SCIM provides the developers and standardize way to retrieve (or update)
+user profile information from a data source. To elaborate, developers
+have no need to manage connections to the SQL tables at back-end. Gluu's
+implementation of SCIM also facilitates the developers in performing
+User, Group and Bulk CRUD operations. Complete developer guide can be
+found [Here](http://www.gluu.org/docs/reference/lib/using-scim/).
 
 ## SCIM Resource Management
 
