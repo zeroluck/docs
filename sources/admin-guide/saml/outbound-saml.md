@@ -68,9 +68,9 @@ Attributes can be sorted by clicking "Show only Active Attributes."
 
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SamlIDPAdminGuide/LDAP_tree_Gluu_server.png?raw=true)
 
-Organization can manage their required attributes from this big LDAP
-tree. Just select the attribute and make it active / inactive in the
-GUI.
+An organization can manage their required attributes from this big LDAP
+tree. Just select the according attribute, and enable or disable it in
+the GUI.
 
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SamlIDPAdminGuide/Active_inactive.png?raw=true)
 
