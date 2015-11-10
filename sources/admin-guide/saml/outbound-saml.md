@@ -88,11 +88,10 @@ like this will appear:
 * _Edit Type_: User who can edit this attribute definition.
 * _View Type_:  User who can view this attribute.
 * _Privacy Level_: From 1 to 5. Select the desired one.
-* _Multivalued_: Is this attribute has multi values? If yes, True. Otherwise, false. 
+* _Multivalued_: Is this attribute has multi values? If yes, True. Otherwise, false.
 * _SCIM Attributes_: Is this attribute in SCIM architecture? True or False.
 * _Description_: Little description of this attribute
-* _Status_: “Active” will release and publish the attribute in IdP. 
- 
+* _Status_: “Active” will release and publish the attribute in IdP.
 
 ## SAML Trust Relationship
 
@@ -107,9 +106,9 @@ In order to create a trust relationship with any SP:
 * Go to SAML → Trust Relationships
 * Click on “Add Relationship”
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/Add_Relationships.png?raw=true)
-* A new page will appear. Here, Gluu Server Administrator needs to
-provide all information regarding SP to establish Trust Relationship
-from Gluu Server.
+* A new page will appear. Here, as a Gluu Server administrator you need
+  to provide all the information regarding the SP to establish Trust
+  Relationship from Gluu Server.
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/TR_new_page.png?raw=true)
     * _Display Name_: Name of the Trust Relationship (it should be unique for every trust relationship)
     * _Description_: Little description. Purpose and SSO link can be added here.
@@ -140,19 +139,23 @@ entityID.
 
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/Federation_3.png?raw=true)
 
-* Public certificate: Upload public certificate for this SP server.
-Please note that: public certificate’s CN (common name) MUST maintain
-the hostname of the SP server. If the SP has no certificate then keep
-this option blank and the IdP will generate a self signed certificate.
+* Public certificate: Upload the public certificate for this SP server.
+  Please note that: public certificate’s CN (common name) MUST maintain
+  the hostname of the SP server. If the SP has no certificate then keep
+  this option blank and the IdP will generate a self signed certificate.
 
 * Released: Release required attributes. Available attributes can be
-grabbed from upper left corner.
+  grabbed from upper left corner.
 
-* More configuration: If SP requires custom relying party and/or custom
-MetadataFilter configuration, that can be achieved using the following
-options:
-* Configure MetadataFilters: Click on this option and Gluu Server will allow you to configure MetadataFilters inside the GUI.
-* Configure specific Relying Party: If the server admin “checks” this option a new link will appear which allows the server administrator to modify various relying party configurations like SAML2SSO, SAML2AttributeQuery, ShibbolethSSO etc. 
+* More configuration: If the SP requires custom relying party and/or 
+  custom MetadataFilter configuration, that can be achieved using the
+  following options:
+    * Configure MetadataFilters: Click on this option and Gluu Server
+      will allow you to configure MetadataFilters inside the GUI.
+    * Configure specific Relying Party: If the server admin “checks”
+      this option a new link will appear which allows the server 
+      administrator to modify various relying party configurations like
+      SAML2SSO, SAML2AttributeQuery, ShibbolethSSO etc.
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/Relying_Party_Configuration.png)
 
