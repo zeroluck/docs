@@ -270,10 +270,17 @@ example script
 
 ## Algorithm
 
-Rules:
+The algorithm follows theses rules:
 
-- Policy protects resources based on scopes. If scope is protected by policy then during RPT authorization such policy script must return true in order to authorize access to resource, otherwise authorization is denied.
-- Scope can be protected by multiple policies. If one scope is protected by multiple policies then all policies must return true to authorize access. If at least one policy returned false then authorization is denied.
+- Policy protects resources based on scopes. If a scope is protected by
+  a policy then during RPT authorization such a policy script has to
+  return true in order to authorize access to resource, otherwise
+  authorization is denied.
+- Scope can be protected by multiple policies. If one scope is protected
+  by multiple policies then all policies have to return true to
+  authorize access. If at least one policy returned false then the
+  authorization is denied.
+
 ![UMA Policy Handling](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/interception_scripts/uma_policy_handling.jpg) 
 
 # Requesting party trust elevation
