@@ -20,18 +20,18 @@ from the target website or application:
 - [Required attribute of website](#required-attribute-of-website)
 - [SSO testing endpoint of website](#sso-testing-endpoint-of-website)
 
-Above three points are described briefly below.
+The three points above are described briefly below.
 
 ## Metadata of website:
 
 Metadata is a XML file which has configuration data used to provision any
 website (SP) or IDP (Gluu Server) to communicate with each other. It is
-interchangeable between IDP and SP.
+interchangeable between the IDP and the SP.
 
-Websites (SP) can provide metadata via URL or as a standalone separate
-file. If SP provide an XML separate file, Gluu Server can check the
-integrity of that metadata with it's own mechanism, which can be shown
-and tested from Gluu Server oxTrust GUI.
+Websites (SP) can provide metadata via URL or as a separate file. If the
+SP provides an separate XML file, the Gluu Server can check the
+integrity of that metadata with its own mechanism. This mechanism can be
+shown and tested from Gluu Server oxTrust GUI.
 
 ## Required attribute of website:
 
