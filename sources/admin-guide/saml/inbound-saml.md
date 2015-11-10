@@ -202,32 +202,33 @@ Configure `idp.conf`:
 # Add New Identity Provider
 
 All our configurations are based on one Asimba configuration file named
-`asimba.xml`. It's also possible to configure Asimba with JDBC. For more info view the
-Asimba [wiki](http://sourceforge.net/p/asimba/wiki/Home/).
+`asimba.xml`. It's also possible to configure Asimba with JDBC. For more
+info view the Asimba [wiki](http://sourceforge.net/p/asimba/wiki/Home/).
 
 ## Required Files
 
 * Metadata of remote IDP
 * SAML certificate of remote IDP
 
-## Configure `asimba.xml`: 
+## Configure `asimba.xml`:
 
-* Grab the metadata of remote IDP and save it in some place. Make sure that user tomcat can read this xml copy. 
-    * Specify this metadata in  `<websso>\<method>\<idps>` section. 
-        * `idp id` must follow the entityID of this metadata.
-        * `scoping` should be "false"
-        * Add the static path of metadata inside `<file>` section. 
-    
-A sample configuration should look like below:
+* Grab the metadata of the remote IDP, and save it in some place. Make
+  sure that the user `tomcat` can read this xml copy.
+    * Specify this metadata in the `<websso>\<method>\<idps>` section.
+        * The `idp id` has to follow the entityID of this metadata.
+        * The `scoping` should be "false".
+        * Add the static path of metadata inside the `<file>` section.
 
+A sample configuration looks like that:
 
-            <idp id="https://idp.gluu.org/idp/shibboleth" friendlyname="Gluu IDP" scoping="false" 
-                avoid_subjectconfirmation="false">
-                    <nameidpolicy enabled="false" />
-                        <metadata>
-                            <file>${webapp.root}/WEB-INF/metadata/idp/idp_gluu_org.xml</file>
-                        <metadata>
-            </idp>
+```
+<idp id="https://idp.gluu.org/idp/shibboleth" friendlyname="Gluu IDP" scoping="false" avoid_subjectconfirmation="false">
+	<nameidpolicy enabled="false" />
+	<metadata>
+		<file>${webapp.root}/WEB-INF/metadata/idp/idp_gluu_org.xml</file>
+	</metadata>
+</idp>
+```
 
 ## Work on IDP Keystore: 
 
