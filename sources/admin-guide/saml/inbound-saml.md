@@ -288,17 +288,18 @@ A sample configuration of requestor's profile configuration:
 
 ## Work on SP Keystore
 
-* Import the SAML certificate of SP into Asimba's JKS
-    * Convert certificate into DER format
-    * Import this der formatted certificate into Asimba's keystore
-    * Please note that it's a good practice to follow the SP's `entityID` as `alias` of this certificate.
+* Import the SAML certificate of the SP into Asimba's JKS.
+    * Convert the certificate into DER format.
+    * Import this DER formatted certificate into Asimba's keystore.
+    * Please note that it is a good practice to follow the SP's
+      `entityID` as `alias` of this certificate.
 
-Sample command would be:
+A sample command is:
 
-        keytool -import -trustcacerts -alias https://sptest2.gluu.org/secure \
+```
+keytool -import -trustcacerts -alias https://sptest2.gluu.org/secure \
             -file sp_gluu_org.der -keystore asimba-keystore.jks
-
-
+```
 ## SP Restart Tomcat
 If everything was done correctly, the SP is now configured in Asimba. 
 
