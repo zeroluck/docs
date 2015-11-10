@@ -49,8 +49,9 @@ releases: 1.1 and 2.0. As of Gluu Server 2.4, we support both, although
 
 ## Specification
 
-SCIM is integrated as a service of oxTrust. To start operating with SCIM’s web service, you need to send a request to 
-one of SCIM’s endpoints.
+SCIM is integrated as a service of oxTrust. To start operating with
+SCIM’s web service, you need to send a request to one of SCIM’s
+endpoints.
 
 ### Available Endpoints
 
@@ -69,10 +70,11 @@ one of SCIM’s endpoints.
 
 ### Access Management
 
-SCIM API's are very powerful. While the SCIM API's don't say two specifically how you protect them--
-its considered to be outside the scope of the document--it does say that OAuth2 is one of the options.
-So it made sense for Gluu to use the UMA API's to issue tokens which are required to call the SCIM
-API's. 
+SCIM APIs are very powerful. While the SCIM APIs do not specify how you
+protect them--its considered to be outside the scope of the document--it
+does say that OAuth2 is one of the options. So it made sense for Gluu to
+use the UMA APIs to issue tokens which are required to call the SCIM
+APIs.
 
 Example:
 
@@ -82,10 +84,11 @@ Accept: application/json
 Authorization: Bearer 91732a27-fd00-487a-9dde-a6ed2fac6949
 ```
 
-How do you get one of these bearer tokens? You'll need to read up on the UMA protocol. 
-Basically, the first time you call the SCIM API's, oxTrust will return a 403 and permission 
-ticket. Your UMA client will have to present this permission ticket to the oxAuth UMA Authorization API
-endpoints (the rpt_endpoint) to obtain a token.
+How do you get one of these bearer tokens? You'll need to read up on the
+UMA protocol. Basically, the first time you call the SCIM API, oxTrust
+will return both a 403 error code, and permission ticket. Your UMA
+client will have to present this permission ticket to the oxAuth UMA
+Authorization API endpoints (the rpt_endpoint) to obtain a valid token.
 
 From the Gluu Server admin perspective, you'll need to make sure there is an UMA Scope created,
 and that this scope is associated with a policy that enables the client to call the SCIM API's. For example, 
