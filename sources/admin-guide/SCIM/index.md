@@ -149,18 +149,21 @@ ScimBulkOperation groupsOperation = ExcelMapper.mapGroups(excelFileLocationGroup
 You can download the Excel file models from here: 
 https://github.com/GluuFederation/SCIM-Client/tree/master/doc/SampleXLS
 
-Excel files must follow the exact structure, the “Operation” cell defines the type of the operation ”Add, Update, Delete” .
-For groups you can always add more groups to the spreadsheet following the same structure.
-
+Excel files have to follow the exact structure using an “Operation”
+cell. This cell defines the type of the operation. As an operation
+"Add", "Update", and "Delete” are available. For groups you can always
+add more groups to the spreadsheet following the same structure.
 
 <!--
 				********** This part needs some maintenance **********
 
 ## SCIM Developers Guide
-SCIM provides the developers and standardize way to retrieve (or update) user profile information from a data source. 
-To elaborate, developers have no need to manage connections to the SQL tables at back-end.
-Gluu's implementation of SCIM also facilitates the developers in performing User, Group and Bulk CRUD operations. 
-Complete developer guide can be found [Here](http://www.gluu.org/docs/reference/lib/using-scim/).
+SCIM provides the developers and standardize way to retrieve (or update)
+user profile information from a data source. To elaborate, developers
+have no need to manage connections to the SQL tables at back-end. Gluu's
+implementation of SCIM also facilitates the developers in performing
+User, Group and Bulk CRUD operations. Complete developer guide can be
+found [Here](http://www.gluu.org/docs/reference/lib/using-scim/).
 
 ## SCIM Resource Management
 
