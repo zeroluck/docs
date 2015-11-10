@@ -35,13 +35,17 @@
 
 ## SCIM Overview
 
-The Simple Cloud Identity Management (SCIM) specification is a standard REST/JSON API to standardize user and group CRUD 
-(create, read, update, delete). You can review the detailed specification at 
-[http://www.simplecloud.info](http://www.simplecloud.info). The standard got started when coders from Google and 
-Salesforce started wondering if they could combine their similar endpoints for user management, reducing the 
-frustration of the community. Identity Management vendors, who were writing connectors to both (and many other 
-SaaS providers) also liked the idea and contributed to the effort. The standard has two major releases: 1.1 and 2.0.
-As of Gluu Server 2.4, we support both, although 1.1 will be deprecated soon.
+The Simple Cloud Identity Management (SCIM) specification is a standard
+REST/JSON API to standardize user and group CRUD (create, read, update,
+delete). You can review the detailed specification at
+[http://www.simplecloud.info](http://www.simplecloud.info). The standard
+got started when coders from Google and Salesforce started wondering if
+they could combine their similar endpoints for user management, reducing
+the frustration of the community. Identity Management vendors, who were
+writing connectors to both (and many other SaaS providers) also liked
+the idea and contributed to the effort. The standard has two major
+releases: 1.1 and 2.0. As of Gluu Server 2.4, we support both, although
+1.1 will be deprecated soon.
 
 ## Specification
 
@@ -63,7 +67,7 @@ one of SCIM’s endpoints.
 | Bulk       | /Bulk              | 	          | Adding/Modifying resources in bulk          |
 |            |                    | 		      | 			                        	    |
 
-### Access Managmement
+### Access Management
 
 SCIM API's are very powerful. While the SCIM API's don't say two specifically how you protect them--
 its considered to be outside the scope of the document--it does say that OAuth2 is one of the options.
