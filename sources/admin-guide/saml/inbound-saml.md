@@ -300,16 +300,20 @@ A sample command is:
 keytool -import -trustcacerts -alias https://sptest2.gluu.org/secure \
             -file sp_gluu_org.der -keystore asimba-keystore.jks
 ```
+
 ## SP Restart Tomcat
 If everything was done correctly, the SP is now configured in Asimba. 
 
 # Configure SP
 
-Now, it's time to configure your SP as it can send the request to Asimba server.
-The primary item to configure Asimba server in SP's configuration is `the
-metadata of Asimba`. Which can be grabbed easily with 
+Now, it is time to configure your SP as it can send the request to the
+Asimba server. The primary item to configure the Asimba server in SP's
+configuration is `the metadata of Asimba`. You can grab uhis information
+with this command:
 
-    wget -c https://<HOSTNAME>/asimba-saml-proxy/profiles/saml2
+```
+wget -c https://<HOSTNAME>/asimba-saml-proxy/profiles/saml2
+```
 
 ## Configure Remote IDP
 
