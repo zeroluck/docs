@@ -337,13 +337,14 @@ requires three things:
 
 # How to Test
 
-The workflow of SAML Proxy is:
+The workflow of the SAML Proxy is:
 
 End user hit the SP --> SP will take user to Asimba's discovery page to
 select IDP --> User will select IDP for authentication --> After
 successful authentication user will be logged into SP.
 
-Gluu has an auto selector mechanism which automatically redirect user
-from specified SP to desired IDP for authentication. If you have
-questions, please open a ticket on [support](http://support.gluu.org).
+The Gluu server has an auto selector mechanism which automatically
+redirects the user from the specified SP to the desired IDP for
+authentication. If you have questions, please open a ticket on
+[support](http://support.gluu.org).
 
