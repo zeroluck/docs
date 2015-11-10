@@ -120,18 +120,19 @@ UID, or an email address. In general, it can be any custom attribute.
 </Location>
 ```
 
-* Restart httpd 
+* Restart httpd
 
 ## Test Asimba Setup
 
-* Try to download the metadata of Asimba server with: `wget -c https://<HOSTNAME>/asimba-saml-proxy/profiles/saml2`
- 
+* Download the metadata of the Asimba server using `wget -c
+  https://<HOSTNAME>/asimba-saml-proxy/profiles/saml2`.
 
 # Add New Service Provider or Identity Provider
 
 All our configurations are based on one Asimba configuration file named
-`asimba.xml`. It's also possible to configure Asimba with JDBC. For more info
-Asimba [wiki](http://sourceforge.net/p/asimba/wiki/Home/) is available.
+`asimba.xml`. It's also possible to configure Asimba with JDBC. For more
+info have a look at the [Asimba
+wiki](http://sourceforge.net/p/asimba/wiki/Home/).
 
 * Required tools
     * Metadata of remote IDP
