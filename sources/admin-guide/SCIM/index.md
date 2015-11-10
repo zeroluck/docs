@@ -90,12 +90,14 @@ will return both a 403 error code, and permission ticket. Your UMA
 client will have to present this permission ticket to the oxAuth UMA
 Authorization API endpoints (the rpt_endpoint) to obtain a valid token.
 
-From the Gluu Server admin perspective, you'll need to make sure there is an UMA Scope created,
-and that this scope is associated with a policy that enables the client to call the SCIM API's. For example, 
-out of the box, the Gluu Server ships with a policy for an client id white list.  
+From the Gluu Server admin perspective, you will need to make sure there
+is an UMA Scope created, and that this scope is associated with a policy
+that enables the client to call the SCIM APIs. For example, out of the
+box, the Gluu Server ships with a policy for an client id white list.
 
-For more information, see the Gluu Server UMA documentation. Just remember for SCIM, oxTrust is the "UMA Resource 
-Sever", and the SCIM client is the UMA Client.
+For more information, see the Gluu Server UMA documentation. Just
+remember for SCIM, oxTrust is the "UMA Resource Server", and the SCIM
+client is the UMA Client.
 
 ## SCIM REST API Reference
  
