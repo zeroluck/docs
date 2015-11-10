@@ -171,14 +171,13 @@ custom properties.
 # UMA Scopes
 
 UMA Scopes are bound to resource sets and are used by policies to check
-whether user the specified user has access to the resource.
-
-An UMA Scope is described in JSON and has following properties:
+whether the specified user has access to the resource. An UMA Scope is
+described in JSON and has the following properties:
 
 - name: name of scope (e.g. View photo, Edit photo)
-- icon_uri: optional property to specify icon for photo
+- icon_uri: optional property to specify an icon for the photo
 
-Example of typical JSON document of scope:
+An example of a typical JSON document of scope can be seen here:
 
 ```
 {
