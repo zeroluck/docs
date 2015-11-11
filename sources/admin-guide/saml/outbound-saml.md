@@ -20,30 +20,31 @@ from the target website or application:
 - [Required attribute of website](#required-attribute-of-website)
 - [SSO testing endpoint of website](#sso-testing-endpoint-of-website)
 
-Above three points are described briefly below.
+The three points above are described briefly below.
 
 ## Metadata of website:
 
 Metadata is a XML file which has configuration data used to provision any
 website (SP) or IDP (Gluu Server) to communicate with each other. It is
-interchangeable between IDP and SP.
+interchangeable between the IDP and the SP.
 
-Websites (SP) can provide metadata via URL or as a standalone separate
-file. If SP provide an XML separate file, Gluu Server can check the
-integrity of that metadata with it's own mechanism, which can be shown
-and tested from Gluu Server oxTrust GUI.
+Websites (SP) can provide metadata via URL or as a separate file. If the
+SP provides an separate XML file, the Gluu Server can check the
+integrity of that metadata with its own mechanism. This mechanism can be
+shown and tested from Gluu Server oxTrust GUI.
 
 ## Required attribute of website:
 
-Every organization has their own policy to release / share attributes
-with any IDP or SP. Gluu Server support and can be configured for
-standard or custom attribute. All can be done from Gluu Server oxTrust
-GUI.
+Every organization has their own policy to release/share attributes with
+any IDP or SP. The Gluu Server supports, and can be configured for
+standard or custom attributes. This can be done from the Gluu Server
+oxTrust GUI.
 
 ## SSO testing endpoint of website:
 
-Every website (SP) should have staging and production URL endpoint which
-can be checked for SSO, where user will hit to log into that SP.
+Every website (SP) should have both a staging and a production uri
+endpoint which can be checked for SSO, where the user will access to log
+into that SP.
 
 # Configuring Outbound SAML SSO
 
@@ -67,9 +68,9 @@ Attributes can be sorted by clicking "Show only Active Attributes."
 
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SamlIDPAdminGuide/LDAP_tree_Gluu_server.png?raw=true)
 
-Organization can manage their required attributes from this big LDAP
-tree. Just select the attribute and make it active / inactive in the
-GUI.
+An organization can manage their required attributes from this big LDAP
+tree. Just select the according attribute, and enable or disable it in
+the GUI.
 
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SamlIDPAdminGuide/Active_inactive.png?raw=true)
 
@@ -87,11 +88,10 @@ like this will appear:
 * _Edit Type_: User who can edit this attribute definition.
 * _View Type_:  User who can view this attribute.
 * _Privacy Level_: From 1 to 5. Select the desired one.
-* _Multivalued_: Is this attribute has multi values? If yes, True. Otherwise, false. 
+* _Multivalued_: Is this attribute has multi values? If yes, True. Otherwise, false.
 * _SCIM Attributes_: Is this attribute in SCIM architecture? True or False.
 * _Description_: Little description of this attribute
-* _Status_: “Active” will release and publish the attribute in IdP. 
- 
+* _Status_: “Active” will release and publish the attribute in IdP.
 
 ## SAML Trust Relationship
 
@@ -106,9 +106,9 @@ In order to create a trust relationship with any SP:
 * Go to SAML → Trust Relationships
 * Click on “Add Relationship”
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/Add_Relationships.png?raw=true)
-* A new page will appear. Here, Gluu Server Administrator needs to
-provide all information regarding SP to establish Trust Relationship
-from Gluu Server.
+* A new page will appear. Here, as a Gluu Server administrator you need
+  to provide all the information regarding the SP to establish Trust
+  Relationship from Gluu Server.
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/TR_new_page.png?raw=true)
     * _Display Name_: Name of the Trust Relationship (it should be unique for every trust relationship)
     * _Description_: Little description. Purpose and SSO link can be added here.
@@ -139,48 +139,57 @@ entityID.
 
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/Federation_3.png?raw=true)
 
-* Public certificate: Upload public certificate for this SP server.
-Please note that: public certificate’s CN (common name) MUST maintain
-the hostname of the SP server. If the SP has no certificate then keep
-this option blank and the IdP will generate a self signed certificate.
+* Public certificate: Upload the public certificate for this SP server.
+  Please note that: public certificate’s CN (common name) MUST maintain
+  the hostname of the SP server. If the SP has no certificate then keep
+  this option blank and the IdP will generate a self signed certificate.
 
 * Released: Release required attributes. Available attributes can be
-grabbed from upper left corner.
+  grabbed from upper left corner.
 
-* More configuration: If SP requires custom relying party and/or custom
-MetadataFilter configuration, that can be achieved using the following
-options:
-* Configure MetadataFilters: Click on this option and Gluu Server will allow you to configure MetadataFilters inside the GUI.
-* Configure specific Relying Party: If the server admin “checks” this option a new link will appear which allows the server administrator to modify various relying party configurations like SAML2SSO, SAML2AttributeQuery, ShibbolethSSO etc. 
+* More configuration: If the SP requires custom relying party and/or 
+  custom MetadataFilter configuration, that can be achieved using the
+  following options:
+    * Configure MetadataFilters: Click on this option and Gluu Server
+      will allow you to configure MetadataFilters inside the GUI.
+    * Configure specific Relying Party: If the server admin “checks”
+      this option a new link will appear which allows the server 
+      administrator to modify various relying party configurations like
+      SAML2SSO, SAML2AttributeQuery, ShibbolethSSO etc.
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/SAMLTrustRelationships/Relying_Party_Configuration.png)
 
-After adding a new Trust Relationship, the server administrator will observe a confirmation page like the one below. Please note that for testing purpose we did not provided any certificates. The IdP created the key and cert by itself. The image below shows a sample Trust Relationship after successful creation.
+After adding a new Trust Relationship, the server administrator will
+observe a confirmation page like the one below. Please note that for
+testing purposes we did not provide any certificates. The IdP created
+both the key and certificate by itself. The image below shows a sample
+Trust Relationship after successful creation.
 
 # FAQ 
 
 * I have a new SP, what do I need to do to create a Trust Relationship from the Gluu Server? 
-    * Basically there are two types of single sign-on: IDP-initiated SSO and SP-initiated SSO. You need to know what kind of SSO it is. 
-        * For SP-initiated SSO, you need to know: 
-            * Required attributes by SP.  
-            * Metadata of SP. 
-            * SSO endpoint / testing endpoint which end user will use to log
-            into SP.   
+    * Basically there are two types of single sign-on: IDP-initiated SSO
+      and SP-initiated SSO. You need to know what kind of SSO it is.
+        * For SP-initiated SSO, you need to know:
+            * Required attributes by SP.
+            * Metadata of SP.
+            * SSO endpoint/testing endpoint which end user will use to log into SP.
 
-        * For IDP-initiated SSO, you need to know: 
-            * Required attribute by SP. 
-            * Metadata of SP ( if possible )
-            * SSO endpoint ( if possible )
+        * For IDP-initiated SSO, you need to know:
+            * Required attribute by SP.
+            * Metadata of SP (if possible)
+            * SSO endpoint (if possible)
 
-* Where I can find my IDP's metadata? 
+* Where I can find my IDP's metadata?
     * Gluu Server IDP metadata is available online at: `https://<yourhostname>/idp/shibboleth`
 
-* What kind of certificates does the Gluu Server use? 
+* What kind of certificates does the Gluu Server use?
     * [Certificates](../certificates/index.md) in Gluu Server
 
-* How can I get the IDP's SAML cert? 
-    * SAML certificate is available in your IDP's metadata. Metadata can be collected by following these [instructions](https://support.gluu.org/view/installation/idp-certificate-entityid-location-http-redirect-location-etc/265). 
-
+* How can I get the IDP's SAML cert?
+    * SAML certificate is available in your IDP's metadata. Metadata can
+      be collected by following these
+[instructions](https://support.gluu.org/view/installation/idp-certificate-entityid-location-http-redirect-location-etc/265).
 
 * I need to update metadata for one Service Provider. How is it possible? 
     * This is pretty easy. Just follow the instructions listed [here](https://support.gluu.org/view/maintenance/update-metadata-for-service-provider/1446). 

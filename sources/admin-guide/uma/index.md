@@ -22,17 +22,32 @@ which may contain logic to grant (or forbid) access. All terminology
 used by this page is borrowed from UMA and Connect specs.
 
 ## UMA in Action
-The diagrams below detail how the various UMA actors interact. 
+The diagrams below detail how the various UMA actors interact.
 
 Some helpful definitions:
-- *Resource Owner (RO)*: An OAuth resource owner that is the "user" in User-Managed Access. This is typically an end-user (a natural person) but it can also be a corporation or other legal person.
-- *Resource Server (RS)*: Where the resources are held. 
-- *Authorization Server (AS)*: A server that governs access based on resource owner policies.
-- *Requesting Party (RP)*: An end-user, or a corporation or other legal person, that uses a client to seek access to a protected resource. The requesting party may or may not be the same party as the resource owner.
-- *Client*: A web or native app that is used to access a digital resource. 
-- *Protection API Token (PAT)*: An entity seeking protection API access MUST have the scope "uma_protection". An access token with at least this scope is called a protection API token (PAT) and an entity that can acquire an access token with this scope is by definition a resource server.
-- *Requesting Party Token (RPT)*: the token that a client presents to a resource server when trying to access a protected resource.
-- *Authorization API Token (AAT)*: An entity seeking authorization API access MUST have the scope "uma_authorization". An access token with at least this scope is called an authorization API token (AAT) and an entity that can acquire an access token with this scope is by definition a client.  
+- *Resource Owner (RO)*: An OAuth resource owner that is the "user" in
+  User-Managed Access. This is typically an end-user (a natural person)
+  but it can also be a corporation or other legal person.
+- *Resource Server (RS)*: Where the resources are held.
+- *Authorization Server (AS)*: A server that governs access based on
+  resource owner policies.
+- *Requesting Party (RP)*: An end-user, or a corporation or other legal
+  person, that uses a client to seek access to a protected resource. The
+  requesting party may or may not be the same party as the resource owner.
+- *Client*: A web or native app that is used to access a digital
+  resource.
+- *Protection API Token (PAT)*: An entity seeking protection API access
+  MUST have the scope "uma_protection". An access token with at least
+  this scope is called a protection API token (PAT) and an entity that
+  can acquire an access token with this scope is by definition a resource
+  server.
+- *Requesting Party Token (RPT)*: the token that a client presents to a
+  resource server when trying to access a protected resource.
+- *Authorization API Token (AAT)*: An entity seeking authorization API
+  access MUST have the scope "uma_authorization". An access token with
+  at least this scope is called an authorization API token (AAT) and an
+  entity that can acquire an access token with this scope is by 
+  definition a client.
 
 ### UMA Authorization Workflow
 ![UMA Authorization Workflow](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/uma/uma_parts.png "UMA Parts")
@@ -58,7 +73,8 @@ properties (defined by UMA specification) as well as custom properties
 (extension that is out of scope of this document). Gluu Server
 guarantees property name uniqueness within response.
 
-The following is an example of a GET request to the UMA configuration discovery endpoint: 
+The following is an example of a GET request to the UMA configuration
+discovery endpoint:
 
 ``` json
 {
@@ -94,47 +110,58 @@ The following is an example of a GET request to the UMA configuration discovery 
 }
 ```
 
-The JSON object returned includes the following configuration information:
+The JSON object returned includes the following configuration
+information:
 
-`version`: The supported UMA core protocol version.
+`version`: the supported UMA core protocol version.
 
-`issuer`: The URI of the issuing authorization server.
+`issuer`: the uri of the issuing authorization server.
 
-`pat_profiles_supported`: The supported OAuth token types used for issuing Protection API Tokens (PATs).
+`pat_profiles_supported`: the supported OAuth token types used for
+issuing Protection API Tokens (PATs).
 
-`aat_profiles_supported`: The supported OAuth token types used for issuing Authorization API Tokens (AATs).
+`aat_profiles_supported`: the supported OAuth token types used for
+issuing Authorization API Tokens (AATs).
 
-`rpt_profiles_supported`: The supported Requesting Party Token (RPT) profiles.
+`rpt_profiles_supported`: the supported Requesting Party Token (RPT)
+profiles.
 
-`pat_grant_types_supported`: The supported OAuth grant types used for issuing PATs.
+`pat_grant_types_supported`: the supported OAuth grant types used for
+issuing PATs.
 
-`aat_grant_types_supported`: The supported OAuth grant types used for issuing AATs.
+`aat_grant_types_supported`: the supported OAuth grant types used for
+issuing AATs.
 
-`token_endpoint`: The URI to request a PAT or AAT.
+`token_endpoint`: the uri to request a PAT or AAT.
 
-`authorization_endpoint`: The URI to request authorization for issuing a PAT or AAT.
+`authorization_endpoint`: the uri to request authorization for issuing a
+PAT or AAT.
 
-`introspection_endpoint`: The URI to introspect an RPT.
+`introspection_endpoint`: the uri to introspect an RPT.
 
-`resource_set_registration_endpoint`: The URI for a resource server to register a resource set.
+`resource_set_registration_endpoint`: the uri for a resource server to
+register a resource set.
 
-`permission_registration_endpoint`: The URI for a resource server to register a requested permission.
+`permission_registration_endpoint`: the uri for a resource server to
+register a requested permission.
 
-`rpt_endpoint`: The URI for the client to request authorization data.
+`rpt_endpoint`: the uri for the client to request authorization data.
 
-`dynamic_client_endpoint`: The URI for registering a dynamic client.
+`dynamic_client_endpoint`: the uri for registering a dynamic client.
 
 # Resource Registration
 
 To let the Gluu Server know which resources are protected by UMA they
-must be registered. Resources are described by following properties:
+must be registered. Resources are described by the following properties:
 
 - name: name of resource
 - scopes: scopes that are available for this resource
-- type:  type of resource (it can be string, uri or what ever, basically it is up to Resource Server what type it should be).
+- type: type of resource (it can be string, uri or what ever, basically
+  it is up to Resource Server what type it should be).
 - icon_uri: uri to the icon.
 
-These are standard properties however a resource description MAY contain custom properties.
+These are standard properties however a resource description MAY contain
+custom properties.
 
 ## Register resource via oxTrust
 
@@ -144,14 +171,13 @@ These are standard properties however a resource description MAY contain custom 
 # UMA Scopes
 
 UMA Scopes are bound to resource sets and are used by policies to check
-whether user the specified user has access to the resource.
-
-An UMA Scope is described in JSON and has following properties:
+whether the specified user has access to the resource. An UMA Scope is
+described in JSON and has the following properties:
 
 - name: name of scope (e.g. View photo, Edit photo)
-- icon_uri: optional property to specify icon for photo
+- icon_uri: optional property to specify an icon for the photo
 
-Example of typical JSON document of scope:
+An example of a typical JSON document of scope can be seen here:
 
 ```
 {
@@ -160,7 +186,8 @@ Example of typical JSON document of scope:
 }
 ```
 
-The Scope JSON MAY contain custom properties which is out of scope of this document.
+The scope JSON MAY contain custom properties which are out of scope of
+this document.
 
 ## Define UMA Scopes via oxTrust
 
@@ -170,21 +197,25 @@ The Scope JSON MAY contain custom properties which is out of scope of this docum
 
 ## Implementation specificity
 
-Scopes types:
+The following types of scopes exist:
 
-- internal: hosted on oxAuth (must provide scope description);
-- external: hosted on other servers;
-- external_auto: scope hosted on other server but which is automatically added during resource set registration or update.
+- internal: hosted on oxAuth (must provide a scope description).
+- external: hosted on other servers.
+- external_auto: a scope hosted on another server but which is
+  automatically added during resource set registration or update.
 
-**Note:** there is no url for internal scope because it is configurable and depends on oxAuth hosting.
+**Note:** there is no uri for an internal scope because it is
+configurable and depends on oxAuth hosting.
 
 UMA url = uma_scopes_endpoint + "/" + oxId;
 
 http://gluu.org/uma/scopes/view = http://gluu.org/uma/scopes + "/" + view
 
-Under http://gluu.org/uma/scopes/view server must provide scope description as json document:
+A server has to provide a scope description as JSON document. The
+following uri is in use: http://gluu.org/uma/scopes/view
 
-**Note:** The Scope endpoint must be present in UMA configuration to make it discoverable.
+**Note:** The scope endpoint has to be present in UMA configuration to
+make it discoverable.
 
 #### External sample ldif
 
@@ -213,15 +244,17 @@ oxIconUrl: http://seed.gluu.org/uma/icons/view_scope.png
 
 # UMA Policies
 
-UMA Policies protect UMA Resources. Protection of resources are made via
-scopes. Gluu server evaluates all policies (identified by scopes) in
+UMA Policies protect UMA Resources. The protection of resources are made
+via scopes. Gluu Server evaluates all policies (identified by scopes) in
 order to grant access.
 
-UMA Policy main properties:
+The UMA Policy main properties are:
 
 - scopes: policy protects resources by scopes.
-- authorization script: script that is evaluated in order to grant or deny access (script basically returns true of false to server).
-- name: it is best to provide an easily understandable name to the policy so that it is clear what the policy protects.  
+- authorization script: script that is evaluated in order to grant or
+  deny access (script basically returns true or false to the server).
+- name: it is best to provide an easily understandable name to the
+  policy so that it is clear what the policy protects.
 
 ## Define Policies
 
@@ -229,23 +262,33 @@ Within the oxTrust interface the Gluu Server admin can define UMA
 policies (pictured below). To achieve this, navigate to Configuration >
 Manage Custom Scripts > UMA Authorization policies.
 
-You can find more information on crafting UMA policies as well as an example script [here](../../reference/interception-scripts/index.md#authorization)
+You can find more information on crafting UMA policies as well as an
+example script
+[here](../../reference/interception-scripts/index.md#authorization).
 
 ![Add UMA Policies](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/uma/uma_oxtrust_policy_add.png)
 
 ## Algorithm
 
-Rules:
+The algorithm follows theses rules:
 
-- Policy protects resources based on scopes. If scope is protected by policy then during RPT authorization such policy script must return true in order to authorize access to resource, otherwise authorization is denied.
-- Scope can be protected by multiple policies. If one scope is protected by multiple policies then all policies must return true to authorize access. If at least one policy returned false then authorization is denied.
+- Policy protects resources based on scopes. If a scope is protected by
+  a policy then during RPT authorization such a policy script has to
+  return true in order to authorize access to resource, otherwise
+  authorization is denied.
+- Scope can be protected by multiple policies. If one scope is protected
+  by multiple policies then all policies have to return true to
+  authorize access. If at least one policy returned false then the
+  authorization is denied.
+
 ![UMA Policy Handling](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/interception_scripts/uma_policy_handling.jpg) 
 
 # Requesting party trust elevation
 
-This section defines the OX claim profile for UMA. Following is a summary:
+This section defines the OX claim profile for UMA. Following is a
+summary:
 
-  - Identifying URI: http://gluu.org/uma/profiles/uma-claim-gluu-1.0
+  - Identifying uri: http://gluu.org/uma/profiles/uma-claim-gluu-1.0
   - Profile author and contact information: Michael Schwartz and Yuriy Zabrovarnyy (info@gluu.org)
   - Updates or obsoletes: None; this profile is new.
   - Syntax and semantics of claim data: As defined below.
@@ -260,10 +303,16 @@ configuration data.
 
 To conform to this option, the authorization server MUST do the following:
 
-  - send "need_reauthentication" error in case AAT does not correspond to authentication level and (or) mode of authorization policy. Together with error authorization server MUST provide:
-      - domain_auth_level - REQUIRED. authentication level required to satisfy authorization policy
-      - domain_auth_mode - REQUIRED. authentication mode required to satisfy authorization policy
-      - authentication_uri - OPTIONAL. authorization server authentication uri for re-authentication with required authentication level and mode
+  - send "need_reauthentication" error in case AAT does not correspond
+    to authentication level and (or) mode of authorization policy.
+    Together with error authorization server MUST provide:
+      - domain_auth_level - REQUIRED. authentication level required to
+        satisfy authorization policy.
+      - domain_auth_mode - REQUIRED. authentication mode required to
+        satisfy authorization policy.
+      - authentication_uri - OPTIONAL. authorization server
+        authentication uri for re-authentication with required
+        authentication level and mode
 
 For example:
 
