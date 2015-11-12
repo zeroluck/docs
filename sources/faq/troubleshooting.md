@@ -21,6 +21,7 @@
 ## VM Issues
 - Have you meddled with your Gluu instance before the issue occurred, i.e. customized any configuration files, or source codes? 
 - Was it a freshly installed OS, or has it been / is it being used for other purposes? It should be a freshly installed OS and dedicated to the Gluu Server only.
+- **Please use [VMware Player](https://www.vmware.com/products/player).** Not VM Box, or any other virtualization software. 
 
 ## Diagnostic Commands to Gauge Health of Installation
 - Try running the command `sudo netstat -lnpt`. Next ports must be present in your output (unless you are running some heavily customized version of Gluu):
