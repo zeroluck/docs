@@ -107,4 +107,4 @@ This will add tempadmin user to the IdP managers group and you can then login an
 ## Revert Authentication Method
 It is possible to get locked out of Gluu Server if the authentication script is faulty or for various other reasons. It is possible to modify the authentication method to revert back to the older method using `ldap` commands. The follwing guide will help you to revert back to the default authentication method.
 
-* [Revert Authentication Method](http://www.gluu.org/docs/articles/auth-script/#reverting-authentication-method)
+* [Revert Authentication Method](../articles/auth-script.md#reverting-authentication-method)
