@@ -106,7 +106,9 @@ You wouldn't want to have your admin password sitting on the filesystem!
 
 ## Add admin for gluu server
 
-Please follow this steps to restore your Gluu admin account (you will probably need to substitute actual port, bind names and hostnames with ones used by your installation):
+Please follow these steps to restore your Gluu admin account (you will
+probably need to substitute actual port, bind names and hostnames with
+ones used by your installation):
 
 1) Login into Gluu's chroot environment with the command below:
 
@@ -116,13 +118,14 @@ Please follow this steps to restore your Gluu admin account (you will probably n
 
 `/opt/opendj/bin/ldapsearch -p 1389 -D 'cn=directory manager' -w 'YOUR_BIND_PASSWORD' -b o=gluu gluuGroupType=gluuManagerGroup 1.1`
 
-and copy displayed dn of the Gluu Manager Group for future use
+and remember the displayed dn of the Gluu Manager Group for future use.
 
 3) Run this command:
 
 `/opt/opendj/bin/ldapsearch -p 1389 -D 'cn=directory manager' -w 'YOUR_BIND_PASSWORD' -b o=gluu ou=people 1.1`
 
-and copy displayed dn of the People ou for future use
+and remember the displayed dn of the People ou for future use.
+
 4) While staying in chrooted environment, create file "add_user.ldif" in your home ("~/") directory here using your favorite text editor, and copy the following lines to it:
 ```
 dn: inum=tempadmin,ou=people,o=@!F9CC.D762.4778.1032!0001!2C72.BB87,o=gluu
