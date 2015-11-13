@@ -130,16 +130,20 @@ anathema to application security.
 
 ## What are the future identity protocols and is the Gluu Server future-proof?
 
-There is a major paradigm shift happening right now. In the past, there were too many Internet standards for
-web authentication: OpenID 2.0, OAuth 1.0, WS-Federation, CAS, and many other protocols are on the trash heap
-of failed or fading efforts. Finally, new standards have arisen that use the OAuth2 pattern, leveraging
-a JSON/REST API architecture that is friendly to application developers. There is more consensus than ever
-on how to achieve interoperable security.
+There is a major paradigm shift happening right now. In the past, there
+were too many Internet standards for web authentication: OpenID 2.0,
+OAuth 1.0, WS-Federation, CAS, and many other protocols are on the trash
+heap of failed or fading efforts. Finally, new standards have arisen
+that use the OAuth2 pattern, leveraging a JSON/REST API architecture
+that is friendly to application developers. There is more consensus than
+ever on how to achieve interoperable security.
 
-In the future we will see Microsoft release WAAD - Windows Azure Active Directory. This will position
-OpenID Connect to replace Kerberos, LDAP, SAML and WS-Trust as an application protocols to identify a person.
-Google is already the biggest OpenID Connect IDP on the Internet, and the most cutting edge user of
-identity to deliver services. But in addition to these two giants, a sea of service providers will vie to
+In the future we will see Microsoft release WAAD--Windows Azure Active
+Directory. This will position OpenID Connect to replace Kerberos, LDAP,
+SAML and WS-Trust as an application protocols to identify a person.
+Google is already the biggest OpenID Connect IDP on the Internet, and
+the most cutting edge user of identity to deliver services. But in
+addition to these two giants, a sea of service providers will vie to
 help organizations manage identity.
 
 The Gluu Server has been leading the OpenID Connect Interop since [January 2013](http://www.gluu.co/.fm8t)
