@@ -76,11 +76,18 @@
   it will need even more time.
 
 ## Log Monitoring
-- Monitor logs with `tail -F`, while repeatedly triggering the issue, and provide any suspicious entries that can be relevant to the case:
-`/opt/tomcat/logs/wrapper.log`, `/opt/tomcat/logs/oxauth.log`, `/opt/tomcat/logs/oxtrust.log`, `/opt/tomcat/logs/oxtrust-cache-refresh.log`
-Contents of snapshot directory (for instances running Cache Refresh), Apache logs (keep in mind that Gluu usually defines it's own Apache log), etc. 
+- Monitor logs with `tail -F`, while repeatedly triggering the issue,
+  and provide any suspicious entries that can be relevant to the case:
+  - `/opt/tomcat/logs/wrapper.log`
+  - `/opt/tomcat/logs/oxauth.log`
+  - `/opt/tomcat/logs/oxtrust.log`
+  - `/opt/tomcat/logs/oxtrust-cache-refresh.log`
 
-Stop service, remove/rename wrapper.log and restart the application, then check the recreated wrapper.log (if something fails to start, records telling that may appear in this log)
+Contents of the snapshot directory (for instances running Cache Refresh), Apache logs (keep in mind that Gluu usually defines it's own Apache log), etc. 
+
+Stop the service, remove/rename `wrapper.log` and restart the
+application, then check the recreated file `wrapper.log` (if something
+fails to start, records telling that may appear in this log).
 
 ## Forgot the admin password! 
 
