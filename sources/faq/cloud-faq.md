@@ -27,7 +27,8 @@ mapping in the hosts file, every time the VM was shutdown or rebooted.
 The VM was rebuilt from image and placed into a Networking group to set
 a static Private IP to bypass the assigning of new Public/Private IP.
 
-For a complete step-by-step guide, see the [Microsoft Azure Setup Guide](./azure.md).
+For a complete step-by-step guide, see the [Microsoft Azure Setup
+Guide](./azure.md).
 
 ## Amazon AWS
 
@@ -42,4 +43,8 @@ have regarding any tips or tricks to deploy Gluu Server in any specific
 cloud platform. Your feedback and suggestions are valuable to us and
 will allow us to enrich the community knowledge.
 
-**Please [post a commit](https://github.com/GluuFederation/docs/blob/master/sources/faq/cloud-faq.md) or open a support ticket in the [Gluu Support Portal](https://support.gluu.org) to notify us about your feedback and suggestions.**
+**Please [post a
+commit](https://github.com/GluuFederation/docs/blob/master/sources/faq/cloud-faq.md)
+or open a support ticket in the [Gluu Support
+Portal](https://support.gluu.org) to notify us about your feedback and
+suggestions.**
