@@ -25,15 +25,32 @@
   Try to disable it and see whether it will resolve the issue.
 
 ## Networking
-- Is there an unobstructed route between the machine from which you are accessing your Gluu's instance, and the machine at which it's installed? Firewalls on the destination host or, sometimes, security safeguards put by virtual machine renting service providers can be cutting off your Gluu from the outside world by default, and may require additional configuration efforts, specific to the particular case. Make sure that all needed ports are accessible and that Gluu is indeed the one who is listening on them. For Cache Refresh users: make sure that backend (source) LDAP database is accessible from the machine where Gluu is installed.
+- Is there an unobstructed route between the machine from which you are
+  accessing your Gluu's instance, and the machine at which it's
+  installed? Firewalls on the destination host or, sometimes, security
+  safeguards put by virtual machine renting service providers can be
+  cutting off your Gluu from the outside world by default, and may require
+  additional configuration efforts, specific to the particular case. Make
+  sure that all needed ports are accessible and that Gluu is indeed the
+  one who is listening on them. For Cache Refresh users: make sure that
+  backend (source) LDAP database is accessible from the machine where Gluu
+  Server is installed.
 
 ## Cloud Setups
-- Be particularly cautious when dealing with cloud setups, as some solutions have strange and problematic network layouts, while others can severely limit disk access speeds, which results in prolonged service starts that can be mistaken for malfunctioning. See our [cloud FAQ's](./cloud-faq.md)
+- Be particularly cautious when dealing with cloud setups, as some
+  solutions have strange and problematic network layouts, while others
+  can severely limit disk access speeds, which results in prolonged
+  service starts that can be mistaken for malfunctioning. For further
+  details have a look at our [cloud faq](./cloud-faq.md).
 
 ## VM Issues
-- Have you meddled with your Gluu instance before the issue occurred, i.e. customized any configuration files, or source codes? 
-- Was it a freshly installed OS, or has it been / is it being used for other purposes? It should be a freshly installed OS and dedicated to the Gluu Server only.
-- **Please use [VMware Player](https://www.vmware.com/products/player).** Not VM Box, or any other virtualization software. 
+- Have you meddled with your Gluu instance before the issue occurred,
+  i.e. customized any configuration files, or source codes?
+- Was it a freshly installed OS, or has it been / is it being used for
+  other purposes? It should be a freshly installed OS and dedicated to
+  the Gluu Server, only.
+- **Please use [VMware Player](https://www.vmware.com/products/player).** 
+  Not VM Box, or any other virtualization software.
 
 ## Diagnostic Commands to Gauge Health of Installation
 - Try running the command `sudo netstat -lnpt`. Next ports must be present in your output (unless you are running some heavily customized version of Gluu):
