@@ -91,11 +91,18 @@ fails to start, records telling that may appear in this log).
 
 ## Forgot the admin password! 
 
-Oh no, its been a few days since you booted your test Gluu Server, and you can't remember the admin password. No worries, the Gluu
-Server stores this in `/install/community-edition-setup/setup.properties.last` under the property `ldapPass`. Try 
-    # grep ldapPass= /install/community-edition-setup/*.last
+Oh no, its been a few days since you booted your test Gluu Server, and
+you can't remember the admin password. No worries, the Gluu Server
+stores this information in the file
+`/install/community-edition-setup/setup.properties.last` under the
+property `ldapPass`. Retrieve the data using this command:
 
-Of course for a production installation, you should remove this file. Wouldn't want to have your admin password sitting on the filesystem!
+```
+# grep ldapPass= /install/community-edition-setup/*.last
+```
+
+Of course for a production installation, you should remove this file.
+You wouldn't want to have your admin password sitting on the filesystem!
 
 ## Add admin for gluu server
 
