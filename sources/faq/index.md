@@ -73,7 +73,7 @@ TCP/IP, DNS, HTTP and SSL. After 20 years, we have the standards on
 which to build the Internet's identity infrastructure. Free open source
 tools like the Gluu Server make these new identity standards accessible
 to the masses. Now any domain can authenticate like Google (or at least
-using the same API's and conventions).
+using the same APIs and conventions).
 
 ## Why do organizations need the Gluu Server?
 
