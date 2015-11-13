@@ -146,11 +146,14 @@ the most cutting edge user of identity to deliver services. But in
 addition to these two giants, a sea of service providers will vie to
 help organizations manage identity.
 
-The Gluu Server has been leading the OpenID Connect Interop since [January 2013](http://www.gluu.co/.fm8t)
-We lead the development of the [Enterprise UMA](http://www.gluu.co/kantara) use case. We also participated
-in the design of the Juju Application Security Protocol, which defines the interfaces between web and mobile
-applications, and the open-standard based security components. We are leading an effort to standardize
-Oauth2 multi-party federation. We also have the first implementation of an OpenID Connect Proxy.
+The Gluu Server has been leading the OpenID Connect Interop since
+[January 2013](http://www.gluu.co/.fm8t) We lead the development of the
+[Enterprise UMA](http://www.gluu.co/kantara) use case. We also
+participated in the design of the Juju Application Security Protocol,
+which defines the interfaces between web and mobile applications, and
+the open-standard based security components. We are leading an effort to
+standardize Oauth2 multi-party federation. We also have the first
+implementation of an OpenID Connect Proxy.
 
 The Gluu Server has always been ahead, and without the constraint of know-it-all venture capitalists, telling
 us how to run our business, we are free to develop not only what the market wants today, but we think
