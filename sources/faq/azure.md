@@ -9,13 +9,12 @@ independent.
 
 1. Log into Windows Azure Administrative Panel
 
-2. Click on `Virtual Machines` tab and click `Create a Virtual Machine` link
+2. Click on `Virtual Machines` tab, and click `Create a Virtual Machine` link
 
-3. Choose `Compute` --> `Virtual Machine` --> `From Gallery` branch from
-the menu.
+3. From the menu, choose `Compute` --> `Virtual Machine` --> `From Gallery` branch.
 
 4. Choose Ubuntu Server 14.04 LTS or CentOS 6.7. Remember to set selinux
-to permissive if you choose CentOS.
+   to permissive if you choose CentOS.
 
 5. Provide a name for the VM in the `Virtual Machine Name` field and use
 `Standard` for `Tier`.
@@ -23,8 +22,9 @@ to permissive if you choose CentOS.
 6. Select at least `A2` variant equipped with 3.5GB RAM in the `Size`
 dropdown menu.
 
-7. Provide username that will be used to connect via ssh and set access
-password, or upload certificate for passwordless auth; click `Next`.
+7. Provide an username to connect via ssh, and define an according
+   access password, or upload a certificate for an authentification 
+   without passwords. Then, click `Next`.
 
 8. Create a new cloud service and select `None` for `Availability Set`
 option.
