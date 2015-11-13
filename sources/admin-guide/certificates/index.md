@@ -40,11 +40,11 @@ _Installing Intermediate Certificates_
 
 To install intermediate certificates follow these steps:
 
-1. log into your Gluu Server container
-2. keep your intermediate certificate in the file `/etc/certs/`
-3. modify `/etc/httpd/conf.d/https_gluu.conf`, and add
-   `SSLCertificateChainFile /etc/certs/name_of_your_interm_root_cert.crt`
-4. restart the service of the httpd server
+1. Log into your Gluu Server container.
+2. Keep your intermediate certificate in the file `/etc/certs/`.
+3. Modify `/etc/httpd/conf.d/https_gluu.conf`, and add
+   `SSLCertificateChainFile /etc/certs/name_of_your_interm_root_cert.crt`.
+4. Restart the service of the httpd server.
 
 _Older Gluu Server Versions_
 
