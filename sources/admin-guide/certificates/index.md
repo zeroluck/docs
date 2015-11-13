@@ -48,16 +48,18 @@ To install intermediate certificates follow these steps:
 
 _Older Gluu Server Versions_
 
-**If you are using a previous version of the Gluu Server,** you may have interfaces inside your server admin application to configure the following certs:
+**If you are using a previous version of the Gluu Server,** you may have
+interfaces inside your server admin application to configure the
+following certs:
 
-- [HTTPS](./https.md)   
-- [SAML](./saml.md)   
-- [OpenID Connect](./openid-connect.md)   
+- [HTTPS](./https.md)
+- [SAML](./saml.md)
+- [OpenID Connect](./openid-connect.md)
 
 [asimba]: http://sourceforge.net/projects/asimba/ "Access Management and Single Sign-on platform (Asimba), Sourceforge"
 
 ## OpenDJ
-`opendj.crt` is the public cert being used by oxAuth to make a
+`opendj.crt` is the public certificate being used by oxAuth to make a
 connection to the internal Gluu-LDAP.
 
 ## oxAuth
