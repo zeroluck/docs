@@ -1,16 +1,28 @@
 [TOC]
+
 # Troubleshooting
 ## Memory
-- Does the system have enough memory/CPU? For a production deployment, at least 4GB of RAM is required for tomcat and the full amount of RAM assigned for the host should be no less than 6GB. 
+- Does the system have enough memory/CPU? For a production deployment,
+  at least 4GB of RAM is required for Apache Tomcat. The full amount of
+  RAM assigned for the host should be no less than 6GB.
 
 ## OS
-- The Gluu Server must be installed on a **64-bit** OS. If the host doesn't meet these requirements, it will not work. 
+- The Gluu Server has to be installed on a **64-bit** OS. If the host
+  does not meet these requirements, it will not work.
 
-- Is the Gluu Server installed on a supported OS? Please check our [deployment doc](../admin-guide/deployment/index.md#supported-operating-systems) for supported operating systems and versions. 
+- Is the Gluu Server installed on a supported OS? Please check our
+  [deployment document](../admin-guide/deployment/index.md#supported-operating-systems)
+  for the list of supported operating systems and versions.
 
 ## Browser and your local OS
-- Is your browser updated to the most recent version available? Have you tried to access your Gluu instance with some other browser? Does it have any 3rd-party security-related add-ons installed? If it does you should try to switch them off and test the connection again.
-- Do you have any anti-virus solution installed on the machine from which you are accessing Gluu's box, which tries to filter web traffic? Try to disable it and see whether it will resolve the issue.
+- Is your browser updated to the most recent version available? Have you
+  tried to access your Gluu instance with some other browser? Does it
+  have any 3rd-party security-related add-ons installed? If it does you
+  should try to switch them off and test the connection again.
+
+- Do you have any anti-virus solution installed on the machine from
+  which you are accessing Gluu's box, which tries to filter web traffic?
+  Try to disable it and see whether it will resolve the issue.
 
 ## Networking
 - Is there an unobstructed route between the machine from which you are accessing your Gluu's instance, and the machine at which it's installed? Firewalls on the destination host or, sometimes, security safeguards put by virtual machine renting service providers can be cutting off your Gluu from the outside world by default, and may require additional configuration efforts, specific to the particular case. Make sure that all needed ports are accessible and that Gluu is indeed the one who is listening on them. For Cache Refresh users: make sure that backend (source) LDAP database is accessible from the machine where Gluu is installed.
