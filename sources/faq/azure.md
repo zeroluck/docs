@@ -42,25 +42,27 @@ dropdown menu.
 10. Go to the `Dashboard` tab of VM Management Panel and copy the `DNS
     Name`. This is the name that is used to access the Gluu Server.
 
-11. SSH into the VM and install Gluu Server. See our [Deployment
-Guide](http://www.gluu.org/docs/admin-guide/deployment/) for
-installation instructions.
+11. SSH into the VM and install the Gluu Server. See our [Deployment
+    Guide](http://www.gluu.org/docs/admin-guide/deployment/) for
+    installation instructions.
 
 ## Setup.py Configuration
 
 This section describes what to put in the prompt when `setup.py` is run
 after installing Gluu Server.
 
-* IP Address: Do not change the default IP address; just hit `enter`
+* IP Address: Do not change the default IP address; just press `enter`.
 
 * hostname: Use the DNS name that was copied from the `VM Management Panel.
 
-* Update hostname: Choose to update hostname for Ubuntu, but choose no
-if you are running CentOS.
-	* For CentOS, manually update the file `/etc/sysconfig/networking`
-	by adding full DNS name.
+* Update hostname: Choose to update hostname for Ubuntu, but do not
+  change if you are running CentOS.
+	* For CentOS, manually update the file `/etc/sysconfig/networking`,
+      and add the full DNS name.
 
 * Other Settings: The other settings can be left to the default values.
-	* Recommendation: Gluu server requires a 64bit OS and it is recommended to allocate 4GB RAM for `tomcat` in production environments.
+	* Recommendation: the Gluu Server requires a 64bit OS, and allocates
+      at least 4GB of RAM for Apache Tomcat in production environments.
 
-* Now the DNS Name can be used to access the Gluu Server.
+* Now the chosen DNS name can be used to access the Gluu Server.
+
