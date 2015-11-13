@@ -55,24 +55,25 @@ Yes! You can find more information on our
 
 Yes! The Gluu Server provides interfaces for UMA, a new standardized
 profile of OAuth2. [Using
-UMA](http://www.gluu.org/docs/admin-guide/uma/) you can protect web URLs
+UMA](http://www.gluu.org/docs/admin-guide/uma/) you can protect web uris
 like APIs and folders and enforce authorization policies for access.
 
 ## How can the Gluu Server make the Internet a safer place?
 
-It is imperative for our society that we decentralize identity. Facebook and
-Google have bridged our inability to identify our friends on the Internet by
-providing a central identity hub-you can share a Google doc with someone
-only if they have a Google account. With a myriad of vendors producing
-hardware and software that interact on our behalf, we cannot build our society on
-central identity silos. Like enlightened despotism, it seems efficient. But
-over time, it undermines the design goal of the Internet--the resiliency
-of autonomous entities cooperating to form one network.  The Internet
-was made possible by standards like TCP/IP, DNS, HTTP and SSL. After 20 years,
-we have the standards on which to build the Internet's identity infrastructure.
-Free open source tools like the Gluu Server make these new identity standards
-accessible to the masses. Now any domain can authenticate like Google (or at
-least using the same API's and conventions).
+It is imperative for our society that we decentralize identity. Facebook
+and Google have bridged our inability to identify our friends on the
+Internet by providing a central identity hub--you can share a Google doc
+with someone only if they have a Google account. With a myriad of
+vendors producing hardware and software that interact on our behalf, we
+cannot build our society on central identity silos. Like enlightened
+despotism, it seems efficient. But over time, it undermines the design
+goal of the Internet--the resiliency of autonomous entities cooperating
+to form one network. The Internet was made possible by standards like
+TCP/IP, DNS, HTTP and SSL. After 20 years, we have the standards on
+which to build the Internet's identity infrastructure. Free open source
+tools like the Gluu Server make these new identity standards accessible
+to the masses. Now any domain can authenticate like Google (or at least
+using the same API's and conventions).
 
 ## Why do organizations need the Gluu Server?
 
