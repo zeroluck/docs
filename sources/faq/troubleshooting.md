@@ -126,7 +126,10 @@ and remember the displayed dn of the Gluu Manager Group for future use.
 
 and remember the displayed dn of the People ou for future use.
 
-4) While staying in chrooted environment, create file "add_user.ldif" in your home ("~/") directory here using your favorite text editor, and copy the following lines to it:
+4) While staying in the chrooted environment, create the file
+`~/add_user.ldif` using your favorite text editor, and copy the
+following lines to it:
+
 ```
 dn: inum=tempadmin,ou=people,o=@!F9CC.D762.4778.1032!0001!2C72.BB87,o=gluu
 changetype: add
@@ -139,15 +142,21 @@ inum: tempadmin
 gluuStatus: active
 userPassword: 1q2w3e
 ```
-Please note the string's segment marked with bold: you will have to substitute it with dn of your own People ou which you've acquired on step 3)
+
+Please note the string's segment marked with bold: you will have to
+substitute it with dn of your own People ou which you've acquired in
+step 3).
 
 5) Run this command:
 
 `/opt/opendj/bin/ldapmodify -p 1389 -D 'cn=directory manager' -w 'YOUR_BIND_PASSWORD' -f ~/add_user.ldif`
 
-This will create new user tempadmin with attributes provided via file created on step 4)
+This will create new user tempadmin with attributes provided via file
+created in step 4).
 
-6) Now create file "add_2_group.ldif" in your home ("~/") directory and copy the following lines to it:
+6) Now create file `add_2_group.ldif` in your home ("~/") directory and
+copy the following lines to it:
+
 ```
 dn: inum=@!F9CC.D762.4778.1032!0001!2C72.BB87!0003!60B7,ou=groups,o=@!f9cc.d762.4778.1032!0001!2c72.bb87,o=gluu
 changetype: modify
@@ -155,7 +164,11 @@ add: member
 member: inum=tempadmin,ou=people,o=@!f9cc.d762.4778.1032!0001!2c72.bb87,o=gluu
 ```
 
-Please again note the strings' segment marked with bold: you will have to substitute contents of the "dn:" string with dn of your own Gluu Manager Group which you've acquired on step 2), and for "member:" string you will have to use the dn of tempadmin user (the one you specified in 1st line of the file in step 4)
+Again, please note the strings' segment marked with bold: you will have
+to substitute contents of the "dn:" string with dn of your own Gluu
+Manager Group which you've acquired in step 2), and for "member:" string
+you will have to use the dn of tempadmin user (the one you already
+specified in the 1st line of the file in step 4).
 
 7) Run this command:
 
