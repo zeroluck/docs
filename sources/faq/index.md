@@ -155,16 +155,22 @@ the open-standard based security components. We are leading an effort to
 standardize Oauth2 multi-party federation. We also have the first
 implementation of an OpenID Connect Proxy.
 
-The Gluu Server has always been ahead, and without the constraint of know-it-all venture capitalists, telling
-us how to run our business, we are free to develop not only what the market wants today, but we think
-it needs. And if someone else writes a free open source component that is better than what OX provides,
-we will abandon our OX component in its favor. This vacuum cleaner approach to open source enables us
-to stay a step ahead of our slow-footed enterprise competition, getting components to market faster and better.
+The Gluu Server has always been ahead, and without the constraint of
+know-it-all venture capitalists, telling us how to run our business, we
+are free to develop not only what the market wants today, but we think
+it needs. And if someone else writes a free open source component that
+is better than what OX provides, we will abandon our OX component in its
+favor. This vacuum cleaner approach to open source enables us to stay a
+step ahead of our slow-footed enterprise competition, getting components
+to market faster and better.
 
 ## What will you learn if you read all the docs?
 
-After reading the docs, you should be ready to deploy the Gluu Server, and start testing your OpenID Connect,
-SAML, and UMA applications. You will be able to articulate the roadmap for security to developers in your
-organization. Importantly, after reading these docs, programmers, system administrators, and Chief Information
-Security Officer should be able to get alignment much more quickly on the important standards, and the
-moving pieces that need to be addressed from a business perspective, not just a technical perspective.
+After reading the docs, you should be ready to deploy the Gluu Server,
+and start testing your OpenID Connect, SAML, and UMA applications. You
+will be able to articulate the roadmap for security to developers in
+your organization. Importantly, after reading these docs, programmers,
+system administrators, and Chief Information Security Officer should be
+able to get alignment much more quickly on the important standards, and
+the moving pieces that need to be addressed from a business perspective,
+not just a technical perspective.
