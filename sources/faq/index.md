@@ -2,15 +2,16 @@
 
 ## What can I do with a Gluu Server?
 
-People-employees, customers, and partners-need to be identified to
+People--employees, customers, and partners--need to be identified to
 interact electronically with an organization. Authentication (_authn_)
 and authorization (_authz_) is a challenge faced by almost every
 organization large enough to register an Internet domain. And its not
 just people that need to be authenticated and authorized. Clients are
 online agents that can interact with services on your behalf. With the
-emergence of the IoT and the API economy, developers and system
-administrators are urgently searching for standards based solutions and
-best practices to improve the security of web and mobile applications.
+emergence of the Internet of Things (IoT) and the API economy,
+developers and system administrators are urgently searching for
+standards based solutions and best practices to improve the security of
+web and mobile applications.
 
 The Gluu Server is like a router for authentication and authorization.
 It speaks multiple dialects of SSO, and can help an organization manage
@@ -21,15 +22,17 @@ exact access management task at hand.
 
 ## How do I install the Gluu Server?
 
-Instructions for installation can be found [here](http://www.gluu.org/docs/admin-guide/deployment/)
+Instructions for installation can be found
+[here](http://www.gluu.org/docs/admin-guide/deployment/).
 
 ## Where can I find license information for the components of the Gluu Server?
 
-Licenses for the various components of the Gluu Server can be found [here](http://www.gluu.org/docs/admin-guide/introduction/#licenses)
+Licenses for the various components of the Gluu Server can be found
+[here](http://www.gluu.org/docs/admin-guide/introduction/#licenses).
 
 ## Can I contribute to the Gluu Server?
 
-Yes, please! Only with community involvement can the Gluu Server become
+Yes, please! Only with community involvement the Gluu Server can become
 the best free open source access management tool. You can fork the code
 on [GitHub](http://github.com/GluuFederation) and push us changes. Your
 input is greatly appreciated!
