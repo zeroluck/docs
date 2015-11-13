@@ -118,12 +118,15 @@ security software on the planet and even on the Internet too!
 
 ## Who wants open source access management?
 
-The Internet will not become a safer place if only big companies can afford security. If organizations
-had to pay a license fee for every web, email and DNS server, the Internet would be a much smaller place.
-Even companies that may opt for a non-open-source solution, may need a cost effective solutions to
-recommend to partners. If you need your partners to support secure open standards for security, you cant
-ask them to buy expensive enterprise software. Finally, privacy advocates around the globe prefer open
-source security solutions. Black boxes are anathema to application security.
+The Internet will not become a safer place if only big companies can
+afford security. If organizations had to pay a license fee for every
+web, email and DNS server, the Internet would be a much smaller place.
+Even companies that may opt for a non-open-source solution, may need a
+cost effective solutions to recommend to partners. If you need your
+partners to support secure open standards for security, you cannot ask
+them to buy expensive enterprise software. Finally, privacy advocates
+around the globe prefer open source security solutions. Black boxes are
+anathema to application security.
 
 ## What are the future identity protocols and is the Gluu Server future-proof?
 
