@@ -1,7 +1,7 @@
 # Installing Gluu Server in Azure
 
-Accessing Gluu Server on Azure can be a little tricky because of the
-Public/Private IP. Here is the step by step guide to creating a VM,
+Accessing the Gluu Server on Azure can be a little bit tricky because of
+the Public/Private IP. Here is the step by step guide to creating a VM,
 installing Gluu Server and accessing the same. These steps are OS
 independent.
 
