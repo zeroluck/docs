@@ -27,20 +27,20 @@ dropdown menu.
    without passwords. Then, click `Next`.
 
 8. Create a new cloud service and select `None` for `Availability Set`
-option.
-	* Endpoints Section: This is  where port forwarding is set so that
-the internal IP address could be selectively reachable from the outside
-world. By default, only ssh tcp 22 port is there; public ports `http`
-and `https` (tcp ports 80 and 443) must be added and mapped to the same
-private ports. If the cloud mappings are flagged conflicting, proceed
-without setting them. Remember to set them after the creation of the VM.
-Click `Next`.
+   option.
+	* Endpoints Section: This is where the port forwarding is set so 
+      that the internal IP address could be selectively reachable from 
+      the outside world. By default, only ssh tcp port 22 is there. The
+      public ports for http and https (tcp ports 80 and 443) have to be 
+      added and mapped to the same private ports. If the cloud mappings
+      are flagged conflicting, proceed without setting them. Remember to 
+      set them after the creation of the VM. Then, click `Next`.
 
 9. Choose not to install `VM Agent` and click the `tick` button to
-finalize the VM.
+   finalize the VM.
 
 10. Go to the `Dashboard` tab of VM Management Panel and copy the `DNS
-Name`. This is the name that is used to access Gluu Server.
+    Name`. This is the name that is used to access the Gluu Server.
 
 11. SSH into the VM and install Gluu Server. See our [Deployment
 Guide](http://www.gluu.org/docs/admin-guide/deployment/) for
