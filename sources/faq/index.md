@@ -77,36 +77,44 @@ using the same API's and conventions).
 
 ## Why do organizations need the Gluu Server?
 
-For years, deploying an application access management suite was too expensive
-for any but the largest enterprises, who engineered tightly bundled proprietary
-application security solutions like Oracle Access Manager, IBM Tivoli Access Manager
-or CA SiteMinder. These security suites used proprietary protocols and resulted in
-vendor lock-in. The Gluu server offers an alternative:
-enterprise class access management, using 100% open source components
-that are free to use in production. This recipe has been developed by Gluu over the
-last five years, and is proven to work in a variety of deployments around the globe
-that vary in size from small to humongous.
+For years, deploying an application access management suite was too
+expensive for any but the largest enterprises, who engineered tightly
+bundled proprietary application security solutions like Oracle Access
+Manager, IBM Tivoli Access Manager or CA SiteMinder. These security
+suites used proprietary protocols and resulted in vendor lock-in. The
+Gluu server offers an alternative: enterprise class access management,
+using 100% open source components that are free to use in production.
+This recipe has been developed by Gluu over the last five years, and is
+proven to work in a variety of deployments around the globe that vary in
+size from small to humongous.
 
 ## Why does the Gluu Server rock?
 
-The Gluu server makes simple things easy. For example, if your organization has Active Directory,
-without writing any custom code, you can map your users, leverage your existing passwords, and
-configure SSO with SAML or OpenID Connect websites. Voila!
+The Gluu server makes simple things easy. For example, if your
+organization has Active Directory, without writing any custom code, you
+can map your users, leverage your existing passwords, and configure SSO
+with SAML or OpenID Connect websites. Voila!
 
-But for complex deployments, the Gluu Server is both scalable and flexible.
+But for complex deployments, the Gluu Server is both scalable and
+flexible.
 
-As mentioned above, the Gluu offers "interception scripts" which enable system administrators to use
-Jython to specify custom business logic at several critical integration points. The Gluu Server can call other APIs (for example fraud detection
-or strong authentication) to tie together the components of security and identity infrastructure of your domain. Interception scripts are the glue of the Gluu Server. You can implement any crazy plan you can code to define the workflow for authentication, authorization, logout and
-more.
+As mentioned above, the Gluu offers "interception scripts" which enable
+system administrators to use Jython to specify custom business logic at
+several critical integration points. The Gluu Server can call other APIs
+(for example fraud detection or strong authentication) to tie together
+the components of security and identity infrastructure of your domain.
+Interception scripts are the glue of the Gluu Server. You can implement
+any crazy plan you can code to define the workflow for authentication,
+authorization, logout and more.
 
-This Gluu Server has more features and is easier to manage than commercial alternatives. This
-recipe includes some of the most widely deployed federation components: like the Shibboleth SAML
-Identity Provider, and some of the most cutting edge security solutions available anywhere: like
-the OX UMA Authorization Server.
+This Gluu Server has more features and is easier to manage than
+commercial alternatives. This recipe includes some of the most widely
+deployed federation components: like the Shibboleth SAML Identity
+Provider, and some of the most cutting edge security solutions available
+anywhere like the OX UMA Authorization Server.
 
-Feel confident that you are using the best open source application security software on the
-planet and even on the Internet too!
+Feel confident that you are using the best open source application
+security software on the planet and even on the Internet too!
 
 ## Who wants open source access management?
 
