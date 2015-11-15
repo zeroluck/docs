@@ -128,5 +128,10 @@ FAQ](../../faq/troubleshooting.md) for solutions to common issues. In
 addition, you can browse our [support site](https://support.gluu.org)
 for solutions to common problems we know about.
 
-
+## Support
+Gluu offers both community and VIP support. Anyone can browse and open
+tickets on our [support portal](http://support.gluu.org). For private
+support, expedited assistance, and strategic consultations, please view
+[our pricing](http://gluu.org/pricing) and [schedule a meeting with
+us](http://gluu.org/booking) to discuss VIP support options.
 
