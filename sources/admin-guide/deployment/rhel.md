@@ -31,20 +31,21 @@ The Gluu Server Community Edition should be deployed on a VM with:
 Please review the [deployment guide](./index.md) for a list of available
 components during the installation.
 
-## Installing GLUU Server with yum:
+## Installing GLUU Server with yum (RHEL 6):
 
- RHEL 6:
-`# wget http://repo.gluu.org/rhel/Gluu.repo -O /etc/yum.repos.d/Gluu.repo`
+These are the single steps:
 
-`# wget http://repo.gluu.org/rhel/RPM-GPG-KEY-GLUU -O /etc/pki/rpm-gpg/RPM-GPG-KEY-GLUU`
+```
+# wget http://repo.gluu.org/rhel/Gluu.repo -O /etc/yum.repos.d/Gluu.repo
+# wget http://repo.gluu.org/rhel/RPM-GPG-KEY-GLUU -O /etc/pki/rpm-gpg/RPM-GPG-KEY-GLUU
+# rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-GLUU
+# yum clean all
+# yum install gluu-server
+```
 
-`# rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-GLUU`
+## Start Gluu Server: 
 
-`# yum clean all`
-
-`# yum install gluu-server`
-
-## Start Gluu-Server: 
+To start the Gluu Server, run the following command:
 
 `# service gluu-server start`
 
@@ -52,10 +53,10 @@ components during the installation.
 
 To perform the final configuration of the Gluu Server you need to
 provide some instance specific information, like the DNS hostname, and
-the information required to generate certificates. Post rpm
+the information required to generate the certificates. Post rpm
 installation, run the Gluu Server `setup.py` to complete the
-installation. See [setup.py help](./setup_py.md) or run `./setup.py -h`
-to see the latest installation options.
+installation. For both help and the latest installation options see
+either [setup.py help](./setup_py.md), or run `./setup.py -h`.
 
 * Login to Gluu Server container: 
 
