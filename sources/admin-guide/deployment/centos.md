@@ -52,21 +52,21 @@ To start the Gluu Server, run the following command:
 
 To perform the final configuration of the Gluu Server you need to
 provide some instance specific information, like the DNS hostname, and
-the information required to generate certificates. Post rpm
+the information required to generate the certificates. Post rpm
 installation, run the Gluu Server `setup.py` to complete the
-installation.  See [setup.py help](./setup_py.md) or run `./setup.py -h`
-to see the latest installation options.
+installation. For both help and the latest installation options see
+either [setup.py help](./setup_py.md), or run `./setup.py -h`.
 
-* Login to Gluu Server container: 
+* Login to the Gluu Server container:
 
 `# service gluu-server login`
 
-* Run "setup" script to perform the final installation: 
+* Run the "setup" script to perform the final installation:
 
-`# cd /install/community-edition-setup/`
-
-`# ./setup.py`
-
+```
+# cd /install/community-edition-setup/
+# ./setup.py
+```
 
 After setup.py script successful execution, point your browser to
 `https://hostname` Login with the default user name “admin” and the LDAP
