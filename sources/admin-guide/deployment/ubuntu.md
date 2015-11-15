@@ -92,22 +92,24 @@ clear text passwords for everything: LDAP, admin user, keystores, and
 3DES salt.
 
 If something goes wrong, check `setup.log` for a detailed step-by-step
-of the installation. Or check `setup_errors.log` to just see the errors
-(or stderr output from the scripts).
+of the installation. As an alternative you may check the file
+`setup_errors.log` to just see the errors (or stderr output from the
+scripts).
 
 ### Scripted Installation
 
 If you want to script the installation of the Gluu Server, here is what
 you can do to achieve your goal:
 
-* Save and backup your existing `setup.properties.last`
-* Uninstall existing Gluu-Server installation
-* For new installation you can either grab a new VM or use existing one
-* Run all commands till `service gluu-server login`
-* Copy your saved `setup.properties.last` file into new server's  /install/community-edition-setup/ location
-* Rename `setup.properties.last` to `setup.properties`
-* Run setup script with `./setup.py` command
-
+* Save and backup your existing file `setup.properties.last`.
+* Uninstall existing Gluu Server installation.
+* For a new installation you can either grab a new VM, or just use the
+  existing one.
+* Run all the commands until `service gluu-server login`.
+* Copy your file `setup.properties.last` into the new server's
+  `/install/community-edition-setup/` location.
+* Rename the file `setup.properties.last` to `setup.properties`.
+* Run the setup script with `./setup.py` command.
 
 ## Uninstallation
 
