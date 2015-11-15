@@ -231,11 +231,11 @@ administrator to control who can register an account by issuing a unique
 registration link and sending it to the desired new users.
 
 Any person who knows the link will be able to register an account (as
-long as the link is not expired). Expired Links are deleted according to
+long as the link is not expired). Expired links are deleted according to
 "invite codes expiration process" policy, together with any unconfirmed
 accounts if said link is moderated.
 
-As an option, Invitation Links can be set to be "moderated", and a
+As an option, Invitation links can be set to be "moderated", and a
 number of moderators can be assigned to the link. The moderators come
 from the list of registered users. In this case any newly registered
 user who uses this link will not be immediately able to use his account
