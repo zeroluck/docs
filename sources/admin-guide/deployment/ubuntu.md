@@ -53,13 +53,17 @@ and look for the LDAP password which is the same as the admin password.
 
 Please see our [Cloud Deployment FAQ](../../faq/cloud-faq.md) for cloud
 specific notes and our [Troubleshooting
-FAQ](../../faq/troubleshooting.md) for solutions to common issues. In addition, you can browse our [support site](https://support.gluu.org) for solutions to many common problems. 
+FAQ](../../faq/troubleshooting.md) for solutions to common issues. In
+addition, you can browse our [support site](https://support.gluu.org)
+for solutions to many common problems we know about.
 
 ## Starting and Stopping the Gluu Server
 
-<code> service gluu-server start </code>
- 
-<code> service gluu-server stop </code>
+```
+# service gluu-server start
+
+# service gluu-server stop
+```
 
 ## Login to chroot environment
 
