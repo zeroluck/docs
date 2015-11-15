@@ -90,16 +90,27 @@ and is the last section that is titled Configuration (see image below).
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/WebUI_modification/oxtrust/oxTrust_GUI_mod_configuration_overview.png?raw=true)
 
 - `Title`: Web User Interface title can be modified with this link. 
-- `Display name`: Display Name of IdP in LDAP. [ This change is not suggested to be done by Gluu Server Administrator. As it will change configuration in our central server. ]
-- `Short name`: Short Name of Org in LDAP. [ This change is not suggested to be done by Gluu Server Administrator. As it will change configuration in our central server. ]
-- `Description`: A little description about Gluu Server.
-- `Login page message`: Login page is now using oxAuth, we will more features to support Login page modification through oxAuth. 
-- `Welcome Title Text`: Gluu Server Administrator can add custom Welcome Title Text with feature.
-- `Welcome Page Message`: Various message can be included here. Out of the box, Gluu Server includes these 1. Upload SSL Certificate, 2. Active attribute … etc. messages.
-- `Organization Logo`: Organization logo can be uploaded and activated from here.
-You can upload your logo here, which will be shown in Gluu Server Administrative Control page. 
+- `Display name`: Display Name of IdP in LDAP. This change is not
+  suggested to be done by the Gluu Server administrator as it will
+  change the configuration in our central server.
+- `Short name`: Short Name of the organization in LDAP. This change is
+  not suggested to be done by the Gluu Server administrator as it will
+  change the configuration in our central server.
+- `Description`: A little description about the Gluu Server.
+- `Login page message`: Login page is now using oxAuth, and allows a
+  more detailed Login page modification.
+- `Welcome Title Text`: Gluu Server administrator can add custom welcome
+  title text with this feature.
+- `Welcome Page Message`: Various messages can be included here. Out of
+  the box, the Gluu Server includes these: 
+  - 1. Upload SSL Certificate
+  - 2. Active attribute
+- `Organization Logo`: Organization logo that can be uploaded and
+  activated from here. You can upload your logo here, which will be
+  displayed in the Gluu Server Administrative Control page, then.
 - `Organization Favicon`: Organization favicon can be changed with this feature. 
-- `Menu Color`: It’s a color picker for Gluu Server. Gluu Server’s Web UI color can be changed with this option.
+- `Menu Color`: It is a color picker for the Gluu Server. Gluu Server’s
+  Web UI color can be changed with this option.
 
 # How to Add Custom Attributes to Gluu LDAP
 
