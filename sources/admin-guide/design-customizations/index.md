@@ -114,9 +114,13 @@ and is the last section that is titled Configuration (see image below).
 
 # How to Add Custom Attributes to Gluu LDAP
 
-The following creates a custom objectclass `svPerson` and an attribute called `svPermission` in the LDAP Schema. This procedure can also be used to create any other custom attribute.
+The Gluu Server allows you to add custom attributes. The following
+example creates a custom object class named `svPerson`, and an attribute
+called `svPermission` in the LDAP schema. This procedure can also be
+used to create any other custom attribute.
 
-1. Create a file called `102-sv.ldif` in `/opt/opendj/config/schema/` folder with the following content:
+1. Create a file called `102-sv.ldif` in `/opt/opendj/config/schema/`
+folder with the following content:
 
 ```
 dn: cn=schema
@@ -130,24 +134,37 @@ attributeTypes: ( svPermission-oid NAME 'svPermission'
   X-ORIGIN 'SV custom attribute' )
 objectClasses: ( svPerson-oid NAME 'svPerson' SUP top AUXILIARY MAY ( svPermission) X-ORIGIN 'SV - Custom objectclass' )
 ```
-	1. The oxTrust admin can also be used to add the custom attribute. Please see the [Attribute Section](http://www.gluu.org/docs/admin-guide/configuration/#attributes) for more information.
- 
-2. Restart `opendj` and make sure that there is no error when `opendj` starts.
+	1. The oxTrust administrator can also be used to add the custom
+    attribute. Please see the [Attribute
+    Section](http://www.gluu.org/docs/admin-guide/configuration/#attributes)
+    for more information.
 
-3. Edit the `oxTrust.properties` file in `/opt/tomcat/conf/` folder and add the following.
+2. Restart `opendj`, and make sure that no error occures when `opendj`
+   starts.
 
-	1. Add `svPerson` to `person-objectClass-types`
+3. Edit the file `oxTrust.properties` in the folder `/opt/tomcat/conf/`,
+   and add the following content:
 
-	2. Add `svPerson` to `person-objectClass-displayNames`
+	1. Add `svPerson` to `person-objectClass-types`.
+
+	2. Add `svPerson` to `person-objectClass-displayNames`.
 
 4. Reload the oxTrust properties using `# touch /opt/tomcat/conf/oxtrust.config.reload`.
 
-5. Register this new attribute using the oxTrust admin interface, in the [Attributes](http://www.gluu.org/docs/admin-guide/configuration/#attributes) configuration page. 
-For SAML URI, you can use an https URI like `https://sv.com/schema/svPermission...` but it has no importance as SAML will not be used at all.
+5. Register this new attribute using the oxTrust administrator
+interface, in the
+[Attributes](http://www.gluu.org/docs/admin-guide/configuration/#attributes)
+configuration page. For SAML URI, you can use an https URI like
+`https://sv.com/schema/svPermission...` but it has no importance as SAML
+will not be used at all.
 
 It is also possible to use the attribute as a scope for OpenID Connect.
 
-1. Create a custom scope `svInfo` for OpenID Connect. Please see [OpenID Conncet Scopes](http://www.gluu.org/docs/admin-guide/openid-connect/#scopes) for instructions about custom scope creation.
+1. Create a custom scope `svInfo` for OpenID Connect. Please see [OpenID
+Connect
+Scopes](http://www.gluu.org/docs/admin-guide/openid-connect/#scopes) for
+the instructions about custom scope creation.
 
-2. Add the `svPermission` userclaim to `svInfo` Scope. Make sure you release this scope to your registered clients.
+2. Add the `svPermission` userclaim to `svInfo` scope. Make sure you
+release this scope to your registered clients.
 .
