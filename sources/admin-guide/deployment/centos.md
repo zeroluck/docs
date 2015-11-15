@@ -8,10 +8,10 @@ Linux system, the `/` directory in the Gluu Server is actually
 
 This strategy has its pluses and minuses. In certain circumstances,
 there are ways for a hacker to “break out of the jail”, and escalate to
-the host file system. (You don't want to make any file system links from
-the chroot'd server to the main host!) The benefit is ease of deployment
-(Docker not required...). We wanted a simple package that people could
-install and uninstall quickly.
+the host file system. (You do not want to make any file system links from
+the chroot'd server to the main host!) The benefit is the ease of
+deployment (Docker is not required...). We wanted a simple package that
+people could install and uninstall quickly.
 
 To report issues or provide feedback about the installation process,
 please use
@@ -24,24 +24,27 @@ Portal](https://support.gluu.org).
 The Gluu Server Community Edition should be deployed on a VM with:
 
 * CentOS 6.5
-* 2 CPU Units and at least 4GB Physical Memory (more is always better, though)
+* 2 cpu units and at least 4GB of physical memory (more is always better, though)
 
 ## Available Components
-Please review the [deployment guide](./index.md) for a list of available components during installation. 
+Please review the [deployment guide](./index.md) for a list of available
+components during the installation. 
 
-## Installing GLUU Server with yum:
-  CentOS 6.5:
-`# wget http://repo.gluu.org/centos/Gluu.repo -O /etc/yum.repos.d/Gluu.repo`
+## Installing GLUU Server with yum (CentOS 6.5):
 
-`# wget http://repo.gluu.org/centos/RPM-GPG-KEY-GLUU -O /etc/pki/rpm-gpg/RPM-GPG-KEY-GLUU`
+These are the single steps:
 
-`# rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-GLUU`
+```
+# wget http://repo.gluu.org/centos/Gluu.repo -O /etc/yum.repos.d/Gluu.repo
+# wget http://repo.gluu.org/centos/RPM-GPG-KEY-GLUU -O /etc/pki/rpm-gpg/RPM-GPG-KEY-GLUU
+# rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-GLUU
+# yum clean all
+# yum install gluu-server
+```
 
-`# yum clean all`
+## Start Gluu Server:
 
-`# yum install gluu-server`
-
-## Start Gluu-Server: 
+To start the Gluu Server, run the following command:
 
 `# service gluu-server start`
 
