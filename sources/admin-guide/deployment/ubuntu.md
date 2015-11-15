@@ -113,18 +113,20 @@ you can do to achieve your goal:
 
 ## Uninstallation
 
-Exit from chroot environment to main Linux.
+Exit from the chroot environment to main Linux.
 
 Stop the chroot environment, which will unmount all chroot directories.
 After that, delete both the Gluu Server packages that are installed, and
 the home directory of the Gluu Server user. The following commands
 illustrate the single steps:
 
-<code> # service gluu-server stop </code>
+```
+# service gluu-server stop
 
-<code> # apt-get remove gluu-server </code>
+# apt-get remove gluu-server
 
-<code> # rm -rf /home/gluu-server </code>
+# rm -rf /home/gluu-server
+```
 
 On installation, any modified files are saved in
 `/home/gluu-server.save`. If you want to blow away all remnants of the
