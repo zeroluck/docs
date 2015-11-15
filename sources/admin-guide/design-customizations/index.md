@@ -19,17 +19,17 @@ the CSS and JavaScript locations are *\<contextPath\>/stylesheet* and
 *\<contextPath\>/js* in the configuration file.
 
 It is possible to unpack the contents of the said jar into a folder
-hosted by a web server and change the default cssLocation, jsLocation
-and imgLocation attributes in `oxTrust.properties` and/or in
+hosted by a web server, and change the default cssLocation, jsLocation
+and imgLocation attributes in the file `oxTrust.properties` and/or in
 `oxauth-config.xml`.
 
-* CSS: The location is specified using the property `cssLocation`
+* CSS: The location is specified using the property `cssLocation`.
 
-* Javascript: The location is specified using the property `jsLocation`
+* JavaScript: The location is specified using the property `jsLocation`.
 
-* Images: The location is specified using the property `imgLocation`
+* Images: The location is specified using the property `imgLocation`.
 
-For example, in `oxTrust.properties`
+For example, in `oxTrust.properties` it looks like that:
 
 ```
 cssLocation=https://idp.gluu.org/static/stylesheet
@@ -37,8 +37,8 @@ jsLocation=https://idp.gluu.org/static/js
 imgLocation=https://idp.gluu.org/static/img
 ```
 
-in `oxauth-config.xml`
-(as a children of \<configuration\> node)
+in `oxauth-config.xml` (as a children of \<configuration\> node) it
+looks like that:
 
 ```
 <cssLocation>https://idp.gluu.org/static/stylesheet</cssLocation>
