@@ -128,16 +128,28 @@ illustrate the single steps:
 # rm -rf /home/gluu-server
 ```
 
-On installation, any modified files are saved in
-`/home/gluu-server.save`. If you want to blow away all remnants of the
+On an installation, any modified files are saved in the directory
+`/home/gluu-server.save`. If you want to remove all the remnants of the
 installation, delete these files with the command `rm -rf
 /home/gluu-server.save'.
 
 In some circumstances, the installation can be broken. In that case
 please try the following to force uninstall the package.
 
-<code> # dpkg --purge --force-all gluu-server </code>
+```
+# dpkg --purge --force-all gluu-server
+```
 
+## Troubleshooting
+Please see our [Cloud Deployment FAQ](../../faq/cloud-faq.md) for cloud
+specific notes and our [Troubleshooting
+FAQ](../../faq/troubleshooting.md) for solutions to common issues we
+know about.
 
-
+## Support
+Gluu offers both community and VIP support. Anyone can browse and open
+tickets on our [support portal](http://support.gluu.org). For private
+support, expedited assistance, and strategic consultations, please view
+[our pricing](http://gluu.org/pricing) and [schedule a meeting with
+us](http://gluu.org/booking) to discuss VIP support options.
 
