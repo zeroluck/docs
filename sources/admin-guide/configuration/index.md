@@ -173,11 +173,11 @@ server.
 * _Test LDAP Connection:_ Based on the provided information, this button
   checks whether the connection to the authentication server works fine.
   The scan runs in real time, and it is advised to use it for the Gluu
-  Server Administrators.
+  Server administrators.
 
 ## Default Authentication Method
 
-This allows the Gluu Server Administrator to select the default
+This option allows the Gluu Server administrator to select the default
 authentication mode and level for person authentication. Both are set to
 "Default" until additional authentication mechanisms are enabled via
 [custom scripts](#manage-custom-scripts).
