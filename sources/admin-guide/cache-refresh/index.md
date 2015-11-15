@@ -8,7 +8,7 @@ This feature is sensitive in nature and any incorrect action may result
 in loss of data within the Gluu Server.
 
 ## Overview
-When configured for Cache Refresh, oxTrust acts as a metadirectory. It
+When configured for Cache Refresh, oxTrust acts as a meta-directory. It
 periodically retrieves the full data set from each source LDAP server,
 hashes the values, and stores this hash on the disk--a snapshot file.
 Subsequent results are compared with the last snapshot. Using set
@@ -42,7 +42,7 @@ will halt the users ability to log into the system.
 # Using Cache Refresh
 Cache Refresh **must be enabled** from the [System Configuration](http://www.gluu.org/docs/admin-guide/configuration/#system-configuration) of the [Organization Configuration](http://www.gluu.org/docs/admin-guide/configuration/#organization-configuration) under Configuration menu.
 
-The Gluu Server has two LDAP integrations: (1) authentication and (2)
+The Gluu Server supports two LDAP modes: (1) authentication and (2)
 identity mapping. Only sometimes it is the same LDAP server. To
 synchronize user accounts from an external LDAP directory server, you
 can use the built-in oxTrust features for ”Cache Refresh”, which support
@@ -300,7 +300,7 @@ below:
 
   * _Snapshot Count:_ This defines the total number of snapshots that
   are allowed to be saved in the hard drive of the VM. It is recommended
-  to be kept to 20 shapshots.
+  to be kept to 20 snapshots.
 
 Latest Gluu Servers--including the Community Edition--introduced two
 upgraded sections here:
