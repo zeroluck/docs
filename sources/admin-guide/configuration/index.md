@@ -333,7 +333,10 @@ appear:
   the attribute in IdP.
 
 # Cache Refresh
-Cache Refresh was designed by Gluu to enable an organization to sync a backend LDAP like Active Directory with the Gluu Server. Cache Refresh is a big topic, and because so it is detailed under a separate [Cache Refresh Page](http://www.gluu.org/docs/admin-guide/cache-refresh/).
+Cache Refresh was designed by Gluu to enable an organization to sync a
+backend LDAP like Active Directory with the Gluu Server. Cache Refresh
+is a big topic, and because so it is detailed under a separate [Cache
+Refresh Page](http://www.gluu.org/docs/admin-guide/cache-refresh/).
 
 # Configure Log Viewer
 The Gluu Server has the facility to read log files using the GUI. The
