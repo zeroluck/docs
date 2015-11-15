@@ -4,40 +4,42 @@
 
 The Gluu Server Community Edition should be deployed on a VM with:
 
-* Ubuntu Server 14.04 (Trusty)
-* 2 CPU Units and at least 4GB of physical memory (more is always better, though)
+* Ubuntu Server 14.04 (Trusty Tahr)
+* 2 cpu units and at least 4GB of physical memory (more is always better, though)
 
 ## Available Components
 
 Please review the [deployment guide](./index.md) for a list of available
-components during installation.
+components during the installation.
 
 ## Install 
 
 Download and install Gluu-Server by the following commands. Use the
-`.deb` installation to perform a base chroot installation with following
-Gluu Server Base Ubuntu requirements.
+`.deb` installation to perform a base chroot installation with the
+following Gluu Server Base Ubuntu requirements.
 
 As an alternative, use our Gluu repository for Ubuntu Trusty:
 
-<code> # echo "deb http://repo.gluu.org/ubuntu/ trusty main" > /etc/apt/sources.list.d/gluu-repo.list </code>
+```
+# echo "deb http://repo.gluu.org/ubuntu/ trusty main" > /etc/apt/sources.list.d/gluu-repo.list
 
-<code> # curl http://repo.gluu.org/ubuntu/gluu-apt.key | apt-key add - </code>
+# curl http://repo.gluu.org/ubuntu/gluu-apt.key | apt-key add -
 
-<code> # apt-get update </code>
+# apt-get update
 
-<code> # apt-get install gluu-server </code>
+# apt-get install gluu-server
 
-<code> # service gluu-server start </code>
+# service gluu-server start
 
-<code> # service gluu-server login </code> 
+# service gluu-server login
 
-<code> # cd /install/community-edition-setup/ </code>
+# cd /install/community-edition-setup/
 
-<code> ./setup.py </code>
+#./setup.py
+```
 
 After the successful execution of `setup.py` script, login to oxTrust,
-the policy administration point for Gluu by pointing your browser to
+the policy administration point for Gluu. Point your browser to the uri
 `https://hostname`.
 
 Note: if you are not using a resolvable DNS host, you will need to add
