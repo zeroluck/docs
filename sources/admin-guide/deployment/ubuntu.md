@@ -65,24 +65,27 @@ for solutions to many common problems we know about.
 # service gluu-server stop
 ```
 
-## Login to chroot environment
+## Login to the chroot environment
 
-<code> # service gluu-server login </code>
+```
+# service gluu-server login
+```
 
 Or if you prefer...
 
-<code> chroot /home/gluu-server/ su - </code>
+```
+# chroot /home/gluu-server/ su -
+```
 
 ## Running the latest setup
 
 To perform the final configuration of the Gluu Server you need to
-provide some Gluu Server appliance specific information, like the DNS
-hostname, and the information required for an X.509 certificate. We are
-always working to make the setup easier. After successful Gluu Server
-installation, run the Gluu Server `setup.py` to complete the
-installation. The script is installed in the directory `/install`.
-
-<code> ./setup.py </code>
+provide some instance specific information, like the DNS hostname, and
+the information required to generate the X.509 certificate. Next, run
+the script `setup.py` to complete the installation. The script is
+located in the directory `/install`. For both help and the latest
+installation options see either [setup.py help](./setup_py.md), or run
+`./setup.py -h`.
 
 Make sure you remove or encrypt `setup.properties.last`. It has the
 clear text passwords for everything: LDAP, admin user, keystores, and

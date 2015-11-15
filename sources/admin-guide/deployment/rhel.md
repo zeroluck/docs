@@ -53,7 +53,7 @@ To start the Gluu Server, run the following command:
 
 To perform the final configuration of the Gluu Server you need to
 provide some instance specific information, like the DNS hostname, and
-the information required to generate the certificates. Post rpm
+the information required to generate the X.509 certificate. Post rpm
 installation, run the Gluu Server `setup.py` to complete the
 installation. For both help and the latest installation options see
 either [setup.py help](./setup_py.md), or run `./setup.py -h`.
