@@ -94,26 +94,26 @@ installation:
 `./setup.py -n -f setup.properties.last`
 -->
 
-## Starting | Stopping the Gluu Server
+## Starting and Stopping the Gluu Server
 
 `# service gluu-server start`
 
 `# service gluu-server stop`
 
-## Login to chroot environment
+## Login to the chroot environment
 
 `# service gluu-server login`
 
 ## Gluu Server Uninstallation
 
 Exit from chroot environment to main Linux. Stop the chroot environment,
-remove the Gluu Server, then remove the Gluu yum repository:
+remove the Gluu Server, and remove the Gluu yum repository, afterwards:
 
-`# service gluu-server stop`
-
-`# yum remove gluu-server`
-
-`# rm -f -r /opt/gluu-server.rpm.saved`
+```
+# service gluu-server stop
+# yum remove gluu-server
+# rm -f -r /opt/gluu-server.rpm.saved
+```
 
 <!--
 or 
