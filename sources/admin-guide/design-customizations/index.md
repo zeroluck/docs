@@ -78,14 +78,14 @@ this snippet:
     </s:fragment>
 ```
 
-# Built-in oxTrust customization
+# Built-in oxTrust Customization
 
 Using the oxTrust Web UI, an administrator can quickly style the Gluu
-Server Administration interface by customizing the messages, logo,
-favicon and colors.
+Server Administration interface by customizing the messages, the logo,
+the favicon, and the colors.
 
-In oxTrust, this is under Configuration > Organization Configuration,
-and is the last section, titled Configuration.
+In oxTrust, this is done under Configuration --> Organization Configuration,
+and is the last section that is titled Configuration (see image below).
 
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/WebUI_modification/oxtrust/oxTrust_GUI_mod_configuration_overview.png?raw=true)
 
