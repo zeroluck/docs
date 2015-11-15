@@ -48,7 +48,7 @@ The Gluu Server uses LDAP for persistence to store oxTrust and oxAuth
 data, and to cache user entries.  The Gluu Server packages include "Gluu
 OpenDJ", which is our
 [fork](https://github.com/GluuFederation/gluu-opendj) of OpenDJ 2.6.0,
-the last open source release by Forgerock.  It is possible to use any
+the last open source release by Forgerock. It is possible to use any
 LDAP server, as long as you have the schema and security under control.
 
 We publish the [latest
