@@ -32,7 +32,7 @@ easy.
 * _Self-Service Password Reset:_ The Self-Service Password Reset is
 disabled by default. For Self-Service Password Reset to work the SMTP
 Server (see below) should be configured as well. Password reset link for
-your Gluu server should be something like
+your Gluu Server should be something like
 `https://your.idp.link/identity/person/passwordReminder.htm`.
 
 * _Cache Refresh:_ This is the mechanism which pulls and synchronizes
@@ -50,23 +50,23 @@ and synchronize the existing identity data into the Gluu Server.
 * _DNS Server:_ The address to the DNS Server goes in this field.
 
 * _Maximum Log Size:_ This option can be used to mitigate the space
-issues within the Gluu Server. The Gluu Server automatically zips any
-log file which is bigger than the defined value in this field.
+issues within the Gluu Server. The Gluu Server automatically compresses
+any log file which is bigger than the defined value in this field.
 
 ## SMTP Server Configuration
 
 The Gluu Server can communicate to any SMTP server specified in these
 fields. All Gluu Server related informats *(cron daemon/logwatch/crash
-reports etc.)* can be pushed to the desired Gluu Server Administrator
+reports etc.)* can be pushed to the desired Gluu Server administrator
 using this feature.
 
 ![SMTP Server Configuration](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_smtp.png)
 
-* _SMTP Host:_ Name of the SMTP Host server.
+* _SMTP Host:_ Name of the SMTP host server.
 
-* _From Name:_ Name of the Gluu Server Administrator.
+* _From Name:_ Name of the Gluu Server administrator.
 
-* _From Email Address:_ Email Address of the Gluu Server Administrator.
+* _From Email Address:_ Email address of the Gluu Server administrator.
 
 * _Required Authentication:_ If the SMTP server requires authentication
 for every access, then please enable this option by ticking the
@@ -74,13 +74,13 @@ according checkbox.
 
 * _SMTP User Name:_ The username for the SMTP server goes in this field.
 
-* _SMTP Password:_ The password for the username above goes here. The
-username and password are used to access the SMTP server.
+* _SMTP Password:_ The password for the username from above goes here.
+  Both the username and password are used to access the SMTP server.
 
-* _Requires SSL:_ If the SMTP Server has SSL availability, then enable
-this option by ticking the checkbox.
+* _Requires SSL:_ If the SMTP server has SSL availability, then enable
+  this option by ticking the checkbox.
 
-* _SMTP Port:_ The SMTP Host server port number must be listed here.
+* _SMTP Port:_ The SMTP host server port number has to be listed here.
 
 ## oxTrust Settings
 
@@ -256,7 +256,7 @@ will be presented with the following option:
 
 ## Disable captcha for registration form
 
-Upon activating this feature, the default Captcha will be removed from
+Upon activating this feature, the default captcha will be removed from
 the registration form.
 
 ## Configure Registration Form Attributes
