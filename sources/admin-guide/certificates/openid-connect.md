@@ -92,7 +92,9 @@ RS256, RS384, RS512, ES256, ES384 and ES512.
 Update or add the desired new cryptographic keys in the configuration
 file at this location:
 
-    /opt/tomcat/conf/oxauth-web-keys.json
+```
+/opt/tomcat/conf/oxauth-web-keys.json
+```
 
 In order to force oxAuth to reload the configuration files these steps
 are needed:
