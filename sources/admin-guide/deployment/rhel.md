@@ -8,10 +8,10 @@ Linux system, the `/` directory in the Gluu Server is actually
 
 This strategy has its pluses and minuses. In certain circumstances,
 there are ways for a hacker to “break out of the jail”, and escalate to
-the host file system. (You don't want to make any file system links from
-the chroot'd server to the main host!) The benefit is ease of deployment
-(Docker not required...). We wanted a simple package that people could
-install and uninstall quickly.
+the host file system. (You do not want to make any file system links from
+the chroot'd server to the main host!) The benefit is the ease of
+deployment (Docker is not required...). We wanted a simple package that
+people could install and uninstall quickly.
 
 To report issues or provide feedback about the installation process,
 please use
@@ -24,12 +24,12 @@ or register for an account on
 The Gluu Server Community Edition should be deployed on a VM with:
 
 * RHEL 6.5
-* 2 CPU Units and at least 2GB Physical Memory (more is always better, though)
+* 2 cpu units and at least 4GB of physical memory (more is always better, though)
 
 ## Available Components
 
 Please review the [deployment guide](./index.md) for a list of available
-components during installation.
+components during the installation.
 
 ## Installing GLUU Server with yum:
 
