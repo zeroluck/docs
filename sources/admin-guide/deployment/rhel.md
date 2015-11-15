@@ -58,29 +58,31 @@ installation, run the Gluu Server `setup.py` to complete the
 installation. For both help and the latest installation options see
 either [setup.py help](./setup_py.md), or run `./setup.py -h`.
 
-* Login to Gluu Server container: 
+* Login to the Gluu Server container:
 
 `# service gluu-server login`
 
-* Run "setup" script to perform the final installation: 
+* Run "setup" script to perform the final installation:
 
-`# cd /install/community-edition-setup/`
+```
+# cd /install/community-edition-setup/
+# ./setup.py
+```
 
-`# ./setup.py`
-
-After the successful execution of the `setup.py` script, point your
-browser to `https://hostname`. Login with the default user name “admin”
+After the successful execution of the setup script, point your browser
+to the uri `https://hostname`. Login with the default user name “admin”,
 and the LDAP password printed back in the confirmation (also contained
-in `setup.properties.last`). If you want to see the full LDIF for the
-admin user, it is contained in `/opt/opendj/ldif/people.ldif`.
+in `setup.properties.last`). The full LDIF for the admin user contains
+the file `/opt/opendj/ldif/people.ldif`.
 
 Make sure you remove or encrypt `setup.properties.last`. It has the
 clear text passwords for everything: LDAP, admin user, keystores, and
 3DES salt.
 
 If something goes wrong, check `setup.log` for a detailed step-by-step
-of the installation. Or check `setup_errors.log` to just see the errors
-(or stderr output from the scripts).
+of the installation. As an alternative you may check the file
+`setup_errors.log` to just see the errors (or stderr output from the
+scripts).
 
 <!--
 If you want to script the installation of the Gluu Server, user the `-f`
