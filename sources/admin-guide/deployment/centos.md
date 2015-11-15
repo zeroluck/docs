@@ -79,8 +79,9 @@ text passwords for everything: LDAP, admin user, keystores, and 3DES
 salt.
 
 If something goes wrong, check `setup.log` for a detailed step-by-step
-of the installation. Or check `setup_errors.log` to just see the errors
-(or stderr output from the scripts).
+of the installation. As an alternative you may check the file
+`setup_errors.log` to just see the errors (or stderr output from the
+scripts).
 
 <!--
 If you want to script the installation of the Gluu Server, user the `-f`
