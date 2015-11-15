@@ -7,14 +7,15 @@ organizations branding and custom requirements.
 
 # Style Customizations
 
-Static style elements like CSS, js and images are packaged into separate
-jar named _\<ProjectName\>_ Static- _\<version\>_ .jar (e.g.
-oxTrustStatic-1.3.0.Final.jar and oxAuthStatic-1.4.0x.Final.jar) and is
-added to the deployable war during the build time.
+Static style elements like CSS, JavaScript and images are packaged into
+separate jar files. They are named _\<ProjectName\>_ Static-
+_\<version\>_ .jar, e.g. 'oxTrustStatic-1.3.0.Final.jar' and
+'oxAuthStatic-1.4.0x.Final.jar'. These files are added to the deployable
+war during build time.
 
 Post deployment, the structure of the jar allows its context to be
-accessible from the Web contextroot. For example, the default values of
-the CSS and js locations are *\<contextPath\>/stylesheet* and
+accessible from the Web context root. For example, the default values of
+the CSS and JavaScript locations are *\<contextPath\>/stylesheet* and
 *\<contextPath\>/js* in the configuration file.
 
 It is possible to unpack the contents of the said jar into a folder
@@ -48,7 +49,7 @@ in `oxauth-config.xml`
 # Page Customizations
 
 To change the content of the pages, you will need to edit the xhtml files. Be careful
-not to remove any of the important form elements. But you can add additional html
+not to remove any of the important form elements. But you can add additional HTML
 elements to meet your needs. (.xhtml files inside `/opt/tomcat/webapps/identity` and
 `/opt/tomcat/webapps/oxauth`).
 
@@ -88,8 +89,8 @@ and is the last section, titled Configuration.
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/WebUI_modification/oxtrust/oxTrust_GUI_mod_configuration_overview.png?raw=true)
 
 - `Title`: Web User Interface title can be modified with this link. 
-- `Display name`: Display Name of IDP in ldap. [ This change is not suggested to be done by Gluu Server Administrator. As it will change configuration in our central server. ]
-- `Short name`: Short Name of Org in ldap. [ This change is not suggested to be done by Gluu Server Administrator. As it will change configuration in our central server. ]
+- `Display name`: Display Name of IdP in LDAP. [ This change is not suggested to be done by Gluu Server Administrator. As it will change configuration in our central server. ]
+- `Short name`: Short Name of Org in LDAP. [ This change is not suggested to be done by Gluu Server Administrator. As it will change configuration in our central server. ]
 - `Description`: A little description about Gluu Server.
 - `Login page message`: Login page is now using oxAuth, we will more features to support Login page modification through oxAuth. 
 - `Welcome Title Text`: Gluu Server Administrator can add custom Welcome Title Text with feature.
@@ -129,7 +130,7 @@ objectClasses: ( svPerson-oid NAME 'svPerson' SUP top AUXILIARY MAY ( svPermissi
 
 4. Reload the oxTrust properties using `# touch /opt/tomcat/conf/oxtrust.config.reload`.
 
-5. Register this new attribute using the oxTrust admin interface, in the [Attributes](http://www.gluu.org/docs/admin-guide/configuration/#attributes) configuraiton page. 
+5. Register this new attribute using the oxTrust admin interface, in the [Attributes](http://www.gluu.org/docs/admin-guide/configuration/#attributes) configuration page. 
 For SAML URI, you can use an https URI like `https://sv.com/schema/svPermission...` but it has no importance as SAML will not be used at all.
 
 It is also possible to use the attribute as a scope for OpenID Connect.
