@@ -25,8 +25,8 @@ about each of the open source licenses in use
 The full suite of software is distributed as Linux packages that support
 either single server or clustered deployments. In order to deploy the
 clustered package to multiple locations, you'll need a commercial
-license. More about that topic below in [Deployment
-Models](#deployment-models).
+license. You will read more about that topic below in section
+[Deployment Models](#deployment-models).
 
 ## Deployment
 The Gluu Server can be deployed on any physical or virtual server. Both
@@ -57,12 +57,12 @@ commercial license for environments that have more than one location.
 
 We anticipate three license offerings:
 
-1. **Ecommerce:** This license will enables you to run a cluster of Gluu
+1. **Ecommerce:** This license will enable you to run a cluster of Gluu
 Servers consisting of two locations--for example, let's say you have one
 server on Amazon, and one server on Rackspace. For the first location,
 you'd use the "master" package, which is free. For the second location,
 you'd need to purchase the ecommerce license. This license does not
-include support. The [Cluster  Support](http://gluu.org/pricing) package
+include support. The [Cluster Support](http://gluu.org/pricing) package
 is highly recommended and includes one commercial license for up to two
 locations.
 2. **Premium:** The premium cluster license includes three licenses for
@@ -112,7 +112,7 @@ be found
 To keep the Gluu Server up-to-date with the latest user information
 (a.k.a. attributes or claims), your organization can either "push" or
 "pull" identity data. In the "pull" mode, otherwise known as [LDAP
-Syncronization or Cache
+Synchronization or Cache
 Refresh](../../admin-guide/cache-refresh/index.md), the Gluu Server can
 use an existing LDAP identity source like Microsoft Active Directory as
 the authoritative source of identity information. If you "push"
