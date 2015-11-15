@@ -48,26 +48,27 @@ looks like that:
 
 # Page Customizations
 
-To change the content of the pages, you will need to edit the xhtml files. Be careful
-not to remove any of the important form elements. But you can add additional HTML
-elements to meet your needs. (.xhtml files inside `/opt/tomcat/webapps/identity` and
-`/opt/tomcat/webapps/oxauth`).
+To change the content of the pages, you will need to edit the XHTML
+files. Be careful not to remove any of the important form elements. But
+you can add additional HTML elements to meet your needs as '.xhtml'
+files inside `/opt/tomcat/webapps/identity` and
+`/opt/tomcat/webapps/oxauth`.
 
-Standard forms in oxAuth:
+The standard forms in oxAuth are:
 
 - Default login page: `/opt/tomcat/webapps/oxauth/login.xhtml`
 - Error page: `/opt/tomcat/webapps/oxauth/error.xhtml`
 - Authorization page: `/opt/tomcat/webapps/oxauth/authorize.xhtml`
-- Custom authentication scripts: xhtml files in `/opt/tomcat/webapps/oxauth/auth`
+- Custom authentication scripts: XHTML files in `/opt/tomcat/webapps/oxauth/auth`
 
-Standard forms in oxTrust:
+The standard forms in oxTrust are:
 
 - Default registration page: `/opt/tomcat/webapps/identity/register.xhtml`
 
 To remove the Gluu Copyright icon from your login page, navigate to
-`template.xhtml` under `/opt/tomcat/webapps/identity/WEB-INF/incl/layout`.
-
-And simply remove this snippet:
+`template.xhtml` under
+`/opt/tomcat/webapps/identity/WEB-INF/incl/layout`. Then, simply remove
+this snippet:
 
 ```
     <s:fragment rendered="#{not isLogin}">
