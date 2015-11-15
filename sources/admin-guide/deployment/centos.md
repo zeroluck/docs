@@ -68,11 +68,11 @@ either [setup.py help](./setup_py.md), or run `./setup.py -h`.
 # ./setup.py
 ```
 
-After setup.py script successful execution, point your browser to
-`https://hostname` Login with the default user name “admin” and the LDAP
-password printed back in the confirmation (also contained in
-`setup.properties.last`). If you want to see the full LDIF for the admin
-user, it is contained in `/opt/opendj/ldif/people.ldif`.
+After the successful execution of the setup script, point your browser
+to the uri `https://hostname`. Login with the default user name “admin”,
+and the LDAP password printed back in the confirmation (also contained
+in `setup.properties.last`). The full LDIF for the admin user contains
+the file `/opt/opendj/ldif/people.ldif`.
 
 Make sure you remove or encrypt `setup.properties.last` It has the clear
 text passwords for everything: LDAP, admin user, keystores, and 3DES
