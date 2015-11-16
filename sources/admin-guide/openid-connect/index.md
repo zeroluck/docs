@@ -15,8 +15,8 @@ also provides some of the plumbing around authentication to automate how
 this happens. If a person is visiting a website for the first time, the
 process that OpenID Connect defines is 100% bootstrapable by the
 website. This is really critical for Internet scalability. To visit
-someone's website, or to send someone email, you don't need to get the
-system administrators involved. Connect provides the same type of
+someone's website, or to send someone an email, you do not need to get
+the system administrators involved. Connect provides the same type of
 scalable infrastructure, and promises to define a base level domain
 identification.
 
@@ -25,7 +25,7 @@ identification.
 If you are familiar with SAML, there are many parallels in OpenID
 Connect, but the jargon (or "taxonomy") is different. For example,
 instead of attributes, we have "user claims". Instead of Service
-Provider (SP), we have "client". Instead of Identity Provider (IDP), its
+Provider (SP), we have "client". Instead of Identity Provider (IdP), its
 OpenID Provider (OP).
 
 ## Discovery 
@@ -42,9 +42,9 @@ If you want to try a sample discovery request, you can make a GET request to [Gl
 
 ## Scopes
 
-In SAML, the IDP releases attributes to the SP. OpenID Connect provides
+In SAML, the IdP releases attributes to the SP. OpenID Connect provides
 similar functionality, with more flexibility in case the person needs to
-self-approve the release of information from the IDP to the website (or
+self-approve the release of information from the IdP to the website (or
 mobile application). In OAuth2, scopes can be used for various purposes.
 OpenID Connect uses OAuth2 scopes to "group" attributes. For example, we
 could have a scope called "address" that includes the street, city,
@@ -121,7 +121,7 @@ _Block Encryption Algorithms:_ A128CBC+HS256, A256CBC+HS612, A128GCM, A256GCM,
 
 * _Pre Authorization:_ Gluu server disables this option by default, but it is possible to allow the users to access any URL according to the Organization Policy by the Gluu Server Administrator.
 
-* _Redirect URI:_ The URI for native or web app can be added using this feature.
+* _Redirect URI:_ The uri for native or web app can be added using this feature.
 ![RedirectURI](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_adduri.png)
 
 Clicking on *Add URI* will open a new box to put the hostname in and it is done.
@@ -165,11 +165,11 @@ a convenient solution to cleaning up resources.
 
 The OpenID Connect [Session Management](http://openid.net/specs/openid-connect-session-1_0.html) is
 still marked as draft, and new mechanisms for logout are in the works. The current specification 
-requires Javascript to detect that the session has been ended in the browser. It works... unless
-the tab with the Javascript happens to be closed when the logout event happens on another tab. Also,
-inserting Javascript into every page is not feasible for some applications. A new proposal is under
+requires JavaScript to detect that the session has been ended in the browser. It works... unless
+the tab with the JavaScript happens to be closed when the logout event happens on another tab. Also,
+inserting JavaScript into every page is not feasible for some applications. A new proposal is under
 discussion where the OpenID Connect logout API would return `IMG` HTML tags to the browser
-with the logout callbacks of the clients. This way, the browser could call the logout URIs (not
+with the logout callbacks of the clients. This way, the browser could call the logout uris (not
 the server). 
 
 The Gluu Server is very flexible, and supports both server side session management, and stateless
@@ -226,8 +226,8 @@ into production.
   - Enter the Client ID.
   - Enter the Client Secret.
   - Enter the Code received from the previous request
-  - Enter the Redirect URI (eg: https://seed.gluu.org/oxauth-rp/home.seam)
-  - Enter the Scopes: openid profile address email phone.
+  - Enter the Redirect uri (eg: https://seed.gluu.org/oxauth-rp/home.seam)
+  - Enter the Scopes: OpenID profile address email phone.
   - Click submit.
 
 ![](http://www.gluu.org/docs/img/oxAuth-RP/requestaccesstokenwithauthorizationcode.png "Screenshot of oxAuth-RP Token Endpoint")
