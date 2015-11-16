@@ -200,32 +200,37 @@ for further reference.
 
 ![](http://www.gluu.org/docs/img/openid_connect/oxtrust_view_client.png "Screenshot of oxTrust view client")
 
-
 ## Session management
 
-Logout is a catch-22. There is no perfect answer to logout that satisfies all the requirements
-of all the domains on the Internet. For example, large OpenID Providers, like Google, need
-a totally stateless implementation--Google cannot track sessions on the server side for every
-browser on the Internet. But in smaller domains, server side logout functionality can be 
-a convenient solution to cleaning up resources.
+Logout is a catch-22. There is no perfect answer to logout that
+satisfies all the requirements of all the domains on the Internet. For
+example, large OpenID Providers, like Google, need a totally stateless
+implementation--Google cannot track sessions on the server side for
+every browser on the Internet. But in smaller domains, server side
+logout functionality can be a convenient solution to cleaning up
+resources.
 
-The OpenID Connect [Session Management](http://openid.net/specs/openid-connect-session-1_0.html) is
-still marked as draft, and new mechanisms for logout are in the works. The current specification 
-requires JavaScript to detect that the session has been ended in the browser. It works... unless
-the tab with the JavaScript happens to be closed when the logout event happens on another tab. Also,
-inserting JavaScript into every page is not feasible for some applications. A new proposal is under
-discussion where the OpenID Connect logout API would return `IMG` HTML tags to the browser
-with the logout callbacks of the clients. This way, the browser could call the logout uris (not
-the server). 
+The OpenID Connect [Session
+Management](http://openid.net/specs/openid-connect-session-1_0.html) is
+still marked as draft, and new mechanisms for logout are in the works.
+The current specification requires JavaScript to detect that the session
+has been ended in the browser. It works... unless the tab with the
+JavaScript happens to be closed when the logout event happens on another
+tab. Also, inserting JavaScript into every page is not feasible for some
+applications. A new proposal is under discussion where the OpenID
+Connect logout API would return `IMG` HTML tags to the browser with the
+logout callbacks of the clients. This way, the browser could call the
+logout uris (not the server).
 
-The Gluu Server is very flexible, and supports both server side session management, and stateless
-session management. For server side business logout, the domain admin can use Custom Logout scripts. 
-This can be useful to clean up sessions in a legacy SSO system (i.e. SiteMinder), or perhaps
-in a portal.
+The Gluu Server is very flexible, and supports both server side session
+management, and stateless session management. For server side business
+logout, the domain admin can use Custom Logout scripts. This can be
+useful to clean up sessions in a legacy SSO system (i.e. SiteMinder), or
+perhaps in a portal.
 
-The key for logout is to understand the limitations of logout, and to test the use cases that
-are important to you, so you will not be surprised by the behavior when you put your application
-into production.
+The key for logout is to understand the limitations of logout, and to
+test the use cases that are important to you, so you will not be
+surprised by the behavior when you put your application into production.
 
 
 ## Testing with oxAuth RP
