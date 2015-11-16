@@ -4,7 +4,7 @@ LDAP attributes, SAML attributes, OpenID Connect user claims--whatever
 you call them--many organizations have business-specific information
 about people that needs to be shared with applications. For simplicity,
 this article will refer to them as "attributes." Existing standard
-schemas like the LDAP `inetOrgPerson` standard, or the OpenID Connect
+schemes like the LDAP `inetOrgPerson` standard, or the OpenID Connect
 `id_token` user claims define attributes like first name, last name and
 email address. Where possible, we recommend you use these. But what if
 there is an attribute that is just not in any standard schema? This
@@ -64,7 +64,8 @@ it may be easier to ask the person if its ok to release "mailing address
 information." In situations where the attributes may confuse the person,
 OpenID Scopes are a really good thing.
 
-An example of the default Gluu Server authorization request:
+An example of the default Gluu Server authorization request can be seen
+here:
 
 ![OpenID Connect Scope Authorization Screenshot](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/openid_connect/authz_screenshot.png)
 
