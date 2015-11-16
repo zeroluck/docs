@@ -2,7 +2,7 @@
 
 # oxD Communication Protocol
 
-**state:** in progress (not finished yet)
+**state:** In progress (not finished yet)
 
 The communication is made in [JSON format][json] following a
 request-response model. Both the request and the response have a similar
