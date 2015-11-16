@@ -110,17 +110,35 @@ new client.
 
 ![Add new client](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_newclient.png)
 
-* _Display Name:_ This contains the recognizable and unique display name of the client.
+* _Display Name:_ This contains the recognizable and unique display name
+  of the client.
 
-* _Client Secret:_ This is the Data Encryption Standard scheme used by Confidential Clients to authenticate the token endpoints. The value for the secret can be inserted manually, but it is highly recommended to use the Dynamic Client Registration Endpoint. The Gluu oxAuth provides a random, generated Client Secret in the Dynamic Client Registration procedure.
+* _Client Secret:_ This is the Data Encryption Standard scheme used by
+  Confidential Clients to authenticate the token endpoints. The value for
+  the secret can be inserted manually, but it is highly recommended to use
+  the Dynamic Client Registration Endpoint. The Gluu oxAuth provides a
+  random, generated Client Secret in the Dynamic Client Registration
+  procedure.
 
-* _Application Type:_ There are two types of applications, Web and Native. The different configuration for the different application types are given below.
+* _Application Type:_ There are two types of applications, Web and
+  Native. The different configuration for the different application types
+  are given below.
 
-	* _Web:_ The Dynamic Client Registration is the default for web. In this type the redirect_uri for implicit grant type must be a real hostname with HTTPS. This type is not approved any localhost or HTTP. The Web Application uses the Authorization code flow for Clients which can maintain a Client Secret between the URIs and Authorization server.
+	* _Web:_ The Dynamic Client Registration is the default for web. In
+    this type the redirect_uri for implicit grant type must be a real
+    hostname with HTTPS. This type is not approved any localhost or HTTP.
+    The web application uses the authorization code flow for clients which
+    can maintain a client secret between the uris and the authorization
+    server.
 
-	* _Native:_ Custom URI for Native type application must follow HTTP with localhost. This is suitable for mobile app which cannot maintain the Client Secret between itself and the Authorization Server.
+	* _Native:_ Custom uri for Native type application have to follow HTTP
+    with localhost. This is suitable for a mobile app which cannot maintain
+    the client secret between itself and the authorization server.
 
-* _Algorithm:_ oxAuth supports various types of Signature and Encryption Algorithms for authorizing request parameter passing, ID token signature and encryption, Signing return responses, Encrypt User Info Endpoints etc.
+* _Algorithm:_ oxAuth supports various types of signature and encryption
+  algorithms for authorizing request parameter passing, ID token signature
+  and encryption, signing return responses, Encrypt User Info Endpoints
+  etc.
 
 It is a good practice to implement ID Token Signatures with the RSA SHA-256 Algorithm (algorithm value RS256). Additionally oxAuth also supports other algorithms that are listed below.
 
