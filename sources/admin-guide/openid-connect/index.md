@@ -52,18 +52,18 @@ self-approve the release of information from the IdP to the website (or
 mobile application). In OAuth2, scopes can be used for various purposes.
 OpenID Connect uses OAuth2 scopes to "group" attributes. For example, we
 could have a scope called "address" that includes the street, city,
-state, and country user claims. The Gluu Server defines six scopes by
-default.
+state, and country user claims. By default the Gluu Server defines six
+scopes.
 
 ![Scopes Screenshot](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_scope.png)
 
-The Gluu Server Administrator can easily add more scopes in the GUI.
-Click *Add Scope* and you'll be presented with the following screen:
+The Gluu Server administrator can easily add more scopes in the GUI.
+Click *Add Scope* and you will be presented with the following screen:
 
 ![Add Scopes](http://www.gluu.org/docs/img/openid_connect/oxtrust_scope_screenshot.png "Screenshot of oxTrust add OpenID Connect Scope")
 
-You'll have the ability to provide a Display Name, Description, whether
-or not the scope is provided by default, and the claims that are
+You will have the ability to provide a Display Name, Description,
+whether or not the scope is provided by default, and the claims that are
 included in the scope.
 
 Default Scope needs some further explanation. When a client uses dynamic
@@ -74,7 +74,7 @@ scope automatically, set the Default Scope to `true` for that scope. You
 can always explicitly release a scope to a certain client later on, but
 this will require some manual intervention by the domain administrator.
 
-To add more claims, simply click "Add Claim" and you'll be presented
+To add more claims, simply click "Add Claim" and you will be presented
 with the following screen:
 
 ![Add Claims](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_scopeadd.png)
