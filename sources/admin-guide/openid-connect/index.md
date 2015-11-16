@@ -232,11 +232,10 @@ The key for logout is to understand the limitations of logout, and to
 test the use cases that are important to you, so you will not be
 surprised by the behavior when you put your application into production.
 
-
 ## Testing with oxAuth RP
 
   - Go to https://seed.gluu.org/oxauth-rp
-  - Or deploy oxAuth-rp.war
+  - Or deploy `oxAuth-rp.war`
 
 ### OpenID Connect Discovery
 
@@ -262,9 +261,10 @@ surprised by the behavior when you put your application into production.
   - Enter the Authorization Endpoint (eg: https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/authorize)
   - Select the Response Types: CODE and ID_TOKEN
   - Enter the Client ID (eg: @!EDFB.879F.2DAE.D95A!0001!0442.B31E!0008!A2DA.C10F)
-  - Select the desired Scopes: openid is mandatory, profile, address, email and phone are optional.
-  - Enter a Redirect URI (eg: https://seed.gluu.org/oxauth-rp/home.seam)
-  - Optionally enter a State value.
+  - Select the desired scopes: OpenID is mandatory, profile, address,
+    email and phone are optional.
+  - Enter a Redirect uri, e.g. https://seed.gluu.org/oxauth-rp/home.seam
+  - Optionally enter a state value.
   - Click submit.
 
 ![](http://www.gluu.org/docs/img/oxAuth-RP/requestauthorizationcodegrant.png "Screenshot of oxAuth-RP Authorization Endpoint")
