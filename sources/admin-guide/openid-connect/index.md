@@ -140,7 +140,9 @@ new client.
   and encryption, signing return responses, Encrypt User Info Endpoints
   etc.
 
-It is a good practice to implement ID Token Signatures with the RSA SHA-256 Algorithm (algorithm value RS256). Additionally oxAuth also supports other algorithms that are listed below.
+It is a good practice to implement ID Token Signatures with the RSA
+SHA-256 algorithm (algorithm value RS256). Additionally, oxAuth also
+supports other algorithms that are listed below.
 
 _Signature Algorithms:_ HS256, HS384, HS512, RS256, RS384, RS512, ES256, ES384, ES512.
 
@@ -148,7 +150,9 @@ _Encryption, Key Encryption Algorithms:_ RSA1_5, RSA-OAEP, A128KW, A256KW.
 
 _Block Encryption Algorithms:_ A128CBC+HS256, A256CBC+HS612, A128GCM, A256GCM,
 
-* _Pre Authorization:_ Gluu server disables this option by default, but it is possible to allow the users to access any URL according to the Organization Policy by the Gluu Server Administrator.
+* _Pre Authorization:_ The Gluu Server disables this option by default,
+but it is possible to allow the users to access any URL according to the
+Organization Policy by the Gluu Server administrator.
 
 * _Redirect URI:_ The uri for native or web app can be added using this feature.
 ![RedirectURI](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_adduri.png)
@@ -158,12 +162,15 @@ Clicking on *Add URI* will open a new box to put the hostname in and it is done.
 * _Add Group:_ This feature can be used to affiliate specific groups.
 ![Add Group](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_addgroup.png)
 
-The existing groups can be listed by hitting the *Search* button keeping the search phrase blank.
+The existing groups can be listed by hitting the *Search* button, and
+keeping the search phrase blank.
 
 * _Add Scopes:_ This option can be used to add the required scopes in the Gluu Server.
 ![Add Scopes](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_addscope.png)
 
-The available scopes can be listed by hitting the *Search* button keeping the search phrase black and from this the Gluu Server Administrator can select the required scopes.
+The available scopes can be listed by hitting the *Search* button, and
+keeping the search phrase blank. Furthermore, from this the Gluu Server
+administrator can select the required scopes.
 
 * _Add Response Type:_ There are three types of responses in the Gluu Server and they are Code, Token and ID Token. The Gluu Server Administrator can select all of them for testing purposes.
 ![Response Type](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_response.png)
