@@ -277,8 +277,8 @@ surprised by the behavior when you put your application into production.
   - Enter the Client ID.
   - Enter the Client Secret.
   - Enter the Code received from the previous request
-  - Enter the Redirect uri (eg: https://seed.gluu.org/oxauth-rp/home.seam)
-  - Enter the Scopes: OpenID profile address email phone.
+  - Enter the Redirect uri, e.g. https://seed.gluu.org/oxauth-rp/home.seam
+  - Enter the scopes: OpenID profile address email phone.
   - Click submit.
 
 ![](http://www.gluu.org/docs/img/oxAuth-RP/requestaccesstokenwithauthorizationcode.png "Screenshot of oxAuth-RP Token Endpoint")
@@ -312,6 +312,8 @@ surprised by the behavior when you put your application into production.
 
 # oAuth 2 Grants
 
-There are two additional flows that the Gluu Server supports for user and client authentication, which are not part of the OpenID Connect Spec. The flows are explained in the following page.
+There are two additional flows that the Gluu Server supports for user
+and client authentication, which are not part of the OpenID Connect
+specification. The flows are explained in the following page.
 
 * [oAuth 2 Grants](./oauth2grants.md)
