@@ -2,7 +2,7 @@
 
 # oxD Communication Protocol
 
-**state:** in progress (not finished yet)
+**state:** In progress (not finished yet)
 
 The communication is made in [JSON format][json] following a
 request-response model. Both the request and the response have a similar
@@ -978,4 +978,8 @@ response looks like that:
 [jdk6-documentation]: http://docs.oracle.com/javase/6/docs/api/java/io/Reader.html "Java (JDK) Class Documentation"
 
 [json]: https://en.wikipedia.org/wiki/JSON "JSON, Wikipedia"
+
+
+
+
 
