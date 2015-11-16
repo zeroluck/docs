@@ -157,31 +157,41 @@ Organization Policy by the Gluu Server administrator.
 * _Redirect URI:_ The uri for native or web app can be added using this feature.
 ![RedirectURI](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_adduri.png)
 
-Clicking on *Add URI* will open a new box to put the hostname in and it is done.
+  Clicking on *Add URI* will open a new box to put the hostname in and it is done.
 
 * _Add Group:_ This feature can be used to affiliate specific groups.
 ![Add Group](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_addgroup.png)
 
-The existing groups can be listed by hitting the *Search* button, and
-keeping the search phrase blank.
+  The existing groups can be listed by hitting the *Search* button, and
+  keeping the search phrase blank.
 
 * _Add Scopes:_ This option can be used to add the required scopes in the Gluu Server.
 ![Add Scopes](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_addscope.png)
 
-The available scopes can be listed by hitting the *Search* button, and
-keeping the search phrase blank. Furthermore, from this the Gluu Server
-administrator can select the required scopes.
+  The available scopes can be listed by hitting the *Search* button, and
+  keeping the search phrase blank. Furthermore, from this the Gluu Server
+  administrator can select the required scopes.
 
-* _Add Response Type:_ There are three types of responses in the Gluu Server and they are Code, Token and ID Token. The Gluu Server Administrator can select all of them for testing purposes.
+* _Add Response Type:_ There are three types of responses in the Gluu
+  Server and they are Code, Token and ID Token. The Gluu Server
+  Administrator can select all of them for testing purposes.
 ![Response Type](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_response.png)
 
 ### Custom Client Registration
 
-Using interception scripts you can customize client registration behavior. For example, by default oxAuth allows new clients access to default scopes only. With a custom client registration interception script it is possible to allow access to more scopes. For instance, we can use redirect_uri to determine if we need to allow access to additional scopes or not. 
+Using interception scripts you can customize client registration
+behavior. For example, by default oxAuth allows new clients to access to
+default scopes only. With a custom client registration interception
+script it is possible to allow access to more scopes. For instance, we
+can use `redirect_uri` to determine if we need to allow access to
+additional scopes or not.
 
-To access the interface for custom scripts in oxTrust, navigate to Configuration > Custom Scripts > Custom Client Registration. 
+To access the interface for custom scripts in oxTrust, navigate to
+Configuration --> Custom Scripts --> Custom Client Registration.
 
-Take a look at our [example client registration script](../../reference/interception-scripts/sample-client-registration-script.py) for a reference. 
+Take a look at our [example client registration
+script](../../reference/interception-scripts/sample-client-registration-script.py)
+for further reference.
 
 ### Search clients
 ![](http://www.gluu.org/docs/img/openid_connect/oxtrust_search_clients.png "Screenshot of oxTrust browse / search clients")
