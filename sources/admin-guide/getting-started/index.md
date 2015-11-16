@@ -124,13 +124,13 @@ can also be performed inside the Gluu Server management interface.
 
 
 ## Single Sign-On (SSO)
-Now it's time to connect your endpoints, portals or websites with your
+Now it is time to connect your endpoints, portals or websites with your
 Gluu Server. The Gluu Server stack includes both a
-[SAML](../saml/index.md) and [OpenID Connect Identity
+[SAML](../saml/index.md) and an [OpenID Connect Identity
 Provider](../openid-connect/index.md) which can be configured for single
 sign-on to any SAML 2.0 or OpenID Connect protected application.
 
-Here are a couple how-to's for creating SSO to popular apps:
+Here are a couple of how-to's for creating SSO to popular applications:
 
 - [Using SAML to get SSO with Google Apps](../../articles/google-saml.md)
 - [Using SAML to get SSO with Salesforce.com](../../articles/salesforce-sso.md)
