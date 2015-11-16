@@ -73,8 +73,8 @@ license for unlimited cluster deployments. It makes license management
 really easy because you can use the same license for all your
 environments, like development, QA and production.
 
-To learn more about the cluster project, [read the
-docs](http://gluu.org/docs-cluster).
+To learn more about the cluster project, [read our
+documentation](http://gluu.org/docs-cluster).
 
 ## Dashboard
 The Gluu Server dashboard shows you metrics on the health and activity
@@ -82,7 +82,7 @@ of your server(s). It also enables you to view logs, and to manage other
 common Gluu Server administration tasks.
 
 ## Person Authentication
-Correctly identifying people--authentication--is fundamental to Web and
+Correctly identifying people--authentication--is fundamental to web and
 mobile security. Using the oxTrust web User Interface (UI), you can
 configure built-in or custom business logic for authentication.
 
