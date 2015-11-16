@@ -117,9 +117,3 @@ The main documentation is organized into the following sections:
 - [SAML SSO with Hobsons](./articles/hobsons-saml.md)
 - [SAML SSO with Google](./articles/google-saml.md)
 - [How to Write a Custom Authentication Script](./articles/auth-script.md)
-
-
-
-
-
-
