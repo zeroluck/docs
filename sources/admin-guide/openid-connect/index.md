@@ -25,20 +25,24 @@ identification.
 If you are familiar with SAML, there are many parallels in OpenID
 Connect, but the jargon (or "taxonomy") is different. For example,
 instead of attributes, we have "user claims". Instead of Service
-Provider (SP), we have "client". Instead of Identity Provider (IdP), its
-OpenID Provider (OP).
+Provider (SP), we have "client". Instead of Identity Provider (IdP), it
+is an OpenID Provider (OP).
 
 ## Discovery 
 
 The first thing you want to know about any OAuth2 API is where are the
-endpoints (i.e. what are the URLs where you call the APIs). OpenID
+endpoints (i.e. what are the uris where you call the APIs). OpenID
 Connect provides a very simple mechanism to accomplish this: make a GET
-request to `https://<domain>/.well-known/openid-configuration`
+request to `https://<domain>/.well-known/openid-configuration`.
 
-[OpenID Connect Discovery](http://openid.net/specs/openid-connect-discovery-1_0.html) is based on 
-a previous standard called [WebFinger](http://en.wikipedia.org/wiki/WebFinger). 
+[OpenID Connect
+Discovery](http://openid.net/specs/openid-connect-discovery-1_0.html) is
+based on a previous standard called
+[WebFinger](http://en.wikipedia.org/wiki/WebFinger).
 
-If you want to try a sample discovery request, you can make a GET request to [Gluu's OpenID Connect Discovery Page](https://idp.gluu.org/.well-known/openid-configuration)
+If you want to try a sample discovery request, you can make a GET
+request to [Gluu's OpenID Connect Discovery
+Page](https://idp.gluu.org/.well-known/openid-configuration).
 
 ## Scopes
 
