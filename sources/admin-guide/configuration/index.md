@@ -32,7 +32,7 @@ easy.
 * _Self-Service Password Reset:_ The Self-Service Password Reset is
 disabled by default. For Self-Service Password Reset to work the SMTP
 Server (see below) should be configured as well. Password reset link for
-your Gluu server should be something like
+your Gluu Server should be something like
 `https://your.idp.link/identity/person/passwordReminder.htm`.
 
 * _Cache Refresh:_ This is the mechanism which pulls and synchronizes
@@ -50,23 +50,23 @@ and synchronize the existing identity data into the Gluu Server.
 * _DNS Server:_ The address to the DNS Server goes in this field.
 
 * _Maximum Log Size:_ This option can be used to mitigate the space
-issues within the Gluu Server. The Gluu Server automatically zips any
-log file which is bigger than the defined value in this field.
+issues within the Gluu Server. The Gluu Server automatically compresses
+any log file which is bigger than the defined value in this field.
 
 ## SMTP Server Configuration
 
 The Gluu Server can communicate to any SMTP server specified in these
 fields. All Gluu Server related informats *(cron daemon/logwatch/crash
-reports etc.)* can be pushed to the desired Gluu Server Administrator
+reports etc.)* can be pushed to the desired Gluu Server administrator
 using this feature.
 
 ![SMTP Server Configuration](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_smtp.png)
 
-* _SMTP Host:_ Name of the SMTP Host server.
+* _SMTP Host:_ Name of the SMTP host server.
 
-* _From Name:_ Name of the Gluu Server Administrator.
+* _From Name:_ Name of the Gluu Server administrator.
 
-* _From Email Address:_ Email Address of the Gluu Server Administrator.
+* _From Email Address:_ Email address of the Gluu Server administrator.
 
 * _Required Authentication:_ If the SMTP server requires authentication
 for every access, then please enable this option by ticking the
@@ -74,23 +74,24 @@ according checkbox.
 
 * _SMTP User Name:_ The username for the SMTP server goes in this field.
 
-* _SMTP Password:_ The password for the username above goes here. The
-username and password are used to access the SMTP server.
+* _SMTP Password:_ The password for the username from above goes here.
+  Both the username and password are used to access the SMTP server.
 
-* _Requires SSL:_ If the SMTP Server has SSL availability, then enable
-this option by ticking the checkbox.
+* _Requires SSL:_ If the SMTP server has SSL availability, then enable
+  this option by ticking the checkbox.
 
-* _SMTP Port:_ The SMTP Host server port number must be listed here.
+* _SMTP Port:_ The SMTP host server port number has to be listed here.
 
 ## oxTrust Settings
 
 This feature provides options to add various changes in the Gluu Server
-User Interface. Gluu Server Administrator can add Title, Display Name or
-even modify the Web User Interface color and logo from this section.
+User Interface. The Gluu Server administrator can add title, display
+name or even modify both the web user interface color and the logo from
+this section.
 
 ![Configuration Panel](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_config.png)
 
-* _Title:_ The Web User Interface title can be modified with this link.
+* _Title:_ The web user interface title can be modified with this link.
 
 ![Web Interface Title](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_config_title.png)
 
@@ -104,12 +105,13 @@ Interface. However, this option is yet to be tested properly.
 * _Login Page Message:_ The login page now uses oxAuth Web UI. The
   changes made in this field will not affect the IdP.
 
-* _Welcome Title Text:_ With this feature, the Gluu Server Administrator
+* _Welcome Title Text:_ With this feature, the Gluu Server administrator
   can add custom welcome text here.
 
 ![Welcome Title Text](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_config_welcome.png)
 
-* _Welcome Page Message:_ This feature can be used to add various messages and shortcuts in the welcome message.
+* _Welcome Page Message:_ This feature can be used to add various
+  messages and shortcuts in the welcome message.
 
 ![Welcome Page Message](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_config_message.png)
 
@@ -125,7 +127,7 @@ can belong to the manager group.
 * _Menu Color:_ This is the menu color picker for the Gluu Server User Interface. The color used in the demo screenshots is green.
 
 # Manage Authentication
-This section allows the Gluu Server Administrator to define how and
+This section allows the Gluu Server administrator to define how and
 where the server should connect to authenticate users. If it is a remote
 LDAP/Active Directory server, the values are required. Put the details
 of the data source that you are trying to connect with Gluu Server. The
@@ -171,11 +173,11 @@ server.
 * _Test LDAP Connection:_ Based on the provided information, this button
   checks whether the connection to the authentication server works fine.
   The scan runs in real time, and it is advised to use it for the Gluu
-  Server Administrators.
+  Server administrators.
 
 ## Default Authentication Method
 
-This allows the Gluu Server Administrator to select the default
+This option allows the Gluu Server administrator to select the default
 authentication mode and level for person authentication. Both are set to
 "Default" until additional authentication mechanisms are enabled via
 [custom scripts](#manage-custom-scripts).
@@ -212,9 +214,9 @@ them](../../reference/interception-scripts/index.md).
 
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/registration/ManageRegistrationStart.jpg?raw=true)
 
-From the Manage Registration interface, the Gluu Server admin can
-customize the self-registration workflow. Each option will be covered
-individually below.
+From the Manage Registration interface, the Gluu Server administrator
+can customize the self-registration workflow. Each option will be
+covered individually below.
 
 There are other ways of creating accounts within the Gluu Server. This
 includes SCIM, Cache Refresh, Manual User Management, and Automatic
@@ -224,16 +226,16 @@ methods are covered within the [User
 Management](../user-management/index.md) portion of the documentation.
 
 ## Activate Invitation Link
-When active, the Invitation Links feature allows the server admin to
-control who can register an account by issuing a unique registration
-link and sending it to the desired new users.
+When active, the Invitation Links feature allows the server
+administrator to control who can register an account by issuing a unique
+registration link and sending it to the desired new users.
 
 Any person who knows the link will be able to register an account (as
-long as the link is not expired). Expired Links are deleted according to
+long as the link is not expired). Expired links are deleted according to
 "invite codes expiration process" policy, together with any unconfirmed
 accounts if said link is moderated.
 
-As an option, Invitation Links can be set to be "moderated", and a
+As an option, Invitation links can be set to be "moderated", and a
 number of moderators can be assigned to the link. The moderators come
 from the list of registered users. In this case any newly registered
 user who uses this link will not be immediately able to use his account
@@ -256,7 +258,7 @@ will be presented with the following option:
 
 ## Disable captcha for registration form
 
-Upon activating this feature, the default Captcha will be removed from
+Upon activating this feature, the default captcha will be removed from
 the registration form.
 
 ## Configure Registration Form Attributes
@@ -282,7 +284,7 @@ link.
 
 ![Show Active Attribute](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_attribute_show.png)
 
-The Gluu Server Administrator can make modifications, such as changing
+The Gluu Server administrator can make modifications, such as changing
 the state of an attribute to active/inactive by clicking on the
 according attribute.
 
@@ -294,7 +296,8 @@ appear:
 
 ![Add Attribute Screen](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_attribute_add.png)
 
-* _Name:_ This field defines the name of the custom attribute which must be unique in the Gluu Server LDAP tree.
+* _Name:_ This field defines the name of the custom attribute which has
+  to be unique in the Gluu Server LDAP tree.
 
 * _SAML1 URI:_ This field contains the SAML1 uri for the custom attribute.
 
@@ -302,20 +305,24 @@ appear:
 
 * _Display Name:_ This display name can be anything that is human readable.
 
-* _Type:_ The attribute type should be selected from the drop-down menu. There are four attribute types supported by Gluu:
+* _Type:_ The attribute type should be selected from the drop-down menu.
+  There are four attribute types supported by the Gluu Server:
 
   1. text
   2. numeric
   3. photo
   4. date
 
-* _Edit Type:_ This field defines the user who has access to edit the specific attribute.
+* _Edit Type:_ This field defines the user who has access to edit the
+  specific attribute.
 
 * _View Type:_ This field defines the user who can view this attribute.
 
-* _Privacy Level:_ Please select the desired privacy level from the drop-down menu. The privacy level has a specific range of 1 to 5.
+* _Privacy Level:_ Please select the desired privacy level from the
+  drop-down menu. The privacy level has a specific range of 1 to 5.
 
-* _Multivalued:_ Please select multivalue in this field if the attribute contains more than one value.
+* _Multivalued:_ Please select multivalue in this field if the attribute
+  contains more than one value.
 
 * _SCIM Attributes:_ If the attribute is a part of SCIM architecture
   select `true` from the list of options.
@@ -326,7 +333,10 @@ appear:
   the attribute in IdP.
 
 # Cache Refresh
-Cache Refresh was designed by Gluu to enable an organization to sync a backend LDAP like Active Directory with the Gluu Server. Cache Refresh is a big topic, and because so it is detailed under a separate [Cache Refresh Page](http://www.gluu.org/docs/admin-guide/cache-refresh/).
+Cache Refresh was designed by Gluu to enable an organization to sync a
+backend LDAP like Active Directory with the Gluu Server. Cache Refresh
+is a big topic, and because so it is detailed under a separate [Cache
+Refresh Page](http://www.gluu.org/docs/admin-guide/cache-refresh/).
 
 # Configure Log Viewer
 The Gluu Server has the facility to read log files using the GUI. The

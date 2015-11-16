@@ -81,14 +81,14 @@ OpenSSO might be end-of-life. Oracle had recently purchased Sun
 Microsystems, and before ForgeRock was formed, it seemed possible that
 Oracle would simply migrate OpenSSO customers to Oracle Access Manager.
 Bob Morgan from the University of Washington convinced Mike that the
-Shibboleth IDP was a reasonable alternative, and arguably had even more
+Shibboleth IdP was a reasonable alternative, and arguably had even more
 features in SAML, including fine grain access release policies, and a
 better approach for multi-party federation. As the InCommon federation's
 efforts to evangelize SAML federation would support Gluu's message,
 switching had marketing advantages, and would reduce the event risk
 around OpenSSO. Shortly thereafter, a new project from scratch was
 launched for Gluu Server v3 with the goal of using templates to simplify
-the management of the Shibboleth IDP.
+the management of the Shibboleth IdP.
 
 ## Version 3
 

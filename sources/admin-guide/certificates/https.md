@@ -12,9 +12,9 @@ Certificate.
 
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Manage_SSL_cert.png?raw=true)
 
-To update the Gluu Server's SSL certificate, Server admin need to upload
-both private key and certificate in upper section (DA….-JAVA.crt) of the
-"Manage sever SSL certificates" section.
+To update the Gluu Server's SSL certificate, the server admin needs to
+upload both the private key and the certificate in the upper section
+(DA….-JAVA.crt) of the "Manage sever SSL certificates" section.
 
 Please note that the private key cannot be password protected. The
 certificate file should be base64, and its filename has to have a `.crt`

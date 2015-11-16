@@ -21,12 +21,11 @@ and keys.
 ## Apache
 `httpd.crt`, `httpd.csr`, `httpd.key`, `httpd.key.orig` are Apache SSL
 related certificates and keys. If you want to update your Apache SSL
-certificate do not worry about the file extenstion `.csr` and
-`.key.orig`.
+certificate do not worry about the file extension `.csr` and `.key.orig`.
 
 If you are using the Gluu Server CE binaries or latest Gluu Servers, you
-need to manually update certificates and keys from the
-file`/etc/certs/`. Please note that your private key cannot be password
+need to manually update certificates and keys from the file
+`/etc/certs/`. Please note that your private key cannot be password
 protected, and the public key should be base64 X.509. For example,
 follow these steps in order to update the Apache SSL cert:
 

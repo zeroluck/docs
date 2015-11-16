@@ -7,28 +7,29 @@ organizations branding and custom requirements.
 
 # Style Customizations
 
-Static style elements like CSS, js and images are packaged into separate
-jar named _\<ProjectName\>_ Static- _\<version\>_ .jar (e.g.
-oxTrustStatic-1.3.0.Final.jar and oxAuthStatic-1.4.0x.Final.jar) and is
-added to the deployable war during the build time.
+Static style elements like CSS, JavaScript and images are packaged into
+separate jar files. They are named _\<ProjectName\>_ Static-
+_\<version\>_ .jar, e.g. 'oxTrustStatic-1.3.0.Final.jar' and
+'oxAuthStatic-1.4.0x.Final.jar'. These files are added to the deployable
+war during build time.
 
 Post deployment, the structure of the jar allows its context to be
-accessible from the Web contextroot. For example, the default values of
-the CSS and js locations are *\<contextPath\>/stylesheet* and
+accessible from the Web context root. For example, the default values of
+the CSS and JavaScript locations are *\<contextPath\>/stylesheet* and
 *\<contextPath\>/js* in the configuration file.
 
 It is possible to unpack the contents of the said jar into a folder
-hosted by a web server and change the default cssLocation, jsLocation
-and imgLocation attributes in `oxTrust.properties` and/or in
+hosted by a web server, and change the default cssLocation, jsLocation
+and imgLocation attributes in the file `oxTrust.properties` and/or in
 `oxauth-config.xml`.
 
-* CSS: The location is specified using the property `cssLocation`
+* CSS: The location is specified using the property `cssLocation`.
 
-* Javascript: The location is specified using the property `jsLocation`
+* JavaScript: The location is specified using the property `jsLocation`.
 
-* Images: The location is specified using the property `imgLocation`
+* Images: The location is specified using the property `imgLocation`.
 
-For example, in `oxTrust.properties`
+For example, in `oxTrust.properties` it looks like that:
 
 ```
 cssLocation=https://idp.gluu.org/static/stylesheet
@@ -36,8 +37,8 @@ jsLocation=https://idp.gluu.org/static/js
 imgLocation=https://idp.gluu.org/static/img
 ```
 
-in `oxauth-config.xml`
-(as a children of \<configuration\> node)
+in `oxauth-config.xml` (as a children of \<configuration\> node) it
+looks like that:
 
 ```
 <cssLocation>https://idp.gluu.org/static/stylesheet</cssLocation>
@@ -47,26 +48,27 @@ in `oxauth-config.xml`
 
 # Page Customizations
 
-To change the content of the pages, you will need to edit the xhtml files. Be careful
-not to remove any of the important form elements. But you can add additional html
-elements to meet your needs. (.xhtml files inside `/opt/tomcat/webapps/identity` and
-`/opt/tomcat/webapps/oxauth`).
+To change the content of the pages, you will need to edit the XHTML
+files. Be careful not to remove any of the important form elements. But
+you can add additional HTML elements to meet your needs as '.xhtml'
+files inside `/opt/tomcat/webapps/identity` and
+`/opt/tomcat/webapps/oxauth`.
 
-Standard forms in oxAuth:
+The standard forms in oxAuth are:
 
 - Default login page: `/opt/tomcat/webapps/oxauth/login.xhtml`
 - Error page: `/opt/tomcat/webapps/oxauth/error.xhtml`
 - Authorization page: `/opt/tomcat/webapps/oxauth/authorize.xhtml`
-- Custom authentication scripts: xhtml files in `/opt/tomcat/webapps/oxauth/auth`
+- Custom authentication scripts: XHTML files in `/opt/tomcat/webapps/oxauth/auth`
 
-Standard forms in oxTrust:
+The standard forms in oxTrust are:
 
 - Default registration page: `/opt/tomcat/webapps/identity/register.xhtml`
 
 To remove the Gluu Copyright icon from your login page, navigate to
-`template.xhtml` under `/opt/tomcat/webapps/identity/WEB-INF/incl/layout`.
-
-And simply remove this snippet:
+`template.xhtml` under
+`/opt/tomcat/webapps/identity/WEB-INF/incl/layout`. Then, simply remove
+this snippet:
 
 ```
     <s:fragment rendered="#{not isLogin}">
@@ -76,34 +78,49 @@ And simply remove this snippet:
     </s:fragment>
 ```
 
-# Built-in oxTrust customization
+# Built-in oxTrust Customization
 
 Using the oxTrust Web UI, an administrator can quickly style the Gluu
-Server Administration interface by customizing the messages, logo,
-favicon and colors.
+Server Administration interface by customizing the messages, the logo,
+the favicon, and the colors.
 
-In oxTrust, this is under Configuration > Organization Configuration,
-and is the last section, titled Configuration.
+In oxTrust, this is done under Configuration --> Organization Configuration,
+and is the last section that is titled Configuration (see image below).
 
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/WebUI_modification/oxtrust/oxTrust_GUI_mod_configuration_overview.png?raw=true)
 
 - `Title`: Web User Interface title can be modified with this link. 
-- `Display name`: Display Name of IDP in ldap. [ This change is not suggested to be done by Gluu Server Administrator. As it will change configuration in our central server. ]
-- `Short name`: Short Name of Org in ldap. [ This change is not suggested to be done by Gluu Server Administrator. As it will change configuration in our central server. ]
-- `Description`: A little description about Gluu Server.
-- `Login page message`: Login page is now using oxAuth, we will more features to support Login page modification through oxAuth. 
-- `Welcome Title Text`: Gluu Server Administrator can add custom Welcome Title Text with feature.
-- `Welcome Page Message`: Various message can be included here. Out of the box, Gluu Server includes these 1. Upload SSL Certificate, 2. Active attribute … etc. messages.
-- `Organization Logo`: Organization logo can be uploaded and activated from here.
-You can upload your logo here, which will be shown in Gluu Server Administrative Control page. 
+- `Display name`: Display Name of IdP in LDAP. This change is not
+  suggested to be done by the Gluu Server administrator as it will
+  change the configuration in our central server.
+- `Short name`: Short Name of the organization in LDAP. This change is
+  not suggested to be done by the Gluu Server administrator as it will
+  change the configuration in our central server.
+- `Description`: A little description about the Gluu Server.
+- `Login page message`: Login page is now using oxAuth, and allows a
+  more detailed Login page modification.
+- `Welcome Title Text`: Gluu Server administrator can add custom welcome
+  title text with this feature.
+- `Welcome Page Message`: Various messages can be included here. Out of
+  the box, the Gluu Server includes these: 
+  - 1. Upload SSL Certificate
+  - 2. Active attribute
+- `Organization Logo`: Organization logo that can be uploaded and
+  activated from here. You can upload your logo here, which will be
+  displayed in the Gluu Server Administrative Control page, then.
 - `Organization Favicon`: Organization favicon can be changed with this feature. 
-- `Menu Color`: It’s a color picker for Gluu Server. Gluu Server’s Web UI color can be changed with this option.
+- `Menu Color`: It is a color picker for the Gluu Server. Gluu Server’s
+  Web UI color can be changed with this option.
 
 # How to Add Custom Attributes to Gluu LDAP
 
-The following creates a custom objectclass `svPerson` and an attribute called `svPermission` in the LDAP Schema. This procedure can also be used to create any other custom attribute.
+The Gluu Server allows you to add custom attributes. The following
+example creates a custom object class named `svPerson`, and an attribute
+called `svPermission` in the LDAP schema. This procedure can also be
+used to create any other custom attribute.
 
-1. Create a file called `102-sv.ldif` in `/opt/opendj/config/schema/` folder with the following content:
+1. Create a file called `102-sv.ldif` in `/opt/opendj/config/schema/`
+folder with the following content:
 
 ```
 dn: cn=schema
@@ -117,24 +134,37 @@ attributeTypes: ( svPermission-oid NAME 'svPermission'
   X-ORIGIN 'SV custom attribute' )
 objectClasses: ( svPerson-oid NAME 'svPerson' SUP top AUXILIARY MAY ( svPermission) X-ORIGIN 'SV - Custom objectclass' )
 ```
-	1. The oxTrust admin can also be used to add the custom attribute. Please see the [Attribute Section](http://www.gluu.org/docs/admin-guide/configuration/#attributes) for more information.
- 
-2. Restart `opendj` and make sure that there is no error when `opendj` starts.
+	1. The oxTrust administrator can also be used to add the custom
+    attribute. Please see the [Attribute
+    Section](http://www.gluu.org/docs/admin-guide/configuration/#attributes)
+    for more information.
 
-3. Edit the `oxTrust.properties` file in `/opt/tomcat/conf/` folder and add the following.
+2. Restart `opendj`, and make sure that no error occures when `opendj`
+   starts.
 
-	1. Add `svPerson` to `person-objectClass-types`
+3. Edit the file `oxTrust.properties` in the folder `/opt/tomcat/conf/`,
+   and add the following content:
 
-	2. Add `svPerson` to `person-objectClass-displayNames`
+	1. Add `svPerson` to `person-objectClass-types`.
+
+	2. Add `svPerson` to `person-objectClass-displayNames`.
 
 4. Reload the oxTrust properties using `# touch /opt/tomcat/conf/oxtrust.config.reload`.
 
-5. Register this new attribute using the oxTrust admin interface, in the [Attributes](http://www.gluu.org/docs/admin-guide/configuration/#attributes) configuraiton page. 
-For SAML URI, you can use an https URI like `https://sv.com/schema/svPermission...` but it has no importance as SAML will not be used at all.
+5. Register this new attribute using the oxTrust administrator
+interface, in the
+[Attributes](http://www.gluu.org/docs/admin-guide/configuration/#attributes)
+configuration page. For SAML URI, you can use an https URI like
+`https://sv.com/schema/svPermission...` but it has no importance as SAML
+will not be used at all.
 
 It is also possible to use the attribute as a scope for OpenID Connect.
 
-1. Create a custom scope `svInfo` for OpenID Connect. Please see [OpenID Conncet Scopes](http://www.gluu.org/docs/admin-guide/openid-connect/#scopes) for instructions about custom scope creation.
+1. Create a custom scope `svInfo` for OpenID Connect. Please see [OpenID
+Connect
+Scopes](http://www.gluu.org/docs/admin-guide/openid-connect/#scopes) for
+the instructions about custom scope creation.
 
-2. Add the `svPermission` userclaim to `svInfo` Scope. Make sure you release this scope to your registered clients.
+2. Add the `svPermission` userclaim to `svInfo` scope. Make sure you
+release this scope to your registered clients.
 .

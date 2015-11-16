@@ -25,8 +25,8 @@ about each of the open source licenses in use
 The full suite of software is distributed as Linux packages that support
 either single server or clustered deployments. In order to deploy the
 clustered package to multiple locations, you'll need a commercial
-license. More about that topic below in [Deployment
-Models](#deployment-models).
+license. You will read more about that topic below in section
+[Deployment Models](#deployment-models).
 
 ## Deployment
 The Gluu Server can be deployed on any physical or virtual server. Both
@@ -57,12 +57,12 @@ commercial license for environments that have more than one location.
 
 We anticipate three license offerings:
 
-1. **Ecommerce:** This license will enables you to run a cluster of Gluu
+1. **Ecommerce:** This license will enable you to run a cluster of Gluu
 Servers consisting of two locations--for example, let's say you have one
 server on Amazon, and one server on Rackspace. For the first location,
 you'd use the "master" package, which is free. For the second location,
 you'd need to purchase the ecommerce license. This license does not
-include support. The [Cluster  Support](http://gluu.org/pricing) package
+include support. The [Cluster Support](http://gluu.org/pricing) package
 is highly recommended and includes one commercial license for up to two
 locations.
 2. **Premium:** The premium cluster license includes three licenses for
@@ -73,8 +73,8 @@ license for unlimited cluster deployments. It makes license management
 really easy because you can use the same license for all your
 environments, like development, QA and production.
 
-To learn more about the cluster project, [read the
-docs](http://gluu.org/docs-cluster).
+To learn more about the cluster project, [read our
+documentation](http://gluu.org/docs-cluster).
 
 ## Dashboard
 The Gluu Server dashboard shows you metrics on the health and activity
@@ -82,7 +82,7 @@ of your server(s). It also enables you to view logs, and to manage other
 common Gluu Server administration tasks.
 
 ## Person Authentication
-Correctly identifying people--authentication--is fundamental to Web and
+Correctly identifying people--authentication--is fundamental to web and
 mobile security. Using the oxTrust web User Interface (UI), you can
 configure built-in or custom business logic for authentication.
 
@@ -112,7 +112,7 @@ be found
 To keep the Gluu Server up-to-date with the latest user information
 (a.k.a. attributes or claims), your organization can either "push" or
 "pull" identity data. In the "pull" mode, otherwise known as [LDAP
-Syncronization or Cache
+Synchronization or Cache
 Refresh](../../admin-guide/cache-refresh/index.md), the Gluu Server can
 use an existing LDAP identity source like Microsoft Active Directory as
 the authoritative source of identity information. If you "push"
@@ -124,13 +124,13 @@ can also be performed inside the Gluu Server management interface.
 
 
 ## Single Sign-On (SSO)
-Now it's time to connect your endpoints, portals or websites with your
+Now it is time to connect your endpoints, portals or websites with your
 Gluu Server. The Gluu Server stack includes both a
-[SAML](../saml/index.md) and [OpenID Connect Identity
+[SAML](../saml/index.md) and an [OpenID Connect Identity
 Provider](../openid-connect/index.md) which can be configured for single
 sign-on to any SAML 2.0 or OpenID Connect protected application.
 
-Here are a couple how-to's for creating SSO to popular apps:
+Here are a couple of how-to's for creating SSO to popular applications:
 
 - [Using SAML to get SSO with Google Apps](../../articles/google-saml.md)
 - [Using SAML to get SSO with Salesforce.com](../../articles/salesforce-sso.md)

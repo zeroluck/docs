@@ -1,8 +1,9 @@
 # setup.py Command Line Options
 
-Use `setup.py` to configure your Gluu Server and to add initial data required for
-oxAuth and oxTrust to start. If `setup.properties` is found in this folder, these
-properties will automatically be used instead of the interactive setup.
+Use `setup.py` to configure your Gluu Server and to add initial data
+required for oxAuth and oxTrust to start. If `setup.properties` is found
+in this folder, these properties will automatically be used instead of
+the interactive setup.
 
 The following options are available:
 
@@ -15,6 +16,6 @@ The following options are available:
 * __-n__ no interactive prompt before install starts. Run with `-f`
 * __-N__ no Apache httpd server
 * __-s__ install the Shibboleth IDP
-* __-u__ update hosts file with IP address / hostname
+* __-u__ update hosts file with IP address/hostname
 * __-w__ get the development head war files
 

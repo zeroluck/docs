@@ -12,12 +12,14 @@ by contributing documentation details!
 
 # Indexing
 
-All databases need proper indexing to function. This is particularly true for LDAP servers. 
-There should never be any `sub` or `one` scoped searches to the LDAP server that are not
-properly indexed. Because indexing is implementation specific, the following guidelines 
-should provide a good starting point. The LDAP server logs should be periodically analyzed to
-identify un-indexed searches. The exact indexing requirements may vary based on custom attributes,
-and custom authentication and authorization requirements.
+All databases need proper indexing to function. This is particularly
+true for LDAP servers. There should never be any `sub` or `one` scoped
+searches to the LDAP server that are not properly indexed. Because
+indexing is implementation specific, the following guidelines should
+provide a good starting point. The LDAP server logs should be
+periodically analyzed to identify un-indexed searches. The exact
+indexing requirements may vary based on custom attributes, and custom
+authentication and authorization requirements.
 
 ## OpenDJ Indexing
 
@@ -54,7 +56,9 @@ Indexed attributes in OpenDS on seed.gluu.org server:
     | lastModifiedTime | ordering            | Gluu    | 
     | oxAuthExpiration | ordering            | Gluu    | 
 
-For o=site cache refresh will search on the 'Primary Key'. So it will not be possible for us to know which attributes need to be indexed until configuration time.
+For o=site cache refresh will search on the 'Primary Key'. So it will
+not be possible for us to know which attributes need to be indexed until
+configuration time.
 
 ## Configuring LDAP indexing to improve OX applications performance
 
@@ -122,8 +126,8 @@ Indexing](http://opendj.forgerock.org/opendj-server/doc/admin-guide/#debug-searc
 
 ## Sample commands to add indexes
 
-Add index for inum attribute.
-	
+Add an index for the inum attribute.
+
 	./dsconfig create-local-db-index --backend-name userRoot --type generic --index-name inum --set index-type:equality --set index-entry-limit:4000 --hostName host --port 4444 --bindDN cn=Directory\ Manager -j /tmp/.pw --trustAll --noPropertiesFile --no-prompt
 	./dsconfig set-backend-prop --backend-name userRoot --set enabled:false --hostName host --port 4444 --bindDN cn=Directory\ Manager -j /tmp/.pw --trustAll --noPropertiesFile --no-prompt
 	./rebuild-index --baseDN o=gluu --index inum
@@ -134,50 +138,40 @@ Add index for inum attribute.
 	./rebuild-index --baseDN o=site --index inum
 	./dsconfig set-backend-prop --backend-name inumDB --set enabled:true --hostName host --port 4444 --bindDN cn=Directory\ Manager -j /tmp/.pw --trustAll --noPropertiesFile --no-prompt
 
+Add an index for the uniqueIdentifier attribute.
 
-Add index for uniqueIdentifier attribute.
-
-	
 	./dsconfig create-local-db-index --backend-name userRoot --type generic --index-name uniqueIdentifier --set index-type:equality --set index-entry-limit:4000 --hostName host --port 4444 --bindDN cn=Directory\ Manager -j /tmp/.pw --trustAll --noPropertiesFile --no-prompt
 	./dsconfig set-backend-prop --backend-name userRoot --set enabled:false --hostName host --port 4444 --bindDN cn=Directory\ Manager -j /tmp/.pw --trustAll --noPropertiesFile --no-prompt
 	./rebuild-index --baseDN o=gluu --index uniqueIdentifier
 	./rebuild-index --baseDN o=site --index uniqueIdentifier
 	./dsconfig set-backend-prop --backend-name userRoot --set enabled:true --hostName host --port 4444 --bindDN cn=Directory\ Manager -j /tmp/.pw --trustAll --noPropertiesFile --no-prompt
 
+Add an index for the oxId attribute.
 
-Add index for oxId attribute.
-
-	
 	./dsconfig create-local-db-index --backend-name userRoot --type generic --index-name oxId --set index-type:equality --set index-entry-limit:4000 --hostName host --port 4444 --bindDN cn=Directory\ Manager -j /tmp/.pw --trustAll --noPropertiesFile --no-prompt
 	./dsconfig set-backend-prop --backend-name userRoot --set enabled:false --hostName host --port 4444 --bindDN cn=Directory\ Manager -j /tmp/.pw --trustAll --noPropertiesFile --no-prompt
 	./rebuild-index --baseDN o=gluu --index oxId
 	./rebuild-index --baseDN o=site --index oxId
 	./dsconfig set-backend-prop --backend-name userRoot --set enabled:true --hostName host --port 4444 --bindDN cn=Directory\ Manager -j /tmp/.pw --trustAll --noPropertiesFile --no-prompt
 
+Add an index for the lastModifiedTime attribute.
 
-Add index for lastModifiedTime attribute.
-
-	
 	./dsconfig create-local-db-index --backend-name userRoot --type generic --index-name lastModifiedTime --set index-type:ordering --set index-entry-limit:4000 --hostName host --port 4444 --bindDN cn=Directory\ Manager -j /tmp/.pw --trustAll --noPropertiesFile --no-prompt
 	./dsconfig set-backend-prop --backend-name userRoot --set enabled:false --hostName host --port 4444 --bindDN cn=Directory\ Manager -j /tmp/.pw --trustAll --noPropertiesFile --no-prompt
 	./rebuild-index --baseDN o=gluu --index lastModifiedTime
 	./rebuild-index --baseDN o=site --index lastModifiedTime
 	./dsconfig set-backend-prop --backend-name userRoot --set enabled:true --hostName host --port 4444 --bindDN cn=Directory\ Manager -j /tmp/.pw --trustAll --noPropertiesFile --no-prompt
 
+Add an index for oxAuthExpiration attribute.
 
-Add index for oxAuthExpiration attribute.
-
-	
 	./dsconfig create-local-db-index --backend-name userRoot --type generic --index-name oxAuthExpiration --set index-type:ordering --set index-entry-limit:4000 --hostName host --port 4444 --bindDN cn=Directory\ Manager -j /tmp/.pw --trustAll --noPropertiesFile --no-prompt
 	./dsconfig set-backend-prop --backend-name userRoot --set enabled:false --hostName host --port 4444 --bindDN cn=Directory\ Manager -j /tmp/.pw --trustAll --noPropertiesFile --no-prompt
 	./rebuild-index --baseDN o=gluu --index oxAuthExpiration
 	./rebuild-index --baseDN o=site --index oxAuthExpiration
 	./dsconfig set-backend-prop --backend-name userRoot --set enabled:true --hostName host --port 4444 --bindDN cn=Directory\ Manager -j /tmp/.pw --trustAll --noPropertiesFile --no-prompt
 
+Determine the current status of indexes.
 
-Determine current status of indexes.
-
-	
 	./dbtest list-index-status --backendID userRoot -b o=gluu
 
 # Replication
@@ -199,6 +193,4 @@ replication.
 ## 389DS
 
 [Managing Replication](https://access.redhat.com/documentation/en-US/Red_Hat_Directory_Server/9.0/html/Administration_Guide/Managing_Replication.html)
-
-
 
