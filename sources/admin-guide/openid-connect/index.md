@@ -81,17 +81,21 @@ with the following screen:
 
 ## Client Registration
 
-A client in OAuth2 could be either a website or mobile application. OpenID Connect has an API 
-for [Dynamic Client Registration](http://openid.net/specs/openid-connect-registration-1_0.html)
-which efficiently pushes the task to the application developer. If you do not want to write an
-application to register your client, there are a few web pages around that can do the job for 
-you. Gluu publishes the [oxAuth-RP](seed.gluu.org/oxauth-rp) and there is also another in
-[PHP RP](http://www.gluu.co/php-sample-rp)
+A client in OAuth2 could be either a website or mobile application.
+OpenID Connect has an API for [Dynamic Client
+Registration](http://openid.net/specs/openid-connect-registration-1_0.html)
+which efficiently pushes the task to the application developer. If you
+do not want to write an application to register your client, there are a
+few web pages around that can do the job for you. Gluu publishes the
+[oxAuth-RP](seed.gluu.org/oxauth-rp) and there is also another in [PHP
+RP](http://www.gluu.co/php-sample-rp).
 
-If you can't get the developer to help themselves, or if your domain doesn't want to allow
-dynamic client registration, you can use the oxTrust admin GUI to manually add trusted clients.
+If you cannot get the developer to help themselves, or if your domain
+doesn't want to allow dynamic client registration, you can use the
+oxTrust admin GUI to manually add trusted clients.
 
-Available **Clients** can be seen by hitting the **Search** button leaving the search box empty.
+Available **Clients** can be seen by hitting the **Search** button
+leaving the search box empty.
 
 ![Client List](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_clientlist.png)
 
@@ -99,7 +103,10 @@ A new client can be added by clicking the **Add Client** link.
 
 ![Add Client](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_addclient.png)
 
-Clicking on the _Add Client_ link allows the Gluu Server Administrator to add new client. The search box can be used to look up previously added clients as well. The screenshot below shows the interface to add a new client.
+Clicking on the _Add Client_ link allows the Gluu Server administrator
+to add a new client. The search box can be used to look up previously
+added clients as well. The screenshot below shows the interface to add a
+new client.
 
 ![Add new client](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_newclient.png)
 
