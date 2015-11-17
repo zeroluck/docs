@@ -18,22 +18,22 @@
 - [Add New Identity Provider](#add-new-identity-provider)
 	- [Required Files](#required-files)
 	- [Configure asimba.xml:](#configure-asimba.xml)
-	- [Work on IDP Keystore:](#work-on-idp-keystore)
-	- [IDP Restart Tomcat](#idp-restart-tomcat)
+	- [Work on IdP Keystore:](#work-on-idp-keystore)
+	- [IdP Restart Tomcat](#idp-restart-tomcat)
 - [Add New Service Provider](#add-new-service-provider)
 	- [Configure asimba.xml:](#configure-asimba.xml)
 	- [Work on SP Keystore](#work-on-sp-keystore)
 	- [SP Restart Tomcat](#sp-restart-tomcat)
 - [Configure SP](#configure-sp)
-	- [Configure Remote IDP](#configure-remote-idp)
+	- [Configure Remote IdP](#configure-remote-idp)
 - [How to Test](#how-to-test)
 
 
 # Inbound SAML in Gluu Server
 
-The main use case for Asimba is to enable websites to use a single IDP
+The main use case for Asimba is to enable websites to use a single IdP
 for single sign-on (SSO) even when the organization may have a number of
-IDPs that are trusted. For more information, please review the [Asimba
+IdPs that are trusted. For more information, please review the [Asimba
 website](http://www.asimba.org/site/).
 
 # Requirements for Inbound SAML 
@@ -48,12 +48,12 @@ Above points are described below, briefly.
 
 ## Metadata of Authentication Server
 
-An authentication server can be any remote/native SAML IDP such as the
-Shibboleth IDP or Microsoft ADFS. You need the metadata of this server
+An authentication server can be any remote/native SAML IdP such as the
+Shibboleth IdP or Microsoft ADFS. You need the metadata of this server
 to configure Asimba. After configuration, the end user will be able to
 select their desired authentication server from Asimba's discovery page.
 As an alternative, you can configure the "selector" which will
-automatically redirect user to desired IDP/ADFS.
+automatically redirect a user to the desired IdP/ADFS.
 
 ## Metadata of Service Provider
 
@@ -92,10 +92,10 @@ UID, or an email address. In general, it can be any custom attribute.
         * What is the name of your City or Locality?: city name
         * What is the name of your State or Province?: State name
         * What is the two-letter country code for this unit?: US
-* Adding IDP/ADFS in Asimba: 
-    * Gather metadata of IDP/ADFS and keep them in some place under
+* Adding IdP/ADFS in Asimba: 
+    * Gather metadata of IdP/ADFS and keep them in some place under
       `/tomcat/webapps/asimba-saml-proxy/WEB-INF/`.
-    * Collect the certificate of the IDP/ADFS, and import them in Asimba
+    * Collect the certificate of the IdP/ADFS, and import them in Asimba
       truststore JKS.
 
 * Adding SP in Asimba: 
@@ -135,11 +135,11 @@ info have a look at the [Asimba
 wiki](http://sourceforge.net/p/asimba/wiki/Home/).
 
 * Required tools
-    * Metadata of remote IDP
-    * SAML certificate of remote IDP
+    * Metadata of remote IdP
+    * SAML certificate of remote IdP
 
 * Configuring `asimba.xml`:
-    * Grab the metadata of the remote IDP and save it in some place.
+    * Grab the metadata of the remote IdP and save it in some place.
       Make sure that user `tomcat` can read this xml copy.
         * Specify this metadata in the `<websso>\<method>\<idps>` section.
             * `idp id` must follow the entityID of this metadata.
@@ -159,8 +159,8 @@ A sample configuration looks like that:
 
 # Configure Asimba SAML Proxy
 
-* Collect the metadata of IDP/AD FS which will be connected with your Asimba Server.
-* Collect the SAML certificate of that IDP/AD FS server which will be
+* Collect the metadata of IdP/ADFS which will be connected with your Asimba Server.
+* Collect the SAML certificate of that IdP/ADFS server which will be
   connected with Asimba Proxy Server.
     * The certificate has to be a base64-encoded ASCII file which
       contains the two lines `-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----`.
@@ -207,12 +207,12 @@ info view the Asimba [wiki](http://sourceforge.net/p/asimba/wiki/Home/).
 
 ## Required Files
 
-* Metadata of remote IDP
-* SAML certificate of remote IDP
+* Metadata of remote IdP
+* SAML certificate of remote IdP
 
 ## Configure `asimba.xml`:
 
-* Grab the metadata of the remote IDP, and save it in some place. Make
+* Grab the metadata of the remote IdP, and save it in some place. Make
   sure that the user `tomcat` can read this xml copy.
     * Specify this metadata in the `<websso>\<method>\<idps>` section.
         * The `idp id` has to follow the entityID of this metadata.
@@ -230,20 +230,20 @@ A sample configuration looks like that:
 </idp>
 ```
 
-## Work on IDP Keystore: 
+## Work on IdP Keystore: 
 
-* Import the SAML certificate of IDP into Asimba's JKS
+* Import the SAML certificate of IdP into Asimba's JKS
     * Convert certificate into DER format
     * Import this DER formatted certificate into Asimba's keystore
-    * Please note that it's a good practice to follow the IDP's `entityID` as `alias` of this certificate.
+    * Please note that it's a good practice to follow the IdP's `entityID` as `alias` of this certificate.
 
 Sample command would be: 
 
         keytool -import -trustcacerts -alias https://idp.gluu.org/idp/shibboleth \ 
             -file idp_gluu_org.der -keystore asimba-keystore.jks
     
-## IDP Restart Tomcat 
-If everything was done correctly, the new IDP is configured with Asimba
+## IdP Restart Tomcat 
+If everything was done correctly, the new IdP is configured with Asimba
  
 # Add New Service Provider 
 
@@ -315,12 +315,12 @@ with this command:
 wget -c https://<HOSTNAME>/asimba-saml-proxy/profiles/saml2
 ```
 
-## Configure Remote IDP
+## Configure Remote IdP
 
-The remote IDP/AD FS also needs to be configured for the Asimba server
+The remote IdP/ADFS also needs to be configured for the Asimba server
 so that they can talk to each other.
 
-If the remote authentication server is a Shibboleth IDP, it just
+If the remote authentication server is a Shibboleth IdP, it just
 requires three things:
 
 * Metadata of Asimba--which can be grabbed easily.
@@ -340,11 +340,11 @@ requires three things:
 The workflow of the SAML Proxy is:
 
 End user hit the SP --> SP will take user to Asimba's discovery page to
-select IDP --> User will select IDP for authentication --> After
+select IDP --> User will select IdP for authentication --> After
 successful authentication user will be logged into SP.
 
 The Gluu server has an auto selector mechanism which automatically
-redirects the user from the specified SP to the desired IDP for
+redirects the user from the specified SP to the desired IdP for
 authentication. If you have questions, please open a ticket on
 [support](http://support.gluu.org).
 
