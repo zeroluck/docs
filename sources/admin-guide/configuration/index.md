@@ -1,3 +1,13 @@
+[TOC]
+
+# Welcome Screen
+The Administrator will be welcome with the following screen.
+There is a bar on top of the page that shows the status of the server.
+![bar](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_config_config_message.png)
+
+The welcome page looks like this:
+![Welcom Page](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_config_config_welcome.png)
+
 # Configuration
 
 This section of the documentation includes instructions for configuring
@@ -82,49 +92,18 @@ according checkbox.
 
 * _SMTP Port:_ The SMTP host server port number has to be listed here.
 
-## oxTrust Settings
+## oxTrust Configuration
+This feature provides options to add various changes in the Gluu Server User Interface. Gluu Server Administrator can add Title, Display Name or evern modify the Web User Interface color and logo from this section.
 
-This feature provides options to add various changes in the Gluu Server
-User Interface. The Gluu Server administrator can add title, display
-name or even modify both the web user interface color and the logo from
-this section.
+![Configuration Panel](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_config_config.png)
 
-![Configuration Panel](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_config.png)
+* _Organization Name:_ The organization name goes in this field
 
-* _Title:_ The web user interface title can be modified with this link.
+* _Manager Group:_ Gluu server has a single manager group. The users under the manager group can use the Web User Interface to operate the Gluu Server. There is no limit to the users that can be added to the manager group.
 
-![Web Interface Title](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_config_title.png)
-
-* _Display Name:_ This is the display name for the Gluu Server User
-Interface. However, this option is yet to be tested properly.
-
-* _Short Name:_ This feature has not been tested yet.
-
-* _Description:_ This feature is yet to be tested for any change in the IdP.
-
-* _Login Page Message:_ The login page now uses oxAuth Web UI. The
-  changes made in this field will not affect the IdP.
-
-* _Welcome Title Text:_ With this feature, the Gluu Server administrator
-  can add custom welcome text here.
-
-![Welcome Title Text](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_config_welcome.png)
-
-* _Welcome Page Message:_ This feature can be used to add various
-  messages and shortcuts in the welcome message.
-
-![Welcome Page Message](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_config_config_message.png)
-
-* _Manager Group:_ Gluu Server has a single manager group. The users
-that belong to the manager group can use the Web User Interface to
-operate the Gluu Server. There is no limit to the number of users that
-can belong to the manager group.
-
-* _Organization Logo:_ The organization logo can be uploaded and activated from the configuration menu.
+* _Organization Logo:_ The orgaziation logo can be uploaded and activated from the configuration menu.
 
 * _Organization Favicon:_ This feature can be used to change the organization favicon, if necessary.
-
-* _Menu Color:_ This is the menu color picker for the Gluu Server User Interface. The color used in the demo screenshots is green.
 
 # Manage Authentication
 This section allows the Gluu Server administrator to define how and
