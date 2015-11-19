@@ -35,7 +35,7 @@ The welcome page looks like this:
 #Configuration
 This section of the documentation includes instructions for configuring a number of the components of the Gluu Server in order to make the server fit for your organizational needs. 
 
-![Configuration Menu](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_menu_configuration.png)
+![Configuration Menu](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/config_menu.png)
 
 # Organization Configuration
 The organization configuration section contains the following options:    
