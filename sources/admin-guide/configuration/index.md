@@ -239,7 +239,7 @@ Additional attributes can be added from the Gluu Server GUI, oxTrust, by clickin
 
 # Cache Refresh
 
-**Cache Refresh** was built by Gluu to pull user information from a backend customer Active Directory/LDAP Server. Cache refresh dynamically synchronises user information from the backend data source of the customer to the Gluu Server in order to maximize performance. This feature is sensitive in nature and any incorrect action may result in loss of data within the Gluu Server. Before configuring Cache Refresh, you should read the [overview here](../../articles/cache-refresh.md). For any questions relating to Cache Refresh functionality, you can seek assistance from [Gluu Support](http://support.gluu.org). *For a successful Cache Refresh setup, you have to insert data in ALL FIELDS below.*
+**Cache Refresh** was built by Gluu to pull user information from a backend customer Active Directory/LDAP Server. Cache refresh dynamically synchronises user information from the backend data source of the customer to the Gluu Server in order to maximize performance. This feature is sensitive in nature and any incorrect action may result in loss of data within the Gluu Server. Before configuring Cache Refresh, you should read the Cache Refresh overview under Atricles. For any questions relating to Cache Refresh functionality, you can seek assistance from [Gluu Support](http://support.gluu.org). *For a successful Cache Refresh setup, you have to insert data in ALL FIELDS below.*
 
 ![Cache Refresh Menu](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_cache_menu.png)
 
