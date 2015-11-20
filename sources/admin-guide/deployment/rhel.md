@@ -4,7 +4,7 @@
 `chroot` distribution includes a full Linux distribution. As a file
 system based "jail", when you login to the Gluu Server from the host
 Linux system, the `/` directory in the Gluu Server is actually
-`/home/gluu-server` on the host.
+`/home/gluu-server24` on the host.
 
 This strategy has its pluses and minuses. In certain circumstances,
 there are ways for a hacker to “break out of the jail”, and escalate to
@@ -40,14 +40,14 @@ These are the single steps:
 # wget http://repo.gluu.org/rhel/RPM-GPG-KEY-GLUU -O /etc/pki/rpm-gpg/RPM-GPG-KEY-GLUU
 # rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-GLUU
 # yum clean all
-# yum install gluu-server
+# yum install gluu-server24
 ```
 
 ## Start Gluu Server: 
 
 To start the Gluu Server, run the following command:
 
-`# service gluu-server start`
+`# service gluu-server24 start`
 
 ## Gluu Server Configuration
 
@@ -60,7 +60,7 @@ either [setup.py help](./setup_py.md), or run `./setup.py -h`.
 
 * Login to the Gluu Server container:
 
-`# service gluu-server login`
+`# service gluu-server24 login`
 
 * Run "setup" script to perform the final installation:
 
@@ -96,13 +96,13 @@ installation:
 
 ## Starting and Stopping the Gluu Server
 
-`# service gluu-server start`
+`# service gluu-server24 start`
 
-`# service gluu-server stop`
+`# service gluu-server24 stop`
 
 ## Login to the chroot environment
 
-`# service gluu-server login`
+`# service gluu-server24 login`
 
 ## Gluu Server Uninstallation
 
@@ -110,9 +110,9 @@ Exit from chroot environment to main Linux. Stop the chroot environment,
 remove the Gluu Server, and remove the Gluu yum repository, afterwards:
 
 ```
-# service gluu-server stop
-# yum remove gluu-server
-# rm -f -r /opt/gluu-server.rpm.saved
+# service gluu-server24 stop
+# yum remove gluu-server24
+# rm -f -r /opt/gluu-server24.rpm.saved
 ```
 
 <!--

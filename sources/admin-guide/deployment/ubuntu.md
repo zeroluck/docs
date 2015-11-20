@@ -27,11 +27,11 @@ As an alternative, use our Gluu repository for Ubuntu Trusty:
 
 # apt-get update
 
-# apt-get install gluu-server
+# apt-get install gluu-server24
 
-# service gluu-server start
+# service gluu-server24 start
 
-# service gluu-server login
+# service gluu-server24 login
 
 # cd /install/community-edition-setup/
 
@@ -60,21 +60,21 @@ for solutions to many common problems we know about.
 ## Starting and Stopping the Gluu Server
 
 ```
-# service gluu-server start
+# service gluu-server24 start
 
-# service gluu-server stop
+# service gluu-server24 stop
 ```
 
 ## Login to the chroot environment
 
 ```
-# service gluu-server login
+# service gluu-server24 login
 ```
 
 Or if you prefer...
 
 ```
-# chroot /home/gluu-server/ su -
+# chroot /home/gluu-server24/ su -
 ```
 
 ## Running the latest setup
@@ -105,7 +105,7 @@ you can do to achieve your goal:
 * Uninstall existing Gluu Server installation.
 * For a new installation you can either grab a new VM, or just use the
   existing one.
-* Run all the commands until `service gluu-server login`.
+* Run all the commands until `service gluu-server24 login`.
 * Copy your file `setup.properties.last` into the new server's
   `/install/community-edition-setup/` location.
 * Rename the file `setup.properties.last` to `setup.properties`.
@@ -121,23 +121,23 @@ the home directory of the Gluu Server user. The following commands
 illustrate the single steps:
 
 ```
-# service gluu-server stop
+# service gluu-server24 stop
 
-# apt-get remove gluu-server
+# apt-get remove gluu-server24
 
-# rm -rf /home/gluu-server
+# rm -rf /home/gluu-server24
 ```
 
 On an installation, any modified files are saved in the directory
-`/home/gluu-server.save`. If you want to remove all the remnants of the
+`/home/gluu-server24.save`. If you want to remove all the remnants of the
 installation, delete these files with the command `rm -rf
-/home/gluu-server.save'.
+/home/gluu-server24.save'.
 
 In some circumstances, the installation can be broken. In that case
 please try the following to force uninstall the package.
 
 ```
-# dpkg --purge --force-all gluu-server
+# dpkg --purge --force-all gluu-server24
 ```
 
 ## Troubleshooting
