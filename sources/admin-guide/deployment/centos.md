@@ -46,7 +46,7 @@ These are the single steps:
 
 To start the Gluu Server, run the following command:
 
-`# service gluu-server2424 start`
+`# service gluu-server24 start`
 
 ## Gluu Server Configuration
 
@@ -113,6 +113,7 @@ remove the Gluu Server, and remove the Gluu yum repository, afterwards:
 # yum remove gluu-server24
 # rm -f -r /opt/gluu-server24.rpm.saved
 ```
+
 
 <!--
 or 
