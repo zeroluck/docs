@@ -292,22 +292,7 @@ If any organization has multiple Active Directory/LDAP server, click on **Add so
 ![Inum LDAP Server](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_cache_inum.png)
 
 This section of the application allows the server administrator to connect to the internal LDAP of the Gluu Server.
-
-* _Name:_ This contains the name of the Gluu LDAP server. i.e. 'inumdb'
-
-* _Bind DN:_ This field contains the username to connect to the internal server. Default BindDN for Gluu Server is: 'cn=directory manager' 
-
-* _Use SSL:_ Please tick the ckeckbox because the SSL must be activated. 
-
-* _Max Connections:_ The recommended number of connections is 2.
-
-* _Server:_ The hostname of the server with IP should be put here. Default Server address for Gluu Server is: localhost:1636
-
-* _Base DN:_ This contains the Gluu Server LDAP tree which is allowed to access the user information. Default Base DN: ou=people,o=site
-
-* _Enabled:_ Enabling this feature saves the values inside the gluu server.
-
-* _Change Bind Password:_ This option can be used to bind/change the password to connect to the internal LDAP of the Gluu Server. Bind Password is the same password which you inserted durning installation of Gluu Server
+As Gluu Server Administrator, you don't need to insert anything here in this section as new Gluu Server versions automatically populates this for you ( unless you try to manually configure it anyway ). 
 
 * _Refresh Method:_ The Gluu Server allows the Server Administrator to apply two types of Cache Refresh mechanism (i) VDS Method and (ii) Copy Method.
 
