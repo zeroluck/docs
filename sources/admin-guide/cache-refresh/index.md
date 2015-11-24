@@ -82,7 +82,7 @@ After collecting this information, deployer can move forward with the
 setup of the Cache Refresh engine.
 
 # Configuring Cache Refresh From oxTrust
-For a successful Cache Refresh setup, you have to insert data in ALL FIELDS below.
+For a successful Cache Refresh setup, please fill up the data in the 'Cache Refresh', 'Customer Backend Key/Attributes' and 'Source Backend LDAP Servers'. It is not necessary to fill up any data in the 'Inum LDAP Server' tab.
 
 ![Cache Refresh Menu](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_menu.png)
 
