@@ -32,16 +32,7 @@ bind password, base DN for search, and object class of person entry.
 Please note that the usage of [LDAPS (LDAP over SSL)][ldap] is strongly
 recommended.
 
-As you can see in the above diagram, 'Cache Refresh Engine' and
-'Authentication Manager' are each connected separately to the backend
-AD/LDAP. Both Engine and Manager need to know how and where to search
-for a user when the user authenticates through the Gluu Server for any
-kind of single sign-on operation. Any failure in these two connections
-will halt the users ability to log into the system.
-
-# Using Cache Refresh
-Cache Refresh **must be enabled** from the [System Configuration](http://www.gluu.org/docs/admin-guide/configuration/#system-configuration) of the [Organization Configuration](http://www.gluu.org/docs/admin-guide/configuration/#organization-configuration) under Configuration menu.
-
+# Things To Remember
 The Gluu Server supports two LDAP modes: (1) authentication and (2)
 identity mapping. Only sometimes it is the same LDAP server. To
 synchronize user accounts from an external LDAP directory server, you
@@ -75,7 +66,7 @@ LDAP:
 * Try to login with one of these users… assuming you've also setup your
 Gluu Server to use the correct LDAP server for authentication.
 
-## Configuring 'Cache Refresh Engine' in Gluu Server
+# Things To Know
 The deployer needs to know various values of his own backend AD to
 configure this part. For example, host & port, bindDN user information,
 bindDN password, Objectclasses, attributes whose information will be
@@ -90,60 +81,7 @@ baseDN respectively.
 After collecting this information, deployer can move forward with the
 setup of the Cache Refresh engine.
 
-## Configuring 'Authentication Manager' in Gluu Server
-This manager knows where to search for users when a request comes in.
-The deployer needs to put his own backend AD's information here which
-will allow the Gluu Server to connect and search for specific users
-based on Username/UID/sAMAccountName.
-
-To describe the picture a bit:
-
-1. backend AD and Cache Refresh Engine are always connected and talking
-to each other to check if any user's information are updated or not.
-
-2. Cache Refresh Engine and Gluu LDAP are always connected. After
-getting information from #1 point, Gluu server updates user's
-information in 'Gluu LDAP'.
-
-3. Authentication Manager is also connected with backend AD and this
-manager has information of backend AD.
-
-Here's a real life scenario:
-
-a. A user is trying to log into Gluu Server.
-
-b. After login, Gluu server takes this user's information and checks
-'Gluu LDAP' to see if this user is available in Gluu Server or not.
-
-c. If the user is present in Gluu Server then the workflow goes to
-'Authentication Manager' as it can check the user's password against
-customer's backend.
-
-After successful completion of b and c, user will be logged into the
-Gluu Server.
-
-What might be the best practice to complete this identity mapping
-successfully?
-
-1. Configure Cache Refresh. Enable 'Keep External Person' during CR
-setup. This enabling will allow your default user 'admin' to log into
-the Gluu Server after initial Cache Refresh iteration. If you do not
-enable 'Keep External Person', your 'admin' user including all other
-test users will be gone after the first Cache Refresh iteration.
-
-2. Test if you were able to successfully import all your users
-information into the Gluu Server or not. After 10-30 minutes, check
-user's information in the Gluu Server. If everything looks good you can
-move forward.
-
-3. Configure Authentication Manager. Provide your backend information
-here. Test LDAP connection. If both look good and work as expected, you
-can 'Update' this setup.
-
-4. Open a new browser and try to log into Gluu Server with your AD
-credentials. If you fail, check the log files for failure information.
-
-## Configuring Cache Refresh From oxTrust
+# Configuring Cache Refresh From oxTrust
 For a successful Cache Refresh setup, you have to insert data in ALL FIELDS below.
 
 ![Cache Refresh Menu](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_menu.png)
@@ -172,35 +110,17 @@ For a successful Cache Refresh setup, you have to insert data in ALL FIELDS belo
 
 ![Refresh Copy](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_refresh_copy.png)
 
-### Copy Method
-
-![Refresh Copy](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_refresh_copy.png)
-
-When the Copy method is selected, a section for Attribute mapping will
-be exposed. In this section, the Gluu Server Administrator can map any
-attribute from the backend Active Directory/LDAP to the LDAP cache of
-the Gluu Server.
-
-In the source attribute to destination attribute mapping field, you can
+* _Source attribute to destination attribute mapping:_ In the source attribute to destination attribute mapping field, you can
 enter the source attribute value on the left, and the destination
 attribute on the right. In other words, you can specify what the
 attribute is on the backend in the left field, and what it should be
 rendered as when it comes through the Gluu Server in the right field.
 
-The Administrator can select any Cache Refresh Method according to the
-backend Active Directory/LDAP server, but there are some essential
-values for both types of cache refresh method. The values are given
-below:
+![cache-refresh8](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/CR/Cache_Refresh_8.png)
 
   * _Pooling Interval (Minutes):_ This is the interval value for running
   the Cache Refresh mechanism in the Gluu Server. It is recommended to be
   kept higher than 15 minutes.
-
-  * _Script File Name:_ Gluu Server Cache Refresh can accept any kind of
-  Jython Script which might help to calculate any custom/complex
-  attribute, i.e. eduPersonScopedAffiliation calculation is highly
-  targeted field where such scripts can be used. For more information
-  please contact Gluu Support.
 
   * _Snapshot Folder:_ Every cycle of of Gluu Server Cache Refresh cycle
   saves an overall snapshot and problem-list record on a specified
@@ -215,7 +135,7 @@ below:
   are allowed to be saved in the hard drive of the VM. It is recommended
   to be kept to 20 snapshots.
 
-### Customer Backend Key and Attributes
+## Customer Backend Key and Attributes
 ![Customer Backend Key](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_backend.png)
 
 * _Key Attribute:_ This is the unique key attribute of backend Active Directory/LDAP Server such as SAMAccountname for any Active Directory.
@@ -231,7 +151,7 @@ below:
 filtering mechanism can be used such as `sn=*` where the value of this
 field ensures that every user must contain an attribute named SN.
 
-### Source Backend LDAP Servers
+## Source Backend LDAP Servers
 
 ![Source Backend](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_sourcebackend.png)
 
@@ -271,7 +191,7 @@ If any organization has multiple Active Directory/LDAP server, click on
 **Add source LDAP server** and add the additional server information.
 Please remember that a *failover server* is not a new server.
 
-### Inum LDAP Server
+## Inum LDAP Server
 
 ![Inum LDAP Server](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_inum.png)
 
