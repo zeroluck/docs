@@ -46,7 +46,9 @@ These are the single steps:
 
 To start the Gluu Server, run the following command:
 
-`# service gluu-server24 start`
+```
+# service gluu-server24 start
+```
 
 ## Gluu Server Configuration
 
@@ -59,7 +61,9 @@ either [setup.py help](./setup_py.md), or run `./setup.py -h`.
 
 * Login to the Gluu Server container:
 
-`# service gluu-server24 login`
+```
+# service gluu-server24 login
+```
 
 * Run the "setup" script to perform the final installation:
 
@@ -95,13 +99,17 @@ installation:
 
 ## Starting and Stopping the Gluu Server
 
-`# service gluu-server24 start`
+```
+# service gluu-server24 start
 
-`# service gluu-server24 stop`
+# service gluu-server24 stop
+```
 
 ## Login to the chroot environment
 
-`# service gluu-server24 login`
+```
+# service gluu-server24 login
+```
 
 ## Gluu Server Uninstallation
 
