@@ -370,11 +370,15 @@ below.*
 ## Customer Backend Key and Attributes
 ![Customer Backend Key](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_cache_backend.png)
 
-* _Key Attribute:_ This is the unique key attribute of backend Active Directory/LDAP Server such as sAMAccountname for any Active Directory.
+* _Key Attribute:_ This is the unique key attribute of backend Active
+  Directory/LDAP Server such as SAMAccountname for any Active Directory.
 
-* _Object Class:_ This contains the Object Classes of the backend Active Directory/LDAP which has permission to talk to Gluu Server Cache Refresh such as person, organizationalPerson, user etc.
+* _Object Class:_ This contains the Object Classes of the backend Active
+  Directory/LDAP which has permission to talk to Gluu Server Cache Refresh
+  such as person, organizationalPerson, user etc.
 
-* _Source Attribute:_ This contains the list of attributes which will be pulled and read by the Gluu Server.
+* _Source Attribute:_ This contains the list of attributes which will be
+  pulled and read by the Gluu Server.
 
 * _Custom LDAP Filter:_ If there is any custom search required, this filtering mechanism can be used such as "sn=*" where the value of this field ensures that every user must contain an attribute named SN.
 
