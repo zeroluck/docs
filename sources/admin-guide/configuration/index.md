@@ -256,13 +256,21 @@ approved by the moderator of their link.
 Upon activating Invitation Links Management within the interface, you
 will be presented with the following options:
 
-- **Run invite codes expiration process every**: This feature allows you to configure how often oxTrust will purge expired invitation links from the system. 
-- **Enable registration without invitation**: Allows public registration even when Invitation Links are used.
-- **Enable account expiration**: Allows the admin to configure an expiration policy for registered accounts. 
-	- **Accounts expire after**: Provides interface to set account expiration period and how often to run the expiration process. After this period registered accounts will be subject to invalidation during the next account expiration process run.
+- **Run invite codes expiration process every**: This feature allows you
+  to configure how often oxTrust will purge expired invitation links
+  from the system.
+- **Enable registration without invitation**: Allows public registration
+  even when Invitation Links are used.
+- **Enable account expiration**: Allows the admin to configure an
+  expiration policy for registered accounts.
+	- **Accounts expire after**: Provides an interface to set account
+	  expiration period and how often to run the expiration process.
+      After this period registered accounts will be subject to 
+      invalidation during the next account expiration process run.
 
 ## Disable Captcha for registration form
-Upon activating this feature, the default Captcha will be removed from the registration form. 
+Upon activating this feature, the default Captcha will be removed from
+the registration form.
 
 ## Configure Registration Form Attributes
 By default, there are a limited number of fields present in the self-registration form. If more attributes are needed they can be added in this section of Registration Management. Once you activate this feature, just start typing the attribute name in the Attributes Filter and then add desired attributes to the right column and click "Update". 
