@@ -10,16 +10,18 @@ The welcome page looks like this:
 ![Welcome Page](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_config_config_welcome.png)
 
 # Configuration
-This section of the documentation includes instructions for configuring a number of the components of the Gluu Server in order to make the server fit for your organizational needs. 
+This section of the documentation includes instructions for configuring
+a number of the components of the Gluu Server in order to adjust the
+server to your organizational needs.
 
 ![Configuration Menu](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/config_menu.png)
 
 # Organization Configuration
-The organization configuration section contains the following options:    
-- [System Configuration](#system-configuration)		
-- [Manage Email Addresses](#manage-email-addresses)		
-- [SMTP Server Configuration](#smtp-server-configuration)		
-- [oxTrust Configuration](#oxtrust-configuration)		
+This section contains the following options:
+- [System Configuration](#system-configuration)
+- [Manage Email Addresses](#manage-email-addresses)
+- [SMTP Server Configuration](#smtp-server-configuration)
+- [oxTrust Configuration](#oxtrust-configuration)
 
 ## System Configuration
 This feature allows the Gluu system administrator to customize and implement various options such as *Cache Refresh*, *Federation Hosting*, *SCIM Support* etc. 
