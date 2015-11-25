@@ -149,7 +149,8 @@ Backend LDAP Servers' sections. It is not necessary enter data in the
 ## Customer Backend Key and Attributes
 ![Customer Backend Key](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_backend.png)
 
-* _Key Attribute:_ This is the unique key attribute of backend Active Directory/LDAP Server such as SAMAccountname for any Active Directory.
+* _Key Attribute:_ This is the unique key attribute of backend Active
+  Directory/LDAP Server such as SAMAccountname for any Active Directory.
 
 * _Object Class:_ This contains the object classes of the backend Active
   Directory/LDAP which have permission to talk to the Gluu Server Cache
@@ -159,8 +160,8 @@ Backend LDAP Servers' sections. It is not necessary enter data in the
   pulled and read by the Gluu Server.
 
 * _Custom LDAP Filter:_ If there is any custom search required, this
-filtering mechanism can be used such as `sn=*` where the value of this
-field ensures that every user must contain an attribute named SN.
+  filtering mechanism can be used such as `sn=*`. The value of this field
+  ensures that every user must contain an attribute named SN.
 
 ## Source Backend LDAP Servers
 
