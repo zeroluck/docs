@@ -73,11 +73,15 @@ notifications for the IdP.
   Gluu. The email address in this field shall receive various
   notifications from Centreon.
 
-* _Email for Jira:_ The customers are not provided the jira access, and it will be removed from oxTrust soon. Please visit [Gluu Support](https://support.gluu.org) for customer support.
+* _Email for Jira:_ The customers that are not provided by the jira
+  access, and it will be removed from oxTrust soon. Please visit [Gluu
+  Support](https://support.gluu.org) for customer support.
 
-* _Email for Billing:_ The email address in this field will receive the billing invoices from Gluu.
+* _Email for Billing:_ The email address in this field will receive the
+  billing invoices from Gluu.
 
-* _Email for Privacy:_ This email address will receive news and updates about the privacy related matters of Gluu.
+* _Email for Privacy:_ This email address will receive news and updates
+  about the privacy related matters of Gluu.
 
 * _Email for SVN:_ The IdP related configuration files are are saved in the [Gluu SVN](https://svn.gluu.info). Configuration files are generally saved under */opt/* and */etc/httpd/*. The email address will get access to the checked-in files section of the corresponding IdP.
 
