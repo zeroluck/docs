@@ -215,7 +215,7 @@ connect to the internal LDAP of the Gluu Server.
 * _Name:_ This contains the name of the Gluu LDAP server, i.e. `inumdb`.
 
 * _Bind DN:_ This field contains the username to connect to the internal
-server. The default BindDN for Gluu Server is `cn=directory manager`.
+  server. The default BindDN for Gluu Server is `cn=directory manager`.
 
 * _Use SSL:_ Please tick the check-box because the SSL has to be
   activated.
