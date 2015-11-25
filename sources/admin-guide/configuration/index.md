@@ -1,13 +1,15 @@
 [TOC]
 # Welcome Screen
-The Administrator will be welcome with the following screen.
-There is a bar on top of the page that shows the status of the server.
+The administrator will be welcomed with the following screen. The bar on
+top of the page displays the status of the server.
+
 ![bar](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_config_config_message.png)
 
 The welcome page looks like this:
+
 ![Welcome Page](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_config_config_welcome.png)
 
-#Configuration
+# Configuration
 This section of the documentation includes instructions for configuring a number of the components of the Gluu Server in order to make the server fit for your organizational needs. 
 
 ![Configuration Menu](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/config_menu.png)
