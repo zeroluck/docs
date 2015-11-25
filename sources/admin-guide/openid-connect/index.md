@@ -60,7 +60,7 @@ scopes.
 The Gluu Server administrator can easily add more scopes in the GUI.
 Click *Add Scope* and you will be presented with the following screen:
 
-![Add Scopes](http://www.gluu.org/docs/img/openid_connect/oxtrust_scope_screenshot.png "Screenshot of oxTrust add OpenID Connect Scope")
+![Add Scopes](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/openid_connect/oxtrust_scope_screenshot.png)
 
 You will have the ability to provide a Display Name, Description,
 whether or not the scope is provided by default, and the claims that are
@@ -158,12 +158,6 @@ Organization Policy by the Gluu Server administrator.
 ![RedirectURI](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_adduri.png)
 
   Clicking on *Add URI* will open a new box to put the hostname in and it is done.
-
-* _Add Group:_ This feature can be used to affiliate specific groups.
-![Add Group](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_addgroup.png)
-
-  The existing groups can be listed by hitting the *Search* button, and
-  keeping the search phrase blank.
 
 * _Add Scopes:_ This option can be used to add the required scopes in the Gluu Server.
 ![Add Scopes](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_addscope.png)

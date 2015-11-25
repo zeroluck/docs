@@ -1,29 +1,4 @@
-**Table of Contents** 
-- [Welcome Screen](#wecome-screen)
-- [Configuration](#configuration)	
-- [Organization Configuration](#organization-configuration)	
-	- [System Configuration](#system-configuration)	
-	- [Manage Email Addresses](#manage-email-addresses)	
-	- [SMTP Server Configuration](#smtp-server-configuration)	
-	- [oxTrust Configuration](#oxtrust-configuration)	
-- [Manage Authentication](#manage-authentication)	
-	- [Default Authentication Method](#default-authentication-method)	
-- [Manage Custom Scripts](#manage-custom-scripts)	
-- [Manage Registration](#manage-registration)	
-	- [Activate Invitation Link](#activate-invitation-link)	
-	- [Disable Captcha for Registration Form](#disable-captcha-for-registration-form)	
-	- [Configure Registration Form Attributes](#configure-registration-form-attributes) 	
-- [Attributes](#attributes)	
-- [Cache Refresh Directory Integration](#cache-refresh)	
-	- [Customer Backend Key/Attributes](#customer-backend-key-and-attributes)	
-	- [Source Backend LDAP Servers](#source-backend-ldap-servers)	
-	- [Inum LDAP Server](#inum-ldap-server)	
-	- [Attributes Mapping](#attributes-mapping)	
-	- [Customizing Behavior](#customizing-behavior)	
-- [Configure Log Viewer](#configure-log-viewer)	
-- [View Log File](#view-log-file)		
-- [Status](#status)	
-
+[TOC]
 # Welcome Screen
 The Administrator will be welcome with the following screen.
 There is a bar on top of the page that shows the status of the server.
