@@ -132,12 +132,19 @@ section.
   operate the Gluu Server. There is no limit to the number of users that
   can be added to the manager group.
 
-* _Organization Logo:_ The organization logo can be uploaded and activated from the configuration menu.
+* _Organization Logo:_ The organization logo can be uploaded and
+  activated from the configuration menu.
 
-* _Organization Favicon:_ This feature can be used to change the organization favicon, if necessary.
+* _Organization Favicon:_ This feature can be used to change the
+  organization favicon, if desired.
 
 # Manage Authentication
-This section allows the Gluu Server Administrator to define how and where the server should connect to authenticate users. If it is a remote LDAP/Active Directory server, the values are required. Put the details of the data source that you are trying to connect with Gluu Server. The data source can your back-end Active Directory or local LDAP server. 
+This section allows the Gluu Server administrator to define how and
+where the server should connect to authenticate users. If it is a remote
+LDAP/Active Directory server, the values are required. Put the details
+of the data source that you are trying to connect with Gluu Server. For
+example, the data source can be your back-end Active Directory, or your
+local LDAP server.
 
 ![Manage LDAP Authentication](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_manage_ldap.png)
 
