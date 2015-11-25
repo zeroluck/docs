@@ -24,15 +24,26 @@ This section contains the following options:
 - [oxTrust Configuration](#oxtrust-configuration)
 
 ## System Configuration
-This feature allows the Gluu system administrator to customize and implement various options such as *Cache Refresh*, *Federation Hosting*, *SCIM Support* etc. 
+This feature allows the Gluu system administrator to customize and
+implement various options such as *Cache Refresh*, *Federation Hosting*,
+*SCIM Support* etc.
 
 ![System Configuration](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_config_system.png)
 
-* _White Pages:_ If the user intends to use the built-in White Pages of the Gluu Server, it can be enabled from the menu.
+* _White Pages:_ If the user intends to use the built-in White Pages of
+  the Gluu Server, this feature can be enabled here.
 
-* _Federation Hosting:_ The Federation hosting is enabled by default. However, the creation and management of federations can be complicated. Gluu offers an additional service called *Federation Registry* that makes the creation and management of identity federations simple and easy. 
+* _Federation Hosting:_ The Federation hosting is enabled by default.
+  However, the creation and management of federations can be 
+  complicated. Gluu offers an additional service called *Federation 
+  Registry* that simplifies both the creation and management of identity 
+  federations.
 
-* _Self-Service Password Reset:_ The Self-Service Password Reset is disabled by default. For Self-Service Password Reset to work SMTP Server(see below) should be configured as well. Password reset link for your Gluu server should be something like: "https://your.idp.link/identity/person/passwordReminder.htm"
+* _Self-Service Password Reset:_ The Self-Service Password Reset is
+  disabled by default. For Self-Service Password Reset to work an SMTP
+  server (see below) should be configured as well. Password reset link 
+  for your Gluu server should be something like:
+  "https://your.idp.link/identity/person/passwordReminder.html".
 
 * _Cache Refresh:_ This is the mechanism which pulls and synchronizes user information from a remote LDAP/Active Directory with the local LDAP of Gluu server. The Gluu server administrator needs to provide sufficient information including username and password before enabling this option. Before configuring Cache Refresh, you should read the overview under `Articles` . After reading the overview, you can learn about the Cache Refresh GUI tools [here](#cache-refresh).
 
