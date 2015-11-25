@@ -84,30 +84,38 @@ After collecting this information, the deployer can move forward with
 the setup of the Cache Refresh engine.
 
 # Configuring Cache Refresh From oxTrust
-For a successful Cache Refresh setup, please fill up the data in the 'Cache Refresh', 'Customer Backend Key/Attributes' and 'Source Backend LDAP Servers'. It is not necessary to fill up any data in the 'Inum LDAP Server' tab.
+For a successful Cache Refresh setup, please complete the data fields in
+both the 'Cache Refresh', 'Customer Backend Key/Attributes', and 'Source
+Backend LDAP Servers' sections. It is not necessary enter data in the
+'Inum LDAP Server' tab.
 
 ![Cache Refresh Menu](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_menu.png)
 
-* _Last Run:_ The date and time of the latest cache refresh cycle completion is shown in the last run.
+* _Last Run:_ The date and time of the latest cache refresh cycle
+  completion is shown in the last run.
 
-* _Updates at the Last Run:_ This shows the total number of users who have been updated in the last Cache Refresh cycle. For example an user who has any of his attribute updated will show up here.
+* _Updates at the Last Run:_ This shows the total number of users who
+  have been updated in the last Cache Refresh cycle. For example an user
+  who has any of his attribute updated will show up here.
 
-* _Problem at the Last Run:_ This shows the number of users who have been rejected by the Gluu Server during the update. If there are any rejections, please contact Gluu Support for clarification and help.
+* _Problem at the Last Run:_ This shows the number of users who have
+  been rejected by the Gluu Server during the update. If there are any
+  rejections, please contact Gluu Support for clarification and help.
 
 ![Last Run](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_lastrun.png)
 
-* _Refresh Method:_ The Gluu Server allows the Server Administrator to
-  apply two types of Cache Refresh mechanism--(1) VDS Method, and (2) Copy
-  Method.
+* _Refresh Method:_ The Gluu Server allows the server administrator to
+  apply two types of Cache Refresh mechanisms--(1) VDS Method, and (2) 
+  Copy Method.
 
   1. _VDS Method:_ Any organization with a database like *mysql* can use
   the VDS method. This option can be enabled via the drop-down menu in
-  Refresh Method option.
+  the Refresh Method option.
 
 ![Refresh VDS](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_refresh_vds.png)
 
   2. _Copy Method:_ If the organization has any kind of Active
-  Directory/LDAP server, they are strongly recommended to use the *Copy
+  Directory/LDAP server, it is strongly recommended to use the *Copy
   Method* from the drop-down menu.
 
 ![Refresh Copy](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_refresh_copy.png)
