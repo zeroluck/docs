@@ -182,10 +182,16 @@ local LDAP server.
 * _Change Bind Password:_ This button assignes a password to
   authenticate the *Authentication Server*.
 
-* _Test LDAP Connection:_ This button checks whether the provided information can connect to the authentication server. The scan is real time and it is advised to use it for the Gluu Server Administrators.
+* _Test LDAP Connection:_ This button checks whether the provided
+  information are sufficient to connect to the authentication server. The
+  scan is done in real time, and it is recommended to be used by the Gluu
+  Server administrators, only.
 
 ## Default Authentication Method
-This allows the Gluu Server Administrator to select the default authentication mode and level for person authentication. Both are set to "Default" until additional authentication mechanisms are enabled via [custom scripts](#manage-custom-scripts). 
+This allows the Gluu Server administrator to select both the default
+authentication mode, and level for person authentication. Both modes are
+set to "Default" until additional authentication mechanisms are enabled
+via [custom scripts](#manage-custom-scripts).
 
 ![Default Authentication Method](https://raw.githubusercontent.com/GluuFederation/docs/75518bb90184aa1b096874526b4da5f9f924bd44/sources/img/2.4/admin_auth_default.png)
 
