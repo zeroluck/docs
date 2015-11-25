@@ -430,10 +430,15 @@ Please remember that a *failover server* is not a new server.
 
 ![Inum LDAP Server](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_cache_inum.png)
 
-This section of the application allows the server administrator to connect to the internal LDAP of the Gluu Server.
-As Gluu Server Administrator, you don't need to insert anything here in this section as new Gluu Server versions automatically populates this for you ( unless you try to manually configure it anyway ). 
+This section of the application allows the server administrator to
+connect to the internal LDAP of the Gluu Server. As Gluu Server
+administrator, you do not need to insert anything here in this section
+as new Gluu Server versions automatically populates this for you (unless
+you try to manually configure it anyway).
 
-* _Refresh Method:_ The Gluu Server allows the Server Administrator to apply two types of Cache Refresh mechanism (i) VDS Method and (ii) Copy Method.
+* _Refresh Method:_ The Gluu Server allows the Server Administrator to
+  apply two types of Cache Refresh mechanism--(i) VDS Method and (ii) Copy
+  Method.
 
   1. _VDS Method:_ Any organization with a database like *mysql* can use the VDS method. This option can be enabled via the drop-down menu in Refresh Method option.
 
