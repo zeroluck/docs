@@ -45,9 +45,17 @@ implement various options such as *Cache Refresh*, *Federation Hosting*,
   for your Gluu server should be something like:
   "https://your.idp.link/identity/person/passwordReminder.html".
 
-* _Cache Refresh:_ This is the mechanism which pulls and synchronizes user information from a remote LDAP/Active Directory with the local LDAP of Gluu server. The Gluu server administrator needs to provide sufficient information including username and password before enabling this option. Before configuring Cache Refresh, you should read the overview under `Articles` . After reading the overview, you can learn about the Cache Refresh GUI tools [here](#cache-refresh).
+* _Cache Refresh:_ This is the mechanism which pulls and synchronizes
+  user information between a remote LDAP/Active Directory, and local 
+  LDAP of your Gluu server. The Gluu server administrator needs to 
+  provide sufficient information including username and password before 
+  enabling this option. Before configuring Cache Refresh, it is recommended 
+  that you read the overview (see `Articles`), the Cache Refresh GUI tools
+  [here](#cache-refresh).
 
-* _SCIM Support:_ If the organization already has an identity management or provisioning system in place, the SCIM protocol can be used to push and synchronize the existing identity data into the Gluu Server.
+* _SCIM Support:_ If the organization already has an identity management
+  or provisioning system in place, the SCIM protocol can be used to push
+  and synchronize the existing identity data into the Gluu Server.
 
 * _DNS Server:_ The address to the DNS Server goes in this field.
 
