@@ -168,11 +168,13 @@ Backend LDAP Servers' sections. It is not necessary enter data in the
 ![Source Backend](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_sourcebackend.png)
 
 This section allows the Gluu Server to connect to the backend Active
-Directory/LDAP server of the organization.
+Directory/LDAP server of your organization.
 
 * _Name:_ Please input **source** as the value.
 
-* _Use Anonymous Bind:_ Some customers do now allow username/password connections to their backend server. Enable this option if this applies to your organization.
+* _Use Anonymous Bind:_ Some customers do now allow username/password
+  connections to their backend server. Enable this option if this applies
+  to your organization.
 
 * _Bind DN:_ This contains the username to connect to the backend
   server. You need to use full DN here. As for example,
@@ -186,7 +188,7 @@ Directory/LDAP server of the organization.
 
 * _Server:_ This contains the backend Active Directory/LDAP server
   hostname with port, i.e. `backend.organization.com:389`. If your
-  organization has a failover server, click **Add Server** and more
+  organization has a failover server, click **Add Server** to add more
   hostnames with the according port.
 
 * _Base DN:_ This contains the location of the Active Directory/LDAP
