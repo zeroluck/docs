@@ -340,15 +340,30 @@ appear:
 
 # Cache Refresh
 
-**Cache Refresh** was built by Gluu to pull user information from a backend customer Active Directory/LDAP Server. Cache refresh dynamically synchronizes user information from the backend data source of the customer to the Gluu Server in order to maximize performance. This feature is sensitive in nature and any incorrect action may result in loss of data within the Gluu Server. Before configuring Cache Refresh, you should read the Cache Refresh overview under Articles. For any questions relating to Cache Refresh functionality, you can seek assistance from [Gluu Support](http://support.gluu.org). *For a successful Cache Refresh setup, you have to insert data in ALL FIELDS below.*
+**Cache Refresh** was built by Gluu to pull user information from a
+backend customer Active Directory/LDAP Server. Cache refresh dynamically
+synchronizes user information from the backend data source of the
+customer to the Gluu Server in order to maximize performance. This
+feature is sensitive in nature and any incorrect action may result in
+loss of data within the Gluu Server. Before configuring Cache Refresh,
+you should read the Cache Refresh overview (see Articles). For any
+questions relating to Cache Refresh functionality, you can ask for
+assistance from [Gluu Support](http://support.gluu.org). *For a
+successful Cache Refresh setup, you have to insert data in ALL FIELDS
+below.*
 
 ![Cache Refresh Menu](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_cache_menu.png)
 
-* _Last Run:_ The date and time of the latest cache refresh cycle completion is shown in the last run.
+* _Last Run:_ The date and time of the latest cache refresh cycle
+  completion is shown here.
 
-* _Updates at the Last Run:_ This shows the total number of users who have been updated in the last Cache Refresh cycle. For example an user who has any of his attribute updated will show up here.
+* _Updates at the Last Run:_ This shows the total number of users who
+  have been updated in the last Cache Refresh cycle. For example an user
+  who has any of his attribute updated will show up here.
 
-* _Problem at the Last Run:_ This shows the number of users who have been rejected by the Gluu Server during the update. If there are any rejections, please contact Gluu Support for clarification and help.
+* _Problem at the Last Run:_ This shows the number of users who have
+  been rejected by the Gluu Server during the update. If there are any
+  rejections, please contact Gluu Support for clarification and help.
 
 ![Last Run](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_cache_lastrun.png)
 
