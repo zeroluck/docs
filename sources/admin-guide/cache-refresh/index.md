@@ -192,10 +192,10 @@ Directory/LDAP server of your organization.
   hostnames with the according port.
 
 * _Base DN:_ This contains the location of the Active Directory/LDAP
-  tree from where the Gluu Server shall read the user information.
+  tree from where the Gluu Server reads the user information.
 
-* _Enabled:_ This check-box is to save and push the changes and only to
-  be used when the server administrator has entered all the required
+* _Enabled:_ This check-box is to save and push the changes. It is only
+  to be used when the server administrator has entered all the required
   values.
 
 * _Change Bind Password:_ This can be used for a new password or to
