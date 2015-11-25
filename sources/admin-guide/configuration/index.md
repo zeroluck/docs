@@ -320,19 +320,23 @@ appear:
   3. Photo
   4. Date
 
-* _Edit Type:_ This field defines the user who has access to edit the specific attribute.
+* _Edit Type:_ This field defines the user who has access to edit the
+  specific attributes.
 
 * _View Type:_ This field defines the user who can view this attribute.
 
-* _Privacy Level:_ Please select the desired privacy level from the drop-down menu. The privacy level has a specific range of 1 to 5.
+* _Privacy Level:_ Please select the desired privacy level from the
+  drop-down menu. The privacy level has a specific range of 1 to 5.
 
-* _Multivalued:_ Please select multivalue in this field if the attribute contains more than one value.
+* _Multivalued:_ Please select multivalue in this field if the attribute
+  contains more than one value.
 
 * _SCIM Attributes:_ If the attribute is a part of SCIM architecture select true.
 
 * _Description:_ This contains a few words to describe the attribute.
 
-* _Status:_ The status, when selected active, will release and publish the attribute in IdP The status, when selected active, will release and publish the attribute in IdP.
+* _Status:_ The status, when selected active, will release and publish
+  the attribute in IdP.
 
 # Cache Refresh
 
