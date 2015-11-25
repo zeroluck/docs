@@ -118,13 +118,19 @@ using this feature.
   here.
 
 ## oxTrust Configuration
-This feature provides options to add various changes in the Gluu Server User Interface. Gluu Server Administrator can add Title, Display Name or even modify the Web User Interface color and logo from this section.
+This feature provides options to add various changes in the Gluu Server
+User Interface. The Gluu Server administrator can add Title, Display
+Name or even modify the Web User Interface color and logo from this
+section.
 
 ![Configuration Panel](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_config_config.png)
 
-* _Organization Name:_ The organization name goes in this field
+* _Organization Name:_ The organization name goes here.
 
-* _Manager Group:_ Gluu server has a single manager group. The users under the manager group can use the Web User Interface to operate the Gluu Server. There is no limit to the users that can be added to the manager group.
+* _Manager Group:_ The Gluu Server has a single manager group. The users
+  that belong to the manager group can use the Web User Interface to
+  operate the Gluu Server. There is no limit to the number of users that
+  can be added to the manager group.
 
 * _Organization Logo:_ The organization logo can be uploaded and activated from the configuration menu.
 
