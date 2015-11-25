@@ -120,11 +120,12 @@ Backend LDAP Servers' sections. It is not necessary enter data in the
 
 ![Refresh Copy](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_refresh_copy.png)
 
-* _Source attribute to destination attribute mapping:_ In the source attribute to destination attribute mapping field, you can
-enter the source attribute value on the left, and the destination
-attribute on the right. In other words, you can specify what the
-attribute is on the backend in the left field, and what it should be
-rendered as when it comes through the Gluu Server in the right field.
+* _Source attribute to destination attribute mapping:_ Here you can
+  enter the source attribute value on the left, and the destination
+  attribute on the right. In other words, the left entry field defines 
+  the attribute that belongs to the backend. The right entry field 
+  defines the way it should be rendered as it is delivered by the Gluu 
+  Server.
 
 ![cache-refresh8](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/CR/Cache_Refresh_8.png)
 
