@@ -57,16 +57,21 @@ implement various options such as *Cache Refresh*, *Federation Hosting*,
   or provisioning system in place, the SCIM protocol can be used to push
   and synchronize the existing identity data into the Gluu Server.
 
-* _DNS Server:_ The address to the DNS Server goes in this field.
+* _DNS Server:_ The address of the DNS Server goes here.
 
-* _Maximum Log Size:_ This option can be used to mitigate the space issues within the Gluu Server. The Gluu Server automatically zips any log file which is bigger than the defined value in this field. 
+* _Maximum Log Size:_ This option can be used to mitigate the space
+  issues within the Gluu Server. The Gluu Server automatically zips any
+  log file which is bigger than the defined value in this field.
 
 ## Manage Email Addresses
-This feature allows the Gluu Server Administrator to manage notifications for the IdP.
+This feature allows the Gluu Server administrator to manage
+notifications for the IdP.
 
 ![Manage Email Addresses](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_config_email.png)
 
-* _Email for Centreon:_ Centreon is the server monitoring system used by Gluu. The email address in this field shall receive various notifications from Centreon.
+* _Email for Centreon:_ Centreon is the server monitoring system used by
+  Gluu. The email address in this field shall receive various
+  notifications from Centreon.
 
 * _Email for Jira:_ The customers are not provided the jira access, and it will be removed from oxTrust soon. Please visit [Gluu Support](https://support.gluu.org) for customer support.
 
