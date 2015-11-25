@@ -304,19 +304,21 @@ appear:
 
 ![Add Attribute Screen](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_attribute_add.png)
 
-* _Name:_ This field defines the name of the custom attribute which must be unique in the Gluu Server LDAP tree.
+* _Name:_ This field defines the name of the custom attribute which must
+  be unique in the Gluu Server LDAP tree.
 
-* _SAML1 URI:_ This field contains the SAML1 URI for the custom attribute.
+* _SAML1 URI:_ This field contains the SAML1 uri for the custom attribute.
 
-* _SAML2 URI:_ This field contains the SAML2 URI for the custom attribute.
+* _SAML2 URI:_ This field contains the SAML2 uri for the custom attribute.
 
 * _Display Name:_ This display name can be anything that is human readable.
 
-* _Type:_ The attribute type should be selected from the drop-down menu. There are four attribute types supported by Gluu:    
-  1. Text	
-  2. Numeric	
-  3. Photo	
-  4. Date	
+* _Type:_ The attribute type should be selected from the drop-down menu.
+  There are four attribute types supported by Gluu:
+  1. Text
+  2. Numeric
+  3. Photo
+  4. Date
 
 * _Edit Type:_ This field defines the user who has access to edit the specific attribute.
 
