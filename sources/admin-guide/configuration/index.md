@@ -188,6 +188,7 @@ local LDAP server.
   Server administrators, only.
 
 ## Default Authentication Method
+
 This allows the Gluu Server administrator to select both the default
 authentication mode, and level for person authentication. Both modes are
 set to "Default" until additional authentication mechanisms are enabled
@@ -196,39 +197,64 @@ via [custom scripts](#manage-custom-scripts).
 ![Default Authentication Method](https://raw.githubusercontent.com/GluuFederation/docs/75518bb90184aa1b096874526b4da5f9f924bd44/sources/img/2.4/admin_auth_default.png)
 
 # Manage Custom Scripts  
-  
-The latest edition of the Gluu Server introduced a new Configuration section called _Manage Custom Scripts_. This is a single place where the server administrator can manage and implement interception scripts to customize the behavior of the Gluu Server. 
+
+The latest edition of the Gluu Server introduced a new Configuration
+section called _Manage Custom Scripts_. This is a single place where the
+server administrator can manage and implement interception scripts to
+customize the behavior of the Gluu Server.
 
 ![Custom Authentication Scritp](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_auth_custom.png)
 
-Currently, there are interception scripts to customize the following functionalities:      
+Currently, there are interception scripts to customize the following
+functionalities:
 
-- [Application Session Management](../../reference/interception-scripts/index.md#application-session-management)    	
-- [Authentication](../../reference/interception-scripts/index.md#authentication)	 
-- [Authorization](../../reference/interception-scripts/index.md#authorization)	
-- [Cache Refresh](../../reference/interception-scripts/index.md#cache-refresh)	
-- [Client Registration](../../reference/interception-scripts/index.md#client-registration)	
-- [ID Generation](../../reference/interception-scripts/index.md#id-generation)	
-- [Update User](../../reference/interception-scripts/index.md#update-user)	
-- [User Registration](../../reference/interception-scripts/index.md#user-registration)	
+- [Application Session Management](../../reference/interception-scripts/index.md#application-session-management)
+- [Authentication](../../reference/interception-scripts/index.md#authentication)
+- [Authorization](../../reference/interception-scripts/index.md#authorization)
+- [Cache Refresh](../../reference/interception-scripts/index.md#cache-refresh)
+- [Client Registration](../../reference/interception-scripts/index.md#client-registration)
+- [ID Generation](../../reference/interception-scripts/index.md#id-generation)
+- [Update User](../../reference/interception-scripts/index.md#update-user)
+- [User Registration](../../reference/interception-scripts/index.md#user-registration)
 
-Due to the significance of custom interception scripts in the Gluu Server, we have dedicated a separate folder within the docs to more comprehensively go over [how to use them](../../reference/interception-scripts/index.md). 
+Due to the significance of custom interception scripts in the Gluu
+Server, we have dedicated a separate folder within the docs to explain
+[how to use them](../../reference/interception-scripts/index.md) in
+detail.
 
 # Manage Registration
+
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_config_workflow.png)
 
-From the Manage Registration interface, the Gluu Server admin can customize the self-registration work-flow. Each option will be covered individually below.
+From the Manage Registration interface, the Gluu Server administrator
+can customize the self-registration work-flow. Each option will be
+covered individually as described below.
 
-There are other ways of creating accounts within the Gluu Server, including: SCIM, Cache Refresh, Manual User Management, and Automatic Enrollment as part of custom authentication (Inbound SAML). Except Cache Refresh, which is covered [here](#cache-refresh), those additional methods are covered within the [User Management](../user-management/index.md) portion of the documentation.
+There are other ways of creating accounts within the Gluu Server,
+including: SCIM, Cache Refresh, Manual User Management, and Automatic
+Enrollment as part of custom authentication (Inbound SAML). Except Cache
+Refresh, which is covered [here](#cache-refresh), those additional
+methods are covered within the [User
+Management](../user-management/index.md) portion of the documentation.
 
 ## Activate Invitation Link
-When active, the Invitation Links feature allows the server admin to control who can register an account by issuing a unique registration link and sending it to the desired new users.
+When active, the Invitation Links feature allows the server admin to
+control who can register an account by issuing a unique registration
+link and sending it to the desired new users.
 
-Any person who knows the link will be able to register an account (as long as the link is not expired). Expired Links are deleted according to "invite codes expiration process" policy, together with any unconfirmed accounts if said link is moderated.
+Any person who knows the link will be able to register an account as
+long as the link is not expired. Expired links are deleted according to
+the "invite codes expiration process" policy. This includes any
+unconfirmed accounts if said link is moderated.
 
-Invitation Links can be optionally made "moderated" and a number of moderators can be assigned to the link from among registered users. In this case any newly registered users who used this link will not be immediately able to use their account until their registration is approved by the moderator of their link.
+Invitation links can be set to "moderated", and a number of moderators
+can be assigned to the link. A moderator has to be a registered user. In
+this case any newly registered users who used this link will not be
+immediately able to use their account until their registration is
+approved by the moderator of their link.
 
-Upon activating Invitation Links Management within the interface, you will be presented with the following option:    
+Upon activating Invitation Links Management within the interface, you
+will be presented with the following options:
 
 - **Run invite codes expiration process every**: This feature allows you to configure how often oxTrust will purge expired invitation links from the system. 
 - **Enable registration without invitation**: Allows public registration even when Invitation Links are used.
