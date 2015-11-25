@@ -65,7 +65,7 @@ the right people.
 To manage people, navigate to User > Manage People, as shown in the
 screenshot below.
 
-![](http://www.gluu.org/docs/img/local_user_admin/manage_people.png)
+![](https://raw.githubusercontent.com/GluuFederation/docs/img/local_user_admin/manage_people.png)
 
 From this interface you can add users and search for specific users.
 Because the user database can potentially be very large, a value is
@@ -75,14 +75,14 @@ this would be best performed manually within the Gluu OpenDJ server.
 Upon performing a user search, a list will be populated with all users
 that match the search, as shown in the screenshot below.
 
-![Search Users](https://cloud.githubusercontent.com/assets/5271048/7096390/2711fa62-df95-11e4-8f5c-a7df045aec93.png)
+![Search Users](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_users_searchadmin.png)
 
 To edit a user, simply click on any of the hyperlinks associated with
 that user and you will be taken to a user management interface where you
 can modify that specific attributes relating to that user as displayed
 below.
 
-![Manage Users](https://cloud.githubusercontent.com/assets/5271048/7096380/2592c978-df95-11e4-94ff-11b14d39dc91.png)
+![Manage Users](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_users_edituser.png)
 
 ### Import People
 This feature allows the Gluu Server Administrator to bulk import users.

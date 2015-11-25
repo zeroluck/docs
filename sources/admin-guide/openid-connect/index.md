@@ -159,12 +159,6 @@ Organization Policy by the Gluu Server administrator.
 
   Clicking on *Add URI* will open a new box to put the hostname in and it is done.
 
-* _Add Group:_ This feature can be used to affiliate specific groups.
-![Add Group](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_addgroup.png)
-
-  The existing groups can be listed by hitting the *Search* button, and
-  keeping the search phrase blank.
-
 * _Add Scopes:_ This option can be used to add the required scopes in the Gluu Server.
 ![Add Scopes](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_addscope.png)
 
