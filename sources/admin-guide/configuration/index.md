@@ -380,18 +380,25 @@ below.*
 * _Source Attribute:_ This contains the list of attributes which will be
   pulled and read by the Gluu Server.
 
-* _Custom LDAP Filter:_ If there is any custom search required, this filtering mechanism can be used such as "sn=*" where the value of this field ensures that every user must contain an attribute named SN.
+* _Custom LDAP Filter:_ If there is any custom search required, this
+filtering mechanism can be used such as "sn=*" whereas the value of this
+field ensures that every user must contain an attribute named SN.
 
 ## Source Backend LDAP Servers
 ![Source Backend](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_cache_sourcebackend.png)
 
-This section allows the Gluu Server to connect to the backend Active Directory/LDAP server of the organization.
+This section allows the Gluu Server to connect to the backend Active
+Directory/LDAP server of the organization.
 
 * _Name:_ Please input **source** as the value.
 
-* _Use Anonymous Bind:_ Some customers do now allow username/password connections to their backend server. Enable this option if this applies to your organization.
+* _Use Anonymous Bind:_ Some customers do now allow username/password
+  connections to their backend server. Enable this option if this applies
+  to your organization.
 
-* _Bind DN:_ This contains the username to connect to the backend server. You need to use full DN here. As for example, _cn=gluu,dc=company,dc=org_
+* _Bind DN:_ This contains the username to connect to the backend
+  server. You need to use full DN here. As for example,
+  _cn=gluu,dc=company,dc=org_.
 
 * _Use SSL:_ Use this feature if the backend server allows SSL connectivity.
 
