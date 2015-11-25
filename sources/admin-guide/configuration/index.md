@@ -96,21 +96,26 @@ using this feature.
 
 ![SMTP Server Configuration](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_config_smtp.png)
 
-* _SMTP Host:_ Name of the SMTP Host server.
+* _SMTP Host:_ Name of the SMTP host server.
 
-* _From Name:_ Name of the Gluu Server Administrator.
+* _From Name:_ Name of the Gluu Server administrator.
 
-* _From Email Address:_ Email Address of the Gluu Server Administrator.
+* _From Email Address:_ Email Address of the Gluu Server administrator.
 
-* _Required Authentication:_ If the SMTP server requires authentication every access, then please enable this option by ticking the check-box.
+* _Required Authentication:_ If the SMTP server requires authentication
+  for every access, then enable this option by ticking the check-box,
+  please.
 
-* _SMTP User Name:_ The username for the SMTP server goes in this field.
+* _SMTP User Name:_ The username for the SMTP server goes here.
 
-* _SMTP Password:_ The password for the username above goes here. The username and password are used to access the SMTP server.
+* _SMTP Password:_ The password for the username above goes here. The
+  username and password are used to access the SMTP server.
 
-* _Requires SSL:_ If the SMTP Server has SSL availability, then enable this option by ticking the check-box.
+* _Requires SSL:_ If the SMTP Server offers communication via SSL enable
+  this option by ticking the check-box.
 
-* _SMTP Port:_ The SMTP Host server port number must be listed here.
+* _SMTP Port:_ The number of the SMTP host server port has to be entered
+  here.
 
 ## oxTrust Configuration
 This feature provides options to add various changes in the Gluu Server User Interface. Gluu Server Administrator can add Title, Display Name or even modify the Web User Interface color and logo from this section.
