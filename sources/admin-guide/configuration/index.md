@@ -454,32 +454,64 @@ you try to manually configure it anyway).
 
 ## Attributes Mapping
 
-When the Copy method is selected, a section for Attribute mapping will be exposed. In this section, the Gluu Server Administrator can map any attribute from the backend Active Directory/LDAP to the LDAP cache of the Gluu Server.
+When the Copy method is selected, a section for Attribute mapping will
+be exposed. In this section, the Gluu Server Administrator can map any
+attribute from the backend Active Directory/LDAP to the LDAP cache of
+the Gluu Server.
 
 ![Attribute Mapping](https://raw.githubusercontent.com/GluuFederation/docs/75518bb90184aa1b096874526b4da5f9f924bd44/sources/img/2.4/admin_cache_mapattribute.png)
 
-In the source attribute to destination attribute mapping field, you can enter the source attribute value on the left, and the destination attribute on the right. In other words, you can specify what the attribute is on the backend in the left field, and what it should be rendered as when it comes through the Gluu Server in the right field. 
+In the source attribute to destination attribute mapping field, you can
+enter the source attribute value on the left, and the destination
+attribute on the right. In other words, you can specify what the
+attribute is on the backend in the left field, and what it should be
+rendered as when it comes through the Gluu Server in the right field.
 
-The Administrator can select any Cache Refresh Method according to the backend Active Directory/LDAP server, but there are some essential values for both types of cache refresh method. The values are given below.
+The Administrator can select any Cache Refresh Method according to the
+backend Active Directory/LDAP server, but there are some essential
+values for both types of cache refresh method. The values are given
+below.
 
-  * _Pooling Interval (Minutes):_ This is the interval value for running the Cache Refresh mechanism in the Gluu Server. It is recommended to be kept higher than 15 Minutes.
+  * _Pooling Interval (Minutes):_ This is the interval value for running
+    the Cache Refresh mechanism in the Gluu Server. It is recommended to 
+    be kept higher than 15 minutes.
 
-  * _Script File Name:_ Gluu Server cache refresh can accept any kind of Jython Script which might help calculate any custom/complex attribute i.e. eduPersonScopedAffiliation calculation is highly targeted field where such scripts can be used. For more information please contact Gluu Support.
+  * _Script File Name:_ The Gluu Server cache refresh can accept any
+    kind of Jython Script which might help to calculate any custom/complex
+    attribute i.e. eduPersonScopedAffiliation. For more information please
+    contact Gluu Support.
 
-  * _Snapshot Folder:_ Every cycle of of Gluu Server Cache Refresh cycle save an overall snapshot and problem-list record on a specified location. This is where the Gluu Server Administrator can specify the location. A Gluu Server administrator can easily decide whether cache refresh has synchronized all users or not. Generally the rejected users are enclosed in the problem-list file. An overall report is displayed at the top of the cache refresh page with headings **Updated at the last run** and **Problems at the last run.**
+  * _Snapshot Folder:_ Every cycle of of Gluu Server Cache Refresh cycle
+    saves an overall snapshot and problem-list record on a specified
+    location. This is where the Gluu Server Administrator can specify the
+    location. You can easily decide whether cache refresh synchronizes all
+    users or not. Generally the rejected users are enclosed in the
+    problem-list file. An overall report is displayed at the top of the
+    cache refresh page with headings **Updated at the last run** and
+    **Problems at the last run**.
 
-  * _Snapshot Count:_ This defines the total number of snapshots that are allowed to be saved in the hard drive of the VM. It is recommended to be kept to 20 snapshots.
-  
-Latest Gluu Servers ( including Community Edition ) introduced two upgraded sections here. 
+  * _Snapshot Count:_ This defines the total number of snapshots that
+    are allowed to be saved in the hard drive of the VM. It is recommended
+    to be kept to 20 snapshots.
 
-  * _Server IP Address:_ Include the IP of your Gluu Server here. This feature basically added to run Cache Refresh mechanism perfectly in clustered environment.
-  
-  * _Removed Script File Name location:_ New version of Gluu Server allows Gluu Server Administrator to manage your custom scripts with more interactive section under configuration named Manage Custom Scripts.
+Latest Gluu Servers (including Community Edition) introduced two
+upgraded sections here.
 
-  * _Update:_ This button is to push the changes in the Gluu Server and it should be hit only when the values have been entered.
+  * _Server IP Address:_ Include the IP of your Gluu Server here. This
+    feature helps to run Cache Refresh mechanism perfectly in a clustered
+    environment.
 
-  * _Update and Validate Script:_ This button is used to test the operation and integrity of any custom script such as a Jython Script.
-  
+  * _Removed Script File Name location:_ New version of the Gluu Server
+    allows the administrator to manage your custom scripts with more
+    interactive section under configuration named Manage Custom Scripts.
+
+  * _Update:_ This button is used to push the changes in the Gluu
+    Server. Hit this button only when the values have been entered,
+    completely.
+
+  * _Update and Validate Script:_ This button is used to test the
+    operation and integrity of any custom script such as a Jython Script.
+
 ## Customizing Behavior
 Specifics about the behavior of Cache Refresh can be customized within the custom scripts section. Please see more information [here](../../reference/interception-scripts/index.md#cache-refresh)
 
