@@ -5,7 +5,7 @@ There is a bar on top of the page that shows the status of the server.
 ![bar](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_config_config_message.png)
 
 The welcome page looks like this:
-![Welcom Page](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_config_config_welcome.png)
+![Welcome Page](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_config_config_welcome.png)
 
 #Configuration
 This section of the documentation includes instructions for configuring a number of the components of the Gluu Server in order to make the server fit for your organizational needs. 
@@ -30,9 +30,9 @@ This feature allows the Gluu system administrator to customize and implement var
 
 * _Self-Service Password Reset:_ The Self-Service Password Reset is disabled by default. For Self-Service Password Reset to work SMTP Server(see below) should be configured as well. Password reset link for your Gluu server should be something like: "https://your.idp.link/identity/person/passwordReminder.htm"
 
-* _Cache Refresh:_ This is the mechanism which pulls and synchonises user information from a remote LDAP/Active Directory with the local LDAP of Gluu server. The Gluu server administrator needs to provide sufficient information including username and password before enabling this option. Before configuring Cache Refresh, you should read the overview under `Articles` . After reading the overview, you can learn about the Cache Refresh GUI tools [here](#cache-refresh).
+* _Cache Refresh:_ This is the mechanism which pulls and synchronizes user information from a remote LDAP/Active Directory with the local LDAP of Gluu server. The Gluu server administrator needs to provide sufficient information including username and password before enabling this option. Before configuring Cache Refresh, you should read the overview under `Articles` . After reading the overview, you can learn about the Cache Refresh GUI tools [here](#cache-refresh).
 
-* _SCIM Support:_ If the organization already has an identity management or provisioning system in place, the SCIM protocol can be used to push and synchronise the existing identity data into the Gluu Server.
+* _SCIM Support:_ If the organization already has an identity management or provisioning system in place, the SCIM protocol can be used to push and synchronize the existing identity data into the Gluu Server.
 
 * _DNS Server:_ The address to the DNS Server goes in this field.
 
@@ -43,7 +43,7 @@ This feature allows the Gluu Server Administrator to manage notifications for th
 
 ![Manage Email Addresses](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_config_email.png)
 
-* _Email for Centreon:_ Centreon is the server monitoring system used by Gluu. The email address in this field shall recieve various notifications from Centreon.
+* _Email for Centreon:_ Centreon is the server monitoring system used by Gluu. The email address in this field shall receive various notifications from Centreon.
 
 * _Email for Jira:_ The customers are not provided the jira access, and it will be removed from oxTrust soon. Please visit [Gluu Support](https://support.gluu.org) for customer support.
 
@@ -64,18 +64,18 @@ The Gluu server can communicate to any SMTP server specified in these fields. Al
 
 * _From Email Address:_ Email Address of the Gluu Server Administrator.
 
-* _Required Authentication:_ If the SMTP server requires authentication every access, then please enable this option by ticking the checkbox.
+* _Required Authentication:_ If the SMTP server requires authentication every access, then please enable this option by ticking the check-box.
 
 * _SMTP User Name:_ The username for the SMTP server goes in this field.
 
 * _SMTP Password:_ The password for the username above goes here. The username and password are used to access the SMTP server.
 
-* _Requires SSL:_ If the SMTP Server has SSL availability, then enable this option by ticking the checkbox.
+* _Requires SSL:_ If the SMTP Server has SSL availability, then enable this option by ticking the check-box.
 
 * _SMTP Port:_ The SMTP Host server port number must be listed here.
 
 ## oxTrust Configuration
-This feature provides options to add various changes in the Gluu Server User Interface. Gluu Server Administrator can add Title, Display Name or evern modify the Web User Interface color and logo from this section.
+This feature provides options to add various changes in the Gluu Server User Interface. Gluu Server Administrator can add Title, Display Name or even modify the Web User Interface color and logo from this section.
 
 ![Configuration Panel](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_config_config.png)
 
@@ -83,7 +83,7 @@ This feature provides options to add various changes in the Gluu Server User Int
 
 * _Manager Group:_ Gluu server has a single manager group. The users under the manager group can use the Web User Interface to operate the Gluu Server. There is no limit to the users that can be added to the manager group.
 
-* _Organization Logo:_ The orgaziation logo can be uploaded and activated from the configuration menu.
+* _Organization Logo:_ The organization logo can be uploaded and activated from the configuration menu.
 
 * _Organization Favicon:_ This feature can be used to change the organization favicon, if necessary.
 
@@ -98,7 +98,7 @@ This section allows the Gluu Server Administrator to define how and where the se
 
 * _Bind DN:_ The *Username* for the authentication server (local LDAP/remote LDAP/remote Active Directory) goes here.
 
-* _Use SSL:_ If the authentication server requires a secured port (i.e. 636) then this option should be activated using the checkbox.
+* _Use SSL:_ If the authentication server requires a secured port (i.e. 636) then this option should be activated using the check-box.
 
 * _Max Connections:_ This option can be used to define the total number of simultaneous connections allowed for reading local LDAP/remote Active Directory/remote LDAP.
 
@@ -108,9 +108,9 @@ This section allows the Gluu Server Administrator to define how and where the se
 
 * _Primary Key:_ This field contains the primary key to connect to the authentication server (i.e. SAMAccountName/uid/mail etc).
 
-* _Local Primary Key:_ This field contains the internal LDAP primary key of the Gluu Server. Gererally the key is either the *uid* or the *mail*.
+* _Local Primary Key:_ This field contains the internal LDAP primary key of the Gluu Server. Generally the key is either the *uid* or the *mail*.
 
-* _Enabled:_ This checkbos is used to enable the keys that are inserted in their respective fields.
+* _Enabled:_ This check-box is used to enable the keys that are inserted in their respective fields.
 
 * _Change Bind Password:_ This button can be used to assign a password to authenticate the *Authentication Server*.
 
@@ -125,7 +125,7 @@ This allows the Gluu Server Administrator to select the default authentication m
   
 The latest edition of the Gluu Server introduced a new Configuration section called _Manage Custom Scripts_. This is a single place where the server administrator can manage and implement interception scripts to customize the behavior of the Gluu Server. 
 
-![Cuscom Authentication Scritp](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_auth_custom.png)
+![Custom Authentication Scritp](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_auth_custom.png)
 
 Currently, there are interception scripts to customize the following functionalities:      
 
@@ -138,14 +138,14 @@ Currently, there are interception scripts to customize the following functionali
 - [Update User](../../reference/interception-scripts/index.md#update-user)	
 - [User Registration](../../reference/interception-scripts/index.md#user-registration)	
 
-Due to the significance of custom interception scripts in the Gluu Server, we have dedicated a separate folder within the docs to more comprehensivley go over [how to use them](../../reference/interception-scripts/index.md). 
+Due to the significance of custom interception scripts in the Gluu Server, we have dedicated a separate folder within the docs to more comprehensively go over [how to use them](../../reference/interception-scripts/index.md). 
 
 # Manage Registration
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_config_workflow.png)
 
-From the Manage Registration interface, the Gluu Server admin can customize the self-registration workflow. Each option will be covered individually below.
+From the Manage Registration interface, the Gluu Server admin can customize the self-registration work-flow. Each option will be covered individually below.
 
-There are other ways of creating accounts within the Gluu Server, including: SCIM, Cache Refresh, Manual User Management, and Automatic Enrollment as part of custom authentication (Inbound SAML). Except Cache Refresh, which is covered [here](#cache-refresh), those additonal methods are covered within the [User Management](../user-management/index.md) portion of the documentation.
+There are other ways of creating accounts within the Gluu Server, including: SCIM, Cache Refresh, Manual User Management, and Automatic Enrollment as part of custom authentication (Inbound SAML). Except Cache Refresh, which is covered [here](#cache-refresh), those additional methods are covered within the [User Management](../user-management/index.md) portion of the documentation.
 
 ## Activate Invitation Link
 When active, the Invitation Links feature allows the server admin to control who can register an account by issuing a unique registration link and sending it to the desired new users.
@@ -182,7 +182,7 @@ The Gluu Server Administrator can make changes, such as changing the status to a
 
 Additional attributes can be added from the Gluu Server GUI, oxTrust, by clicking the **Add Attribute** button. On clicking the **Add Attribute** button, the following screen shall appear.
 
-![Add Attriute Screen](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_attribute_add.png)
+![Add Attribute Screen](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_attribute_add.png)
 
 * _Name:_ This field defines the name of the custom attribute which must be unique in the Gluu Server LDAP tree.
 
@@ -190,9 +190,9 @@ Additional attributes can be added from the Gluu Server GUI, oxTrust, by clickin
 
 * _SAML2 URI:_ This field contains the SAML2 URI for the custom attribute.
 
-* _Display Name:_ Thi display name can be anything that is human readable.
+* _Display Name:_ This display name can be anything that is human readable.
 
-* _Type:_ The attribute type should be selected from the drop-down meny. There are four attribute types supported by Gluu:    
+* _Type:_ The attribute type should be selected from the drop-down menu. There are four attribute types supported by Gluu:    
   1. Text	
   2. Numeric	
   3. Photo	
@@ -200,21 +200,21 @@ Additional attributes can be added from the Gluu Server GUI, oxTrust, by clickin
 
 * _Edit Type:_ This field defines the user who has access to edit the specific attribute.
 
-* _View Type:_ This field defines the user who can view thie attribute.
+* _View Type:_ This field defines the user who can view this attribute.
 
 * _Privacy Level:_ Please select the desired privacy level from the drop-down menu. The privacy level has a specific range of 1 to 5.
 
-* _Multivalued:_ Please select miltivalue in this field if the attribute contains more than one value.
+* _Multivalued:_ Please select multivalue in this field if the attribute contains more than one value.
 
 * _SCIM Attributes:_ If the attribute is a part of SCIM architecture select true.
 
 * _Description:_ This contains a few words to describe the attribute.
 
-* _Status:_ The status, when selected active, will release and publish the attribute in IdPThe status, when selected active, will release and publish the attribute in IdP.
+* _Status:_ The status, when selected active, will release and publish the attribute in IdP The status, when selected active, will release and publish the attribute in IdP.
 
 # Cache Refresh
 
-**Cache Refresh** was built by Gluu to pull user information from a backend customer Active Directory/LDAP Server. Cache refresh dynamically synchronises user information from the backend data source of the customer to the Gluu Server in order to maximize performance. This feature is sensitive in nature and any incorrect action may result in loss of data within the Gluu Server. Before configuring Cache Refresh, you should read the Cache Refresh overview under Atricles. For any questions relating to Cache Refresh functionality, you can seek assistance from [Gluu Support](http://support.gluu.org). *For a successful Cache Refresh setup, you have to insert data in ALL FIELDS below.*
+**Cache Refresh** was built by Gluu to pull user information from a backend customer Active Directory/LDAP Server. Cache refresh dynamically synchronizes user information from the backend data source of the customer to the Gluu Server in order to maximize performance. This feature is sensitive in nature and any incorrect action may result in loss of data within the Gluu Server. Before configuring Cache Refresh, you should read the Cache Refresh overview under Articles. For any questions relating to Cache Refresh functionality, you can seek assistance from [Gluu Support](http://support.gluu.org). *For a successful Cache Refresh setup, you have to insert data in ALL FIELDS below.*
 
 ![Cache Refresh Menu](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_cache_menu.png)
 
@@ -254,9 +254,9 @@ This section allows the Gluu Server to connect to the backend Active Directory/L
 
 * _Server:_ This contains the backend Active Directory/LDAP server hostname with port i.e. backend.organization.com:389. If organization has a failover server, click **Add Server** and more hostnames with port.
 
-* _Base DN:_ This contains the location of the Active Directory/LDAP tree from where the Gluu Server shall read the user informaiton.
+* _Base DN:_ This contains the location of the Active Directory/LDAP tree from where the Gluu Server shall read the user information.
 
-* _Enabled:_ This checkbox is to save and push the changes and only to be used when the server administrator has entered all the required values.
+* _Enabled:_ This check-box is to save and push the changes and only to be used when the server administrator has entered all the required values.
 
 * _Change Bind Password:_ This can be used for a new password or to change any existing password.
 
@@ -271,11 +271,11 @@ As Gluu Server Administrator, you don't need to insert anything here in this sec
 
 * _Refresh Method:_ The Gluu Server allows the Server Administrator to apply two types of Cache Refresh mechanism (i) VDS Method and (ii) Copy Method.
 
-  1. _VDS Method:_ Any organization with a database like *mysql* can use the VDS method. This option can be enabled via the dropdown menu in Refresh Method option.
+  1. _VDS Method:_ Any organization with a database like *mysql* can use the VDS method. This option can be enabled via the drop-down menu in Refresh Method option.
 
 ![Refresh VDS](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_cache_refresh_vds.png)
 
-  2. _Copy Method:_ If the organization has any kind of Active Directory/LDAP server, they are strongly recommened to use the *Copy Method* from the dropdown menu.
+  2. _Copy Method:_ If the organization has any kind of Active Directory/LDAP server, they are strongly recommended to use the *Copy Method* from the drop-down menu.
 
 ![Refresh Copy](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_cache_refresh_copy.png)
 
@@ -289,19 +289,19 @@ In the source attribute to destination attribute mapping field, you can enter th
 
 The Administrator can select any Cache Refresh Method according to the backend Active Directory/LDAP server, but there are some essential values for both types of cache refresh method. The values are given below.
 
-  * _Pooling Interval (Minutes):_ This is the vnterval value for running the Cache Refresh mechanism in the Gluu Server. It is recommended to be kept higher than 15 Minutes.
+  * _Pooling Interval (Minutes):_ This is the interval value for running the Cache Refresh mechanism in the Gluu Server. It is recommended to be kept higher than 15 Minutes.
 
   * _Script File Name:_ Gluu Server cache refresh can accept any kind of Jython Script which might help calculate any custom/complex attribute i.e. eduPersonScopedAffiliation calculation is highly targeted field where such scripts can be used. For more information please contact Gluu Support.
 
-  * _Snapshot Folder:_ Every cycle of of Gluu Server Cache Refresh cycle save an overall snapshot and problem-list record on a specified location. This is where the Gluu Server Administrator can specigy the location. A Gluu Server administrator can easily decide whether cache refresh has synchronised all users or not. Generally the rejected users are enclosed in the problem-list file. An overall report is displayed at the top of the cache refresh page with headings **Updated at the last run** and **Problems at the last run.**
+  * _Snapshot Folder:_ Every cycle of of Gluu Server Cache Refresh cycle save an overall snapshot and problem-list record on a specified location. This is where the Gluu Server Administrator can specify the location. A Gluu Server administrator can easily decide whether cache refresh has synchronized all users or not. Generally the rejected users are enclosed in the problem-list file. An overall report is displayed at the top of the cache refresh page with headings **Updated at the last run** and **Problems at the last run.**
 
-  * _Snapshot Count:_ This defines the total number of snapshots that are allowed to be saved in the hard drive of the VM. It is recommended to be kept to 20 shapshots.
+  * _Snapshot Count:_ This defines the total number of snapshots that are allowed to be saved in the hard drive of the VM. It is recommended to be kept to 20 snapshots.
   
-Latest Gluu Servers ( including Community Edition ) introduced two updgraded sections here. 
+Latest Gluu Servers ( including Community Edition ) introduced two upgraded sections here. 
 
   * _Server IP Address:_ Include the IP of your Gluu Server here. This feature basically added to run Cache Refresh mechanism perfectly in clustered environment.
   
-  * _Removed Script File Name location:_ New version of Gluu Server allows Gluu Server Administrator to manage your custom scripts with more interctive section under configuration named Manage Custom Scripts.
+  * _Removed Script File Name location:_ New version of Gluu Server allows Gluu Server Administrator to manage your custom scripts with more interactive section under configuration named Manage Custom Scripts.
 
   * _Update:_ This button is to push the changes in the Gluu Server and it should be hit only when the values have been entered.
 
