@@ -83,10 +83,16 @@ notifications for the IdP.
 * _Email for Privacy:_ This email address will receive news and updates
   about the privacy related matters of Gluu.
 
-* _Email for SVN:_ The IdP related configuration files are are saved in the [Gluu SVN](https://svn.gluu.info). Configuration files are generally saved under */opt/* and */etc/httpd/*. The email address will get access to the checked-in files section of the corresponding IdP.
+* _Email for SVN:_ The IdP related configuration files are saved in the
+  [Gluu SVN](https://svn.gluu.info). Configuration files are generally
+  saved under */opt/* and */etc/httpd/*. The email address will get 
+  access to the checked-in files section of the corresponding IdP.
 
 ## SMTP Server Configuration
-The Gluu server can communicate to any SMTP server specified in these fields. All Gluu Server related informats *(cron daemon/logwatch/crash reports etc.)* can be pushed to the desired Gluu Server Administrator using this feature.
+The Gluu server can communicate to any SMTP server specified in these
+fields. All Gluu Server related informats *(cron daemon/logwatch/crash
+reports etc.)* can be pushed to the desired Gluu Server administrator
+using this feature.
 
 ![SMTP Server Configuration](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_config_smtp.png)
 
