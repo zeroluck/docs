@@ -60,7 +60,7 @@ scopes.
 The Gluu Server administrator can easily add more scopes in the GUI.
 Click *Add Scope* and you will be presented with the following screen:
 
-![Add Scopes](http://www.gluu.org/docs/img/openid_connect/oxtrust_scope_screenshot.png "Screenshot of oxTrust add OpenID Connect Scope")
+![Add Scopes](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/openid_connect/oxtrust_scope_screenshot.png)
 
 You will have the ability to provide a Display Name, Description,
 whether or not the scope is provided by default, and the claims that are
