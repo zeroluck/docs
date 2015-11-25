@@ -133,9 +133,9 @@ Backend LDAP Servers' sections. It is not necessary enter data in the
   the Cache Refresh mechanism in the Gluu Server. It is recommended to be
   kept higher than 15 minutes.
 
-  * _Snapshot Folder:_ Every cycle of of Gluu Server Cache Refresh cycle
-  saves an overall snapshot and problem-list record on a specified
-  location. This is where the Gluu Server Administrator can specify the
+  * _Snapshot Folder:_ Every cycle of the Gluu Server Cache Refresh cycle
+  saves both an overall snapshot and a problem-list record on a specified
+  location. This is where the Gluu Server administrator can specify the
   location. A Gluu Server administrator can easily decide whether Cache
   Refresh has synchronized all users or not. In general, the rejected
   users are enclosed in the problem-list file. An overall report is
