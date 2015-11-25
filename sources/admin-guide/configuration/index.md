@@ -400,13 +400,20 @@ Directory/LDAP server of the organization.
   server. You need to use full DN here. As for example,
   _cn=gluu,dc=company,dc=org_.
 
-* _Use SSL:_ Use this feature if the backend server allows SSL connectivity.
+* _Use SSL:_ Use this feature if the backend server allows SSL
+  connectivity.
 
-* _Max Connections:_ This value defines the maximum number of connection that are allowed to read the backend Active Directory/LDAP server. It is recommended to keep the value 2 or three.
+* _Max Connections:_ This value defines the maximum number of
+  connections that are allowed to read the backend Active Directory/LDAP
+  server. It is recommended to keep the value of 2 or 3.
 
-* _Server:_ This contains the backend Active Directory/LDAP server hostname with port i.e. backend.organization.com:389. If organization has a failover server, click **Add Server** and more hostnames with port.
+* _Server:_ This contains the backend Active Directory/LDAP server
+  hostname with port i.e. backend.organization.com:389. If organization
+  has a failover server, click **Add Server** and add more hostnames with
+  port.
 
-* _Base DN:_ This contains the location of the Active Directory/LDAP tree from where the Gluu Server shall read the user information.
+* _Base DN:_ This contains the location of the Active Directory/LDAP
+  tree from where the Gluu Server shall read the user information.
 
 * _Enabled:_ This check-box is to save and push the changes and only to be used when the server administrator has entered all the required values.
 
