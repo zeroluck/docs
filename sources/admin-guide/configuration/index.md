@@ -532,17 +532,25 @@ contain the path of the log file such as _/opt/tomcat/logs/demo.log_.
 
 # View Log File
 
-The log files configured in the earlier section can be viewed using the **View log file** feature. This feature can be accessed through the configuration menu using **Configuration --> View Log File.**
+The log files configured in the earlier section can be viewed using the
+**View log file** feature. This feature can be accessed through the
+configuration menu using **Configuration --> View Log File**.
 
 ![View Log File](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_view_log.png)
 
-The **Display last lines count** field contains the lines that will be displayed in the Web GUI. If the field contains the value **400**, then the Gluu Server will show the last 400 lines of the log in the GUI. The screenshot below shows an example.
+The **Display last lines count** field contains the lines that will be
+displayed in the Web GUI. If the field contains the value **400**, then
+the Gluu Server will show the last 400 lines of the log in the GUI. The
+screenshot below shows an according example.
 
 ![Log file tail](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_view_logtail.png)
 
 # Status
 
 ![Status](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_config_status.png)
-The Status section provides a high level overview of server metrics. The included values are straightforward and shouldn't require any further explanation. 
+
+The Status section provides a high level overview of server metrics. The
+included values are straightforward and shouldn't require any further
+explanation.
 
 
