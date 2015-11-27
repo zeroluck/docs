@@ -35,7 +35,7 @@
 
 ## SCIM Overview
 
-The Simple Cloud Identity Management (SCIM) specification is a standard
+The System for Cross-domain Identity Management (SCIM) specification is a standard
 REST/JSON API to standardize user and group CRUD (create, read, update,
 delete). You can review the detailed specification at
 [http://www.simplecloud.info](http://www.simplecloud.info). The standard
