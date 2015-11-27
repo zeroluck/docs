@@ -48,23 +48,25 @@ iteration. If you do not enable 'Keep External Person', your 'admin'
 user including all other test users will be gone after first Cache
 Refresh iteration.
 
-* Make sure you are using LDAP authentication, not VDS. You'll only need
-VDS setting if you're using the Radiant Logic Virtual Directory Server.
+* Make sure you are using LDAP authentication, not VDS. You will only
+  need VDS setting if you're using the Radiant Logic Virtual Directory
+  Server.
 
 * Check the snapshots folder to see if files are being created.
 
 * Use the oxTrust admin to browse users.
 
-* Use `ldapsearch` to check to see if results are starting to come in.
-The following command will search total number of users in the Gluu
-LDAP:
+* Use the command `ldapsearch` to check to see if results are starting
+  to come in. The following command will search for the total number of
+  users in the Gluu LDAP:
 
 ```
 # /opt/opendj/bin/ldapsearch -h localhost -p 1636 -Z -X -D "cn=directory manager" -w 'pass_of_ldap_ -b 'ou=people,o=DA....,o=gluu' dn | grep "dn\:" | wc -l
 ```
 
-* Try to login with one of these users… assuming you've also setup your
-Gluu Server to use the correct LDAP server for authentication.
+* Try to login with one of these users. We assume that you have also
+  setup your Gluu Server to use the correct LDAP server for
+  authentication.
 
 # Things To Know
 The deployer needs to know various values of his own backend AD to
@@ -73,48 +75,57 @@ bindDN password, Objectclasses, attributes whose information will be
 pulled etc.
 
 In addition, the deployer also needs to know generic information of his
-Gluu Server's LDAP. By default, deployer can use 'localhost:1636',
+Gluu Server's LDAP. By default, the deployer can use 'localhost:1636',
 'cn=directory manager', 'password what he chose during installation',
 'ou=people,o=site' as server information, bindDN, bindDN password and
 baseDN respectively.
 
-After collecting this information, deployer can move forward with the
-setup of the Cache Refresh engine.
+After collecting this information, the deployer can move forward with
+the setup of the Cache Refresh engine.
 
 # Configuring Cache Refresh From oxTrust
-For a successful Cache Refresh setup, please fill up the data in the 'Cache Refresh', 'Customer Backend Key/Attributes' and 'Source Backend LDAP Servers'. It is not necessary to fill up any data in the 'Inum LDAP Server' tab.
+For a successful Cache Refresh setup, please complete the data fields in
+both the 'Cache Refresh', 'Customer Backend Key/Attributes', and 'Source
+Backend LDAP Servers' sections. It is not necessary enter data in the
+'Inum LDAP Server' tab.
 
 ![Cache Refresh Menu](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_menu.png)
 
-* _Last Run:_ The date and time of the latest cache refresh cycle completion is shown in the last run.
+* _Last Run:_ The date and time of the latest cache refresh cycle
+  completion is shown in the last run.
 
-* _Updates at the Last Run:_ This shows the total number of users who have been updated in the last Cache Refresh cycle. For example an user who has any of his attribute updated will show up here.
+* _Updates at the Last Run:_ This shows the total number of users who
+  have been updated in the last Cache Refresh cycle. For example an user
+  who has any of his attribute updated will show up here.
 
-* _Problem at the Last Run:_ This shows the number of users who have been rejected by the Gluu Server during the update. If there are any rejections, please contact Gluu Support for clarification and help.
+* _Problem at the Last Run:_ This shows the number of users who have
+  been rejected by the Gluu Server during the update. If there are any
+  rejections, please contact Gluu Support for clarification and help.
 
 ![Last Run](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_lastrun.png)
 
-* _Refresh Method:_ The Gluu Server allows the Server Administrator to
-  apply two types of Cache Refresh mechanism--(1) VDS Method, and (2) Copy
-  Method.
+* _Refresh Method:_ The Gluu Server allows the server administrator to
+  apply two types of Cache Refresh mechanisms--(1) VDS Method, and (2) 
+  Copy Method.
 
   1. _VDS Method:_ Any organization with a database like *mysql* can use
-  the VDS method. This option can be enabled via the dropdown menu in
-  Refresh Method option.
+  the VDS method. This option can be enabled via the drop-down menu in
+  the Refresh Method option.
 
 ![Refresh VDS](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_refresh_vds.png)
 
   2. _Copy Method:_ If the organization has any kind of Active
-  Directory/LDAP server, they are strongly recommended to use the *Copy
-  Method* from the dropdown menu.
+  Directory/LDAP server, it is strongly recommended to use the *Copy
+  Method* from the drop-down menu.
 
 ![Refresh Copy](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_refresh_copy.png)
 
-* _Source attribute to destination attribute mapping:_ In the source attribute to destination attribute mapping field, you can
-enter the source attribute value on the left, and the destination
-attribute on the right. In other words, you can specify what the
-attribute is on the backend in the left field, and what it should be
-rendered as when it comes through the Gluu Server in the right field.
+* _Source attribute to destination attribute mapping:_ Here you can
+  enter the source attribute value on the left, and the destination
+  attribute on the right. In other words, the left entry field defines 
+  the attribute that belongs to the backend. The right entry field 
+  defines the way it should be rendered as it is delivered by the Gluu 
+  Server.
 
 ![cache-refresh8](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/CR/Cache_Refresh_8.png)
 
@@ -122,9 +133,9 @@ rendered as when it comes through the Gluu Server in the right field.
   the Cache Refresh mechanism in the Gluu Server. It is recommended to be
   kept higher than 15 minutes.
 
-  * _Snapshot Folder:_ Every cycle of of Gluu Server Cache Refresh cycle
-  saves an overall snapshot and problem-list record on a specified
-  location. This is where the Gluu Server Administrator can specify the
+  * _Snapshot Folder:_ Every cycle of the Gluu Server Cache Refresh cycle
+  saves both an overall snapshot and a problem-list record on a specified
+  location. This is where the Gluu Server administrator can specify the
   location. A Gluu Server administrator can easily decide whether Cache
   Refresh has synchronized all users or not. In general, the rejected
   users are enclosed in the problem-list file. An overall report is
@@ -138,7 +149,8 @@ rendered as when it comes through the Gluu Server in the right field.
 ## Customer Backend Key and Attributes
 ![Customer Backend Key](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_backend.png)
 
-* _Key Attribute:_ This is the unique key attribute of backend Active Directory/LDAP Server such as SAMAccountname for any Active Directory.
+* _Key Attribute:_ This is the unique key attribute of backend Active
+  Directory/LDAP Server such as SAMAccountname for any Active Directory.
 
 * _Object Class:_ This contains the object classes of the backend Active
   Directory/LDAP which have permission to talk to the Gluu Server Cache
@@ -148,19 +160,21 @@ rendered as when it comes through the Gluu Server in the right field.
   pulled and read by the Gluu Server.
 
 * _Custom LDAP Filter:_ If there is any custom search required, this
-filtering mechanism can be used such as `sn=*` where the value of this
-field ensures that every user must contain an attribute named SN.
+  filtering mechanism can be used such as `sn=*`. The value of this field
+  ensures that every user must contain an attribute named SN.
 
 ## Source Backend LDAP Servers
 
 ![Source Backend](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_sourcebackend.png)
 
 This section allows the Gluu Server to connect to the backend Active
-Directory/LDAP server of the organization.
+Directory/LDAP server of your organization.
 
 * _Name:_ Please input **source** as the value.
 
-* _Use Anonymous Bind:_ Some customers do now allow username/password connections to their backend server. Enable this option if this applies to your organization.
+* _Use Anonymous Bind:_ Some customers do now allow username/password
+  connections to their backend server. Enable this option if this applies
+  to your organization.
 
 * _Bind DN:_ This contains the username to connect to the backend
   server. You need to use full DN here. As for example,
@@ -174,14 +188,14 @@ Directory/LDAP server of the organization.
 
 * _Server:_ This contains the backend Active Directory/LDAP server
   hostname with port, i.e. `backend.organization.com:389`. If your
-  organization has a failover server, click **Add Server** and more
+  organization has a failover server, click **Add Server** to add more
   hostnames with the according port.
 
 * _Base DN:_ This contains the location of the Active Directory/LDAP
-  tree from where the Gluu Server shall read the user information.
+  tree from where the Gluu Server reads the user information.
 
-* _Enabled:_ This checkbox is to save and push the changes and only to
-  be used when the server administrator has entered all the required
+* _Enabled:_ This check-box is to save and push the changes. It is only
+  to be used when the server administrator has entered all the required
   values.
 
 * _Change Bind Password:_ This can be used for a new password or to
@@ -201,9 +215,9 @@ connect to the internal LDAP of the Gluu Server.
 * _Name:_ This contains the name of the Gluu LDAP server, i.e. `inumdb`.
 
 * _Bind DN:_ This field contains the username to connect to the internal
-server. The default BindDN for Gluu Server is `cn=directory manager`.
+  server. The default BindDN for Gluu Server is `cn=directory manager`.
 
-* _Use SSL:_ Please tick the checkbox because the SSL has to be
+* _Use SSL:_ Please tick the check-box because the SSL has to be
   activated.
 
 * _Max Connections:_ The recommended number of connections is 2.
@@ -222,4 +236,4 @@ server. The default BindDN for Gluu Server is `cn=directory manager`.
   Password is the same password which you inserted during installation of
   Gluu Server.
 
-[ldap]: https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol "Lightweight Directory Access Protocol (LDAP), Wikpedia"
+[ldap]: https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol "Lightweight Directory Access Protocol (LDAP), Wikipedia"
