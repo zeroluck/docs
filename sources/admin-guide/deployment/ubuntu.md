@@ -59,9 +59,15 @@ for solutions to many common problems we know about.
 
 ## Starting and Stopping the Gluu Server
 
+You can start the Gluu Server with this command:
+
 ```
 # service gluu-server24 start
+```
 
+You can stop the Gluu Server with this command:
+
+```
 # service gluu-server24 stop
 ```
 
