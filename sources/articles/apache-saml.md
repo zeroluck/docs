@@ -41,9 +41,9 @@ The following commands will both install, and start the Apache web
 server on your machine/Linux environment:
 
 ```
-yum install httpd
-service httpd start
-Stop the firewall
+# yum install httpd
+# service httpd start
+# Stop the firewall
 ```
 
 #### Configuration
@@ -62,7 +62,7 @@ Edit the file `httpd.conf`, and do the following changes:
 
 * Restart the httpd service using the command `service httpd restart`.
 
-* Check from your browser
+* Check from your browser if the file `index.html` is visible.
 
 #### SP Key Certificate
 
