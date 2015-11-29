@@ -125,12 +125,12 @@ you can do to achieve your goal:
 
 ## Uninstallation
 
-Exit from the chroot environment to main Linux.
+First, exit from the chroot environment to main Linux.
 
-Stop the chroot environment, which will unmount all chroot directories.
-After that, delete both the Gluu Server packages that are installed, and
-the home directory of the Gluu Server user. The following commands
-illustrate the single steps:
+Second, stop the Gluu Server chroot environment which will unmount all
+chroot directories. As a third step, delete both the Gluu Server
+packages that are installed, and the home directory of the Gluu Server
+user. The following commands illustrate the single steps:
 
 ```
 # service gluu-server24 stop
@@ -146,7 +146,7 @@ installation, delete these files with the command `rm -rf
 /home/gluu-server24.save'.
 
 In some circumstances, the installation can be broken. In that case
-please try the following to force uninstall the package.
+please try the following to force to uninstall the package.
 
 ```
 # dpkg --purge --force-all gluu-server24
