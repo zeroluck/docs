@@ -125,10 +125,10 @@ This section describes how to configure the file `shibboleth2.xml`.
 
 * Restart both shibd and Apache2 using these lines:
 
-  ```
-  service shibd restart
-  service httpd restart
-  ```
+```
+service shibd restart
+service httpd restart
+```
 
 * Create a Trust Relationship for this SP in your desired IdP.
 
