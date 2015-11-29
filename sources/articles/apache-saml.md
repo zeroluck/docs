@@ -18,18 +18,20 @@ gpgkey=http://download.opensuse.org/repositories/security:/shibboleth/CentOS_Cen
 enabled=1
 ```
 
-* Download the Shibboleth security security:
+* Download the Shibboleth security repo key from here:
 
-`http://download.opensuse.org/repositories/security:/shibboleth/CentOS_CentOS-6/security:shibboleth.repo`
+```
+http://download.opensuse.org/repositories/security:/shibboleth/CentOS_CentOS-6/security:shibboleth.repo
+```
 
 ### Shibboleth SP Installation
 
 To install the Shibboleth SP, run the following commands in a terminal:
 
 ```
-yum install shibboleth
-service shibd start
-chkconfig shibd on
+# yum install shibboleth
+# service shibd start
+# chkconfig shibd on
 ```
 
 ### Install and Configure httpd
