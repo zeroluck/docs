@@ -14,11 +14,11 @@ components during the installation.
 
 ## Install 
 
-Download and install Gluu-Server by the following commands. Use the
+Download and install Gluu Server by the following commands. Use the
 `.deb` installation to perform a base chroot installation with the
 following Gluu Server Base Ubuntu requirements.
 
-As an alternative, use our Gluu repository for Ubuntu Trusty:
+As an alternative, use our Gluu repository for Ubuntu Trusty (14.04):
 
 ```
 # echo "deb http://repo.gluu.org/ubuntu/ trusty main" > /etc/apt/sources.list.d/gluu-repo.list
@@ -28,7 +28,13 @@ As an alternative, use our Gluu repository for Ubuntu Trusty:
 # apt-get update
 
 # apt-get install gluu-server24
+```
 
+After both the retrieval, and the installation of the Gluu Server
+software package start the Gluu Server, and login into the local chroot
+environment to configure the Gluu Server. These are the single steps:
+
+```
 # service gluu-server24 start
 
 # service gluu-server24 login
