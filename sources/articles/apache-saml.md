@@ -18,18 +18,20 @@ gpgkey=http://download.opensuse.org/repositories/security:/shibboleth/CentOS_Cen
 enabled=1
 ```
 
-* Download the Shibboleth security security:
+* Download the Shibboleth security repo key from here:
 
-`http://download.opensuse.org/repositories/security:/shibboleth/CentOS_CentOS-6/security:shibboleth.repo`
+```
+http://download.opensuse.org/repositories/security:/shibboleth/CentOS_CentOS-6/security:shibboleth.repo
+```
 
 ### Shibboleth SP Installation
 
 To install the Shibboleth SP, run the following commands in a terminal:
 
 ```
-yum install shibboleth
-service shibd start
-chkconfig shibd on
+# yum install shibboleth
+# service shibd start
+# chkconfig shibd on
 ```
 
 ### Install and Configure httpd
@@ -39,9 +41,9 @@ The following commands will both install, and start the Apache web
 server on your machine/Linux environment:
 
 ```
-yum install httpd
-service httpd start
-Stop the firewall
+# yum install httpd
+# service httpd start
+# Stop the firewall
 ```
 
 #### Configuration
@@ -60,7 +62,7 @@ Edit the file `httpd.conf`, and do the following changes:
 
 * Restart the httpd service using the command `service httpd restart`.
 
-* Check from your browser
+* Check from your browser if the file `index.html` is visible.
 
 #### SP Key Certificate
 
@@ -123,10 +125,10 @@ This section describes how to configure the file `shibboleth2.xml`.
 
 * Restart both shibd and Apache2 using these lines:
 
-  ```
-  service shibd restart
-  service httpd restart
-  ```
+```
+service shibd restart
+service httpd restart
+```
 
 * Create a Trust Relationship for this SP in your desired IdP.
 
