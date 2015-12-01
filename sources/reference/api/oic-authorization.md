@@ -208,6 +208,20 @@ The Authorization Endpoint performs Authentication of the End-User.
             <td>302</td>
             <td>registration_not_supported&#10;    The OP does not support use of the registration parameter</td>
         </tr>
+        <tr>
+            <td>400</td>
+            <td>The request parameters contain an invalid option, e.g. an unusual grant type.</td>
+        </tr>
+        <tr>
+            <td>401</td>
+            <td>The request could not be authenticated using the client_id and client_secret.</td>
+        </tr>
+        <tr>
+            <td>500</td>
+            <td>Either an internal server error occurred (e.g. opendj server is down), or the username and password 
+                do not match any known user.
+            </td>
+        </tr>
 </table>
 
 
