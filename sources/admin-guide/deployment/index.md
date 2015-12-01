@@ -24,7 +24,7 @@ systems:
 
 *Note:* 32-bit operating systems are **not** supported.
 
-# Hardware Guidance
+# Hardware Requirements
 
 The Gluu Server is very flexible, and can be used for a wide array of
 access management requirements. Depending on the size of your data, and
