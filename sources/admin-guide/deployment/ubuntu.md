@@ -1,3 +1,4 @@
+[TOC]
 # Gluu Server Ubuntu Installation Guide
 
 ## System Requirements

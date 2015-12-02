@@ -1,3 +1,4 @@
+[TOC]
 # Gluu Server Community Edition (CE) CentOS Configuration Guide
 
 `chroot` is a pre-Docker OS level container technology. Like Docker, the
