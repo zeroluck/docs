@@ -381,12 +381,7 @@ for more details.)
     
         <tr>
             <td>schemes</td>
-            <td>
-                
-                
-                array[string]
-                
-            </td>
+            <td>array[string]</td>
             <td>optional</td>
             <td>-</td>
             <td></td>
@@ -394,18 +389,10 @@ for more details.)
     
         <tr>
             <td>operations</td>
-            <td>
-                
-                
-                    array[<a href="#/definitions/BulkOperation">BulkOperation</a>]
-                
-                
-                
-            </td>
+            <td>array[<a href="#/definitions/BulkOperation">BulkOperation</a>]</td>
             <td>optional</td>
             <td>-</td>
             <td></td>
         </tr>
-    
 </table>
 
