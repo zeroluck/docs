@@ -198,7 +198,12 @@ group MUST be already registered with the mentioned id.
 
 <a id="bulkOperation">Bulk Operation</a>
 
-SCIM Bulk Operation enables Consumers to work with potentially large collection (Bulk) of Resource operations in a single request. Body of a bulk operation may contain set of HTTP Resource operations using one of the API supported HTTP methods; i.e., POST, PUT, PATCH or DELETE. (http://www.simplecloud.info/specs/draft-scim-api-01.html#bulk-resources)
+SCIM Bulk Operation enables consumers to work with a potentially large
+collection (bulk) of Resource operations in a single request. A body of
+a bulk operation may contain a set of HTTP Resource operations using one
+of the API supported HTTP methods; i.e., POST, PUT, PATCH or DELETE.
+(see http://www.simplecloud.info/specs/draft-scim-api-01.html#bulk-resources
+for more details.)
 
 #### Security
 
@@ -220,40 +225,23 @@ SCIM Bulk Operation enables Consumers to work with potentially large collection 
         <th>Default</th>
         <th>Schema</th>
     </tr>
-
-
-
-<tr>
-    <th>Authorization</th>
-    <td>header</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>body</th>
-    <td>body</td>
-    <td>no</td>
-    <td>BulkRequest</td>
-    <td> - </td>
-
-    <td>
-    
-    <a href="#/definitions/BulkRequest">BulkRequest</a> 
-    </td>
-
-</tr>
-
-
+    <tr>
+        <th>Authorization</th>
+        <td>header</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>body</th>
+        <td>body</td>
+        <td>no</td>
+        <td>BulkRequest</td>
+        <td> - </td>
+        <td><a href="#/definitions/BulkRequest">BulkRequest</a></td>
+    </tr>
 </table>
-
-
 
 #### Response
 
@@ -281,12 +269,7 @@ SCIM Bulk Operation enables Consumers to work with potentially large collection 
     
         <tr>
             <td>bulkId</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
+            <td>string</td>
             <td>optional</td>
             <td>-</td>
             <td></td>
@@ -294,12 +277,7 @@ SCIM Bulk Operation enables Consumers to work with potentially large collection 
     
         <tr>
             <td>version</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
+            <td>string</td>
             <td>optional</td>
             <td>-</td>
             <td></td>
@@ -307,12 +285,7 @@ SCIM Bulk Operation enables Consumers to work with potentially large collection 
     
         <tr>
             <td>method</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
+            <td>string</td>
             <td>optional</td>
             <td>-</td>
             <td></td>
@@ -320,12 +293,7 @@ SCIM Bulk Operation enables Consumers to work with potentially large collection 
     
         <tr>
             <td>path</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
+            <td>string</td>
             <td>optional</td>
             <td>-</td>
             <td></td>
@@ -333,12 +301,7 @@ SCIM Bulk Operation enables Consumers to work with potentially large collection 
     
         <tr>
             <td>location</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
+            <td>string</td>
             <td>optional</td>
             <td>-</td>
             <td></td>
@@ -346,12 +309,7 @@ SCIM Bulk Operation enables Consumers to work with potentially large collection 
     
         <tr>
             <td>data</td>
-            <td>
-                
-                    
-                    object
-                
-            </td>
+            <td>object</td>
             <td>optional</td>
             <td>-</td>
             <td></td>
@@ -359,12 +317,7 @@ SCIM Bulk Operation enables Consumers to work with potentially large collection 
     
         <tr>
             <td>status</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
+            <td>string</td>
             <td>optional</td>
             <td>-</td>
             <td></td>
@@ -372,17 +325,11 @@ SCIM Bulk Operation enables Consumers to work with potentially large collection 
     
         <tr>
             <td>response</td>
-            <td>
-                
-                    
-                    object
-                
-            </td>
+            <td>object</td>
             <td>optional</td>
             <td>-</td>
             <td></td>
         </tr>
-    
 </table>
 
 
