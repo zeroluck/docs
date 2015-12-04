@@ -24,7 +24,7 @@ systems:
 
 *Note:* 32-bit operating systems are **not** supported.
 
-# Hardware Guidance
+# Hardware Requirements
 
 The Gluu Server is very flexible, and can be used for a wide array of
 access management requirements. Depending on the size of your data, and
@@ -32,7 +32,7 @@ the number of concurrent transactions you want to support, you may need
 more or less memory or CPU capacity.
 
 With that said, if you are running all the Gluu Server services on one
-server (i.e. SAML, OAuth2, LDAP), **we recommend at least 2 CPU units, 4
+server (i.e. SAML, OAuth2, LDAP), you will ned at least **2 CPU units, 4
 GB of RAM and around 30GB of disk space.** Not enough memory may produce
 some really weird bugs.
 
