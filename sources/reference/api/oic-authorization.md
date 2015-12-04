@@ -10,7 +10,7 @@
 **POST** `/oxauth/authorize`
 
 Performs authorization.
-The Authorization Endpoint performs Authentication of the End-User.
+The Authorization Endpoint performs Authentication of the end-user.
 
 ###### URL
     http://gluu.org/oxauth/authorize
@@ -63,37 +63,37 @@ The Authorization Endpoint performs Authentication of the End-User.
         <tr>
             <th>display</th>
             <td>false</td>
-            <td>ASCII string value that specifies how the Authorization Server displays the authentication and consent user interface pages to the End-User. The defined values are: page, popup, touch, wap</td>
+            <td>ASCII string value that specifies how the Authorization Server displays the authentication and consent user interface pages to the end-user. The defined values are: page, popup, touch, wap</td>
             <td>string</td>
         </tr>
         <tr>
             <th>prompt</th>
             <td>false</td>
-            <td>Space delimited, case sensitive list of ASCII string values that specifies whether the Authorization Server prompts the End-User for reauthentication and consent. The defined values are: none, login, consent, select_account</td>
+            <td>Space delimited, case sensitive list of ASCII string values that specifies whether the Authorization Server prompts the end-user for re-authentication and consent. The defined values are: none, login, consent, select_account</td>
             <td>string</td>
         </tr>
         <tr>
             <th>max_age</th>
             <td>false</td>
-            <td>Maximum Authentication Age. Specifies the allowable elapsed time in seconds since the last time the End-User was actively authenticated by the OP. If the elapsed time is greater than this value, the OP MUST attempt to actively re-authenticate the End-User. (The max_age request parameter corresponds to the OpenID 2.0 PAPE [OpenID.PAPE] max_auth_age request parameter.) When max_age is used, the ID Token returned MUST include an auth_time Claim Value.</td>
+            <td>Maximum Authentication Age. Specifies the allowable elapsed time in seconds since the last time the end-user was actively authenticated by the OP. If the elapsed time is greater than this value, the OP MUST attempt to actively re-authenticate the end-user. (The max_age request parameter corresponds to the OpenID 2.0 PAPE [OpenID.PAPE] max_auth_age request parameter.) When max_age is used, the ID Token returned MUST include an auth_time Claim Value.</td>
             <td>int</td>
         </tr>
         <tr>
             <th>ui_locales</th>
             <td>false</td>
-            <td>End-User&#39;s preferred languages and scripts for the user interface, represented as a space-separated list of BCP47 [RFC5646] language tag values, ordered by preference. For instance, the value &quot;fr-CA fr en&quot; represents a preference for French as spoken in Canada, then French (without a region designation), followed by English (without a region designation). An error SHOULD NOT result if some or all of the requested locales are not supported by the OpenID Provider.</td>
+            <td>end-user&#39;s preferred languages and scripts for the user interface, represented as a space-separated list of BCP47 [RFC5646] language tag values, ordered by preference. For instance, the value &quot;fr-CA fr en&quot; represents a preference for French as spoken in Canada, then French (without a region designation), followed by English (without a region designation). An error SHOULD NOT result if some or all of the requested locales are not supported by the OpenID Provider.</td>
             <td>string</td>
         </tr>
         <tr>
             <th>id_token_hint</th>
             <td>false</td>
-            <td>ID Token previously issued by the Authorization Server being passed as a hint about the End-User&#39;s current or past authenticated session with the Client. If the End-User identified by the ID Token is logged in or is logged in by the request, then the Authorization Server returns a positive response; otherwise, it SHOULD return an error, such as login_required. When possible, an id_token_hint SHOULD be present when prompt=none is used and an invalid_request error MAY be returned if it is not; however, the server SHOULD respond successfully when possible, even if it is not present. The Authorization Server need not be listed as an audience of the ID Token when it is used as an id_token_hint value.</td>
+            <td>ID Token previously issued by the Authorization Server being passed as a hint about the end-user&#39;s current or past authenticated session with the Client. If the end-user identified by the ID Token is logged in or is logged in by the request, then the Authorization Server returns a positive response; otherwise, it SHOULD return an error, such as login_required. When possible, an id_token_hint SHOULD be present when prompt=none is used and an invalid_request error MAY be returned if it is not; however, the server SHOULD respond successfully when possible, even if it is not present. The Authorization Server need not be listed as an audience of the ID Token when it is used as an id_token_hint value.</td>
             <td>string</td>
         </tr>
         <tr>
             <th>login_hint</th>
             <td>false</td>
-            <td>Hint to the Authorization Server about the login identifier the End-User might use to log in (if necessary). This hint can be used by an RP if it first asks the End-User for their e-mail address (or other identifier) and then wants to pass that value as a hint to the discovered authorization service. It is RECOMMENDED that the hint value match the value used for discovery. This value MAY also be a phone number in the format specified for the phone_number Claim. The use of this parameter is left to the OP&#39;s discretion.</td>
+            <td>Hint to the Authorization Server about the login identifier the end-user might use to log in (if necessary). This hint can be used by an RP if it first asks the end-user for their e-mail address (or other identifier) and then wants to pass that value as a hint to the discovered authorization service. It is RECOMMENDED that the hint value match the value used for discovery. This value MAY also be a phone number in the format specified for the phone_number Claim. The use of this parameter is left to the OP&#39;s discretion.</td>
             <td>string</td>
         </tr>
         <tr>
@@ -174,19 +174,19 @@ The Authorization Endpoint performs Authentication of the End-User.
     </tr>
         <tr>
             <td>302</td>
-            <td>interaction_required&#10;    The Authorization Server requires End-User interaction of some form to proceed. This error MAY be returned when the prompt parameter value in the Authentication Request is none, but the Authentication Request cannot be completed without displaying a user interface for End-User interaction. </td>
+            <td>interaction_required&#10;    The Authorization Server requires end-user interaction of some form to proceed. This error MAY be returned when the prompt parameter value in the Authentication Request is none, but the Authentication Request cannot be completed without displaying a user interface for end-user interaction. </td>
         </tr>
         <tr>
             <td>302</td>
-            <td>login_required&#10;    The Authorization Server requires End-User authentication. This error MAY be returned when the prompt parameter value in the Authentication Request is none, but the Authentication Request cannot be completed without displaying a user interface for End-User authentication. </td>
+            <td>login_required&#10;    The Authorization Server requires end-user authentication. This error MAY be returned when the prompt parameter value in the Authentication Request is none, but the Authentication Request cannot be completed without displaying a user interface for end-user authentication. </td>
         </tr>
         <tr>
             <td>302</td>
-            <td>account_selection_required&#10;    The End-User is REQUIRED to select a session at the Authorization Server. The End-User MAY be authenticated at the Authorization Server with different associated accounts, but the End-User did not select a session. This error MAY be returned when the prompt parameter value in the Authentication Request is none, but the Authentication Request cannot be completed without displaying a user interface to prompt for a session to use. </td>
+            <td>account_selection_required&#10;    The end-user is REQUIRED to select a session at the Authorization Server. The end-user MAY be authenticated at the Authorization Server with different associated accounts, but the end-user did not select a session. This error MAY be returned when the prompt parameter value in the Authentication Request is none, but the Authentication Request cannot be completed without displaying a user interface to prompt for a session to use. </td>
         </tr>
         <tr>
             <td>302</td>
-            <td>consent_required&#10;    The Authorization Server requires End-User consent. This error MAY be returned when the prompt parameter value in the Authentication Request is none, but the Authentication Request cannot be completed without displaying a user interface for End-User consent. </td>
+            <td>consent_required&#10;    The Authorization Server requires end-user consent. This error MAY be returned when the prompt parameter value in the Authentication Request is none, but the Authentication Request cannot be completed without displaying a user interface for end-user consent. </td>
         </tr>
         <tr>
             <td>302</td>
@@ -230,7 +230,7 @@ The Authorization Endpoint performs Authentication of the End-User.
 **GET** `/oxauth/authorize`
 
 Performs authorization.
-The Authorization Endpoint performs Authentication of the End-User.
+The Authorization Endpoint performs Authentication of the end-user.
 
 ###### URL
     http://gluu.org/oxauth/authorize
@@ -289,43 +289,43 @@ The Authorization Endpoint performs Authentication of the End-User.
         <tr>
             <th>display</th>
             <td>false</td>
-            <td>ASCII string value that specifies how the Authorization Server displays the authentication and consent user interface pages to the End-User. The defined values are: page, popup, touch, wap</td>
+            <td>ASCII string value that specifies how the Authorization Server displays the authentication and consent user interface pages to the end-user. The defined values are: page, popup, touch, wap</td>
             <td>string</td>
         </tr>
         <tr>
             <th>prompt</th>
             <td>false</td>
-            <td>Space delimited, case sensitive list of ASCII string values that specifies whether the Authorization Server prompts the End-User for reauthentication and consent. The defined values are: none, login, consent, select_account</td>
+            <td>Space delimited, case sensitive list of ASCII string values that specifies whether the Authorization Server prompts the end-user for re-authentication and consent. The defined values are: none, login, consent, select_account</td>
             <td>string</td>
         </tr>
         <tr>
             <th>max_age</th>
             <td>false</td>
-            <td>Maximum Authentication Age. Specifies the allowable elapsed time in seconds since the last time the End-User was actively authenticated by the OP. If the elapsed time is greater than this value, the OP MUST attempt to actively re-authenticate the End-User. (The max_age request parameter corresponds to the OpenID 2.0 PAPE [OpenID.PAPE] max_auth_age request parameter.) When max_age is used, the ID Token returned MUST include an auth_time Claim Value.</td>
+            <td>Maximum Authentication Age. Specifies the allowable elapsed time in seconds since the last time the end-user was actively authenticated by the OP. If the elapsed time is greater than this value, the OP MUST attempt to actively re-authenticate the end-user. (The max_age request parameter corresponds to the OpenID 2.0 PAPE [OpenID.PAPE] max_auth_age request parameter.) When max_age is used, the ID Token returned MUST include an auth_time Claim Value.</td>
             <td>int</td>
         </tr>
         <tr>
             <th>ui_locales</th>
             <td>false</td>
-            <td>End-User&#39;s preferred languages and scripts for the user interface, represented as a space-separated list of BCP47 [RFC5646] language tag values, ordered by preference. For instance, the value &quot;fr-CA fr en&quot; represents a preference for French as spoken in Canada, then French (without a region designation), followed by English (without a region designation). An error SHOULD NOT result if some or all of the requested locales are not supported by the OpenID Provider.</td>
+            <td>end-user&#39;s preferred languages and scripts for the user interface, represented as a space-separated list of BCP47 [RFC5646] language tag values, ordered by preference. For instance, the value &quot;fr-CA fr en&quot; represents a preference for French as spoken in Canada, then French (without a region designation), followed by English (without a region designation). An error SHOULD NOT result if some or all of the requested locales are not supported by the OpenID Provider.</td>
             <td>string</td>
         </tr>
         <tr>
             <th>id_token_hint</th>
             <td>false</td>
-            <td>ID Token previously issued by the Authorization Server being passed as a hint about the End-User&#39;s current or past authenticated session with the Client. If the End-User identified by the ID Token is logged in or is logged in by the request, then the Authorization Server returns a positive response; otherwise, it SHOULD return an error, such as login_required. When possible, an id_token_hint SHOULD be present when prompt=none is used and an invalid_request error MAY be returned if it is not; however, the server SHOULD respond successfully when possible, even if it is not present. The Authorization Server need not be listed as an audience of the ID Token when it is used as an id_token_hint value.</td>
+            <td>ID Token previously issued by the Authorization Server being passed as a hint about the end-user&#39;s current or past authenticated session with the Client. If the end-user identified by the ID Token is logged in or is logged in by the request, then the Authorization Server returns a positive response; otherwise, it SHOULD return an error, such as login_required. When possible, an id_token_hint SHOULD be present when prompt=none is used and an invalid_request error MAY be returned if it is not; however, the server SHOULD respond successfully when possible, even if it is not present. The Authorization Server need not be listed as an audience of the ID Token when it is used as an id_token_hint value.</td>
             <td>string</td>
         </tr>
         <tr>
             <th>login_hint</th>
             <td>false</td>
-            <td>Hint to the Authorization Server about the login identifier the End-User might use to log in (if necessary). This hint can be used by an RP if it first asks the End-User for their e-mail address (or other identifier) and then wants to pass that value as a hint to the discovered authorization service. It is RECOMMENDED that the hint value match the value used for discovery. This value MAY also be a phone number in the format specified for the phone_number Claim. The use of this parameter is left to the OP&#39;s discretion.</td>
+            <td>Hint to the Authorization Server about the login identifier the end-user might use to log in (if necessary). This hint can be used by an RP if it first asks the end-user for their e-mail address (or other identifier) and then wants to pass that value as a hint to the discovered authorization service. It is RECOMMENDED that the hint value match the value used for discovery. This value MAY also be a phone number in the format specified for the phone_number Claim. The use of this parameter is left to the OP&#39;s discretion.</td>
             <td>string</td>
         </tr>
         <tr>
             <th>acr_values</th>
             <td>false</td>
-            <td>Requested Authentication Context Class Reference values. Space-separated string that specifies the acr values that the Authorization Server is being requested to use for processing this Authentication Request, with the values appearing in order of preference. The Authentication Context Class satisfied by the authentication performed is returned as the acr Claim Value, as specified in Section 2. The acr Claim is requested as a Voluntary Claim by this parameter.</td>
+            <td>Requested Authentication Context Class Reference values. Space-separated string that specifies the acr values that the Authorization Server is being requested to use for processing this Authentication Request, with the values appearing in order of preference. The Authentication Context Class satisfied by the authentication performed is returned as the acr Claim Value, as specified in section 2. The acr Claim is requested as a Voluntary Claim by this parameter.</td>
             <td>string</td>
         </tr>
         <tr>
@@ -337,7 +337,7 @@ The Authorization Endpoint performs Authentication of the End-User.
         <tr>
             <th>request</th>
             <td>false</td>
-            <td>This parameter enables OpenID Connect requests to be passed in a single, self-contained parameter and to be optionally signed and/or encrypted. The parameter value is a Request Object value, as specified in Section 6.1. It represents the request as a JWT whose Claims are the request parameters.</td>
+            <td>This parameter enables OpenID Connect requests to be passed in a single, self-contained parameter and to be optionally signed and/or encrypted. The parameter value is a Request Object value, as specified in section 6.1. It represents the request as a JWT whose Claims are the request parameters.</td>
             <td>string</td>
         </tr>
         <tr>
@@ -384,19 +384,19 @@ The Authorization Endpoint performs Authentication of the End-User.
     </tr>
         <tr>
             <td>302</td>
-            <td>interaction_required&#10;    The Authorization Server requires End-User interaction of some form to proceed. This error MAY be returned when the prompt parameter value in the Authentication Request is none, but the Authentication Request cannot be completed without displaying a user interface for End-User interaction. </td>
+            <td>interaction_required&#10;    The Authorization Server requires end-user interaction of some form to proceed. This error MAY be returned when the prompt parameter value in the Authentication Request is none, but the Authentication Request cannot be completed without displaying a user interface for end-user interaction. </td>
         </tr>
         <tr>
             <td>302</td>
-            <td>login_required&#10;    The Authorization Server requires End-User authentication. This error MAY be returned when the prompt parameter value in the Authentication Request is none, but the Authentication Request cannot be completed without displaying a user interface for End-User authentication. </td>
+            <td>login_required&#10;    The Authorization Server requires end-user authentication. This error MAY be returned when the prompt parameter value in the Authentication Request is none, but the Authentication Request cannot be completed without displaying a user interface for end-user authentication. </td>
         </tr>
         <tr>
             <td>302</td>
-            <td>account_selection_required&#10;    The End-User is REQUIRED to select a session at the Authorization Server. The End-User MAY be authenticated at the Authorization Server with different associated accounts, but the End-User did not select a session. This error MAY be returned when the prompt parameter value in the Authentication Request is none, but the Authentication Request cannot be completed without displaying a user interface to prompt for a session to use. </td>
+            <td>account_selection_required&#10;    The end-user is REQUIRED to select a session at the Authorization Server. The end-user MAY be authenticated at the Authorization Server with different associated accounts, but the end-user did not select a session. This error MAY be returned when the prompt parameter value in the Authentication Request is none, but the Authentication Request cannot be completed without displaying a user interface to prompt for a session to use. </td>
         </tr>
         <tr>
             <td>302</td>
-            <td>consent_required&#10;    The Authorization Server requires End-User consent. This error MAY be returned when the prompt parameter value in the Authentication Request is none, but the Authentication Request cannot be completed without displaying a user interface for End-User consent. </td>
+            <td>consent_required&#10;    The Authorization Server requires end-user consent. This error MAY be returned when the prompt parameter value in the Authentication Request is none, but the Authentication Request cannot be completed without displaying a user interface for end-user consent. </td>
         </tr>
         <tr>
             <td>302</td>
