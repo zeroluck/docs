@@ -589,39 +589,22 @@ Update a u ser
 
 **Content-Type: ** application/json, application/xml
 
-
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
 | 200    | successful operation | <a href="#/definitions/User">User</a>|
-
-
-
-
-
-
 
 ### DELETE
 
 <a id="deleteUser">Delete User</a>
 
-Delete User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
-
-
-
+Delete a user
+(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3).
 
 #### Security
 
-
-
-
 * Authorization
 
-
-
-
 #### Request
-
-
 
 ##### Parameters
 
@@ -634,44 +617,27 @@ Delete User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
         <th>Default</th>
         <th>Schema</th>
     </tr>
-
-
-
-<tr>
-    <th>Authorization</th>
-    <td>header</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>uid</th>
-    <td>path</td>
-    <td>yes</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-
+    <tr>
+        <th>Authorization</th>
+        <td>header</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>uid</th>
+        <td>path</td>
+        <td>yes</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
 </table>
-
-
 
 #### Response
 
 **Content-Type: ** application/json, application/xml
-
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
