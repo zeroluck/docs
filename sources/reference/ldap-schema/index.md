@@ -1,7 +1,7 @@
 # Schema
 
-Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
-389DS too:
+Below are the schemes for OpenDJ and OpenLDAP. The OpenDJ schema should
+work for 389DS, too:
 
  * [OpenDJ](https://github.com/GluuFederation/community-edition-setup/tree/master/static/opendj)
  * [OpenLDAP](https://github.com/GluuFederation/community-edition-setup/tree/master/static/openldap)
@@ -41,14 +41,14 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __gluuOrgProfileMgt__ enable or disable profile management feature in oxTrust
  * __gluuPaidUntil__ TODO - in use?
  * __gluuPaymentProcessorTimestamp__ TODO - in use?
- * __gluuPersonCount__ Monitor the number of people in the LDAP severs for a Gluu Server instance
+ * __gluuPersonCount__ Monitor the number of people in the LDAP server for a Gluu Server instance
  * __gluuPrivacyEmail__ Privacy alert email address used by oxTrust
  * __gluuPrivate__ TODO - in use?
  * __gluuPublishIdpMetadata__ Gluu Server flag to publish the IDP metadata via the web server
  * __gluuResizeInitiated__ TODO - in use?
  * __gluuSPTR__ TODO - in use?
  * __gluuScimEnabled__ oxTrust SCIM feature - enabled or disabled
- * __gluuShibAssertionsIssued__ Monitors activity of Gluu Server Shibboleth IDP
+ * __gluuShibAssertionsIssued__ Monitors the activity of Gluu Server Shibboleth IDP
  * __gluuShibFailedAuth__ Monitors failed login attempts on Gluu Server Shibboleth IDP
  * __gluuShibSecurityEvents__ Monitors security events on Gluu Server Shibboleth IDP
  * __gluuShibSuccessfulAuths__ Monitors login attempts on Gluu Server Shibboleth IDP
@@ -62,10 +62,10 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __gluuSmtpUserName__ SMTP user name
  * __gluuSslExpiry__ SAML trust relationship configuration
  * __gluuStatus__ Status of the entry, used by many object classes
- * __gluuSvnEmail__ SVN alert amail address
+ * __gluuSvnEmail__ SVN alert email address
  * __gluuSystemUptime__ Monitors how long the Gluu Server instance has been running
- * __gluuTargetRAM__ Monitors total available RAM on Gluu Server instance
- * __gluuUrl__ Gluu instance uri
+ * __gluuTargetRAM__ Monitors total available RAM on the Gluu Server instance
+ * __gluuUrl__ Gluu Server instance uri
  * __gluuVDSenabled__ oxTrust VDS enabled or disabled
  * __gluuVDSstatus__ Gluu VDS configuration
  * __gluuVdsCacheRefreshEnabled__ None
@@ -179,7 +179,7 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __gluuLogoImage__ Logo used by oxTrust for default look and feel
  * __gluuManageIdentityPermission__ TODO - in use?
  * __gluuManager__ Used to specify if a person has the manager role
- * __gluuManagerGroup__ Used in organization entry to specifies the dn of the group that has admin privileges in oxTrust
+ * __gluuManagerGroup__ Used in organization entry to specifies the DN of the group that has admin privileges in oxTrust
  * __gluuOrgProfileMgt__ enable or disable profile management feature in oxTrust
  * __gluuOrgShortName__ Short description, as few letters as possible, no spaces
  * __gluuOwnerGroup__ Deprecated. Use gluuManagerGroup
@@ -208,8 +208,8 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __proStoresToken__ None
  * __prostoresTimestamp__ None
  * __scimAuthMode__ SCIM authorization mode
- * __scimGroup__ scim group
- * __scimStatus__ scim status
+ * __scimGroup__ SCIM group
+ * __scimStatus__ SCIM status
  * __st__ 
  * __street__ 
  * __telephoneNumber__ 
@@ -301,14 +301,14 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __gluuEntityId__ Specifies SAML trust relationship entity ID
  * __gluuIsFederation__ Used in oxTrust to specify if a SAML trust relationship is a federation. It could also be a website
  * __gluuProfileConfiguration__ SAML trust relationship attribute
- * __gluuReleasedAttribute__ oxTrust reference for the dn of the released attribute
+ * __gluuReleasedAttribute__ oxTrust reference for the DN of the released attribute
  * __gluuRulesAccepted__ TODO - use unknown for Gluu SAML configuration
  * __gluuSAMLMetaDataFilter__ Metadata filter in SAML trust relationship
  * __gluuSAMLTrustEngine__ SAML trust relationship configuration
  * __gluuSAMLmaxRefreshDelay__ SAML trust relationship refresh time
  * __gluuSAMLspMetaDataFN__ SAML Trust Relationship file location of metadata
  * __gluuSAMLspMetaDataSourceType__ SAML Trust Relationship SP metadata type - file, uri, federation
- * __gluuSAMLspMetaDataURL__ SAML Trust Relationship URI location of metadata
+ * __gluuSAMLspMetaDataURL__ SAML Trust Relationship uri location of metadata
  * __gluuSpecificRelyingPartyConfig__ SAML Trust Relationship configuration
  * __gluuStatus__ Status of the entry, used by many object classes
  * __gluuTrustContact__ oxTrust login page configuration
@@ -325,7 +325,7 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
 ### Object class oxAuthClient
 
  * __Description__ 
- * __associatedPerson__ Reference the dn of a person.
+ * __associatedPerson__ Reference the DN of a person.
  * __displayName__ 
  * __inum__ XRI i-number (iNum)
  * __oxAuthAppType__ oxAuth app type
@@ -395,7 +395,7 @@ Below are schema for OpenDJ and OpenLDAP. OpenDJ schema should work for
  * __oxAuthFederationMetadataIntervalCheck__ oxAuth Federation metadata interval check attribute
  * __oxAuthFederationOP__ oxAuth Federation OP attribute
  * __oxAuthFederationRP__ oxAuth Federation RP attribute
- * __oxAuthRedirectURI__ oxAuth Redirect URI
+ * __oxAuthRedirectURI__ oxAuth Redirect uri
 
 ### Object class oxAuthFederationOP
 
