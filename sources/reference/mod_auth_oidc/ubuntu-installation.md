@@ -230,29 +230,45 @@ The Apache log file will contain the following entry:
 Note that the screenshots and log file extracts have been captured while
 writing this documentation.
 
-To solve this problem, log into the gluuCE server as:
+To solve this problem, log into the gluuCE server like that:
 
-    # service gluu-server login
+```
+# service gluu-server login
+```
 
 #### Getting DN from Client ID
 
-We get the client id from the search performed in gluu-server's Web UI. So, to get the DN part we perform the below command. The ldap password can be stored in `/root/.pw` or at any convenient location. In our case the command was:
+We need the client ID from the search performed in Gluu Server's Web UI.
+We perform the command as written below. For example, the LDAP password
+that is needed can be stored in a local file like `/root/.pw` or at any
+other location that is convenient for you.
 
-    # /opt/opendj/bin/ldapsearch -T -X -Z -p 1636 -D "cn=Directory Manager" -j /root/.pw -s sub -b "o=gluu" 'inum=@!1962.E949.50EE.BCB7!0001!B312.DB22!0008!24F8.303C'
+```
+# /opt/opendj/bin/ldapsearch -T -X -Z -p 1636 -D "cn=Directory Manager" -j /root/.pw -s sub -b "o=gluu" 'inum=@!1962.E949.50EE.BCB7!0001!B312.DB22!0008!24F8.303C'
+```
 
-Create a file named `mod.ldif` with the following contents. The `oxAuthSubjectIdentifier` is same as the client id. Since it's missing initially when we register the client manually, so we have to add it later. The DN part to be used in `mod.ldif` is obtained from above command's output. 
+Create an LDIF file named `mod.ldif` with the contents written below:
 
-    dn: inum=@!1962.E949.50EE.BCB7!0001!B312.DB22!0008!24F8.303C,ou=clients,o=@!C648.9803.5565.E5CB!0001!0DB0.EEDB,o=gluu
+```
+dn: inum=@!1962.E949.50EE.BCB7!0001!B312.DB22!0008!24F8.303C,ou=clients,o=@!C648.9803.5565.E5CB!0001!0DB0.EEDB,o=gluu
     changetype: modify
     add: oxAuthSubjectIdentifier
     oxAuthSubjectIdentifier: @!1962.E949.50EE.BCB7!0001!B312.DB22!0008!24F8.303C
+```
 
-Then run the `ldapmodify` command to insert the `oxAuthSubjectIdentifier` as below:
+The `oxAuthSubjectIdentifier` is same as the client ID. Since it is
+missing initially when we register the client manually, so we have to
+add it later on. The DN part to be used in `mod.ldif` is obtained from
+the above command's output. 
 
-    /opt/opendj/bin/ldapmodify -Z -X -h localhost -p 1636 -D "cn=Directory Manager" -j /root/.pw -f /root/mod.ldif
+To insert the `oxAuthSubjectIdentifier` run the `ldapmodify` command:
 
-The command may vary depending upon how you are using.
+```
+/opt/opendj/bin/ldapmodify -Z -X -h localhost -p 1636 -D "cn=Directory Manager" -j /root/.pw -f /root/mod.ldif
+```
 
-Then again access the page: `https://static.gluu.org:44443/static` and very good chances are there that you'll see the success message.
+The command may vary depending upon your installation.
 
+Next, access the page `https://static.gluu.org:44443/static`, again.
+Now, the success message will be displayed.
 
