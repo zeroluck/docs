@@ -1871,59 +1871,34 @@ Delete a user
         <th>description</th>
         <th>example</th>
     </tr>
-    
-        <tr>
-            <td>id</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>externalId</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>meta</td>
-            <td>
-                
-                    <a href="#/definitions/Meta">Meta</a>
-                    
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>schemas</td>
-            <td>
-                
-                
-                array[string]
-                
-            </td>
-            <td>required</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
+    <tr>
+        <td>id</td>
+        <td>string</td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>externalId</td>
+        <td>string</td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>meta</td>
+        <td><a href="#/definitions/Meta">Meta</a></td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>schemas</td>
+        <td>array[string]</td>
+        <td>required</td>
+        <td>-</td>
+        <td></td>
+    </tr>
 </table>
 
 ## <a name="/definitions/Role">Role</a>
