@@ -203,18 +203,22 @@ String result = response.getResponseBodyString(); // this will give you Response
 - - -
 
 ## SCIM 2.0
-Following is the guide to work with SCIM client 2.0:
 
-You can checkout SCIM-client from Gluu's GIT repository : https://github.com/GluuFederation/SCIM-Client 
+Following is the guide to work with SCIM client 2.0. You can checkout
+the according SCIM Client from our [GIT
+repository](https://github.com/GluuFederation/SCIM-Client).
 
 ### Creating SCIM 2 client instance
-Following is an example code to create a SCIM 2.0 client instance:
+
+Following is example code to create a SCIM 2.0 client instance:
 
 ```
 Scim2Client client = Scim2Client.oAuthInstance("admin", "pwd", "@!0035.934F.1A51.77B0!0001!402D.66D0!0008!5BAD.32E4", "9e9fef43-0d97-4383-863f-0e828ff0a408", "http://localhost:8085/oxtrust-server/seam/resource/restv1", "http://localhost:8085/oxauth/seam/resource/restv1/oxauth/token");
 ```
 
-In the mentioned example, we have used the following constructor to create the client instance (Signature):
+In the mentioned example, we have used the following constructor to
+create the client instance (Signature):
+
 ```
 public static Scim2Client oAuthInstance(String userName, String passWord, String clientID, String clientSecret, String domain,
 String oAuthTokenEndpoint)
