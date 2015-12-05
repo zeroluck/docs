@@ -620,7 +620,7 @@ work for 389DS, too:
 ### Object class oxPushDevice
 
  * __Description__ 
- * __oxAuthUserId__ oxAuth user id
+ * __oxAuthUserId__ oxAuth user ID
  * __oxId__ ox identifier
  * __oxPushApplication__ oxPush application DN
  * __oxPushDeviceConf__ oxPush device configuration
