@@ -298,7 +298,7 @@ work for 389DS, too:
  * __displayName__ 
  * __federationRules__ Track rules for the federation in Gluu SAML configuration. Deprecated as multi-party federation management should move to Jagger
  * __gluuContainerFederation__ SAML trust relationship federation info
- * __gluuEntityId__ Specifies SAML trust relationship entity ID
+ * __gluuEntityId__ Specifies SAML trust relationship entity id
  * __gluuIsFederation__ Used in oxTrust to specify if a SAML trust relationship is a federation. It could also be a website
  * __gluuProfileConfiguration__ SAML trust relationship attribute
  * __gluuReleasedAttribute__ oxTrust reference for the DN of the released attribute
@@ -329,16 +329,16 @@ work for 389DS, too:
  * __displayName__ 
  * __inum__ XRI i-number (iNum)
  * __oxAuthAppType__ oxAuth app type
- * __oxAuthClientIdIssuedAt__ oxAuth client id issued at
+ * __oxAuthClientIdIssuedAt__ oxAuth client ID issued at
  * __oxAuthClientSecret__ oxAuth client secret
- * __oxAuthClientSecretExpiresAt__ the Date the oxAuth client secret expires
+ * __oxAuthClientSecretExpiresAt__ the date the oxAuth client secret expires
  * __oxAuthClientURI__ oxAuth client uri
  * __oxAuthClientUserGroup__ oxAuth client user group
  * __oxAuthContact__ oxAuth contact
- * __oxAuthDefaultAcrValues__ oxAuth default Acr values
+ * __oxAuthDefaultAcrValues__ oxAuth default ACR values
  * __oxAuthDefaultMaxAge__ oxAuth default maximum age
  * __oxAuthFederationId__ oxAuth Federation ID attribute
- * __oxAuthFederationMetadataURI__ oxAuth Federation metadata uri attribute
+ * __oxAuthFederationMetadataURI__ oxAuth federation metadata uri attribute
  * __oxAuthGrantType__ oxAuth Grant type
  * __oxAuthIdTokenEncryptedResponseAlg__ oxAuth ID token encrypted response algorithm
  * __oxAuthIdTokenEncryptedResponseEnc__ oxAuth ID token encrypted response encoding
@@ -373,7 +373,7 @@ work for 389DS, too:
  * __oxAuthConfCustomAuthMethod__ Custom authentication method
  * __oxAuthConfDynamic__ oxAuth dynamic configuration
  * __oxAuthConfErrors__ oxAuth errors configuration
- * __oxAuthConfIdPythonScript__ Custom id generation
+ * __oxAuthConfIdPythonScript__ Custom ID generation
  * __oxAuthConfLdapAuth__ LDAP authentication configuration
  * __oxAuthConfStatic__ oxAuth static configuration
  * __oxAuthConfWebKeys__ oxAuth web keys configuration
