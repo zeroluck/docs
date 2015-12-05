@@ -579,12 +579,12 @@ work for 389DS, too:
  * __oxAuthCreation__ oxAuth creation
  * __oxAuthExpiration__ oxAuth expiration
  * __oxProxyAccessToken__ oxProxy access token
- * __oxProxyClientId__ oxProxy client id
+ * __oxProxyClientId__ oxProxy client ID
 
 ### Object class oxProxClient
 
  * __Description__ 
- * __displayName__ 
+ * __displayName__ (user) name that appears on the display
  * __inum__ XRI i-number (iNum)
  * __oxProxyClaimMapping__ oxProxy claim mapping
  * __oxProxyScope__ oxProxy scope
@@ -601,18 +601,18 @@ work for 389DS, too:
 
  * __Description__ 
  * __c__ 
- * __displayName__ 
+ * __displayName__ (user) name that appears on the display
  * __inum__ XRI i-number (iNum)
  * __l__ 
  * __oxDomain__ ox domain
  * __oxId__ ox identifier
- * __oxX509PEM__ ox x509 in PEM format
- * __oxX509URL__ ox x509 uri
+ * __oxX509PEM__ ox X.509 in PEM format
+ * __oxX509URL__ ox X.509 uri
 
 ### Object class oxPushApplication
 
  * __Description__ 
- * __displayName__ 
+ * __displayName__ (user) name that appears on the display
  * __oxId__ ox identifier
  * __oxName__ ox name
  * __oxPushApplicationConf__ oxPush application configuration
