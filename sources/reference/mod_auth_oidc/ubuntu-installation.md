@@ -5,9 +5,11 @@
 Install the Apache2 web server, and enable the SSL module as described
 below:
 
-    # sudo apt-get install apache2
-    # sudo a2enmod ssl
-    # service apache2 restart
+```
+# sudo apt-get install apache2
+# sudo a2enmod ssl
+# service apache2 restart
+```
 
 Download the mod_auth_openidc deb file as below. If the binary file is
 not available, then refer to the [OpenIDC wiki
