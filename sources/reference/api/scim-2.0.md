@@ -187,44 +187,28 @@ Create Group
     </tr>
 </table>
 
-
-
 #### Response
 
 **Content-Type: ** application/json, application/xml
-
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
 | 200    | successful operation | <a href="#/definitions/Group">Group</a>|
 
-
-
 ## /v2/Groups/{id}
-
 
 ### GET
 
 <a id="getGroupById">Find Group by id</a>
 
-Returns a Group on the basis of provided id as path parameter (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.1)
-
-
-
+Returns a Group on the basis of the provided id as path parameter
+(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.1).
 
 #### Security
 
-
-
-
 * Authorization
 
-
-
-
 #### Request
-
-
 
 ##### Parameters
 
