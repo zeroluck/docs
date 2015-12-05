@@ -473,56 +473,28 @@ Create a user
     </tr>
 </table>
 
-
-
 #### Response
 
 **Content-Type: ** application/json, application/xml
-
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
 | 200    | successful operation | <a href="#/definitions/User">User</a>|
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## /v2/Users/{uid}
-
 
 ### GET
 
-<a id="getUserByUid">Find User by id</a>
+<a id="getUserByUid">Find user by id</a>
 
-Returns a Users on the basis of provided uid as path parameter (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.1)
-
-
-
+Returns a user on the basis of provided uid as path parameter
+(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.1).
 
 #### Security
 
-
-
-
 * Authorization
 
-
-
-
 #### Request
-
-
 
 ##### Parameters
 
