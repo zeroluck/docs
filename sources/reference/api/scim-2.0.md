@@ -273,50 +273,30 @@ Update Group
         <th>Default</th>
         <th>Schema</th>
     </tr>
-
-
-
-<tr>
-    <th>Authorization</th>
-    <td>header</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>id</th>
-    <td>path</td>
-    <td>yes</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>body</th>
-    <td>body</td>
-    <td>no</td>
-    <td>Group</td>
-    <td> - </td>
-
-    <td>
-    
-    <a href="#/definitions/Group">Group</a> 
-    </td>
-
-</tr>
-
-
+    <tr>
+        <th>Authorization</th>
+        <td>header</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>id</th>
+        <td>path</td>
+        <td>yes</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>body</th>
+        <td>body</td>
+        <td>no</td>
+        <td>Group</td>
+        <td> - </td>
+        <td><a href="#/definitions/Group">Group</a></td>
+    </tr>
 </table>
 
 
