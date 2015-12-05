@@ -1270,85 +1270,48 @@ Delete a user
         <th>description</th>
         <th>example</th>
     </tr>
-    
-        <tr>
-            <td>formatted</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>familyName</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>givenName</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>middleName</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>honorificPrefix</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>honorificSuffix</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
+    <tr>
+        <td>formatted</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>familyName</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>givenName</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>middleName</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>honorificPrefix</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>honorificSuffix</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
 </table>
 
 ## <a name="/definitions/PhoneNumber">PhoneNumber</a>
