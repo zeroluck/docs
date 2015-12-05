@@ -1382,45 +1382,27 @@ Delete a user
         <th>description</th>
         <th>example</th>
     </tr>
-    
-        <tr>
-            <td>totalResults</td>
-            <td>
-                
-                    
-                    integer (int32)
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>startIndex</td>
-            <td>
-                
-                    
-                    integer (int32)
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>itemsPerPage</td>
-            <td>
-                
-                    
-                    integer (int32)
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
+    <tr>
+        <td>totalResults</td>
+        <td>integer (int32)</td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>startIndex</td>
+        <td>integer (int32)</td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>itemsPerPage</td>
+        <td>integer (int32)</td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
     
         <tr>
             <td>schemas</td>
@@ -2507,9 +2489,4 @@ Delete a user
             <td>-</td>
             <td></td>
         </tr>
-    
 </table>
-
-
-
-
