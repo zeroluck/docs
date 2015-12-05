@@ -257,12 +257,12 @@ This script type adds only one method to the base script type:
 
 * `def updateUser(self, user, configurationAttributes):`
 
-These are types of parameters:
+These are the types of parameters:
 
 - `user` is `org.gluu.oxtrust.model.GluuCustomPerson`
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
 
-This script can be used in oxTrust application only.
+This script can be used in an oxTrust application only.
 
 - [Sample Cache Refresh Script](./sample-cache-refresh-script.py)
 
