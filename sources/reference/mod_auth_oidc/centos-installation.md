@@ -33,11 +33,10 @@ Next, create an according Apache configuration file to use this module:
 # echo "LoadModule auth_openidc_module modules/mod_auth_openidc.so" > /etc/httpd/conf.d/mod_auth_openidc.conf
 ```
 
-Activate the OpenIDC module, and restart the Apache service, then:
+Activate the OpenIDC module:
 
 ```
 # a2enmod auth_openidc
-# service httpd restart
 ```
 
 As demonstrated here we are running gluuCE at `ce.gluu.org`. The OpenIDC
@@ -51,6 +50,10 @@ Change the port numbers in the files `/etc/apache2/ports.conf`,
 `/etc/apache2/sites-available/000-default.conf` and
 `/etc/apache2/sites-available/default-ssl.conf`. Then, restart the
 Apache2 web service:
+
+```
+# service httpd restart
+```
 
 #### Dynamic Client Registration
 
