@@ -143,21 +143,12 @@ Returns a list of Groups
 |-------------|-------------|----------------|
 | 200    | successful operation | <a href="#/definitions/ListResponse">ListResponse</a>|
 
-
-
-
-
-
-
 ### POST
-
 
 <a id="createGroup">Create Group</a>
 
-Create Group (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
-
-
-
+Create Group
+(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3).
 
 #### Security
 
