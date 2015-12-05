@@ -1,91 +1,124 @@
 ## Installing mod_auth_oidc on Gluu Server on Ubuntu 14.04
 
-#### Install Apache2 and enable module ssl as below:
+#### Apache2 and the SSL module
 
+Install the Apache2 web server, and enable the SSL module as described
+below:
 
     # sudo apt-get install apache2
     # sudo a2enmod ssl
     # service apache2 restart
 
-Download mod_auth_openidc deb file as below.
-If the binary is not available, then refer to https://github.com/pingidentity/mod_auth_openidc/wiki.
-Then install the binary with dpkg and at the end enable the mod as shown below.
+Download the mod_auth_openidc deb file as below. If the binary file is
+not available, then refer to the [OpenIDC wiki
+page](https://github.com/pingidentity/mod_auth_openidc/wiki). Then,
+install the binary file with `dpkg`, and enable the SSL module as shown
+below.
 
+```
+# wget http://ftp.us.debian.org/debian/pool/main/liba/libapache2-mod-auth-openidc/libapache2-mod-auth-openidc_1.6.0-1_amd64.deb
+# dpkg -i libapache2-mod-auth-openidc_1.6.0-1_amd64.deb
+# a2enmod auth_openidc
+# service apache2 restart
+```
 
-    # wget http://ftp.us.debian.org/debian/pool/main/liba/libapache2-mod-auth-openidc/libapache2-mod-auth-openidc_1.6.0-1_amd64.deb
-    # dpkg -i libapache2-mod-auth-openidc_1.6.0-1_amd64.deb
-    # a2enmod auth_openidc
-    # service apache2 restart
+Now, since we want to run this Apache at port 44443 for SSL and at port
+8000 for non-SSL, we need to edit three files. The changes are done to
+avoid a conflict with the Gluu Server's Apache ports. But, if both the
+Gluu Server and the Apache server are different, then there is no need
+to change the ports.
 
+Change the port numbers in the files `/etc/apache2/ports.conf`,
+`/etc/apache2/sites-available/000-default.conf` and
+`/etc/apache2/sites-available/default-ssl.conf`. Then, restart the
+Apache2 web service:
 
-Now, since we want to run this apache at `port 44443` for ssl and `port 8000` for non-ssl, we need to edit three files. The changes are done to avoid conflict with the Gluu Server's Apache ports. But, if the Gluu Server and Apache servers are different, no need to change the ports. Change port numbers in the file: `/etc/apache2/ports.conf`, `/etc/apache2/sites-available/000-default.conf` and `/etc/apache2/sites-available/default-ssl.conf` and restart apache2 service as mentioned above.
+```
+# service apache2 restart
+```
 
 #### Dynamic Client Registration
 
-Let's consider the case of dynamic client registration first.
+Let's consider the case of dynamic client registration first. For this
+purpose we will use `dynamic.gluu.org` as the server name. Let's prepare
+the server for serving the content protected by gluuCE.
 
-For this purpose we'll name the server: `dynamic.gluu.org`.
+Create a directory named as: `dynamic` inside `/var/www/html`:
 
-Let's prepare the server for serving the content protected by gluuCE.
+```
+# mkdir /var/www/html/dynamic
+```
 
-Create a directory named as: `dynamic` inside `/var/www/html`
+Now, let's create a file named `index.html` inside the directory above.
+The file will have the following content:
 
-    # mkdir /var/www/html/dynamic
+```
+<html>
+	<title>
+	    Protected URL
+	</title>
+	<body>
+	    Nice to see the protected url via Dynamic Registration
+	</body>
+</html>
+```
 
-Now, let's create a file named `index.html` inside above directory with the following content:
+Create another directory named `metadata` in `/var/www/html` which will
+hold the metadata:
 
-    <html>
-	    <title>
-		    Protected URL
-	    </title>
-	    <body>
-		    Nice to see the protected url via Dynamic Registration
-	    </body>
-    </html>
+```
+# mkdir /var/www/html/metadata
+```
 
-Create another directory named `metadata` in `/var/www/html` which will hold the metadata.
+Now, change the ownership of the entire directory. This is **extremely
+critical** because without this step the Apache will not be able to
+write the metadata inside the directory.
 
-    # mkdir /var/www/html/metadata
+```
+# chown -R www-data:www-data /var/www/html
+```
 
-Now, change the ownerships. This is **extremely critical** because without this apache won't be able to write the metadata inside the directory.
+Let's create the Apache config file now.
 
-    # chown -R www-data:www-data /var/www/html
+Create a file named `/etc/apache2/sites-available/dynamic.conf` with the
+contents as written below:
 
-Let's create the apache config file now.
+```
+<VirtualHost *:44443>
+    ServerName dynamic.gluu.org
+    DocumentRoot /var/www/html
 
-Create a file named `/etc/apache2/sites-available/dynamic.conf` with the contents as below:
+    OIDCMetadataDir	/var/www/html/metadata
+    OIDCClientSecret secret
 
-    <VirtualHost *:44443>
-	    ServerName dynamic.gluu.org
-	    DocumentRoot /var/www/html
+    OIDCRedirectURI https://dynamic.gluu.org:44443/dynamic/fake_redirect_uri
+    OIDCCryptoPassphrase secret
+    OIDCSSLValidateServer Off
 
-	    OIDCMetadataDir	/var/www/html/metadata
-	    OIDCClientSecret secret
-	
-	    OIDCRedirectURI https://dynamic.gluu.org:44443/dynamic/fake_redirect_uri
-	    OIDCCryptoPassphrase secret
-	    OIDCSSLValidateServer Off
-	
-	    <Location /dynamic/>
-   		    AuthType openid-connect
-   		    Require valid-user
-	    </Location>
+    <Location /dynamic/>
+		AuthType openid-connect
+		Require valid-user
+	</Location>
 
-        SSLEngine On
+    SSLEngine On
         SSLCertificateFile      /etc/ssl/certs/ssl-cert-snakeoil.pem
         SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
-    </VirtualHost>
+</VirtualHost>
+```
 
-Above, I've taken the cert and key files which are pre-existing at the server. Feel free to use your own.
+Above, I have taken both the certificate and the key file which are
+pre-existing at the server. Feel free to use your own files. As the next
+step enable the site, and restart the Apache service as below:
 
-Now, enable the site and restart the apache service as below:
+```
+# a2ensite  dynamic.conf
+# service apache2 restart
+```
 
-    # a2ensite  dynamic.conf
-    # service apache2 restart
-
-Now, try to access the page: `https://dynamic.gluu.org:44443/dynamic` and you should see the discovery page as below. 
-
-When presented with the discovery page, enter `admin@ce.gluu.org`
+To validate the availability if the website try to access the page via
+`https://dynamic.gluu.org:44443/dynamic`. As a result, you should see
+the discovery page as pictured below. Enter `admin@ce.gluu.org` to
+access the site.
 
 ![dynamic_discovery](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/mod_auth_oidc/dynamic_discovery.png)
 
