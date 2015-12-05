@@ -177,22 +177,14 @@ Create Group
         <td> - </td>
         <td>string </td>
     </tr>
-
-<tr>
-    <th>body</th>
-    <td>body</td>
-    <td>no</td>
-    <td>Group</td>
-    <td> - </td>
-
-    <td>
-    
-    <a href="#/definitions/Group">Group</a> 
-    </td>
-
-</tr>
-
-
+    <tr>
+        <th>body</th>
+        <td>body</td>
+        <td>no</td>
+        <td>Group</td>
+        <td> - </td>
+        <td><a href="#/definitions/Group">Group</a></td>
+    </tr>
 </table>
 
 
