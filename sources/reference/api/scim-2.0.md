@@ -251,23 +251,14 @@ Returns a Group on the basis of the provided id as path parameter
 
 <a id="updateGroup">Update Group</a>
 
-Update Group (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
-
-
-
+Update Group
+(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3).
 
 #### Security
 
-
-
-
 * Authorization
 
-
-
-
 #### Request
-
 
 **Content-Type: ** application/json, application/xml
 
