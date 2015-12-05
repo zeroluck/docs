@@ -10,13 +10,38 @@
 **POST** `/requester/perm`
 
 Client Requests Authorization Data
-Once in possession of a permission ticket and an AAT for this authorization server, the client asks the authorization server to give it authorization data corresponding to that permission ticket. It performs a POST on the RPT endpoint, supplying its own AAT in the header and a JSON object in the body with a "ticket" property containing the ticket as its value.
-If the client had included an RPT in its failed access attempt, It MAY also provide that RPT in an "rpt" property in its request to the authorization server.
-In circumstances where the client needs to provide requesting party claims to the authorization server, it MAY also include a "claim_tokens" property in its request; see Section 3.4.1.2.1 for more information. The authorization server uses the ticket to look up the details of the previously registered requested permission, maps the requested permission to operative resource owner policies based on the resource set identifier and scopes associated with it, potentially requests additional information, and ultimately responds positively or negatively to the request for authorization data.
-The authorization server bases the issuing of authorization data on resource owner policies. These policies thus amount to an asynchronous OAuth authorization grant. The authorization server is also free to enable the resource owner to set policies that require the owner to interact with the server in near-real time to provide consent subsequent to an access attempt. All such processes are outside the scope of this specification.
+Once in possession of a permission ticket and an AAT for this
+authorization server, the client asks the authorization server to give
+it authorization data corresponding to that permission ticket. It
+performs a POST on the RPT endpoint, supplying its own AAT in the header
+and a JSON object in the body with a "ticket" property containing the
+ticket as its value.
+
+If the client had included an RPT in its failed access attempt, It MAY
+also provide that RPT in an "rpt" property in its request to the
+authorization server.
+
+In circumstances where the client needs to provide requesting party
+claims to the authorization server, it MAY also include a "claim_tokens"
+property in its request; see Section 3.4.1.2.1 for more information. The
+authorization server uses the ticket to look up the details of the
+previously registered requested permission, maps the requested
+permission to operative resource owner policies based on the resource
+set identifier and scopes associated with it, potentially requests
+additional information, and ultimately responds positively or negatively
+to the request for authorization data.
+
+The authorization server bases the issuing of authorization data on
+resource owner policies. These policies thus amount to an asynchronous
+OAuth authorization grant. The authorization server is also free to
+enable the resource owner to set policies that require the owner to
+interact with the server in near-real time to provide consent subsequent
+to an access attempt. All such processes are outside the scope of this
+specification.
 
 ###### URL
     http://gluu.org/requester/perm
+
 ###### Parameters
 - body
 
@@ -97,23 +122,21 @@ The authorization server bases the issuing of authorization data on resource own
         <th>description</th>
         <th>notes</th>
     </tr>
-        <tr>
-            <td>boolean</td>
-            <td>optional</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td>int</td>
-            <td>optional</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-        </tr>
+    <tr>
+        <td>boolean</td>
+        <td>optional</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>int</td>
+        <td>optional</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
 </table>
-
-
 
 ## <a name="RptAuthorizationRequest">RptAuthorizationRequest</a>
 
@@ -125,26 +148,26 @@ The authorization server bases the issuing of authorization data on resource own
         <th>description</th>
         <th>notes</th>
     </tr>
-        <tr>
-            <td><a href="#ClaimTokenList">ClaimTokenList</a></td>
-            <td>optional</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td>string</td>
-            <td>optional</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td>string</td>
-            <td>optional</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-        </tr>
+    <tr>
+        <td><a href="#ClaimTokenList">ClaimTokenList</a></td>
+        <td>optional</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>string</td>
+        <td>optional</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>string</td>
+        <td>optional</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
 </table>
 
