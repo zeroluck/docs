@@ -47,11 +47,9 @@ be used to do global script initialization, initiate objects, etc. The
 the `init` method.
 
 The script manager only loads enabled scripts. Hence, after enabling a
-script, the script manager should trigger an event to load or destroy
-script.
-
-All scripts are stored in LDAP in the `ou=scripts,o=<org_inum>,o=gluu`
-branch.
+script, the script manager should trigger an event to either load or
+destroy a script. All scripts are stored in LDAP in the
+`ou=scripts,o=<org_inum>,o=gluu` branch.
 
 This is a sample entry:
 
@@ -75,8 +73,9 @@ restart the application once `oxRevision` is increased.
 
 The `getApiVersion` method allows API changes in order to do transparent
 migration from an old script to a new API. Currently all scripts should
-return `1`. For example, in the future we can extend the API of any
-script and call new method(s) only if API version > 2, etc. exists.
+return `1`. For example, in the future it is planned to extend the API
+of any script and call new method(s) only if API version > 2, etc.
+exists.
 
 ## Interception Script Logs
 
@@ -84,8 +83,8 @@ The log files regarding interception scripts are not stored in the
 `wrapper.log` file. The logs are separated according to the module they
 affect. The oxAuth custom script logs are stored in `oxauth_script.log`
 and the oxTrust custom script logs are stored in the
-`oxtrust_script.log`. Please refer to these logs for any errors in the
-interception scripts or following the workflow of the script.
+`oxtrust_script.log`. Please refer to these log files for any errors in
+the interception scripts or following the workflow of the script.
 
 # Application Session Management
 
@@ -95,7 +94,7 @@ the `end_session` endpoint. It's possible to add multiple scripts with
 this type. The application should call all of them according to the
 level.
 
-This script type adds only one method to base script type:
+This script type adds only one method to the base script type:
 
 `def endSession(self, httpRequest, authorizationGrant, configurationAttributes):`
 
@@ -105,7 +104,7 @@ These are the types of parameters:
 - `authorizationGrant` is `org.xdi.oxauth.model.common.AuthorizationGrant`
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
 
-This script can be used in oxAuth application only.
+This script can be used in an oxAuth application only.
 
 - [Sample Application Session Management Script](./sample-application-session-script.py)
 
@@ -141,7 +140,7 @@ following methods:
 The `isValidAuthenticationMethod` method is used to check if the
 authentication method is in a valid state. For example we can check
 there if a 3rd party mechanism is available to authenticate users. As a
-result it should return `True` or `False`.
+result it should either return `True` or `False`.
 
 This method has the following parameters:
 
@@ -161,7 +160,7 @@ This method has the following parameters:
 
 The `authenticate` method is the key method within the person
 authentication script. It checks if the user has passed the specified
-step or not. As a result it should return `True` or `False`.
+step or not. As a result it should either return `True` or `False`.
 
 This method has the following parameters:
 
@@ -170,8 +169,8 @@ This method has the following parameters:
 - step is a java integer
 
 The `prepareForStep` method can be used to prepare variables needed to
-render login page and store them in event context. As a result it should
-return `True` or `False`.
+render the login page and store them in an according event context. As a
+result it should either return `True` or `False`.
 
 This method has the following parameters:
 
@@ -183,12 +182,13 @@ The `getCountAuthenticationSteps` method should return an integer value
 with the number of steps in the authentication workflow.
 
 This method has the following parameters:
+
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
 
 The `getExtraParametersForStep` method provides a way to notify the
 authenticator that it should store specified event context parameters
-event in the oxAuth session. It's needed in few cases, for example when
-an authentication script redirects the user to a 3rd party
+event in the oxAuth session. It is needed in a few cases, for example
+when an authentication script redirects the user to a 3rd party
 authentication system and expects the workflow to resume after that. As
 a result it should return a java array of strings.
 
