@@ -182,7 +182,7 @@ work for 389DS, too:
  * __gluuManagerGroup__ Used in organization entry to specifies the DN of the group that has admin privileges in oxTrust
  * __gluuOrgProfileMgt__ enable or disable profile management feature in oxTrust
  * __gluuOrgShortName__ Short description, as few letters as possible, no spaces
- * __gluuOwnerGroup__ Deprecated. Use gluuManagerGroup
+ * __gluuOwnerGroup__ Deprecated. Use gluuManagerGroup, instead.
  * __gluuPaidUntil__ TODO - in use?
  * __gluuPaymentProcessorTimestamp__ TODO - in use?
  * __gluuProStoresUser__ TODO - remove
@@ -222,7 +222,7 @@ work for 389DS, too:
  * __Description__ 
  * __creationDate__ Creation date used for password reset requests
  * __oxGuid__ A random string to mark temporary tokens
- * __personInum__ Inum of a person
+ * __personInum__ iNum of a person
 
 ### Object class gluuPerson
 
@@ -231,7 +231,7 @@ work for 389DS, too:
  * __c__ 
  * __displayName__ 
  * __givenName__ 
- * __gluuManagedOrganizations__ Used to track with which organizations a person is associated
+ * __gluuManagedOrganizations__ Used to track the organizations a person is associated with
  * __gluuOptOuts__ White pages attributes restricted by person in oxTrust profile management
  * __gluuStatus__ Status of the entry, used by many object classes
  * __gluuWhitePagesListed__ Allow publication
@@ -272,7 +272,7 @@ work for 389DS, too:
  * __profile__ Profile page uri of the person
  * __picture__ Profile picture uri of the person
  * __website__ Web page or blog uri of the person
- * __emailVerified__ True if the e-mail address of the person has been verified; otherwise false
+ * __emailVerified__ True if the email address of the person has been verified; otherwise false
  * __gender__ Gender of the person - either female or male
  * __birthdate__ Birthday of the person, represented as an ISO 8601:2004 [ISO8601â€‘2004] YYYY-MM-DD format
  * __zoneinfo__ time zone database representing the end-user
@@ -280,7 +280,7 @@ work for 389DS, too:
  * __phoneNumberVerified__ True if the phone number of the person has been verified, otherwise false
  * __address__ OpenID Connect formatted JSON object representing the address of the person
  * __updatedAt__ Time the information of the person was last updated. Seconds from 1970-01-01T0:0:0Z
- * __preferredLanguage__ 
+ * __preferredLanguage__ Preferred language of the person
  * __role__ Role
  * __secretAnswer__ Secret answer
  * __secretQuestion__ Secret question
@@ -288,8 +288,8 @@ work for 389DS, too:
  * __sn__ 
  * __cn__ 
  * __transientId__ Transient id
- * __uid__ 
- * __userPassword__ 
+ * __uid__ User id of the person
+ * __userPassword__ Password of the person
 
 ### Object class gluuSAMLconfig
 
