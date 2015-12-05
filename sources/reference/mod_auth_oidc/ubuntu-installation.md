@@ -133,32 +133,38 @@ enter the credentials for authentication.
 
 #### Manual Client Registration
 
-Let's consider the case of **manual client registration** now if you don't wish to use dynamic client registration.
-
-For this purpose we'll name the server: `static.gluu.org`.
+Let's consider the case of **manual client registration** now if you do
+not wish to use dynamic client registration. For this purpose we will
+use `static.gluu.org` as the server name.
 
 Let's prepare the server for serving the content protected by gluuCE.
+Create a directory named `static` inside `the directory /var/www/html`:
 
-Create a directory named as: `static` inside `/var/www/html`
+```
+# mkdir /var/www/html/static
+```
 
-    # mkdir /var/www/html/static
+Now, create a file named `index.html` inside the directory created
+above. The file needs to have the following content:
 
-Now, let's create a file named `index.html` inside above created directory with the following content:
-
-    <html>
+```
+<html>
 	<title>
 		Protected URL
 	</title>
 	<body>
 		Nice to see the protected url via Manual registration
 	</body>
-    </html>
+</html>
+```
 
-Now, change the ownerships.
+Now, change the ownership of the entire directory:
 
-    # chown -R www-data:www-data /var/www/html
+```
+# chown -R www-data:www-data /var/www/html
+```
 
-Let's create the apache config file now.
+As the next step create the Apache configuration file.
 
 Create a file named `/etc/apache2/sites-available/static.conf` with the contents as below:
 
