@@ -45,11 +45,16 @@ is the `tokenURL`, for example
 ScimClient client = ScimClient.basicInstance(userName, passWord, domainURL);
 ```
 
-For the basic authentication you only need the user’s credentials (userName, passWord) and domain URL.
+For the basic authentication you only need the user’s credentials
+(userName, passWord) and domain uri.
 
 ### Adding an entity
 
-SCIM-Client API comes with two methods to add an entity, i. e. “createPerson” and “createPersonString”, for createPerson, you pass the person you want to add as ScimPerson object and you specify the desired media type format “XML/JSON” and SCIM-client API will parse the ScimPerson object into XML or JSON and send your request.
+The SCIM Client API comes with two methods to add an entity, i. e.
+“createPerson” and “createPersonString”. For createPerson you pass the
+person you want to add as ScimPerson object. Furthermore, you specify
+the desired media type format “XML/JSON” and the SCIM client API will
+parse the ScimPerson object into XML or JSON, and send your request.
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
@@ -72,7 +77,8 @@ String result = response.getResponseBodyString(); // this will give you Response
 ```
 -->
 
-Similarly for groups, you can use createGroup with ScimGroup as a parameter, or using createGroupString.
+Similarly for groups, you can use createGroup with ScimGroup as a
+parameter, or using createGroupString.
 
 ``` 
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
@@ -81,7 +87,6 @@ groupToAdd.setDisplayName("ScimObjecttesting");
 ScimResponse response = client.createGroup(groupToAdd, MediaType.APPLICATION_JSON);
 String responseStr = response.getResponseBodyString();
 ```
-
 
 - - -
 
