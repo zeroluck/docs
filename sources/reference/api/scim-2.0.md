@@ -21,7 +21,6 @@ You can see the detailed SCIM 2.0 specification documents
 
 ### POST
 
-
 <a id="bulkOperation">Bulk Operation</a>
 
 SCIM Bulk Operation (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.7)
@@ -31,7 +30,6 @@ SCIM Bulk Operation (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-
 * Authorization
 
 #### Request
-
 
 **Content-Type: ** application/json, application/xml
 
@@ -46,37 +44,22 @@ SCIM Bulk Operation (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-
         <th>Default</th>
         <th>Schema</th>
     </tr>
-
-
-
-<tr>
-    <th>Authorization</th>
-    <td>header</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>body</th>
-    <td>body</td>
-    <td>no</td>
-    <td>BulkRequest</td>
-    <td> - </td>
-
-    <td>
-    
-    <a href="#/definitions/BulkRequest">BulkRequest</a> 
-    </td>
-
-</tr>
-
-
+    <tr>
+        <th>Authorization</th>
+        <td>header</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string</td>
+    </tr>
+    <tr>
+        <th>body</th>
+        <td>body</td>
+        <td>no</td>
+        <td>BulkRequest</td>
+        <td> - </td>
+        <td><a href="#/definitions/BulkRequest">BulkRequest</a></td>
+    </tr>
 </table>
 
 
