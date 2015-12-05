@@ -1615,152 +1615,104 @@ Delete a user
         <td>-</td>
         <td></td>
     </tr>
-        <tr>
-            <td>preferredLanguage</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>locale</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>timezone</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>active</td>
-            <td>
-                
-                    
-                    boolean
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>password</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>emails</td>
-            <td>
-                    array[<a href="#/definitions/Email">Email</a>]
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>phoneNumbers</td>
-            <td>
-                    array[<a href="#/definitions/PhoneNumber">PhoneNumber</a>]
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>ims</td>
-            <td>
-                    array[<a href="#/definitions/Im">Im</a>]
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>photos</td>
-            <td>
-                    array[<a href="#/definitions/Photo">Photo</a>]
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>addresses</td>
-            <td>
-                    array[<a href="#/definitions/Address">Address</a>]
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>groups</td>
-            <td>
-                    array[<a href="#/definitions/GroupRef">GroupRef</a>]
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>entitlements</td>
-            <td>
-                    array[<a href="#/definitions/Entitlement">Entitlement</a>]
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>roles</td>
-            <td>
-                    array[<a href="#/definitions/Role">Role</a>]
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>x509Certificates</td>
-            <td>
-                    array[<a href="#/definitions/X509Certificate">X509Certificate</a>]
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
+    <tr>
+        <td>preferredLanguage</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>locale</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>timezone</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>active</td>
+        <td> boolean </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>password</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>emails</td>
+        <td> array[<a href="#/definitions/Email">Email</a>] </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>phoneNumbers</td>
+        <td> array[<a href="#/definitions/PhoneNumber">PhoneNumber</a>] </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>ims</td>
+        <td> array[<a href="#/definitions/Im">Im</a>] </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>photos</td>
+        <td> array[<a href="#/definitions/Photo">Photo</a>] </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>addresses</td>
+        <td> array[<a href="#/definitions/Address">Address</a>] </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>groups</td>
+        <td> array[<a href="#/definitions/GroupRef">GroupRef</a>] </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>entitlements</td>
+        <td> array[<a href="#/definitions/Entitlement">Entitlement</a>] </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>roles</td>
+        <td> array[<a href="#/definitions/Role">Role</a>] </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>x509Certificates</td>
+        <td> array[<a href="#/definitions/X509Certificate">X509Certificate</a>] </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
 </table>
 
 ## <a name="/definitions/X509Certificate">X509Certificate</a>
