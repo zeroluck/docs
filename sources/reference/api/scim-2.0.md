@@ -299,41 +299,24 @@ Update Group
     </tr>
 </table>
 
-
-
 #### Response
 
 **Content-Type: ** application/json, application/xml
-
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
 | 200    | successful operation | <a href="#/definitions/Group">Group</a>|
 
-
-
-
-
-
-
 ### DELETE
 
 <a id="deleteGroup">Delete Group</a>
 
-Delete Group (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
-
-
-
+Delete Group
+(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3).
 
 #### Security
 
-
-
-
 * Authorization
-
-
-
 
 #### Request
 
