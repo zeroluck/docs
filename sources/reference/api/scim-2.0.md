@@ -559,53 +559,31 @@ Update a u ser
         <th>Default</th>
         <th>Schema</th>
     </tr>
-
-
-
-<tr>
-    <th>Authorization</th>
-    <td>header</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>uid</th>
-    <td>path</td>
-    <td>yes</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>body</th>
-    <td>body</td>
-    <td>no</td>
-    <td>User</td>
-    <td> - </td>
-
-    <td>
-    
-    <a href="#/definitions/User">User</a> 
-    </td>
-
-</tr>
-
-
+    <tr>
+        <th>Authorization</th>
+        <td>header</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>uid</th>
+        <td>path</td>
+        <td>yes</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>body</th>
+        <td>body</td>
+        <td>no</td>
+        <td>User</td>
+        <td> - </td>
+        <td><a href="#/definitions/User">User</a></td>
+    </tr>
 </table>
-
-
 
 #### Response
 
