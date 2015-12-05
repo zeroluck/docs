@@ -277,17 +277,17 @@ to get a registration request, analyze it, and apply customizations to
 registered clients. For example, a script can give access to specified
 scopes if `redirect_uri` belongs to a specified service or domain.
 
-This script type adds only one method to base script type:
+This script type adds only one method to the base script type:
 
 * `def updateClient(self, registerRequest, client, configurationAttributes):`
 
-These are types of parameters:
+These are the types of parameters:
 
 - `registerRequest` is `org.xdi.oxauth.client.RegisterRequest`
 - `client` is `org.xdi.oxauth.model.registration.Client`
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
 
-This script can be used in oxAuth application only.
+This script can be used in an oxAuth application only.
 
 - [Sample Client Registration Script](./sample-client-registration-script)
 
