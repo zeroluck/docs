@@ -209,9 +209,9 @@ This method has the following parameters:
 
 The `logout` method is not mandatory. It can be used in cases when you
 need to execute specific logout logic within the authentication script
-when oxAuth receives an end session request. Also it allows oxAuth to
+when oxAuth receives an end session request. Also, it allows oxAuth to
 stop processing the end session request workflow if it returns `False`.
-As result it should return `True` or `False`.
+As a result it should either return `True` or `False`.
 
 This method has the following parameters:
 
@@ -230,11 +230,11 @@ an UMA scope. On requesting access to a specified resource, the
 application should call specified UMA policies in order to grant or deny
 access.
 
-This script type adds only one method to base script type:
+This script type adds only one method to the base script type:
 
 `def authorize(self, authorizationContext, configurationAttributes):`
 
-These are types of parameters:
+These are the types of parameters:
 
 - `authorizationContext` is `org.xdi.oxauth.service.uma.authorization.AuthorizationContext`
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
