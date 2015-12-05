@@ -2,7 +2,8 @@
 
 ### SCIM 2.0 Specifications
 
-You can see the detailed SCIM 2.0 specification documents [here](https://tools.ietf.org/html/draft-ietf-scim-api-19).
+You can see the detailed SCIM 2.0 specification documents
+[here](https://tools.ietf.org/html/draft-ietf-scim-api-19).
 
 ### SCIM 2.0 Endpoints
 
@@ -12,9 +13,6 @@ You can see the detailed SCIM 2.0 specification documents [here](https://tools.i
 
 ### SCIM 2.0 Definitions
 - [Definitions](#definitions)
-
-
-
 
 ## Bulk Operation Endpoint
 
@@ -287,7 +285,7 @@ Create Group (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
 
 <a id="getGroupById">Find Group by id</a>
 
-Returns a Group on the basis of provided id as path param (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.1)
+Returns a Group on the basis of provided id as path parameter (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.1)
 
 
 
@@ -759,7 +757,7 @@ Create User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
 
 <a id="getUserByUid">Find User by id</a>
 
-Returns a Users on the basis of provided uid as path param (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.1)
+Returns a Users on the basis of provided uid as path parameter (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.1)
 
 
 
