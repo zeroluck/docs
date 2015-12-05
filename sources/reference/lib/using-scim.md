@@ -120,8 +120,8 @@ String result = response.getResponseBodyString(); // this will give you Response
 ```
 -->
 
-Same applies for groups, you can use updateGroupString with ScimGroup as a parameter.
-
+The same steps apply for groups. You can use *updateGroupString* with
+ScimGroup as a parameter.
 
 <!--
 
@@ -137,7 +137,9 @@ String result = response.getResponseBodyString(); // this will give you Response
 
 ### Deleting an entity
 
-To delete an entity, you simply pass it’s ID as a String parameter into “deletePerson” or “deleteGroup” methods. For both cases, i. e. Person and Group, entity MUST be already registered in the system with an ID.
+To delete an entity, you simply pass its ID as a string parameter to
+either the “deletePerson” or “deleteGroup” method. In both cases, the
+entity has to be registered in the system with an ID, already.
 
 ``` 
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
