@@ -507,36 +507,22 @@ Returns a user on the basis of provided uid as path parameter
         <th>Default</th>
         <th>Schema</th>
     </tr>
-
-
-
-<tr>
-    <th>Authorization</th>
-    <td>header</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>uid</th>
-    <td>path</td>
-    <td>yes</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-
+    <tr>
+        <th>Authorization</th>
+        <td>header</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>uid</th>
+        <td>path</td>
+        <td>yes</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
 </table>
 
 
