@@ -349,12 +349,9 @@ Delete Group
     </tr>
 </table>
 
-
-
 #### Response
 
 **Content-Type: ** application/json, application/xml
-
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
@@ -362,36 +359,22 @@ Delete Group
 
 - - -
 
-
-
-
 ## User Endpoint
 
 ## /v2/Users
-
 
 ### GET
 
 <a id="listUsers">List Users</a>
 
-Returns a list of users (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4)
-
-
-
+Returns a list of users
+(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4).
 
 #### Security
 
-
-
-
 * Authorization
 
-
-
-
 #### Request
-
-
 
 ##### Parameters
 
@@ -404,47 +387,30 @@ Returns a list of users (https://tools.ietf.org/html/draft-ietf-scim-api-19#sect
         <th>Default</th>
         <th>Schema</th>
     </tr>
-
-
-
-<tr>
-    <th>Authorization</th>
-    <td>header</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>filter</th>
-    <td>query</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>sortBy</th>
-    <td>query</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
+    <tr>
+        <th>Authorization</th>
+        <td>header</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>filter</th>
+        <td>query</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>sortBy</th>
+        <td>query</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
 
 <tr>
     <th>sortOrder</th>
