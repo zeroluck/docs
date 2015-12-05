@@ -123,7 +123,14 @@ of this specification.</td>
         <tr>
             <th>token_type_hint</th>
             <td>false</td>
-            <td>A hint about the type of the token&#10;      submitted for introspection.  The protected resource re MAY pass&#10;      this parameter in order to help the authorization server to&#10;      optimize the token lookup.  If the server is unable to locate the&#10;      token using the given hint, it MUST extend its search across all&#10;      of its supported token types.  An authorization server MAY ignore&#10;      this parameter, particularly if it is able to detect the token&#10;      type automatically.  Values for this field are defined in OAuth&#10;      Token Revocation [RFC7009].</td>
+            <td>A hint about the type of the token submitted for
+introspection. The protected resource MAY pass this parameter in order
+to help the authorization server to optimize the token lookup. If the
+server is unable to locate the token using the given hint, it MUST
+extend its search across all of its supported token types. An
+authorization server MAY ignore this parameter, particularly if it is
+able to detect the token type automatically. Values for this field are
+defined in OAuth Token Revocation [RFC7009].</td>
             <td>string</td>
         </tr>
     </table>
