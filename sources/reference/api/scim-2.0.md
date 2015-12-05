@@ -525,42 +525,26 @@ Returns a user on the basis of provided uid as path parameter
     </tr>
 </table>
 
-
-
 #### Response
 
 **Content-Type: ** application/json, application/xml
-
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
 | 200    | successful operation | <a href="#/definitions/User">User</a>|
 
-
-
-
-
 ### PUT
 
 <a id="updateUser">Update User</a>
 
-Update User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
-
-
-
+Update a u ser
+(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3).
 
 #### Security
 
-
-
-
 * Authorization
 
-
-
-
 #### Request
-
 
 **Content-Type: ** application/json, application/xml
 
