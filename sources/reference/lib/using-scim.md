@@ -21,9 +21,9 @@
 
 ## SCIM 1.1
 
-Following is the guide to work with SCIM client 1.1:
-
-You can checkout SCIM-client from our GIT repository : https://github.com/GluuFederation/SCIM-Client 
+Following is the guide to work with SCIM client 1.1. You can checkout
+the SCIM client from our [repository at
+GitHub](https://github.com/GluuFederation/SCIM-Client).
 
 ### Creating SCIM client instance
 
@@ -33,8 +33,12 @@ Below is an example on how to create a ScimClient instance:
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
 ```
 
-This will create an oAuth instance of ScimClient where: `userName` and `passWord` are the user credentials, `clientID` and `clientSecret` are oxAuth client credentials, `domainURL` is the domain where SCIM client resides, for example:
-`http://localhost:8080/oxTrust/seam/resource/restv1`, and `oxAuthDomain` is the `tokenURL` example
+This will create an OAuth instance of ScimClient whereas `userName` and
+`passWord` are the user credentials, `clientID` and `clientSecret` are
+oxAuth client credentials, and `domainURL` is the domain where SCIM
+client resides. For example the `domainURL` can be
+`http://localhost:8080/oxTrust/seam/resource/restv1`. The `oxAuthDomain`
+is the `tokenURL`, for example
 `http://localhost:8080/oxauth/seam/resource/restv1/oxauth/token`.
 
 ```
