@@ -206,12 +206,17 @@ respond with a status message that includes an "_id" property.
 ##### getResourceSetList
 **GET** `/host/rsrc/resource_set`
 
-Lists all previously registered resource set identifiers for this user using the GET method. The authorization server MUST return the list in the form of a JSON array of {rsid} string values.
+Lists all previously registered resource set identifiers for this user
+using the GET method. The authorization server MUST return the list in
+the form of a JSON array of {rsid} string values.
 
-The resource server uses this method as a first step in checking whether its understanding of protected resources is in full synchronization with the authorization server's understanding.
+The resource server uses this method as a first step in checking whether
+its understanding of protected resources is in full synchronization with
+the authorization server's understanding.
 
 ###### URL
     http://gluu.org/host/rsrc/resource_set
+
 ###### Parameters
 - query
 
@@ -249,28 +254,29 @@ The resource server uses this method as a first step in checking whether its und
 ###### Response
 [ResourceSet](#ResourceSet)
 
-
 ###### Errors
 <table border="1">
     <tr>
         <th>Status Code</th>
         <th>Reason</th>
     </tr>
-        <tr>
-            <td>401</td>
-            <td>Unauthorized</td>
-        </tr>
+    <tr>
+        <td>401</td>
+        <td>Unauthorized</td>
+    </tr>
 </table>
-
 
 - - -
 ##### createResourceSet
 **POST** `/host/rsrc/resource_set`
 
-Adds a new resource set description using the POST method. If the request is successful, the authorization server MUST respond with a status message that includes an _id property.
+Adds a new resource set description using the POST method. If the
+request is successful, the authorization server MUST respond with a
+status message that includes an _id property.
 
 ###### URL
     http://gluu.org/host/rsrc/resource_set
+
 ###### Parameters
 - body
 
