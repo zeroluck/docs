@@ -4,16 +4,15 @@
 
 #### Overview
 
-
 #### `/rpt/status`
 ##### requestRptStatusGet
 **GET** `/rpt/status`
 
 Not allowed
 
-
 ###### URL
     http://gluu.org/rpt/status
+
 ###### Parameters
 - form
 
@@ -56,7 +55,6 @@ Not allowed
 
 ###### Response
 [](#)
-
 
 ###### Errors
 <table border="1">
