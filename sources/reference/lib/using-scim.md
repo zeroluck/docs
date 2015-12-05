@@ -423,7 +423,8 @@ String result = response.getResponseBodyString(); // this will give you Response
 
 ### Bulk operations SCIM 2.0
 
-To perform multiple operations (in a bulk), you pass the operation as a *ScimBulkOperation* or *BulkRequest* object into “bulkOperation” method.
+To perform multiple operations (in a bulk), you pass the operation as a
+*ScimBulkOperation* or *BulkRequest* object into “bulkOperation” method.
 
 ```
 BulkRequest bulkRequest = new BulkRequest();
