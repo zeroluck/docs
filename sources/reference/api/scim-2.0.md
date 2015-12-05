@@ -411,24 +411,15 @@ Returns a list of users
         <td> - </td>
         <td>string </td>
     </tr>
-
-<tr>
-    <th>sortOrder</th>
-    <td>query</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-
+    <tr>
+        <th>sortOrder</th>
+        <td>query</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
 </table>
-
-
 
 #### Response
 
