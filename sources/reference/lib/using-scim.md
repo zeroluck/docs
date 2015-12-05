@@ -226,7 +226,11 @@ String oAuthTokenEndpoint)
 
 ### Adding an entity using SCIM 2.0
 
-SCIM 2.0 client API comes with two methods to add an entity using createPerson method. For **createPerson**, firstly, you can pass the person you want to add as *ScimPerson* object and you specify the desired media type format “XML/JSON” and SCIM-client API will parse the ScimPerson object into XML or JSON and send your request. 
+The SCIM 2.0 client API comes with two methods to add an entity using
+the *createPerson* method. This method expects the person you want to
+add as a *ScimPerson* object, and the desired media type format such as
+“XML/JSON”. Then, the SCIM client API will parse the ScimPerson object
+into XML or JSON, and send your request.
 
 ```
 Scim2Client client = Scim2Client.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
@@ -240,6 +244,7 @@ String result = response.getResponseBodyString(); // this will give you Response
 ```
 
 Another method of using createPerson is to pass a *'User'* to this method, like:
+
 ```
 User newUser = new User();
 Name name = new Name();
@@ -265,9 +270,10 @@ System.out.println(response1.getResponseBodyString());
 
 ```
 
-Similarly for groups, you can use **createGroup** with object of *ScimGroup* as a parameter, or object of *Group* as a parameter.
+Similarly for groups, you can use **createGroup** with object of either
+*ScimGroup* or *Group* as a parameter:
 
-``` 
+```
 Scim2Client client = Scim2Client.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
 ScimGroup groupToAdd = new ScimGroup();
 groupToAdd.setDisplayName("ScimObjecttesting");
