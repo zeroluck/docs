@@ -152,16 +152,9 @@ Create Group
 
 #### Security
 
-
-
-
 * Authorization
 
-
-
-
 #### Request
-
 
 **Content-Type: ** application/json, application/xml
 
@@ -176,21 +169,14 @@ Create Group
         <th>Default</th>
         <th>Schema</th>
     </tr>
-
-
-
-<tr>
-    <th>Authorization</th>
-    <td>header</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
+    <tr>
+        <th>Authorization</th>
+        <td>header</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
 
 <tr>
     <th>body</th>
