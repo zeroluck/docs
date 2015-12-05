@@ -158,8 +158,10 @@ response.getStatusCode() // this will give you the Status code
 
 ### Retrieving an entity
 
-To retrieve a person or a group you can use “retrievePerson” or “retrieveGroup” method by passing the Entity’s id as a parameter and the
-desired media type. For both cases, i. e. Person and Group, entity MUST be already registered in the system with an ID.
+To retrieve a person or a group you can use “retrievePerson” or
+“retrieveGroup” method by passing the entitys ID as a parameter and the
+desired media type. In both cases the entity has to be registered in the
+system with an ID, already.
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
