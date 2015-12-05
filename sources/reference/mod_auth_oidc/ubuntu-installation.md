@@ -212,18 +212,23 @@ oxAuth page from gluuCE. Enter the credentials for authentication:
 
 ![oxauth_authentication](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/mod_auth_oidc/oxauth_authentication.png)
 
-Chances are there that you'll see the below error after logging in: 
+It may happen that you see the following error after logging in: 
 
-    Error:
+```
+Error:
 
-    The OpenID Connect Provider returned an error: Error in handling response type.
+The OpenID Connect Provider returned an error: Error in handling response type.
+```
 
-And that, the apache log at the client side shows as below:
+The Apache log file will contain the following entry:
 
-    [Mon Jun 08 12:58:59.946860 2015] [auth_openidc:error] [pid 15877:tid 139878178371328] [client 124.253.174.54:42385]         oidc_proto_validate_idtoken: id_token JSON payload did not contain the required-by-spec "sub" string value, referer:         https://static.gluu.org:44443/static/fake_redirect_uri
+```
+[Mon Jun 08 12:58:59.946860 2015] [auth_openidc:error] [pid 15877:tid 139878178371328] [client 124.253.174.54:42385]         oidc_proto_validate_idtoken: id_token JSON payload did not contain the required-by-spec "sub" string value, referer:         https://static.gluu.org:44443/static/fake_redirect_uri
     [Mon Jun 08 12:58:59.946916 2015] [auth_openidc:error] [pid 15877:tid 139878178371328] [client 124.253.174.54:42385]         oidc_proto_parse_idtoken: id_token payload could not be validated, aborting, referer:                        https://static.gluu.org:44443/static/fake_redirect_uri
- 
-The screenshots and logs have been captured while writing the doc.
+```
+
+Note that the screenshots and log file extracts have been captured while
+writing this documentation.
 
 To solve this problem, log into the gluuCE server as:
 
