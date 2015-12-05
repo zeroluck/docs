@@ -4,15 +4,17 @@
 
 #### Overview
 
-
 #### `/host/rsrc/resource_set{rsid}`
 ##### deleteResourceSet
 **DELETE** `/host/rsrc/resource_set{rsid}`
 
-Deletes a previously registered resource set description using the DELETE method, thereby removing it from the authorization server's protection regime.
+Deletes a previously registered resource set description using the
+DELETE method, thereby removing it from the authorization server's
+protection regime.
 
 ###### URL
     http://gluu.org/host/rsrc/resource_set{rsid}
+
 ###### Parameters
 - path
 
@@ -50,28 +52,30 @@ Deletes a previously registered resource set description using the DELETE method
 ###### Response
 [ResourceSet](#ResourceSet)
 
-
 ###### Errors
 <table border="1">
     <tr>
         <th>Status Code</th>
         <th>Reason</th>
     </tr>
-        <tr>
-            <td>401</td>
-            <td>Unauthorized</td>
-        </tr>
+    <tr>
+        <td>401</td>
+        <td>Unauthorized</td>
+    </tr>
 </table>
-
 
 - - -
 ##### getResourceSet
 **GET** `/host/rsrc/resource_set{rsid}`
 
-Reads a previously registered resource set description using the GET method. If the request is successful, the authorization server MUST respond with a status message that includes a body containing the referenced resource set description, along with an "_id" property.
+Reads a previously registered resource set description using the GET
+method. If the request is successful, the authorization server MUST
+respond with a status message that includes a body containing the
+referenced resource set description, along with an "_id" property.
 
 ###### URL
     http://gluu.org/host/rsrc/resource_set{rsid}
+
 ###### Parameters
 - path
 
@@ -109,28 +113,29 @@ Reads a previously registered resource set description using the GET method. If 
 ###### Response
 [ResourceSet](#ResourceSet)
 
-
 ###### Errors
 <table border="1">
     <tr>
         <th>Status Code</th>
         <th>Reason</th>
     </tr>
-        <tr>
-            <td>401</td>
-            <td>Unauthorized</td>
-        </tr>
+    <tr>
+        <td>401</td>
+        <td>Unauthorized</td>
+    </tr>
 </table>
-
 
 - - -
 ##### updateResourceSet
 **PUT** `/host/rsrc/resource_set{rsid}`
 
-Updates a previously registered resource set description using the PUT method. If the request is successful, the authorization server MUST respond with a status message that includes an "_id" property.
+Updates a previously registered resource set description using the PUT
+method. If the request is successful, the authorization server MUST
+respond with a status message that includes an "_id" property.
 
 ###### URL
     http://gluu.org/host/rsrc/resource_set{rsid}
+
 ###### Parameters
 - body
 
@@ -184,19 +189,17 @@ Updates a previously registered resource set description using the PUT method. I
 ###### Response
 [](#)
 
-
 ###### Errors
 <table border="1">
     <tr>
         <th>Status Code</th>
         <th>Reason</th>
     </tr>
-        <tr>
-            <td>401</td>
-            <td>Unauthorized</td>
-        </tr>
+    <tr>
+        <td>401</td>
+        <td>Unauthorized</td>
+    </tr>
 </table>
-
 
 - - -
 #### `/host/rsrc/resource_set`
