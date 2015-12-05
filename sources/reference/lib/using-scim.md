@@ -293,7 +293,13 @@ System.out.println(response1.getResponseBodyString());
 
 ### Modifying an entity using SCIM 2.0
 
-In this example we will show you how to modify a person or a group using SCIM 2.0 client. SCIM-Client API comes with two methods to accomplish this using updatePerson. For **updatePerson** method, you can pass the person you want to update as ScimPerson object and its uid as a String and you specify the desired media type format “XML/JSON” and SCIM-client API will parse the ScimPerson object into XML or JSON and send your request.
+In this example we will show you how to modify a person or a group using
+SCIM 2.0 client. The SCIM client API comes with two methods to
+accomplish this using *updatePerson*. This method expects the person you
+want to update as a ScimPerson object, and its uid as a string.
+Furthermore, specify the desired media type format such as “XML/JSON”.
+The SCIM client API will parse the ScimPerson object into XML or JSON,
+and send your request.
 
 ```
 Scim2Client client = Scim2Client.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
@@ -306,7 +312,8 @@ ScimResponse response = client.updatePerson(person, uid, MediaType.APPLICATION_J
 response.getStatusCode() // this will give you the Status code
 String result = response.getResponseBodyString(); // this will give you Response body 
 ```
-Another method of using updatePerson is to pass *User* object to this method:
+Another method of using *updatePerson* is to pass an *User* object to
+this method:
 
 ```
 User newUser = new User();
