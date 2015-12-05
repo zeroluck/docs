@@ -314,7 +314,6 @@ status message that includes an _id property.
 ###### Response
 [](#)
 
-
 ###### Errors
 <table border="1">
     <tr>
@@ -327,21 +326,19 @@ status message that includes an _id property.
         </tr>
 </table>
 
-
 - - -
 ##### unsupportedHeadMethod
 **HEAD** `/host/rsrc/resource_set`
 
 Not allowed
 
-
 ###### URL
     http://gluu.org/host/rsrc/resource_set
+
 ###### Parameters
 
 ###### Response
 [](#)
-
 
 ###### Errors
 <table border="1">
@@ -350,7 +347,6 @@ Not allowed
         <th>Reason</th>
     </tr>
 </table>
-
 
 - - -
 ##### unsupportedOptionsMethod
@@ -358,14 +354,13 @@ Not allowed
 
 Not allowed
 
-
 ###### URL
     http://gluu.org/host/rsrc/resource_set
+
 ###### Parameters
 
 ###### Response
 [](#)
-
 
 ###### Errors
 <table border="1">
@@ -375,11 +370,9 @@ Not allowed
     </tr>
 </table>
 
-
 - - -
 
 ## Data Types
-
 
 ## <a name="ResourceSet">ResourceSet</a>
 
@@ -391,40 +384,40 @@ Not allowed
         <th>description</th>
         <th>notes</th>
     </tr>
-        <tr>
-            <td>string</td>
-            <td>optional</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td>string</td>
-            <td>optional</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td>string</td>
-            <td>optional</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td>Array[string]</td>
-            <td>optional</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td>string</td>
-            <td>optional</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-        </tr>
+    <tr>
+        <td>string</td>
+        <td>optional</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>string</td>
+        <td>optional</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>string</td>
+        <td>optional</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Array[string]</td>
+        <td>optional</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>string</td>
+        <td>optional</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
 </table>
 
