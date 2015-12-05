@@ -98,13 +98,13 @@ work for 389DS, too:
  * __Description__ 
  * __description__ 
  * __displayName__ 
- * __gluuAttributeEditType__ Specify in oxTrust who can update an attribute, admin or user
+ * __gluuAttributeEditType__ Specify in oxTrust who can update an attribute - admin or user
  * __gluuAttributeName__ Specify an identifier for an attribute. May be multi-value where an attribute has two names, like givenName and first-name
  * __gluuAttributeOrigin__ Specify the person object class associated with the attribute, used for display purposes in oxTrust
  * __gluuAttributeSystemEditType__ TODO - still required?
- * __gluuAttributeType__ Data type of attribute. Values can be string, photo, numeric, date
+ * __gluuAttributeType__ Data type of attribute. Values can be string, photo, numeric, and date
  * __gluuAttributeUsageType__ TODO - Usage? Value can be OpenID
- * __gluuAttributeViewType__ Specify in oxTrust who can view an attribute, admin or user
+ * __gluuAttributeViewType__ Specify in oxTrust who can view an attribute -  admin or user
  * __gluuCategory__ TODO - in use? Used to group attributes together
  * __gluuSAML1URI__ SAML 1 uri of attribute
  * __gluuSAML2URI__ SAML 2 uri of attribute
