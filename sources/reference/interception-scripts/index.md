@@ -239,21 +239,21 @@ These are the types of parameters:
 - `authorizationContext` is `org.xdi.oxauth.service.uma.authorization.AuthorizationContext`
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
 
-This script can be used in oxAuth application only.
+This script can be used in an oxAuth application only.
 
 - [Sample Authorization Script](./sample-uma-authorization-script.py)
 
 # Cache Refresh
 
-In order to integrate with an existing authentication server oxTrust
-provides a mechanism called [Cache
+In order to integrate an interception script with an existing
+authentication server oxTrust provides a mechanism called [Cache
 Refresh](../../admin-guide/configuration/index.md#cache-refresh) to copy
-user data to the local LDAP server. During this process it iss possible
+user data to the local LDAP server. During this process it is possible
 to specify key attribute(s) and specify attribute name transformations.
 There are also cases when it can be used to overwrite attribute values
-or add new attributes based on other attributes values.
+or to add new attributes based on other attribute values.
 
-This script type adds only one method to base script type:
+This script type adds only one method to the base script type:
 
 * `def updateUser(self, user, configurationAttributes):`
 
