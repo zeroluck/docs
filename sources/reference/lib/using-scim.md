@@ -51,7 +51,7 @@ For the basic authentication you only need the user’s credentials
 ### Adding an entity
 
 The SCIM Client API comes with two methods to add an entity, i. e.
-“createPerson” and “createPersonString”. For createPerson you pass the
+“createPerson” and “createPersonString”. For *createPerson* you pass the
 person you want to add as ScimPerson object. Furthermore, you specify
 the desired media type format “XML/JSON” and the SCIM client API will
 parse the ScimPerson object into XML or JSON, and send your request.
@@ -92,7 +92,13 @@ String responseStr = response.getResponseBodyString();
 
 ### Modifying an entity
 
-In this example we will show you how to modify a person or a group using SCIM-Client. SCIM-Client API comes with two methods to accomplish this, i. e. “updatePerson” and “updatePersonString”. For *updatePerson* method, you pass the person you want to update as ScimPerson object and its uid as a String and you specify the desired media type format “XML/JSON” and SCIM-client API will parse the ScimPerson object into XML or JSON and send your request.
+In this example you will learn how to modify a person or a group using
+SCIM Client. The SCIM Client API comes with two methods to accomplish
+this, i. e. “updatePerson” and “updatePersonString”. For *updatePerson*
+method, you pass both the person you want to update as ScimPerson object
+and its uid as a string, and you specify the desired media type format
+“XML/JSON”. The SCIM Client API will parse the ScimPerson object into
+XML or JSON, and send your request.
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
