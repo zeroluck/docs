@@ -150,15 +150,16 @@ enter the credentials for authentication.
 
 #### Manual Client Registration
 
-Let's consider the case of **manual client registration** now if you don't wish to use dynamic client registration.
-
-For this purpose we'll name the server: `static.gluu.org`.
+Let's consider the case of **manual client registration** now if you do
+not wish to use dynamic client registration. For this purpose we will
+use `static.gluu.org` as the server name.
 
 Let's prepare the server for serving the content protected by gluuCE.
+Create a directory named `static` inside `the directory /var/www/html`:
 
-Create a directory named as: `static` inside `/var/www/html`
-
-    # mkdir /var/www/html/static
+```
+# mkdir /var/www/html/static
+```
 
 Now, let's create a file named `index.html` inside above created directory with the following content:
 
