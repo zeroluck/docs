@@ -350,8 +350,9 @@ public ScimResponse updatePerson(ScimPerson person, String uid, String mediaType
 UnsupportedEncodingException, IOException, JAXBException
 ```
 
-Similarly, if you want to update a group, then you can use **updateGroup** in two of the following manners:
-First one is to pass a ScimGroup object to this method:
+Similarly, if you want to update a group, then you can use
+**updateGroup** in two of the following manners: the first one is to
+pass a ScimGroup object to this method:
 
 ``` 
 Scim2Client client = Scim2Client.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
