@@ -302,11 +302,11 @@ format of the ID is:
 The ID generation script enables an admin to implement custom ID
 generation rules.
 
-This script type adds only one method to base script type:
+This script type adds only one method to the base script type:
 
 * `def generateId(self, appId, idType, idPrefix, configurationAttributes):`
 
-These are types of parameters:
+These are the types of parameters:
 
 - `appId` is application ID
 - `idType` is ID Type
@@ -314,7 +314,7 @@ These are types of parameters:
 - `user` is `org.gluu.oxtrust.model.GluuCustomPerson`
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
 
-This script can be used in oxTrust application only.
+This script can be used in an oxTrust application only.
 
 - [Sample ID Generation Script](./sample-id-generation.py)
 
