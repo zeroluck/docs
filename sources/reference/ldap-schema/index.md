@@ -481,15 +481,15 @@ work for 389DS, too:
 ### Object class oxAuthUmaRPT
 
  * __Description__ 
- * __oxAmHost__ am host
+ * __oxAmHost__ AM host
  * __oxAuthAuthenticationTime__ oxAuth authentication time
- * __oxAuthClientId__ oxAuth client id
+ * __oxAuthClientId__ oxAuth client ID
  * __oxAuthCreation__ oxAuth creation
  * __oxAuthExpiration__ oxAuth expiration
  * __oxAuthTokenCode__ oxAuth token code
- * __oxAuthUserId__ oxAuth user id
- * __oxUmaPermission__ ox uma permission
- * __uniqueIdentifier__ 
+ * __oxAuthUserId__ oxAuth user ID
+ * __oxUmaPermission__ ox UMA permission
+ * __uniqueIdentifier__ the unique identifier that is in use
 
 ### Object class oxAuthUmaResourceSet
 
@@ -497,11 +497,11 @@ work for 389DS, too:
  * __displayName__ (user) name that appears on the display
  * __inum__ XRI i-number (iNum)
  * __owner__ 
- * __oxAssociatedClient__ Associate the dn of an OAuth2 client with a person or UMA resource set
+ * __oxAssociatedClient__ Associate the DN of an OAuth2 client with a person or UMA resource set
  * __oxAuthUmaScope__ uri reference of scope descriptor
  * __oxFaviconImage__ uri for the favicon
  * __oxGroup__ User group
- * __oxId__ Identifier
+ * __oxId__ oxAuth identifier
  * __oxResource__ Host path
  * __oxRevision__ Revision number
  * __oxType__ ox type
@@ -509,7 +509,7 @@ work for 389DS, too:
 ### Object class oxAuthUmaResourceSetPermission
 
  * __Description__ 
- * __oxAmHost__ am host
+ * __oxAmHost__ AM host
  * __oxAuthExpiration__ oxAuth expiration
  * __oxAuthUmaScope__ uri reference of scope descriptor
  * __oxConfigurationCode__ ox configuration code
@@ -527,7 +527,7 @@ work for 389DS, too:
  * __oxIconUrl__ uri for the ox icon
  * __oxId__ ox identifier
  * __oxPolicyRule__ ox policy rule
- * __oxRevision__ Revision
+ * __oxRevision__ ox Revision
  * __oxType__ ox type
  * __oxUrl__ ox uri
 
@@ -541,7 +541,7 @@ work for 389DS, too:
 ### Object class oxLink
 
  * __Description__ 
- * __description__ 
+ * __description__ oxLink description
  * __oxGuid__ A random string to mark temporary ox tokens
  * __oxLinkCreator__ ox link creator
  * __oxLinkExpirationDate__ ox Link expiration date
