@@ -9,10 +9,11 @@
 ##### getRequesterPermissionToken
 **POST** `/requester/rpt`
 
-The endpoint at which the requester asks the AM to issue an RPT
+The endpoint at which the requester asks the AM to issue an RPT.
 
 ###### URL
     http://gluu.org/requester/rpt
+
 ###### Parameters
 - header
 
@@ -52,7 +53,6 @@ The endpoint at which the requester asks the AM to issue an RPT
             <td>Unauthorized</td>
         </tr>
 </table>
-
 
 - - -
 
