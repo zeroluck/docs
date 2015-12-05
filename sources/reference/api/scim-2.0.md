@@ -425,39 +425,22 @@ Returns a list of users
 
 **Content-Type: ** application/json, application/xml
 
-
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
 | 200    | successful operation | <a href="#/definitions/ListResponse">ListResponse</a>|
 
-
-
-
-
-
-
 ### POST
-
 
 <a id="createUser">Create User</a>
 
-Create User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
-
-
-
+Create a user
+(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3).
 
 #### Security
 
-
-
-
 * Authorization
 
-
-
-
 #### Request
-
 
 **Content-Type: ** application/json, application/xml
 
@@ -472,37 +455,22 @@ Create User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
         <th>Default</th>
         <th>Schema</th>
     </tr>
-
-
-
-<tr>
-    <th>Authorization</th>
-    <td>header</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>body</th>
-    <td>body</td>
-    <td>no</td>
-    <td>User</td>
-    <td> - </td>
-
-    <td>
-    
-    <a href="#/definitions/User">User</a> 
-    </td>
-
-</tr>
-
-
+    <tr>
+        <th>Authorization</th>
+        <td>header</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>body</th>
+        <td>body</td>
+        <td>no</td>
+        <td>User</td>
+        <td> - </td>
+        <td><a href="#/definitions/User">User</a></td>
+    </tr>
 </table>
 
 
