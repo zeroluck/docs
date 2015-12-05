@@ -123,13 +123,14 @@ as written below:
         SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
 </VirtualHost>
 ```
+Above, I have taken both the certificate and the key file which are
+pre-existing at the server. Feel free to use your own files. As the next
+step enable the site, and restart the Apache service as below:
 
-Above, I've taken the cert and key files which are pre-existing at the server.
-Feel free to use your own.
-
-Now, restart the apache service as below:
-
-    # service httpd restart
+```
+# a2ensite  dynamic.conf
+# service apache2 restart
+```
 
 Now, try to access the page: `https://dynamic.gluu.org:44443/dynamic` and you should see the discovery page as below: You'll be presented with a discovery page, enter `admin@ce.gluu.org`
 ![dynamic_authentication](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/mod_auth_oidc/dynamic_discovery.png)
