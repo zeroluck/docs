@@ -376,7 +376,10 @@ System.out.println(response1.getResponseBodyString());
 
 ### Deleting an entity SCIM 2.0
 
-To delete an entity, you simply pass it’s ID as a String parameter into “deletePerson” or “deleteGroup” methods. For both cases, i. e. Person and Group, entity MUST be already registered in the system with an ID.
+To delete an entity, you simply pass its ID as a string parameter into
+“deletePerson” or “deleteGroup” methods. For both cases, i. e. Person
+and Group, the entity has to be registered in the system with an ID,
+already.
 
 ``` 
 Scim2Client client = Scim2Client.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
@@ -395,8 +398,11 @@ response.getStatusCode() // this will give you the Status code
 
 ### Retrieving an entity SCIM 2.0
 
-To retrieve a person or a group you can use “retrievePerson” or “retrieveGroup” method by passing the Entity’s id as a parameter and the
-desired media type. For both cases, i. e. Person and Group, entity MUST be already registered in the system with an ID.
+To retrieve a person or a group you can use either “retrievePerson” or
+“retrieveGroup” method by passing the entity’s ID as a parameter.
+Furthermore, add the desired media type. In both cases, i. e. Person and
+Group, the entity has to be registered in the system with an ID,
+already.
 
 ```
 Scim2Client client = Scim2Client.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
