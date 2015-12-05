@@ -115,7 +115,7 @@ step enable the site, and restart the Apache service as below:
 # service apache2 restart
 ```
 
-To validate the availability if the website try to access the page via
+To validate the availability if the website access the page via
 `https://dynamic.gluu.org:44443/dynamic`. As a result, you should see
 the discovery page as pictured below. Enter `admin@ce.gluu.org` to
 access the site.
@@ -164,12 +164,11 @@ Now, change the ownership of the entire directory:
 # chown -R www-data:www-data /var/www/html
 ```
 
-As the next step create the Apache configuration file.
+As the next step create the Apache configuration file named
+`/etc/apache2/sites-available/static.conf` with the contents as below:
 
-Create a file named `/etc/apache2/sites-available/static.conf` with the contents as below:
-
-
-    <VirtualHost *:44443>
+```
+<VirtualHost *:44443>
 	ServerName static.gluu.org
 	DocumentRoot /var/www/html
 
@@ -194,19 +193,24 @@ Create a file named `/etc/apache2/sites-available/static.conf` with the contents
         SSLCertificateFile      /etc/ssl/certs/ssl-cert-snakeoil.pem
         SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
     </VirtualHost>
+```
 
-Above, I've taken the cert and key files which are pre-existing at the server. Feel free to use your own.
+Above, I have taken both the certificate and the key files which are
+pre-existing at the server. Feel free to use your own authentification
+files.
 
-Now, restart the apache service as below:
+Now, restart the Apache server as below:
 
-    # a2ensite static.conf
-    # service apache2 restart
+```
+# a2ensite static.conf
+# service apache2 restart
+```
 
-Now, try to access the page: `https://static.gluu.org:44443/static` and you should see the oxAuth page from gluuCE where we enter the credentials for authentication.
+To validate the availability if the website access the page via
+`https://static.gluu.org:44443/static`. As a result, you should see the
+oxAuth page from gluuCE. Enter the credentials for authentication:
 
 ![oxauth_authentication](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/mod_auth_oidc/oxauth_authentication.png)
-
-
 
 Chances are there that you'll see the below error after logging in: 
 
