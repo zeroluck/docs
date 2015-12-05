@@ -4,16 +4,20 @@
 
 #### Overview
 
-
 #### `/host/rsrc_pr`
 ##### registerResourceSetPermission
 **POST** `/host/rsrc_pr`
 
-Registers permission using the POST method
-The resource server uses the POST method at the endpoint. The body of the HTTP request message contains a JSON object providing the requested permission, using a format derived from the scope description format specified in [OAuth-resource-reg], as follows. The object has the following properties:
+Registers permission using the POST method.
+The resource server uses the POST method at the endpoint. The body of
+the HTTP request message contains a JSON object providing the requested
+permission, using a format derived from the scope description format
+specified in [OAuth-resource-reg], as follows. The object has the
+following properties:
 
 ###### URL
     http://gluu.org/host/rsrc_pr
+
 ###### Parameters
 - body
 
@@ -57,7 +61,6 @@ The resource server uses the POST method at the endpoint. The body of the HTTP r
 ###### Response
 [](#)
 
-
 ###### Errors
 <table border="1">
     <tr>
@@ -74,11 +77,9 @@ The resource server uses the POST method at the endpoint. The body of the HTTP r
         </tr>
 </table>
 
-
 - - -
 
 ## Data Types
-
 
 ## <a name="RegisterPermissionRequest">RegisterPermissionRequest</a>
 
@@ -90,40 +91,40 @@ The resource server uses the POST method at the endpoint. The body of the HTTP r
         <th>description</th>
         <th>notes</th>
     </tr>
-        <tr>
-            <td>Date</td>
-            <td>optional</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td>Array[string]</td>
-            <td>optional</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td>Date</td>
-            <td>optional</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td>string</td>
-            <td>optional</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-        </tr>
-        <tr>
-            <td>Date</td>
-            <td>optional</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-        </tr>
+    <tr>
+        <td>Date</td>
+        <td>optional</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Array[string]</td>
+        <td>optional</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Date</td>
+        <td>optional</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>string</td>
+        <td>optional</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Date</td>
+        <td>optional</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
 </table>
 

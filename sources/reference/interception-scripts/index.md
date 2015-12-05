@@ -47,11 +47,9 @@ be used to do global script initialization, initiate objects, etc. The
 the `init` method.
 
 The script manager only loads enabled scripts. Hence, after enabling a
-script, the script manager should trigger an event to load or destroy
-script.
-
-All scripts are stored in LDAP in the `ou=scripts,o=<org_inum>,o=gluu`
-branch.
+script, the script manager should trigger an event to either load or
+destroy a script. All scripts are stored in LDAP in the
+`ou=scripts,o=<org_inum>,o=gluu` branch.
 
 This is a sample entry:
 
@@ -75,8 +73,9 @@ restart the application once `oxRevision` is increased.
 
 The `getApiVersion` method allows API changes in order to do transparent
 migration from an old script to a new API. Currently all scripts should
-return `1`. For example, in the future we can extend the API of any
-script and call new method(s) only if API version > 2, etc. exists.
+return `1`. For example, in the future it is planned to extend the API
+of any script and call new method(s) only if API version > 2, etc.
+exists.
 
 ## Interception Script Logs
 
@@ -84,8 +83,8 @@ The log files regarding interception scripts are not stored in the
 `wrapper.log` file. The logs are separated according to the module they
 affect. The oxAuth custom script logs are stored in `oxauth_script.log`
 and the oxTrust custom script logs are stored in the
-`oxtrust_script.log`. Please refer to these logs for any errors in the
-interception scripts or following the workflow of the script.
+`oxtrust_script.log`. Please refer to these log files for any errors in
+the interception scripts or following the workflow of the script.
 
 # Application Session Management
 
@@ -95,7 +94,7 @@ the `end_session` endpoint. It's possible to add multiple scripts with
 this type. The application should call all of them according to the
 level.
 
-This script type adds only one method to base script type:
+This script type adds only one method to the base script type:
 
 `def endSession(self, httpRequest, authorizationGrant, configurationAttributes):`
 
@@ -105,7 +104,7 @@ These are the types of parameters:
 - `authorizationGrant` is `org.xdi.oxauth.model.common.AuthorizationGrant`
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
 
-This script can be used in oxAuth application only.
+This script can be used in an oxAuth application only.
 
 - [Sample Application Session Management Script](./sample-application-session-script.py)
 
@@ -141,7 +140,7 @@ following methods:
 The `isValidAuthenticationMethod` method is used to check if the
 authentication method is in a valid state. For example we can check
 there if a 3rd party mechanism is available to authenticate users. As a
-result it should return `True` or `False`.
+result it should either return `True` or `False`.
 
 This method has the following parameters:
 
@@ -161,7 +160,7 @@ This method has the following parameters:
 
 The `authenticate` method is the key method within the person
 authentication script. It checks if the user has passed the specified
-step or not. As a result it should return `True` or `False`.
+step or not. As a result it should either return `True` or `False`.
 
 This method has the following parameters:
 
@@ -170,8 +169,8 @@ This method has the following parameters:
 - step is a java integer
 
 The `prepareForStep` method can be used to prepare variables needed to
-render login page and store them in event context. As a result it should
-return `True` or `False`.
+render the login page and store them in an according event context. As a
+result it should either return `True` or `False`.
 
 This method has the following parameters:
 
@@ -183,12 +182,13 @@ The `getCountAuthenticationSteps` method should return an integer value
 with the number of steps in the authentication workflow.
 
 This method has the following parameters:
+
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
 
 The `getExtraParametersForStep` method provides a way to notify the
 authenticator that it should store specified event context parameters
-event in the oxAuth session. It's needed in few cases, for example when
-an authentication script redirects the user to a 3rd party
+event in the oxAuth session. It is needed in a few cases, for example
+when an authentication script redirects the user to a 3rd party
 authentication system and expects the workflow to resume after that. As
 a result it should return a java array of strings.
 
@@ -209,9 +209,9 @@ This method has the following parameters:
 
 The `logout` method is not mandatory. It can be used in cases when you
 need to execute specific logout logic within the authentication script
-when oxAuth receives an end session request. Also it allows oxAuth to
+when oxAuth receives an end session request. Also, it allows oxAuth to
 stop processing the end session request workflow if it returns `False`.
-As result it should return `True` or `False`.
+As a result it should either return `True` or `False`.
 
 This method has the following parameters:
 
@@ -230,39 +230,39 @@ an UMA scope. On requesting access to a specified resource, the
 application should call specified UMA policies in order to grant or deny
 access.
 
-This script type adds only one method to base script type:
+This script type adds only one method to the base script type:
 
 `def authorize(self, authorizationContext, configurationAttributes):`
 
-These are types of parameters:
+These are the types of parameters:
 
 - `authorizationContext` is `org.xdi.oxauth.service.uma.authorization.AuthorizationContext`
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
 
-This script can be used in oxAuth application only.
+This script can be used in an oxAuth application only.
 
 - [Sample Authorization Script](./sample-uma-authorization-script.py)
 
 # Cache Refresh
 
-In order to integrate with an existing authentication server oxTrust
-provides a mechanism called [Cache
+In order to integrate an interception script with an existing
+authentication server oxTrust provides a mechanism called [Cache
 Refresh](../../admin-guide/configuration/index.md#cache-refresh) to copy
-user data to the local LDAP server. During this process it iss possible
+user data to the local LDAP server. During this process it is possible
 to specify key attribute(s) and specify attribute name transformations.
 There are also cases when it can be used to overwrite attribute values
-or add new attributes based on other attributes values.
+or to add new attributes based on other attribute values.
 
-This script type adds only one method to base script type:
+This script type adds only one method to the base script type:
 
 * `def updateUser(self, user, configurationAttributes):`
 
-These are types of parameters:
+These are the types of parameters:
 
 - `user` is `org.gluu.oxtrust.model.GluuCustomPerson`
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
 
-This script can be used in oxTrust application only.
+This script can be used in an oxTrust application only.
 
 - [Sample Cache Refresh Script](./sample-cache-refresh-script.py)
 
@@ -277,17 +277,17 @@ to get a registration request, analyze it, and apply customizations to
 registered clients. For example, a script can give access to specified
 scopes if `redirect_uri` belongs to a specified service or domain.
 
-This script type adds only one method to base script type:
+This script type adds only one method to the base script type:
 
 * `def updateClient(self, registerRequest, client, configurationAttributes):`
 
-These are types of parameters:
+These are the types of parameters:
 
 - `registerRequest` is `org.xdi.oxauth.client.RegisterRequest`
 - `client` is `org.xdi.oxauth.model.registration.Client`
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
 
-This script can be used in oxAuth application only.
+This script can be used in an oxAuth application only.
 
 - [Sample Client Registration Script](./sample-client-registration-script)
 
@@ -302,11 +302,11 @@ format of the ID is:
 The ID generation script enables an admin to implement custom ID
 generation rules.
 
-This script type adds only one method to base script type:
+This script type adds only one method to the base script type:
 
 * `def generateId(self, appId, idType, idPrefix, configurationAttributes):`
 
-These are types of parameters:
+These are the types of parameters:
 
 - `appId` is application ID
 - `idType` is ID Type
@@ -314,7 +314,7 @@ These are types of parameters:
 - `user` is `org.gluu.oxtrust.model.GluuCustomPerson`
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
 
-This script can be used in oxTrust application only.
+This script can be used in an oxTrust application only.
 
 - [Sample ID Generation Script](./sample-id-generation.py)
 
@@ -323,19 +323,19 @@ This script can be used in oxTrust application only.
 oxTrust allows an admin to add and modify users which belong to groups.
 In order to simplify this process and apply repeating actions, oxTrust
 supports an Update User script. In this script it is possible to modify
-a person entry before it is persisted in LDAP.
+a person entry before it is stored in LDAP.
 
-This script type adds only one method to base script type:
+This script type adds only one method to the base script type:
 
 * `def updateUser(self, user, persisted, configurationAttributes):`
 
-These are types of parameters:
+These are the types of parameters:
 
 - `user` is `org.gluu.oxtrust.model.GluuCustomPerson`
-- persisted is boolean value to specify if operation type: add/modify
+- persisted is a boolean value to specify the operation type: add/modify
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
 
-This script can be used in oxTrust application only.
+This script can be used in an oxTrust application only.
 
 - [Sample Update User Script](./sample-update-user-script.py)
 
@@ -359,15 +359,15 @@ All these methods expect the same parameters:
 - `requestParameters` is `java.util.Map<String, String[]>`
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
 
-First oxTrust executes the `initRegistration` method to do initial user
-entry update. The `preRegistration` method is called before persisting
+First oxTrust executes the `initRegistration` method to do an initial
+user entry update. The `preRegistration` method is called before storing
 the user entry in LDAP. Hence in this script it is possible to validate
 the user entry. The `postRegistration` method is called after
-successfully persisting the user entry in LDAP. In this method, for
+successfully storing the user entry in LDAP. In this method, for
 example, the script can send an e-mail or send notifications to other
 organization systems about the new user entry.
 
-All three methods should return `True` or `False`.
+All three methods should either return `True` or `False`.
 
 - [Sample User Registration Script](./sample-user-registration-script.py)
 

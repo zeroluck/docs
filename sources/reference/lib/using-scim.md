@@ -21,9 +21,9 @@
 
 ## SCIM 1.1
 
-Following is the guide to work with SCIM client 1.1:
-
-You can checkout SCIM-client from our GIT repository : https://github.com/GluuFederation/SCIM-Client 
+Following is the guide to work with SCIM client 1.1. You can checkout
+the SCIM client from our [repository at
+GitHub](https://github.com/GluuFederation/SCIM-Client).
 
 ### Creating SCIM client instance
 
@@ -33,19 +33,28 @@ Below is an example on how to create a ScimClient instance:
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
 ```
 
-This will create an oAuth instance of ScimClient where: `userName` and `passWord` are the user credentials, `clientID` and `clientSecret` are oxAuth client credentials, `domainURL` is the domain where SCIM client resides, for example:
-`http://localhost:8080/oxTrust/seam/resource/restv1`, and `oxAuthDomain` is the `tokenURL` example
+This will create an OAuth instance of ScimClient whereas `userName` and
+`passWord` are the user credentials, `clientID` and `clientSecret` are
+oxAuth client credentials, and `domainURL` is the domain where SCIM
+client resides. For example the `domainURL` can be
+`http://localhost:8080/oxTrust/seam/resource/restv1`. The `oxAuthDomain`
+is the `tokenURL`, for example
 `http://localhost:8080/oxauth/seam/resource/restv1/oxauth/token`.
 
 ```
 ScimClient client = ScimClient.basicInstance(userName, passWord, domainURL);
 ```
 
-For the basic authentication you only need the user’s credentials (userName, passWord) and domain URL.
+For the basic authentication you only need the user’s credentials
+(userName, passWord) and domain uri.
 
 ### Adding an entity
 
-SCIM-Client API comes with two methods to add an entity, i. e. “createPerson” and “createPersonString”, for createPerson, you pass the person you want to add as ScimPerson object and you specify the desired media type format “XML/JSON” and SCIM-client API will parse the ScimPerson object into XML or JSON and send your request.
+The SCIM Client API comes with two methods to add an entity, i. e.
+“createPerson” and “createPersonString”. For *createPerson* you pass the
+person you want to add as ScimPerson object. Furthermore, you specify
+the desired media type format “XML/JSON” and the SCIM client API will
+parse the ScimPerson object into XML or JSON, and send your request.
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
@@ -68,7 +77,8 @@ String result = response.getResponseBodyString(); // this will give you Response
 ```
 -->
 
-Similarly for groups, you can use createGroup with ScimGroup as a parameter, or using createGroupString.
+Similarly for groups, you can use createGroup with ScimGroup as a
+parameter, or using createGroupString.
 
 ``` 
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
@@ -78,12 +88,17 @@ ScimResponse response = client.createGroup(groupToAdd, MediaType.APPLICATION_JSO
 String responseStr = response.getResponseBodyString();
 ```
 
-
 - - -
 
 ### Modifying an entity
 
-In this example we will show you how to modify a person or a group using SCIM-Client. SCIM-Client API comes with two methods to accomplish this, i. e. “updatePerson” and “updatePersonString”. For *updatePerson* method, you pass the person you want to update as ScimPerson object and its uid as a String and you specify the desired media type format “XML/JSON” and SCIM-client API will parse the ScimPerson object into XML or JSON and send your request.
+In this example you will learn how to modify a person or a group using
+SCIM Client. The SCIM Client API comes with two methods to accomplish
+this, i. e. “updatePerson” and “updatePersonString”. For *updatePerson*
+method, you pass both the person you want to update as ScimPerson object
+and its uid as a string, and you specify the desired media type format
+“XML/JSON”. The SCIM Client API will parse the ScimPerson object into
+XML or JSON, and send your request.
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
@@ -105,8 +120,8 @@ String result = response.getResponseBodyString(); // this will give you Response
 ```
 -->
 
-Same applies for groups, you can use updateGroupString with ScimGroup as a parameter.
-
+The same steps apply for groups. You can use *updateGroupString* with
+ScimGroup as a parameter.
 
 <!--
 
@@ -122,7 +137,9 @@ String result = response.getResponseBodyString(); // this will give you Response
 
 ### Deleting an entity
 
-To delete an entity, you simply pass it’s ID as a String parameter into “deletePerson” or “deleteGroup” methods. For both cases, i. e. Person and Group, entity MUST be already registered in the system with an ID.
+To delete an entity, you simply pass its ID as a string parameter to
+either the “deletePerson” or “deleteGroup” method. In both cases, the
+entity has to be registered in the system with an ID, already.
 
 ``` 
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
@@ -141,8 +158,10 @@ response.getStatusCode() // this will give you the Status code
 
 ### Retrieving an entity
 
-To retrieve a person or a group you can use “retrievePerson” or “retrieveGroup” method by passing the Entity’s id as a parameter and the
-desired media type. For both cases, i. e. Person and Group, entity MUST be already registered in the system with an ID.
+To retrieve a person or a group you can use “retrievePerson” or
+“retrieveGroup” method by passing the entitys ID as a parameter and the
+desired media type. In both cases the entity has to be registered in the
+system with an ID, already.
 
 ```
 ScimClient client = ScimClient.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
@@ -184,18 +203,22 @@ String result = response.getResponseBodyString(); // this will give you Response
 - - -
 
 ## SCIM 2.0
-Following is the guide to work with SCIM client 2.0:
 
-You can checkout SCIM-client from Gluu's GIT repository : https://github.com/GluuFederation/SCIM-Client 
+Following is the guide to work with SCIM client 2.0. You can checkout
+the according SCIM Client from our [GIT
+repository](https://github.com/GluuFederation/SCIM-Client).
 
 ### Creating SCIM 2 client instance
-Following is an example code to create a SCIM 2.0 client instance:
+
+Following is example code to create a SCIM 2.0 client instance:
 
 ```
 Scim2Client client = Scim2Client.oAuthInstance("admin", "pwd", "@!0035.934F.1A51.77B0!0001!402D.66D0!0008!5BAD.32E4", "9e9fef43-0d97-4383-863f-0e828ff0a408", "http://localhost:8085/oxtrust-server/seam/resource/restv1", "http://localhost:8085/oxauth/seam/resource/restv1/oxauth/token");
 ```
 
-In the mentioned example, we have used the following constructor to create the client instance (Signature):
+In the mentioned example, we have used the following constructor to
+create the client instance (Signature):
+
 ```
 public static Scim2Client oAuthInstance(String userName, String passWord, String clientID, String clientSecret, String domain,
 String oAuthTokenEndpoint)
@@ -203,7 +226,11 @@ String oAuthTokenEndpoint)
 
 ### Adding an entity using SCIM 2.0
 
-SCIM 2.0 client API comes with two methods to add an entity using createPerson method. For **createPerson**, firstly, you can pass the person you want to add as *ScimPerson* object and you specify the desired media type format “XML/JSON” and SCIM-client API will parse the ScimPerson object into XML or JSON and send your request. 
+The SCIM 2.0 client API comes with two methods to add an entity using
+the *createPerson* method. This method expects the person you want to
+add as a *ScimPerson* object, and the desired media type format such as
+“XML/JSON”. Then, the SCIM client API will parse the ScimPerson object
+into XML or JSON, and send your request.
 
 ```
 Scim2Client client = Scim2Client.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
@@ -217,6 +244,7 @@ String result = response.getResponseBodyString(); // this will give you Response
 ```
 
 Another method of using createPerson is to pass a *'User'* to this method, like:
+
 ```
 User newUser = new User();
 Name name = new Name();
@@ -242,9 +270,10 @@ System.out.println(response1.getResponseBodyString());
 
 ```
 
-Similarly for groups, you can use **createGroup** with object of *ScimGroup* as a parameter, or object of *Group* as a parameter.
+Similarly for groups, you can use **createGroup** with object of either
+*ScimGroup* or *Group* as a parameter:
 
-``` 
+```
 Scim2Client client = Scim2Client.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
 ScimGroup groupToAdd = new ScimGroup();
 groupToAdd.setDisplayName("ScimObjecttesting");
@@ -264,7 +293,13 @@ System.out.println(response1.getResponseBodyString());
 
 ### Modifying an entity using SCIM 2.0
 
-In this example we will show you how to modify a person or a group using SCIM 2.0 client. SCIM-Client API comes with two methods to accomplish this using updatePerson. For **updatePerson** method, you can pass the person you want to update as ScimPerson object and its uid as a String and you specify the desired media type format “XML/JSON” and SCIM-client API will parse the ScimPerson object into XML or JSON and send your request.
+In this example we will show you how to modify a person or a group using
+SCIM 2.0 client. The SCIM client API comes with two methods to
+accomplish this using *updatePerson*. This method expects the person you
+want to update as a ScimPerson object, and its uid as a string.
+Furthermore, specify the desired media type format such as “XML/JSON”.
+The SCIM client API will parse the ScimPerson object into XML or JSON,
+and send your request.
 
 ```
 Scim2Client client = Scim2Client.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
@@ -277,7 +312,8 @@ ScimResponse response = client.updatePerson(person, uid, MediaType.APPLICATION_J
 response.getStatusCode() // this will give you the Status code
 String result = response.getResponseBodyString(); // this will give you Response body 
 ```
-Another method of using updatePerson is to pass *User* object to this method:
+Another method of using *updatePerson* is to pass an *User* object to
+this method:
 
 ```
 User newUser = new User();
@@ -314,8 +350,9 @@ public ScimResponse updatePerson(ScimPerson person, String uid, String mediaType
 UnsupportedEncodingException, IOException, JAXBException
 ```
 
-Similarly, if you want to update a group, then you can use **updateGroup** in two of the following manners:
-First one is to pass a ScimGroup object to this method:
+Similarly, if you want to update a group, then you can use
+**updateGroup** in two of the following manners: the first one is to
+pass a ScimGroup object to this method:
 
 ``` 
 Scim2Client client = Scim2Client.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
@@ -339,7 +376,10 @@ System.out.println(response1.getResponseBodyString());
 
 ### Deleting an entity SCIM 2.0
 
-To delete an entity, you simply pass it’s ID as a String parameter into “deletePerson” or “deleteGroup” methods. For both cases, i. e. Person and Group, entity MUST be already registered in the system with an ID.
+To delete an entity, you simply pass its ID as a string parameter into
+“deletePerson” or “deleteGroup” methods. For both cases, i. e. Person
+and Group, the entity has to be registered in the system with an ID,
+already.
 
 ``` 
 Scim2Client client = Scim2Client.oAuthInstance(userName, passWord, clientID, clientSecret, domainURL, oxAuthDomain);
@@ -358,8 +398,11 @@ response.getStatusCode() // this will give you the Status code
 
 ### Retrieving an entity SCIM 2.0
 
-To retrieve a person or a group you can use “retrievePerson” or “retrieveGroup” method by passing the Entity’s id as a parameter and the
-desired media type. For both cases, i. e. Person and Group, entity MUST be already registered in the system with an ID.
+To retrieve a person or a group you can use either “retrievePerson” or
+“retrieveGroup” method by passing the entity’s ID as a parameter.
+Furthermore, add the desired media type. In both cases, i. e. Person and
+Group, the entity has to be registered in the system with an ID,
+already.
 
 ```
 Scim2Client client = Scim2Client.oAuthInstance(userName, passWord, clientID,clientSecret, domainURL, oxAuthDomain);
@@ -380,7 +423,8 @@ String result = response.getResponseBodyString(); // this will give you Response
 
 ### Bulk operations SCIM 2.0
 
-To perform multiple operations (in a bulk), you pass the operation as a *ScimBulkOperation* or *BulkRequest* object into “bulkOperation” method.
+To perform multiple operations (in a bulk), you pass the operation as a
+*ScimBulkOperation* or *BulkRequest* object into “bulkOperation” method.
 
 ```
 BulkRequest bulkRequest = new BulkRequest();

@@ -1,6 +1,6 @@
 # UMA
 
-Gluu provides cleint
+Gluu provides client
 
 ## Sample of Gluu Server in Action
 
@@ -13,6 +13,7 @@ Authorization Server. For this reason Gluu prepares these components:
 - [oxuma-rs](https://svn.gluu.info/repository/openxdi/oxUmaDemo/RS/) - sample Resource Server
 
 ## References
+
 - [UMA Specifications](http://kantarainitiative.org/confluence/display/uma/UMA+1.0+Core+Protocol)
 - [JavaDocs](http://ox.gluu.org/oxauth-javadocs/apidocs) for the Gluu oxAuth code
 

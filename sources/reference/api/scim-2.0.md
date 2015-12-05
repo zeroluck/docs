@@ -2,7 +2,8 @@
 
 ### SCIM 2.0 Specifications
 
-You can see the detailed SCIM 2.0 specification documents [here](https://tools.ietf.org/html/draft-ietf-scim-api-19).
+You can see the detailed SCIM 2.0 specification documents
+[here](https://tools.ietf.org/html/draft-ietf-scim-api-19).
 
 ### SCIM 2.0 Endpoints
 
@@ -13,16 +14,12 @@ You can see the detailed SCIM 2.0 specification documents [here](https://tools.i
 ### SCIM 2.0 Definitions
 - [Definitions](#definitions)
 
-
-
-
 ## Bulk Operation Endpoint
 
 - - -
 ## /v2/Bulk
 
 ### POST
-
 
 <a id="bulkOperation">Bulk Operation</a>
 
@@ -34,7 +31,6 @@ SCIM Bulk Operation (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-
 
 #### Request
 
-
 **Content-Type: ** application/json, application/xml
 
 ##### Parameters
@@ -48,53 +44,33 @@ SCIM Bulk Operation (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-
         <th>Default</th>
         <th>Schema</th>
     </tr>
-
-
-
-<tr>
-    <th>Authorization</th>
-    <td>header</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>body</th>
-    <td>body</td>
-    <td>no</td>
-    <td>BulkRequest</td>
-    <td> - </td>
-
-    <td>
-    
-    <a href="#/definitions/BulkRequest">BulkRequest</a> 
-    </td>
-
-</tr>
-
-
+    <tr>
+        <th>Authorization</th>
+        <td>header</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string</td>
+    </tr>
+    <tr>
+        <th>body</th>
+        <td>body</td>
+        <td>no</td>
+        <td>BulkRequest</td>
+        <td> - </td>
+        <td><a href="#/definitions/BulkRequest">BulkRequest</a></td>
+    </tr>
 </table>
-
-
 
 #### Response
 
 **Content-Type: ** application/json, application/xml
-
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
 | 200    | successful operation | <a href="#/definitions/BulkResponse">BulkResponse</a>|
 
 - - -
-
-
 
 ## Group Endpoint
 
@@ -104,7 +80,8 @@ SCIM Bulk Operation (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-
 
 <a id="listGroups">List Users</a>
 
-Returns a list of Groups (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4)
+Returns a list of Groups
+(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4).
 
 #### Security
 
@@ -123,65 +100,39 @@ Returns a list of Groups (https://tools.ietf.org/html/draft-ietf-scim-api-19#sec
         <th>Default</th>
         <th>Schema</th>
     </tr>
-
-
-
-<tr>
-    <th>Authorization</th>
-    <td>header</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>filter</th>
-    <td>query</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>sortBy</th>
-    <td>query</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>sortOrder</th>
-    <td>query</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-
+    <tr>
+        <th>Authorization</th>
+        <td>header</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>filter</th>
+        <td>query</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>sortBy</th>
+        <td>query</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>sortOrder</th>
+        <td>query</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
 </table>
-
-
 
 #### Response
 
@@ -192,34 +143,18 @@ Returns a list of Groups (https://tools.ietf.org/html/draft-ietf-scim-api-19#sec
 |-------------|-------------|----------------|
 | 200    | successful operation | <a href="#/definitions/ListResponse">ListResponse</a>|
 
-
-
-
-
-
-
 ### POST
-
 
 <a id="createGroup">Create Group</a>
 
-Create Group (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
-
-
-
+Create Group
+(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3).
 
 #### Security
 
-
-
-
 * Authorization
 
-
-
-
 #### Request
-
 
 **Content-Type: ** application/json, application/xml
 
@@ -234,77 +169,46 @@ Create Group (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
         <th>Default</th>
         <th>Schema</th>
     </tr>
-
-
-
-<tr>
-    <th>Authorization</th>
-    <td>header</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>body</th>
-    <td>body</td>
-    <td>no</td>
-    <td>Group</td>
-    <td> - </td>
-
-    <td>
-    
-    <a href="#/definitions/Group">Group</a> 
-    </td>
-
-</tr>
-
-
+    <tr>
+        <th>Authorization</th>
+        <td>header</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>body</th>
+        <td>body</td>
+        <td>no</td>
+        <td>Group</td>
+        <td> - </td>
+        <td><a href="#/definitions/Group">Group</a></td>
+    </tr>
 </table>
-
-
 
 #### Response
 
 **Content-Type: ** application/json, application/xml
 
-
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
 | 200    | successful operation | <a href="#/definitions/Group">Group</a>|
 
-
-
 ## /v2/Groups/{id}
-
 
 ### GET
 
 <a id="getGroupById">Find Group by id</a>
 
-Returns a Group on the basis of provided id as path param (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.1)
-
-
-
+Returns a Group on the basis of the provided id as path parameter
+(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.1).
 
 #### Security
 
-
-
-
 * Authorization
 
-
-
-
 #### Request
-
-
 
 ##### Parameters
 
@@ -317,74 +221,44 @@ Returns a Group on the basis of provided id as path param (https://tools.ietf.or
         <th>Default</th>
         <th>Schema</th>
     </tr>
-
-
-
-<tr>
-    <th>Authorization</th>
-    <td>header</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>id</th>
-    <td>path</td>
-    <td>yes</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-
+    <tr>
+        <th>Authorization</th>
+        <td>header</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>id</th>
+        <td>path</td>
+        <td>yes</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
 </table>
-
-
 
 #### Response
 
 **Content-Type: ** application/json, application/xml
 
-
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
 | 200    | successful operation | <a href="#/definitions/Group">Group</a>|
-
-
-
-
 
 ### PUT
 
 <a id="updateGroup">Update Group</a>
 
-Update Group (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
-
-
-
+Update Group
+(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3).
 
 #### Security
 
-
-
-
 * Authorization
 
-
-
-
 #### Request
-
 
 **Content-Type: ** application/json, application/xml
 
@@ -399,91 +273,52 @@ Update Group (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
         <th>Default</th>
         <th>Schema</th>
     </tr>
-
-
-
-<tr>
-    <th>Authorization</th>
-    <td>header</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>id</th>
-    <td>path</td>
-    <td>yes</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>body</th>
-    <td>body</td>
-    <td>no</td>
-    <td>Group</td>
-    <td> - </td>
-
-    <td>
-    
-    <a href="#/definitions/Group">Group</a> 
-    </td>
-
-</tr>
-
-
+    <tr>
+        <th>Authorization</th>
+        <td>header</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>id</th>
+        <td>path</td>
+        <td>yes</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>body</th>
+        <td>body</td>
+        <td>no</td>
+        <td>Group</td>
+        <td> - </td>
+        <td><a href="#/definitions/Group">Group</a></td>
+    </tr>
 </table>
-
-
 
 #### Response
 
 **Content-Type: ** application/json, application/xml
-
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
 | 200    | successful operation | <a href="#/definitions/Group">Group</a>|
 
-
-
-
-
-
-
 ### DELETE
 
 <a id="deleteGroup">Delete Group</a>
 
-Delete Group (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
-
-
-
+Delete Group
+(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3).
 
 #### Security
 
-
-
-
 * Authorization
 
-
-
-
 #### Request
-
-
 
 ##### Parameters
 
@@ -496,44 +331,27 @@ Delete Group (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
         <th>Default</th>
         <th>Schema</th>
     </tr>
-
-
-
-<tr>
-    <th>Authorization</th>
-    <td>header</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>id</th>
-    <td>path</td>
-    <td>yes</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-
+    <tr>
+        <th>Authorization</th>
+        <td>header</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>id</th>
+        <td>path</td>
+        <td>yes</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
 </table>
-
-
 
 #### Response
 
 **Content-Type: ** application/json, application/xml
-
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
@@ -541,36 +359,22 @@ Delete Group (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
 
 - - -
 
-
-
-
 ## User Endpoint
 
 ## /v2/Users
-
 
 ### GET
 
 <a id="listUsers">List Users</a>
 
-Returns a list of users (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4)
-
-
-
+Returns a list of users
+(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4).
 
 #### Security
 
-
-
-
 * Authorization
 
-
-
-
 #### Request
-
-
 
 ##### Parameters
 
@@ -583,103 +387,60 @@ Returns a list of users (https://tools.ietf.org/html/draft-ietf-scim-api-19#sect
         <th>Default</th>
         <th>Schema</th>
     </tr>
-
-
-
-<tr>
-    <th>Authorization</th>
-    <td>header</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>filter</th>
-    <td>query</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>sortBy</th>
-    <td>query</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>sortOrder</th>
-    <td>query</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-
+    <tr>
+        <th>Authorization</th>
+        <td>header</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>filter</th>
+        <td>query</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>sortBy</th>
+        <td>query</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>sortOrder</th>
+        <td>query</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
 </table>
-
-
 
 #### Response
 
 **Content-Type: ** application/json, application/xml
-
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
 | 200    | successful operation | <a href="#/definitions/ListResponse">ListResponse</a>|
 
-
-
-
-
-
-
 ### POST
-
 
 <a id="createUser">Create User</a>
 
-Create User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
-
-
-
+Create a user
+(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3).
 
 #### Security
 
-
-
-
 * Authorization
 
-
-
-
 #### Request
-
 
 **Content-Type: ** application/json, application/xml
 
@@ -694,89 +455,46 @@ Create User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
         <th>Default</th>
         <th>Schema</th>
     </tr>
-
-
-
-<tr>
-    <th>Authorization</th>
-    <td>header</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>body</th>
-    <td>body</td>
-    <td>no</td>
-    <td>User</td>
-    <td> - </td>
-
-    <td>
-    
-    <a href="#/definitions/User">User</a> 
-    </td>
-
-</tr>
-
-
+    <tr>
+        <th>Authorization</th>
+        <td>header</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>body</th>
+        <td>body</td>
+        <td>no</td>
+        <td>User</td>
+        <td> - </td>
+        <td><a href="#/definitions/User">User</a></td>
+    </tr>
 </table>
-
-
 
 #### Response
 
 **Content-Type: ** application/json, application/xml
 
-
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
 | 200    | successful operation | <a href="#/definitions/User">User</a>|
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## /v2/Users/{uid}
 
-
 ### GET
 
-<a id="getUserByUid">Find User by id</a>
+<a id="getUserByUid">Find user by id</a>
 
-Returns a Users on the basis of provided uid as path param (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.1)
-
-
-
+Returns a user on the basis of provided uid as path parameter
+(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.1).
 
 #### Security
 
-
-
-
 * Authorization
 
-
-
-
 #### Request
-
-
 
 ##### Parameters
 
@@ -789,74 +507,44 @@ Returns a Users on the basis of provided uid as path param (https://tools.ietf.o
         <th>Default</th>
         <th>Schema</th>
     </tr>
-
-
-
-<tr>
-    <th>Authorization</th>
-    <td>header</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>uid</th>
-    <td>path</td>
-    <td>yes</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-
+    <tr>
+        <th>Authorization</th>
+        <td>header</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>uid</th>
+        <td>path</td>
+        <td>yes</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
 </table>
-
-
 
 #### Response
 
 **Content-Type: ** application/json, application/xml
 
-
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
 | 200    | successful operation | <a href="#/definitions/User">User</a>|
-
-
-
-
 
 ### PUT
 
 <a id="updateUser">Update User</a>
 
-Update User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
-
-
-
+Update a u ser
+(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3).
 
 #### Security
 
-
-
-
 * Authorization
 
-
-
-
 #### Request
-
 
 **Content-Type: ** application/json, application/xml
 
@@ -871,91 +559,52 @@ Update User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
         <th>Default</th>
         <th>Schema</th>
     </tr>
-
-
-
-<tr>
-    <th>Authorization</th>
-    <td>header</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>uid</th>
-    <td>path</td>
-    <td>yes</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>body</th>
-    <td>body</td>
-    <td>no</td>
-    <td>User</td>
-    <td> - </td>
-
-    <td>
-    
-    <a href="#/definitions/User">User</a> 
-    </td>
-
-</tr>
-
-
+    <tr>
+        <th>Authorization</th>
+        <td>header</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>uid</th>
+        <td>path</td>
+        <td>yes</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>body</th>
+        <td>body</td>
+        <td>no</td>
+        <td>User</td>
+        <td> - </td>
+        <td><a href="#/definitions/User">User</a></td>
+    </tr>
 </table>
-
-
 
 #### Response
 
 **Content-Type: ** application/json, application/xml
-
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
 | 200    | successful operation | <a href="#/definitions/User">User</a>|
 
-
-
-
-
-
-
 ### DELETE
 
 <a id="deleteUser">Delete User</a>
 
-Delete User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
-
-
-
+Delete a user
+(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3).
 
 #### Security
 
-
-
-
 * Authorization
 
-
-
-
 #### Request
-
-
 
 ##### Parameters
 
@@ -968,48 +617,31 @@ Delete User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
         <th>Default</th>
         <th>Schema</th>
     </tr>
-
-
-
-<tr>
-    <th>Authorization</th>
-    <td>header</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>uid</th>
-    <td>path</td>
-    <td>yes</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-
+    <tr>
+        <th>Authorization</th>
+        <td>header</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>uid</th>
+        <td>path</td>
+        <td>yes</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
 </table>
-
-
 
 #### Response
 
 **Content-Type: ** application/json, application/xml
 
-
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
-| default    | successful operation |  - |
+| default     | successful operation |  -    |
 
 - - -
 
@@ -1025,137 +657,76 @@ Delete User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
         <th>description</th>
         <th>example</th>
     </tr>
-    
-        <tr>
-            <td>operation</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>primary</td>
-            <td>
-                
-                    
-                    boolean
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>formatted</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>streetAddress</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>locality</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>region</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>postalCode</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>country</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>type</td>
-            <td>
-                
-                    <a href="#/definitions/Type">Type</a>
-                    
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>$ref</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
+    <tr>
+        <td>operation</td>
+        <td>string</td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>primary</td>
+        <td>boolean</td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>formatted</td>
+        <td>string</td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>streetAddress</td>
+        <td>string</td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>locality</td>
+        <td>string</td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>region</td>
+        <td>string</td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>postalCode</td>
+        <td>string</td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>country</td>
+        <td>string</td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>type</td>
+        <td><a href="#/definitions/Type">Type</a></td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>$ref</td>
+        <td>string</td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
 </table>
 
 ## <a name="/definitions/BulkOperation">BulkOperation</a>
@@ -1168,111 +739,62 @@ Delete User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
         <th>description</th>
         <th>example</th>
     </tr>
-    
-        <tr>
-            <td>bulkId</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>version</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>method</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>path</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>location</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>data</td>
-            <td>
-                
-                    
-                    object
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>status</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>response</td>
-            <td>
-                
-                    
-                    object
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
+    <tr>
+        <td>bulkId</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>version</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>method</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>path</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>location</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>data</td>
+        <td> object </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>status</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>response</td>
+        <td> object </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
 </table>
 
 ## <a name="/definitions/BulkRequest">BulkRequest</a>
@@ -1285,48 +807,27 @@ Delete User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
         <th>description</th>
         <th>example</th>
     </tr>
-    
-        <tr>
-            <td>schemas</td>
-            <td>
-                
-                
-                array[string]
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>failOnErrors</td>
-            <td>
-                
-                    
-                    integer (int32)
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>operations</td>
-            <td>
-                
-                
-                    array[<a href="#/definitions/BulkOperation">BulkOperation</a>]
-                
-                
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
+    <tr>
+        <td>schemas</td>
+        <td> array[string] </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>failOnErrors</td>
+        <td> integer (int32) </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>operations</td>
+        <td> array[<a href="#/definitions/BulkOperation">BulkOperation</a>] </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
 </table>
 
 ## <a name="/definitions/BulkResponse">BulkResponse</a>
@@ -1339,35 +840,20 @@ Delete User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
         <th>description</th>
         <th>example</th>
     </tr>
-    
-        <tr>
-            <td>schemas</td>
-            <td>
-                
-                
-                array[string]
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>operations</td>
-            <td>
-                
-                
-                    array[<a href="#/definitions/BulkOperation">BulkOperation</a>]
-                
-                
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
+    <tr>
+        <td>schemas</td>
+        <td> array[string] </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>operations</td>
+        <td> array[<a href="#/definitions/BulkOperation">BulkOperation</a>] </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
 </table>
 
 ## <a name="/definitions/Email">Email</a>
@@ -1380,85 +866,48 @@ Delete User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
         <th>description</th>
         <th>example</th>
     </tr>
-    
-        <tr>
-            <td>operation</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>value</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>display</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>primary</td>
-            <td>
-                
-                    
-                    boolean
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>type</td>
-            <td>
-                
-                    <a href="#/definitions/Type">Type</a>
-                    
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>$ref</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
+    <tr>
+        <td>operation</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>value</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>display</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>primary</td>
+        <td> boolean </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>type</td>
+        <td> <a href="#/definitions/Type">Type</a> </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>$ref</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
 </table>
 
 ## <a name="/definitions/Entitlement">Entitlement</a>
@@ -1471,85 +920,48 @@ Delete User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
         <th>description</th>
         <th>example</th>
     </tr>
-    
-        <tr>
-            <td>operation</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>value</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>display</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>primary</td>
-            <td>
-                
-                    
-                    boolean
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>type</td>
-            <td>
-                
-                    <a href="#/definitions/Type">Type</a>
-                    
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>$ref</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
+    <tr>
+        <td>operation</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+   </tr>
+    <tr>
+        <td>value</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>display</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>primary</td>
+        <td> boolean </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>type</td>
+        <td> <a href="#/definitions/Type">Type</a> </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>$ref</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
 </table>
 
 ## <a name="/definitions/Group">Group</a>
@@ -1562,87 +974,48 @@ Delete User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
         <th>description</th>
         <th>example</th>
     </tr>
-    
-        <tr>
-            <td>id</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>externalId</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>meta</td>
-            <td>
-                
-                    <a href="#/definitions/Meta">Meta</a>
-                    
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>schemas</td>
-            <td>
-                
-                
-                array[string]
-                
-            </td>
-            <td>required</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>displayName</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>members</td>
-            <td>
-                
-                
-                    array[<a href="#/definitions/MemberRef">MemberRef</a>]
-                
-                
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
+    <tr>
+        <td>id</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>externalId</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>meta</td>
+        <td> <a href="#/definitions/Meta">Meta</a> </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>schemas</td>
+        <td> array[string] </td>
+        <td>required</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>displayName</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>members</td>
+        <td> array[<a href="#/definitions/MemberRef">MemberRef</a>] </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
 </table>
 
 ## <a name="/definitions/GroupRef">GroupRef</a>
@@ -1655,59 +1028,34 @@ Delete User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
         <th>description</th>
         <th>example</th>
     </tr>
-    
-        <tr>
-            <td>value</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>display</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>type</td>
-            <td>
-                
-                    <a href="#/definitions/Type">Type</a>
-                    
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>$ref</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
+    <tr>
+        <td>value</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>display</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>type</td>
+        <td> <a href="#/definitions/Type">Type</a> </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>$ref</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
 </table>
 
 ## <a name="/definitions/Im">Im</a>
@@ -1720,85 +1068,48 @@ Delete User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
         <th>description</th>
         <th>example</th>
     </tr>
-    
-        <tr>
-            <td>operation</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>value</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>display</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>primary</td>
-            <td>
-                
-                    
-                    boolean
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>type</td>
-            <td>
-                
-                    <a href="#/definitions/Type">Type</a>
-                    
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>$ref</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
+    <tr>
+        <td>operation</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>value</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>display</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>primary</td>
+        <td> boolean </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>type</td>
+        <td> <a href="#/definitions/Type">Type</a> </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>$ref</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
 </table>
 
 ## <a name="/definitions/ListResponse">ListResponse</a>
@@ -1811,74 +1122,41 @@ Delete User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
         <th>description</th>
         <th>example</th>
     </tr>
-    
-        <tr>
-            <td>totalResults</td>
-            <td>
-                
-                    
-                    integer (int32)
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>startIndex</td>
-            <td>
-                
-                    
-                    integer (int32)
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>itemsPerPage</td>
-            <td>
-                
-                    
-                    integer (int32)
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>schemas</td>
-            <td>
-                
-                
-                array[string]
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>resources</td>
-            <td>
-                
-                
-                    array[<a href="#/definitions/Resource">Resource</a>]
-                
-                
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
+    <tr>
+        <td>totalResults</td>
+        <td>integer (int32)</td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>startIndex</td>
+        <td>integer (int32)</td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>itemsPerPage</td>
+        <td>integer (int32)</td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>schemas</td>
+        <td>array[string]</td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>resources</td>
+        <td>array[<a href="#/definitions/Resource">Resource</a>]</td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
 </table>
 
 ## <a name="/definitions/MemberRef">MemberRef</a>
@@ -1891,72 +1169,41 @@ Delete User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
         <th>description</th>
         <th>example</th>
     </tr>
-    
-        <tr>
-            <td>operation</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>value</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>display</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>type</td>
-            <td>
-                
-                    <a href="#/definitions/Type">Type</a>
-                    
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>$ref</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
+    <tr>
+        <td>operation</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>value</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>display</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>type</td>
+        <td> <a href="#/definitions/Type">Type</a> </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>$ref</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
 </table>
 
 ## <a name="/definitions/Meta">Meta</a>
@@ -1969,85 +1216,48 @@ Delete User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
         <th>description</th>
         <th>example</th>
     </tr>
-    
-        <tr>
-            <td>created</td>
-            <td>
-                
-                    
-                    string (date-time)
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>lastModified</td>
-            <td>
-                
-                    
-                    string (date-time)
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>location</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>version</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>attributes</td>
-            <td>
-                
-                
-                array[string]
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>resourceType</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
+    <tr>
+        <td>created</td>
+        <td> string (date-time) </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>lastModified</td>
+        <td> string (date-time) </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>location</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>version</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>attributes</td>
+        <td> array[string] </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>resourceType</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
 </table>
 
 ## <a name="/definitions/Name">Name</a>
@@ -2060,85 +1270,48 @@ Delete User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
         <th>description</th>
         <th>example</th>
     </tr>
-    
-        <tr>
-            <td>formatted</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>familyName</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>givenName</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>middleName</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>honorificPrefix</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>honorificSuffix</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
+    <tr>
+        <td>formatted</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>familyName</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>givenName</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>middleName</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>honorificPrefix</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>honorificSuffix</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
 </table>
 
 ## <a name="/definitions/PhoneNumber">PhoneNumber</a>
@@ -2151,85 +1324,48 @@ Delete User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
         <th>description</th>
         <th>example</th>
     </tr>
-    
-        <tr>
-            <td>operation</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>value</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>display</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>primary</td>
-            <td>
-                
-                    
-                    boolean
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>type</td>
-            <td>
-                
-                    <a href="#/definitions/Type">Type</a>
-                    
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>$ref</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
+    <tr>
+        <td>operation</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>value</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>display</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>primary</td>
+        <td> boolean </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>type</td>
+        <td> <a href="#/definitions/Type">Type</a> </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>$ref</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
 </table>
 
 ## <a name="/definitions/Photo">Photo</a>
@@ -2242,85 +1378,48 @@ Delete User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
         <th>description</th>
         <th>example</th>
     </tr>
-    
-        <tr>
-            <td>operation</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>value</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>display</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>primary</td>
-            <td>
-                
-                    
-                    boolean
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>type</td>
-            <td>
-                
-                    <a href="#/definitions/Type">Type</a>
-                    
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>$ref</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
+    <tr>
+        <td>operation</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>value</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>display</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>primary</td>
+        <td> boolean </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>type</td>
+        <td> <a href="#/definitions/Type">Type</a> </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>$ref</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
 </table>
 
 ## <a name="/definitions/Resource">Resource</a>
@@ -2333,59 +1432,34 @@ Delete User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
         <th>description</th>
         <th>example</th>
     </tr>
-    
-        <tr>
-            <td>id</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>externalId</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>meta</td>
-            <td>
-                
-                    <a href="#/definitions/Meta">Meta</a>
-                    
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>schemas</td>
-            <td>
-                
-                
-                array[string]
-                
-            </td>
-            <td>required</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
+    <tr>
+        <td>id</td>
+        <td>string</td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>externalId</td>
+        <td>string</td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>meta</td>
+        <td><a href="#/definitions/Meta">Meta</a></td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>schemas</td>
+        <td>array[string]</td>
+        <td>required</td>
+        <td>-</td>
+        <td></td>
+    </tr>
 </table>
 
 ## <a name="/definitions/Role">Role</a>
@@ -2398,85 +1472,48 @@ Delete User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
         <th>description</th>
         <th>example</th>
     </tr>
-    
-        <tr>
-            <td>operation</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>value</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>display</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>primary</td>
-            <td>
-                
-                    
-                    boolean
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>type</td>
-            <td>
-                
-                    <a href="#/definitions/Type">Type</a>
-                    
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>$ref</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
+    <tr>
+        <td>operation</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>value</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>display</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>primary</td>
+        <td> boolean </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>type</td>
+        <td> <a href="#/definitions/Type">Type</a> </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>$ref</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
 </table>
 
 ## <a name="/definitions/Type">Type</a>
@@ -2489,7 +1526,6 @@ Delete User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
         <th>description</th>
         <th>example</th>
     </tr>
-    
 </table>
 
 ## <a name="/definitions/User">User</a>
@@ -2502,350 +1538,181 @@ Delete User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
         <th>description</th>
         <th>example</th>
     </tr>
-    
-        <tr>
-            <td>id</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>externalId</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>meta</td>
-            <td>
-                
-                    <a href="#/definitions/Meta">Meta</a>
-                    
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>schemas</td>
-            <td>
-                
-                
-                array[string]
-                
-            </td>
-            <td>required</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>userName</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>name</td>
-            <td>
-                
-                    <a href="#/definitions/Name">Name</a>
-                    
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>displayName</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>nickName</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>profileUrl</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>title</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>userType</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>preferredLanguage</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>locale</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>timezone</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>active</td>
-            <td>
-                
-                    
-                    boolean
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>password</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>emails</td>
-            <td>
-                
-                
-                    array[<a href="#/definitions/Email">Email</a>]
-                
-                
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>phoneNumbers</td>
-            <td>
-                
-                
-                    array[<a href="#/definitions/PhoneNumber">PhoneNumber</a>]
-                
-                
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>ims</td>
-            <td>
-                
-                
-                    array[<a href="#/definitions/Im">Im</a>]
-                
-                
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>photos</td>
-            <td>
-                
-                
-                    array[<a href="#/definitions/Photo">Photo</a>]
-                
-                
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>addresses</td>
-            <td>
-                
-                
-                    array[<a href="#/definitions/Address">Address</a>]
-                
-                
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>groups</td>
-            <td>
-                
-                
-                    array[<a href="#/definitions/GroupRef">GroupRef</a>]
-                
-                
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>entitlements</td>
-            <td>
-                
-                
-                    array[<a href="#/definitions/Entitlement">Entitlement</a>]
-                
-                
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>roles</td>
-            <td>
-                
-                
-                    array[<a href="#/definitions/Role">Role</a>]
-                
-                
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>x509Certificates</td>
-            <td>
-                
-                
-                    array[<a href="#/definitions/X509Certificate">X509Certificate</a>]
-                
-                
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
+    <tr>
+        <td>id</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>externalId</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>meta</td>
+        <td> <a href="#/definitions/Meta">Meta</a> </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>schemas</td>
+        <td> array[string] </td>
+        <td>required</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>userName</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>name</td>
+        <td> <a href="#/definitions/Name">Name</a> </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>displayName</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>nickName</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>profileUrl</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>title</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>userType</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>preferredLanguage</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>locale</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>timezone</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>active</td>
+        <td> boolean </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>password</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>emails</td>
+        <td> array[<a href="#/definitions/Email">Email</a>] </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>phoneNumbers</td>
+        <td> array[<a href="#/definitions/PhoneNumber">PhoneNumber</a>] </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>ims</td>
+        <td> array[<a href="#/definitions/Im">Im</a>] </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>photos</td>
+        <td> array[<a href="#/definitions/Photo">Photo</a>] </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>addresses</td>
+        <td> array[<a href="#/definitions/Address">Address</a>] </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>groups</td>
+        <td> array[<a href="#/definitions/GroupRef">GroupRef</a>] </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>entitlements</td>
+        <td> array[<a href="#/definitions/Entitlement">Entitlement</a>] </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>roles</td>
+        <td> array[<a href="#/definitions/Role">Role</a>] </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>x509Certificates</td>
+        <td> array[<a href="#/definitions/X509Certificate">X509Certificate</a>] </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
 </table>
 
 ## <a name="/definitions/X509Certificate">X509Certificate</a>
@@ -2858,87 +1725,46 @@ Delete User (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3)
         <th>description</th>
         <th>example</th>
     </tr>
-    
-        <tr>
-            <td>operation</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>value</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>display</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>primary</td>
-            <td>
-                
-                    
-                    boolean
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>type</td>
-            <td>
-                
-                    <a href="#/definitions/Type">Type</a>
-                    
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>$ref</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
+    <tr>
+        <td>operation</td>
+        <td>string</td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>value</td>
+        <td>string</td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>display</td>
+        <td>string</td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>primary</td>
+        <td>boolean</td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>type</td>
+        <td><a href="#/definitions/Type">Type</a></td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>$ref</td>
+        <td>string</td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
 </table>
-
-
-
-
