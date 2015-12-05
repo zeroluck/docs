@@ -359,15 +359,15 @@ All these methods expect the same parameters:
 - `requestParameters` is `java.util.Map<String, String[]>`
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
 
-First oxTrust executes the `initRegistration` method to do initial user
-entry update. The `preRegistration` method is called before persisting
+First oxTrust executes the `initRegistration` method to do an initial
+user entry update. The `preRegistration` method is called before storing
 the user entry in LDAP. Hence in this script it is possible to validate
 the user entry. The `postRegistration` method is called after
-successfully persisting the user entry in LDAP. In this method, for
+successfully storing the user entry in LDAP. In this method, for
 example, the script can send an e-mail or send notifications to other
 organization systems about the new user entry.
 
-All three methods should return `True` or `False`.
+All three methods should either return `True` or `False`.
 
 - [Sample User Registration Script](./sample-user-registration-script.py)
 
