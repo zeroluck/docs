@@ -1403,35 +1403,20 @@ Delete a user
         <td>-</td>
         <td></td>
     </tr>
-    
-        <tr>
-            <td>schemas</td>
-            <td>
-                
-                
-                array[string]
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>resources</td>
-            <td>
-                
-                
-                    array[<a href="#/definitions/Resource">Resource</a>]
-                
-                
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
+    <tr>
+        <td>schemas</td>
+        <td>array[string]</td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>resources</td>
+        <td>array[<a href="#/definitions/Resource">Resource</a>]</td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
 </table>
 
 ## <a name="/definitions/MemberRef">MemberRef</a>
