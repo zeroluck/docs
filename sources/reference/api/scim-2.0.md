@@ -807,48 +807,27 @@ Delete a user
         <th>description</th>
         <th>example</th>
     </tr>
-    
-        <tr>
-            <td>schemas</td>
-            <td>
-                
-                
-                array[string]
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>failOnErrors</td>
-            <td>
-                
-                    
-                    integer (int32)
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>operations</td>
-            <td>
-                
-                
-                    array[<a href="#/definitions/BulkOperation">BulkOperation</a>]
-                
-                
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
+    <tr>
+        <td>schemas</td>
+        <td> array[string] </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>failOnErrors</td>
+        <td> integer (int32) </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>operations</td>
+        <td> array[<a href="#/definitions/BulkOperation">BulkOperation</a>] </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
 </table>
 
 ## <a name="/definitions/BulkResponse">BulkResponse</a>
