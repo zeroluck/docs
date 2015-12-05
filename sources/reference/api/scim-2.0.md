@@ -1028,59 +1028,34 @@ Delete a user
         <th>description</th>
         <th>example</th>
     </tr>
-    
-        <tr>
-            <td>value</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>display</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>type</td>
-            <td>
-                
-                    <a href="#/definitions/Type">Type</a>
-                    
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>$ref</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
+    <tr>
+        <td>value</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>display</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>type</td>
+        <td> <a href="#/definitions/Type">Type</a> </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>$ref</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
 </table>
 
 ## <a name="/definitions/Im">Im</a>
