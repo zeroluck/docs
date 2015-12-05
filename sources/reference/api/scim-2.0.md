@@ -739,111 +739,62 @@ Delete a user
         <th>description</th>
         <th>example</th>
     </tr>
-    
-        <tr>
-            <td>bulkId</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>version</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>method</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>path</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>location</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>data</td>
-            <td>
-                
-                    
-                    object
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>status</td>
-            <td>
-                
-                    
-                    string
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
-        <tr>
-            <td>response</td>
-            <td>
-                
-                    
-                    object
-                
-            </td>
-            <td>optional</td>
-            <td>-</td>
-            <td></td>
-        </tr>
-    
+    <tr>
+        <td>bulkId</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>version</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>method</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>path</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>location</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>data</td>
+        <td> object </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>status</td>
+        <td> string </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>response</td>
+        <td> object </td>
+        <td>optional</td>
+        <td>-</td>
+        <td></td>
+    </tr>
 </table>
 
 ## <a name="/definitions/BulkRequest">BulkRequest</a>
