@@ -57,58 +57,72 @@ Apache2 web service:
 
 #### Dynamic Client Registration
 
-Let's consider the case of dynamic client registration first.
+Let's consider the case of dynamic client registration first. For this
+purpose we will use `dynamic.gluu.org` as the server name. Let's prepare
+the server for serving the content protected by gluuCE.
 
-For this purpose we'll name the server: `dynamic.gluu.org`.
+Create a directory named as: `dynamic` inside `/var/www/html`:
 
-Let's prepare the server for serving the content protected by gluuCE.
+```
+# mkdir /var/www/html/dynamic
+```
 
-Create a directory named as: `dynamic` inside `/var/www/html`
+Now, let's create a file named `index.html` inside the directory above.
+The file will have the following content:
 
-    # mkdir /var/www/html/dynamic
+```
+<html>
+	<title>
+	    Protected URL
+	</title>
+	<body>
+	    Nice to see the protected url via Dynamic Registration
+	</body>
+</html>
+```
 
-Now, let's create a file named `index.html` inside above directory with the following content:
+Create another directory named `metadata` in `/var/www/html` which will
+hold the metadata:
 
-    <html>
-	      <title>
-		    Protected URL
-	      </title>
-	     <body>
-		  Nice to see the protected url via Dynamic Registration
-	     </body>
-    </html>
+```
+# mkdir /var/www/html/metadata
+```
 
-Create another directory named `metadata` in `/var/www/html` which will hold the metadata.
+Now, change the ownership of the entire directory. This is **extremely
+critical** because without this step the Apache will not be able to
+write the metadata inside the directory.
 
-    # mkdir /var/www/html/metadata
+```
+# chown -R apache:apache /var/www/html
+```
 
-Now, change the ownerships. This is **extremely critical**, because without this apache won't be able to write the metadata inside the directory.
+Let's create the Apache config file now.
 
-    # chown -R apache:apache /var/www/html
+Create a file named `/etc/httpd/conf.d/dynamic.conf` with the contents
+as written below:
 
-Let's create the apache config file now.
-Create a file named `/etc/httpd/conf.d/dynamic.conf` with the contents as below:
+```
+<VirtualHost *:44443>
+    ServerName dynamic.gluu.org
+    DocumentRoot /var/www/html
 
-    <VirtualHost *:44443>
-	      ServerName dynamic.gluu.org
-	      DocumentRoot /var/www/html
+    OIDCMetadataDir	/var/www/html/metadata
+    OIDCClientSecret secret
 
-	      OIDCMetadataDir	/var/www/html/metadata
-	      OIDCClientSecret secret
-	
-	      OIDCRedirectURI https://dynamic.gluu.org:44443/dynamic/fake_redirect_uri
-	      OIDCCryptoPassphrase secret
-	      OIDCSSLValidateServer Off
-	
-	      <Location /dynamic/>
-   		  AuthType openid-connect
-   		  Require valid-user
-	      </Location>
+    OIDCRedirectURI https://dynamic.gluu.org:44443/dynamic/fake_redirect_uri
+    OIDCCryptoPassphrase secret
+    OIDCSSLValidateServer Off
 
-	      SSLEngine On
-	      SSLCertificateFile /etc/pki/tls/certs/localhost.crt
-	      SSLCertificateKeyFile /etc/pki/tls/private/localhost.key
-    </VirtualHost>
+    <Location /dynamic/>
+		AuthType openid-connect
+		Require valid-user
+	</Location>
+
+    SSLEngine On
+        SSLCertificateFile      /etc/ssl/certs/ssl-cert-snakeoil.pem
+        SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+</VirtualHost>
+```
 
 Above, I've taken the cert and key files which are pre-existing at the server.
 Feel free to use your own.
