@@ -132,14 +132,19 @@ step enable the site, and restart the Apache service as below:
 # service apache2 restart
 ```
 
-Now, try to access the page: `https://dynamic.gluu.org:44443/dynamic` and you should see the discovery page as below: You'll be presented with a discovery page, enter `admin@ce.gluu.org`
+To validate the availability if the website access the page via
+`https://dynamic.gluu.org:44443/dynamic`. As a result, you should see
+the discovery page as pictured below. Enter `admin@ce.gluu.org` to
+access the site.
+
 ![dynamic_authentication](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/mod_auth_oidc/dynamic_discovery.png)
 
+Currently, the usual choice is `admin@ce.gluu.org`. Make sure that user
+exist at the gluuCE along with an according uri such as
+`existing_user@your.gluu.ce.server`.
 
-
-The usual choice as per present used urls is: `admin@ce.gluu.org`. But you must use the existing user at the gluuCE along with existing url i.e `existing_user@your.gluu.ce.server`
-
-After this we are presented with the oxAuth page from gluuCE where we enter the credentials for authentication.
+After this we are presented with the oxAuth page from gluuCE where we
+enter the credentials for authentication.
 
 ![oxauth_authentication](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/mod_auth_oidc/oxauth_authentication.png)
 
