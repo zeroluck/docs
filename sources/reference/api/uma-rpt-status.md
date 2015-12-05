@@ -154,19 +154,17 @@ defined in OAuth Token Revocation [RFC7009].</td>
 ###### Response
 [](#)
 
-
 ###### Errors
 <table border="1">
     <tr>
         <th>Status Code</th>
         <th>Reason</th>
     </tr>
-        <tr>
-            <td>401</td>
-            <td>Unauthorized</td>
-        </tr>
+    <tr>
+        <td>401</td>
+        <td>Unauthorized</td>
+    </tr>
 </table>
-
 
 - - -
 
