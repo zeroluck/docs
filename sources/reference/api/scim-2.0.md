@@ -62,20 +62,15 @@ SCIM Bulk Operation (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-
     </tr>
 </table>
 
-
-
 #### Response
 
 **Content-Type: ** application/json, application/xml
-
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
 | 200    | successful operation | <a href="#/definitions/BulkResponse">BulkResponse</a>|
 
 - - -
-
-
 
 ## Group Endpoint
 
@@ -85,7 +80,8 @@ SCIM Bulk Operation (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-
 
 <a id="listGroups">List Users</a>
 
-Returns a list of Groups (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4)
+Returns a list of Groups
+(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4).
 
 #### Security
 
@@ -104,65 +100,39 @@ Returns a list of Groups (https://tools.ietf.org/html/draft-ietf-scim-api-19#sec
         <th>Default</th>
         <th>Schema</th>
     </tr>
-
-
-
-<tr>
-    <th>Authorization</th>
-    <td>header</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>filter</th>
-    <td>query</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>sortBy</th>
-    <td>query</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-<tr>
-    <th>sortOrder</th>
-    <td>query</td>
-    <td>no</td>
-    <td></td>
-    <td> - </td>
-
-    
-            <td>string </td>
-    
-
-</tr>
-
-
+    <tr>
+        <th>Authorization</th>
+        <td>header</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>filter</th>
+        <td>query</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>sortBy</th>
+        <td>query</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>sortOrder</th>
+        <td>query</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
 </table>
-
-
 
 #### Response
 
