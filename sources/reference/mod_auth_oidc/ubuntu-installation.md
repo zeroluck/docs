@@ -122,9 +122,12 @@ access the site.
 
 ![dynamic_discovery](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/mod_auth_oidc/dynamic_discovery.png)
 
-The usual choice as per present used urls is: `admin@ce.gluu.org`. But you must use the existing user at the gluuCE along with existing url i.e `existing_user@your.gluu.ce.server`
+Currently, the usual choice is `admin@ce.gluu.org`. Make sure that user
+exist at the gluuCE along with an according uri such as
+`existing_user@your.gluu.ce.server`.
 
-After this we are presented with the oxAuth page from gluuCE where we enter the credentials for authentication.
+After this we are presented with the oxAuth page from gluuCE where we
+enter the credentials for authentication.
 
 ![oxauth_authentication](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/mod_auth_oidc/oxauth_authentication.png)
 
