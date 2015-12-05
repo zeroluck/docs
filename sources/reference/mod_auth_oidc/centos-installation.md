@@ -1,26 +1,56 @@
 ## Installing mod_auth_oidc on Gluu Server on CentOS 6.x
 
-#### Add EPEL Repo
-`rpm -ivh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm`
+#### Add EPEL Repository
+
+First, add the EPEL repository to your list of package resources, and
+retrieve the according RPM file:
+
+```
+rpm -ivh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+```
 
 #### Setup Apache2 SSL
 
-    # yum install httpd mod_ssl
-    # yum install curl hiredis jansson
-    # rpm -ivh https://github.com/pingidentity/mod_auth_openidc/releases/download/v1.8.2/mod_auth_openidc-1.8.2-1.el6.x86_64.rpm
+Next, both install and the activate the SSL module for your web server
+such as Apache2:
 
-Confirm presence of the the mod file as below:
-    # ls -l /usr/lib64/httpd/modules/mod_auth_openidc.so 
+```
+# yum install httpd mod_ssl
+# yum install curl hiredis jansson
+# rpm -ivh https://github.com/pingidentity/mod_auth_openidc/releases/download/v1.8.2/mod_auth_openidc-1.8.2-1.el6.x86_64.rpm
+```
 
-Next, create an apache conf file for loading this module. After that start the apache service.
+We recommend you to verify the presence of the the OpenIDC module as
+below:
 
-    # cat "LoadModule auth_openidc_module modules/mod_auth_openidc.so" > /etc/httpd/conf.d/mod_auth_openidc.conf
-    # service httpd start
+```
+# ls -l /usr/lib64/httpd/modules/mod_auth_openidc.so
+```
 
-For our demonstration, we are running gluuCE at `ce.gluu.org`.
- 
-Apache mod is being run at the same server but at the `port 44443`.
-You may choose your own and make appropriate changes.
+Next, create an according Apache configuration file to use this module:
+
+```
+# echo "LoadModule auth_openidc_module modules/mod_auth_openidc.so" > /etc/httpd/conf.d/mod_auth_openidc.conf
+```
+
+Activate the OpenIDC module, and restart the Apache service, then:
+
+```
+# a2enmod auth_openidc
+# service httpd restart
+```
+
+As demonstrated here we are running gluuCE at `ce.gluu.org`. The OpenIDC
+module is being run at the same Apache server but at the port 44443 for
+SSL, and at port 8000 for non-SSL. Therefore we need to edit three
+files. The changes are done to avoid a conflict with the Gluu Server's
+Apache ports. But, if both the Gluu Server and the Apache server are
+different, then there is no need to change the ports.
+
+Change the port numbers in the files `/etc/apache2/ports.conf`,
+`/etc/apache2/sites-available/000-default.conf` and
+`/etc/apache2/sites-available/default-ssl.conf`. Then, restart the
+Apache2 web service:
 
 #### Dynamic Client Registration
 
