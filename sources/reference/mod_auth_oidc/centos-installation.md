@@ -139,8 +139,8 @@ access the site.
 
 ![dynamic_authentication](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/mod_auth_oidc/dynamic_discovery.png)
 
-Currently, the usual choice is `admin@ce.gluu.org`. Make sure that user
-exist at the gluuCE along with an according uri such as
+Currently, the usual choice is `admin@ce.gluu.org`. Make sure that the
+user exists at the gluuCE along with an according uri such as
 `existing_user@your.gluu.ce.server`.
 
 After this we are presented with the oxAuth page from gluuCE where we
