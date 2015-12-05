@@ -119,10 +119,11 @@ as written below:
 	</Location>
 
     SSLEngine On
-        SSLCertificateFile      /etc/ssl/certs/ssl-cert-snakeoil.pem
-        SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+        SSLCertificateFile    /etc/pki/tls/certs/localhost.crt
+        SSLCertificateKeyFile /etc/pki/tls/private/localhost.key
 </VirtualHost>
 ```
+
 Above, I have taken both the certificate and the key file which are
 pre-existing at the server. Feel free to use your own files. As the next
 step enable the site, and restart the Apache service as below:
@@ -161,33 +162,39 @@ Create a directory named `static` inside `the directory /var/www/html`:
 # mkdir /var/www/html/static
 ```
 
-Now, let's create a file named `index.html` inside above created directory with the following content:
+Now, create a file named `index.html` inside the directory created
+above. The file needs to have the following content:
 
-    <html>
+```
+<html>
 	<title>
 		Protected URL
 	</title>
 	<body>
 		Nice to see the protected url via Manual registration
 	</body>
-    </html>
+</html>
+```
 
-Now, change the ownerships.
+Now, change the ownership of the entire directory:
 
-    # chown -R apache:apache /var/www/html
+```
+# chown -R apache:apache /var/www/html
+```
 
-Let's create the apache config file now.
-Create a file named `/etc/httpd/conf.d/static.conf` with the contents as below:
+As the next step create the Apache configuration file named
+`/etc/httpd/conf.d/static.conf` with the contents as below:
 
-    <VirtualHost *:44443>
+```
+<VirtualHost *:44443>
 	ServerName static.gluu.org
 	DocumentRoot /var/www/html
 
 	OIDCRedirectURI https://static.gluu.org:44443/static/fake_redirect_uri
 	OIDCCryptoPassphrase newsecret
 
-	OIDCProviderMetadataURL	https://ce.gluu.org/.well-known/openid-configuration
-	OIDCClientID @!C648.9803.5565.E5CB!0001!0DB0.EEDB!0008!7728.5650
+    OIDCProviderMetadataURL	https://ce.gluu.org/.well-known/openid-configuration
+    OIDCClientID @!1962.E949.50EE.BCB7!0001!B312.DB22!0008!24F8.303C
 	OIDCClientSecret newsecret
 	OIDCResponseType id_token
 	OIDCProviderTokenEndpointAuth client_secret_basic
@@ -201,9 +208,10 @@ Create a file named `/etc/httpd/conf.d/static.conf` with the contents as below:
 	</Location>
 
 	SSLEngine On
-	SSLCertificateFile /etc/pki/tls/certs/localhost.crt
-	SSLCertificateKeyFile /etc/pki/tls/private/localhost.key
+		SSLCertificateFile /etc/pki/tls/certs/localhost.crt
+		SSLCertificateKeyFile /etc/pki/tls/private/localhost.key
     </VirtualHost>
+```
 
 Above, I've taken the cert and key files which are pre-existing at the server. Feel free to use your own.
 
