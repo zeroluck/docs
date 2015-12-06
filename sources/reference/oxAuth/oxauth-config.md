@@ -743,28 +743,32 @@ To define a certain oxAuth operation policy uri use the tag
 <op-policy-uri>http://ox.gluu.org/doku.php?id=oxauth:policy</op-policy-uri>
 ```
 
-### Uri for type-of-service operations
+### Uri For Type-of-service Operations
 
-To define a certain oxAuth type-of-service operations uri use the tag
-`op-tos-uri`. The value refers to an according type-of-service document.
+To define an uri for certain oxAuth type-of-service operations use the
+tag `op-tos-uri`. The value refers to an according type-of-service
+document.
 
 ```
 <op-tos-uri>http://ox.gluu.org/doku.php?id=oxauth:tos</op-tos-uri>
 ```
 
-### Connection behaviour
+### Connection Behaviour
 
 These tags control the behaviour of the connection:
 
 * `authorization-code-lifetime`: sets the lifetime of the authorization
   code. The default is 600 seconds.
 * `refresh-token-lifetime`: sets the interval the token is refreshed.
-  The default value is 14400 seconds that represent 6 hours.
+  The default value is 14400 seconds. This represents six hours.
 * `id-token-lifetime`: sets the lifetime of the id token. The default
-  value is 3600 seconds that represents one hour.
+  value is 3600 seconds. This represents one hour.
 * `short-lived-access-token-lifetime`: sets the short-lived access token
-  lifetime
-* `long-lived-access-token-lifetime`: sets the long-lived access token lifetime
+  lifetime.
+* `long-lived-access-token-lifetime`: sets the long-lived access token
+  lifetime.
+
+The according entries in the configuration file are as follows:
 
 ```
 <authorization-code-lifetime>600</authorization-code-lifetime>
