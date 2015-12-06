@@ -126,10 +126,10 @@ This is the according entry in the configuration file:
 <configuration-update-interval>3600</configuration-update-interval>
 ```
 
-### Supported response types
+### Supported Response Types
 
-This entry defines the various response types that are supported by the
-Gluu Server. The following combinations are possible:
+This section explains the various response types that are supported by
+the Gluu Server. The following combinations are possible:
 
 * `code`: Authorization Code Grant Type
 * `token`: Implicit Grant Type
@@ -140,7 +140,7 @@ Gluu Server. The following combinations are possible:
 * `code token id_token`: Authorization Code Grant Type, Implicit Grant Type, and ID Token
 
 To enable the desired combinations from the list above activate the
-according tag `response-type`:
+according tag `response-type` in the configuration file as shown here:
 
 ```
 <response-types-supported>
