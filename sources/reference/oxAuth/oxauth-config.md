@@ -999,7 +999,7 @@ definition allows the following tags:
 </auth-filters>
 ```
 
-### Custom LDAP client filters
+### Custom LDAP Client Filters
 
 oxAuth allows to define custom [LDAP][ldap] client filters. oxAuth uses
 them to find clients in the [LDAP][ldap] Namespace, or Directory
@@ -1017,7 +1017,8 @@ Next, you can use the previously defined authorization filters. A filter
 definition allows the following tags:
 
 * `filter`: the condition for the filter
-* `bind`: can be either `true` or `false`. If `true` oxAuth binds to the entry which is found by the filter as specified above
+* `bind`: can be either `true` or `false`. If `true` oxAuth binds to the
+  entry which is found by the filter as specified above
 * `bind-password-attribute`: the name of the password attribute
 * `base-dn`: the name of the base domain, for example `o=gluu`
 
