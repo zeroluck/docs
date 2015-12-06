@@ -845,11 +845,11 @@ are part of the list:
 <ES512-keyid>6</ES512-keyid>
 ```
 
-### Federation settings
+### Federation Settings
 
 The entry `federation-enabled` sets the value for the [Active Directory
 Federation Services (ADFS)][adfs-wikipedia] feature. `true` means
-enabled, and `false` means disabled.
+enabled, and `false` means disabled:
 
 ```
 <federation-enabled>false</federation-enabled>
@@ -860,6 +860,8 @@ interval in seconds. It checks whether data in trusts are still valid
 for example if the request parameter (RP) `redirectUri` still exists in
 metadata. If not then remove from trust automatically. The value `86400`
 represents 24 hours.
+
+The following entry corresponds to this setting:
 
 ```
 <federation-check-interval>86400</federation-check-interval>
@@ -894,12 +896,12 @@ section about default signature algorithms.
 <federation-signing-kid>1</federation-signing-kid>
 ```
 
-### Dynamic registration of custom object
+### Dynamic Registration Of Custom Object
 
 Dynamic Client Registration is configurable because some servers may not
 want to support this feature due to it opens you up to the possibility
 of a [Denial-of-service attack (DOS) attack][dos]. To enable this
-feature set the value for `dynamic-registration-enabled` to `true`,
+feature set the value for `dynamic-registration-enabled` to `true`, and
 otherwise to `false`.
 
 ```
@@ -907,16 +909,19 @@ otherwise to `false`.
 ```
 
 The expiration time for Dynamic Client Registration allows to configure
-a time in seconds for the client's account expiration, it can be set to
-zero if the client account never expires.
+a time in seconds for the client's account expiration. It can be set to
+zero if the client account never expires. The value `86400` represents
+24 hours.
+
+The following entry corresponds to this setting:
 
 ```
 <dynamic-registration-expiration-time>86400</dynamic-registration-expiration-time>
 ```
 
-Dynamic Client Registration uses an inum generator service. You can
-configure both the URL of the service under the tag `oxID`, and the
-organization inum used by this service under the tag `organization`.
+Dynamic Client Registration uses an iNum generator service. You can
+configure both the uri of the service using the tag `oxID`, and the
+organization iNum used by this service using the tag `organization`.
 
 ```
 <oxID>https://%(hostname)s/oxid/service/gluu/inum</oxID>
