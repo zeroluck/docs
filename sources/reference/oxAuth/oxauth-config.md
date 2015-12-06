@@ -962,20 +962,22 @@ Trusted clients have to be enabled, first. Set the tag
 <trusted-client-enabled>true</trusted-client-enabled>
 ```
 
-### Authorization LDAP filters
+### Authorization LDAP Filters
 
 To use authorization [LDAP][ldap] filters you have to enable them,
-first. Set the tag `auth-filters-enabled` to `true`:
+first. Set the tag `auth-filters-enabled` to `true`. The value `false`
+disables the filter.
 
 ```
-<auth-filters-enabled>false</auth-filters-enabled>
+<auth-filters-enabled>true</auth-filters-enabled>
 ```
 
 Next, you can use the previously defined authorization filters. A filter
 definition allows the following tags:
 
 * `filter`: the condition for the filter
-* `bind`: can be either `true` or `false`. If `true` oxAuth binds to the entry which is found by the filter as specified above
+* `bind`: can be either `true` or `false`. If `true` oxAuth binds to the
+  entry which is found by the filter as specified above
 * `bind-password-attribute`: the name of the password attribute
 * `base-dn`: the name of the base domain, for example `o=gluu`
 
