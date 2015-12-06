@@ -255,7 +255,7 @@ according tag `userinfo-signing-alg` in the configuration file:
 </userinfo-signing-alg-values-supported>
 ```
 
-### Supported encryption algorithms
+### Supported Encryption Algorithms
 
 Currently, the Gluu Server supports these algorithms for data encryption:
 
@@ -274,7 +274,7 @@ enabled, currently:
 * `ECDH-ES+A256KW`: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] with the "A256KW" function (rather than being used directly as the CEK).
 
 To enable the desired algorithm from the list above activate the
-according tag `userinfo-encryption-alg`:
+according tag `userinfo-encryption-alg` in the configuration file:
 
 ```
 <userinfo-encryption-alg-values-supported>
@@ -289,7 +289,7 @@ according tag `userinfo-encryption-alg`:
 </userinfo-encryption-alg-values-supported>
 ```
 
-### Supported encryption encoding values
+### Supported Encryption Encoding Values
 
 These encryption encoding values are supported:
 
