@@ -11,13 +11,13 @@ configuration entries without oxTrust. The projects are separate
 projects because in a high throughput cluster deployment, many oxAuth
 servers are needed versus a few oxTrust instances.
 
-## oxTrust.properties
+## oxTrust Properties
 
 The oxTrust has quite a few properties to control its behaviour. This
 consists of general properties, [SVN][svn]-related properties as well as
 display and authentication properties.
 
-### General properties
+### General Properties
 
 These properties control the general setup of oxTrust, and set several
 appliance-specific variables.
@@ -46,7 +46,7 @@ appliance-specific variables.
    display name of the person, and its according object class. An 
    example value is `inetOrgPerson, gluuPerson`.
 
-### SVN-related properties
+### SVN-related Properties
 
 The following properties define settings that are related to the
 revision control system [SVN][svn].
@@ -75,7 +75,7 @@ revision control system [SVN][svn].
  * __baseDN__ set the base domain name of oxTrust. The default value is
    `o=gluu`.
 
-### Attribute schema definitions
+### Attribute Schema Definitions
 
 The following properties define the schema to add various attribute
 types.
@@ -86,9 +86,9 @@ types.
 
  * __schema.add-with-attribute-types.objectClass.objectClasses__ `( %%s-oid NAME '%%s' SUP top STRUCTURAL MUST objectClass MAY ( %%s ) X-SCHEMA-FILE '100-user.ldif' X-ORIGIN 'gluu' )`
 
-### Display properties
+### Display Properties
 
-These properties refer to visual settings of oxTrust.
+These properties refer to the visual settings of oxTrust.
 
  * __photo.repository.root-dir__ sets the path to the root directory of
    photographs. The default value is `/var/photos`.
@@ -113,9 +113,9 @@ These properties refer to visual settings of oxTrust.
    images, and the logos that are in use. The default value is
    `/var/photos`.
 
-### Authentication properties 
+### Authentication Properties
 
-These properties refer to authentication settings of oxTrust.
+These properties refer to the authentication settings of oxTrust.
 
  * __gluuSP.shared.attributes__ sets the shared attributes. The default
    value is `uid, mail, sn, givenName` that refer to the attributes user
@@ -148,9 +148,11 @@ These properties refer to authentication settings of oxTrust.
  * __idp.securityKeyPassword__ holds the security key password of the
    [OpenID][openid] provider.
 
- * __idp.bindDN__ holds the domain name the [OpenID][openid] provider is bind to.
+ * __idp.bindDN__ holds the domain name the [OpenID][openid] provider is
+   bound to.
 
- * __idp.bindPassword__ holds the password the [OpenID][openid] provider is bind to.
+ * __idp.bindPassword__ holds the password the [OpenID][openid] provider 
+   is bound to.
 
  * __idp.useSSL__ enables or disables a secure connection via
    [SSL][ssl]. Use `true` to enable (default value), or `false` to disable
@@ -158,16 +160,16 @@ These properties refer to authentication settings of oxTrust.
 
  * __idp.ldap.server__ holds the name of OpenID [LDAP][ldap] server.
 
- * __mysql.url__ define the MySQL connector as uri. The default value is
+ * __mysql.url__ defines the MySQL connector as uri. The default value is
    `jdbc:mysql:///localhost` for the local machine using the JDBC driver.
 
- * __mysql.user__ define the user name for the MySQL connection. The
+ * __mysql.user__ defines the user name for the MySQL connection. The
    default value is `idp`.
 
- * __mysql.password__ define the password for the MySQL connection. The
+ * __mysql.password__ defines the password for the MySQL connection. The
    default value is empty.
 
- * __ldifStoreDir__  define the path to the [LDAP Data Interchange Format
+ * __ldifStoreDir__  defines the path to the [LDAP Data Interchange Format
    (LDIF)][ldif] store. The default value is `/var/removedldif/`.
 
  * __cacertsLocation__ holds the value
@@ -204,33 +206,33 @@ These properties refer to authentication settings of oxTrust.
  * __oxauth.token.validation.url__ defines the oxAuth uri for token
    validation.
 
- * __oxauth.checksession.url__ define the oxAuth uri to check the
+ * __oxauth.checksession.url__ defines the oxAuth uri to check the
    current session.
 
- * __oxauth.userinfo.url__ define the oxAuth uri for user information
+ * __oxauth.userinfo.url__ defines the oxAuth uri for user information
 
- * __oxauth.logout.url__ define the oxAuth uri to log out
+ * __oxauth.logout.url__ defines the oxAuth uri to log out
 
- * __oxauth.client.id__ define the id of the oxAuth client
+ * __oxauth.client.id__ defines the id of the oxAuth client
 
- * __oxauth.client.credentials__ define the credentials for the oxAuth
+ * __oxauth.client.credentials__ defines the credentials for the oxAuth
    client.
 
- * __oxauth.client.password__ define the password for the oxAuth client
+ * __oxauth.client.password__ defines the password for the oxAuth client
 
- * __oxauth.client.scope__ define the scope of the oxAuth client. The
+ * __oxauth.client.scope__ defines the scope of the oxAuth client. The
    default value is `openid+profile+address+email`.
 
-## oxTrustLdap.properties
+## oxTrustLdap Properties
 
 These are the properties oxTrust uses to connect to [LDAP][ldap]
 services:
 
- * __bindDN__ define the [LDAP][ldap] domain name to bind to
+ * __bindDN__ defines the [LDAP][ldap] domain name to bind to
 
- * __bindPassword__ define the [LDAP][ldap] password to bind to
+ * __bindPassword__ defines the [LDAP][ldap] password to bind to
 
- * __servers__ define the [LDAP][ldap] hostname, and the according
+ * __servers__ defines the [LDAP][ldap] hostname, and the according
    network port for the connection. The default value is 
    `localhost:1636` for the local machine on port `1636`.
 
@@ -241,7 +243,7 @@ services:
  * __maxconnections__ set this entry to define the maximum number of
    parallel connections. The default value is set to `3`.
 
- * __baseConfigurationDN__ define the [LDAP][ldap] domain name for base
+ * __baseConfigurationDN__ defines the [LDAP][ldap] domain name for base
    configuration
 
  * __createLdapConfigurationEntryIfNotExist__ if an [LDAP][ldap]
