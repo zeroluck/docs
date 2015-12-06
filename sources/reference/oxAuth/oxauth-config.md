@@ -310,7 +310,7 @@ activate the according tag `userinfo-encryption-enc`:
 </userinfo-encryption-enc-values-supported>
 ```
 
-### Supported ID token signing algorithms
+### Supported ID Token Signing Algorithms
 
 Currently, the Gluu Server supports these algorithms to sign an ID
 token:
@@ -342,7 +342,7 @@ activate the according tag `id-token-signing-alg`:
 </id-token-signing-alg-values-supported>
 ```
 
-### Supported ID token encryption algorithms
+### Supported ID Token Encryption Algorithms
 
 Currently, the Gluu Server supports these encryption algorithms for
 ID tokens:
@@ -361,7 +361,8 @@ enabled, currently:
 * `ECDH-ES+A256KW`: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] with the "A256KW" function (rather than being used directly as the CEK).
 
 To enable the desired token encryption algorithm from the list above
-activate the according tag `id-token-encryption-alg`:
+activate the according tag `id-token-encryption-alg` in the
+configuration file:
 
 ```
 <id-token-encryption-alg-values-supported>
@@ -377,9 +378,9 @@ activate the according tag `id-token-encryption-alg`:
 
 ```
 
-### Supported encryption encoding values for ID tokens
+### Supported Encryption Encoding Values For ID Tokens
 
-These encryption encoding values for ID tokens are supported:
+The following encryption encoding values for ID tokens are supported:
 
 * A128CBC+HS256: [AES][aes]_128_CBC_HMAC_SHA_256 authenticated encryption using a 256 bit key
 * A256CBC+HS512: [AES][aes]_256_CBC_HMAC_SHA_512 authenticated encryption using a 512 bit key
@@ -398,7 +399,7 @@ above activate the according tag `id-token-encryption-enc`:
 </id-token-encryption-enc-values-supported>
 ```
 
-### Supported request object signing algorithms
+### Supported Request Object Signing Algorithms
 
 Currently, the Gluu Server supports these algorithms to sign a request
 object:
@@ -430,7 +431,7 @@ according tag `request-object-signing-alg`:
 </request-object-signing-alg-values-supported>
 ```
 
-### Supported request object encryption algorithms
+### Supported Request Object Encryption Algorithms
 
 Currently, the Gluu Server supports these encryption algorithms for
 request objects:
@@ -464,7 +465,7 @@ activate the according tag `request-object-encryption-alg`:
 </request-object-encryption-alg-values-supported>
 ```
 
-### Supported request object encryption encoding values
+### Supported Request Object Encryption Encoding Values
 
 These encryption encoding values are supported:
 
@@ -485,7 +486,7 @@ activate the according tag `request-object-encryption-enc`:
 </request-object-encryption-enc-values-supported>
 ```
 
-### Supported token endpoint authentication methods
+### Supported Token Endpoint Authentication Methods
 
 The [OpenID Core specification][openid-core] defines a number of methods
 that are used by clients to authenticate to the authorization server
@@ -529,7 +530,7 @@ Furthermore, the [OpenID Core specification][openid-core] defines the
 method `none`. This method is used to connect without authentication,
 and is not supported by the Gluu Server, currently.
 
-### Supported token endpoint authentication signing algorithm values
+### Supported Token Endpoint Authentication Signing Algorithm Values
 
 Currently, the Gluu Server supports these signing algorithms to
 authenticate endpoints:
