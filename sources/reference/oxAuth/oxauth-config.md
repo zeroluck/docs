@@ -724,17 +724,17 @@ To enable additional parameters for uri requests, the tag
 <request-uri-parameter-supported>true</request-uri-parameter-supported>
 ```
 
-### Required request uri registration
+### Required Request Uri Registration
 
 To require a request for uri registration, the tag
 `require-request-uri-registration` has to be set to `true` before, and
-`false` otherwise.
+`false` otherwise:
 
 ```
 <require-request-uri-registration>false</require-request-uri-registration>
 ```
 
-### Uri for operation policy
+### Uri For An Operation Policy
 
 To define a certain oxAuth operation policy uri use the tag
 `op-policy-uri`. The value refers to an according policy document.
