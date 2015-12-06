@@ -202,7 +202,7 @@ feature is turned off:
 </amr-values-supported>
 ```
 
-### Supported subject identifier types
+### Supported Subject Identifier Types
 
 According to the [OpenID Core Documentation][openid-core], an identifier
 is a locally unique and never reassigned identifier within the issuer
@@ -213,6 +213,9 @@ are two possible subject identifier types available -- *public* and
 * `public`: provide the same subject value to all clients
 * `pairwise`: provide a different subject value to each client
 
+To enable these identifiers add the following lines to the configuration
+file:
+
 ```
 <subject-types-supported>
     <subject-type>public</subject-type>
@@ -220,7 +223,7 @@ are two possible subject identifier types available -- *public* and
 </subject-types-supported>
 ```
 
-### Supported algorithms a user can login with
+### Supported Algorithms An User Can Login With
 
 Currently, the Gluu Server supports these algorithms for login
 procedures:
@@ -236,7 +239,7 @@ procedures:
 * ES512: [ECDSA][ecdsa] using P-521 curve and [SHA-512][sha2] hash algorithm.
 
 To enable the desired algorithm from the list above activate the
-according tag `userinfo-signing-alg`:
+according tag `userinfo-signing-alg` in the configuration file:
 
 ```
 <userinfo-signing-alg-values-supported>
