@@ -935,7 +935,7 @@ the tag `oxOpenIDConnectVersion` like that:
 <oxOpenIDConnectVersion>openidconnect-1.0</oxOpenIDConnectVersion>
 ```
 
-Each custom object class can be registered dynamically. Set the the tag
+Each custom object class can be registered dynamically. Set the tag
 `dynamic-registration-custom-object-class` to the referenced class name.
 
 ```
@@ -943,7 +943,9 @@ Each custom object class can be registered dynamically. Set the the tag
 ```
 
 Dynamic registration allows the usage of custom attributes using the tag
-`dynamic-registration-custom-attribute`.
+`dynamic-registration-custom-attribute`. The following detail displays
+the definition of the three attributes `oxAuthTrustedClient`,
+`myCustomAttr1`, and `myCustomAttr2`.
 
 ```
 <dynamic-registration-custom-attribute-supported>
