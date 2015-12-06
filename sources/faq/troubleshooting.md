@@ -83,9 +83,11 @@
   - `/opt/tomcat/logs/oxtrust.log`
   - `/opt/tomcat/logs/oxtrust-cache-refresh.log`
 
-Contents of the snapshot directory (for instances running Cache Refresh), Apache logs (keep in mind that Gluu usually defines it's own Apache log), etc. 
+Contents of the snapshot directory (for instances running Cache
+Refresh), Apache logs (keep in mind that Gluu usually defines it's own
+Apache log), etc.
 
-Stop the service, remove/rename `wrapper.log` and restart the
+Stop the service, remove/rename the file `wrapper.log` and restart the
 application, then check the recreated file `wrapper.log` (if something
 fails to start, records telling that may appear in this log).
 
@@ -112,17 +114,23 @@ ones used by your installation):
 
 1) Login into Gluu's chroot environment with the command below:
 
-`service gluu-server login`
+```
+# service gluu-server login
+```
 
 2) Run this command:
 
-`/opt/opendj/bin/ldapsearch -p 1389 -D 'cn=directory manager' -w 'YOUR_BIND_PASSWORD' -b o=gluu gluuGroupType=gluuManagerGroup 1.1`
+```
+#/opt/opendj/bin/ldapsearch -p 1389 -D 'cn=directory manager' -w 'YOUR_BIND_PASSWORD' -b o=gluu gluuGroupType=gluuManagerGroup 1.1
+```
 
 and remember the displayed dn of the Gluu Manager Group for future use.
 
 3) Run this command:
 
-`/opt/opendj/bin/ldapsearch -p 1389 -D 'cn=directory manager' -w 'YOUR_BIND_PASSWORD' -b o=gluu ou=people 1.1`
+```
+# /opt/opendj/bin/ldapsearch -p 1389 -D 'cn=directory manager' -w 'YOUR_BIND_PASSWORD' -b o=gluu ou=people 1.1
+```
 
 and remember the displayed dn of the People ou for future use.
 
@@ -149,7 +157,9 @@ step 3).
 
 5) Run this command:
 
-`/opt/opendj/bin/ldapmodify -p 1389 -D 'cn=directory manager' -w 'YOUR_BIND_PASSWORD' -f ~/add_user.ldif`
+```
+# /opt/opendj/bin/ldapmodify -p 1389 -D 'cn=directory manager' -w 'YOUR_BIND_PASSWORD' -f ~/add_user.ldif
+```
 
 This will create new user tempadmin with attributes provided via file
 created in step 4).
@@ -172,7 +182,9 @@ specified in the 1st line of the file in step 4).
 
 7) Run this command:
 
-`/opt/opendj/bin/ldapmodify -p 1389 -D 'cn=directory manager' -w 'YOUR_BIND_PASSWORD' -f ~/add_2_group.ldif`
+```
+# /opt/opendj/bin/ldapmodify -p 1389 -D 'cn=directory manager' -w 'YOUR_BIND_PASSWORD' -f ~/add_2_group.ldif
+```
 
 This will add tempadmin user to the IdP managers group and you can then
 login and assign another user to act as admin.
