@@ -780,17 +780,17 @@ The according entries in the configuration file are as follows:
 
 These tags control the behaviour of a session:
 
-* `session-id-unused-lifetime`: if the session id is not used during some
+* `session-id-unused-lifetime`: if the session ID is not used during some
   time then it is removed, automatically. The lifetime is set in seconds,
   whereas 86400 seconds represent a single day.
 * `session-id-enabled`: this tag is either `true` or `false` and displays
-  whether a session id is enabled or not
+  whether a session ID is enabled or not.
 * `refresh-user-session-timeout-enabled`: this tag is either `true` or
   `false` and defines whether the timeout is enabled to refresh a user
   session. The default value is `true`.
 * `refresh-user-session-timeout`: defines the duration of the timeout
   after which the session is refreshed. The default value is set to 1800
-  seconds.
+  seconds. This represents 30 minutes.
 
 ```
 <session-id-unused-lifetime>86400</session-id-unused-lifetime>
