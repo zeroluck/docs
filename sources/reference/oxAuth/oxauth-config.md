@@ -114,11 +114,13 @@ The according entry in the configuration file looks like that:
 <mode>ldap</mode>
 ```
 
-### Update interval
+### Update Interval
 
 This entry sets the value for the interval the configuration is updated
 from the LDAP server. The value represents the interval in seconds
 whereas 3600 seconds represent 1 hour.
+
+This is the according entry in the configuration file:
 
 ```
 <configuration-update-interval>3600</configuration-update-interval>
