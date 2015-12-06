@@ -559,7 +559,7 @@ authenticate endpoints:
 </token-endpoint-auth-signing-alg-values-supported>
 ```
 
-### Supported OpenID display values
+### Supported OpenID Display Values
 
 According to the [OpenID Core Documentation][openid-core], the Gluu
 Server supports these OpenID display values as part of the request
@@ -575,7 +575,7 @@ parameter set:
   "feature phone" type display.
 
 As the default value, `page` is enabled, only. To activate one of the
-other display values enable the according tag.
+other display values enable the according tag in the configuration file.
 
 ```
 <display-values-supported>
