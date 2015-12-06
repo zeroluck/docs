@@ -694,31 +694,31 @@ The following entries refer to the according locales:
 </ui-locales-supported>
 ```
 
-### Supported claims parameters
+### Supported Claims Parameters
 
 To enable additional parameters for claims, the tag
 `claims-parameter-supported` has to be set to `true` before, and
-`false` otherwise.
+`false` otherwise:
 
 ```
 <claims-parameter-supported>true</claims-parameter-supported>
 ```
 
-### Supported request parameters
+### Supported Request Parameters
 
-To enable additional parameters for request, the tag
+To enable additional parameters for requests, the tag
 `request-parameter-supported` has to be set to `true` before, and
-`false` otherwise.
+`false` otherwise:
 
 ```
 <request-parameter-supported>true</request-parameter-supported>
 ```
 
-### Supported request uri parameters
+### Supported Request Uri Parameters
 
 To enable additional parameters for uri requests, the tag
 `request-uri-parameter-supported` has to be set to `true` before, and
-`false` otherwise.
+`false` otherwise:
 
 ```
 <request-uri-parameter-supported>true</request-uri-parameter-supported>
