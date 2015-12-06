@@ -8,21 +8,22 @@ sub-chapter.
 
 The general structure of the configuration file is like that:
 
-    <?xml version="1.0" encoding="UTF-8"?>
-    <configuration>
-        <appliance-inum>%(inumAppliance)s</appliance-inum>
-        ...
-
-    </configuration>
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appliance-inum>%(inumAppliance)s</appliance-inum>
+    ...
+</configuration>
+```
 
 The sections are listed according to their order in the configuration
-file as it is delivered with the original package of the Gluu server.
+file as it is delivered with the original package of the Gluu Server.
 
-### Basic settings
+### Basic Settings
 
-The basic settings describe the general setup of the Gluu Server.
+This section describes the general setup of the Gluu Server.
 
-* `appliance-inum`: the [iNum code][inum] the appliances refer to
+* `appliance-inum`: the [iNum code][inum] the appliances refers to
 * `issuer`: the according hostname, or specific uri of the issuer
 * `login-page`: the login page for the according hostname, or uri
 * `authorization-page`: the oxAuth authorization page
