@@ -666,7 +666,7 @@ These languages are enabled by default:
 </claims-locales-supported>
 ```
 
-### Supported locales for user interfaces
+### Supported Locales For User Interfaces
 
 Currently, these languages are supported for claims as part of user
 interfaces:
@@ -678,8 +678,10 @@ These languages are not enabled, yet:
 
 * `en-GB`: British English
 * `en-CA`: Canadian English
-* `fr-FR`: French 
+* `fr-FR`: French
 * `fr-CA`: Canadian French
+
+The following entries refer to the according locales:
 
 ```
 <ui-locales-supported>
