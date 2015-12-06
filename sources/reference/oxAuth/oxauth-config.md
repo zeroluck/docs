@@ -633,7 +633,7 @@ These are the according entries in the configuration file:
 </claims-supported>
 ```
 
-### Service documentation
+### Service Documentation
 
 This entry keeps the path to the service documentation of the Gluu
 Server.
@@ -642,19 +642,19 @@ Server.
 <service-documentation>http://gluu.org/docs</service-documentation>
 ```
 
-### Supported locales for claims
+### Supported Locales For Claims
 
 Currently, the Gluu Server supports these languages for claims:
 
-* en: English
-* en-GB: British English
-* en-CA: Canadian English
-* fr-FR: French 
-* fr-CA: Canadian French
+* `en`: English
+* `en-GB`: British English
+* `en-CA`: Canadian English
+* `fr-FR`: French
+* `fr-CA`: Canadian French
 
 These languages are enabled by default:
 
-* en: English
+* `en`: English
 
 ```
 <claims-locales-supported>
