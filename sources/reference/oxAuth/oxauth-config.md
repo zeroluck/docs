@@ -97,15 +97,17 @@ The according entry in the configuration file looks like that:
 <uma-configuration-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/uma-configuration</uma-configuration-endpoint>
 ```
 
-### Server mode
+### Server Mode
 
 This entry sets the mode of the Gluu oxAuth Server. Possible modes are
 `memory` and `ldap`.
 
-* memory: run the oxAuth server in `in-memory` mode.
+* `memory`: run the Gluu oxAuth Server in `in-memory` mode.
 
-* ldap: run the oxAuth server in `ldap` mode. This is required to work
-  in cluster, and this is the default setting.
+* `ldap`: run the Gluu oxAuth Server in `ldap` mode. This is required to
+  work in cluster, and this is the default setting.
+
+The according entry in the configuration file looks like that:
 
 ```
 <mode>ldap</mode>
