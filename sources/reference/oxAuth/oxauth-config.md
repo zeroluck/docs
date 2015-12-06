@@ -154,7 +154,7 @@ according tag `response-type` in the configuration file as shown here:
 </response-types-supported>
 ```
 
-### Supported grant types
+### Supported Grant Types
 
 These grant types are supported:
 
@@ -172,6 +172,8 @@ These grant types are supported:
   Web Token (JWT)][ietf-jwk] Profile for [OAuth 2.0][oauth2] Client
   Authentication and Authorization Grants as described in the according
   [IETF document][ietf-jwk].
+
+This is the according entry in the configuration file:
 
 ```
 <grant-types-supported>
@@ -191,7 +193,8 @@ are identifiers for authentication methods used in the authentication
 procedure. In this specific case, AMR enables an [OpenID][openid]
 Connect client to request a specific method of authentication. 
 
-By default, this feature is turned off.
+This is the according entry in the configuration file. By default, this
+feature is turned off:
 
 ```
 <amr-values-supported>
