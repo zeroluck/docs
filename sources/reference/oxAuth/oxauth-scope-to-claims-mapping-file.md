@@ -1,5 +1,5 @@
 
-## Scope to claims mapping file
+## Scope To Claims Mapping File
 
 This file does a mapping between the scopes and the different claims
 that are used by the Gluu Server. The mapping has a [JSON][json]
