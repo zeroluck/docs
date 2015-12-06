@@ -792,6 +792,9 @@ These tags control the behaviour of a session:
   after which the session is refreshed. The default value is set to 1800
   seconds. This represents 30 minutes.
 
+The following entries in the configuration file correspond to the tags
+described before:
+
 ```
 <session-id-unused-lifetime>86400</session-id-unused-lifetime>
 <session-id-enabled>true</session-id-enabled>
@@ -819,10 +822,10 @@ value is 600 seconds:
 <clean-service-interval>600</clean-service-interval>
 ```
 
-### Default signature algorithms
+### Default Signature Algorithms
 
 These entries define the default signature algorithm, and list the key
-ids for the other signature algorithms that are available. These values
+IDs for the other signature algorithms that are available. These values
 are part of the list:
 
 * RS256: [RSASSA-PKCS-v1_5][rsassa] using [SHA-256][sha2] hash algorithm.
