@@ -55,10 +55,12 @@ endpoints the Gluu Server communicates with:
 * `validate-token-endpoint`: the remote station to validate authorization tokens
 * `federation-metadata-endpoint`: the remote station for [Active Directory Federation Services (ADFS)][adfs-wikipedia] metadata
 * `federation-endpoint`: the remote station for using the [Active Directory Federation Services (ADFS)][adfs-wikipedia]
-* `openid-discovery-endpoint`: the remote station for the [OpenID][openid] Discovery service 
+* `openid-discovery-endpoint`: the remote station for the [OpenID][openid] Discovery service
 * `openid-configuration-endpoint`: the remote station for the [OpenID][openid] configuration
 * `id-generation-endpoint`: the remote station to generate the ID
 * `introspection-endpoint`: the remote station for further introspection
+
+The configuration file has the following content:
 
 ```
 <base-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1</base-endpoint>
@@ -88,6 +90,8 @@ to [OpenID][openid] Connect. UMA defines [REST][rest]ful,
 management. Use this tag to configure the according endpoint:
 
 * `uma-configuration-endpoint`: uri that defines the endpoint
+
+The according entry in the configuration file looks like that:
 
 ```
 <uma-configuration-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/uma-configuration</uma-configuration-endpoint>
