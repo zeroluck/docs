@@ -586,23 +586,23 @@ other display values enable the according tag in the configuration file.
 </display-values-supported>
 ```
 
-### Supported OpenID claim types
+### Supported OpenID Claim Types
 
 According to the [OpenID Core Documentation][openid-core], the Gluu
 Server supports the claims `normal` and `distributed`:
 
 * `normal`: these claims are directly asserted by the OpenID provider. A
   claim dataset is represented as a [JSON][json] object. See the following
-  section "Supported OpenID Claims" for a detailed list of values.
+  section "Supported OpenID Claims" for a detailed list of possible values.
 * `distributed`: these claims are asserted by a claims provider other
   than the OpenID provider but are returned as references by the OpenID
   provider. The claim dataset is represented by using special
   `_claim_names` and `_claim_sources` members of the [JSON][json] object
   containing the claims.
 
-Currently, the claim type `aggregated` is not supported. To activate a
-certain claim type enable the according tag in the configuration file as
-follows:
+Currently, the claim type `aggregated` is not supported by the Gluu
+Server. To activate a certain claim type enable the according tag in the
+configuration file as follows:
 
 ```
 <claim-types-supported>
@@ -611,7 +611,7 @@ follows:
 </claim-types-supported>
 ```
 
-### Supported OpenID claims
+### Supported OpenID Claims
 
 The Gluu Server supports these values for claims:
 
@@ -620,6 +620,8 @@ The Gluu Server supports these values for claims:
 * `givenName`: a previously given user name
 * `sn`: the family name of the user. This feature has not been tested yet.
 * `mail`: a stored email address for this user
+
+These are the according entries in the configuration file:
 
 ```
 <claims-supported>
