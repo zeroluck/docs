@@ -5,7 +5,6 @@ Server. It is broken down into the following sections:
 
 - [Overview](#overview)
 - [Deployment](#deployment)
-- [Dashboard](#dashboard)
 - [Identity Management](#identity-management)
 - [Single Sign-on](#single-sign-on-sso)
 - [Person Authentication](#person-authentication)
@@ -73,11 +72,6 @@ environments, like development, QA and production.
 
 To learn more about the cluster project, [read our
 documentation](http://gluu.org/docs-cluster).
-
-## Dashboard
-The Gluu Server dashboard shows you metrics on the health and activity
-of your server(s). It also enables you to view logs, and to manage other
-common Gluu Server administration tasks.
 
 ## Identity Management
 
