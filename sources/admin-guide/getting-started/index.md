@@ -62,9 +62,7 @@ Servers consisting of two locations--for example, let's say you have one
 server on Amazon, and one server on Rackspace. For the first location,
 you'd use the "master" package, which is free. For the second location,
 you'd need to purchase the ecommerce license. This license does not
-include support. The [Cluster Support](http://gluu.org/pricing) package
-is highly recommended and includes one commercial license for up to two
-locations.
+include support. At the miminum, we would recommend purchasing a [Basic Support](http://gluu.org/pricing) contract with your cluster license.
 2. **Premium:** The premium cluster license includes three licenses for
 clusters of up to five locations. The premium license is included with
 [Premium Support](http://gluu.org/pricing).
