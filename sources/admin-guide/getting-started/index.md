@@ -6,9 +6,9 @@ Server. It is broken down into the following sections:
 - [Overview](#overview)
 - [Deployment](#deployment)
 - [Dashboard](#dashboard)
-- [Person Authentication](#person-authentication)
 - [Identity Management](#identity-management)
 - [Single Sign-on](#single-sign-on-sso)
+- [Person Authentication](#person-authentication)
 - [Web & API Access Management](#web--api-access-management)
 
 ## Overview
@@ -81,32 +81,6 @@ The Gluu Server dashboard shows you metrics on the health and activity
 of your server(s). It also enables you to view logs, and to manage other
 common Gluu Server administration tasks.
 
-## Person Authentication
-Correctly identifying people--authentication--is fundamental to web and
-mobile security. Using the oxTrust web User Interface (UI), you can
-configure built-in or custom business logic for authentication.
-
-#### Basic Authentication
-Passwords do not mitigate a lot of risk, but for many organizations, it
-is still the place to start. With the Gluu Server you can use either an
-existing LDAP V3 repository like Active Directory, or you can use the
-embedded Gluu Server OpenDJ server to store passwords. `Basic` is the
-[default](../configuration/index.md#manage-authentication)
-authentication mechanism shipped with every Gluu Server.
-
-#### Custom Authentication
-`Custom Authentication` enables an organization to utilize [interception
-scripts](../../reference/interception-scripts/index.md#overview) to
-achieve advanced levels of authentication. Using authentication
-interception scripts, your organization can call third-party APIs to
-enable multi-factor authentication (MFA), intrusion detection systems,
-or make use of multiple backend servers for authentication.
-
-The Gluu Server currently ships with support for the FIDO U2F standard.
-Instructions for adding additional strong authentication mechanisms can
-be found
-[here](../../reference/interception-scripts/index.md#authentication).
-
 ## Identity Management
 
 To keep the Gluu Server up-to-date with the latest user information
@@ -134,6 +108,32 @@ Here are a couple of how-to's for creating SSO to popular applications:
 
 - [Using SAML to get SSO with Google Apps](../../articles/google-saml.md)
 - [Using SAML to get SSO with Salesforce.com](../../articles/salesforce-sso.md)
+
+## Person Authentication
+Correctly identifying people--authentication--is fundamental to web and
+mobile security. Using the oxTrust web User Interface (UI), you can
+configure built-in or custom business logic for authentication.
+
+#### Basic Authentication
+Passwords do not mitigate a lot of risk, but for many organizations, it
+is still the place to start. With the Gluu Server you can use either an
+existing LDAP V3 repository like Active Directory, or you can use the
+embedded Gluu Server OpenDJ server to store passwords. `Basic` is the
+[default](../configuration/index.md#manage-authentication)
+authentication mechanism shipped with every Gluu Server.
+
+#### Custom Authentication
+`Custom Authentication` enables an organization to utilize [interception
+scripts](../../reference/interception-scripts/index.md#overview) to
+achieve advanced levels of authentication. Using authentication
+interception scripts, your organization can call third-party APIs to
+enable multi-factor authentication (MFA), intrusion detection systems,
+or make use of multiple backend servers for authentication.
+
+The Gluu Server currently ships with support for the FIDO U2F standard.
+Instructions for adding additional strong authentication mechanisms can
+be found
+[here](../../reference/interception-scripts/index.md#authentication).
 
 ## Web & API Access Management
 The Gluu Server includes an [UMA Authorization Server
