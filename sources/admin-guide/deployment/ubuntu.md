@@ -8,6 +8,7 @@ The Gluu Server Community Edition should be deployed on a VM with:
 * Ubuntu Server 14.04.2 (Trusty Tahr)
 * 2 CPU units 
 * At least 4GB of RAM (more is always better, though)
+* 40 GB disk space
 
 ## Available Components
 
