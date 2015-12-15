@@ -24,7 +24,9 @@ or register for an account on
 The Gluu Server Community Edition should be deployed on a VM with:
 
 * RHEL 6.5
-* 2 cpu units and at least 4GB of physical memory (more is always better, though)
+* 2 cpu units
+* At least 4GB of physical memory (more is always better, though)
+* 40 GB disk space
 
 ## Available Components
 
