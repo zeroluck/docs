@@ -31,7 +31,7 @@ access management requirements. Depending on the size of your data, and
 the number of concurrent transactions you want to support, you may need
 more or less memory or CPU capacity.
 
-## Community Edition
+### Community Edition
 
 If you are running all the Gluu Server services on one
 server (i.e. SAML, OAuth2, LDAP), you will need at least: 
@@ -42,7 +42,7 @@ server (i.e. SAML, OAuth2, LDAP), you will need at least:
 Not enough memory may produce some really weird bugs. From there, you may need to adjust the resources based on the
 requirements.
 
-## Enterprise Edition (for clusters)
+### Enterprise Edition (for clusters)
 
 - 2 CPU Units
 - 8 GB of RAM
