@@ -39,7 +39,7 @@ Gluu Server together, it would take you a long time.
 [View the Gluu Server deployment guide](../deployment/index.md)
 
 #### Deployment Models:
-**Single Server:** You can find deployment instructions for a single
+**Community Edition:** You can find deployment instructions for a single
 instance of the Gluu Server by following one of the links above for your
 preferred operating system. All single server deployments of the Gluu
 Server can be deployed in production with an unlimited number of users
@@ -48,22 +48,22 @@ forum](http://support.gluu.org), or you can purchase [Basic
 Support](http://gluu.org/pricing) to open private tickets and enlist
 security and support consultations with Gluu engineers.
 
-**Clusters:** Development of our new cluster packages are ongoing. The
-packages **are not ready** for deployments in the wild. While
+**Enterprise Edition:** Development of our new cluster packages are ongoing. The
+packages are now ready for deployments in the wild. While
 development is finished, we recommend getting familiar with a [single
 server deployment](../deployment/index.md). Gluu Clusters will require a
 commercial license for environments that have more than one location.
 
 We anticipate three license offerings:
 
-1. **Ecommerce:** This license will enable you to run a cluster of Gluu
+1. **A la carte:** This license will enable you to run a cluster of Gluu
 Servers consisting of two locations--for example, let's say you have one
 server on Amazon, and one server on Rackspace. For the first location,
 you'd use the "master" package, which is free. For the second location,
-you'd need to purchase the ecommerce license. This license does not
+you'd need to purchase the a la carte license. This license does not
 include support. At the miminum, we would recommend purchasing a [Basic Support](http://gluu.org/pricing) contract with your cluster license.
-2. **Premium:** The premium cluster license includes three licenses for
-clusters of up to five locations. The premium license is included with
+2. **Premium:** The premium subscription includes licenses for
+three clustered environemnts, e.g. Production, Development, and QA. The subscription also includes
 [Premium Support](http://gluu.org/pricing).
 3. **Enterprise:** The enterprise cluster license includes a site
 license for unlimited cluster deployments. It makes license management
