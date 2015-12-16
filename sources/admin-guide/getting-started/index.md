@@ -29,9 +29,9 @@ license. You will read more about that topic below in section
 
 ## Deployment
 The Gluu Server can be deployed on any physical or virtual server. Both
-distributions of the Gluu Server--Community Edition and Cluster--are
-distributed as containers. Community edition uses `chroot` containers,
-while the Cluster Edition uses `docker` containers. Container
+distributions of the Gluu Server--Community Edition and Enterprise Edition--are
+distributed as containers. Community Edition uses `chroot` containers,
+while the Enterprise Edition uses `docker` containers. Container
 distribution enables Gluu to make sure that all the pieces are working
 together. If you actually had to integrate all the components of the
 Gluu Server together, it would take you a long time.
@@ -39,22 +39,16 @@ Gluu Server together, it would take you a long time.
 [View the Gluu Server deployment guide](../deployment/index.md)
 
 #### Deployment Models:
-**Community Edition:** You can find deployment instructions for a single
-instance of the Gluu Server by following one of the links above for your
-preferred operating system. All single server deployments of the Gluu
+**Community Edition:** All single server deployments of the Gluu
 Server can be deployed in production with an unlimited number of users
 for free. Community support is available on our [public
 forum](http://support.gluu.org), or you can purchase [Basic
 Support](http://gluu.org/pricing) to open private tickets and enlist
 security and support consultations with Gluu engineers.
 
-**Enterprise Edition:** Development of our new cluster packages are ongoing. The
-packages are now ready for deployments in the wild. While
-development is finished, we recommend getting familiar with a [single
-server deployment](../deployment/index.md). Gluu Clusters will require a
-commercial license for environments that have more than one location.
+**Enterprise Edition:** Gluu Enterprise Edition promises scalability, reliability and a fail-over mechanism through its innovative design implemented using Docker. The cluster server can also call a DOS service, like DOSarrest, enabling protection from distributed denial of service attacks. Enteprise Edition introduces additional operational complexities. We recommend getting familiar with [Community Edition](../deployment/index.md) before making the lead to Enterprise Edition. 
 
-We anticipate three license offerings:
+The Gluu Server Cluster is divided into two packages identified as "master" and "consumer". The "master" package is offered free and the "consumer" package requires a commercial license. We currently have three Enterprise Edition license offerings:
 
 1. **A la carte:** This license will enable you to run a cluster of Gluu
 Servers consisting of two locations--for example, let's say you have one
