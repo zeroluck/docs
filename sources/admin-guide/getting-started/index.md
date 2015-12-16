@@ -46,7 +46,7 @@ forum](http://support.gluu.org), or you can purchase [Basic
 Support](http://gluu.org/pricing) to open private tickets and enlist
 security and support consultations with Gluu engineers.
 
-**Enterprise Edition:** Gluu Enterprise Edition promises scalability, reliability and a fail-over mechanism through its innovative design implemented using Docker. The cluster server can also call a DOS service, like DOSarrest, enabling protection from distributed denial of service attacks. Enteprise Edition introduces additional operational complexities. We recommend getting familiar with [Community Edition](../deployment/index.md) before making the lead to Enterprise Edition. 
+**Enterprise Edition:** Gluu Enterprise Edition promises scalability, reliability and a fail-over mechanism through its innovative design implemented using Docker. The cluster server can also call a DOS service, like DOSarrest, enabling protection from distributed denial of service attacks. Because the Enteprise Edition introduces new operational complexities, we recommend getting familiar with [Community Edition](../deployment/index.md) before making the leap to Enterprise Edition. 
 
 The Gluu Server Cluster is divided into two packages identified as "master" and "consumer". The "master" package is offered free and the "consumer" package requires a commercial license. We currently have three Enterprise Edition license offerings:
 
