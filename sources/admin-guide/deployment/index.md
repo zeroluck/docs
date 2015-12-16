@@ -1,11 +1,14 @@
 # Supported Operating Systems
-
 We currently publish packages for the following **64-bit** operating
 systems:
 
+### Community Edition 
 - [Centos](./centos.md)
 - [Ubuntu](./ubuntu.md)
 - [RHEL](./rhel.md)
+
+### Enterprise Edition
+- [Ubuntu](http://www.gluu.org/docs-cluster/admin-guide/installation/)
 
 *Note:* 32-bit operating systems are **not** supported.
 
