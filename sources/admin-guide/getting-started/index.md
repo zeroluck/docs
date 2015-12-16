@@ -64,7 +64,7 @@ license for unlimited cluster deployments. It makes license management
 really easy because you can use the same license for all your
 environments, like development, QA and production.
 
-To learn more about the cluster project, [read our
+To learn more about Enterprise Edition, [read our
 documentation](http://gluu.org/docs-cluster).
 
 ## Identity Management
