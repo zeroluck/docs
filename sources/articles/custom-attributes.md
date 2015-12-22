@@ -23,9 +23,9 @@ exists for your attribute, it is considered to be "registered".
 
 ## Register Attribute in the Gluu Server
 
-There are two ways you can register an attribute. The most user-frendly and straightforward way is to create your custom attributes one by one using oxTrust web UI. It will readily updates LDAP schema for you, and then will register your new attribute's metadata. Unless you need to create a huge amount of entries, or have very specific requierments, this method is strictly recommended and should be able to provide most of your everyday needs.
+There are two ways you can register an attribute. The most user-frendly and straightforward way is to create your custom attributes one by one using oxTrust web UI. It will readily update LDAP schema for you, and then will register your new attribute's metadata. Unless you need to create a huge amount of entries, or have very specific requirements that can't be met this way, that method is strictly recommended and should be able to provide most of your everyday needs.
 But if you are an LDAP geek, or just sure that previous method can't be used in your case, your next option is to edit LDAP directory used by Gluu directly. Of course you could just create an LDIF file with the correct information, and
-load it in the LDAP server that is storing your configuration. If you want to quickly spool up new Gluu Servers, this is probably the quickest way to handle it. 
+load it in the LDAP server that is storing your configuration. If you want to quickly spool up new Gluu Servers, this is probably the most rational way to handle it. An exemplatory metadata definition you could put in an ldif file and then feed it to ldapmodify tool:
 
     dn: inum=@!1111!0005!2B29,ou=attributes,o=@!1111,o=gluu
     objectClass: top
