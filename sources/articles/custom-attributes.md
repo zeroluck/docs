@@ -15,7 +15,7 @@ has requirements for "acmeCustNumber" and "acmeStateLicenseNumber".
 
 ## Attributes' metadata
 
-Simply modifying your LDAP schema (more on it below) isn't enough for the Gluu Server to become able to use your newly added attributes right away. It needs to know which of those attributes will be available for its workflows (and which exactly workflows). Each attribute that you want to make available must have a corresponding LDAP
+Simply modifying your LDAP schema (more on it below) isn't enough for the Gluu Server to become able to use your newly added attributes right away. It needs to know which of these attributes will be available for its workflows (and for which exactly workflows). Each attribute that you want to make available must have a corresponding LDAP
 entry under `ou=attributes,o=<org-inum>,o=gluu`, also called attribute's metadata. If you browse your LDAP
 server after performing a Gluu Server base installation, you will see
 that many commonly used attributes are already there. When an LDAP entry
@@ -23,11 +23,9 @@ exists for your attribute, it is considered to be "registered".
 
 ## Register Attribute in the Gluu Server
 
-There are two ways you can register an attribute. The most user-frendly and straightforward way is to create your custom attributes one by one using oxTrust web UI. Unless you need to create a huge amount of entries, or have very specific requierments, this method is strictly recommended and should be able to provide most of your everyday needs.
-But if you are an LDAP geek, or just sure that previous method can't be used in your case, your next option is to edit LDAP directory used by Gluu directly. You can just create an LDIF file with the correct information, and
-load it in the LDAP server that is storing your configuration. If you
-want to quickly spool up new Gluu Servers, this is probably the quickest
-way to handle it.
+There are two ways you can register an attribute. The most user-frendly and straightforward way is to create your custom attributes one by one using oxTrust web UI. It will readily updates LDAP schema for you, and then will register your new attribute's metadata. Unless you need to create a huge amount of entries, or have very specific requierments, this method is strictly recommended and should be able to provide most of your everyday needs.
+But if you are an LDAP geek, or just sure that previous method can't be used in your case, your next option is to edit LDAP directory used by Gluu directly. Of course you could just create an LDIF file with the correct information, and
+load it in the LDAP server that is storing your configuration. If you want to quickly spool up new Gluu Servers, this is probably the quickest way to handle it. 
 
     dn: inum=@!1111!0005!2B29,ou=attributes,o=@!1111,o=gluu
     objectClass: top
