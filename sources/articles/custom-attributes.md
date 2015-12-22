@@ -43,6 +43,14 @@ load it in the LDAP server that is storing your configuration. If you want to qu
     gluuAttributeViewType: user
     gluuAttributeViewType: admin
 
+If you are not yet familiar with schema and objectclasses used by Gluu, you can use a couple of tricks to acquire examplanary configurations you could build upon:
+1. Use web UI of your standalon CE instance to create all attributes you need. When oxTrust will be modifying schema to add your new attributes to it, it put all these new schema entries into /opt/opendj/config/schema/100-user.ldif You then should move them to a newly created file (let's call it 103-mynewattrs.ldif) and use them as examples to add your additional schema definitions by hand to that new file
+2. Now your main concern will be the attributes' metadata. oxTrust will be creating its entries under "ou=attributes,o=your_inum,o=gluu" branch in internal LDAP directory. You may use prefix like "myorgattrs-" in names of all attributes you will be creating with web UI on step 1), so you could use a filter like (gluuAttributeName=myorgattrs-*) to make exporting task easier later on. Using those as examples you will be able to easily create metadata entries for each of attributes you added to schema on step 1. 
+3. Move your custom schema file (103-pletter.ldif) to your cluster instance. A quote from the cluster [management docs](http://www.gluu.org/docs-cluster/admin-guide/cluster-management/#ldap-node_1): "Starting from v0.4.0, ldap node has support for custom schema. To deploy custom schema, put the desired schema in .ldif file under /var/lib/gluu-cluster/custom/opendj/schema/. For example, we can create /var/lib/gluu-cluster/custom/opendj/schema/102-customSchema.ldif for our custom schema. This file will be added to ldap node located at /opt/opendj/config/schema/102-customSchema.ldif."
+
+
+
+
 If you just have a couple of attributes, you can also use the oxTrust
 Web interface to add the attributes. See the screenshot below, and refer
 to the oxTrust
@@ -87,22 +95,10 @@ person identifier in the domain (i.e. for Google, this would be your Google id).
 However, rules were meant to be broken, so if you have a reason to release
 a scope by default, go for it!
 
-## oxAuth Discovery configuration
+## OpenID Discovery configuration
 
-Discovery enables clients to discover which attributes are available at an
-OpenID Provider. Ideally, this would be controlled also from oxTrust and this
-information would be persisted in the attribute LDAP data. At some point this
-will happen (see [Jira issue](http://ox.gluu.org/jira/browse/OXTRUST-169)). But 
-in the meantime, this is controlled by oxauth.xml. So if you want to publish 
-that a claim is available, you'll need to update this section:
+[OpenID Discovery](http://openid.net/specs/openid-connect-discovery-1_0.html) protocol enables RP to discover a most suitable OP for the user in question, and acquire its metadata that may help to correctly compose subsequent requests to it. This metadata serves as ultimate source of information about OP's capabilities, including which attributes are available as claims at the OP, which scopes they are grouped into, is it possible to request them as a separate claim, and a much more. To access it you can follow url of type [https://your.gluuidp.host.name/.well-known/openid-configuration](https://your.gluuidp.host.name/.well-known/openid-configuration). In the latest versions of Gluu IdP package this setting is now can be controlled from the web UI. 
 
-    <claims-supported>
-        <claim>uid</claim>
-        <claim>givenName</claim>
-        <claim>sn</claim>
-        <claim>displayName</claim>
-        <claim>mail</claim>
-    </claims-supported>
 
 ## Letting the world know about your custom schema
 
