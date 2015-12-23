@@ -13,7 +13,7 @@ The Gluu Server EE is functionally equivalent to CE, but each component is packa
 
 - [Ubuntu](http://www.gluu.org/docs-cluster/admin-guide/installation/)
 
-*Note:* 32-bit operating systems are **not supported** for any distribution of the Gluu Server.
+*Note:* 32-bit operating systems are **not supported** for any Gluu Server distributions.
 
 # Hardware Requirements
 
