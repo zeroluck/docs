@@ -10,7 +10,7 @@ systems:
 ### Enterprise Edition
 - [Ubuntu](http://www.gluu.org/docs-cluster/admin-guide/installation/)
 
-*Note:* 32-bit operating systems are **not** supported.
+*Note:* 32-bit operating systems are **not supported** for any distribution of the Gluu Server.
 
 # Hardware Requirements
 
