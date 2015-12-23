@@ -8,21 +8,22 @@ sub-chapter.
 
 The general structure of the configuration file is like that:
 
-    <?xml version="1.0" encoding="UTF-8"?>
-    <configuration>
-        <appliance-inum>%(inumAppliance)s</appliance-inum>
-        ...
-
-    </configuration>
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appliance-inum>%(inumAppliance)s</appliance-inum>
+    ...
+</configuration>
+```
 
 The sections are listed according to their order in the configuration
-file as it is delivered with the original package of the Gluu server.
+file as it is delivered with the original package of the Gluu Server.
 
-### Basic settings
+### Basic Settings
 
-The basic settings describe the general setup of the Gluu Server.
+This section describes the general setup of the Gluu Server.
 
-* `appliance-inum`: the [iNum code][inum] the appliances refer to
+* `appliance-inum`: the [iNum code][inum] the appliances refers to
 * `issuer`: the according hostname, or specific uri of the issuer
 * `login-page`: the login page for the according hostname, or uri
 * `authorization-page`: the oxAuth authorization page
@@ -54,10 +55,12 @@ endpoints the Gluu Server communicates with:
 * `validate-token-endpoint`: the remote station to validate authorization tokens
 * `federation-metadata-endpoint`: the remote station for [Active Directory Federation Services (ADFS)][adfs-wikipedia] metadata
 * `federation-endpoint`: the remote station for using the [Active Directory Federation Services (ADFS)][adfs-wikipedia]
-* `openid-discovery-endpoint`: the remote station for the [OpenID][openid] Discovery service 
+* `openid-discovery-endpoint`: the remote station for the [OpenID][openid] Discovery service
 * `openid-configuration-endpoint`: the remote station for the [OpenID][openid] configuration
 * `id-generation-endpoint`: the remote station to generate the ID
 * `introspection-endpoint`: the remote station for further introspection
+
+The configuration file has the following content:
 
 ```
 <base-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1</base-endpoint>
@@ -88,38 +91,45 @@ management. Use this tag to configure the according endpoint:
 
 * `uma-configuration-endpoint`: uri that defines the endpoint
 
+The according entry in the configuration file looks like that:
+
 ```
 <uma-configuration-endpoint>https://%(hostname)s/oxauth/seam/resource/restv1/oxauth/uma-configuration</uma-configuration-endpoint>
 ```
 
-### Server mode
+### Server Mode
 
 This entry sets the mode of the Gluu oxAuth Server. Possible modes are
 `memory` and `ldap`.
 
-* memory: run the oxAuth server in `in-memory` mode.
+* `memory`: run the Gluu oxAuth Server in `in-memory` mode.
 
-* ldap: run the oxAuth server in `ldap` mode. This is required to work
-  in cluster, and this is the default setting.
+* `ldap`: run the Gluu oxAuth Server in `ldap` mode, and use
+  authorization information that is stored in an LDAP directory. This 
+  mode is required to work in cluster, and this is the default setting.
+
+The according entry in the configuration file looks like that:
 
 ```
 <mode>ldap</mode>
 ```
 
-### Update interval
+### Update Interval
 
 This entry sets the value for the interval the configuration is updated
 from the LDAP server. The value represents the interval in seconds
 whereas 3600 seconds represent 1 hour.
 
+This is the according entry in the configuration file:
+
 ```
 <configuration-update-interval>3600</configuration-update-interval>
 ```
 
-### Supported response types
+### Supported Response Types
 
-This entry defines the various response types that are supported by the
-Gluu Server. The following combinations are possible:
+This section explains the various response types that are supported by
+the Gluu Server. The following combinations are possible:
 
 * `code`: Authorization Code Grant Type
 * `token`: Implicit Grant Type
@@ -130,7 +140,7 @@ Gluu Server. The following combinations are possible:
 * `code token id_token`: Authorization Code Grant Type, Implicit Grant Type, and ID Token
 
 To enable the desired combinations from the list above activate the
-according tag `response-type`:
+according tag `response-type` in the configuration file as shown here:
 
 ```
 <response-types-supported>
@@ -144,7 +154,7 @@ according tag `response-type`:
 </response-types-supported>
 ```
 
-### Supported grant types
+### Supported Grant Types
 
 These grant types are supported:
 
@@ -162,6 +172,8 @@ These grant types are supported:
   Web Token (JWT)][ietf-jwk] Profile for [OAuth 2.0][oauth2] Client
   Authentication and Authorization Grants as described in the according
   [IETF document][ietf-jwk].
+
+This is the according entry in the configuration file:
 
 ```
 <grant-types-supported>
@@ -181,7 +193,8 @@ are identifiers for authentication methods used in the authentication
 procedure. In this specific case, AMR enables an [OpenID][openid]
 Connect client to request a specific method of authentication. 
 
-By default, this feature is turned off.
+This is the according entry in the configuration file. By default, this
+feature is turned off:
 
 ```
 <amr-values-supported>
@@ -189,7 +202,7 @@ By default, this feature is turned off.
 </amr-values-supported>
 ```
 
-### Supported subject identifier types
+### Supported Subject Identifier Types
 
 According to the [OpenID Core Documentation][openid-core], an identifier
 is a locally unique and never reassigned identifier within the issuer
@@ -200,6 +213,9 @@ are two possible subject identifier types available -- *public* and
 * `public`: provide the same subject value to all clients
 * `pairwise`: provide a different subject value to each client
 
+To enable these identifiers add the following lines to the configuration
+file:
+
 ```
 <subject-types-supported>
     <subject-type>public</subject-type>
@@ -207,7 +223,7 @@ are two possible subject identifier types available -- *public* and
 </subject-types-supported>
 ```
 
-### Supported algorithms a user can login with
+### Supported Algorithms An User Can Login With
 
 Currently, the Gluu Server supports these algorithms for login
 procedures:
@@ -223,7 +239,7 @@ procedures:
 * ES512: [ECDSA][ecdsa] using P-521 curve and [SHA-512][sha2] hash algorithm.
 
 To enable the desired algorithm from the list above activate the
-according tag `userinfo-signing-alg`:
+according tag `userinfo-signing-alg` in the configuration file:
 
 ```
 <userinfo-signing-alg-values-supported>
@@ -239,7 +255,7 @@ according tag `userinfo-signing-alg`:
 </userinfo-signing-alg-values-supported>
 ```
 
-### Supported encryption algorithms
+### Supported Encryption Algorithms
 
 Currently, the Gluu Server supports these algorithms for data encryption:
 
@@ -258,7 +274,7 @@ enabled, currently:
 * `ECDH-ES+A256KW`: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] with the "A256KW" function (rather than being used directly as the CEK).
 
 To enable the desired algorithm from the list above activate the
-according tag `userinfo-encryption-alg`:
+according tag `userinfo-encryption-alg` in the configuration file:
 
 ```
 <userinfo-encryption-alg-values-supported>
@@ -273,7 +289,7 @@ according tag `userinfo-encryption-alg`:
 </userinfo-encryption-alg-values-supported>
 ```
 
-### Supported encryption encoding values
+### Supported Encryption Encoding Values
 
 These encryption encoding values are supported:
 
@@ -294,7 +310,7 @@ activate the according tag `userinfo-encryption-enc`:
 </userinfo-encryption-enc-values-supported>
 ```
 
-### Supported ID token signing algorithms
+### Supported ID Token Signing Algorithms
 
 Currently, the Gluu Server supports these algorithms to sign an ID
 token:
@@ -326,7 +342,7 @@ activate the according tag `id-token-signing-alg`:
 </id-token-signing-alg-values-supported>
 ```
 
-### Supported ID token encryption algorithms
+### Supported ID Token Encryption Algorithms
 
 Currently, the Gluu Server supports these encryption algorithms for
 ID tokens:
@@ -345,7 +361,8 @@ enabled, currently:
 * `ECDH-ES+A256KW`: Elliptic Curve Diffie-Hellman Ephemeral Static key agreement per "ECDH-ES", but where the agreed-upon key is used to wrap the [Content Encryption Key (CEK)][glossary-of-cryptographic-keys] with the "A256KW" function (rather than being used directly as the CEK).
 
 To enable the desired token encryption algorithm from the list above
-activate the according tag `id-token-encryption-alg`:
+activate the according tag `id-token-encryption-alg` in the
+configuration file:
 
 ```
 <id-token-encryption-alg-values-supported>
@@ -361,9 +378,9 @@ activate the according tag `id-token-encryption-alg`:
 
 ```
 
-### Supported encryption encoding values for ID tokens
+### Supported Encryption Encoding Values For ID Tokens
 
-These encryption encoding values for ID tokens are supported:
+The following encryption encoding values for ID tokens are supported:
 
 * A128CBC+HS256: [AES][aes]_128_CBC_HMAC_SHA_256 authenticated encryption using a 256 bit key
 * A256CBC+HS512: [AES][aes]_256_CBC_HMAC_SHA_512 authenticated encryption using a 512 bit key
@@ -382,7 +399,7 @@ above activate the according tag `id-token-encryption-enc`:
 </id-token-encryption-enc-values-supported>
 ```
 
-### Supported request object signing algorithms
+### Supported Request Object Signing Algorithms
 
 Currently, the Gluu Server supports these algorithms to sign a request
 object:
@@ -414,7 +431,7 @@ according tag `request-object-signing-alg`:
 </request-object-signing-alg-values-supported>
 ```
 
-### Supported request object encryption algorithms
+### Supported Request Object Encryption Algorithms
 
 Currently, the Gluu Server supports these encryption algorithms for
 request objects:
@@ -448,7 +465,7 @@ activate the according tag `request-object-encryption-alg`:
 </request-object-encryption-alg-values-supported>
 ```
 
-### Supported request object encryption encoding values
+### Supported Request Object Encryption Encoding Values
 
 These encryption encoding values are supported:
 
@@ -469,7 +486,7 @@ activate the according tag `request-object-encryption-enc`:
 </request-object-encryption-enc-values-supported>
 ```
 
-### Supported token endpoint authentication methods
+### Supported Token Endpoint Authentication Methods
 
 The [OpenID Core specification][openid-core] defines a number of methods
 that are used by clients to authenticate to the authorization server
@@ -513,7 +530,7 @@ Furthermore, the [OpenID Core specification][openid-core] defines the
 method `none`. This method is used to connect without authentication,
 and is not supported by the Gluu Server, currently.
 
-### Supported token endpoint authentication signing algorithm values
+### Supported Token Endpoint Authentication Signing Algorithm Values
 
 Currently, the Gluu Server supports these signing algorithms to
 authenticate endpoints:
@@ -542,7 +559,7 @@ authenticate endpoints:
 </token-endpoint-auth-signing-alg-values-supported>
 ```
 
-### Supported OpenID display values
+### Supported OpenID Display Values
 
 According to the [OpenID Core Documentation][openid-core], the Gluu
 Server supports these OpenID display values as part of the request
@@ -558,7 +575,7 @@ parameter set:
   "feature phone" type display.
 
 As the default value, `page` is enabled, only. To activate one of the
-other display values enable the according tag.
+other display values enable the according tag in the configuration file.
 
 ```
 <display-values-supported>
@@ -569,23 +586,23 @@ other display values enable the according tag.
 </display-values-supported>
 ```
 
-### Supported OpenID claim types
+### Supported OpenID Claim Types
 
 According to the [OpenID Core Documentation][openid-core], the Gluu
 Server supports the claims `normal` and `distributed`:
 
 * `normal`: these claims are directly asserted by the OpenID provider. A
   claim dataset is represented as a [JSON][json] object. See the following
-  section "Supported OpenID Claims" for a detailed list of values.
+  section "Supported OpenID Claims" for a detailed list of possible values.
 * `distributed`: these claims are asserted by a claims provider other
   than the OpenID provider but are returned as references by the OpenID
   provider. The claim dataset is represented by using special
   `_claim_names` and `_claim_sources` members of the [JSON][json] object
   containing the claims.
 
-Currently, the claim type `aggregated` is not supported. To activate a
-certain claim type enable the according tag in the configuration file as
-follows:
+Currently, the claim type `aggregated` is not supported by the Gluu
+Server. To activate a certain claim type enable the according tag in the
+configuration file as follows:
 
 ```
 <claim-types-supported>
@@ -594,7 +611,7 @@ follows:
 </claim-types-supported>
 ```
 
-### Supported OpenID claims
+### Supported OpenID Claims
 
 The Gluu Server supports these values for claims:
 
@@ -603,6 +620,8 @@ The Gluu Server supports these values for claims:
 * `givenName`: a previously given user name
 * `sn`: the family name of the user. This feature has not been tested yet.
 * `mail`: a stored email address for this user
+
+These are the according entries in the configuration file:
 
 ```
 <claims-supported>
@@ -614,7 +633,7 @@ The Gluu Server supports these values for claims:
 </claims-supported>
 ```
 
-### Service documentation
+### Service Documentation
 
 This entry keeps the path to the service documentation of the Gluu
 Server.
@@ -623,19 +642,19 @@ Server.
 <service-documentation>http://gluu.org/docs</service-documentation>
 ```
 
-### Supported locales for claims
+### Supported Locales For Claims
 
 Currently, the Gluu Server supports these languages for claims:
 
-* en: English
-* en-GB: British English
-* en-CA: Canadian English
-* fr-FR: French 
-* fr-CA: Canadian French
+* `en`: English
+* `en-GB`: British English
+* `en-CA`: Canadian English
+* `fr-FR`: French
+* `fr-CA`: Canadian French
 
 These languages are enabled by default:
 
-* en: English
+* `en`: English
 
 ```
 <claims-locales-supported>
@@ -647,7 +666,7 @@ These languages are enabled by default:
 </claims-locales-supported>
 ```
 
-### Supported locales for user interfaces
+### Supported Locales For User Interfaces
 
 Currently, these languages are supported for claims as part of user
 interfaces:
@@ -659,8 +678,10 @@ These languages are not enabled, yet:
 
 * `en-GB`: British English
 * `en-CA`: Canadian English
-* `fr-FR`: French 
+* `fr-FR`: French
 * `fr-CA`: Canadian French
+
+The following entries refer to the according locales:
 
 ```
 <ui-locales-supported>
@@ -673,47 +694,47 @@ These languages are not enabled, yet:
 </ui-locales-supported>
 ```
 
-### Supported claims parameters
+### Supported Claims Parameters
 
 To enable additional parameters for claims, the tag
 `claims-parameter-supported` has to be set to `true` before, and
-`false` otherwise.
+`false` otherwise:
 
 ```
 <claims-parameter-supported>true</claims-parameter-supported>
 ```
 
-### Supported request parameters
+### Supported Request Parameters
 
-To enable additional parameters for request, the tag
+To enable additional parameters for requests, the tag
 `request-parameter-supported` has to be set to `true` before, and
-`false` otherwise.
+`false` otherwise:
 
 ```
 <request-parameter-supported>true</request-parameter-supported>
 ```
 
-### Supported request uri parameters
+### Supported Request Uri Parameters
 
 To enable additional parameters for uri requests, the tag
 `request-uri-parameter-supported` has to be set to `true` before, and
-`false` otherwise.
+`false` otherwise:
 
 ```
 <request-uri-parameter-supported>true</request-uri-parameter-supported>
 ```
 
-### Required request uri registration
+### Required Request Uri Registration
 
 To require a request for uri registration, the tag
 `require-request-uri-registration` has to be set to `true` before, and
-`false` otherwise.
+`false` otherwise:
 
 ```
 <require-request-uri-registration>false</require-request-uri-registration>
 ```
 
-### Uri for operation policy
+### Uri For An Operation Policy
 
 To define a certain oxAuth operation policy uri use the tag
 `op-policy-uri`. The value refers to an according policy document.
@@ -722,28 +743,32 @@ To define a certain oxAuth operation policy uri use the tag
 <op-policy-uri>http://ox.gluu.org/doku.php?id=oxauth:policy</op-policy-uri>
 ```
 
-### Uri for type-of-service operations
+### Uri For Type-of-service Operations
 
-To define a certain oxAuth type-of-service operations uri use the tag
-`op-tos-uri`. The value refers to an according type-of-service document.
+To define an uri for certain oxAuth type-of-service operations use the
+tag `op-tos-uri`. The value refers to an according type-of-service
+document.
 
 ```
 <op-tos-uri>http://ox.gluu.org/doku.php?id=oxauth:tos</op-tos-uri>
 ```
 
-### Connection behaviour
+### Connection Behaviour
 
 These tags control the behaviour of the connection:
 
 * `authorization-code-lifetime`: sets the lifetime of the authorization
   code. The default is 600 seconds.
 * `refresh-token-lifetime`: sets the interval the token is refreshed.
-  The default value is 14400 seconds that represent 6 hours.
+  The default value is 14400 seconds. This represents six hours.
 * `id-token-lifetime`: sets the lifetime of the id token. The default
-  value is 3600 seconds that represents one hour.
+  value is 3600 seconds. This represents one hour.
 * `short-lived-access-token-lifetime`: sets the short-lived access token
-  lifetime
-* `long-lived-access-token-lifetime`: sets the long-lived access token lifetime
+  lifetime.
+* `long-lived-access-token-lifetime`: sets the long-lived access token
+  lifetime.
+
+The according entries in the configuration file are as follows:
 
 ```
 <authorization-code-lifetime>600</authorization-code-lifetime>
@@ -755,17 +780,20 @@ These tags control the behaviour of the connection:
 
 These tags control the behaviour of a session:
 
-* `session-id-unused-lifetime`: if the session id is not used during some
+* `session-id-unused-lifetime`: if the session ID is not used during some
   time then it is removed, automatically. The lifetime is set in seconds,
   whereas 86400 seconds represent a single day.
 * `session-id-enabled`: this tag is either `true` or `false` and displays
-  whether a session id is enabled or not
+  whether a session ID is enabled or not.
 * `refresh-user-session-timeout-enabled`: this tag is either `true` or
   `false` and defines whether the timeout is enabled to refresh a user
   session. The default value is `true`.
 * `refresh-user-session-timeout`: defines the duration of the timeout
   after which the session is refreshed. The default value is set to 1800
-  seconds.
+  seconds. This represents 30 minutes.
+
+The following entries in the configuration file correspond to the tags
+described before:
 
 ```
 <session-id-unused-lifetime>86400</session-id-unused-lifetime>
@@ -794,10 +822,10 @@ value is 600 seconds:
 <clean-service-interval>600</clean-service-interval>
 ```
 
-### Default signature algorithms
+### Default Signature Algorithms
 
 These entries define the default signature algorithm, and list the key
-ids for the other signature algorithms that are available. These values
+IDs for the other signature algorithms that are available. These values
 are part of the list:
 
 * RS256: [RSASSA-PKCS-v1_5][rsassa] using [SHA-256][sha2] hash algorithm.
@@ -817,11 +845,11 @@ are part of the list:
 <ES512-keyid>6</ES512-keyid>
 ```
 
-### Federation settings
+### Federation Settings
 
 The entry `federation-enabled` sets the value for the [Active Directory
 Federation Services (ADFS)][adfs-wikipedia] feature. `true` means
-enabled, and `false` means disabled.
+enabled, and `false` means disabled:
 
 ```
 <federation-enabled>false</federation-enabled>
@@ -832,6 +860,8 @@ interval in seconds. It checks whether data in trusts are still valid
 for example if the request parameter (RP) `redirectUri` still exists in
 metadata. If not then remove from trust automatically. The value `86400`
 represents 24 hours.
+
+The following entry corresponds to this setting:
 
 ```
 <federation-check-interval>86400</federation-check-interval>
@@ -866,12 +896,12 @@ section about default signature algorithms.
 <federation-signing-kid>1</federation-signing-kid>
 ```
 
-### Dynamic registration of custom object
+### Dynamic Registration Of Custom Object
 
 Dynamic Client Registration is configurable because some servers may not
 want to support this feature due to it opens you up to the possibility
 of a [Denial-of-service attack (DOS) attack][dos]. To enable this
-feature set the value for `dynamic-registration-enabled` to `true`,
+feature set the value for `dynamic-registration-enabled` to `true`, and
 otherwise to `false`.
 
 ```
@@ -879,16 +909,19 @@ otherwise to `false`.
 ```
 
 The expiration time for Dynamic Client Registration allows to configure
-a time in seconds for the client's account expiration, it can be set to
-zero if the client account never expires.
+a time in seconds for the client's account expiration. It can be set to
+zero if the client account never expires. The value `86400` represents
+24 hours.
+
+The following entry corresponds to this setting:
 
 ```
 <dynamic-registration-expiration-time>86400</dynamic-registration-expiration-time>
 ```
 
-Dynamic Client Registration uses an inum generator service. You can
-configure both the URL of the service under the tag `oxID`, and the
-organization inum used by this service under the tag `organization`.
+Dynamic Client Registration uses an iNum generator service. You can
+configure both the uri of the service using the tag `oxID`, and the
+organization iNum used by this service using the tag `organization`.
 
 ```
 <oxID>https://%(hostname)s/oxid/service/gluu/inum</oxID>
@@ -902,7 +935,7 @@ the tag `oxOpenIDConnectVersion` like that:
 <oxOpenIDConnectVersion>openidconnect-1.0</oxOpenIDConnectVersion>
 ```
 
-Each custom object class can be registered dynamically. Set the the tag
+Each custom object class can be registered dynamically. Set the tag
 `dynamic-registration-custom-object-class` to the referenced class name.
 
 ```
@@ -910,7 +943,9 @@ Each custom object class can be registered dynamically. Set the the tag
 ```
 
 Dynamic registration allows the usage of custom attributes using the tag
-`dynamic-registration-custom-attribute`.
+`dynamic-registration-custom-attribute`. The following detail displays
+the definition of the three attributes `oxAuthTrustedClient`,
+`myCustomAttr1`, and `myCustomAttr2`.
 
 ```
 <dynamic-registration-custom-attribute-supported>
@@ -927,20 +962,22 @@ Trusted clients have to be enabled, first. Set the tag
 <trusted-client-enabled>true</trusted-client-enabled>
 ```
 
-### Authorization LDAP filters
+### Authorization LDAP Filters
 
 To use authorization [LDAP][ldap] filters you have to enable them,
-first. Set the tag `auth-filters-enabled` to `true`:
+first. Set the tag `auth-filters-enabled` to `true`. The value `false`
+disables the filter.
 
 ```
-<auth-filters-enabled>false</auth-filters-enabled>
+<auth-filters-enabled>true</auth-filters-enabled>
 ```
 
 Next, you can use the previously defined authorization filters. A filter
 definition allows the following tags:
 
 * `filter`: the condition for the filter
-* `bind`: can be either `true` or `false`. If `true` oxAuth binds to the entry which is found by the filter as specified above
+* `bind`: can be either `true` or `false`. If `true` oxAuth binds to the
+  entry which is found by the filter as specified above
 * `bind-password-attribute`: the name of the password attribute
 * `base-dn`: the name of the base domain, for example `o=gluu`
 
@@ -962,7 +999,7 @@ definition allows the following tags:
 </auth-filters>
 ```
 
-### Custom LDAP client filters
+### Custom LDAP Client Filters
 
 oxAuth allows to define custom [LDAP][ldap] client filters. oxAuth uses
 them to find clients in the [LDAP][ldap] Namespace, or Directory
@@ -980,7 +1017,8 @@ Next, you can use the previously defined authorization filters. A filter
 definition allows the following tags:
 
 * `filter`: the condition for the filter
-* `bind`: can be either `true` or `false`. If `true` oxAuth binds to the entry which is found by the filter as specified above
+* `bind`: can be either `true` or `false`. If `true` oxAuth binds to the
+  entry which is found by the filter as specified above
 * `bind-password-attribute`: the name of the password attribute
 * `base-dn`: the name of the base domain, for example `o=gluu`
 
