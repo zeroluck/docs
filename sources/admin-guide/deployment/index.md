@@ -21,14 +21,15 @@ more or less memory or CPU capacity.
 
 ### Community Edition
 
-If you are running all the Gluu Server services on one
-server (i.e. SAML, OAuth2, LDAP), you will need at least: 
-- 2 CPU units
-- 4GB of RAM  
-- 40GB of disk space 
+If you are running all the Gluu Server services on the same server (i.e.
+SAML, OAuth2, LDAP), you will need at least:
 
-Not enough memory may produce some really weird bugs. From there, you may need to adjust the resources based on the
-requirements.
+- 2 CPU units
+- 4GB of RAM
+- 40GB of disk space
+
+Not enough memory may produce some really weird bugs. From there, you
+may need to adjust the resources based on your specific requirements.
 
 ### Enterprise Edition
 
