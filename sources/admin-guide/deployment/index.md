@@ -9,7 +9,7 @@ The Gluu Server CE is the full stack of Gluu components distributed in a `chroot
 - [RHEL](./rhel.md)
 
 ### Enterprise Edition (EE)
-The Gluu Server EE is functionally equivalent to CE, but each component is packaged in its own `docker` container. EE includes [a web application](http://www.gluu.org/docs-cluster/admin-guide/webui/) that enables an organization to deploy a highly available and elastic infrastructure of Gluu Servers across multiple cloud providers.  EE is divided into two packages identified as "master" and "consumer". The "master" package is offered free and the "consumer" package requires a commercial license. If you'd like to discuss our enterprise offerings, please [schedule a meeting with us](http://gluu.org/booking).
+The Gluu Server EE is functionally equivalent to CE, but each component is packaged in its own `docker` container. EE includes a [web application](http://www.gluu.org/docs-cluster/admin-guide/webui/) that enables an organization to deploy a highly available and elastic infrastructure of Gluu Servers across multiple cloud providers.  EE is divided into two packages identified as "master" and "consumer". The "master" package is offered free and the "consumer" package requires a commercial license. If you'd like to discuss our enterprise offerings, please [schedule a meeting with us](http://gluu.org/booking).
 
 - [Ubuntu](http://www.gluu.org/docs-cluster/admin-guide/installation/)
 
