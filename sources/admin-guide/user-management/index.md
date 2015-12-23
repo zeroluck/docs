@@ -65,7 +65,7 @@ the right people.
 To manage people, navigate to User > Manage People, as shown in the
 screenshot below.
 
-![](https://raw.githubusercontent.com/GluuFederation/docs/img/local_user_admin/manage_people.png)
+![](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/local_user_admin/manage_people.png)
 
 From this interface you can add users and search for specific users.
 Because the user database can potentially be very large, a value is

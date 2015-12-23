@@ -17,7 +17,7 @@ pages:
 - [admin-guide/configuration/index.md, Admin Guide, Configuration]
 - [admin-guide/design-customizations/index.md, Admin Guide, Design Customizations]
 - [admin-guide/ldap/index.md, Admin Guide, LDAP]
-- [admin-guide/cache-refresh/index.md, Admin Guide, Cache Refresh]
+- [admin-guide/cache-refresh/index.md, Admin Guide, Cache Refresh (a.k.a. AD Synchronization)]
 - [admin-guide/saml/index.md, Admin Guide, SAML]
 - [admin-guide/openid-connect/index.md, Admin Guide, OpenID Connect]
 - [admin-guide/uma/index.md, Admin Guide, UMA]

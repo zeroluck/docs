@@ -1,26 +1,14 @@
-# Gluu Server Installation
-
-These are the instructions for **single server** Gluu Server
-deployments.
-
-Commercial Gluu Server Cluster Packages are currently under development.
-They are not quite ready yet for public consumption. If your
-organization needs clusters before the packages are publicly available,
-please [schedule a meeting with us](http://gluu.org/booking) to discuss.
-You can learn more about the cluster project
-[here](http://gluu.org/docs-cluster).
-
-**Note:** Before deploying the Gluu Server, it may be helpful for you to
-review our [getting started](../getting-started/index.md) document.
-
 # Supported Operating Systems
-
 We currently publish packages for the following **64-bit** operating
 systems:
 
+### Community Edition 
 - [Centos](./centos.md)
 - [Ubuntu](./ubuntu.md)
 - [RHEL](./rhel.md)
+
+### Enterprise Edition
+- [Ubuntu](http://www.gluu.org/docs-cluster/admin-guide/installation/)
 
 *Note:* 32-bit operating systems are **not** supported.
 
@@ -31,13 +19,22 @@ access management requirements. Depending on the size of your data, and
 the number of concurrent transactions you want to support, you may need
 more or less memory or CPU capacity.
 
-With that said, if you are running all the Gluu Server services on one
-server (i.e. SAML, OAuth2, LDAP), you will ned at least **2 CPU units, 4
-GB of RAM and around 30GB of disk space.** Not enough memory may produce
-some really weird bugs.
+### Community Edition
 
-From there, you may need to adjust the resources based on the
+If you are running all the Gluu Server services on one
+server (i.e. SAML, OAuth2, LDAP), you will need at least: 
+- 2 CPU units
+- 4GB of RAM  
+- 40GB of disk space 
+
+Not enough memory may produce some really weird bugs. From there, you may need to adjust the resources based on the
 requirements.
+
+### Enterprise Edition
+
+- 2 CPU Units
+- 8 GB of RAM
+- 40 GB of disk space
 
 # Java
 The Gluu Server components have been tested with OpenJDK version 1.7 or
