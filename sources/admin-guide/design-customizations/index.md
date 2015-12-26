@@ -71,11 +71,11 @@ To remove the Gluu Copyright icon from your login page, navigate to
 this snippet:
 
 ```
-    <s:fragment rendered="#{not isLogin}">
-            <div class="footer">
-                <p>Copyright <a href="http://www.gluu.org">Gluu</a> All rights reserved.</p>
-            </div>
-    </s:fragment>
+<s:fragment rendered="#{not isLogin}">
+    <div class="footer">
+        <p>Copyright <a href="http://www.gluu.org">Gluu</a> All rights reserved.</p>
+    </div>
+</s:fragment>
 ```
 
 # Built-in oxTrust Customization
@@ -89,7 +89,9 @@ and is the last section that is titled Configuration (see image below).
 
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/WebUI_modification/oxtrust/oxTrust_GUI_mod_configuration_overview.png?raw=true)
 
-- `Title`: Web User Interface title can be modified with this link. 
+The single input fields have the following meaning:
+
+- `Title`: Web User Interface title can be modified with this link.
 - `Display name`: Display Name of IdP in LDAP. This change is not
   suggested to be done by the Gluu Server administrator as it will
   change the configuration in our central server.
@@ -102,7 +104,7 @@ and is the last section that is titled Configuration (see image below).
 - `Welcome Title Text`: Gluu Server administrator can add custom welcome
   title text with this feature.
 - `Welcome Page Message`: Various messages can be included here. Out of
-  the box, the Gluu Server includes these: 
+  the box, the Gluu Server includes these:
   - 1. Upload SSL Certificate
   - 2. Active attribute
 - `Organization Logo`: Organization logo that can be uploaded and
