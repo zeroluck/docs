@@ -37,8 +37,8 @@ jsLocation=https://idp.gluu.org/static/js
 imgLocation=https://idp.gluu.org/static/img
 ```
 
-in `oxauth-config.xml` (as a children of \<configuration\> node) it
-looks like that:
+In the file `oxauth-config.xml` (as a children of \<configuration\>
+node) it looks like that:
 
 ```
 <cssLocation>https://idp.gluu.org/static/stylesheet</cssLocation>
@@ -49,9 +49,10 @@ looks like that:
 # Page Customizations
 
 To change the content of the pages, you will need to edit the XHTML
-files. Be careful not to remove any of the important form elements. But
-you can add additional HTML elements to meet your needs as '.xhtml'
-files inside `/opt/tomcat/webapps/identity` and
+files. Be careful not to remove any of the important form elements. 
+
+To meet your needs you can add further HTML elements as '.xhtml' files
+inside the two directories `/opt/tomcat/webapps/identity` and
 `/opt/tomcat/webapps/oxauth`.
 
 The standard forms in oxAuth are:
@@ -65,8 +66,8 @@ The standard forms in oxTrust are:
 
 - Default registration page: `/opt/tomcat/webapps/identity/register.xhtml`
 
-To remove the Gluu Copyright icon from your login page, navigate to
-`template.xhtml` under
+To remove the Gluu Copyright icon from your login page, navigate to the
+file `template.xhtml` that is located under
 `/opt/tomcat/webapps/identity/WEB-INF/incl/layout`. Then, simply remove
 this snippet:
 
