@@ -1,7 +1,7 @@
 [TOC]
 # Introduction
 Cache Refresh (CR) was built by Gluu to pull user information from a
-backend customer Active Directory/[LDAP][ldap] Server. Cache refresh
+backend customer Active Directory/[LDAP][ldap] Server. Cache Refresh
 dynamically synchronizes user information from the backend data source
 of the customer to the Gluu Server in order to maximize performance.
 This feature is sensitive in nature and any incorrect action may result
@@ -43,13 +43,13 @@ After configuring Cache Refresh, you should give it some time to run,
 and populate the LDAP server. Here are some tips before you get started:
 
 * Enable 'Keep External Person' during CR setup. This will allow your
-default user 'admin' to log into Gluu Server after initial Cache Refresh
-iteration. If you do not enable 'Keep External Person', your 'admin'
-user including all other test users will be gone after first Cache
-Refresh iteration.
+  default user 'admin' to log into Gluu Server after initial Cache 
+  Refresh iteration. If you do not enable 'Keep External Person', your 
+  'admin' user including all other test users will be gone after first 
+  Cache Refresh iteration.
 
 * Make sure you are using LDAP authentication, not VDS. You will only
-  need VDS setting if you're using the Radiant Logic Virtual Directory
+  need VDS setting if you are using the Radiant Logic Virtual Directory
   Server.
 
 * Check the snapshots folder to see if files are being created.
