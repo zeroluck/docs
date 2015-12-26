@@ -145,13 +145,17 @@ objectClasses: ( svPerson-oid NAME 'svPerson' SUP top AUXILIARY MAY ( svPermissi
    starts.
 
 3. Edit the file `oxTrust.properties` in the folder `/opt/tomcat/conf/`,
-   and add the following content:
+   and complement the following content:
 
 	1. Add `svPerson` to `person-objectClass-types`.
 
 	2. Add `svPerson` to `person-objectClass-displayNames`.
 
-4. Reload the oxTrust properties using `# touch /opt/tomcat/conf/oxtrust.config.reload`.
+4. Reload the oxTrust properties using the following command:
+
+   ```
+   # touch /opt/tomcat/conf/oxtrust.config.reload`.
+   ```
 
 5. Register this new attribute using the oxTrust administrator
 interface, in the
@@ -162,11 +166,10 @@ will not be used at all.
 
 It is also possible to use the attribute as a scope for OpenID Connect.
 
-1. Create a custom scope `svInfo` for OpenID Connect. Please see [OpenID
-Connect
-Scopes](http://www.gluu.org/docs/admin-guide/openid-connect/#scopes) for
-the instructions about custom scope creation.
+1. Create a custom scope named `svInfo` for OpenID Connect. Please see 
+[OpenID Connect Scopes](http://www.gluu.org/docs/admin-guide/openid-connect/#scopes) 
+for the instructions about custom scope creation.
 
 2. Add the `svPermission` userclaim to `svInfo` scope. Make sure you
 release this scope to your registered clients.
-.
+
