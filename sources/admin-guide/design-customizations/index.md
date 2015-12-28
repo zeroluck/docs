@@ -37,8 +37,8 @@ jsLocation=https://idp.gluu.org/static/js
 imgLocation=https://idp.gluu.org/static/img
 ```
 
-in `oxauth-config.xml` (as a children of \<configuration\> node) it
-looks like that:
+In the file `oxauth-config.xml` (as a children of \<configuration\>
+node) it looks like that:
 
 ```
 <cssLocation>https://idp.gluu.org/static/stylesheet</cssLocation>
@@ -49,9 +49,10 @@ looks like that:
 # Page Customizations
 
 To change the content of the pages, you will need to edit the XHTML
-files. Be careful not to remove any of the important form elements. But
-you can add additional HTML elements to meet your needs as '.xhtml'
-files inside `/opt/tomcat/webapps/identity` and
+files. Be careful not to remove any of the important form elements. 
+
+To meet your needs you can add further HTML elements as '.xhtml' files
+inside the two directories `/opt/tomcat/webapps/identity` and
 `/opt/tomcat/webapps/oxauth`.
 
 The standard forms in oxAuth are:
@@ -65,17 +66,17 @@ The standard forms in oxTrust are:
 
 - Default registration page: `/opt/tomcat/webapps/identity/register.xhtml`
 
-To remove the Gluu Copyright icon from your login page, navigate to
-`template.xhtml` under
+To remove the Gluu copyright icon from your login page, navigate to the
+file `template.xhtml` that is located under
 `/opt/tomcat/webapps/identity/WEB-INF/incl/layout`. Then, simply remove
 this snippet:
 
 ```
-    <s:fragment rendered="#{not isLogin}">
-            <div class="footer">
-                <p>Copyright <a href="http://www.gluu.org">Gluu</a> All rights reserved.</p>
-            </div>
-    </s:fragment>
+<s:fragment rendered="#{not isLogin}">
+    <div class="footer">
+        <p>Copyright <a href="http://www.gluu.org">Gluu</a> All rights reserved.</p>
+    </div>
+</s:fragment>
 ```
 
 # Built-in oxTrust Customization
@@ -89,7 +90,9 @@ and is the last section that is titled Configuration (see image below).
 
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/WebUI_modification/oxtrust/oxTrust_GUI_mod_configuration_overview.png?raw=true)
 
-- `Title`: Web User Interface title can be modified with this link. 
+The single input fields have the following meaning:
+
+- `Title`: Web User Interface title can be modified with this link.
 - `Display name`: Display Name of IdP in LDAP. This change is not
   suggested to be done by the Gluu Server administrator as it will
   change the configuration in our central server.
@@ -102,7 +105,7 @@ and is the last section that is titled Configuration (see image below).
 - `Welcome Title Text`: Gluu Server administrator can add custom welcome
   title text with this feature.
 - `Welcome Page Message`: Various messages can be included here. Out of
-  the box, the Gluu Server includes these: 
+  the box, the Gluu Server includes these:
   - 1. Upload SSL Certificate
   - 2. Active attribute
 - `Organization Logo`: Organization logo that can be uploaded and
@@ -143,13 +146,17 @@ objectClasses: ( svPerson-oid NAME 'svPerson' SUP top AUXILIARY MAY ( svPermissi
    starts.
 
 3. Edit the file `oxTrust.properties` in the folder `/opt/tomcat/conf/`,
-   and add the following content:
+   and complement the following content:
 
 	1. Add `svPerson` to `person-objectClass-types`.
 
 	2. Add `svPerson` to `person-objectClass-displayNames`.
 
-4. Reload the oxTrust properties using `# touch /opt/tomcat/conf/oxtrust.config.reload`.
+4. Reload the oxTrust properties using the following command:
+
+   ```
+   # touch /opt/tomcat/conf/oxtrust.config.reload`.
+   ```
 
 5. Register this new attribute using the oxTrust administrator
 interface, in the
@@ -160,11 +167,10 @@ will not be used at all.
 
 It is also possible to use the attribute as a scope for OpenID Connect.
 
-1. Create a custom scope `svInfo` for OpenID Connect. Please see [OpenID
-Connect
-Scopes](http://www.gluu.org/docs/admin-guide/openid-connect/#scopes) for
-the instructions about custom scope creation.
+1. Create a custom scope named `svInfo` for OpenID Connect. Please see 
+[OpenID Connect Scopes](http://www.gluu.org/docs/admin-guide/openid-connect/#scopes) 
+for the instructions about custom scope creation.
 
 2. Add the `svPermission` userclaim to `svInfo` scope. Make sure you
 release this scope to your registered clients.
-.
+

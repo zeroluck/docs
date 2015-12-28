@@ -3,17 +3,30 @@ We currently publish packages for the following **64-bit** operating
 systems:
 
 ### Community Edition (CE) 
-The Gluu Server CE is the full stack of Gluu components distributed in a `chroot` container. CE is suitable for single server deployments of the Gluu Server where high availability and elastic scalability are not core requirements. 
+The Gluu Server CE is the full stack of Gluu components distributed in a
+`chroot` container. CE is suitable for single server deployments of the
+Gluu Server where high availability and elastic scalability are not core
+requirements.
+
 - [Centos](./centos.md)
 - [Ubuntu](./ubuntu.md)
 - [RHEL](./rhel.md)
 
 ### Enterprise Edition (EE)
-The Gluu Server EE is functionally equivalent to CE, but each component is packaged in its own `docker` container. EE includes a [web application](http://www.gluu.org/docs-cluster/admin-guide/webui/) that enables an organization to deploy a highly available and elastic infrastructure of Gluu Servers across multiple cloud providers.  EE is divided into two packages identified as "master" and "consumer". The "master" package is offered free and the "consumer" package requires a commercial license. If you'd like to discuss our enterprise offerings, please [schedule a meeting with us](http://gluu.org/booking).
+The Gluu Server EE is functionally equivalent to CE, but each component
+is packaged in its own `docker` container. EE includes a [web
+application](http://www.gluu.org/docs-cluster/admin-guide/webui/) that
+enables an organization to deploy a highly available and elastic
+infrastructure of Gluu Servers across multiple cloud providers. EE is
+divided into two packages identified as "master" and "consumer". The
+"master" package is offered free and the "consumer" package requires a
+commercial license. If you'd like to discuss our enterprise offerings,
+please [schedule a meeting with us](http://gluu.org/booking).
 
 - [Ubuntu](http://www.gluu.org/docs-cluster/admin-guide/installation/)
 
-*Note:* 32-bit operating systems are **not supported** for any Gluu Server distributions.
+*Note:* 32-bit operating systems are **not supported** for any Gluu
+Server distributions.
 
 # Hardware Requirements
 
