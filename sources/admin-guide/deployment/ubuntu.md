@@ -140,7 +140,7 @@ user. The following commands illustrate the single steps:
 
 # apt-get remove gluu-server24
 
-# rm -rf /home/gluu-server24
+# rm -rf /opt/gluu-server24
 ```
 
 On an installation, any modified files are saved in the directory
