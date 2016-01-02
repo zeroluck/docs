@@ -43,7 +43,7 @@ implement various options such as *Cache Refresh*, *Federation Hosting*,
   disabled by default. For Self-Service Password Reset to work an SMTP
   server (see below) should be configured as well. Password reset link 
   for your Gluu server should be something like:
-  "https://your.idp.link/identity/person/passwordReminder.html".
+  "https://your.idp.link/identity/person/passwordReminder.htm".
 
 * _Cache Refresh:_ This is the mechanism which pulls and synchronizes
   user information between a remote LDAP/Active Directory, and local 
