@@ -20,6 +20,7 @@ inum to make it possible to know the type of object just by looking at the ident
 | 0009     | scope                | OAuth2 Scope Object                    |
 | 0010     | uma-resource-set     | UMA Resource Set Object                |
 | 0011     | interception-script  | Gluu Server interception script object |
+| 0012     | sector-identifier    | Managed Sector Identifier URI          |
 
 #### `/id/{prefix}/{type}/`
 ##### generateHtmlInum
