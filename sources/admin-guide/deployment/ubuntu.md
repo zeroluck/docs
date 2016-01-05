@@ -24,9 +24,9 @@ following Gluu Server Base Ubuntu requirements.
 As an alternative, use our Gluu repository for Ubuntu Trusty (14.04):
 
 ```
-# echo "deb http://repo.gluu.org/ubuntu/ trusty main" > /etc/apt/sources.list.d/gluu-repo.list
+# echo "deb https://repo.gluu.org/ubuntu/ trusty main" > /etc/apt/sources.list.d/gluu-repo.list
 
-# curl http://repo.gluu.org/ubuntu/gluu-apt.key | apt-key add -
+# curl https://repo.gluu.org/ubuntu/gluu-apt.key | apt-key add -
 
 # apt-get update
 
