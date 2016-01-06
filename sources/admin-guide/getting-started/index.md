@@ -22,9 +22,7 @@ about each of the open source licenses in use
 [here](../introduction/index.md#licenses).
 
 The full suite of software is distributed as Linux packages that support
-either single server or clustered deployments. In order to deploy the
-clustered package to multiple locations, you'll need a commercial
-license. You will read more about that topic below in section
+either single server or clustered deployments. In order to achieve a highly available, clustered Gluu Server infrastrucutre, you'll need a commercial license for the Gluu Server Enterprise Edition (EE). More information about that is covered below in the 
 [Deployment Models](#deployment-models).
 
 ## Deployment
@@ -55,7 +53,7 @@ operational complexities, we recommend getting familiar with [Community
 Edition](../deployment/index.md) before making the leap to Enterprise
 Edition.
 
-The Gluu Server Cluster is divided into two packages identified as
+The Gluu Server Enterprise Edition is divided into two packages identified as
 "master" and "consumer". The "master" package is offered for free, and
 the "consumer" package requires a commercial license. Learn more in our [EE docs](http://gluu.org/docs-cluster).
 
