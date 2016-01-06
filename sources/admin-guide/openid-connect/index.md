@@ -1,26 +1,18 @@
-# Overview 
-[TOC]
-
-# OpenID Connect
-Since [Interop 4](http://www.gluu.co/.fm8t) the Gluu Server has one of
-the most comprehensive implementations of OpenID Connect. The current
-results from [IntereOp 5](http://www.gluu.co/.iwjk), while not final,
-also put the Gluu Server at the top of the list.
-
+# Overview
 [OpenID Connect](http://openid.net/connect) ("Connect") is a standard
 profile of OAuth2 which defines a protocol to enable a website or mobile
 application to send a person to a domain for authentication and required
-attributes (e.g. email address, first name, last name, etc.). Connect
+attributes (e.g. email address, first name, last name, etc.). OpenID Connect
 also provides some of the plumbing around authentication to automate how
 this happens. If a person is visiting a website for the first time, the
 process that OpenID Connect defines is 100% bootstrapable by the
 website. This is really critical for Internet scalability. To visit
 someone's website, or to send someone an email, you do not need to get
 the system administrators involved. Connect provides the same type of
-scalable infrastructure, and promises to define a base level domain
+scalable infrastructure for authentication and authorization, and promises to define a base level domain
 identification.
 
-## New Jargon (taxonomy)
+## Jargon (taxonomy)
 
 If you are familiar with SAML, there are many parallels in OpenID
 Connect, but the jargon (or "taxonomy") is different. For example,
