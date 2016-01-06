@@ -38,8 +38,8 @@ for a list of available components during the installation.
 These are the single steps:
 
 ```
-# wget http://repo.gluu.org/centos/Gluu.repo -O /etc/yum.repos.d/Gluu.repo
-# wget http://repo.gluu.org/centos/RPM-GPG-KEY-GLUU -O /etc/pki/rpm-gpg/RPM-GPG-KEY-GLUU
+# wget https://repo.gluu.org/centos/Gluu.repo -O /etc/yum.repos.d/Gluu.repo
+# wget https://repo.gluu.org/centos/RPM-GPG-KEY-GLUU -O /etc/pki/rpm-gpg/RPM-GPG-KEY-GLUU
 # rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-GLUU
 # yum clean all
 # yum install gluu-server24
