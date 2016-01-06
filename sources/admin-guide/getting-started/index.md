@@ -39,14 +39,14 @@ Gluu Server together, it would take you a long time.
 [View the Gluu Server deployment guide](../deployment/index.md)
 
 #### Deployment Models:
-**Community Edition:** All single server deployments of the Gluu
+**Community Edition (CE):** All single server deployments of the Gluu
 Server can be deployed in production with an unlimited number of users
 for free. Community support is available on our [public
 forum](http://support.gluu.org), or you can purchase [Basic
 Support](http://gluu.org/pricing) to open private tickets and enlist
 security and support consultations with Gluu engineers.
 
-**Enterprise Edition:** Gluu Enterprise Edition promises scalability,
+**Enterprise Edition (EE):** Gluu Enterprise Edition promises scalability,
 reliability and a fail-over mechanism through its innovative design
 implemented using Docker. The cluster server can also call a DOS
 service, like DOSarrest, enabling protection from distributed denial of
@@ -57,28 +57,7 @@ Edition.
 
 The Gluu Server Cluster is divided into two packages identified as
 "master" and "consumer". The "master" package is offered for free, and
-the "consumer" package requires a commercial license. We currently have
-three Enterprise Edition license offerings:
-
-1. **A la carte:** This license will enable you to run a cluster of Gluu
-Servers consisting of two locations--for example, let's say you have one
-server on Amazon, and one server on Rackspace. For the first location,
-you'd use the "master" package, which is free. For the second location,
-you'd need to purchase the a la carte license. This license does not
-include support. At the miminum, we would recommend purchasing a [Basic
-Support](http://gluu.org/pricing) contract with your cluster license.
-
-2. **Premium:** The premium subscription includes licenses for three
-clustered environemnts, e.g. Production, Development, and QA. The
-subscription also includes [Premium Support](http://gluu.org/pricing).
-
-3. **Enterprise:** The enterprise cluster license includes a site
-license for unlimited cluster deployments. It makes license management
-really easy because you can use the same license for all your
-environments, like development, QA and production.
-
-To learn more about Enterprise Edition, [read our
-documentation](http://gluu.org/docs-cluster).
+the "consumer" package requires a commercial license. Learn more in our [EE docs](http://gluu.org/docs-cluster).
 
 ## Identity Management
 
