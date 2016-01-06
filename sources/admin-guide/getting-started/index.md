@@ -22,17 +22,21 @@ about each of the open source licenses in use
 [here](../introduction/index.md#licenses).
 
 The full suite of software is distributed as Linux packages that support
-either single server or clustered deployments. In order to achieve a highly available, clustered Gluu Server infrastrucutre, you'll need a commercial license for the Gluu Server Enterprise Edition (EE). More information about that is covered below in the 
-[Deployment Models](#deployment-models).
+either single server or clustered deployments. In order to achieve a
+highly available, clustered Gluu Server infrastructure, you'll need a
+commercial license for the Gluu Server Enterprise Edition (EE). More
+information about that is covered below in the [Deployment
+Models](#deployment-models).
 
 ## Deployment
 The Gluu Server can be deployed on any physical or virtual server. Both
-distributions of the Gluu Server--Community Edition and Enterprise Edition--are
-distributed as containers. Community Edition uses `chroot` containers,
-while the Enterprise Edition uses `docker` containers. Container
-distribution enables Gluu to make sure that all the pieces are working
-together. If you actually had to integrate all the components of the
-Gluu Server together, it would take you a long time.
+distributions of the Gluu Server--Community Edition and Enterprise
+Edition--are distributed as containers. The Community Edition uses
+`chroot` containers, while the Enterprise Edition uses `docker`
+containers. Container distribution enables Gluu to make sure that all
+the pieces are working together. If you actually had to integrate all
+the components of the Gluu Server together, it would take you a long
+time.
 
 [View the Gluu Server deployment guide](../deployment/index.md)
 
@@ -53,9 +57,10 @@ operational complexities, we recommend getting familiar with [Community
 Edition](../deployment/index.md) before making the leap to Enterprise
 Edition.
 
-The Gluu Server Enterprise Edition is divided into two packages identified as
-"master" and "consumer". The "master" package is offered for free, and
-the "consumer" package requires a commercial license. Learn more in our [EE docs](http://gluu.org/docs-cluster).
+The Gluu Server Enterprise Edition is divided into two packages
+identified as "master" and "consumer". The "master" package is offered
+for free, and the "consumer" package requires a commercial license.
+Learn more in our [EE docs](http://gluu.org/docs-cluster).
 
 ## Identity Management
 
