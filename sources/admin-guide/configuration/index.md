@@ -524,9 +524,10 @@ log file can be displayed from the Web UI with a few clicks of the
 mouse. This feature can be enabled from the configuration menu clicking
 **Configuration --> Configure Log Viewer**.
 
-![Configure Log Viewer](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_config_logviewer.png)
+![Configure Log Viewer](https://cloud.githubusercontent.com/assets/7703245/12272408/8fc7ecc2-b98a-11e5-9297-3d3f3329ba5d.png)
 
-Clicking on **Add log template** will bring two boxes. The boxes on the
+Gluu Server comes preloaded with four logs in this page as the screenshot portrays. The oxAuth, oxTrust, Cache Refresh and the console log is available by default.
+Clicking on **Add log template** will bring up boxes where log path can be set to view the same from the GUI. The boxes on the
 left contain the name/description of the log file, and the right boxes
 contain the path of the log file such as _/opt/tomcat/logs/demo.log_.
 
