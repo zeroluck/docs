@@ -76,7 +76,9 @@ either [setup.py help](./setup_py.md), or run `./setup.py -h`.
 ```
 
 After the successful execution of the setup script, point your browser
-to the uri `https://hostname`. Login with the default user name “admin”,
+to the uri `https://hostname`. If you are not using a resolvable DNS host, 
+you will need to add the hostname to your hosts file on the server which is running your browser. 
+Login with the default user name “admin”,
 and the LDAP password printed back in the confirmation (also contained
 in `setup.properties.last`). The full LDIF for the admin user contains
 the file `/opt/opendj/ldif/people.ldif`.
