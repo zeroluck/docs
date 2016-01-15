@@ -78,7 +78,7 @@ either [setup.py help](./setup_py.md), or run `./setup.py -h`.
 The script will bring up a prompt to provide information for certificate. It is recommened to use 
 `hostname.domain` structure for hostname and refrain from using `127.x.x.x` 
 for IP address. After the successful execution of the setup script, point your browser
-to the uri `https://hostname`. If you are not using a resolvable DNS host, 
+to the uri `https://hostname.domain`. If you are not using a resolvable DNS host, 
 you will need to add the hostname to your hosts file on the server which 
 is running your browser. Login with the default user name “admin”,
 and the LDAP password printed back in the confirmation (also contained
