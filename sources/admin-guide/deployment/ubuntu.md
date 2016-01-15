@@ -47,7 +47,9 @@ environment to configure the Gluu Server. These are the single steps:
 #./setup.py
 ```
 
-After the successful execution of `setup.py` script, login to oxTrust,
+The script will bring up a prompt to provide information for certificate. It is recommened to use 
+`hostname.domain` structure for hostname and refrain from using `127.x.x.x` 
+for IP address. After the successful execution of `setup.py` script, login to oxTrust,
 the policy administration point for Gluu. Point your browser to the uri
 `https://hostname`.
 
