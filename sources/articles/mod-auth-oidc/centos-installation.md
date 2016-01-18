@@ -128,7 +128,7 @@ Let's create the Apache configuration file now. Create a file named
 
 Here, both certificate and key files already exist on the server. You
 can use your own, too. Next, enable the site by running the
-`a2ensite`command, and restart the Apache service as:
+following command, and restart the Apache service as:
 
 ```
 ln -s /etc/httpd/sites-available/dynamic.conf
@@ -213,7 +213,7 @@ below:
 ```
 
 Instead of pre-existing cert and key files, feel free to use your own.
-Next, enable the static site by running the `a2ensite` command, and
+Next, enable the static site by running the following command, and
 restart the Apache service as below:
 
 ```
