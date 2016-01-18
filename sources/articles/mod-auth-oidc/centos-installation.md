@@ -131,7 +131,7 @@ can use your own, too. Next, enable the site by running the
 `a2ensite`command, and restart the Apache service as:
 
 ```
-a2ensite dynamic.conf
+ln -s /etc/httpd/sites-available/dynamic.conf
 service httpd restart
 ```
 
@@ -217,7 +217,7 @@ Next, enable the static site by running the `a2ensite` command, and
 restart the Apache service as below:
 
 ```
-a2ensite static.conf
+ln -s /etc/httpd/sites-available/sites-available/static.conf
 service httpd restart
 ```
 
