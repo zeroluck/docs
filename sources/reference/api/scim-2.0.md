@@ -685,7 +685,7 @@ Returns a list of users
         <td>Yes</td>
         <td></td>
         <td> - </td>
-        <td>ScimPersonSearch </td>
+        <td><a href="#/definitions/ScimPersonSearch"> ScimPersonSearch </td>
     </tr>
 </table>
 
