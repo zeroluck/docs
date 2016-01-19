@@ -643,6 +643,61 @@ Delete a user
 |-------------|-------------|----------------|
 | default     | successful operation |  -    |
 
+
+
+## /v2/Users/SearchPersons
+
+### POST
+
+<a id="listUsers">List Users</a>
+
+Returns a list of users
+(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4).
+
+#### Security
+
+* Authorization
+
+#### Request
+
+##### Parameters
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Located in</th>
+        <th>Required</th>
+        <th>Description</th>
+        <th>Default</th>
+        <th>Schema</th>
+    </tr>
+    <tr>
+        <th>Authorization</th>
+        <td>header</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>Body</th>
+        <td>Body</td>
+        <td>Yes</td>
+        <td></td>
+        <td> - </td>
+        <td>ScimPersonSearch </td>
+    </tr>
+</table>
+
+#### Response
+
+**Content-Type: ** application/json, application/xml
+
+| Status Code | Reason      | Response Model |
+|-------------|-------------|----------------|
+| 200    | successful operation | <a href="#/definitions/ListResponse">ListResponse</a>|
+
+
 - - -
 
 ## Definitions
@@ -1768,3 +1823,30 @@ Delete a user
         <td></td>
     </tr>
 </table>
+
+## <a name="/definitions/ScimPersonSearch">ScimPersonSearch</a>
+
+<table border="1">
+    <tr>
+        <th>name</th>
+        <th>type</th>
+        <th>required</th>
+        <th>description</th>
+        <th>example</th>
+    </tr>
+    <tr>
+        <td>attribute</td>
+        <td> string </td>
+        <td>required</td>
+        <td>User Attribute Name</td>
+        <td>Username</td>
+    </tr>
+    <tr>
+        <td>value</td>
+        <td> string </td>
+        <td>required</td>
+        <td>User Attribute Value</td>
+        <td>Mike</td>
+    </tr>
+</table>
+
