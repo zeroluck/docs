@@ -32,7 +32,7 @@ follow these steps in order to update the Apache SSL cert:
 - save both the latest SSL httpd key and certificate in the file 
   `/etc/certs`.
 - rename them to `httpd.key` and `httpd.crt`, respectively.
-- import 'httpd.der' into java keystore
+- import 'httpd.der' into the default java keystore [Ex: /usr/java/latest/lib/security/cacerts ]
   - Convertion to DER, command: `openssl x509 -outform der -in httpd.crt -out httpd.der`
   - Import this DER into java keystore (cacerts), command: `keytool -importcert -file httpd.der -keystore cacerts -alias <hostname_of_your_Gluu_Server>`
 - restart LDAP server, apache2/httpd and tomcat.
