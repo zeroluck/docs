@@ -30,7 +30,7 @@ As an alternative, use our Gluu repository for Ubuntu Trusty (14.04):
 
 # apt-get update
 
-# apt-get install gluu-server24
+# apt-get install gluu-server-2.4.1
 ```
 
 After both the retrieval, and the installation of the Gluu Server
