@@ -13,6 +13,7 @@ pages:
 - [admin-guide/introduction/index.md, Admin Guide, Introduction]
 - [admin-guide/getting-started/index.md, Admin Guide, Getting Started]
 - [admin-guide/deployment/index.md, Admin Guide, Deployment]
+- [admin-guide/deployment/update.md, Admin Guide, Upgrade]
 - [admin-guide/certificates/index.md, Admin Guide, Certificates]
 - [admin-guide/configuration/index.md, Admin Guide, Configuration]
 - [admin-guide/design-customizations/index.md, Admin Guide, Design Customizations]
@@ -68,7 +69,7 @@ pages:
 - [admin-guide/deployment/setup_py.md, hidden]
 - [admin-guide/deployment/ubuntu.md, hidden]
 - [admin-guide/deployment/rhel.md, hidden]
-
+- [admin-guide/deployment/centos7.md, hidden]
 # Certificates Sub-sections
 - [admin-guide/certificates/https.md, hidden]
 - [admin-guide/certificates/openid-connect.md, hidden]

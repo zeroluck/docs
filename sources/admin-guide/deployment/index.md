@@ -8,7 +8,8 @@ The Gluu Server CE is the full stack of Gluu components distributed in a
 Gluu Server where high availability and elastic scalability are not core
 requirements.
 
-- [Centos](./centos.md)
+- [CentOS 6.x](./centos.md)
+- [CentOS 7](./centos7.md)
 - [Ubuntu](./ubuntu.md)
 - [RHEL](./rhel.md)
 
