@@ -1,5 +1,5 @@
 [TOC]
-# Gluu Server Community Edition (CE) CentOS Configuration Guide
+# Gluu Server Community Edition (CE) CentOS 6.x Configuration Guide
 
 `chroot` is a pre-Docker OS level container technology. Like Docker, the
 `chroot` distribution includes a full Linux distribution. As a file
@@ -24,7 +24,7 @@ Portal](https://support.gluu.org).
 
 The Gluu Server Community Edition should be deployed on a VM with:
 
-* CentOS 6.5 and 7
+* CentOS 6.5
 * 2 cpu units
 * At least 4GB of physical memory (more is always better, though)
 * 40 GB disk space
