@@ -38,9 +38,9 @@ software package start the Gluu Server, and login into the local chroot
 environment to configure the Gluu Server. These are the single steps:
 
 ```
-# service gluu-server24 start
+# /etc/init.d/gluu-server-2.4.1 start
 
-# service gluu-server24 login
+# /etc/init.d/gluu-server-2.4.1 login
 
 # cd /install/community-edition-setup/
 
@@ -73,19 +73,19 @@ for solutions to many common problems we know about.
 You can start the Gluu Server with this command:
 
 ```
-# service gluu-server24 start
+# /etc/init.d/gluu-server-2.4.1 start
 ```
 
 You can stop the Gluu Server with this command:
 
 ```
-# service gluu-server24 stop
+# /etc/init.d/gluu-server-2.4.1 stop
 ```
 
 ## Login to the chroot environment
 
 ```
-# service gluu-server24 login
+# /etc/init.d/gluu-server-2.4.1 login
 ```
 
 Or if you prefer...
