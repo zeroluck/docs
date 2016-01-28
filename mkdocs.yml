@@ -13,7 +13,6 @@ pages:
 - [admin-guide/introduction/index.md, Admin Guide, Introduction]
 - [admin-guide/getting-started/index.md, Admin Guide, Getting Started]
 - [admin-guide/deployment/index.md, Admin Guide, Deployment]
-- [admin-guide/deployment/update.md, Admin Guide, Upgrade]
 - [admin-guide/certificates/index.md, Admin Guide, Certificates]
 - [admin-guide/configuration/index.md, Admin Guide, Configuration]
 - [admin-guide/design-customizations/index.md, Admin Guide, Design Customizations]
