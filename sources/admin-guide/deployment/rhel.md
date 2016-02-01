@@ -38,7 +38,7 @@ components during the installation.
 These are the single steps:
 
 ```
-# wget https://repo.gluu.org/rhel/Gluu.repo -O /etc/yum.repos.d/Gluu.repo
+# wget https://repo.gluu.org/rhel/Gluu-rhel6.repo -O /etc/yum.repos.d/Gluu.repo
 # wget https://repo.gluu.org/rhel/RPM-GPG-KEY-GLUU -O /etc/pki/rpm-gpg/RPM-GPG-KEY-GLUU
 # rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-GLUU
 # yum clean all
