@@ -1,19 +1,50 @@
-# Supported Operating Systems
-We currently publish packages for the following **64-bit** operating
-systems:
+[TOC]
 
-### Community Edition (CE) 
+# Community Edition (CE) 
 The Gluu Server CE is the full stack of Gluu components distributed in a
 `chroot` container. CE is suitable for single server deployments of the
 Gluu Server where high availability and elastic scalability are not core
 requirements.
 
-- [CentOS 6.x](./centos.md)
-- [CentOS 7](./centos7.md)
-- [Ubuntu](./ubuntu.md)
-- [RHEL](./rhel.md)
+## Requirements
+### Hardware Requirements
+The Gluu Server is very flexible, and can be used for a wide array of
+access management requirements. Depending on the size of your data, and
+the number of concurrent transactions you want to support, you may need
+more or less memory or CPU capacity.
 
-### Enterprise Edition (EE)
+If you are running all the Gluu Server services on the same server (i.e.
+SAML, OAuth2, LDAP), you will need at least:
+
+- 2 CPU units
+- 4GB of RAM
+- 40GB of disk space
+
+Not enough memory may produce some really weird bugs. From there, you
+may need to adjust the resources based on your specific requirements.
+
+### Operating System Requirement
+32-bit operating systems are **not supported** for any Gluu
+Server distributions. It is strongly recommended to set `file descriptors`
+to 65k. The following steps will help set the `file descriptor` limit.
+
+* Edit the `/etc/security/limits.conf` file.
+* Add the following lines in the `limits.conf` file. Please replace the `username` with the user that will install Gluu Server.
+	
+```
+username soft nofile 65536
+username hard nofile 262144
+```
+
+# Deployment Guide
+The following operating systems are supported by Gluu and the releases are tested before release.
+
+- [CentOS 6.5](./centos.md)
+- [CentOS 7](./centos7.md)
+- [Ubuntu 14.04.2](./ubuntu.md)
+- [RHEL 6.5](./rhel.md)
+
+# Enterprise Edition (EE)
 The Gluu Server EE is functionally equivalent to CE, but each component
 is packaged in its own `docker` container. EE includes a [web
 application](http://www.gluu.org/docs-cluster/admin-guide/webui/) that
@@ -29,36 +60,18 @@ please [schedule a meeting with us](http://gluu.org/booking).
 *Note:* 32-bit operating systems are **not supported** for any Gluu
 Server distributions.
 
-# Hardware Requirements
-
-The Gluu Server is very flexible, and can be used for a wide array of
-access management requirements. Depending on the size of your data, and
-the number of concurrent transactions you want to support, you may need
-more or less memory or CPU capacity.
-
-### Community Edition
-
-If you are running all the Gluu Server services on the same server (i.e.
-SAML, OAuth2, LDAP), you will need at least:
-
-- 2 CPU units
-- 4GB of RAM
-- 40GB of disk space
-
-Not enough memory may produce some really weird bugs. From there, you
-may need to adjust the resources based on your specific requirements.
-
-### Enterprise Edition
+## Requirements
 
 - 2 CPU Units
 - 8 GB of RAM
 - 40 GB of disk space
 
-# Java
+# Third Party Componenets
+## Java
 The Gluu Server components have been tested with OpenJDK version 1.7 or
 later.
 
-# LDAP
+## LDAP
 The Gluu Server uses LDAP for persistence to store oxTrust and oxAuth
 data, and to cache user entries.  The Gluu Server packages include "Gluu
 OpenDJ", which is our
