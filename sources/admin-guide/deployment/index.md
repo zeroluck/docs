@@ -25,7 +25,8 @@ may need to adjust the resources based on your specific requirements.
 
 ### Operating System Requirement
 32-bit operating systems are **not supported** for any Gluu
-Server distributions. It is strongly recommended to set `file descriptors`
+Server distributions. 
+It is strongly recommended to set `file descriptors`
 to 65k. The following steps will help set the `file descriptor` limit.
 
 * Edit the `/etc/security/limits.conf` file.
@@ -35,6 +36,13 @@ to 65k. The following steps will help set the `file descriptor` limit.
 username soft nofile 65536
 username hard nofile 262144
 ```
+The following ports need to stay open for the Gluu Server to run. Please keep the ports open before installing Gluu Server.
+
+|	Port Number	|	Protocol	|
+|-----------------------|-----------------------|
+|	20		|	tcp		|
+|	80		|	tcp		|
+|	443		|	tcp		|
 
 # Deployment Guide
 The following operating systems are supported by Gluu and the releases are tested before release.
