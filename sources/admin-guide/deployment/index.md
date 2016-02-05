@@ -33,8 +33,8 @@ to 65k. The following steps will help set the `file descriptor` limit.
 * Add the following lines in the `limits.conf` file. Please replace the `username` with the user that will install Gluu Server.
 	
 ```
-username soft nofile 65536
-username hard nofile 262144
+* soft nofile 65536
+* hard nofile 262144
 ```
 The following ports need to stay open for the Gluu Server to run. Please keep the ports open before installing Gluu Server.
 
