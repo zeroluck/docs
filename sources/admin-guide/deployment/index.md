@@ -35,7 +35,24 @@ to 65k. The following steps will help set the `file descriptor` limit.
 ```
 * soft nofile 65536
 * hard nofile 262144
+
 ```
+
+Edit the `/etc/pam.d/login` by adding the line:
+```
+session required /lib/security/pam_limits.so
+```
+* Use the system file limit to increase the file descriptor limit to 65535. The system file limit is set in `/proc/sys/fs/file-max`.
+```
+echo 65535 > /proc/sys/fs/file-max
+```
+
+* Use the `ulimit` command to set the file descriptor limit to the hard limit specified in `/etc/security/limits.conf`.
+```
+ulimit -n unlimited
+```
+* Restart your system.
+
 The following ports need to stay open for the Gluu Server to run. Please keep the ports open before installing Gluu Server.
 
 |	Port Number	|	Protocol	|
