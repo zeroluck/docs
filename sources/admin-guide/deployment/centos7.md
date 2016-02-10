@@ -33,7 +33,7 @@ The Gluu Server Community Edition should be deployed on a VM with:
 Please review the [deployment guide](./index.md#available-components)
 for a list of available components during the installation.
 
-## Installing GLUU Server with yum (CentOS 6.5):
+## Installing GLUU Server with yum
 
 These are the single steps:
 
