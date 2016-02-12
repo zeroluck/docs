@@ -189,7 +189,7 @@ Trust Relationship after successful creation.
 * How can I get the IDP's SAML cert?
     * SAML certificate is available in your IDP's metadata. Metadata can
       be collected by following these
-[instructions](https://support.gluu.org/view/installation/idp-certificate-entityid-location-http-redirect-location-etc/265).
+[instructions](https://support.gluu.org/view/installation/idp-certificate-entityid-location-http-redirect-location-etc-265).
 
 * I need to update metadata for one Service Provider. How is it possible? 
-    * This is pretty easy. Just follow the instructions listed [here](https://support.gluu.org/view/maintenance/update-metadata-for-service-provider/1446). 
+    * This is pretty easy. Just follow the instructions listed [here](https://support.gluu.org/view/maintenance/update-metadata-for-service-provider-1446). 
