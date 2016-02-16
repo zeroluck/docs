@@ -138,11 +138,11 @@ packages that are installed, and the home directory of the Gluu Server
 user. The following commands illustrate the single steps:
 
 ```
-# service gluu-server24 stop
+# service gluu-server-2.4.1 stop
 
-# apt-get remove gluu-server24
+# apt-get remove gluu-server-2.4.1
 
-# rm -rf /opt/gluu-server24
+# rm -f -r gluu-server-2.4.1.
 ```
 
 On an installation, any modified files are saved in the directory
