@@ -36,7 +36,7 @@ Further documentation is available at the Salesforce.com site.
        above, i.e. `https://testgluu-dev-ed.my.salesforce.com`
      * _Identity Provider Certificate_: Grab your Gluu Server's SAML
        certificate. SAML certificate can be grabbed from your Gluu Sever's
-       [metadata](https://support.gluu.org/view/application-integration/how-can-i-get-my-idps-metadata/216). Save the certificate and upload it.
+       [metadata](https://support.gluu.org/integrations/how-can-i-get-my-idps-metadata-and-certificate-216). Save the certificate and upload it.
      * _Request Signing Certificate_: Default certificate
      * _Request Signature Method_: RSA-SHA1
      * _Assertion Decryption Certificate_: Assertion not encrypted.
