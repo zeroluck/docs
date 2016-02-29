@@ -5,15 +5,16 @@
 [OpenID Connect](http://openid.net/connect) ("Connect") is a standard
 profile of OAuth2 which defines a protocol to enable a website or mobile
 application to send a person to a domain for authentication and required
-attributes (e.g. email address, first name, last name, etc.). OpenID Connect
-also provides some of the plumbing around authentication to automate how
-this happens. If a person is visiting a website for the first time, the
-process that OpenID Connect defines is 100% bootstrapable by the
-website. This is really critical for Internet scalability. To visit
-someone's website, or to send someone an email, you do not need to get
-the system administrators involved. Connect provides the same type of
-scalable infrastructure for authentication and authorization, and promises to define a base level domain
-identification.
+attributes (e.g. email address, first name, last name, etc.). OpenID
+Connect also provides some of the plumbing around authentication to
+automate how this happens. If a person is visiting a website for the
+first time, the process that OpenID Connect defines is 100%
+bootstrapable by the website. This is really critical for Internet
+scalability. To visit someone's website, or to send someone an email,
+you do not need to get the system administrators involved. OpenID
+Connect provides the same type of scalable infrastructure for
+authentication and authorization, and promises to define a base level
+domain identification.
 
 ## Jargon (taxonomy)
 
