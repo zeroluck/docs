@@ -35,7 +35,7 @@ this plugin as a standard LifeRay hot deployable WAR file.
 This requires a prerequisite: make sure that you have [Maven][maven]
 installed on your system to build this plugin from source.
 
-1. Checkout the Maven source from the [oxRay Repository][oxray].
+1. Checkout the Maven source from the [oxRay Repository][https://github.com/GluuFederation/oxRay/tree/master/6.2.x/maven/gluu-openid-connect-hook].
 
 2. Open the file `pom.xml` in `gluu-openid-connect-hook`, and update
 your local LifeRay Tomcat bundle path. This is required for building the
@@ -75,7 +75,7 @@ ant clean deploy
 You can also download a compiled binary as a standard LifeRay deployable
 WAR file from the following location:
 
-[oxRay LifeRay Deployable War File](https://github.com/Gluufederation/oxRay/6.2.x/binary/gluu-openid-connect-hook-6.2.0.1.war)
+[oxRay LifeRay Deployable War File](https://github.com/GluuFederation/oxRay/blob/master/6.2.x/binary/gluu-openid-connect-hook-6.2.0.1.war)
 
 Copy this WAR file in your LifeRay bundle. Usually, this is located at
 `liferay-portal-6.2.0-ce-ga1/deploy`.

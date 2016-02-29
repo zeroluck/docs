@@ -44,8 +44,7 @@ options.
      provides such a link for its end users.
 
    * __Verification certificate__: Upload the SAML certificate of your
-     Gluu Server. To get the SAML certificate of your Gluu Server, have
-     a look [here](https://support.gluu.org/view/installation/certificates-in-idp/275).
+     Gluu Server. The SAML certificates are available in the `/etc/certs` folder inside the Gluu Server `chroot` environment.
 
    * __Use a domain specific issuer__: Enable this box to use a
      domain-specific issuer.

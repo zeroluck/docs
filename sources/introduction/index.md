@@ -42,6 +42,6 @@ The third party components have separate licenses.
 |	Shibboleth	|	[Apache2](http://www.apache.org/licenses/LICENSE-2.0)|
 |	OpenDJ		|	[CDDL-1.0](http://opensource.org/licenses/CDDL-1.0)|
 |	OpenLDAP	|	[OpenLDAP Public License](http://www.openldap.org/software/release/license.html)|
-|	389DS		|	[389 Directory Server License](http://www.port389.org/docs/389ds/licensing.html)|
+|	389DS		|	[389 Directory Server License](http://www.port389.org/docs/389ds/FAQ/licensing.html)|
 |	Asimba		|	[GNU APGL 3.0](http://www.gnu.org/licenses/agpl-3.0.html)|
 |	Jagger		|	[MIT License](http://opensource.org/licenses/MIT)|

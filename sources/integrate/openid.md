@@ -82,7 +82,7 @@ Registration](http://openid.net/specs/openid-connect-registration-1_0.html)
 which efficiently pushes the task to the application developer. If you
 do not want to write an application to register your client, there are a
 few web pages around that can do the job for you. Gluu publishes the
-[oxAuth-RP](seed.gluu.org/oxauth-rp) and there is also another in [PHP
+[oxAuth-RP](https://seed.gluu.org/oxauth-rp) and there is also another in [PHP
 RP](http://www.gluu.co/php-sample-rp).
 
 If you cannot get the developer to help themselves, or if your domain
@@ -179,7 +179,7 @@ To access the interface for custom scripts in oxTrust, navigate to
 Configuration --> Custom Scripts --> Custom Client Registration.
 
 Take a look at our [example client registration
-script](../../reference/interception-scripts/sample-client-registration-script.py)
+script](../customize/sample-client-registration-script.py)
 for further reference.
 
 ### Search clients
