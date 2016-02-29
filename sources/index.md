@@ -1,129 +1,43 @@
-# Welcome to the Gluu Server Documentation
+[TOC]
 
-The Gluu Server is a free open source access management suite of
-software primarily written in the Java programming language. The Gluu
-Server combines best-of-breed open source identity and access management
-software with easy deployment and administration, and is engineered to
-support robust enterprise requirements for uptime and availability.
+# Gluu Server Documentation 
+## Overview
+The Gluu Server is an identity and access management suite comprised of
+free open source software (FOSS) components. Some of the software was
+written by Gluu (everything with an "ox" prefix, like "oxAuth"), and
+some of the software we forked from existing open source projects like
+the Shibboleth SAML identity provider, Forgerock community release of
+OpenDJ, the Asimba SAML proxy, the CAS authentication server and many
+more components that are part of the Linux distributions.
 
-The code is open source, and [available on github](http://github.com/gluufederation).
+The full suite of software is distributed as Linux packages that support
+either single server or clustered deployments. In order to achieve a highly available, clustered Gluu Server infrastrucutre, you'll need a commercial license for the Gluu Server Enterprise Edition (EE).
 
-Community support can be enlisted either on the [Gluu
-website](http://support.gluu.org) or by opening an issue on
-[Github](http://github.com/GluuFederation). Gluu also offers [VIP
-support and operational services](http://gluu.org/pricing) and can refer
-your organization to one of our world-class [integration
-partners](http://www.gluu.org/partners/current-partners/) for any custom
-development and integration needs.
+## Deployment
+The Gluu Server can be deployed on any physical or virtual server. Both
+distributions of the Gluu Server--Community Edition and Enterprise Edition--are
+distributed as containers. Community Edition uses `chroot` containers,
+while the Enterprise Edition uses `docker` containers. Container
+distribution enables Gluu to make sure that all the pieces are working
+together. If the integration of the components were done manually 
+then it would be a lengthy and tiresome process.
 
-The main documentation is organized into the following sections:
+### Deployment Models:
+**Community Edition (CE):** The Gluu Server Community Edition deploys all 
+services in one chroot container and can be deployed in production, with 
+an unlimited number of users, for free. Community support is available on our 
+[public forum](https://support.gluu.org), or you can purchase a [Basic or 
+Growing Business support plan](gluu.org/pricing) to open private tickets, 
+get an SLA on support responses, and enlist security and support consultations 
+with Gluu’s trained support staff.
 
-- *[Admin Guide](#admin-guide)*
-- *[Reference](#reference)*
-- *[Articles](#articles)*
+**Enterprise Edition (EE):** Gluu Enterprise Edition promises scalability,
+reliability and a fail-over mechanism through its innovative design
+implemented using Docker. The cluster server can also call a DOS
+service, like DOSarrest, enabling protection from distributed denial of
+service attacks. Because the Enteprise Edition introduces new
+operational complexities, we recommend getting familiar with Community
+Edition before making the leap to Enterprise
+Edition.
 
-# Admin Guide
-- [Introduction](./admin-guide/introduction/index.md)
-	  - [Our Mission](./admin-guide/introduction/index.md#our-mission)
-	  - [History](./admin-guide/introduction/index.md#history)
-	  - [Design Goals](./admin-guide/introduction/index.md#design-goals)
-	  - [Architecture](./admin-guide/introduction/index.md#architecture)
-	  - [Licenses](./admin-guide/introduction/index.md#licenses)
-- [Getting Started](./admin-guide/getting-started/index.md)
-- [Deployment](./admin-guide/deployment/index.md)
-	  - [CentOS](./admin-guide/deployment/centos.md)
-	  - [Ubuntu](./admin-guide/deployment/ubuntu.md)
-- [Configuration](./admin-guide/configuration/index.md)
-	  - [Organization Configuration](./admin-guide/configuration/index.md#organization-configuration)
-	  - [Manage Authentication](./admin-guide/configuration/index.md#manage-authentication)
-	  - [Manage Custom Scripts](./admin-guide/configuration/index.md#manage-custom-scripts)
-	  - [Manage Registration](./admin-guide/configuration/index.md#manage-registration)
-	  - [Attributes](./admin-guide/configuration/index.md#attributes)
-	  - [Cache Refresh (LDAP Synchronization)](./admin-guide/configuration/index.md#cache-refresh)
-	  - [Configure Log Viewer](./admin-guide/configuration/index.md#configure-log-viewer)
-	  - [View Logs](./admin-guide/configuration/index.md#view-logs)
-- [Operations](./articles/operations/index.md)
-- [Design Customizations](./admin-guide/design-customizations/index.md)
-	  - [Style Customizations](admin-guide/design-customizations/index.md#style-customizations)
-	  - [Page Customizations](admin-guide/design-customizations/index.md#page-customizations)
-	  - [Built-in oxTrust Customization](admin-guide/design-customizations/index.md#built-in-oxtrust-customization)
-- [LDAP](./admin-guide/ldap/index.md)
-	  - [Indexing](./admin-guide/ldap/index.md#indexing)
-	  - [Replication](./admin-guide/ldap/index.md#replication)
-- [SAML](./admin-guide/saml/index.md)
-	  - [Outbound SAML](./admin-guide/saml/outbound-saml.md)
-	  - [Inbound SAML](./admin-guide/saml/inbound-saml.md)
-	  - [SAML SP Setup](./admin-guide/saml/saml-sp-configuration.md)
-- [OpenID Connect](./admin-guide/openid-connect/index.md)
-	  - [New Jargon](admin-guide/openid-connect/index.md#new-jargon-taxonomy)
-	  - [Discovery](admin-guide/openid-connect/index.md#discovery)
-	  - [Scopes](./admin-guide/openid-connect/index.md#scopes)
-	  - [Client Registration](./admin-guide/openid-connect/index.md#client-registration)
-	  - [Session Management](./admin-guide/openid-connect/index.md#session-management)
-- [UMA](./admin-guide/uma/index.md)
-	  - [Introduction](./admin-guide/uma/index.md#introduction)
-	  - [Discovery](./admin-guide/uma/index.md#discovery)
-	  - [Resource Registration](./admin-guide/uma/index.md#resource-registration)
-	  - [UMA Policies](./admin-guide/uma/index.md#uma-policies)
-	  - [UMA Scopes](./admin-guide/uma/index.md#uma-scopes)
-	  - [Requesting Party Trust Elevation](./admin-guide/uma/index.md#requesting-party-trust-elevation)
-- [User Management](./admin-guide/user-management/index.md) 
-	  - [Cache Refresh](./admin-guide/user-management/index.md#cache-refresh)
-	  - [Self Registration](./admin-guide/user-management/index.md#self-registration)
-	  - [Local User Management](./admin-guide/user-management/index.md#local-user-management)
-	  - [SCIM oxAuth Authentication](./admin-guide/user-management/index.md#scim-oxauth-authentication)
-	  - [SCIM UMA Authentication](./admin-guide/user-management/index.md#scim-uma-authentication)
-- [Personal](./admin-guide/personal/index.md) 
-- [SCIM](./admin-guide/SCIM/index.md)
- 
-# FAQ
-- [Troubleshooting](./faq/troubleshooting.md)
-- [Cloud FAQ](./faq/cloud-faq.md)
-- [General FAQ](./faq/index.md)
 
-# Reference
-- [API](./reference/api/index.md) 
-	  - [ID Generation](./reference/api/id-generation.md)
-	  - [OpenID Connect Authorization](./reference/api/oic-authorization.md)
-	  - [OpenID Connect End Session](./reference/api/oic-end-session.md)
-	  - [OpenID Connect Register Client](./reference/api/oic-register-client.md)
-	  - [OpenID Connect Token](./reference/api/oic-token.md)
-	  - [OpenID Connect User Info](./reference/api/oic-userinfo.md)
-	  - [UMA Discovery](./reference/api/uma-discovery.md)
-- [Interception Scripts](reference/interception-scripts/index.md)
-	  - [Application Session Management](reference/interception-scripts/index.md#application-session-management)
-	  - [Authentication](reference/interception-scripts/index.md#authentication)
-	  - [Authorization](reference/interception-scripts/index.md#authorization)
-	  - [Cache Refresh](reference/interception-scripts/index.md#cache-refresh) 
-	  - [Client Registration](reference/interception-scripts/index.md#client-registration)
-	  - [ID Generation](reference/interception-scripts/index.md#id-generation)
-	  - [Update User](reference/interception-scripts/index.md#update-user) 
-	  - [User Registration](reference/interception-scripts/index.md#user-registration) 
-- [LDAP Namespace](./reference/ldap-namespace/index.md)
-- [LDAP Schema](./reference/ldap-schema/index.md)
-- [Lib](./reference/lib/index.md)
-	  - [OpenID Connect](./reference/lib/openid-connect.md)
-	  - [SCIM](./reference/lib/scim.md)
-	  - [Using SCIM](./reference/lib/using-scim.md)
-	  - [UMA](./reference/lib/uma.md)
-- [oxAuth](./reference/oxAuth/index.md) 
-- [oxTrust](./reference/oxTrust/index.md)
-
-# Articles
-- [Gluu CE](./articles/gluu-server-ce.md)
-- [Gluu CE Operations](./articles/operations/index.md)
-- [Apache SAML](./articles/apache-saml.md)
-- [Benchmarking](./articles/benchmarking.md)
-- [Custom Attributes](./articles/custom-attributes.md)
-- [IIS SAML](./articles/iis-saml.md)
-- [oxRay Plugin](./articles/oxray.md)
-- [Java SAML Library](./articles/java-saml.md)
-- [Java OpenID Connect](./articles/java-connect.md)
-- [JS OpenID Connect](./articles/js-connect.md)
-- [mod_auth_oidc Installation Guide](./articles/mod-auth-oidc/index.md)
-- [Testing Shib2](./articles/test-shib2.md)
-- [Social Login With Google](./articles/social-login-google.md)
-- [SAML SSO with Salesforce](./articles/salesforce-sso.md)
-- [SAML SSO with Hobsons](./articles/hobsons-saml.md)
-- [SAML SSO with Google](./articles/google-saml.md)
-- [How to Write a Custom Authentication Script](./articles/auth-script.md)
