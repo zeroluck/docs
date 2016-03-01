@@ -1,5 +1,14 @@
 [TOC]
 
+# Overview
+The Gluu Server was designed to be very flexible. Gluu Server admins can use [Jython](http://www.jython.org/docs/tutorial/indexprogress.html) interception scripts to customize behavior.
+
+Jython was chosen because an interpreted language facilitates dynamic creation of business logic, and makes it easier to distribute this logic to a cluster of Gluu servers.
+
+Another advantage of Jython was that developers can use either Java or Python classes. Combined with the option of calling web services from Python or Java, this enables the Gluu Server to support any business-driven policy requirement.
+
+To access custom scripts within oxTrust, navigate to Configuration > Manage Custom Scripts.
+
 # Custom Scripts
 All script types inherit a base interface which has 3 methods:
 
