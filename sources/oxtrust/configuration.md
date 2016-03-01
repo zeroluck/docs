@@ -89,6 +89,75 @@ section.
 * _Organization Favicon:_ This feature can be used to change the
   organization favicon, if desired.
 
+# Manage Authentication
+This section allows the Gluu Server administrator to define how and
+where the server should connect to authenticate users. If it is a remote
+LDAP/Active Directory server, the values are required. Put the details
+of the data source that you are trying to connect with Gluu Server. For
+example, the data source can be your back-end Active Directory, or your
+local LDAP server.
+
+![Manage LDAP Authentication](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_manage_ldap.png)
+
+* _Deactivate:_ This button *Deactivates/Activates* the Gluu Server
+  accessibility for authentication.
+
+* _Name:_ This field contains the name of the authentication server.
+
+* _Bind DN:_ The *Username* for the authentication server (local
+  LDAP/remote LDAP/remote Active Directory) goes here.
+
+* _Use SSL:_ If the authentication server requires a secured port (i.e.
+  636) then this option should be activated using the check-box.
+
+* _Max Connections:_ This option can be used to define the total number
+  of simultaneous connections allowed for reading local LDAP/remote Active
+  Directory/remote LDAP.
+
+* _Server:_ The unique name of the authentication server and port number
+  (i.e. auth.company.org:636) goes here.
+
+* _Base DN:_ Add base DNs in this field to allow the Gluu Server to
+  connect and search the LDAP server. Every directory tree should be added
+  separately using the *Add Base DN* option.
+
+* _Primary Key:_ This field contains the primary key to connect to the
+  authentication server (i.e. SAMAccountName/uid/mail etc.).
+
+* _Local Primary Key:_ This field contains the internal LDAP primary key
+  of the Gluu Server. Generally the key is either the *uid* or the *mail*.
+
+* _Enabled:_ This check-box is used to enable the keys that are inserted
+  in their respective fields.
+
+* _Change Bind Password:_ This button assignes a password to
+  authenticate the *Authentication Server*.
+
+* _Test LDAP Connection:_ This button checks whether the provided
+  information are sufficient to connect to the authentication server. The
+  scan is done in real time, and it is recommended to be used by the Gluu
+  Server administrators, only.
+
+## Default Authentication Method
+
+This allows the Gluu Server administrator to select both the default
+authentication mode, and level for person authentication. Both modes are
+set to "Default" until additional authentication mechanisms are enabled
+via [custom scripts](#manage-custom-scripts).
+
+![Default Authentication Method](https://raw.githubusercontent.com/GluuFederation/docs/75518bb90184aa1b096874526b4da5f9f924bd44/sources/img/2.4/admin_auth_default.png)
+
+# Manage Custom Scripts  
+
+The latest edition of the Gluu Server introduced a new Configuration
+section called _Manage Custom Scripts_. This is a single place where the
+server administrator can manage and implement interception scripts to
+customize the behavior of the Gluu Server.
+
+![Custom Authentication Scritp](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_auth_custom.png)
+
+Please see the [Behaviour Customization page](../customize/script.md) for details.
+
 # Manage Registration
 
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_config_workflow.png)
