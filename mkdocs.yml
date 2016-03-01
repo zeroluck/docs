@@ -8,7 +8,7 @@ theme: readthedocs
 theme_dir: ./theme/mkdocs/
 pages:
 
-- Home: 'index.md'
+- Welcome: 'index.md'
 - Introduction: 
     - 'Summary': 'introduction/index.md'
     - 'History': 'introduction/history.md'
