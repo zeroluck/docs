@@ -97,37 +97,6 @@ From the Manage Registration interface, the Gluu Server administrator
 can customize the self-registration work-flow. Each option will be
 covered individually as described below.
 
-## Activate Invitation Link
-When active, the Invitation Links feature allows the server admin to
-control who can register an account by issuing a unique registration
-link and sending it to the desired new users.
-
-Any person who knows the link will be able to register an account as
-long as the link is not expired. Expired links are deleted according to
-the "invite codes expiration process" policy. This includes any
-unconfirmed accounts if said link is moderated.
-
-Invitation links can be set to "moderated", and a number of moderators
-can be assigned to the link. A moderator has to be a registered user. In
-this case any newly registered users who used this link will not be
-immediately able to use their account until their registration is
-approved by the moderator of their link.
-
-Upon activating Invitation Links Management within the interface, you
-will be presented with the following options:
-
-- **Run invite codes expiration process every**: This feature allows you
-  to configure how often oxTrust will purge expired invitation links
-  from the system.
-- **Enable registration without invitation**: Allows public registration
-  even when Invitation Links are used.
-- **Enable account expiration**: Allows the admin to configure an
-  expiration policy for registered accounts.
-	- **Accounts expire after**: Provides an interface to set account
-	  expiration period and how often to run the expiration process.
-      After this period registered accounts will be subject to 
-      invalidation during the next account expiration process run.
-
 ## Disable Captcha for registration form
 Upon activating this feature, the default Captcha will be removed from
 the registration form.
