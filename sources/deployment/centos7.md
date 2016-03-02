@@ -6,7 +6,7 @@ Download and install Gluu Server by the following commands. Use the
 `.rpm` installation to perform a base chroot installation with the
 following Gluu Server Base CentOS requirements.
 
-As an alternative, use our Gluu repository for CentOS 6.5:
+As an alternative, use our Gluu repository for CentOS 7:
 
 ```
 # wget https://repo.gluu.org/centos/Gluu-centos7.repo -O /etc/yum.repos.d/Gluu.repo
