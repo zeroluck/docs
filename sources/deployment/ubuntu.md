@@ -15,7 +15,7 @@ As an alternative, use our Gluu repository for Ubuntu Trusty (14.04):
 
 # apt-get update
 
-# apt-get install gluu-server-2.4.1
+# apt-get install gluu-server-2.4.2
 ```
 
 ## Configuring Gluu Server
@@ -24,9 +24,9 @@ software package start the Gluu Server, and login into the local chroot
 environment to configure the Gluu Server. These are the single steps:
 
 ```
-# /etc/init.d/gluu-server-2.4.1 start
+# /etc/init.d/gluu-server-2.4.2 start
 
-# /etc/init.d/gluu-server-2.4.1 login
+# /etc/init.d/gluu-server-2.4.2 login
 
 # cd /install/community-edition-setup/
 
@@ -62,19 +62,19 @@ scripts).
 You can start the Gluu Server with this command:
 
 ```
-# /etc/init.d/gluu-server-2.4.1 start
+# /etc/init.d/gluu-server-2.4.2 start
 ```
 
 You can stop the Gluu Server with this command:
 
 ```
-# /etc/init.d/gluu-server-2.4.1 stop
+# /etc/init.d/gluu-server-2.4.2 stop
 ```
 
 ## Login to the chroot environment
 
 ```
-# /etc/init.d/gluu-server-2.4.1 login
+# /etc/init.d/gluu-server-2.4.2 login
 ```
 
 Or if you prefer...
@@ -107,11 +107,11 @@ packages that are installed, and the home directory of the Gluu Server
 user. The following commands illustrate the single steps:
 
 ```
-# service gluu-server-2.4.1 stop
+# service gluu-server-2.4.2 stop
 
-# apt-get remove gluu-server-2.4.1
+# apt-get remove gluu-server-2.4.2
 
-# rm -rf /opt/gluu-server-2.4.1
+# rm -rf /opt/gluu-server-2.4.2
 ```
 
 On an installation, any modified files are saved in the directory
@@ -122,7 +122,7 @@ installation, delete these files with the command `rm -rf
 In some circumstances, the installation can be broken. In that case
 please try the following to force to uninstall the package.
 
-`# dpkg --purge --force-all gluu-server-2.4.1`
+`# dpkg --purge --force-all gluu-server-2.4.2`
 
 ## Support
 
