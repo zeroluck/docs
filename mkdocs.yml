@@ -52,13 +52,13 @@ pages:
     - 'SCIM 1.1': 'api/scim-1.1.md'
     - 'SCIM 2.0': 'api/scim-2.0.md'
  
-- SP / RP Integratiion Module:
+- SP / RP Integration Modules:
     - 'SAML SP in CentOS': 'integrate/apache-saml.md'
     - 'SAML SP in Ubuntu': 'integrate/ubuntu-shib-apache.md'
     - 'SAML SP in IIS7': 'integrate/iis-saml.md'
     - 'SAML SP in Windows': 'integrate/saml-windows.md'
-    - 'OpenID Connect in Ubuntu': 'integrate/ubuntu-installation.md'
-    - 'OpenID Connect in CentOS': 'integrate/centos-installation.md'
+    - 'OpenID Connect RP in Ubuntu': 'integrate/ubuntu-installation.md'
+    - 'OpenID Connect RP in CentOS': 'integrate/centos-installation.md'
     - 'OpenID Liferay Plugin': 'integrate/oxray.md'
 - Integration Guides:
     - 'Google SSO': 'integrate/google-saml.md'
