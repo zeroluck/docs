@@ -9,8 +9,8 @@ following Gluu Server Base CentOS requirements.
 As an alternative, use our Gluu repository for CentOS 6.5:
 
 ```
-# wget https://repo.gluu.org/centos/Gluu-rhel6.repo -O /etc/yum.repos.d/Gluu.repo
-# wget https://repo.gluu.org/centos/RPM-GPG-KEY-GLUU -O /etc/pki/rpm-gpg/RPM-GPG-KEY-GLUU
+# wget https://repo.gluu.org/rhel/Gluu-rhel6.repo -O /etc/yum.repos.d/Gluu.repo
+# wget https://repo.gluu.org/rhel/RPM-GPG-KEY-GLUU -O /etc/pki/rpm-gpg/RPM-GPG-KEY-GLUU
 # rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-GLUU
 # yum clean all
 # yum install gluu-server-2.4.2
