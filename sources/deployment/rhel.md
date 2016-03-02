@@ -1,12 +1,12 @@
 [TOC]
 
-# RHEL 6.5 Installation Guide
+# RHEL 6.x Installation Guide
 ## Installing Gluu Server 
 Download and install Gluu Server by the following commands. Use the
 `.rpm` installation to perform a base chroot installation with the
 following Gluu Server Base CentOS requirements.
 
-As an alternative, use our Gluu repository for CentOS 6.5:
+As an alternative, use our Gluu repository for RHEL 6.x:
 
 ```
 # wget https://repo.gluu.org/rhel/Gluu-rhel6.repo -O /etc/yum.repos.d/Gluu.repo
