@@ -13,7 +13,7 @@ As an alternative, use our Gluu repository for CentOS 6.5:
 # wget https://repo.gluu.org/centos/RPM-GPG-KEY-GLUU -O /etc/pki/rpm-gpg/RPM-GPG-KEY-GLUU
 # rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-GLUU
 # yum clean all
-# yum install gluu-server-2.4.2
+# yum install gluu-server-2.4.1
 ```
 
 ## Configuring Gluu Server
@@ -22,9 +22,9 @@ software package start the Gluu Server, and login into the local chroot
 environment to configure the Gluu Server. These are the single steps:
 
 ```
-# /sbin/gluu-serverd-2.4.2 start
+# /sbin/gluu-serverd-2.4.1 start
 
-# /sbin/gluu-serverd-2.4.2login
+# /sbin/gluu-serverd-2.4.1login
 
 # cd /install/community-edition-setup/
 
@@ -60,19 +60,19 @@ scripts).
 You can start the Gluu Server with this command:
 
 ```
-# /sbin/gluu-serverd-2.4.2 start
+# /sbin/gluu-serverd-2.4.1 start
 ```
 
 You can stop the Gluu Server with this command:
 
 ```
-# /sbin/gluu-serverd-2.4.2 stop
+# /sbin/gluu-serverd-2.4.1 stop
 ```
 
 ## Login to the chroot environment
 
 ```
-# /sbin/gluu-serverd-2.4.2 login
+# /sbin/gluu-serverd-2.4.1 login
 ```
 
 ### Scripted Installation
@@ -100,11 +100,11 @@ packages that are installed, and the home directory of the Gluu Server
 user. The following commands illustrate the single steps:
 
 ```
-# /sbin/gluu-serverd-2.4.2 stop
+# /sbin/gluu-serverd-2.4.1 stop
 
-# yum remove gluu-server-2.4.2
+# yum remove gluu-server-2.4.1
 
-# rm -rf /opt/gluu-server-2.4.2
+# rm -rf /opt/gluu-server-2.4.1
 ```
 
 On an installation, any modified files are saved in the directory
