@@ -40,4 +40,16 @@ operational complexities, we recommend getting familiar with Community
 Edition before making the leap to Enterprise
 Edition.
 
+## Identity Management
+
+To keep the Gluu Server up-to-date with the latest user information
+(a.k.a. attributes or claims), your organization can either "push" or
+"pull" identity data. In the "pull" mode, otherwise known as [LDAP
+Synchronization or Cache
+Refresh](./cache-refresh/index.md), the Gluu Server can
+use an existing LDAP identity source like Microsoft Active Directory as
+the authoritative source of identity information. If you "push"
+identities to the Gluu Server, you can use the JSON/REST SCIM 1.1 or 2.0
+API.
+
 
