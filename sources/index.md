@@ -27,7 +27,7 @@ then it would be a lengthy and tiresome process.
 services in one chroot container and can be deployed in production, with 
 an unlimited number of users, for free. Community support is available on our 
 [public forum](https://support.gluu.org), or you can purchase a [Basic or 
-Growing Business support plan](gluu.org/pricing) to open private tickets, 
+Growing Business support plan](http://gluu.org/pricing) to open private tickets, 
 get an SLA on support responses, and enlist security and support consultations 
 with Gluu’s trained support staff.
 
