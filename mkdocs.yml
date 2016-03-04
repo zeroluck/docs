@@ -60,6 +60,8 @@ pages:
     - 'OpenID Connect RP in Ubuntu': 'integrate/ubuntu-installation.md'
     - 'OpenID Connect RP in CentOS': 'integrate/centos-installation.md'
     - 'OpenID Liferay Plugin': 'integrate/oxray.md'
+    - 'SCIM UMA How-to': 'integrate/scimuma-howto.md'
+
 - Integration Guides:
     - 'Google SSO': 'integrate/google-saml.md'
     - 'Google Authentication': 'customize/social-login-google.md'
