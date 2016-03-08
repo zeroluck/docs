@@ -36,6 +36,7 @@ pages:
     - 'Personal': 'oxtrust/personal.md'
 - Import Users: 
     - 'Backend LDAP/AD': 'cache-refresh/index.md'
+    - 'XLS File': 'cache-refresh/xlsfile.md'
 - FAQ:
     - 'Troubleshooting': 'faq/troubleshooting.md'
 - Customize Gluu Server: 
@@ -75,6 +76,7 @@ pages:
     - 'Certificates': 'gluu-defaults/index.md'
     - 'LDAP': 'gluu-defaults/ldap.md'
     - 'Schema': 'gluu-defaults/schema.md'
+    - 'OpenID Connect Library': 'gluu-defaults/openid.md'
 - Gluu Server API:
     - 'OpenID Authorization Endpoint': 'api/oic-authorization.md'
     - 'OpenID Token Endpoint': 'api/oic-token.md'
