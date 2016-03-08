@@ -5,9 +5,12 @@ LDAP attributes, SAML attributes, OpenID Connect user claims--whatever
 you call them--many organizations have business-specific information
 about people that needs to be shared with applications. For simplicity,
 this article will refer to them as "attributes." Existing standard
-schemes like the LDAP `inetOrgPerson` standard, or the OpenID Connect
-`id_token` user claims define attributes like first name, last name and
-email address. Where possible, we recommend you use these. But what if
+schemas like the LDAP [inetOrgPerson](https://www.ietf.org/rfc/rfc2798.txt)
+standard, or the [OpenID Connect user claims]
+(http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims) 
+define attributes like first name, last name and
+email address. Where possible, we recommend you use standard attributes
+that are already defined in the Gluu Server. But what if
 there is an attribute that is just not in any standard schema? This
 article will explain what you need to do to configure the Gluu Server to
 support your new attributes, and give you some advice along the way with
@@ -54,63 +57,34 @@ appear:
 
 * _Status:_ The status, when selected active, will release and publish
   the attribute in IdP.
-
-
-## Using LDAP Command
-
-The Gluu Server needs to know which attributes are available. Each
-attribute that you want to make available must have a corresponding LDAP
-entry under `ou=attributes,o=<org-inum>,o=gluu`. If you browse your LDAP
-server after performing a Gluu Server base installation, you will see
-that many commonly used attributes are already there. When an LDAP entry
-exists for your attribute, it is considered to be "registered".
-
-There are two ways you can register an attribute. If you are an LDAP
-geek, you can just create an LDIF file with the correct information, and
-load it in the LDAP server that is storing your configuration. If you
-want to quickly spool up new Gluu Servers, this is probably the quickest
-way to handle it.
-
-    dn: inum=@!1111!0005!2B29,ou=attributes,o=@!1111,o=gluu
-    objectClass: top
-    objectClass: gluuAttribute
-    inum: @!1111!0005!2B29
-    description: How a person would want their name to be presented in writing.
-    displayName: Display Name
-    urn: urn:mace:dir:attribute-def:displayName
-    gluuAttributeName: displayName
-    gluuAttributeOrigin: gluuPerson
-    gluuAttributeType: string
-    gluuStatus: active
-    gluuAttributeEditType: user
-    gluuAttributeEditType: admin
-    gluuAttributeViewType: user
-    gluuAttributeViewType: admin
-
-If you just have a couple of attributes, you can also use the oxTrust
-Web interface to add the attributes. See the screenshot below, and refer
-to the oxTrust
-[documentation](http://www.gluu.org/docs/admin-guide/configuration/#attributes)
-for an explanation of all these fields.
+  
+Where are these attributes stored? During installation, the Gluu Server creates
+a default objectclass specific for your organization. If you view
+`/opt/opendj/config/schema/100-user.ldif`, you'll see an objectclass called
+something like `ox-43A94B45403D3B0A00010D87EAF2` (where this number is your 
+organization identifier.) Any objects you add through the UI will be added to this
+objectclass. In the JSON configuration for oxTrust, you'll see two properties: 
+`personObjectClassTypes` and `personCustomObjectClass` where this objectclass is
+referenced. Also, you'll see the display name for this objectclass referenced in 
+the `personObjectClassDisplayNames` property (default value is "custom"). 
 
 # OpenID Scopes
 
-In SAML, attributes are released directly to websites, so there is not
-much you need to do. In OpenID Connect, there is a little more
-complexity. OpenID Connect defines scopes, which let you group
-attributes together, and to provide a human understandable description
-of the attributes. This improves usability when you need to prompt a
-person to approve the disclosure of attributes to a third party. For
+In OpenID Connect, scopes are used to group attributes, and to provide a human 
+understandable description of the attributes. This improves usability when you need 
+to prompt a person to approve the disclosure of attributes to a third party. For
 example, instead of asking the user if its ok to release her address,
 city, state, and country, and providing a description of each attribute,
 it may be easier to ask the person if its ok to release "mailing address
 information." In situations where the attributes may confuse the person,
-OpenID Scopes are a really good thing.
+OpenID Scopes are a really good thing. Although the OpenID Connect spec says an OP  
+may release individual scopes, the Gluu Server only releases scopes. 
 
 An example of the default Gluu Server authorization request can be seen
 here:
 
-![OpenID Connect Scope Authorization Screenshot](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/openid_connect/authz_screenshot.png)
+![OpenID Connect Scope Authorization Screenshot]
+(https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/openid_connect/authz_screenshot.png)
 
 So if you have custom attributes, you may need to define a custom OpenID Scope.
 This is pretty easy to do using the oxTrust user interface, and you can just
@@ -131,19 +105,77 @@ person identifier in the domain (i.e. for Google, this would be your Google id).
 However, rules were meant to be broken, so if you have a reason to release
 a scope by default, go for it!
 
-## oxAuth Discovery configuration
+## Manual Schema Management Command
 
-Discovery enables clients to discover which attributes are available at an
-OpenID Provider. Ideally, this would be controlled also from oxTrust and this
-information would be persisted in the attribute LDAP data. But 
-in the meantime, this is controlled by oxauth.xml. So if you want to publish 
-that a claim is available, you'll need to update this section:
+Let's say you have a lot of attributes to register. Or you want a more
+repeatable process for adding schema to the Gluu Server. This next section
+will document a slightly more geeky way to do automate the process.
 
-    <claims-supported>
-        <claim>uid</claim>
-        <claim>givenName</claim>
-        <claim>sn</claim>
-        <claim>displayName</claim>
-        <claim>mail</claim>
-    </claims-supported>
+First of all, you should create a custom schema file, which you will copy 
+to `/opt/opendj/config/schema` each time you configure a new Gluu Server.
+Use your organization name, for example something like 102-acme.ldif. 
+For more information about creating custom schema in OpenDJ, see the 
+[ForgeRock OpenDJ Admin Guide]
+(https://backstage.forgerock.com/#!/docs/opendj/2.6/admin-guide/chap-schema). 
+You should consider prefixing the name of your attributes and objectclasses
+with your organization. For example, instead of using `spamId` use `acmeSpamId`.
+Restart your LDAP server to make sure the schema is correct. If it's not, the
+OpenDJ server will not start.
 
+Now you have the objectclass and attributes in OpenDJ, but the Gluu Server
+still does not know about them. You're going to have to "register" these 
+attributes. Each attribute that you want to make available must have a 
+corresponding LDAP entry under `ou=attributes,o=<org-inum>,o=gluu`. If 
+you browse your LDAP server after performing a Gluu Server base installation, 
+you will see that many commonly used attributes are already there. When an 
+LDAP entry exists for your attribute, it is considered to be "registered". 
+Note in this example, we are using @!1111 as the organization id, which will
+be much longer in a real installation.
+
+There are two ways you can register an attribute. If you are an LDAP
+geek, you can just create an LDIF file with the correct information, and
+load it in the LDAP server that is storing your configuration. If you
+want to quickly spool up new Gluu Servers, this is probably the quickest
+way to handle it.
+
+    dn: inum=@!1111!0005!2B29,ou=attributes,o=@!1111,o=gluu
+    objectClass: top
+    objectClass: gluuAttribute
+    inum: @!1111!0005!2B29
+    description: How a person would want their name to be presented in writing.
+    displayName: Display Name
+    urn: urn:mace:dir:attribute-def:displayName
+    gluuAttributeName: displayName
+    gluuAttributeOrigin: gluuPerson
+    gluuAttributeType: string
+    gluuAttributeEditType: user
+    gluuAttributeEditType: admin
+    gluuAttributeViewType: user
+    gluuAttributeViewType: admin
+    gluuStatus: active
+    
+A few things to note: 
+
+  1. For the `inum`, after `0005!` use a unique identifier--normally a four digit hex number.
+  2. If you are using SAML, you will need to make sure that each attribute has a unique `urn`.
+  If you don't like `urn` format, you can use a dns style name here. It supposed to be globally unique. 
+  3. Make sure `gluuStatus` is active
+  4. Set the appropriate description and displayName if possible.
+  
+Once you have this ldif file, you should make sure you use `ldapmodify` to load it after the during
+your Gluu Server installation process. 
+
+If you also want to automate loading your custom OpenID scopes, just remember that these
+scopes reference the DN of the attributes. For example: 
+
+    dn: inum=@!1111!0009!341A,ou=scopes,o=@!1111,o=gluu
+    objectClass: oxAuthCustomScope
+    objectClass: top
+    defaultScope: false
+    description: myScope
+    displayName: myScope
+    inum: @!43A9.4B45.403D.3B0A!0001!0D87.EAF2!0009!341A
+    oxAuthClaim: inum=@!1111!0005!2B29,ou=attributes,o=@!1111,o=gluu
+    oxAuthClaim: inum=@!1111!0005!29DA,ou=attributes,o=@!1111,o=gluu
+
+So you may want to also create an ldif file for each scope, and also load this at installation time.
