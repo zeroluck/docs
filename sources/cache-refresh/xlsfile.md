@@ -6,7 +6,7 @@
 
 Gluu Server allows the administrator to add users from files. This can be accessed from the `Import People` button from the `Users` menu.
 
-![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/import-people_add)
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/import-people_add.png)
 
 * Click on the `Add` button to select the file from which the users will be imported. This feature has been tested with a `xls` file.
 
