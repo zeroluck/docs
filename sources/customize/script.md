@@ -341,10 +341,15 @@ All these methods expect the same parameters:
 - `requestParameters` is `java.util.Map<String, String[]>`
 - `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
 
+Script also declares one custom property called `enable_user` which defaults
+to "false". It controls whether or not this user account will be ready for using
+it to log in to Gluu.
+
 First oxTrust executes the `initRegistration` method to do an initial
 user entry update. The `preRegistration` method is called before storing
 the user entry in LDAP. Hence in this script it is possible to validate
-the user entry. The `postRegistration` method is called after
+the user entry. Currenlty it only disables/enables user account (depending on the
+custom property's value). The `postRegistration` method is called after
 successfully storing the user entry in LDAP. In this method, for
 example, the script can send an e-mail or send notifications to other
 organization systems about the new user entry.
