@@ -343,10 +343,10 @@ All these methods expect the same parameters:
 
 Script also declares one custom property called `enable_user` which defaults
 to "false". It controls whether or not this user account will be ready for using
-it to log in to Gluu.
+it to log in to this Gluu CE instance right away.
 
 First oxTrust executes the `initRegistration` method to do an initial
-user entry update. The `preRegistration` method is called before storing
+user entry update. The `preRegistration` method is called abefore storing
 the user entry in LDAP. Hence in this script it is possible to validate
 the user entry. Currenlty it only disables/enables user account (depending on the
 custom property's value). The `postRegistration` method is called after
