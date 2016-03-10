@@ -37,10 +37,9 @@ to 65k. The following steps will help set the `file descriptor` limit.
 ```
 * soft nofile 65536
 * hard nofile 262144
-
 ```
 
-Edit the `/etc/pam.d/login` by adding the line:
+* Edit the `/etc/pam.d/login` by adding the line:
 ```
 session required /lib/security/pam_limits.so
 ```

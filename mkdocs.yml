@@ -29,8 +29,9 @@ pages:
  
 - Gluu Server GUI:
     - 'Configuration': 'oxtrust/configuration.md'
+    - 'OxTrust JSON Configuration': 'gluu-defaults/oxtrust-properties.md'
     - 'SAML': 'integrate/outbound-saml.md'
-    - 'OpenID Connect': 'integrate/openid.md'
+    - 'OpenID Connect': 'integrate/openid-connect.md'
     - 'UMA': 'integrate/uma.md'
     - 'Users': 'oxtrust/users.md'
     - 'Personal': 'oxtrust/personal.md'
@@ -47,7 +48,7 @@ pages:
 - Supported Protocols: 
     - 'Outbound SAML': 'integrate/outbound-saml.md'
     - 'Inbound SAML': 'integrate/inbound-saml.md'
-    - 'OpenID Connect': 'integrate/openid.md'
+    - 'OpenID Connect': 'integrate/openid-connect.md'
     - 'UMA': 'integrate/uma.md'
     - 'OAuth2': 'integrate/oauth2grants.md'
     - 'SCIM 1.1': 'api/scim-1.1.md'
@@ -73,10 +74,11 @@ pages:
 - Fine Tuning and Benchmarking:
     - 'Tuning LDAP, Tomcat': 'fine-tuning/index.md'
 - Gluu Defaults:
-    - 'Certificates': 'gluu-defaults/index.md'
+    - 'Certificates': 'gluu-defaults/certificates.md'
     - 'LDAP': 'gluu-defaults/ldap.md'
     - 'Schema': 'gluu-defaults/schema.md'
-    - 'OpenID Connect Library': 'gluu-defaults/openid.md'
+    - 'OpenID Connect Library': 'gluu-defaults/openid-connect.md'
+    - 'oxTrust Properties File': 'gluu-defaults/oxtrust-properties.md'
 - Gluu Server API:
     - 'OpenID Connect Authorization Endpoint': 'api/oic-authorization.md'
     - 'OpenID Connect Token Endpoint': 'api/oic-token.md'

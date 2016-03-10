@@ -77,6 +77,8 @@ Backend LDAP Servers' sections. It is not necessary enter data in the
   * _Pooling Interval (Minutes):_ It is recommended to be
   kept higher than 15 minutes.
 
+  * _Server IP Address:_ Enter the IP address of the Gluu Server in this field. The IP with which the Gluu Server was setup, should be used here.
+
   * _Snapshot Folder:_ Every cycle of the Gluu Server Cache Refresh cycle
   saves both an overall snapshot and a problem-list record on a specified
   location. This is where the Gluu Server administrator can specify the
@@ -84,6 +86,8 @@ Backend LDAP Servers' sections. It is not necessary enter data in the
 
   * _Snapshot Count:_ It is recommended
   to be keep the value to 20 snapshots.
+
+  * _Keep external persons:_ Check this box to retain the `admin` user.
 
 ## Customer Backend Key and Attributes
 ![Customer Backend Key](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_cache_backend.png)
