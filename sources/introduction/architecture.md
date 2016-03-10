@@ -31,11 +31,6 @@ the persistence solution of one vendor; (4) LDAP had built-in support for SAML
 and OAuth2 components. In the future the OX project may develop additional
 persistence backends. But this is not likely for the near-term.
 
-## memcached
-Memcached is used on both the Gluu Server, and to cache authorization
-decisions for the OX web container plugins. It is easy to configure and
-there were tools to enable memcached clusters (thanks Twitter!).
-
 ## Web container plugins
 Today, Web access management tools like CA Siteminder predominantly use
 the web agent approach. Many large organizations have hundreds or
