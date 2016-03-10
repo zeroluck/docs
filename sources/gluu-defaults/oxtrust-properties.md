@@ -23,11 +23,13 @@ The following fields are available for edit in the menu.
 
 ## personObjectClassTypes
 This class holds the relation between the person entry and it's relative object class. The examples are given below.
+
 * _item 1:_ inetOrgPerson
 * _item 2:_ gluuPerson
 
 ## personObjectClassDisplayNames
 This class holds the relation betwee the display name of the person and the relative object class. The examples are given below.
+
 * _item 1:_ inetOrgPerson
 * _item 2:_ gluuPerson
 * _schemaAddAttributeDefenition:_ 
