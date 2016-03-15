@@ -335,6 +335,8 @@ group cluster_group
 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59 * * * *    /usr/sbin/csync2 -N idp2.gluu.org -xv 2>/var/log/csync2.log 
 ```
 
-## Configurations Outside of Syncing Mechanism
+## Certificate Management
 
-There are few configurations which are outside of File System replication. One of them is updating the httpd, asimba or shibboleth cert. Deployer need to manually update these certificates in all servers separately. As for example [Here](https://gluu.org/docs/gluu-defaults/certificates/#apache) is how to update httpd/apache2 cert. 
+The certificates do not vary in the manual cluster configuration. The certificates should be updated manually 
+in each host, when required. The [Certificate Page](../gluu-defaults/certificates.md) contains the details about available certificates and 
+how to change them.

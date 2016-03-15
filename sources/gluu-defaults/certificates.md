@@ -4,13 +4,6 @@
 Many of the components of the Gluu Server have cryptographic keys and
 X.509 certificates. There are many key formats, and keystore formats.
 Navigate to the sections below to find what you need for each of the
-Gluu Server components.
-
-- [Asimba](#asimba)
-- [Apache](#apache)
-- [OpenDJ](#opendj)
-- [oxAuth](#oxauth)
-- [Shibboleth IDP](#shibboleth-idp)
 
 ## Asimba
 `asimba.crt`, `asimba.csr`, `asimba.key`, `asimba.key.orig`,
