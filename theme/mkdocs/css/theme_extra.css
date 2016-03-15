@@ -6,7 +6,7 @@ body {
 }
 
 h3, h4, h5, h6 {
-    color: #2980b9;
+    color: #014923;
     font-weight: 300
 }
 
@@ -17,16 +17,17 @@ h3, h4, h5, h6 {
  * https://github.com/mkdocs/mkdocs/issues/175
  */
 .wy-menu-vertical span {
-    line-height: 18px;
+    line-height: 20px;
     padding: 0.4045em 1.618em;
     display: block;
     position: relative;
-    font-size: 90%;
-    color: #838383;
+    font-size: 110%;
+    color: #44e578;
 }
 
 .wy-menu-vertical .subnav a {
     padding: 0.4045em 2.427em;
+    color: #ffffff;
 }
 
 /*
@@ -91,7 +92,7 @@ code.cs, code.c {
 .no-highlight {
   display: block;
   padding: 0.5em;
-  color: #333;
+  color: #698975;
 }
 
 
