@@ -38,6 +38,7 @@ pages:
 - Import Users: 
     - 'Backend LDAP/AD': 'cache-refresh/index.md'
     - 'XLS File': 'cache-refresh/xlsfile.md'
+    - 'Register Users': 'cache-refresh/register.md'
 - FAQ:
     - 'Troubleshooting': 'faq/troubleshooting.md'
 - Customize Gluu Server: 

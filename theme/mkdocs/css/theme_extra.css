@@ -22,12 +22,15 @@ h3, h4, h5, h6 {
     display: block;
     position: relative;
     font-size: 110%;
+    font-weight: bold;
     color: #44e578;
 }
 
 .wy-menu-vertical .subnav a {
-    padding: 0.4045em 2.427em;
+    padding: 0.2045em 2.427em;
     color: #ffffff;
+    position: relative;
+    left: 15px;
 }
 
 /*
