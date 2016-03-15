@@ -337,4 +337,4 @@ group cluster_group
 
 ## Configurations outside of syncing mechanism
 
-There are few configurations which are outside of File System replication for the sake of stable configuration. One of them is updating httpd, asimba or shibboleth cert. Deployer need to manually update these certificates in all servers separately. As for example [Here](https://gluu.org/docs/gluu-defaults/certificates/#apache) is how to update httpd/apache2 cert. 
+There are few configurations which are outside of File System replication. One of them is updating httpd, asimba or shibboleth cert. Deployer need to manually update these certificates in all servers separately. As for example [Here](https://gluu.org/docs/gluu-defaults/certificates/#apache) is how to update httpd/apache2 cert. 
