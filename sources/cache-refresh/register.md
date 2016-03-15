@@ -21,11 +21,11 @@ the `User Registration` tab, it is placed third from the left.
 The next step is to enable the user and set the value to `true` so that the user can login as soon as 
 the registration is complete. So, set the `enable_user` property to `true`.
 
-![image](![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-manage-script_enable.png)
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-manage-script_enable.png)
 
 The Script can be easily enabled by clicking on the checkbox at the bottom of the page.
 
-![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-manage-scrit_check.png)
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-manage-script_check.png)
 
 ## User Registration
 The users can register through the user registration link usually available at `<hostname>/identity/register`.
