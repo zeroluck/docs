@@ -199,15 +199,46 @@ Configure `idp.conf`:
 </Location>
 ```
 
-# Add New Identity Provider
+# Add New Identity Provider (with oxTrust GUI)
 
-All our configurations are based on one Asimba configuration file named
+oxTrust Asimba Adminstration GUI stores the configuration in LDAP. Gluu-Asumba loads both LDAP and XML configurations, so you free to choise where to add new a new configuration item.
+
+## Required Files
+
+* Metadata file or metadata URL of remote IdP
+* SAML certificate of remote IdP
+
+## Configure SAML > Asimba > Add IDP form
+
+A sample configuration looks like that:
+TODO: screenshot
+
+## Work on IdP Keystore: 
+
+* Import the SAML certificate of IdP into Asimba's JKS
+    * Convert certificate into DER format
+    * Import this DER formatted certificate into Asimba's keystore
+    * Please note that it's a good practice to follow the IdP's `entityID` as `alias` of this certificate.
+
+Sample command would be: 
+
+        keytool -import -trustcacerts -alias https://idp.gluu.org/idp/shibboleth \ 
+            -file idp_gluu_org.der -keystore asimba-keystore.jks
+
+** - SAML certificate import will be added to GUI form in the next version of oxTrust. 
+
+## IdP Restart Tomcat 
+If everything was done correctly, the new IdP is configured with Asimba
+
+# Add New Identity Provider (with asimba.xml configuration file)
+
+All our XML configurations are based on one Asimba configuration file named
 `asimba.xml`. It's also possible to configure Asimba with JDBC. For more
 info view the Asimba [wiki](http://sourceforge.net/p/asimba/wiki/Home/).
 
 ## Required Files
 
-* Metadata of remote IdP
+* Metadata file or metadata URL of remote IdP
 * SAML certificate of remote IdP
 
 ## Configure `asimba.xml`:
@@ -244,12 +275,47 @@ Sample command would be:
     
 ## IdP Restart Tomcat 
 If everything was done correctly, the new IdP is configured with Asimba
- 
-# Add New Service Provider 
+
+# Add New Service Provider (with oxTrust GUI)
 
 The required Files are:
 
-* Metadata of SP
+* Metadata file or metadata URL of SP
+* SAML certificate of SP
+
+## Configure SAML > Asimba > Add SP RequestorPool form
+You should use the default RequestorPool or create a new one. The primary goal of separated RequestorPool is customization of attribute mapping, authorization process, etc.
+
+## Configure SAML > Asimba > Add SP Requestor form
+
+A sample configuration looks like that:
+TODO: screenshot
+
+## Work on SP Keystore
+
+* Import the SAML certificate of the SP into Asimba's JKS.
+    * Convert the certificate into DER format.
+    * Import this DER formatted certificate into Asimba's keystore.
+    * Please note that it is a good practice to follow the SP's
+      `entityID` as `alias` of this certificate.
+
+A sample command is:
+
+```
+keytool -import -trustcacerts -alias https://sptest2.gluu.org/secure \
+            -file sp_gluu_org.der -keystore asimba-keystore.jks
+```
+
+** - SAML certificate import will be added to GUI form in the next version of oxTrust. 
+
+## SP Restart Tomcat
+If everything was done correctly, the SP is now configured in Asimba. 
+
+# Add New Service Provider (with asimba.xml configuration file)
+
+The required Files are:
+
+* Metadata file or metadata URL of SP
 * SAML certificate of SP
 
 ## Configure `asimba.xml`:
@@ -334,6 +400,15 @@ requires three things:
     * _signRequests_ : conditional
     * _encryptAssertions_ : never
     * _encryptNameIds_ : never 
+
+# Add New SP->IDP Selector Rule (with oxTrust GUI)
+
+Configured Selector Rule automatically redirects user's browser to predefined IDP, without view Asimba default IDP selection form.
+
+## Configure SAML > Asimba > Add Selector form
+
+A sample configuration looks like that:
+TODO: screenshot
 
 # How to Test
 
