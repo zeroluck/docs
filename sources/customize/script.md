@@ -188,7 +188,7 @@ The image below contains the design diagram for this module.
 
 ![image](https://raw.githubusercontent.com/GluuFederation/oxAuth/master/Server/integrations/cert/docs/Cert%20design.jpg)
 
-The module has a few properties:
+The script has a few properties:
 
 |	Property	|Description|	Allowed Values			|example|
 |-------|--------------|------------|-----------------|
@@ -200,7 +200,7 @@ The module has a few properties:
 |use_crl_validator|enable/disable specific certificate validation				|true/false| false|
 |crl_max_response_size	|specifies the maximum allowed size of [CRL][crl] response		| Integer > 0| 2|
 
-
+- [Sample Certificate Authentication Script](https://raw.githubusercontent.com/GluuFederation/oxAuth/master/Server/integrations/cert/UserCertExternalAuthenticator.py)
 # Update User
 
 oxTrust allows an admin to add and modify users which belong to groups.
