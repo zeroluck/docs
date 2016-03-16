@@ -68,29 +68,7 @@ and the oxTrust custom script logs are stored in the
 `oxtrust_script.log`. Please refer to these log files for any errors in
 the interception scripts or following the workflow of the script.
 
-# Application Session Management
-
-This script allows an admin to notify 3rd party systems about requests
-to end an OAuth session. This method is triggered by an oxAuth call to
-the `end_session` endpoint. It's possible to add multiple scripts with
-this type. The application should call all of them according to the
-level.
-
-This script type adds only one method to the base script type:
-
-`def endSession(self, httpRequest, authorizationGrant, configurationAttributes):`
-
-These are the types of parameters:
-
-- `httpRequest` is `javax.servlet.http.HttpServletRequest`
-- `authorizationGrant` is `org.xdi.oxauth.model.common.AuthorizationGrant`
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
-
-This script can be used in an oxAuth application only.
-
-- [Sample Application Session Management Script](./sample-application-session-script.py)
-
-# Authentication
+# Person Authentication
 
 **For a list of pre-written, open source Gluu authentication scripts, view our [server integrations](https://github.com/GluuFederation/oxAuth/tree/master/Server/integrations)**
 
@@ -204,102 +182,6 @@ This script can be used in oxAuth application only.
 
 - [Sample Authentication Script](./sample-authentication-script.py)
 
-# Authorization
-
-This is a special script for UMA. It allows an admin to protect UMA
-scopes with policies. It is possible to add more than one UMA policy to
-an UMA scope. On requesting access to a specified resource, the
-application should call specified UMA policies in order to grant or deny
-access.
-
-This script type adds only one method to the base script type:
-
-`def authorize(self, authorizationContext, configurationAttributes):`
-
-These are the types of parameters:
-
-- `authorizationContext` is `org.xdi.oxauth.service.uma.authorization.AuthorizationContext`
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
-
-This script can be used in an oxAuth application only.
-
-- [Sample Authorization Script](./sample-uma-authorization-script.py)
-
-# Cache Refresh
-
-In order to integrate an interception script with an existing
-authentication server oxTrust provides a mechanism called [Cache
-Refresh](../cache-refresh/index.md) to copy
-user data to the local LDAP server. During this process it is possible
-to specify key attribute(s) and specify attribute name transformations.
-There are also cases when it can be used to overwrite attribute values
-or to add new attributes based on other attribute values.
-
-This script type adds only one method to the base script type:
-
-* `def updateUser(self, user, configurationAttributes):`
-
-These are the types of parameters:
-
-- `user` is `org.gluu.oxtrust.model.GluuCustomPerson`
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
-
-This script can be used in an oxTrust application only.
-
-- [Sample Cache Refresh Script](./sample-cache-refresh-script.py)
-
-# Client Registration
-
-oxAuth implements the [OpenID Connect dynamic client
-registration](https://openid.net/specs/openid-connect-registration-1_0.html)
-specification. All new clients have the same default access scopes and
-attributes except password and client ID. The Client Registration script
-allows an admin to modify this limitation. In this script it is possible
-to get a registration request, analyze it, and apply customizations to
-registered clients. For example, a script can give access to specified
-scopes if `redirect_uri` belongs to a specified service or domain.
-
-This script type adds only one method to the base script type:
-
-* `def updateClient(self, registerRequest, client, configurationAttributes):`
-
-These are the types of parameters:
-
-- `registerRequest` is `org.xdi.oxauth.client.RegisterRequest`
-- `client` is `org.xdi.oxauth.model.registration.Client`
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
-
-This script can be used in an oxAuth application only.
-
-- [Sample Client Registration Script](./sample-client-registration-script)
-
-# ID Generation
-
-By default oxAuth/oxTrust uses an internal method to generate unique
-identifiers for new person/client, etc. entries. In most cases the
-format of the ID is:
-
-`'!' + idType.getInum() + '!' + four_random_HEX_characters + '.' + four_random_HEX_characters.`
-
-The ID generation script enables an admin to implement custom ID
-generation rules.
-
-This script type adds only one method to the base script type:
-
-* `def generateId(self, appId, idType, idPrefix, configurationAttributes):`
-
-These are the types of parameters:
-
-- `appId` is application ID
-- `idType` is ID Type
-- `idPrefix` is ID Prefix
-- `user` is `org.gluu.oxtrust.model.GluuCustomPerson`
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
-
-This script can be used in an oxTrust application only.
-
-- [Sample ID Generation Script](./sample-id-generation.py)
-
 # Update User
 
 oxTrust allows an admin to add and modify users which belong to groups.
@@ -357,4 +239,133 @@ organization systems about the new user entry.
 All three methods should either return `True` or `False`.
 
 - [Sample User Registration Script](./sample-user-registration-script.py)
+
+# Client Registration
+
+oxAuth implements the [OpenID Connect dynamic client
+registration](https://openid.net/specs/openid-connect-registration-1_0.html)
+specification. All new clients have the same default access scopes and
+attributes except password and client ID. The Client Registration script
+allows an admin to modify this limitation. In this script it is possible
+to get a registration request, analyze it, and apply customizations to
+registered clients. For example, a script can give access to specified
+scopes if `redirect_uri` belongs to a specified service or domain.
+
+This script type adds only one method to the base script type:
+
+* `def updateClient(self, registerRequest, client, configurationAttributes):`
+
+These are the types of parameters:
+
+- `registerRequest` is `org.xdi.oxauth.client.RegisterRequest`
+- `client` is `org.xdi.oxauth.model.registration.Client`
+- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
+
+This script can be used in an oxAuth application only.
+
+- [Sample Client Registration Script](./sample-client-registration-script)
+
+
+# Dynamic Scopes
+The dynamic scope custom script allows the parsing of token returned from `user_info endpoint` into 
+LDAP attributes. The `id_token` is returned from `user_info endpoint` and the values are dynamically placed 
+in the LDAP attributes in Gluu Server.
+
+- [Sample Dynamic Scope Script](./sample-dynamic-script.py) 
+
+# ID Generator
+
+By default oxAuth/oxTrust uses an internal method to generate unique
+identifiers for new person/client, etc. entries. In most cases the
+format of the ID is:
+
+`'!' + idType.getInum() + '!' + four_random_HEX_characters + '.' + four_random_HEX_characters.`
+
+The ID generation script enables an admin to implement custom ID
+generation rules.
+
+This script type adds only one method to the base script type:
+
+* `def generateId(self, appId, idType, idPrefix, configurationAttributes):`
+
+These are the types of parameters:
+
+- `appId` is application ID
+- `idType` is ID Type
+- `idPrefix` is ID Prefix
+- `user` is `org.gluu.oxtrust.model.GluuCustomPerson`
+- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
+
+This script can be used in an oxTrust application only.
+
+- [Sample ID Generation Script](./sample-id-generation.py)
+
+# Cache Refresh
+
+In order to integrate an interception script with an existing
+authentication server oxTrust provides a mechanism called [Cache
+Refresh](../cache-refresh/index.md) to copy
+user data to the local LDAP server. During this process it is possible
+to specify key attribute(s) and specify attribute name transformations.
+There are also cases when it can be used to overwrite attribute values
+or to add new attributes based on other attribute values.
+
+This script type adds only one method to the base script type:
+
+* `def updateUser(self, user, configurationAttributes):`
+
+These are the types of parameters:
+
+- `user` is `org.gluu.oxtrust.model.GluuCustomPerson`
+- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
+
+This script can be used in an oxTrust application only.
+
+- [Sample Cache Refresh Script](./sample-cache-refresh-script.py)
+
+
+# UMA Authorization Policies
+
+This is a special script for UMA. It allows an admin to protect UMA
+scopes with policies. It is possible to add more than one UMA policy to
+an UMA scope. On requesting access to a specified resource, the
+application should call specified UMA policies in order to grant or deny
+access.
+
+This script type adds only one method to the base script type:
+
+`def authorize(self, authorizationContext, configurationAttributes):`
+
+These are the types of parameters:
+
+- `authorizationContext` is `org.xdi.oxauth.service.uma.authorization.AuthorizationContext`
+- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
+
+This script can be used in an oxAuth application only.
+
+- [Sample Authorization Script](./sample-uma-authorization-script.py)
+
+
+# Application Session Management
+
+This script allows an admin to notify 3rd party systems about requests
+to end an OAuth session. This method is triggered by an oxAuth call to
+the `end_session` endpoint. It's possible to add multiple scripts with
+this type. The application should call all of them according to the
+level.
+
+This script type adds only one method to the base script type:
+
+`def endSession(self, httpRequest, authorizationGrant, configurationAttributes):`
+
+These are the types of parameters:
+
+- `httpRequest` is `javax.servlet.http.HttpServletRequest`
+- `authorizationGrant` is `org.xdi.oxauth.model.common.AuthorizationGrant`
+- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
+
+This script can be used in an oxAuth application only.
+
+- [Sample Application Session Management Script](./sample-application-session-script.py)
+
 
