@@ -15,17 +15,29 @@
 - [Configure Asimba SAML Proxy](#configure-asimba-saml-proxy)
         - [Base SAML Proxy Installation](#base-installation)
 	- [SAML Proxy Apache Configuration](#saml-proxy-apache-configuration)
-- [Add New Identity Provider](#add-new-identity-provider)
+- [Add New Identity Provider (with oxTrust GUI)](#add-new-identity-provider-oxtrust)
 	- [Required Files](#required-files)
-	- [Configure asimba.xml:](#configure-asimba.xml)
+	- [Configure SAML > Asimba > Add IDP form](#add-idp-form)
 	- [Work on IdP Keystore:](#work-on-idp-keystore)
 	- [IdP Restart Tomcat](#idp-restart-tomcat)
-- [Add New Service Provider](#add-new-service-provider)
+- [Add New Identity Provider (with asimba.xml configuration file)](#add-new-identity-provider-xml)
+	- [Required Files](#required-files2)
 	- [Configure asimba.xml:](#configure-asimba.xml)
+	- [Work on IdP Keystore:](#work-on-idp-keystore2)
+	- [IdP Restart Tomcat](#idp-restart-tomcat2)
+- [Add New Service Provider (with oxTrust GUI)](#add-new-service-provider-oxtrust)
+	- [Configure SAML > Asimba > Add SP Requestor form](#configure-add-sp-selector-form)
 	- [Work on SP Keystore](#work-on-sp-keystore)
 	- [SP Restart Tomcat](#sp-restart-tomcat)
+- [Add New Service Provider (with asimba.xml configuration file)](#add-new-service-provider-xml)
+	- [Configure asimba.xml:](#configure-asimba.xml)
+	- [Work on SP Keystore](#work-on-sp-keystore2)
+	- [SP Restart Tomcat](#sp-restart-tomcat2)
 - [Configure SP](#configure-sp)
 	- [Configure Remote IdP](#configure-remote-idp)
+- [Add New SP->IDP Selector Rule (with oxTrust GUI)](#add-new-selector-rule-oxtrust)
+	- [Configure SAML > Asimba > Add Selector form](#configure-add-selector-form)
+- [Add New SP->IDP Selector Rule (with asimba-selector.xml configuration file)](#add-new-selector-rule-xml)
 - [How to Test](#how-to-test)
 
 
@@ -425,8 +437,8 @@ A sample configuration looks like that:
 </asimba-selector>
 ```
 
-entityId - SP URL
-organizationId - IDP URL
+* entityId - SP URL
+* organizationId - IDP URL
 
 # How to Test
 
