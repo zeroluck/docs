@@ -298,7 +298,7 @@ The required Files are:
 ## Configure SAML > Asimba > Add SP RequestorPool form
 You should use the default RequestorPool or create a new one. The primary goal of separated RequestorPool is customization of attribute mapping, authorization process, etc.
 
-Default RequestorPool already configured in oxTrust:
+Default RequestorPool is already configured in oxTrust:
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/asimba-sp_list.png?raw=true)
 
 ## Configure SAML > Asimba > Add SP Requestor form
