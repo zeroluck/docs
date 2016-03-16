@@ -146,4 +146,9 @@ If any organization has multiple Active Directory/LDAP server, click on
 **Add source LDAP server** and add the additional server information.
 Please remember that a *failover server* is not a new server.
 
+# Cache Refresh Whitepages
+The following file is prepared by a Gluu Engineer to make Cache refresh mechanism 
+easy to understand. Please download and read it if this page is not clear.
+
+* [Cache Refresh Whitepages](./GluuCache-Refresh.pdf)
 [ldap]: https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol "Lightweight Directory Access Protocol (LDAP), Wikipedia"
