@@ -211,7 +211,7 @@ oxTrust Asimba Adminstration GUI stores the configuration in LDAP. Gluu-Asumba l
 ## Configure SAML > Asimba > Add IDP form
 
 A sample configuration looks like that:
-TODO: screenshot
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/asimba-idp_add.png?raw=true)
 
 ## Work on IdP Keystore: 
 
@@ -286,10 +286,13 @@ The required Files are:
 ## Configure SAML > Asimba > Add SP RequestorPool form
 You should use the default RequestorPool or create a new one. The primary goal of separated RequestorPool is customization of attribute mapping, authorization process, etc.
 
+Default RequestorPool already configured in oxTrust:
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/asimba-sp_list.png?raw=true)
+
 ## Configure SAML > Asimba > Add SP Requestor form
 
 A sample configuration looks like that:
-TODO: screenshot
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/asimba-sprp_add.png?raw=true)
 
 ## Work on SP Keystore
 
@@ -408,7 +411,7 @@ Configured Selector Rule automatically redirects user's browser to predefined ID
 ## Configure SAML > Asimba > Add Selector form
 
 A sample configuration looks like that:
-TODO: screenshot
+![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/asimba-selectors_add.png?raw=true)
 
 # How to Test
 
