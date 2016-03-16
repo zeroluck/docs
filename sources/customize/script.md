@@ -182,6 +182,25 @@ This script can be used in oxAuth application only.
 
 - [Sample Authentication Script](./sample-authentication-script.py)
 
+## Certificate Authentication
+Gluu Server CE offers a person authentication module enabling Certificate Authentication.
+The image below contains the design diagram for this module.
+
+![image](https://raw.githubusercontent.com/GluuFederation/oxAuth/master/Server/integrations/cert/docs/Cert%20design.jpg)
+
+The module has a few properties:
+
+|	Property	|Description|	Allowed Values			|example|
+|-------|--------------|------------|-----------------|
+|chain_cert_file_path	|mandatory property pointing to certificate chains in [pem][pem] format	|file path| /etc/certs/chain_cert.pem	|
+|map_user_cert		|specifies if the script should map new user to local account		|true/false| true|
+|use_generic_validator	|enable/disable specific certificate validation				|true/false| false|
+|use_path_validator	|enable/disable specific certificate validation				|true/false| true|
+|use_oscp_validator|enable/disable specific certificate validation				|true/false| false|
+|use_crl_validator|enable/disable specific certificate validation				|true/false| false|
+|crl_max_response_size	|specifies the maximum allowed size of [CRL][crl] response		| Integer > 0| 2|
+
+
 # Update User
 
 oxTrust allows an admin to add and modify users which belong to groups.
@@ -368,4 +387,4 @@ This script can be used in an oxAuth application only.
 
 - [Sample Application Session Management Script](./sample-application-session-script.py)
 
-
+[pem]: https://en.wikipedia.org/wiki/Privacy-enhanced_Electronic_Mail "Privacy-enhanced Electronic Mail"
