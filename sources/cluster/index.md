@@ -4,7 +4,7 @@
 ## Requirements
 
 For complete deployment requirements and instructions, please see the [Deployment Page](../deployment/index.md).
-The requirements for Cluster varies only in the RAM requirement. Clusters require at least 8GB RAM for smooth performance. The requirements below are specific for Cluster Installation VMs.
+The requirements for Clusters vary only in the RAM requirement. Clusters require at least 8GB RAM for smooth performance. The requirements below are specific for Cluster Installation VMs.
 
 
 |	Number of VMs	|CPU Units	|	RAM	|Root Partion	|	Port Requirements	|
