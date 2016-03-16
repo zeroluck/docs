@@ -201,7 +201,7 @@ Configure `idp.conf`:
 
 # Add New Identity Provider (with oxTrust GUI)
 
-oxTrust Asimba Adminstration GUI stores the configuration in LDAP. Gluu-Asumba loads both LDAP and XML configurations, so you free to choise where to add new a new configuration item.
+oxTrust Asimba Adminstration GUI stores the configuration in LDAP. Gluu-Asumba loads both LDAP and XML configurations, so you free to choose where to add new a new configuration item.
 
 ## Required Files
 
