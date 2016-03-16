@@ -413,6 +413,21 @@ Configured Selector Rule automatically redirects user's browser to predefined ID
 A sample configuration looks like that:
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/asimba-selectors_add.png?raw=true)
 
+# Add New SP->IDP Selector Rule (with asimba-selector.xml configuration file)
+
+Default file location: {Tomcat Directory}/conf/asimba-selector.xml
+
+A sample configuration looks like that:
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<asimba-selector>
+	<application entityId="https://ce.gluu.info/secure" organizationId="https://ce.gluu.org/idp/shibboleth" />
+</asimba-selector>
+```
+
+entityId - SP URL
+organizationId - IDP URL
+
 # How to Test
 
 The workflow of the SAML Proxy is:
