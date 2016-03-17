@@ -1,6 +1,9 @@
 [TOC]
 
 # Manual Cluster
+## Design
+The following diagram outlines the design of the cluster.
+![image](https://cloud.githubusercontent.com/assets/7156097/13850591/9a553fde-ec28-11e5-8fa7-675f96743a10.png)
 ## Requirements
 
 For complete deployment requirements and instructions, please see the [Deployment Page](../deployment/index.md).
