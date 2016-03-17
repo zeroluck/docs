@@ -26,7 +26,6 @@ pages:
 
 - Cluster Configuration:
     - 'Clustering with CE': 'cluster/index.md'
- 
 - Gluu Server GUI:
     - 'Configuration': 'oxtrust/configuration.md'
     - 'OxTrust JSON Configuration': 'gluu-defaults/oxtrust-properties.md'
@@ -39,6 +38,8 @@ pages:
     - 'Backend LDAP/AD': 'cache-refresh/index.md'
     - 'XLS File': 'cache-refresh/xlsfile.md'
     - 'Register Users': 'cache-refresh/register.md'
+- Multi-Factor Authentication: 
+    - 'Twilio SMS': 'multi-factor/twilio.md'
 - FAQ:
     - 'Troubleshooting': 'faq/troubleshooting.md'
 - Customize Gluu Server: 
