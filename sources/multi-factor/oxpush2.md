@@ -1,5 +1,5 @@
 # oxPush2
-This script enables the multi-factor authentication based on oxPush2.
+This script enables use of the free open source [oxPush2 multi-factor authentication](https://github.com/GluuFederation/oxPush2) mechanism.
 ## Overview
 The script has the following properties
 
