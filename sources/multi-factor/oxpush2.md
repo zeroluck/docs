@@ -1,5 +1,5 @@
 # oxPush2
-This script enables the multi-factor authentication based on u2f.
+This script enables the multi-factor authentication based on oxPush2.
 ## Overview
 The script has the following properties
 
@@ -33,7 +33,7 @@ Follow the steps below to configure the [DUO][duo] module in the oxTrust Admin G
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-script_update.png)
 
-6. Change the default authentication method to [DUO][duo]
+6. Change the default authentication method to oxPush2
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/75518bb90184aa1b096874526b4da5f9f924bd44/sources/img/2.4/admin_auth_default.png)
 

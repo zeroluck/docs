@@ -42,6 +42,7 @@ pages:
     - 'Twilio SMS': 'multi-factor/twilio.md'
     - 'DUO': 'multi-factor/duo.md'
     - 'U2F': 'multi-factor/u2f.md'
+    - 'oxPush2': 'multi-factor/oxpush2.md'
 - FAQ:
     - 'Troubleshooting': 'faq/troubleshooting.md'
 - Customize Gluu Server: 
