@@ -1,12 +1,13 @@
-# U2F
+# oxPush2
 This script enables the multi-factor authentication based on u2f.
 ## Overview
 The script has the following properties
 
 |	Property	|	Description		|	Example	|
 |-----------------------|-------------------------------|---------------|
-|u2f_server_uri		|URL of the u2f server		|https://idp.gluu.info|
-|u2f_server_metadata_uri|URL of the u2f server metadata|https://idp.gluu.info|
+|application_id		|URL of the identity server	|https://idp.gluu.info|
+|authentication_mode	|Determine factor of authentication|two_step|
+|credentials_file	|JSON file for oxPush2 		|/etc/certs/oxpush2_creds.json|
 
 ## Installation
 ### Configure oxTrust
@@ -20,9 +21,9 @@ Follow the steps below to configure the [DUO][duo] module in the oxTrust Admin G
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-script_person.png)
 
-3. Select the [U2F script](https://raw.githubusercontent.com/GluuFederation/oxAuth/master/Server/integrations/u2f/U2fExternalAuthenticator.py)
+3. Select the [oxPush2 script](://raw.githubusercontent.com/GluuFederation/oxAuth/master/Server/integrations/oxpush2/oxPush2ExternalAuthenticator.py)
 
-![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-script_u2f.png)
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-script_oxpush2.png)
 
 4. Enable the script by ticking the check box
 
@@ -31,4 +32,8 @@ Follow the steps below to configure the [DUO][duo] module in the oxTrust Admin G
 5. Click Update 
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-script_update.png)
+
+6. Change the default authentication method to [DUO][duo]
+
+![image](https://raw.githubusercontent.com/GluuFederation/docs/75518bb90184aa1b096874526b4da5f9f924bd44/sources/img/2.4/admin_auth_default.png)
 
