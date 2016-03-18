@@ -7,7 +7,7 @@ Jython was chosen because an interpreted language facilitates dynamic creation o
 
 Another advantage of Jython was that developers can use either Java or Python classes. Combined with the option of calling web services from Python or Java, this enables the Gluu Server to support any business-driven policy requirement.
 
-To access custom scripts within oxTrust, navigate to Configuration > Manage Custom Scripts.
+To access custom scripts within oxTrust, navigate to [Configuration > Manage Custom Scripts](https://www.gluu.org/docs/oxtrust/configuration/#manage-custom-scripts).
 
 # Custom Scripts
 All script types inherit a base interface which has 3 methods:
