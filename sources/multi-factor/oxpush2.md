@@ -11,7 +11,7 @@ The script has the following properties
 
 ## Installation
 ### Configure oxTrust
-Follow the steps below to configure the [DUO][duo] module in the oxTrust Admin GUI.
+Follow the steps below to configure the oxPush2 module in the oxTrust Admin GUI.
 
 1. Go to Manager Custom Scripts
 
