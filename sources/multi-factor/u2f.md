@@ -16,7 +16,7 @@ Follow the steps below to configure the [DUO][duo] module in the oxTrust Admin G
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-script_menu.png)
 
-2. Click on the add custom script button
+2. Click on the Person Authentication tab
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-script_person.png)
 
