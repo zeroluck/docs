@@ -18,15 +18,17 @@ Follow the steps below to configure the [DUO][duo] module in the oxTrust Admin G
 
 2. Click on the add custom script button
 
-![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-script_add.png)
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-script_person.png)
 
-3. Fill up the from and add the [U2F script](https://raw.githubusercontent.com/GluuFederation/oxAuth/master/Server/integrations/u2f/U2fExternalAuthenticator.py)
+3. Select the [U2F script](https://raw.githubusercontent.com/GluuFederation/oxAuth/master/Server/integrations/u2f/U2fExternalAuthenticator.py)
+
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-script_u2f.png)
 
 4. Enable the script by ticking the check box
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-script_enable.png)
 
-5. Change the default authentication method to U2F
+5. Click Update 
 
-![image](https://raw.githubusercontent.com/GluuFederation/docs/75518bb90184aa1b096874526b4da5f9f924bd44/sources/img/2.4/admin_auth_default.png)
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-script_update.png)
 
