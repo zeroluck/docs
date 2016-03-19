@@ -39,10 +39,10 @@ pages:
     - 'XLS File': 'cache-refresh/xlsfile.md'
     - 'Register Users': 'cache-refresh/register.md'
 - Multi-Factor Authentication: 
-    - 'Twilio SMS': 'multi-factor/twilio.md'
     - 'DUO': 'multi-factor/duo.md'
     - 'U2F': 'multi-factor/u2f.md'
     - 'oxPush2': 'multi-factor/oxpush2.md'
+    - 'Wikid': 'multi-factor/wikid.md'
 - FAQ:
     - 'Troubleshooting': 'faq/troubleshooting.md'
 - Customize Gluu Server: 

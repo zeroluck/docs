@@ -37,22 +37,18 @@ The [DUO][duo] module depends on python libraries and this section will outline 
 ### Configure oxTrust
 Follow the steps below to configure the [DUO][duo] module in the oxTrust Admin GUI.
 
-1. Go to Manager Custom Scripts  
-
+1. Go to Manage Custom Scripts  
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-script_menu.png)
 
 2. Click on the add custom script button   
-
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-script_add.png)
 
 3. Fill up the from and add the [DUO authentication script](https://raw.githubusercontent.com/GluuFederation/oxAuth/master/Server/integrations/duo/DuoExternalAuthenticator.py)
 
 4. Enable the script by ticking the check box  
-
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-script_enable.png)
 
 5. Change the default authentication method to [DUO][duo]
-
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/75518bb90184aa1b096874526b4da5f9f924bd44/sources/img/2.4/admin_auth_default.png)
 
 [duo]: https://www.duosecurity.com "Duo Authentication"
