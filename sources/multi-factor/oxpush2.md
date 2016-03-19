@@ -1,5 +1,5 @@
 # oxPush2
-This script enables the multi-factor authentication based on oxPush2.
+This script enables use of the free open source [oxPush2 multi-factor authentication](https://github.com/GluuFederation/oxPush2) mechanism.
 ## Overview
 The script has the following properties
 
@@ -11,7 +11,7 @@ The script has the following properties
 
 ## Installation
 ### Configure oxTrust
-Follow the steps below to configure the [DUO][duo] module in the oxTrust Admin GUI.
+Follow the steps below to configure the oxPush2 module in the oxTrust Admin GUI.
 
 1. Go to Manager Custom Scripts
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-script_menu.png)
