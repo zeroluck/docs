@@ -12,7 +12,7 @@ The requirements for Clusters vary only in the RAM requirement. Clusters require
 
 |	Number of VMs	|CPU Units	|	RAM	|Root Partion	|	Port Requirements	|
 |-----------------------|---------------|---------------|---------------|-------------------------------|
-|	2		|	2	|	8 GB	|	40 GB	|	4444 and 8989		|
+|	2		|	2 CPU ea.	|	8 GB	|	40 GB	|	4444 and 8989		|
 
 **Note:** For convenience, the VMs are identified as `host-1` and `host-2`
 
