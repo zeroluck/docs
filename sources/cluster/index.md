@@ -14,7 +14,7 @@ The requirements for Clusters vary only in the RAM requirement. Clusters require
 |-----------------------|---------------|---------------|---------------|-------------------------------|
 |	2		|	2	|	8 GB	|	40 GB	|	4444 and 8989		|
 
-**nota bene:** For convenience, the VMs are identified as `host-1` and `host-2`
+**Note:** For convenience, the VMs are identified as `host-1` and `host-2`
 
 ## Preparing VMs
 
