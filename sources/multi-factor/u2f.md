@@ -1,5 +1,5 @@
 # U2F
-This script enables multi-factor authentication with any FIDO U2F device. Learn more about the U2F standard [here](https://fidoalliance.org/specifications/overview/). 
+This script enables multi-factor authentication with any FIDO U2F device. Learn more about the U2F standard [here](https://www.gluu.org/resources/documents/standards/fido-u2f/). 
 ## Overview
 The script has the following properties
 
