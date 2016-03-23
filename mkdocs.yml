@@ -43,6 +43,7 @@ pages:
     - 'U2F': 'multi-factor/u2f.md'
     - 'oxPush2': 'multi-factor/oxpush2.md'
     - 'Wikid': 'multi-factor/wikid.md'
+    - 'Certificate': 'multi-factor/cert.md'
 - FAQ:
     - 'Troubleshooting': 'faq/troubleshooting.md'
 - Customize Gluu Server: 
