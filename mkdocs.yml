@@ -29,6 +29,7 @@ pages:
 - Gluu Server GUI:
     - 'Configuration': 'oxtrust/configuration.md'
     - 'OxTrust JSON Configuration': 'gluu-defaults/oxtrust-properties.md'
+    - 'OxAuth JSON Configuration': 'gluu-defaults/oxauth-properties.md'
     - 'SAML': 'integrate/outbound-saml.md'
     - 'OpenID Connect': 'integrate/openid-connect.md'
     - 'UMA': 'integrate/uma.md'
