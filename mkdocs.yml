@@ -19,7 +19,7 @@ pages:
     - 'Preparing VM': 'deployment/index.md'
     - 'Ubuntu 14.04': 'deployment/ubuntu.md'
     - 'CentOS 6.x': 'deployment/centos.md'
-    - 'CentOS 7.1': 'deployment/centos7.md'
+    - 'CentOS 7.2': 'deployment/centos7.md'
     - 'RHEL 6.x': 'deployment/rhel.md'
     - 'Setup Script Options': 'deployment/setup_py.md'
     - 'Microsoft Azure Guide': 'deployment/azure.md'

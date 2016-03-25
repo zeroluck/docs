@@ -24,7 +24,7 @@ Click on the desired operating system for deployment guide.
 |-------------------------------|-------------------------------|-------------------|
 |[Ubuntu Server](./ubuntu.md)	|**14.04.2**			|	64 Bit|
 |[CentOS 6.x](./centos.md)	|**6.5**, **6.6**, **6.7**	|	64 Bit|
-|[CentOS 7](./centos7.md)	|**7.1**			|	64 Bit|
+|[CentOS 7.2](./centos7.md)	|**7.1**			|	64 Bit|
 |[RHEL 6.x](./rhel.md)		|**6.5**, **6.6**, **6.7**	|	64 Bit|
 	
 ## File Descriptor
