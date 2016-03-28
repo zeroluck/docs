@@ -1,6 +1,6 @@
 [TOC]
 
-# Upgrading
+# Upgrading Gluu Server CE
 
 Upgrading a Gluu Server is NOT a simple `apt-get upgrade`. The admin needs to explicitly install the version of the Gluu Server. It generally involves the following steps:
 
@@ -12,11 +12,9 @@ Upgrading a Gluu Server is NOT a simple `apt-get upgrade`. The admin needs to ex
 
 Gluu provides the required [scripts](https://github.com/GluuFederation/community-edition-setup/tree/master/static/scripts) necessary to perform the import and export of the data in and out of the servers.
 
-## Upgrading from 2.4.x to 2.4.2 (latest)
-
 > IMPORTANT: Replace `gluu-server24` with `gluu-server-2.4.1` in the commands, if you are running version 2.4.1
 
-### Export the data from the current installation
+## Export the data from the current installation
 
 ```
 # service gluu-server24 login
@@ -31,7 +29,7 @@ Gluu provides the required [scripts](https://github.com/GluuFederation/community
 The export script will generate a directory called `backup_24` which will have all the data backed up from the current installation.
 Check the log file generated in the directory for any errors.
 
-### Install the latest version of the Gluu server
+## Install the latest version of the Gluu server
 
 Consult the docs pages of the respective distribution about how to install the Gluu Server using the package manager. Once the package manager has installed the version `2.4.2`, then:
 
@@ -55,7 +53,7 @@ Consult the docs pages of the respective distribution about how to install the G
 
 Enter the required information for the setup and complete the installation.
 
-### Import your old data
+## Import your old data
 
 Go to the folder where you have the backup_24 folder (if the above commands were followed, it is in /root/) and  get the necessary scripts.
 

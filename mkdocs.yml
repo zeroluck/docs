@@ -24,7 +24,7 @@ pages:
     - 'Setup Script Options': 'deployment/setup_py.md'
     - 'Microsoft Azure Guide': 'deployment/azure.md'
 - Upgrade Gluu CE:
-    - 'Upgrading': 'deployment/upgrading.md'
+    - 'Upgrade from 2.4.x': 'deployment/upgrading.md'
 
 - Cluster Configuration:
     - 'Clustering with CE': 'cluster/index.md'
