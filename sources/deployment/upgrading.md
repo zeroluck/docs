@@ -60,7 +60,7 @@ Go to the folder where you have the backup_24 folder (if the above commands were
 ```
 # cd ~
 
-# wget https://raw.githubusercontent.com/GluuFederation/community-edition-setup/master/static/scripts/imoport24.py
+# wget https://raw.githubusercontent.com/GluuFederation/community-edition-setup/master/static/scripts/import24.py
 
 # wget https://raw.githubusercontent.com/GluuFederation/community-edition-setup/master/ldif.py
 ```
