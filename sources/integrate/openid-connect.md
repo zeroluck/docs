@@ -105,7 +105,7 @@ new client.
 
 ![Add new client](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_newclient.png)
 
-* _Display Name:_ This contains the recognizable and unique display name
+* _Client Name:_ This contains the recognizable and unique display name
   of the client.
 
 * _Client Secret:_ This is the Data Encryption Standard scheme used by
@@ -130,24 +130,32 @@ new client.
     with localhost. This is suitable for a mobile app which cannot maintain
     the client secret between itself and the authorization server.
 
+* _Pre Authorization:_ The Gluu Server disables this option by default,
+but it is possible to allow the users to access any URL according to the
+Organization Policy by the Gluu Server administrator.
+
+* _Logo URI:_ The logo for the client application
+
+* _Client URI:_ The home page for the client
+
+* _Policy URI:_ The URI for the client policy 
+
+* _Terms of Service URI:_ The conditions for the client
+
 * _Algorithm:_ oxAuth supports various types of signature and encryption
   algorithms for authorizing request parameter passing, ID token signature
   and encryption, signing return responses, Encrypt User Info Endpoints
   etc.
 
-It is a good practice to implement ID Token Signatures with the RSA
+**Note:** It is a good practice to implement ID Token Signatures with the RSA
 SHA-256 algorithm (algorithm value RS256). Additionally, oxAuth also
 supports other algorithms that are listed below.
 
-_Signature Algorithms:_ HS256, HS384, HS512, RS256, RS384, RS512, ES256, ES384, ES512.
+_Available Signature Algorithms:_ HS256, HS384, HS512, RS256, RS384, RS512, ES256, ES384, ES512.
 
 _Encryption, Key Encryption Algorithms:_ RSA1_5, RSA-OAEP, A128KW, A256KW.
 
 _Block Encryption Algorithms:_ A128CBC+HS256, A256CBC+HS612, A128GCM, A256GCM,
-
-* _Pre Authorization:_ The Gluu Server disables this option by default,
-but it is possible to allow the users to access any URL according to the
-Organization Policy by the Gluu Server administrator.
 
 * _Redirect URI:_ The uri for native or web app can be added using this feature.
 ![RedirectURI](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_adduri.png)
