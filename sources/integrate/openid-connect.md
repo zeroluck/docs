@@ -183,7 +183,7 @@ Organization Policy by the Gluu Server administrator.
 **Buttons at the bottom**
 
 * _Add Login URI:_ This option can be used to add the login URL.
-![Add Login URI](![Add Scopes](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_loginuri.png)
+![Add Login URI](![Add Scopes](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth_loginuri.png)
 
 * _Add Scopes:_ This option can be used to add the required scopes in the Gluu Server.
 ![Add Scopes](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_addscope.png)
