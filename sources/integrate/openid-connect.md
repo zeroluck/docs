@@ -142,25 +142,48 @@ Organization Policy by the Gluu Server administrator.
 
 * _Terms of Service URI:_ The conditions for the client
 
-* _Algorithm:_ oxAuth supports various types of signature and encryption
-  algorithms for authorizing request parameter passing, ID token signature
-  and encryption, signing return responses, Encrypt User Info Endpoints
-  etc.
+* _JWKS URI:_ The URL for the Client's JSON Web Key Set
 
-**Note:** It is a good practice to implement ID Token Signatures with the RSA
-SHA-256 algorithm (algorithm value RS256). Additionally, oxAuth also
-supports other algorithms that are listed below.
+* _Sector Identifier URI:_ The Sector Identifier URL
 
-_Available Signature Algorithms:_ HS256, HS384, HS512, RS256, RS384, RS512, ES256, ES384, ES512.
+* _JWS alg Algorithm for signing the ID Token:_ The algorithm to sign the ID token. See available algorithms
 
-_Encryption, Key Encryption Algorithms:_ RSA1_5, RSA-OAEP, A128KW, A256KW.
+* _JWE alg Algorithm for encrypting the ID Token:_ See [Algorithms section](#algorithm) for options
 
-_Block Encryption Algorithms:_ A128CBC+HS256, A256CBC+HS612, A128GCM, A256GCM,
+* _JWE enc Algorithm for encrypting the ID Token:_ See [Algorithms section](#algorithm) for options
 
-* _Redirect URI:_ The uri for native or web app can be added using this feature.
-![RedirectURI](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_adduri.png)
+* _JWS alg Algorithm for signing the UserInfo Responses:_ See [Algorithms section](#algorithm) for options
 
-  Clicking on *Add URI* will open a new box to put the hostname in and it is done.
+* _JWS alg Algorithm for encrypting the UserInfo Responses:_ See [Algorithms section](#algorithm) for options
+
+* _JWE enc Algorithm for encrypting the UserInfo Responses:_ See [Algorithms section](#algorithm) for options
+
+* _JWS alg Algorithm for signing Request Objects:_ See [Algorithms section](#algorithm) for options
+
+* _JWE alg Algorithm for encrypting Request Objects:_ See [Algorithms section](#algorithm) for options
+
+* _JWE enc Algorithm for encrypting Request Objects:_ See [Algorithms section](#algorithm) for options
+
+* _Authntication method for the Token Endpoint:_ The authentication method can be `client_secret_basic, client_secret_post, client_secret_jwt, private_key_jwt, none`
+
+* _JWS alg Algorithm for Authentication method to Token Endpoint:_ See [Algorithms section](#algorithm) for options
+
+* _Default Maximum Authentication Age:_ Enter validity of authntication in seconds
+
+* _Require Auth Time:_ The requirement for authentication time
+
+* _Persist Client Authorizations*:_ The options are `true, false`
+
+* _Initiate Login URI:_ The https scheme that can be used by third party to initiate login by RP
+
+* _Logout URI:_ The logout URL
+
+* _Logout Session Required*:_ The options are `true, false`
+
+**Buttons at the bottom**
+
+* _Add Login URI:_ This option can be used to add the login URL.
+![Add Login URI](![Add Scopes](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_loginuri.png)
 
 * _Add Scopes:_ This option can be used to add the required scopes in the Gluu Server.
 ![Add Scopes](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_addscope.png)
@@ -173,6 +196,31 @@ _Block Encryption Algorithms:_ A128CBC+HS256, A256CBC+HS612, A128GCM, A256GCM,
   Server and they are Code, Token and ID Token. The Gluu Server
   Administrator can select all of them for testing purposes.
 ![Response Type](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_response.png)
+
+* _Add Grant Type:_ There are 3 grant type available in this option `authorization_code, implicit, refresh_token`
+![Grant Type](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrust/admin_oauth2_grants.png)
+
+* _Add Contact:_ Use this option to add the email address for the Client contact
+
+* _Add Default ACR value:_ Use this option to define the default ACR Value
+
+* _Add Request URI:_ Use this option to add the Request URI
+
+### Algorithm
+oxAuth supports various types of signature and encryption
+algorithms for authorizing request parameter passing, ID token signature
+and encryption, signing return responses, Encrypt User Info Endpoints
+etc.
+
+**Note:** It is a good practice to implement ID Token Signatures with the RSA
+SHA-256 algorithm (algorithm value RS256). Additionally, oxAuth also
+supports other algorithms that are listed below.
+
+_Available Signature Algorithms:_ HS256, HS384, HS512, RS256, RS384, RS512, ES256, ES384, ES512.
+
+_Encryption, Key Encryption Algorithms:_ RSA1_5, RSA-OAEP, A128KW, A256KW.
+
+_Block Encryption Algorithms:_ A128CBC+HS256, A256CBC+HS612, A128GCM, A256GCM,
 
 ### Custom Client Registration
 
