@@ -34,5 +34,5 @@ Follow the steps below to configure the [DUO][duo] module in the oxTrust Admin G
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-script_update.png)
 
 6. Change the Default authentication method to U2F
-![image](https://raw.githubusercontent.com/GluuFederation/docs/75518bb90184aa1b096874526b4da5f9f924bd44/sources/img/2.4/admin_auth_u2f.png)
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_auth_u2f.png)
 
