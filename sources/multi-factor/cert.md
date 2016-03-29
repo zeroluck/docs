@@ -36,6 +36,6 @@ Follow the steps below to configure the certificate authentication in the oxTrus
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-script_enable.png)
 
 5. Change the default authentication method to Certificate/Cert.
-![image](https://raw.githubusercontent.com/GluuFederation/docs/75518bb90184aa1b096874526b4da5f9f924bd44/sources/img/2.4/admin_auth_default.png)
+![image](https://raw.githubusercontent.com/GluuFederation/docs/75518bb90184aa1b096874526b4da5f9f924bd44/sources/img/2.4/admin_auth_cert.png)
 
 

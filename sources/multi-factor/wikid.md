@@ -45,3 +45,6 @@ Follow the steps below to configure the Wikid module in the oxTrust Admin GUI.
 
 5. Click Update
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-script_update.png)
+
+6. Change the Default Authentication method to Wikid
+![image]((https://raw.githubusercontent.com/GluuFederation/docs/75518bb90184aa1b096874526b4da5f9f924bd44/sources/img/2.4/admin_auth_wikid.png)
