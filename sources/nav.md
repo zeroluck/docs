@@ -53,4 +53,4 @@ The following pages explain the oxTrust GUI
 |[Certificate](./multi-factor/cert.md)|
 
 # Questions
-Please see the [FAQ Page](./faq/troubleshooting.md) troubleshooting.
+Please see the [FAQ Page](./faq/troubleshooting.md) for basic troubleshooting, or [open a ticket](http://support.gluu.org) on our support portal for community support.
