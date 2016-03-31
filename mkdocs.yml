@@ -9,6 +9,7 @@ theme_dir: ./theme/mkdocs/
 pages:
 
 - Home: 'index.md'
+- Quick Start: 'nav.md'
 - Introduction: 
     - 'Summary': 'introduction/index.md'
     - 'History': 'introduction/history.md'
