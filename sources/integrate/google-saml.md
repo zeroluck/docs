@@ -71,7 +71,7 @@ Got the metadata? Great, we are ready to move forward.
 * Create Trust Relationship for Google Apps: 
 
    * How to create a trust relationship can be found [here](./outbound-saml.md#how-to-create-trust-relationship). We need to follow the "File" method for Google Apps trust relationship.
-    * Required attributes: Generally a nameID attributes is required. Please talk to us to generate this nameID in your Gluu Server. 
+    * Required attributes: Generally a nameID attributes is required. Consult with Shibboleth documentation on how to create a custom NameID. 
     * Relying Party Configuration: Yes, SAML2SSO should be configured. 
         * includeAttributeStatement: check
         * assertionLifetime: default 
