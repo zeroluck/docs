@@ -10,23 +10,15 @@ Another advantage of Jython was that developers can use either Java or Python cl
 To access custom scripts within oxTrust, navigate to [Configuration > Manage Custom Scripts](../oxtrust/configuration.md#manage-custom-scripts).
 
 # Custom Scripts
-All script types inherit a base interface which has 3 methods:
+There are three methods that inherit a base interface
 
-* `def init(self, configurationAttributes):`
+|Inherited Methods|Method description|
+|-----------------|------------------|
+|def init(self, configurationAttributes) |This method is only called once during the script initialization. It can be used for global script initialization, initiate objects etc|
+|def destroy(self, configurationAttributes) |This method is called once to destroy events. It can be used to free resource and objects created in the `init()` method|
+|def getApiVersion(self) |The `getApiVersion` method allows API changes in order to do transparent migration from an old script to a new API. Currently all scripts should return `1`|
 
-* `def destroy(self, configurationAttributes):`
-
-* `def getApiVersion(self):`
-
-The `configurationAttributes` parameter is `java.util.Map<String,
-SimpleCustomProperty>` with properties specified in
-`oxConfigurationProperty` attributes.
-
-The `init` and `destroy` methods are called only one time during the
-script initialization and script destroy events. The `init` method can
-be used to do global script initialization, initiate objects, etc. The
-`destroy` method can be used to free resources and objects created in
-the `init` method.
+The `configurationAttributes` parameter is `java.util.Map<String, SimpleCustomProperty>` with properties specified in `oxConfigurationProperty` attributes.
 
 The script manager only loads enabled scripts. Hence, after enabling a
 script, the script manager should trigger an event to either load or
@@ -53,12 +45,6 @@ This is a sample entry:
 The script manager reloads scripts automatically without needing to
 restart the application once `oxRevision` is increased.
 
-The `getApiVersion` method allows API changes in order to do transparent
-migration from an old script to a new API. Currently all scripts should
-return `1`. For example, in the future it is planned to extend the API
-of any script and call new method(s) only if API version > 2, etc.
-exists.
-
 ## Interception Script Logs
 
 The log files regarding interception scripts are not stored in the
@@ -81,102 +67,45 @@ an organizations security requirements. It extends the base script type
 with the `init`, `destroy` and `getApiVersion` methods but also adds the
 following methods:
 
-* `def isValidAuthenticationMethod(self, usageType, configurationAttributes):`
+|Method|isValidAuthenticationMethod(self, usageType, configurationAttributes)|
+|---|---|
+|**Description**|This method is used to check if the authentication method is in a valid state. For example we can check there if a 3rd party mechanism is available to authenticate users. As a result it should either return `True` or `False`|
+|Method Parameter|`usageType` is `org.xdi.model.AuthenticationScriptUsageType`<br/>`configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`|
 
-* `def getAlternativeAuthenticationMethod(self, usageType, configurationAttributes):`
+|Method|def getAlternativeAuthenticationMethod(self, usageType, configurationAttributes)|
+|---|---|
+|**Description**|This method is called only if the current authentication method is in an invalid state. Hence authenticator calls it only if `isValidAuthenticationMethod` returns False. As a result it should return the reserved authentication method name|
+|Method Parameter|`uageType` is `org.xdi.model.AuthenticationScriptUsageType`<br/>`configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`|
 
-* `def authenticate(self, configurationAttributes, requestParameters, step):`
+|Method|def authenticate(self, configurationAttributes, requestParameters, step)|
+|---|---|
+|**Description**|This method is the key method within the person authentication script. It checks if the user has passed the specified step or not. As a result it should either return `True` or `False`|
+|Method Parameter|`requestParameters` is `java.util.Map<String, String[]>`<br/>`step` is java integar<br/>`configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`|
 
-* `def prepareForStep(self, configurationAttributes, requestParameters, step):`
+|Method|def prepareForStep(self, configurationAttributes, requestParameters, step)|
+|---|---|
+|**Description**|This method can be used to prepare variables needed to render the login page and store them in an according event context. As a result it should either return `True` or `False`|
+|Method Parameter|`requestParameters` is `java.util.Map<String, String[]>`<br/>`step` is a java integer<br/>`configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`|
 
-* `def getCountAuthenticationSteps(self, configurationAttributes):`
+|Method|def getCountAuthenticationSteps(self, configurationAttributes)|
+|---|---|
+|**Description**|This method should return an integer value with the number of steps in the authentication workflow|
+|Method Parameter|`configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`|
 
-* `def getExtraParametersForStep(self, configurationAttributes, step):`
+|Method|def getExtraParametersForStep(self, configurationAttributes, step)|
+|---|---|
+|**Description**|This method provides a way to notify the authenticator that it should store specified event context parameters event in the oxAuth session. It is needed in a few cases, for example when an authentication script redirects the user to a 3rd party authentication system and expects the workflow to resume after that. As a result it should return a java array of strings|
+|Method Parameter|`configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`<br/>`step` is a java integer|
 
-* `def getPageForStep(self, configurationAttributes, step):`
+|Method|def getPageForStep(self, configurationAttributes, step)|
+|---|---|
+|**Description**|This method allows the admin to render a required page for a specified authentication step. It should return a string value with a path to an XHTML page. If the return value is empty or null, the authenticator should render the default log in page `/login.xhtml`|
+|Method Parameter|`configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`<br/>`step` is a java integar|
 
-* `def logout(self, configurationAttributes, requestParameters):`
-
-The `isValidAuthenticationMethod` method is used to check if the
-authentication method is in a valid state. For example we can check
-there if a 3rd party mechanism is available to authenticate users. As a
-result it should either return `True` or `False`.
-
-This method has the following parameters:
-
-- `usageType` is `org.xdi.model.AuthenticationScriptUsageType`
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
-
-The `getAlternativeAuthenticationMethod` method is called only if the
-current authentication method is in an invalid state. Hence
-authenticator calls it only if `isValidAuthenticationMethod` returns
-`False`. As a result it should return the reserved authentication method
-name.
-
-This method has the following parameters:
-
-- `usageType` is `org.xdi.model.AuthenticationScriptUsageType`
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
-
-The `authenticate` method is the key method within the person
-authentication script. It checks if the user has passed the specified
-step or not. As a result it should either return `True` or `False`.
-
-This method has the following parameters:
-
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
-- `requestParameters` is `java.util.Map<String, String[]>`
-- step is a java integer
-
-The `prepareForStep` method can be used to prepare variables needed to
-render the login page and store them in an according event context. As a
-result it should either return `True` or `False`.
-
-This method has the following parameters:
-
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
-- `requestParameters` is `java.util.Map<String, String[]>`
-- step is a java integer
-
-The `getCountAuthenticationSteps` method should return an integer value
-with the number of steps in the authentication workflow.
-
-This method has the following parameters:
-
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
-
-The `getExtraParametersForStep` method provides a way to notify the
-authenticator that it should store specified event context parameters
-event in the oxAuth session. It is needed in a few cases, for example
-when an authentication script redirects the user to a 3rd party
-authentication system and expects the workflow to resume after that. As
-a result it should return a java array of strings.
-
-This method has the following parameters:
-
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
-- step is a java integer
-
-The `getPageForStep` method allows the admin to render a required page
-for a specified authentication step. It should return a string value
-with a path to an XHTML page. If the return value is empty or null, the
-authenticator should render the default log in page `/login.xhtml`.
-
-This method has the following parameters:
-
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
-- step is a java integer
-
-The `logout` method is not mandatory. It can be used in cases when you
-need to execute specific logout logic within the authentication script
-when oxAuth receives an end session request. Also, it allows oxAuth to
-stop processing the end session request workflow if it returns `False`.
-As a result it should either return `True` or `False`.
-
-This method has the following parameters:
-
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
-- `requestParameters` is `java.util.Map<String, String[]>`
+|Method|def logout(self, configurationAttributes, requestParameters)|
+|---|---|
+|**Description**|This method is not mandatory. It can be used in cases when you need to execute specific logout logic within the authentication script when oxAuth receives an end session request. Also, it allows oxAuth to stop processing the end session request workflow if it returns `False`. As a result it should either return `True` or `False`|
+|Method Parameters|`configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`<br/>`requestParameters` is `java.util.Map<String, String[]>`|
 
 This script can be used in oxAuth application only.
 
@@ -210,13 +139,10 @@ a person entry before it is stored in LDAP.
 
 This script type adds only one method to the base script type:
 
-* `def updateUser(self, user, persisted, configurationAttributes):`
-
-These are the types of parameters:
-
-- `user` is `org.gluu.oxtrust.model.GluuCustomPerson`
-- persisted is a boolean value to specify the operation type: add/modify
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
+|Method|def updateUser(self, user, persisted, configurationAttributes)|
+|---|---|
+|**Description**|This method updates the user|
+|Method Parameter|`user` is `org.gluu.oxtrust.model.GluuCustomPerson`<br/>persisted is a boolean value to specify the operation type: add/modify<br/>`configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`|
 
 This script can be used in an oxTrust application only.
 
@@ -230,32 +156,29 @@ script type.
 
 This script type adds three methods to the base script type:
 
-* `def initRegistration(self, user, requestParameters, configurationAttributes):`
 
-* `def preRegistration(self, user, requestParameters, configurationAttributes):`
+|Methods|def initRegistration(self, user, requestParameters, configurationAttributes)<br/>def preRegistration(self, user, requestParameters, configurationAttributes)<br/>def postRegistration(self, user, requestParameters, configurationAttributes)|
+|---|---|
+|**Description**|This method enables/disables user account based on the custom property's value|
+|Method Parameters|`user` is `org.gluu.oxtrust.model.GluuCustomPerson`<br/>`requestParameters` is `java.util.Map<String, String[]>`<br/>`configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`|
+|Custom Property|`enable_user`--> defaults to `false`|
+|Description|It controls whether or not this user account will be ready for loggin into the Gluu Server CE instance|
 
-* `def postRegistration(self, user, requestParameters, configurationAttributes):`
+The methods are executed in the following order:
 
-All these methods expect the same parameters:
-
-- `user` is `org.gluu.oxtrust.model.GluuCustomPerson`
-- `requestParameters` is `java.util.Map<String, String[]>`
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
-
-Script also declares one custom property called `enable_user` which defaults
-to "false". It controls whether or not this user account will be ready for using
-it to log in to this Gluu CE instance right away.
+|Order|Method|Expected Return|
+|-----|------|-----------|
+|First|initRegistration()|True/False|
+|Second|preRegistration()|True/False|
+|Third|postRegistration()|True/False|
 
 First oxTrust executes the `initRegistration` method to do an initial
-user entry update. The `preRegistration` method is called abefore storing
+user entry update. The `preRegistration` method is called before storing
 the user entry in LDAP. Hence in this script it is possible to validate
-the user entry. Currenlty it only disables/enables user account (depending on the
-custom property's value). The `postRegistration` method is called after
+the user entry. The `postRegistration` method is called after
 successfully storing the user entry in LDAP. In this method, for
 example, the script can send an e-mail or send notifications to other
 organization systems about the new user entry.
-
-All three methods should either return `True` or `False`.
 
 - [Sample User Registration Script](./sample-user-registration-script.py)
 
@@ -272,13 +195,9 @@ scopes if `redirect_uri` belongs to a specified service or domain.
 
 This script type adds only one method to the base script type:
 
-* `def updateClient(self, registerRequest, client, configurationAttributes):`
-
-These are the types of parameters:
-
-- `registerRequest` is `org.xdi.oxauth.client.RegisterRequest`
-- `client` is `org.xdi.oxauth.model.registration.Client`
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
+|Method|def updateClient(self, registerRequest, client, configurationAttributes)|
+|---|---|
+|**Method Parameter**|`registerRequest` is `org.xdi.oxauth.client.RegisterRequest`<br/>`client` is `org.xdi.oxauth.model.registration.Client`<br/>`configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`|
 
 This script can be used in an oxAuth application only.
 
@@ -305,15 +224,9 @@ generation rules.
 
 This script type adds only one method to the base script type:
 
-* `def generateId(self, appId, idType, idPrefix, configurationAttributes):`
-
-These are the types of parameters:
-
-- `appId` is application ID
-- `idType` is ID Type
-- `idPrefix` is ID Prefix
-- `user` is `org.gluu.oxtrust.model.GluuCustomPerson`
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
+|Method|def generateId(self, appId, idType, idPrefix, configurationAttributes)|
+|---|---|
+|**Method Parameter**|`appId` is application ID<br/>`idType` is ID Type<br/>`idPrefix` is ID Prefix<br/>`user` is `org.gluu.oxtrust.model.GluuCustomPerson`<br/>`configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`|
 
 This script can be used in an oxTrust application only.
 
@@ -331,12 +244,9 @@ or to add new attributes based on other attribute values.
 
 This script type adds only one method to the base script type:
 
-* `def updateUser(self, user, configurationAttributes):`
-
-These are the types of parameters:
-
-- `user` is `org.gluu.oxtrust.model.GluuCustomPerson`
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
+|Method|def updateUser(self, user, configurationAttributes)|
+|---|---|
+|**Method Parameter**|`user` is `org.gluu.oxtrust.model.GluuCustomPerson`<br/>`configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`|
 
 This script can be used in an oxTrust application only.
 
@@ -353,12 +263,9 @@ access.
 
 This script type adds only one method to the base script type:
 
-`def authorize(self, authorizationContext, configurationAttributes):`
-
-These are the types of parameters:
-
-- `authorizationContext` is `org.xdi.oxauth.service.uma.authorization.AuthorizationContext`
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
+|Method|def authorize(self, authorizationContext, configurationAttributes)|
+|---|---|
+|**Method Parameter**|`authorizationContext` is `org.xdi.oxauth.service.uma.authorization.AuthorizationContext`<br/>`configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`|
 
 This script can be used in an oxAuth application only.
 
@@ -375,13 +282,9 @@ level.
 
 This script type adds only one method to the base script type:
 
-`def endSession(self, httpRequest, authorizationGrant, configurationAttributes):`
-
-These are the types of parameters:
-
-- `httpRequest` is `javax.servlet.http.HttpServletRequest`
-- `authorizationGrant` is `org.xdi.oxauth.model.common.AuthorizationGrant`
-- `configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`
+|Method|def endSession(self, httpRequest, authorizationGrant, configurationAttributes)|
+|---|---|
+|**Method Parameter**|`httpRequest` is `javax.servlet.http.HttpServletRequest`<br/>`authorizationGrant` is `org.xdi.oxauth.model.common.AuthorizationGrant`<br/>`configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`|
 
 This script can be used in an oxAuth application only.
 

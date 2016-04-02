@@ -18,8 +18,8 @@ The following pages explain the oxTrust GUI
 
 |	oxTrust Tab Menu	|	Sub-menu	|
 |-------------------------------|-----------------------|
-|**[Configuration](./oxtrust/configuration.md)**| [oxTrust JSON Configuration](./gluu-defaults/oxtrust-properties.md) <br/>[oxAuth JSON Configuration](./gluu-defaults/oxauth-properties.md)<br/> [Cache Refresh](./cache-refresh/index.md)|
-|SAML|[Outbound](./integrate/outbound-saml.md) [Inbound](./integrate/inbound-saml.md)|
+|**[Configuration](./oxtrust/configuration.md)**| [oxTrust JSON Configuration](./gluu-defaults/oxtrust-properties.md) <br/>[oxAuth JSON Configuration](./gluu-defaults/oxauth-properties.md)<br/> [Cache Refresh/Backend LDAP/AD](./cache-refresh/index.md)|
+|SAML|[Outbound](./integrate/outbound-saml.md)<br/> [Inbound](./integrate/inbound-saml.md)|
 |**[OpenID Connect](./integrate/openid-connect.md)**|n/a|
 |**[UMA](./integrate/uma.md)**|n/a|
 |**[Users](./oxtrust/users.md)**|[Import People](./cache-refresh/xlsfile.md)|
@@ -43,7 +43,6 @@ The following pages explain the oxTrust GUI
 |[Salesforce](./integrate/salesforce-sso.md)|
 
 # Authentication
-## Multi-Factor
 | Multi Factor Guides|
 |--------------------|
 |[DUO](./multi-factor/duo.md)|
