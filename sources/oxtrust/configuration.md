@@ -145,7 +145,14 @@ authentication mode, and level for person authentication. Both modes are
 set to "Default" until additional authentication mechanisms are enabled
 via [custom scripts](#manage-custom-scripts).
 
-![Default Authentication Method](https://raw.githubusercontent.com/GluuFederation/docs/75518bb90184aa1b096874526b4da5f9f924bd44/sources/img/2.4/admin_auth_default.png)
+The difference between the two methods are given below
+
+|Authentication Method|Description|
+|---|---|
+|Authentication mode|This mode is used while authenticating general users or synced users from backend LDAP/AD|
+|oxTrust authentication mode|This mode is used for authenticate the GUI admins or users with oxTrust GUI access|
+
+![Default Authentication Method](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_auth_default.png)
 
 # Manage Custom Scripts  
 
