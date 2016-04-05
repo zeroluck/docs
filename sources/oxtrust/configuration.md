@@ -145,11 +145,11 @@ authentication mode, and level for person authentication. Both modes are
 set to "Default" until additional authentication mechanisms are enabled
 via [custom scripts](#manage-custom-scripts).
 
-The difference between the two methods are given below
+Gluu Server uses oxAuth as the first step of authentication in all kind of SSO protocols ( OpenID Connect, SAML, CAS )
 
 |Authentication Method|Description|
 |---|---|
-|Authentication mode|This mode is used while authenticating general users or synced users from backend LDAP/AD|
+|Authentication mode|This mode is used in case of users authenticating with Gluu Server only without entring into oxTrust|
 |oxTrust authentication mode|This mode is used for authenticate the GUI admins or users with oxTrust GUI access|
 
 ![Default Authentication Method](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_auth_default.png)
