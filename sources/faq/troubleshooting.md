@@ -1,4 +1,11 @@
 [TOC]
+# Connectivity Issues?
+## DNS names not resolving!
+It is possible that even after configuring everything there is a `DNS` resolve error in Gluu Server.
+The reason is the `DNS` used inside the chroot container; the `dns` used by the container is the Google DNS servers 
+and the `DNS` for the host OS is not used. Therefore to fix this issue:
+
+- Change the DNS inside the container by editing the `/etc/resolv.conf` file and adding the DNS used by your organization
 # Locked Out?
 ## Forgot the admin password! 
 
