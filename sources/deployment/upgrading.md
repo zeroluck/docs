@@ -31,14 +31,17 @@ Check the log file generated in the directory for any errors.
 
 ## Install the latest version of the Gluu server
 
-Consult the docs pages of the respective distribution about how to install the Gluu Server using the package manager. Once the package manager has installed the version `2.4.2`, then:
+Stop the current version of the gluu-server.
 
 ```
-# service gluu-server24 stop  
-
-# cp -r /opt/gluu-server24/root/backup_24/ /opt/gluu-server-2.4.2/root/
-
 # service gluu-server24 stop
+```
+
+Consult the [docs](https://www.gluu.org/docs/deployment/) of the respective distribution about how to install the Gluu Server using the package manager.
+Once the package manager has installed the version `2.4.2`, then:
+
+```
+# cp -r /opt/gluu-server24/root/backup_24/ /opt/gluu-server-2.4.2/root/
 
 # service gluu-server-2.4.2 start
 
@@ -55,7 +58,7 @@ Enter the required information for the setup and complete the installation.
 
 ## Import your old data
 
-Go to the folder where you have the backup_24 folder (if the above commands were followed, it is in /root/) and  get the necessary scripts.
+Go to the folder where you have the `backup_24` folder (if the above commands were followed, it is in /root/) and  get the necessary scripts.
 
 ```
 # cd ~
@@ -65,7 +68,17 @@ Go to the folder where you have the backup_24 folder (if the above commands were
 # wget https://raw.githubusercontent.com/GluuFederation/community-edition-setup/master/ldif.py
 ```
 
-Install the `python-pip` package using your package manager, e.g., `apt-get install python-pip`
+Install the `python-pip` package using your package manager.
+
+```
+# apt-get install python-pip
+
+or
+
+# yum -y install python-pip
+```
+
+Install the `json-merge` Python package and run the import script.
 
 ```
 # pip install jsonmerge
