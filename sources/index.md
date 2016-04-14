@@ -1,36 +1,61 @@
 [TOC]
+# Gluu Server Administration Docs
+Gluu Server is a free open source access management suite of software primarily written in java. The Gluu Server combines best-of-breed open source identity and access management software with easy deployment and administration, and is engineered to support robust enterprise requirements for uptime and availability.
 
-# Gluu Server Documentation 
-## Overview
-The Gluu Server is an identity and access management suite comprised of
-free open source software (FOSS) components. Some of the software was
-written by Gluu (everything with an "ox" prefix, like "oxAuth"), and
-some of the software we forked from existing open source projects like
-the Shibboleth SAML identity provider, Forgerock community release of
-OpenDJ, the Asimba SAML proxy, the CAS authentication server and many
-more components that are part of the Linux distributions.
+The code is open source, and available on [Github](github.com/GluuFederation/).
 
-The full suite of software is distributed as Linux packages that support
-either single server or clustered deployments. In order to achieve a highly available, clustered Gluu Server infrastrucutre, you'll need a commercial license for the Gluu Server Enterprise Edition (EE).
+Community support can be enlisted either on the [Gluu website](http://gluu.org) or by opening an issue on [Github](github.com/GluuFederation/). Gluu also offers [VIP support and operational services](gluu.org/pricing) and can refer your organization to one of our world-class [integration partners](http://www.gluu.org/partners/current-partners/) for any custom development and integration needs.
 
-## Deployment
-The Gluu Server can be deployed on any physical or virtual server. The Gluu Server Community Edition (CE) is distributed in a `chroot` container. Container distribution enables Gluu to ensure that all the pieces are working together. 
+# Navigating The Docs
+The menu on the left can be used to navigate the docs. However for convenience the following is given.
+## Install Gluu Server
+|	Operating System	|	Version		|
+|-------------------------------|-----------------------|
+|	Ubuntu			|**[14.04](./deployment/ubuntu.md)**|
+|	CentOS			|**[6.x](./deployment/centos.md) <br/> [7.2](./deployment/centos7.md)**|
+|	RHEL			|**[6.x](./deployment/rhel.md)**|
 
-### Deployment Models:
-**Community Edition (CE):** The Gluu Server CE deploys all services in one `chroot` container and can be deployed in production, with an unlimited number of users, for free. Community support is available on our [public forum](https://support.gluu.org), or you can purchase one of our [support plans](http://gluu.org/pricing) to open private tickets, get an SLA on support responses, and enlist security and support consultations with Gluu’s trained support staff.
+## Configure Cluster
+Please use the following to confugure Gluu Server manual cluster.
 
-**Docker Edition (DE):** Gluu Server Docker Edition promises scalability, reliability and a fail-over mechanism through its innovative design implemented using Docker. We are still fine tuning the Docker Edition distribution, and anticipate it's official release in June, 2016. To learn more, please [schedule a meeting with us](http://gluu.org/booking).
+* [**Cluster with Gluu Server**](./cluster/index.md)
+## Gluu Server GUI
+The following pages explain the oxTrust GUI
 
-## Identity Management
+|	oxTrust Tab Menu	|	Sub-menu	|
+|-------------------------------|-----------------------|
+|**[Configuration](./oxtrust/configuration.md)**| [oxTrust JSON Configuration](./gluu-defaults/oxtrust-properties.md) <br/>[oxAuth JSON Configuration](./gluu-defaults/oxauth-properties.md)<br/> [Cache Refresh/Backend LDAP/AD](./cache-refresh/index.md)|
+|SAML|[Outbound](./integrate/outbound-saml.md)<br/> [Inbound](./integrate/inbound-saml.md)|
+|**[OpenID Connect](./integrate/openid-connect.md)**|n/a|
+|**[UMA](./integrate/uma.md)**|n/a|
+|**[Users](./oxtrust/users.md)**|[Import People](./cache-refresh/xlsfile.md)|
+|**[Personal](./oxtrust/personal.md)**|n/a|
 
-To keep the Gluu Server up-to-date with the latest user information
-(a.k.a. attributes or claims), your organization can either "push" or
-"pull" identity data. In the "pull" mode, otherwise known as [LDAP
-Synchronization or Cache
-Refresh](./cache-refresh/index.md), the Gluu Server can
-use an existing LDAP identity source like Microsoft Active Directory as
-the authoritative source of identity information. If you "push"
-identities to the Gluu Server, you can use the JSON/REST SCIM 1.1 or 2.0
-API.
+## Integrate Gluu Server
+### Service Provider/Requesting Party Integration
+|	SAML SP	|	OpenID Connect RP	|
+|---------------|-----------------------|
+|[CentOS](./integrate/apache-saml.md)|[CentOS](./integrate/centos-installation.md)|
+|[Ubuntu](./integrate/ubuntu-shib-apache.md)|[Ubuntu](./integrate/ubuntu-installation.md)|
+|[IIS 7](./integrate/iis-saml.md)|
+|[Windows](./integrate/saml-windows.md)|
 
+### Integration Guides
 
+|SSO|Plugin|
+|---|------|
+|[Google](./integrate/google-saml.md)|[Liferay](./integrate/oxray.md)
+|[Hobsons](./integrate/hobsons-saml.md)|
+|[Salesforce](./integrate/salesforce-sso.md)|
+
+## Authentication
+| Multi Factor Guides|
+|--------------------|
+|[DUO](./multi-factor/duo.md)|
+|[U2F](./multi-factor/u2f.md)|
+|[oxPush2](./multi-factor/oxpush2.md)|
+|[Wikid](./multi-factor/wikid.md)|
+|[Certificate](./multi-factor/cert.md)|
+
+## Questions
+Please see the [FAQ Page](./faq/troubleshooting.md) for basic troubleshooting, or [open a ticket](http://support.gluu.org) on our support portal for community support.
