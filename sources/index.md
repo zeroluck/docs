@@ -57,5 +57,5 @@ The following pages explain the oxTrust GUI
 |[Wikid](./multi-factor/wikid.md)|
 |[Certificate](./multi-factor/cert.md)|
 
-## Questions
-Please see the [FAQ Page](./faq/troubleshooting.md) for basic troubleshooting, or [open a ticket](http://support.gluu.org) on our support portal for community support.
+## Support
+Please see the [FAQ Page](./faq/troubleshooting.md) for basic troubleshooting, or [open a ticket](http://support.gluu.org) on our support portal for community support. Gluu also offers paid support. Please view our [pricing page](http://gluu.org/pricing) to learn more about our VIP support options. 
