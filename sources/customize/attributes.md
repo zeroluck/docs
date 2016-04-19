@@ -4,7 +4,7 @@
 LDAP attributes, SAML attributes, OpenID Connect user claims--whatever you call them--many organizations have business-specific information about people that needs to be shared with applications. For simplicity, this article will refer to them as "attributes." Existing standard schemas like the LDAP [inetOrgPerson](https://www.ietf.org/rfc/rfc2798.txt) standard, or the [OpenID Connect user claims](http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims) define attributes like first name, last name and email address. Where possible, we recommend you use standard attributes that are already defined in the Gluu Server. But what if there is an attribute that is just not in any standard schema? This article will explain what you need to do to configure the Gluu Server to
 support your new attributes, and give you some advice along the way with regard to best practices. We will use fictional Company Acme Inc., which has requirements for "acmeCustNumber" and "acmeStateLicenseNumber".
 
-## Using oxTust
+# Using oxTust
 Additional attributes can be added from the Gluu Server GUI, oxTrust, by
 clicking the **Add Attribute** button. Then, the following screen will
 appear:
@@ -92,7 +92,35 @@ person identifier in the domain (i.e. for Google, this would be your Google id).
 However, rules were meant to be broken, so if you have a reason to release
 a scope by default, go for it!
 
-## Manual Schema Management Command
+# Custom NameID
+Gluu Server comes with the `transientID` attribute which is the default `NameID`.
+If there are other `NameID` requirements, it is possible to create them as well.
+The custom attribute must be created in oxTrust first before defining it as the `NameID`.
+Please see the [oxTrust custom attribute guide](#using-oxtrust) to create the custom attribute in oxTrust.
+
+## Defining NameID
+The template file for `NameID` definitions are located in the `attribute-resolver.xml.vm` file under `/opt/tomcat/conf/shibboleth2/`.
+The example below adds `testcustomattribute` as `NameID` based on UID attribute. The following are put into the `attribute-resolver.xml.vm` file.
+
+* Add declaration for the new attribute
+```
+if( ! ($attribute.name.equals('transientId') or $attribute.name.equals('testcustomattribute') ) )
+```
+* Add definition for the new attribute
+```
+ <resolver:AttributeDefinition id="testcustomattribute" xsi:type="Simple"
+                              xmlns="urn:mace:shibboleth:2.0:resolver:ad"
+                              sourceAttributeID="uid">
+
+        <resolver:Dependency ref="siteLDAP"/>
+        <resolver:AttributeEncoder xsi:type="SAML2StringNameID"
+                                xmlns="urn:mace:shibboleth:2.0:attribute:encoder"
+                                nameFormat="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent" />
+</resolver:AttributeDefinition> 
+```
+* Restart tomcat server
+
+# Manual Schema Management Command
 
 Let's say you have a lot of attributes to register. Or you want a more
 repeatable process for adding schema to the Gluu Server. This next section
@@ -166,3 +194,5 @@ scopes reference the DN of the attributes. For example:
     oxAuthClaim: inum=@!1111!0005!29DA,ou=attributes,o=@!1111,o=gluu
 
 So you may want to also create an ldif file for each scope, and also load this at installation time.
+
+
