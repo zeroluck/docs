@@ -118,7 +118,7 @@ if( ! ($attribute.name.equals('transientId') or $attribute.name.equals('testcust
                                 nameFormat="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent" />
 </resolver:AttributeDefinition> 
 ```
-* Restart tomcat server
+* Restart tomcat service
 
 # Manual Schema Management Command
 
