@@ -1,21 +1,8 @@
 [TOC]
 # Custom Attributes
 
-LDAP attributes, SAML attributes, OpenID Connect user claims--whatever
-you call them--many organizations have business-specific information
-about people that needs to be shared with applications. For simplicity,
-this article will refer to them as "attributes." Existing standard
-schemas like the LDAP [inetOrgPerson](https://www.ietf.org/rfc/rfc2798.txt)
-standard, or the [OpenID Connect user claims]
-(http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims) 
-define attributes like first name, last name and
-email address. Where possible, we recommend you use standard attributes
-that are already defined in the Gluu Server. But what if
-there is an attribute that is just not in any standard schema? This
-article will explain what you need to do to configure the Gluu Server to
-support your new attributes, and give you some advice along the way with
-regard to best practices. We will use fictional Company Acme Inc., which
-has requirements for "acmeCustNumber" and "acmeStateLicenseNumber".
+LDAP attributes, SAML attributes, OpenID Connect user claims--whatever you call them--many organizations have business-specific information about people that needs to be shared with applications. For simplicity, this article will refer to them as "attributes." Existing standard schemas like the LDAP [inetOrgPerson](https://www.ietf.org/rfc/rfc2798.txt) standard, or the [OpenID Connect user claims](http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims) define attributes like first name, last name and email address. Where possible, we recommend you use standard attributes that are already defined in the Gluu Server. But what if there is an attribute that is just not in any standard schema? This article will explain what you need to do to configure the Gluu Server to
+support your new attributes, and give you some advice along the way with regard to best practices. We will use fictional Company Acme Inc., which has requirements for "acmeCustNumber" and "acmeStateLicenseNumber".
 
 ## Using oxTust
 Additional attributes can be added from the Gluu Server GUI, oxTrust, by
