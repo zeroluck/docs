@@ -15,6 +15,8 @@ The menu on the left can be used to navigate the docs. However for convenience t
 |	CentOS			|**[6.x](./deployment/centos.md) <br/> [7.2](./deployment/centos7.md)**|
 |	RHEL			|**[6.x](./deployment/rhel.md)**|
 
+### Upgrading from a previous release
+* [**Upgrade to latest release**](./deployment/upgrading.md)
 ## Configure Cluster
 Please use the following to confugure Gluu Server manual cluster.
 
