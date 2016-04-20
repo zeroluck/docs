@@ -12,12 +12,12 @@ Upgrading a Gluu Server is NOT a simple `apt-get upgrade`. The admin needs to ex
 
 Gluu provides the required [scripts](https://github.com/GluuFederation/community-edition-setup/tree/master/static/scripts) necessary to perform the import and export of the data in and out of the servers.
 
-> IMPORTANT: Replace `gluu-server24` with `gluu-server-2.4.1` in the commands, if you are running version 2.4.1
+> IMPORTANT: Replace `gluu-server24` with `gluu-server-2.4.x` in the commands, if you are running version 2.4.x
 
 ## Export the data from the current installation
 
 ```
-# service gluu-server24 login
+# service gluu-server-2.4.x login
 
 # wget https://raw.githubusercontent.com/GluuFederation/community-edition-setup/master/static/scripts/export24.py
 
@@ -34,18 +34,18 @@ Check the log file generated in the directory for any errors.
 Stop the current version of the gluu-server.
 
 ```
-# service gluu-server24 stop
+# service gluu-server-2.4.x stop
 ```
 
 Consult the [docs](https://www.gluu.org/docs/deployment/) of the respective distribution about how to install the Gluu Server using the package manager.
-Once the package manager has installed the version `2.4.2`, then:
+Once the package manager has installed the version `2.4.x`, then:
 
 ```
-# cp -r /opt/gluu-server24/root/backup_24/ /opt/gluu-server-2.4.2/root/
+# cp -r /opt/gluu-server-2.4.x/root/backup_24/ /opt/gluu-server-2.4.x/root/
 
-# service gluu-server-2.4.2 start
+# service gluu-server-2.4.x start
 
-# service gluu-server-2.4.2 login
+# service gluu-server-2.4.x login
 
 # cp backup_24/setup.properties /install/community-edition-setup/
 
