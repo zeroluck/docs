@@ -21,6 +21,7 @@ pages:
     - 'CentOS 6.x': 'deployment/centos.md'
     - 'CentOS 7.2': 'deployment/centos7.md'
     - 'RHEL 6.x': 'deployment/rhel.md'
+    - 'RHEL 7': 'deploymemnt/rhel7.md'
     - 'Setup Script Options': 'deployment/setup_py.md'
     - 'Microsoft Azure Guide': 'deployment/azure.md'
 - Upgrade Gluu CE:
