@@ -13,7 +13,7 @@ The menu on the left can be used to navigate the docs. However for convenience t
 |-------------------------------|-----------------------|
 |	Ubuntu			|**[14.04](./deployment/ubuntu.md)**|
 |	CentOS			|**[6.x](./deployment/centos.md) <br/> [7.2](./deployment/centos7.md)**|
-|	RHEL			|**[6.x](./deployment/rhel.md)**|
+|	RHEL			|**[6.x](./deployment/rhel.md) <br/> [7](./deployment/rhel7.md)**|
 
 ### Upgrading from a previous release
 * [**Upgrade to latest release**](./deployment/upgrading.md)
