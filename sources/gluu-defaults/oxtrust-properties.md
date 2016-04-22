@@ -15,7 +15,7 @@ The following fields are available for edit in the menu.
 * _baseDN:_ the base doaim name of oxtrust. The default is `o=gluu`
 * _orgIname:_ 
 * _orgSupportEmail:_ the support email address of the Gluu Server installation
-![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-json_oxtrustproperties0.png)
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-json_oxauthproperties0.png)
 * _applianceInum:_ the [INUM][inum] of the appliance
 * _applianceUrl:_ the [URI][uri] of the appliance
 * _baseEndpoint:_ 
