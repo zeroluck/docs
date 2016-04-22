@@ -42,12 +42,14 @@ pages:
     - 'Backend LDAP/AD': 'cache-refresh/index.md'
     - 'XLS File': 'cache-refresh/xlsfile.md'
     - 'Register Users': 'cache-refresh/register.md'
-- Multi-Factor Authentication: 
+- Authentication Mangement: 
     - 'DUO': 'multi-factor/duo.md'
     - 'U2F': 'multi-factor/u2f.md'
     - 'oxPush2': 'multi-factor/oxpush2.md'
     - 'Wikid': 'multi-factor/wikid.md'
     - 'Certificate': 'multi-factor/cert.md'
+    - 'Google Authentication': 'customize/social-login-google.md'
+
 - FAQ:
     - 'Troubleshooting': 'faq/troubleshooting.md'
 - Customize Gluu Server: 
@@ -76,7 +78,6 @@ pages:
 
 - Integration Guides:
     - 'Google SSO': 'integrate/google-saml.md'
-    - 'Google Authentication': 'customize/social-login-google.md'
     - 'Hobsons Education Solution SSO': 'integrate/hobsons-saml.md'
     - 'Salesforce SSO': 'integrate/salesforce-sso.md'
     - 'TestShib2 SSO': 'integrate/test-shib2.md'
