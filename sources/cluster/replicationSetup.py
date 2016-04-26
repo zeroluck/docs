@@ -41,8 +41,8 @@ for i in range(numServers-1):
         host    = raw_input('Enter the hostname of server %s: ' % (i+2))
         passwd  = getpass.getpass('Enter the Directory Manager password for %s:' 
                                                                 % host)
-        os.system("""%s %s -I %s -w %s -b %s -h %s -p %s -D %s --bindPassword1 \
-                '%s' -r %s -O %s --port2 %s --bindDN2 %s --bindPassword2 %s -R %s \
+        os.system("""%s %s -I %s -w '%s' -b %s -h %s -p %s -D %s --bindPassword1 \
+                '%s' -r %s -O %s --port2 %s --bindDN2 %s --bindPassword2 '%s' -R %s \
                 --secureReplication1 --secureReplication2 -X -n""" % (cmd, 
                         subCommand, adminUID, adminPW, baseDN, mainHost, adminPort,
                         bindDN, mainPW, replPort, host, adminPort, bindDN, passwd,
