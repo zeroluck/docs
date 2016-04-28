@@ -34,16 +34,27 @@ The [DUO][duo] module depends on python libraries and this section will outline 
 
 2. Prepare the DUO credential file `/etc/certs/duo_creds.json` with **ikey, akey & skye**
 
+### Configure DUO Account
+1. Sign up for a Duo account.
+
+2. Log in to the Duo Admin Panel and navigate to Applications.
+
+3. Click Protect an Application and locate Web SDK in the applications list. Click Protect this Application to get your integration key, secret key, and API hostname.
+
+4. Generate an "akey" value for your instance. [Click here to know more ](https://duo.com/docs/duoweb#1.-generate-an-akey)
+
+For additional info on Duo's Web SDK check [this atricle](https://duo.com/docs/duoweb) 
+
 ### Configure oxTrust
 Follow the steps below to configure the [DUO][duo] module in the oxTrust Admin GUI.
 
 1. Go to Manage Custom Scripts  
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-script_menu.png)
 
-2. Click on the add custom script button   
-![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-script_add.png)
+2. Scroll down to [DUO][duo] authentication script
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-script_duo.png)
 
-3. Fill up the from and add the [DUO authentication script](https://raw.githubusercontent.com/GluuFederation/oxAuth/master/Server/integrations/duo/DuoExternalAuthenticator.py)
+3. Change the value to `duo_host` to your API
 
 4. Enable the script by ticking the check box  
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-script_enable.png)
