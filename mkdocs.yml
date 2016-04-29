@@ -42,7 +42,6 @@ pages:
     - 'Sync LDAP/AD': 'cache-refresh/index.md'
     - 'Import XLS File': 'cache-refresh/xlsfile.md'
     - 'Register Users': 'cache-refresh/register.md'
-    - 'Advanced User Management': 'cache-refresh/manage-user.md'
 - Authentication Mangement: 
     - 'DUO': 'multi-factor/duo.md'
     - 'U2F': 'multi-factor/u2f.md'
@@ -53,6 +52,7 @@ pages:
 
 - FAQ:
     - 'Troubleshooting': 'faq/troubleshooting.md'
+    - 'User How-tos': 'faq/manage-user.md'
 - Customize Gluu Server: 
     - 'Design Customization': 'customize/design.md'
     - 'Behaviour Customization': 'customize/script.md'
