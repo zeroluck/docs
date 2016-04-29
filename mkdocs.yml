@@ -42,6 +42,7 @@ pages:
     - 'Sync LDAP/AD': 'cache-refresh/index.md'
     - 'Import XLS File': 'cache-refresh/xlsfile.md'
     - 'Register Users': 'cache-refresh/register.md'
+    - 'Reset User Password': 'cache-refresh/reset-password.md'
 - Authentication Mangement: 
     - 'DUO': 'multi-factor/duo.md'
     - 'U2F': 'multi-factor/u2f.md'
