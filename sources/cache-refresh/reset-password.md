@@ -3,11 +3,11 @@ Gluu Server Community Edition comes with a password reset feature, but it is dei
 This feature is available for those setups which use Gluu Server's internal LDAP as the user data source.
 This document shows how to setup password reset feature.
 
-1. Enable `Self-Service Password Reset` from oxTrust `Organization Configuration` Menu
+1. Enable `Self-Service Password Reset` from oxTrust `Organization Configuration` menu
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_menu_configuration.png)
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/password-reset.png)
 
-2. Configure SMTP Server from oxTrust
+2. Configure SMTP Server from oxTrust `Organization Configuration` menu
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_menu_configuration.png)
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_config_smtp.png)
 
