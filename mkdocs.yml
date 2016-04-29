@@ -38,10 +38,11 @@ pages:
     - 'UMA': 'integrate/uma.md'
     - 'Users': 'oxtrust/users.md'
     - 'Personal': 'oxtrust/personal.md'
-- Import Users: 
-    - 'Backend LDAP/AD': 'cache-refresh/index.md'
-    - 'XLS File': 'cache-refresh/xlsfile.md'
+- User Managment: 
+    - 'Sync LDAP/AD': 'cache-refresh/index.md'
+    - 'Import XLS File': 'cache-refresh/xlsfile.md'
     - 'Register Users': 'cache-refresh/register.md'
+    - 'Advanced User Management': 'cache-refresh/manage-user.md'
 - Authentication Mangement: 
     - 'DUO': 'multi-factor/duo.md'
     - 'U2F': 'multi-factor/u2f.md'
