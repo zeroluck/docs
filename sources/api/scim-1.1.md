@@ -17,13 +17,13 @@ You can see the detailed SCIM 1.1 specification documents
 ### /seam/resource/restv1/Users
 - - -
 ##### getUser
-**GET** `/host/seam/resource/restv1/Users{rsid}`
+**GET** `/host/seam/resource/restv1/scim/v1/Users{rsid}`
 
 Returns a user on the basis of provided id as path parameter. The
 resource MUST be already registered with the mentioned id.
 
 ###### URL
-    http://gluu.org/host/seam/resource/restv1/Users{rsid}
+    http://gluu.org/host/seam/resource/restv1/scim/v1/Users{rsid}
 
 ##### Request
 ###### Parameters
@@ -107,13 +107,13 @@ authorization.</td>
 ### /seam/resource/restv1/Groups
 - - -
 ##### getGroup
-**GET** `/host/seam/resource/restv1/Groups{rsid}`
+**GET** `/host/seam/resource/restv1/scim/v1/Groups{rsid}`
 
 Returns a group on the basis of the provided id as a path parameter. The
 group MUST be already registered with the mentioned id.
 
 ###### URL
-    http://gluu.org/host/seam/resource/restv1/Groups{rsid}
+    http://gluu.org/host/seam/resource/restv1/scim/v1/Groups{rsid}
 
 ##### Request
 ###### Parameters
@@ -193,7 +193,7 @@ group MUST be already registered with the mentioned id.
 
 ## Bulk Operation Endpoint
 
-### /seam/resource/restv1/Bulk
+### /seam/resource/restv1/scim/v1/Bulk
 - - -
 
 <a id="bulkOperation">Bulk Operation</a>
