@@ -43,7 +43,7 @@ pages:
     - 'Import XLS File': 'cache-refresh/xlsfile.md'
     - 'Register Users': 'cache-refresh/register.md'
     - 'Reset User Password': 'cache-refresh/reset-password.md'
-    - 'Add/Delete User with SCIM 2.0': 'cache-refresh/scim.md'
+    - 'SCIM 2.0 Add/Delete User': 'cache-refresh/scim.md'
 - Authentication Mangement: 
     - 'DUO': 'multi-factor/duo.md'
     - 'U2F': 'multi-factor/u2f.md'
@@ -84,7 +84,7 @@ pages:
     - 'Hobsons Education Solution SSO': 'integrate/hobsons-saml.md'
     - 'Salesforce SSO': 'integrate/salesforce-sso.md'
     - 'TestShib2 SSO': 'integrate/test-shib2.md'
-
+    - 'Asimba & Gluu CE': 'integrate/asimba.md'
 - Fine Tuning and Benchmarking:
     - 'Tuning LDAP, Tomcat': 'fine-tuning/index.md'
 - Gluu Defaults:
