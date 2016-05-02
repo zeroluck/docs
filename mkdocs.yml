@@ -43,6 +43,7 @@ pages:
     - 'Import XLS File': 'cache-refresh/xlsfile.md'
     - 'Register Users': 'cache-refresh/register.md'
     - 'Reset User Password': 'cache-refresh/reset-password.md'
+    - 'Add/Delete User with SCIM 2.0': 'cache-refresh/scim.md'
 - Authentication Mangement: 
     - 'DUO': 'multi-factor/duo.md'
     - 'U2F': 'multi-factor/u2f.md'
