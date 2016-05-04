@@ -8,8 +8,49 @@ It is assumed that all the hostnames will be dns resolvable; if not, then add th
 
 ```
 sudo apt-get install apache2
+service apache2 restart
+```
+
+## SSL Configuration
+The SSL Module is necessary for the Apache OpenID Connect Module. Please use the following commands to activate the `ssl module`.
+```
 sudo a2enmod ssl
 service apache2 restart
+```
+
+The next step is to create a self-signed SSL Certificate.
+
+* Create a directory to put the ssl certificates<br/>`sudo mkdir /etc/apache2/ssl`
+
+* Generate the certificate<br/>`sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt`
+
+* Answer the questions that are asked. A template is given below
+```
+	Country Name (2 letter code) [AU]:US
+	State or Province Name (full name) [Some-State]:Texas
+	Organization Name (eg, company) [Internet Widgits Pty Ltd]:Gluu Inc
+	Organizational Unit Name (eg, section) []:Gluu Test
+	Common Name (e.g. server FQDN or YOUR name) []:gluu.org
+	Email Address []:support@gluu.org
+```
+
+### Configure Apache to use SSL
+This section will guide you through the steps to configure apache to use the SSL module
+
+1. Open the `default-ssl.conf` file<br/>`sudo vim /etc/apache2/sites-available/default-ssl.conf`
+
+2. Edit the file to edit the following fields to look like the examples below
+
+  * ServerName 
+  * ServerAlias 
+  * DocumentRoot
+  * SSlCertificateFile
+  * SSLCertificateKeyFile
+
+3. Activate the SSl Virtual Host and restart Apache Server
+```
+sudo a2ensite default-ssl.conf
+sudo service apache2 restart
 ```
 
 ### Restart Apache Manually
@@ -133,8 +174,8 @@ Create the apache configuration file named `dynamic.conf` in the `/etc/apache2/s
     </Location>
 
     SSLEngine On
-    SSLCertificateFile /etc/ssl/certs/ssl-cert-snakeoil.pem
-    SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+    SSLCertificateFile /etc/apache2/ssl/apache.crt
+    SSLCertificateKeyFile /etc/apache2/ssl/apache.key
 </VirtualHost>
 ```
 
@@ -229,9 +270,6 @@ Create the apache configuration file named static.conf in the `/etc/apache2/site
     SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
 </VirtualHost>
 ```
-
-**Note:** The default certificate location for the SSL module is used in this example. Please change the locaiton if you use your own certificate.
-
 ### Enable Site
 The dynamic site is enabled using the `a2ensite` command. Run the commands below to enable the site and restart Apache Server:
 
@@ -284,4 +322,4 @@ Then, run the `ldapmodify` command to insert the **oxAuthSubjectIdentifier** as 
 
 `sudo /opt/opendj/bin/ldapmodify -Z -X -h localhost -p 1636 -D "cn=Directory Manager" -j /root/.pw -f /root/mod.ldif`
 
-The command may vary depending upon your installation. Next, access [this page](https://static.gluu.org:44443/static), and the success message should be visible.
+The command may vary depending upon your installation. Next, access [this page](https://static.gluu.org:44443/static), and the success message should be visible or `<hostname>:44443/static`.
