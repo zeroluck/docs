@@ -1,10 +1,12 @@
-## API Document
+# ID Generation API Document
 
-### /id
+## Path
+The API path is set at `/id`.
 
 #### Overview
 
-Use the following types to specify what type you are generating. The `prefix` is used in the 
+The API convention is set as _id_ followed by _prefix_ and _type_ or `/id/{prefix}/{type}/`.
+Please se the following table to specify what type you are generating. The `prefix` is used in the 
 inum to make it possible to know the type of object just by looking at the identifier.
 
 | `prefix` | `type`               | `description`                          |
@@ -22,11 +24,9 @@ inum to make it possible to know the type of object just by looking at the ident
 | 0011     | interception-script  | Gluu Server interception script object |
 | 0012     | sector-identifier    | Managed Sector Identifier URI          |
 
-#### `/id/{prefix}/{type}/`
 ##### generateHtmlInum
 **GET** `/id/{prefix}/{type}/`
 
-Generates ID for given prefix and type.
 Generates ID for given prefix and type.
 
 ###### URL
@@ -66,7 +66,7 @@ Generates ID for given prefix and type.
         <tr>
             <th>Authorization</th>
             <td>false</td>
-            <td></td>
+            <td>The authorization sent as a String</td>
             <td>string</td>
         </tr>
     </table>

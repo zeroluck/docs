@@ -78,7 +78,7 @@ pages:
     - 'OpenID Connect RP in CentOS': 'integrate/centos-installation.md'
     - 'OpenID Connect Liferay Plugin': 'integrate/oxray.md'
     - 'SCIM UMA How-to': 'integrate/scimuma-howto.md'
-
+    - 'OXD Server': 'integrate/oxd.md'
 - Integration Guides:
     - 'Google SSO': 'integrate/google-saml.md'
     - 'Hobsons Education Solution SSO': 'integrate/hobsons-saml.md'
@@ -91,7 +91,6 @@ pages:
     - 'Certificates': 'gluu-defaults/certificates.md'
     - 'LDAP': 'gluu-defaults/ldap.md'
     - 'Schema': 'gluu-defaults/schema.md'
-    - 'OpenID Connect Library': 'gluu-defaults/openid-connect.md'
     - 'oxTrust Properties File': 'gluu-defaults/oxtrust-properties.md'
 - Gluu Server API:
     - 'OpenID Connect Authorization Endpoint': 'api/oic-authorization.md'
