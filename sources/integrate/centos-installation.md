@@ -17,6 +17,37 @@ To setup __Apache2 SSL__, run the following commands:
 yum install httpd mod_ssl
 yum install curl hiredis jansson
 ```
+## Configure SSL Module
+This section will guide you to create SSL certificates.
+Use the following commands to crete a  directory and generate the certificates.
+
+```
+mkdir /etc/httpd/ssl
+openssl req -new -x509 -sha256 -days 365 -nodes -out /etc/httpd/ssl/httpd.pem -keyout /etc/httpd/ssl/httpd.key
+```
+
+You will be prompted to enter some values such as company name, country etc. Please enter them and your certificate will be ready.
+
+The next step is to configure Apache to use the certificates and use the following command to edit the vhost.conf file.
+```
+vi /etc/httpd/conf.d/vhost.conf
+```
+
+The important part of the configuration is to enter the path to the created SSL certificates. The example is given below.<br/>
+**Note:** Please make sure to use the correct server name in the configuration file.
+
+```
+    SSLCertificateFile /etc/httpd/ssl/httpd.pem
+    SSLCertificateKeyFile /etc/httpd/ssl/httpd.key
+    ServerAdmin support@gluu.org
+    ServerName gluu.org
+```
+
+Restart Apache Server and you are done configuring the SSL Module. Use the command below to restart the Apache Server.
+
+```
+service httpd restart
+```
 
 ## Authentication Module (mod_auth_openidc)
 Run the following command to install the `mod_auth_openidc` module:
@@ -207,8 +238,8 @@ below:
 	</Location>
 
 	SSLEngine On
-	SSLCertificateFile /etc/pki/tls/certs/localhost.crt
-	SSLCertificateKeyFile /etc/pki/tls/private/localhost.key
+	SSLCertificateFile /etc/httpd/ssl/httpd.pem
+	SSLCertificateKeyFile /etc/httpd/ssl/httpd.key
 </VirtualHost>
 ```
 
@@ -278,6 +309,6 @@ __oxAuthSubjectIdentifier__ as below:
 ```
 
 The command may vary depending upon your installation. Next, access
-[this page](https://static.gluu.org:44443/static), and the success
+[this page](https://static.gluu.org:44443/static) or `<hostname>:4443/static`, and the success
 message should be visible.
 
