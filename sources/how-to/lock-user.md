@@ -1,7 +1,4 @@
-# User How-tos
-This section contains some hints and how-tos about micro managing users in Gluu Server.
-
-## Lock User Account
+# Lock User Account
 This section will help in locking a user account using custom scripts in solutions where it is
 mandatory to limit access trials to a specific number i.e. lock user account if the user fails to
 produce correct password 3 times.

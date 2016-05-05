@@ -54,7 +54,9 @@ pages:
 
 - FAQ:
     - 'Troubleshooting': 'faq/troubleshooting.md'
-    - 'User How-tos': 'faq/manage-user.md'
+- How To's:
+    - 'Lock User Account': 'how-to/lock-user.md'
+    - 'Automate Custom Schema': 'how-to/automate-schema.md'
 - Customize Gluu Server: 
     - 'Design Customization': 'customize/design.md'
     - 'Behaviour Customization': 'customize/script.md'
