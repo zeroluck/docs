@@ -92,7 +92,7 @@ pages:
 - Gluu Defaults:
     - 'Certificates': 'gluu-defaults/certificates.md'
     - 'LDAP': 'gluu-defaults/ldap.md'
-    - 'Logout Defaluts': 'gluu-defaults/logout.md'
+    - 'Logout': 'gluu-defaults/logout.md'
     - 'Schema': 'gluu-defaults/schema.md'
     - 'oxTrust Properties File': 'gluu-defaults/oxtrust-properties.md'
     - 'OxAuth Properties File': 'gluu-defaults/oxauth-properties.md'
