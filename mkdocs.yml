@@ -95,7 +95,8 @@ pages:
     - 'Logout': 'gluu-defaults/logout.md'
     - 'Schema': 'gluu-defaults/schema.md'
     - 'oxTrust Properties File': 'gluu-defaults/oxtrust-properties.md'
-    - 'OxAuth Properties File': 'gluu-defaults/oxauth-properties.md'
+    - 'oxAuth Properties File': 'gluu-defaults/oxauth-properties.md'
+    - 'Logs': 'gluu-defaults/logs.md'
 - Gluu Server API:
     - 'OpenID Connect Authorization Endpoint': 'api/oic-authorization.md'
     - 'OpenID Connect Token Endpoint': 'api/oic-token.md'
