@@ -4,7 +4,7 @@ Gluu Server is a free open source access management suite of software primarily 
 
 The code is open source, and available on [Github](github.com/GluuFederation/).
 
-Community support can be enlisted either on the [Gluu website](http://gluu.org) or by opening an issue on [Github](github.com/GluuFederation/). Gluu also offers [VIP support and operational services](gluu.org/pricing) and can refer your organization to one of our world-class [integration partners](http://www.gluu.org/partners/current-partners/) for any custom development and integration needs.
+Community support can be enlisted on the [Gluu support site](http://support.gluu.org). If your organization needs to open private tickets with us, or needs an SLA or consultative support, Gluu offers a range of [VIP support](gluu.org/pricing) options. 
 
 # Navigating The Docs
 The menu on the left can be used to navigate the docs. However for convenience the following is given.
