@@ -1,9 +1,23 @@
 # Gluu Server Logs
-Gluu Server logs are available under the `/opt/tomcat/logs/` folder. The following logs are present in the logs folder
+## Tomcat Logs
+Gluu Server Tomcat logs are available under the `/opt/tomcat/logs/` folder. The following logs are present in the logs folder
 
+* cas.log
+* catalina.<date>.log
+* cas_perfStats.log
+* host-manager.<date>.log
+* localhost.<date>.log
+* manager.<date>.log
 * oxauth.log
+* oxauth_persistence_ldap_statistics.log
+* oxauth_script.log
 * oxtrust.log
 * oxtrust_cache_refresh.log
+* oxtrust_cache_refresh_python.log
+* oxtrust_persistence.log
+* oxtrust_persistence_ldap_statistics.log
+* oxtrust_script.log
+* velocity.log
 * wrapper.log
 
 The logs can be tailed from the terminal and logging into Gluu Server chroot environment or they can be accessed from the oxTrust Admin GUI.
@@ -32,6 +46,12 @@ INFO   | jvm 1    | 2016/05/09 23:05:45 |         <location>/opt/tomcat/logs</lo
 INFO   | jvm 1    | 2016/05/09 23:05:45 |     </entry>
 INFO   | jvm 1    | 2016/05/09 23:05:45 | </entries>
 ```
+## IdP Logs
+The IdP logs are stored under the `/opt/idp/logs/` folder within the Gluu Server Chroot environment. The following logs are available:
+
+* idp-access.log
+* idp-audit.log
+* idp-process.log
 
 ## Configure Logs
 Gluu Server has the ability to specify oxAuth/oxTrust log level using profiles. The default level is `INFO`, but it can be set to `TRACE` or `DEBUG` as well. 
