@@ -90,6 +90,7 @@ pages:
 - Fine Tuning and Benchmarking:
     - 'Tuning LDAP, Tomcat': 'fine-tuning/index.md'
 - Gluu Defaults:
+    - 'Configurations': 'gluu-defaults/config.md'
     - 'Certificates': 'gluu-defaults/certificates.md'
     - 'LDAP': 'gluu-defaults/ldap.md'
     - 'Logout': 'gluu-defaults/logout.md'

@@ -54,4 +54,7 @@ The IdP logs are stored under the `/opt/idp/logs/` folder within the Gluu Server
 * idp-process.log
 
 ## Configure Logs
-Gluu Server has the ability to specify oxAuth/oxTrust log level using profiles. The default level is `INFO`, but it can be set to `TRACE` or `DEBUG` as well. 
+Gluu Server has the ability to specify oxAuth/oxTrust log level using profiles. The default level is `INFO`, but it can be set to `TRACE` or `DEBUG` as well. The log levels cannot be changed from the oxTrust Admin GUI, it requires loggin into the Gluu Server chroot environment. The log level can be changed in the following file:
+```
+/opt/tomcat/webapps/oxauth/WEB-INF/classes/log4j.xml
+``` 
