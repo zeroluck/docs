@@ -5,4 +5,6 @@ This page contains the default configurations for Gluu Server Community Edition.
 
 |Attribute|Description|Default|
 |---------|-----------|-------|
-|clientSecretExpiresAt | The expiration of client secret passed while<br/>Dynamic Client Registration|24 hours|
+|clientSecretExpiresAt | The expiration of client secret|24 hours|
+
+This parameter is used to determine the expiration time of the client secret while registring any client with Gluu Server. This parameter sent along with the register request to Gluu Server.
