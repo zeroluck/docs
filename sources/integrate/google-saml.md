@@ -34,7 +34,7 @@ options.
      refers to your Gluu Server instance. Enable this box.
 
    * __Sign-in Page URL__: Enter the uri of the sign-in page, for
-     example `https://idp_hostname/profile/SAML2/Redirect/SSO`.
+     example `https://idp_hostname/idp/profile/SAML2/Redirect/SSO`.
 
    * __Sign-out Page URL__: Enter the uri of the logout page, for
      example `https://idp_hostname/idp/logout.jsp`.
