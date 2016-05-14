@@ -28,7 +28,7 @@ The requirements for Clusters vary only in the RAM requirement. Clusters require
 
 |	host-1			|	host-2		   |
 |-------------------------------|--------------------------|
-|IP Address eg. 192.168.6.1	|Ip Address eg. 192.168.6.1|
+|IP Address eg. 192.168.6.1	|Ip Address eg. 192.168.6.2|
 |	LDAP admin pass		|	LDAP admin pass	   |
 |ldapGeneralConfigInstall.py	|
 |replicationSetup.py		|
