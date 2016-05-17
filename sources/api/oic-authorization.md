@@ -1,22 +1,14 @@
-## API Document
+# OpenId Connect Authorization Grant
+This page provides an interface for request authorization through REST web services.
+## Path
+`/oxauth/authorize`
+### requestAuthorizationGet
+**GET** `/oxauth/authorize`
 
-### /oxauth
-
-#### Overview
-
-
-#### `/oxauth/authorize`
-##### requestAuthorizationPost
-**POST** `/oxauth/authorize`
-
-Performs authorization.
-The Authorization Endpoint performs Authentication of the end-user.
-
-###### URL
-    http://gluu.org/oxauth/authorize
-###### Parameters
-- form
-
+The Authorization Endpoint performs Authentication of the end-user. This is done by sending the User Agent to the Authorization Server's Authorization Endpoint for Authentication and Authorization, using request parameters defined by OAuth 2.0 and additional parameters and parameter values defined by OpenID Connect.
+### URL
+`http://<hostname of Gluu Server>/oxauth/authorize`
+### Parameters
     <table border="1">
         <tr>
             <th>Parameter</th>
@@ -54,6 +46,12 @@ The Authorization Endpoint performs Authentication of the end-user.
             <td>Opaque value used to maintain state between the request and the callback. Typically, Cross-Site Request Forgery (CSRF, XSRF) mitigation is done by cryptographically binding the value of this parameter with a browser cookie.</td>
             <td>string</td>
         </tr>
+	<tr>
+	    <th>response_mode</th>
+	    <td>false</td>
+	    <td>This parameter informs the authorization server about the mechanism to be used to return parameters from the authorization endpoint. This is not recommended if the default for response_type is requested.</td>
+	    <td>string</td>
+	</tr>
         <tr>
             <th>nonce</th>
             <td>false</td>
@@ -121,27 +119,51 @@ The Authorization Endpoint performs Authentication of the end-user.
             <td>string</td>
         </tr>
         <tr>
-            <th>request_session_id</th>
+            <th>request_session_state</th>
             <td>false</td>
-            <td>Request session id</td>
+            <td>Request session state</td>
             <td>string</td>
         </tr>
         <tr>
-            <th>session_id</th>
+            <th>sessionState</th>
             <td>false</td>
-            <td>Session id of this call</td>
+            <td>This is an optional parameter</td>
             <td>string</td>
         </tr>
         <tr>
-            <th>access_token</th>
+            <th>accessToken</th>
             <td>false</td>
-            <td>Access token</td>
+            <td>This parameter is optinal and carries the access token for the request.</td>
+            <td>string</td>
+        </tr>
+	<tr>
+	    <th>origin_headers</tr>
+	    <td>false</td>
+	    <td>This optional token is used in custom workflows.</td>
+	    <td>string</td>
+	</tr> 
+        <tr>
+            <th>codeChallange</th>
+            <td>false</td>
+            <td>This parameter allows the code to be challanced using PKCE.</td>
             <td>string</td>
         </tr>
         <tr>
-            <th>origin_headers</th>
+            <th>codeChallangeMethod</th>
             <td>false</td>
-            <td>Origin headers. Used in custom workflows.</td>
+            <td>This parameter allows the use of PKCE to challange code.</td>
+            <td>string</td>
+	</tr>
+       <tr>
+            <th>httpRequest</th>
+            <td>false</td>
+            <td>This is an optional parameter</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <th>securityContext</th>
+            <td>false</td>
+            <td>This is an injectable interface that provides access to security related information.</td>
             <td>string</td>
         </tr>
     </table>
@@ -162,11 +184,10 @@ The Authorization Endpoint performs Authentication of the end-user.
         </tr>
     </table>
 
-###### Response
+#### Response
 [JSON[Response]](#JSON[Response])
 
-
-###### Errors
+#### Errors
 <table border="1">
     <tr>
         <th>Status Code</th>
@@ -224,19 +245,15 @@ The Authorization Endpoint performs Authentication of the end-user.
         </tr>
 </table>
 
-
-- - -
-##### requestAuthorizationGet
-**GET** `/oxauth/authorize`
+### requestAuthorizationPost
+**POST** `/oxauth/authorize`
 
 Performs authorization.
 The Authorization Endpoint performs Authentication of the end-user.
 
-###### URL
-    http://gluu.org/oxauth/authorize
-###### Parameters
-- query
-
+### URL
+`http://<hostname of Gluu Server>/oxauth/authorize`
+### Parameters
     <table border="1">
         <tr>
             <th>Parameter</th>
@@ -347,15 +364,15 @@ The Authorization Endpoint performs Authentication of the end-user.
             <td>string</td>
         </tr>
         <tr>
-            <th>request_session_id</th>
+            <th>request_session_state</th>
             <td>false</td>
-            <td>Request session id</td>
+            <td>Request session state</td>
             <td>string</td>
         </tr>
         <tr>
-            <th>session_id</th>
+            <th>session_state</th>
             <td>false</td>
-            <td>Session id of this call</td>
+            <td>Session state of this call</td>
             <td>string</td>
         </tr>
         <tr>
@@ -370,13 +387,24 @@ The Authorization Endpoint performs Authentication of the end-user.
             <td>Origin headers. Used in custom workflows.</td>
             <td>string</td>
         </tr>
+	<tr>
+	    <th>code_challange</th>
+	    <td>false</td>
+	    <td>PKCE Code challange</td>
+	    <td>string</td>
+	</tr>
+	<tr>
+	    <th>code_challange_method</td>
+	    <td>false</td>
+	    <td>PKCE code challange method</td>
+	    <td>string</td>
+	</tr>
     </table>
 
-###### Response
+#### Response
 [JSON[Response]](#JSON[Response])
 
-
-###### Errors
+#### Errors
 <table border="1">
     <tr>
         <th>Status Code</th>
@@ -423,4 +451,3 @@ The Authorization Endpoint performs Authentication of the end-user.
 
 - - -
 
-## Data Types
