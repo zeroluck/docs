@@ -104,6 +104,7 @@ pages:
     - 'OpenID Connect UserInfo Endpoint': 'api/oic-userinfo.md'
     - 'OpenID Connect Client Registration Endpoint': 'api/oic-register-client.md'
     - 'OpenID Connect End Session Endpoint': 'api/oic-end-session.md'
+    - 'OpenID Connect Client Info Endpoint': 'api/oic-clientinfo.md'
     - 'UMA Discovery Endpoint': 'api/uma-discovery.md'
     - 'UMA Authorization Endpoint': 'api/uma-authorization-endpoint.md'
     - 'UMA Resource Registration Endpoint': 'api/uma-resource-registration.md'
@@ -113,3 +114,4 @@ pages:
     - 'Custom ID Generation API': 'api/id-generation.md'
     - 'SCIM 1.1': 'api/scim-1.1.md'
     - 'SCIM 2.0': 'api/scim-2.0.md'
+    - 'Federation Join Endpoint': 'api/federation.md'

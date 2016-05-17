@@ -9,7 +9,7 @@ The Authorization Endpoint performs Authentication of the end-user. This is done
 ### URL
 `http://<hostname of Gluu Server>/oxauth/authorize`
 ### Parameters
-    <table border="1">
+<table border="1">
         <tr>
             <th>Parameter</th>
             <th>Required</th>
@@ -137,7 +137,7 @@ The Authorization Endpoint performs Authentication of the end-user. This is done
             <td>string</td>
         </tr>
 	<tr>
-	    <th>origin_headers</tr>
+	    <th>origin_headers</th>
 	    <td>false</td>
 	    <td>This optional token is used in custom workflows.</td>
 	    <td>string</td>
@@ -166,10 +166,10 @@ The Authorization Endpoint performs Authentication of the end-user. This is done
             <td>This is an injectable interface that provides access to security related information.</td>
             <td>string</td>
         </tr>
-    </table>
+</table>
 - query
 
-    <table border="1">
+<table border="1">
         <tr>
             <th>Parameter</th>
             <th>Required</th>
@@ -182,7 +182,7 @@ The Authorization Endpoint performs Authentication of the end-user. This is done
             <td>Informs the Authorization Server of the mechanism to be used for returning parameters from the Authorization Endpoint. This use of this parameter is NOT RECOMMENDED when the Response Mode that would be requested is the default mode specified for the Response Type.</td>
             <td>string</td>
         </tr>
-    </table>
+</table>
 
 #### Response
 [JSON[Response]](#JSON[Response])
@@ -254,7 +254,7 @@ The Authorization Endpoint performs Authentication of the end-user.
 ### URL
 `http://<hostname of Gluu Server>/oxauth/authorize`
 ### Parameters
-    <table border="1">
+<table border="1">
         <tr>
             <th>Parameter</th>
             <th>Required</th>
@@ -399,7 +399,7 @@ The Authorization Endpoint performs Authentication of the end-user.
 	    <td>PKCE code challange method</td>
 	    <td>string</td>
 	</tr>
-    </table>
+</table>
 
 #### Response
 [JSON[Response]](#JSON[Response])
