@@ -63,24 +63,28 @@ You can start the Gluu Server with this command:
 
 ```
 # /etc/init.d/gluu-server-2.4.3 start
+
 ```
 
 You can stop the Gluu Server with this command:
 
 ```
 # /etc/init.d/gluu-server-2.4.3 stop
+
 ```
 
 ## Login to the chroot environment
 
 ```
 # /etc/init.d/gluu-server-2.4.3 login
+
 ```
 
 Or if you prefer...
 
 ```
 # chroot /home/gluu-server24/ su -
+
 ```
 ### Scripted Installation
 
@@ -112,6 +116,7 @@ user. The following commands illustrate the single steps:
 # apt-get remove gluu-server-2.4.3
 
 # rm -rf /opt/gluu-server-2.4.3*
+
 ```
 
 On an installation, any modified files are saved in the directory
@@ -122,7 +127,10 @@ installation, delete these files with the command `rm -rf
 In some circumstances, the installation can be broken. In that case
 please try the following to force to uninstall the package.
 
-`# dpkg --purge --force-all gluu-server-2.4.3`
+```
+# dpkg --purge --force-all gluu-server-2.4.3
+
+```
 
 ## Support
 

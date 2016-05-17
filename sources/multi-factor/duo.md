@@ -1,5 +1,5 @@
-# DUO 
-This is the person authentication module for oxAuth enabling [DUO][duo] for 
+# Duo Security 
+This is the person authentication module for oxAuth enabling [Duo][duo] for 
 user authentication.
 
 ## Overview
