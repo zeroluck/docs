@@ -24,6 +24,7 @@ pages:
     - 'RHEL 7': 'deployment/rhel7.md'
     - 'Setup Script Options': 'deployment/setup_py.md'
     - 'Microsoft Azure Guide': 'deployment/azure.md'
+    - 'Linode VM Guide': 'deployment/linode.md'
 - Upgrade Gluu CE:
     - 'Upgrade from 2.4.x': 'deployment/upgrading.md'
 
