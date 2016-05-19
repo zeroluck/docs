@@ -331,10 +331,72 @@ Cache-Control: no-store
 }
 ```
 
+# UMA Resource Server Java Library
+
+[UMA RS Java Library](https://github.com/GluuFederation/uma-rs) helps to easily protect Java based project with UMA in declarative way.
+
+Sample declaration
+```json
+{"resources":[
+    {
+        "path":"/photo",
+        "conditions":[
+            {
+                "httpMethods":["GET"],
+                "scopes":[
+                    "http://photoz.example.com/dev/actions/view"
+                ]
+            },
+            {
+                "httpMethods":["PUT", "POST"],
+                "scopes":[
+                    "http://photoz.example.com/dev/actions/all",
+                    "http://photoz.example.com/dev/actions/add"
+                ],
+                "ticketScopes":[
+                    "http://photoz.example.com/dev/actions/add"
+                ]
+            }
+        ]
+    },
+    {
+        "path":"/document",
+        "conditions":[
+            {
+                "httpMethods":["GET"],
+                "scopes":[
+                    "http://photoz.example.com/dev/actions/view"
+                ]
+            }
+        ]
+    }
+]
+}
+```
+
+`ticketScopes` are used for UMA ticket registration. If it is skipped then ALL scopes are registered for ticket.
+
+### Usage
+
+```java
+Configuration configuration = ConfigurationLoader.loadFromJson(inputStream(CONFIGURATION_FILE_NAME));
+Collection<RsResource> values = RsProtector.instance(inputStream(PROTECTION_CONFIGURATION_FILE_NAME)).getResourceMap().values();
+
+ServiceProvider serviceProvider = new ServiceProvider(configuration);
+PatProvider patProvider = new PatProvider(serviceProvider);
+ResourceRegistrar resourceRegistrar = new ResourceRegistrar(patProvider);
+
+resourceRegistrar.register(values);
+```
+
 # References
+- [UMA 1.0.1 Specification](https://docs.kantarainitiative.org/uma/rec-uma-core.html)
 - [Kantara Enterprise UMA Case Study](http://kantarainitiative.org/confluence/display/uma/Case+Study%3A+Access+Management+2.0+for+the+Enterprise) 
-- [UMA 1.0 Specifications](https://kantarainitiative.org/confluence/display/uma/UMA+Protocol)
-- [UMA Requestion Party Sample implementation](https://svn.gluu.info/repository/openxdi/oxUmaDemo/RP/)
-- [UMA Resource Server Sample implementation](https://svn.gluu.info/repository/openxdi/oxUmaDemo/RS/)
+- [UMA Specifications](https://kantarainitiative.org/confluence/display/uma/UMA+Protocol)
+- [UMA Requesting Party Sample implementation](https://github.com/GluuFederation/oxUmaDemo/tree/master/RP)
+- [UMA Resource Server Sample implementation](https://github.com/GluuFederation/oxUmaDemo/tree/master/RS)
+- [UMA Demo Video](http://www.gluu.co/uma-demo-video)
+- [UMA Requesting Party Sample Live](https://kantara.gluu.org/rp/rp.html)
+- [UMA Resource Server Sample Live](https://kantara.gluu.org/rs/rs.html)
 - [Gluu Server](http://gluu.org)
 - [Juju Application Security Framework (JASF) Overview](http://www.gluu.co/juju-draft-overview)
