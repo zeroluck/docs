@@ -1,129 +1,63 @@
-# Welcome to the Gluu Server Documentation
+[TOC]
+# Gluu Server Administration Docs
+Gluu Server is a free open source access management suite of software primarily written in java. The Gluu Server combines best-of-breed open source identity and access management software with easy deployment and administration, and is engineered to support robust enterprise requirements for uptime and availability.
 
-The Gluu Server is a free open source access management suite of
-software primarily written in the Java programming language. The Gluu
-Server combines best-of-breed open source identity and access management
-software with easy deployment and administration, and is engineered to
-support robust enterprise requirements for uptime and availability.
+The code is open source, and available on [Github](github.com/GluuFederation/).
 
-The code is open source, and [available on github](http://github.com/gluufederation).
+Community support can be enlisted on the [Gluu support site](http://support.gluu.org). If your organization needs to open private tickets with us, or needs an SLA or consultative support, Gluu offers a range of [VIP support](gluu.org/pricing) options. 
 
-Community support can be enlisted either on the [Gluu
-website](http://support.gluu.org) or by opening an issue on
-[Github](http://github.com/GluuFederation). Gluu also offers [VIP
-support and operational services](http://gluu.org/pricing) and can refer
-your organization to one of our world-class [integration
-partners](http://www.gluu.org/partners/current-partners/) for any custom
-development and integration needs.
+# Navigating The Docs
+The menu on the left can be used to navigate the docs. However for convenience the following is given.
+## Install Gluu Server
+|	Operating System	|	Version		|
+|-------------------------------|-----------------------|
+|	Ubuntu			|**[14.04](./deployment/ubuntu.md)**|
+|	CentOS			|**[6.x](./deployment/centos.md) <br/> [7.2](./deployment/centos7.md)**|
+|	RHEL			|**[6.x](./deployment/rhel.md) <br/> [7](./deployment/rhel7.md)**|
 
-The main documentation is organized into the following sections:
+### Upgrading from a previous release
+* [**Upgrade to latest release**](./deployment/upgrading.md)
+## Configure Cluster
+Please use the following to confugure Gluu Server manual cluster.
 
-- *[Admin Guide](#admin-guide)*
-- *[Reference](#reference)*
-- *[Articles](#articles)*
+* [**Cluster with Gluu Server**](./cluster/index.md)
+## Gluu Server GUI
+The following pages explain the oxTrust GUI
 
-# Admin Guide
-- [Introduction](./admin-guide/introduction/index.md)
-	  - [Our Mission](./admin-guide/introduction/index.md#our-mission)
-	  - [History](./admin-guide/introduction/index.md#history)
-	  - [Design Goals](./admin-guide/introduction/index.md#design-goals)
-	  - [Architecture](./admin-guide/introduction/index.md#architecture)
-	  - [Licenses](./admin-guide/introduction/index.md#licenses)
-- [Getting Started](./admin-guide/getting-started/index.md)
-- [Deployment](./admin-guide/deployment/index.md)
-	  - [CentOS](./admin-guide/deployment/centos.md)
-	  - [Ubuntu](./admin-guide/deployment/ubuntu.md)
-- [Configuration](./admin-guide/configuration/index.md)
-	  - [Organization Configuration](./admin-guide/configuration/index.md#organization-configuration)
-	  - [Manage Authentication](./admin-guide/configuration/index.md#manage-authentication)
-	  - [Manage Custom Scripts](./admin-guide/configuration/index.md#manage-custom-scripts)
-	  - [Manage Registration](./admin-guide/configuration/index.md#manage-registration)
-	  - [Attributes](./admin-guide/configuration/index.md#attributes)
-	  - [Cache Refresh (LDAP Synchronization)](./admin-guide/configuration/index.md#cache-refresh)
-	  - [Configure Log Viewer](./admin-guide/configuration/index.md#configure-log-viewer)
-	  - [View Logs](./admin-guide/configuration/index.md#view-logs)
-- [Operations](./articles/operations/index.md)
-- [Design Customizations](./admin-guide/design-customizations/index.md)
-	  - [Style Customizations](admin-guide/design-customizations/index.md#style-customizations)
-	  - [Page Customizations](admin-guide/design-customizations/index.md#page-customizations)
-	  - [Built-in oxTrust Customization](admin-guide/design-customizations/index.md#built-in-oxtrust-customization)
-- [LDAP](./admin-guide/ldap/index.md)
-	  - [Indexing](./admin-guide/ldap/index.md#indexing)
-	  - [Replication](./admin-guide/ldap/index.md#replication)
-- [SAML](./admin-guide/saml/index.md)
-	  - [Outbound SAML](./admin-guide/saml/outbound-saml.md)
-	  - [Inbound SAML](./admin-guide/saml/inbound-saml.md)
-	  - [SAML SP Setup](./admin-guide/saml/saml-sp-configuration.md)
-- [OpenID Connect](./admin-guide/openid-connect/index.md)
-	  - [New Jargon](admin-guide/openid-connect/index.md#new-jargon-taxonomy)
-	  - [Discovery](admin-guide/openid-connect/index.md#discovery)
-	  - [Scopes](./admin-guide/openid-connect/index.md#scopes)
-	  - [Client Registration](./admin-guide/openid-connect/index.md#client-registration)
-	  - [Session Management](./admin-guide/openid-connect/index.md#session-management)
-- [UMA](./admin-guide/uma/index.md)
-	  - [Introduction](./admin-guide/uma/index.md#introduction)
-	  - [Discovery](./admin-guide/uma/index.md#discovery)
-	  - [Resource Registration](./admin-guide/uma/index.md#resource-registration)
-	  - [UMA Policies](./admin-guide/uma/index.md#uma-policies)
-	  - [UMA Scopes](./admin-guide/uma/index.md#uma-scopes)
-	  - [Requesting Party Trust Elevation](./admin-guide/uma/index.md#requesting-party-trust-elevation)
-- [User Management](./admin-guide/user-management/index.md) 
-	  - [Cache Refresh](./admin-guide/user-management/index.md#cache-refresh)
-	  - [Self Registration](./admin-guide/user-management/index.md#self-registration)
-	  - [Local User Management](./admin-guide/user-management/index.md#local-user-management)
-	  - [SCIM oxAuth Authentication](./admin-guide/user-management/index.md#scim-oxauth-authentication)
-	  - [SCIM UMA Authentication](./admin-guide/user-management/index.md#scim-uma-authentication)
-- [Personal](./admin-guide/personal/index.md) 
-- [SCIM](./admin-guide/SCIM/index.md)
- 
-# FAQ
-- [Troubleshooting](./faq/troubleshooting.md)
-- [Cloud FAQ](./faq/cloud-faq.md)
-- [General FAQ](./faq/index.md)
+|	oxTrust Tab Menu	|	Sub-menu	|
+|-------------------------------|-----------------------|
+|**[Configuration](./oxtrust/configuration.md)**| [oxTrust JSON Configuration](./gluu-defaults/oxtrust-properties.md) <br/>[oxAuth JSON Configuration](./gluu-defaults/oxauth-properties.md)<br/> [Cache Refresh/Backend LDAP/AD](./cache-refresh/index.md)|
+|SAML|[Outbound](./integrate/outbound-saml.md)<br/> [Inbound](./integrate/inbound-saml.md)|
+|**[OpenID Connect](./integrate/openid-connect.md)**|n/a|
+|**[UMA](./integrate/uma.md)**|n/a|
+|**[Users](./oxtrust/users.md)**|[Import People](./cache-refresh/xlsfile.md)|
+|**[Personal](./oxtrust/personal.md)**|n/a|
 
-# Reference
-- [API](./reference/api/index.md) 
-	  - [ID Generation](./reference/api/id-generation.md)
-	  - [OpenID Connect Authorization](./reference/api/oic-authorization.md)
-	  - [OpenID Connect End Session](./reference/api/oic-end-session.md)
-	  - [OpenID Connect Register Client](./reference/api/oic-register-client.md)
-	  - [OpenID Connect Token](./reference/api/oic-token.md)
-	  - [OpenID Connect User Info](./reference/api/oic-userinfo.md)
-	  - [UMA Discovery](./reference/api/uma-discovery.md)
-- [Interception Scripts](reference/interception-scripts/index.md)
-	  - [Application Session Management](reference/interception-scripts/index.md#application-session-management)
-	  - [Authentication](reference/interception-scripts/index.md#authentication)
-	  - [Authorization](reference/interception-scripts/index.md#authorization)
-	  - [Cache Refresh](reference/interception-scripts/index.md#cache-refresh) 
-	  - [Client Registration](reference/interception-scripts/index.md#client-registration)
-	  - [ID Generation](reference/interception-scripts/index.md#id-generation)
-	  - [Update User](reference/interception-scripts/index.md#update-user) 
-	  - [User Registration](reference/interception-scripts/index.md#user-registration) 
-- [LDAP Namespace](./reference/ldap-namespace/index.md)
-- [LDAP Schema](./reference/ldap-schema/index.md)
-- [Lib](./reference/lib/index.md)
-	  - [OpenID Connect](./reference/lib/openid-connect.md)
-	  - [SCIM](./reference/lib/scim.md)
-	  - [Using SCIM](./reference/lib/using-scim.md)
-	  - [UMA](./reference/lib/uma.md)
-- [oxAuth](./reference/oxAuth/index.md) 
-- [oxTrust](./reference/oxTrust/index.md)
+## Integrate Gluu Server
+### Service Provider/Requesting Party Integration
+|	SAML SP	|	OpenID Connect RP	|
+|---------------|-----------------------|
+|[CentOS](./integrate/apache-saml.md)|[CentOS](./integrate/centos-installation.md)|
+|[Ubuntu](./integrate/ubuntu-shib-apache.md)|[Ubuntu](./integrate/ubuntu-installation.md)|
+|[IIS 7](./integrate/iis-saml.md)|
+|[Windows](./integrate/saml-windows.md)|
 
-# Articles
-- [Gluu CE](./articles/gluu-server-ce.md)
-- [Gluu CE Operations](./articles/operations/index.md)
-- [Apache SAML](./articles/apache-saml.md)
-- [Benchmarking](./articles/benchmarking.md)
-- [Custom Attributes](./articles/custom-attributes.md)
-- [IIS SAML](./articles/iis-saml.md)
-- [oxRay Plugin](./articles/oxray.md)
-- [Java SAML Library](./articles/java-saml.md)
-- [Java OpenID Connect](./articles/java-connect.md)
-- [JS OpenID Connect](./articles/js-connect.md)
-- [mod_auth_oidc Installation Guide](./articles/mod-auth-oidc/index.md)
-- [Testing Shib2](./articles/test-shib2.md)
-- [Social Login With Google](./articles/social-login-google.md)
-- [SAML SSO with Salesforce](./articles/salesforce-sso.md)
-- [SAML SSO with Hobsons](./articles/hobsons-saml.md)
-- [SAML SSO with Google](./articles/google-saml.md)
-- [How to Write a Custom Authentication Script](./articles/auth-script.md)
+### Integration Guides
+
+|SSO|Plugin|
+|---|------|
+|[Google](./integrate/google-saml.md)|[Liferay](./integrate/oxray.md)
+|[Hobsons](./integrate/hobsons-saml.md)|
+|[Salesforce](./integrate/salesforce-sso.md)|
+
+## Authentication
+| Multi Factor Guides|
+|--------------------|
+|[DUO](./multi-factor/duo.md)|
+|[U2F](./multi-factor/u2f.md)|
+|[oxPush2](./multi-factor/oxpush2.md)|
+|[Wikid](./multi-factor/wikid.md)|
+|[Certificate](./multi-factor/cert.md)|
+
+## Support
+Please see the [FAQ Page](./faq/troubleshooting.md) for basic troubleshooting, or [open a ticket](http://support.gluu.org) on our support portal for community support. Gluu also offers paid support. Please view our [pricing page](http://gluu.org/pricing) to learn more about our VIP support options. 

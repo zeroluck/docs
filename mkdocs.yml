@@ -1,6 +1,6 @@
 site_name: Gluu Docs
 site_description: Documenation for the Gluu Server
-site_favicon: '/img/gluu_favicon.ico'
+#site_favicon: '/img/gluu_favicon.ico'
 copyright: Copyright &copy; 2014, Gluu, Inc.
 docs_dir: sources
 repo_url: https://github.com/GluuFederation/docs
@@ -8,114 +8,111 @@ theme: readthedocs
 theme_dir: ./theme/mkdocs/
 pages:
 
-- [index.md, Home]
-# Admin Guide Sections
-- [admin-guide/introduction/index.md, Admin Guide, Introduction]
-- [admin-guide/getting-started/index.md, Admin Guide, Getting Started]
-- [admin-guide/deployment/index.md, Admin Guide, Deployment]
-- [admin-guide/certificates/index.md, Admin Guide, Certificates]
-- [admin-guide/configuration/index.md, Admin Guide, Configuration]
-- [admin-guide/design-customizations/index.md, Admin Guide, Design Customizations]
-- [admin-guide/ldap/index.md, Admin Guide, LDAP]
-- [admin-guide/cache-refresh/index.md, Admin Guide, Cache Refresh (a.k.a. AD Synchronization)]
-- [admin-guide/saml/index.md, Admin Guide, SAML]
-- [admin-guide/openid-connect/index.md, Admin Guide, OpenID Connect]
-- [admin-guide/uma/index.md, Admin Guide, UMA]
-- [admin-guide/user-management/index.md, Admin Guide, User Management]
-- [admin-guide/personal/index.md, Admin Guide, Personal]
-- [admin-guide/SCIM/index.md, Admin Guide, SCIM]
+- Home: 'index.md'
+- Introduction: 
+    - 'Summary': 'introduction/index.md'
+    - 'History': 'introduction/history.md'
+    - 'Design Goals': 'introduction/design.md'
+    - 'Gluu Server Architecture': 'introduction/architecture.md'
 
-# FAQ
-- [faq/index.md, FAQ, General]
-- [faq/cloud-faq.md, FAQ, Cloud Deployment]
-- [faq/troubleshooting.md, FAQ, Troubleshooting]
-- [faq/azure.md, hidden]
+- Install Gluu CE:
+    - 'Preparing VM': 'deployment/index.md'
+    - 'Ubuntu 14.04': 'deployment/ubuntu.md'
+    - 'CentOS 6.x': 'deployment/centos.md'
+    - 'CentOS 7.2': 'deployment/centos7.md'
+    - 'RHEL 6.x': 'deployment/rhel.md'
+    - 'RHEL 7': 'deployment/rhel7.md'
+    - 'Setup Script Options': 'deployment/setup_py.md'
+    - 'Microsoft Azure Guide': 'deployment/azure.md'
+    - 'Linode VM Guide': 'deployment/linode.md'
+- Upgrade Gluu CE:
+    - 'Upgrade from 2.4.x': 'deployment/upgrading.md'
 
-# Reference Sections
-- [reference/api/index.md, Reference, API]
-- [reference/interception-scripts/index.md, Reference, Interception Scripts]
-- [reference/ldap-namespace/index.md, Reference, LDAP Namespace]
-- [reference/ldap-schema/index.md, Reference, LDAP Schema]
-- [reference/lib/index.md, Reference, Gluu Library]
-- [reference/oxAuth/index.md, Reference, OxAuth]
-- [reference/oxTrust/index.md, Reference, OxTrust]
-- [reference/mod_auth_oidc/index.md, Reference, Apache Module]
-- [reference/api/scim-1.1.md, Reference, SCIM 1.1 API]
-- [reference/api/scim-2.0.md, Reference, SCIM 2.0 API]
+- Cluster Configuration:
+    - 'Clustering with CE': 'cluster/index.md'
+- Gluu Server GUI:
+    - 'Configuration': 'oxtrust/configuration.md'
+    - 'OxTrust JSON Configuration': 'gluu-defaults/oxtrust-properties.md'
+    - 'OxAuth JSON Configuration': 'gluu-defaults/oxauth-properties.md'
+    - 'SAML': 'integrate/outbound-saml.md'
+    - 'OpenID Connect': 'integrate/openid-connect.md'
+    - 'UMA': 'integrate/uma.md'
+    - 'Users': 'oxtrust/users.md'
+    - 'Personal': 'oxtrust/personal.md'
+- User Managment: 
+    - 'Sync LDAP/AD': 'cache-refresh/index.md'
+    - 'Import XLS File': 'cache-refresh/xlsfile.md'
+    - 'Register Users': 'cache-refresh/register.md'
+    - 'Reset User Password': 'cache-refresh/reset-password.md'
+    - 'SCIM 2.0 Add/Delete User': 'cache-refresh/scim.md'
+- Authentication Mangement: 
+    - 'DUO': 'multi-factor/duo.md'
+    - 'U2F': 'multi-factor/u2f.md'
+    - 'oxPush2': 'multi-factor/oxpush2.md'
+    - 'Wikid': 'multi-factor/wikid.md'
+    - 'Certificate': 'multi-factor/cert.md'
+    - 'Google Authentication': 'customize/social-login-google.md'
 
-# Articles Sections
-- [articles/apache-saml.md, Articles, Apache SAML SP Config]
-- [articles/google-saml.md, Articles, SAML SSO with Google]
-- [articles/salesforce-sso.md, Articles, SAML SSO with Salesforce]
-- [articles/hobsons-saml.md, Articles, SAML SSO with Hobsons]
-- [articles/oxray.md, Articles, oxRay Plugin]
-- [articles/iis-saml.md, Articles, IIS SAML Config]
-- [articles/benchmarking.md, Articles, Benchmarking]
-- [articles/custom-attributes.md, Articles, Custom Attributes]
-- [articles/gluu-server-ce.md, Articles, Gluu CE]
-- [articles/operations/index.md, Articles, Gluu CE Operations]
-- [articles/java-connect.md, Articles, OpenID in Java]
-- [articles/js-connect.md, Articles, OpenID from JavaScript]
-- [articles/java-saml.md, Articles,Java SAML Library ] 
-- [articles/mod-auth-oidc/index.md, Articles, mod_auth_oidc Installation Guide]
-- [articles/test-shib2.md, Articles, Testing Shib2]
-- [articles/social-login-google.md, Articles, Social Login with Google]
-- [articles/auth-script.md, Articles, How to Write a Custom Authn Script]
-- [articles/ubuntu-shib-apache.md, Articles, Super Quick Ubuntu Shib Apache Install]
-
-# Deployment Sub-sections
-- [admin-guide/deployment/centos.md, hidden]
-- [admin-guide/deployment/setup_py.md, hidden]
-- [admin-guide/deployment/ubuntu.md, hidden]
-- [admin-guide/deployment/rhel.md, hidden]
-
-# Certificates Sub-sections
-- [admin-guide/certificates/https.md, hidden]
-- [admin-guide/certificates/openid-connect.md, hidden]
-- [admin-guide/certificates/saml.md, hidden]
-# SAML Sub-sections
-- [admin-guide/saml/inbound-saml.md, hidden]
-- [admin-guide/saml/outbound-saml.md, hidden]
-- [admin-guide/saml/saml-sp-configuration.md, hidden]
-# API Sub-sections
-- [reference/api/id-generation.md, hidden]
-- [reference/api/oic-authorization.md, hidden]
-- [reference/api/oic-end-session.md, hidden]
-- [reference/api/oic-register-client.md, hidden]
-- [reference/api/oic-token.md, hidden]
-- [reference/api/oic-userinfo.md, hidden]
-- [reference/api/uma-create-rpt.md, hidden]
-- [reference/api/uma-discovery.md, hidden]
-- [reference/api/uma-permission-registration.md, hidden]
-- [reference/api/uma-resource-registration.md, hidden]
-- [reference/api/uma-rpt-status.md, hidden]
-- [reference/api/uma-authorization-endpoint.md, hidden]
-# oxAuth Sub-section
-- [reference/oxAuth/oxauth-config.md, hidden]
-- [reference/oxAuth/oxauth-ldap-properties.md, hidden]
-- [reference/oxAuth/oxauth-scope-to-claims-mapping-file.md, hidden]
-- [reference/oxd/index.md, hidden]
-
-# Interception Scripts Sub-sections
-- [reference/interception-scripts/sample-application-session-script.py, hidden]
-- [reference/interception-scripts/sample-authentication-script.py, hidden]
-- [reference/interception-scripts/sample-cache-refresh-script.py, hidden]
-- [reference/interception-scripts/sample-client-registration-script.py, hidden]
-- [reference/interception-scripts/sample-id-generation-script.py, hidden]
-- [reference/interception-scripts/sample-uma-authorization-script.py, hidden]
-- [reference/interception-scripts/sample-update-user-script.py, hidden]
-- [reference/interception-scripts/sample-user-registration-script.py, hidden]
-# Gluu Library Sub-sections
-- [reference/lib/openid-connect.md, hidden]
-- [reference/lib/saml.md, hidden]
-- [reference/lib/scim.md, hidden]
-- [reference/lib/using-scim.md, hidden]
-- [reference/lib/uma.md, hidden]
-# mod_auth_oid Sub-section
-- [articles/mod-auth-oidc/ubuntu-installation.md, hidden]
-- [articles/mod-auth-oidc/centos-installation.md, hidden]
-- [reference/mod_auth_oidc/ubuntu-installation.md, hidden]
-- [reference/mod_auth_oidc/centos-installation.md, hidden]
-
-# OpenID Connect Sub-section
-- [admin-guide/openid-connect/oauth2grants.md, hidden]
+- FAQ:
+    - 'Troubleshooting': 'faq/troubleshooting.md'
+- How To's:
+    - 'Lock User Account': 'how-to/lock-user.md'
+    - 'Automate Custom Schema': 'how-to/automate-schema.md'
+- Customize Gluu Server: 
+    - 'Design Customization': 'customize/design.md'
+    - 'Behaviour Customization': 'customize/script.md'
+    - 'Custom Script How-To': 'customize/auth-script.md'
+    - 'Custom Attributes': 'customize/attributes.md'
+- Supported Protocols: 
+    - 'Outbound SAML': 'integrate/outbound-saml.md'
+    - 'Inbound SAML': 'integrate/inbound-saml.md'
+    - 'OpenID Connect': 'integrate/openid-connect.md'
+    - 'UMA': 'integrate/uma.md'
+    - 'OAuth2': 'integrate/oauth2grants.md'
+    - 'SCIM 1.1': 'api/scim-1.1.md'
+    - 'SCIM 2.0': 'api/scim-2.0.md'
+ 
+- SP / RP Integration Modules:
+    - 'SAML SP in CentOS': 'integrate/apache-saml.md'
+    - 'SAML SP in Ubuntu': 'integrate/ubuntu-shib-apache.md'
+    - 'SAML SP in IIS7': 'integrate/iis-saml.md'
+    - 'SAML SP in Windows': 'integrate/saml-windows.md'
+    - 'OpenID Connect RP in Ubuntu': 'integrate/ubuntu-installation.md'
+    - 'OpenID Connect RP in CentOS': 'integrate/centos-installation.md'
+    - 'OpenID Connect Liferay Plugin': 'integrate/oxray.md'
+    - 'SCIM UMA How-to': 'integrate/scimuma-howto.md'
+    - 'OXD Server': 'integrate/oxd.md'
+- Integration Guides:
+    - 'Google SSO': 'integrate/google-saml.md'
+    - 'Hobsons Education Solution SSO': 'integrate/hobsons-saml.md'
+    - 'Salesforce SSO': 'integrate/salesforce-sso.md'
+    - 'TestShib2 SSO': 'integrate/test-shib2.md'
+    - 'Asimba & Gluu CE': 'integrate/asimba.md'
+- Fine Tuning and Benchmarking:
+    - 'Tuning LDAP, Tomcat': 'fine-tuning/index.md'
+- Gluu Defaults:
+    - 'Configurations': 'gluu-defaults/config.md'
+    - 'Certificates': 'gluu-defaults/certificates.md'
+    - 'LDAP': 'gluu-defaults/ldap.md'
+    - 'Logout': 'gluu-defaults/logout.md'
+    - 'Schema': 'gluu-defaults/schema.md'
+    - 'oxTrust Properties File': 'gluu-defaults/oxtrust-properties.md'
+    - 'oxAuth Properties File': 'gluu-defaults/oxauth-properties.md'
+    - 'Logs': 'gluu-defaults/logs.md'
+- Gluu Server API:
+    - 'OpenID Connect Authorization Endpoint': 'api/oic-authorization.md'
+    - 'OpenID Connect Token Endpoint': 'api/oic-token.md'
+    - 'OpenID Connect UserInfo Endpoint': 'api/oic-userinfo.md'
+    - 'OpenID Connect Client Registration Endpoint': 'api/oic-register-client.md'
+    - 'OpenID Connect End Session Endpoint': 'api/oic-end-session.md'
+    - 'OpenID Connect Client Info Endpoint': 'api/oic-clientinfo.md'
+    - 'UMA Discovery Endpoint': 'api/uma-discovery.md'
+    - 'UMA Authorization Endpoint': 'api/uma-authorization-endpoint.md'
+    - 'UMA Resource Registration Endpoint': 'api/uma-resource-registration.md'
+    - 'UMA Permission Registration Endpoint': 'api/uma-permission-registration.md'
+    - 'UMA CreateRPT Endpoint': 'api/uma-create-rpt.md'
+    - 'UMA RPT Introspection Endpoint': 'api/uma-rpt-status.md'
+    - 'Custom ID Generation API': 'api/id-generation.md'
+    - 'SCIM 1.1': 'api/scim-1.1.md'
+    - 'SCIM 2.0': 'api/scim-2.0.md'
+    - 'Federation Endpoints': 'api/federation.md'

@@ -1,96 +1,12 @@
 [TOC]
+# Connectivity Issues?
+## DNS names not resolving!
+It is possible that even after configuring everything there is a `DNS` resolve error in Gluu Server.
+The reason is the `DNS` used inside the chroot container; the `dns` used by the container is the Google DNS servers 
+and the `DNS` for the host OS is not used. Therefore to fix this issue:
 
-# Troubleshooting
-## Memory
-- Does the system have enough memory/CPU? For a production deployment,
-  at least 4GB of RAM is required for Apache Tomcat. The full amount of
-  RAM assigned for the host should be no less than 6GB.
-
-## OS
-- The Gluu Server has to be installed on a **64-bit** OS. If the host
-  does not meet these requirements, it will not work.
-
-- Is the Gluu Server installed on a supported OS? Please check our
-  [deployment document](../admin-guide/deployment/index.md#supported-operating-systems)
-  for the list of supported operating systems and versions.
-
-## Browser and your local OS
-- Is your browser updated to the most recent version available? Have you
-  tried to access your Gluu instance with some other browser? Does it
-  have any 3rd-party security-related add-ons installed? If it does you
-  should try to switch them off and test the connection again.
-
-- Do you have any anti-virus solution installed on the machine from
-  which you are accessing Gluu's box, which tries to filter web traffic?
-  Try to disable it and see whether it will resolve the issue.
-
-## Networking
-- Is there an unobstructed route between the machine from which you are
-  accessing your Gluu's instance, and the machine at which it's
-  installed? Firewalls on the destination host or, sometimes, security
-  safeguards put by virtual machine renting service providers can be
-  cutting off your Gluu from the outside world by default, and may require
-  additional configuration efforts, specific to the particular case. Make
-  sure that all needed ports are accessible and that Gluu is indeed the
-  one who is listening on them. For Cache Refresh users: make sure that
-  backend (source) LDAP database is accessible from the machine where Gluu
-  Server is installed.
-
-## Cloud Setups
-- Be particularly cautious when dealing with cloud setups, as some
-  solutions have strange and problematic network layouts, while others
-  can severely limit disk access speeds, which results in prolonged
-  service starts that can be mistaken for malfunctioning. For further
-  details have a look at our [cloud faq](./cloud-faq.md).
-
-## VM Issues
-- Have you meddled with your Gluu instance before the issue occurred,
-  i.e. customized any configuration files, or source codes?
-- Was it a freshly installed OS, or has it been / is it being used for
-  other purposes? It should be a freshly installed OS and dedicated to
-  the Gluu Server, only.
-- **Please use [VMware Player](https://www.vmware.com/products/player).** 
-  Not VM Box, or any other virtualization software.
-
-## Diagnostic Commands to Gauge Health of Installation
-- Try running the command `sudo netstat -lnpt`. The following ports have
-  to be present in your output (unless you are running some heavily
-  customized version of Gluu):
-  - Ports 80 and 443 should be taken by Apache
-  - Ports 1389, 1636, 8005, 8009 should be taken by Java/Apache Tomcat
-- Try running the command `service gluu-server status` from outside of
-  chroot-ed container; try to stop and start the service with `service
-  gluu-server start/stop` - you should see notifications that
-  Apache/Tomcat/OpenDJ have been started/stopped successfully,
-  respectively.
-- Try to run the commands `/etc/init.d/tomcat status` and
-  `/etc/init.d/opendj status` from within chroot-ed container.
-- Try stopping the Gluu Service, then check the ports again with the
-  `netstat` command shown above.
-  - Are some of the required ports still present in the output? 
-- Make sure that you have waited long enough after service was restarted
-  (or just installed), especially on slow machines and VMs at
-  problematic cloud providers. Often Gluu needs a minute or two to become
-  fully operational (and until then it will return 404 error or blank
-  pages) even on machines that meet all requirements, and on slow machines
-  it will need even more time.
-
-## Log Monitoring
-- Monitor logs with `tail -F`, while repeatedly triggering the issue,
-  and provide any suspicious entries that can be relevant to the case:
-  - `/opt/tomcat/logs/wrapper.log`
-  - `/opt/tomcat/logs/oxauth.log`
-  - `/opt/tomcat/logs/oxtrust.log`
-  - `/opt/tomcat/logs/oxtrust-cache-refresh.log`
-
-Contents of the snapshot directory (for instances running Cache
-Refresh), Apache logs (keep in mind that Gluu usually defines it's own
-Apache log), etc.
-
-Stop the service, remove/rename the file `wrapper.log` and restart the
-application, then check the recreated file `wrapper.log` (if something
-fails to start, records telling that may appear in this log).
-
+- Change the DNS inside the container by editing the `/etc/resolv.conf` file and adding the DNS used by your organization
+# Locked Out?
 ## Forgot the admin password! 
 
 Oh no, its been a few days since you booted your test Gluu Server, and
@@ -190,10 +106,54 @@ This will add tempadmin user to the IdP managers group and you can then
 login and assign another user to act as admin.
 
 ## Revert Authentication Method
-It is possible to get locked out of Gluu Server if the authentication
-script is faulty or for various other reasons. It is possible to modify
-the authentication method to revert back to the older method using
-`ldap` commands. The following guide will help you to revert back to the
-default authentication method:
+It is not unlikely that you will lock yourself out of Gluu Server while testing the authentication script, if there is any problem in it. In such a case the following method can be used to revert back the older authentication method.
 
-* [Revert Authentication Method](../articles/auth-script.md#reverting-authentication-method)
+1. Run the following command to collect the `inum` for the Gluu Server installation.
+
+`/opt/opendj/bin/ldapsearch -h localhost -p 1389 -D "cn=directory 
+manager" -j ~/.pw -b "ou=appliances,o=gluu" -s one "objectclass=*" 
+oxAuthenticationMode`
+
+2. Create a `LDIF` file with the contents below:
+
+```
+dn: inum=@!1E3B.F133.14FA.5062!0002!4B66.CF9C,ou=appliances,o=gluu
+changetype: modify
+replace: oxAuthenticationMode
+oxAuthenticationMode: internal
+```
+
+As an example, we shall call this file `changeAuth.ldif`.
+
+**Note:** Replace the `inum` from the example above with the `inum` of the Gluu Server from the `ldapsearch` command.
+
+
+3. Replace the the authentication mode using `ldapmodify` command.
+
+`/opt/opendj/bin/ldapmodify -p 1389 -D 'cn=directory manager' -w 'YOUR_BIND_PASSWORD' -f ~/changeAuth.ldif
+
+# Lock users?
+## Lock Account using Custom Scripts
+This section will help in locking a user account using custom scripts in solutions where it is
+mandatory to limit access trials to a specific number i.e. lock user account if the user fails to
+produce correct password 3 times.
+
+Gluu Server makes it easy by using a single attribute to enable/disable user. The `gluuStatus` attribute
+is used to enable/disable the user. This attribute holds the value `acive/inactive` and setting `gluuStatus=inactive`
+any user can be locked from Gluu Server.
+
+The following snippet will help you find the user by UID and set the `gluuStatus` attribute to inactive.
+
+```
+from org.xdi.oxauth.service import UserService
+...
+# Find user entry by UID
+user_uid = credentials.getUser().getUserId()
+find_user_by_uid = userService.getUser(user_uid)
+
+# Update user entry and persist it
+find_user_by_uid.setAttribute("gluuStatus", "inactive")
+userService.updateUser(find_user_by_uid)
+```
+
+The users can be activated again by clicking on the update button in oxTrust.
