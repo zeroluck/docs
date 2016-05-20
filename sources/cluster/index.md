@@ -186,7 +186,7 @@ chkconfig xinetd on
 ```
 **Note:** The status can be checked by running `chkconfig xinetd –list` and `iptables -L -nv | grep 30865`. For confirmation, telnet 30865 port from the VMs.
 
-9. Configure `csync2.cfg` to reflect the configuration below:
+9. Configure `csync2.cfg` to reflect the configuration below (Please note that csync2 doesn't allow to use symlinks in this file; you'll may need to correct full paths to certain directories as they may change in future Gluu's CE packages):
 ```
 #nossl * *;
 group cluster_group
@@ -200,7 +200,7 @@ group cluster_group
         include /opt/idp/conf;
         include /opt/idp/metadata;
         include /opt/idp/ssl;
-        include /opt/tomcat/conf;
+        include /opt/apache-tomcat-7.0.65/conf;
 
         exclude *~ .*;
 
@@ -214,7 +214,7 @@ group cluster_group
 
         action
         {
-                pattern /opt/tomcat/conf/*;
+                pattern /opt/apache-tomcat-7.0.65/conf/*;
 
                 exec "/sbin/service tomcat restart";
                 logfile "/var/log/csync2_action.log";
@@ -285,7 +285,7 @@ chkconfig xinetd on
 ```
 **Note:** The status can be checked by running `chkconfig xinetd –list` and `iptables -L -nv | grep 30865`. For confirmation, telnet 30865 port from the VMs.
 
-8. Configure `csync2.cfg` to reflect the configuration below:
+8. Configure `csync2.cfg` to reflect the configuration below (Please note that csync2 doesn't allow to use symlinks in this file; you'll may need to correct full paths to certain directories as they may change in future Gluu's CE packages):
 ```
 #nossl * *;
 group cluster_group
@@ -299,7 +299,7 @@ group cluster_group
         include /opt/idp/conf;
         include /opt/idp/metadata;
         include /opt/idp/ssl;
-        include /opt/tomcat/conf;
+        include /opt/apache-tomcat-7.0.65/conf;
 
         exclude *~ .*;
 
@@ -313,7 +313,7 @@ group cluster_group
 
         action
         {
-                pattern /opt/tomcat/conf/*;
+                pattern /opt/apache-tomcat-7.0.65/conf/*;
 
                 exec "/sbin/service tomcat restart";
                 logfile "/var/log/csync2_action.log";
