@@ -145,9 +145,9 @@ operation.
 
 3. Install `csync2` package by running `yum install csync2`
 
-4. Generate `csync2` private key by running `csync2 -k csync2.key`
+4. Generate `csync2` private key by running `csync2 -k csync2.key` and put it into `/etc/csync2/csync2.key` file
 
-5. Copy the private key to `host-2`
+5. Copy the private key to `host-2` and put it into the same file there
 
 6. Add IP and hostnames in the `hosts` file. In the hosts file example below `host-1` is called `idp1.gluu.org` and `host-2` is called `idp2.gluu.org`
 ```
@@ -244,11 +244,9 @@ group cluster_group
 
 3. Install `csync2` package by running `yum install csync2`
 
-4. Generate `csync2` private key by running `csync2 -k csync2.key`
+4. (If you haven't done it yet) Copy the private key you generated on `host-1` previously to `host-2` and put it into `/etc/csync2/csync2.key` file 
 
-5. Copy the private key to `host-2`
-
-6. Add IP and hostnames in the `hosts` file. In the hosts file example below `host-1` is called `idp1.gluu.org` and `host-2` is called `idp2.gluu.org`
+5. Add IP and hostnames in the `hosts` file. In the hosts file example below `host-1` is called `idp1.gluu.org` and `host-2` is called `idp2.gluu.org`
 
 ```
 127.0.0.1       localhost
@@ -259,7 +257,7 @@ ff02::2         ip6-allrouters
 192.168.6.2     idp2.gluu.org
 ```
 
-7. Modify `csync2` in the `/etc/xinetd.d/` folder
+6. Modify `csync2` in the `/etc/xinetd.d/` folder
 ```
 # default: off
 # description: csync2
@@ -280,14 +278,14 @@ service csync2
 }
 ```
 
-8. Run the following commands
+7. Run the following commands
 ```
 service xinetd restart
 chkconfig xinetd on
 ```
 **Note:** The status can be checked by running `chkconfig xinetd –list` and `iptables -L -nv | grep 30865`. For confirmation, telnet 30865 port from the VMs.
 
-9. Configure `csync2.cfg` to reflect the configuration below:
+8. Configure `csync2.cfg` to reflect the configuration below:
 ```
 #nossl * *;
 group cluster_group
@@ -329,11 +327,11 @@ group cluster_group
 } 
 ```
 
-10. Start `csync2` by running `csync2 -cvvv -N idp2.gluu.org`
+9. Start `csync2` by running `csync2 -cvvv -N idp2.gluu.org`
 
-11. Run `mkdir -p /var/backups/csync2`
+10. Run `mkdir -p /var/backups/csync2`
 
-12. Add cronjob to automate csync2 run. The cronjob example is given below:
+11. Add cronjob to automate csync2 run. The cronjob example is given below:
 ```
 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59 * * * *    /usr/sbin/csync2 -N idp2.gluu.org -xv 2>/var/log/csync2.log 
 ```
