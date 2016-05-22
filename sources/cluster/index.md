@@ -150,24 +150,25 @@ operation.
 5. Copy the private key to `host-2` and put it into the same file there
 
 6. Generate certificate/key pair that will be used to establish SSL protection layer for incoming connections by running next commands on `host-1` (location of the files and their names are hardcoded into executable). Don't fill any fields, just hit "Enter" accepting default values:
-    ```
+```
 openssl genrsa -out /etc/csync2_ssl_key.pem 1024
 openssl req -new -key /etc/csync2_ssl_key.pem -out /etc/csync2_ssl_cert.csr
-openssl x509 -req -days 600 -in /etc/csync2_ssl_cert.csr -signkey /etc/csync2_ssl_key.pem -out /etc/csync2_ssl_cert.pem
-    ```
+openssl x509 -req -days 600 -in /etc/csync2_ssl_cert.csr -signkey /etc/csync2_ssl_key.pem \
+-out /etc/csync2_ssl_cert.pem
+```
 
 7. Add IP and hostnames in the `hosts` file. In the hosts file example below `host-1` is called `idp1.gluu.org` and `host-2` is called `idp2.gluu.org`
-    ```
+```
 127.0.0.1       localhost
 ::1             ip6-localhost ip6-loopback
 ff02::1         ip6-allnodes
 ff02::2         ip6-allrouters
 192.168.6.1     idp1.gluu.org
 192.168.6.2     idp2.gluu.org  
-    ```
+```
 
 8. Modify `csync2` in the `/etc/xinetd.d/` folder
-    ```
+```
 # default: off
 # description: csync2
 service csync2
@@ -185,13 +186,13 @@ service csync2
         disable         = no
         # only_from     = 192.168.199.3 192.168.199.4
 }
-    ```
+```
 
 9. Run the following commands
-    ```
+```
 service xinetd restart
 chkconfig xinetd on
-    ```
+```
 **Note:** The status can be checked by running `chkconfig xinetd –list` and `iptables -L -nv | grep 30865`. For confirmation, telnet 30865 port from the VMs.
 
 10. Configure `csync2.cfg` to reflect the configuration below (Please note that csync2 doesn't allow to use symlinks in this file; you'll may need to correct full paths to certain directories as they may change in future Gluu's CE packages):
@@ -259,7 +260,8 @@ group cluster_group
     ```
 openssl genrsa -out /etc/csync2_ssl_key.pem 1024
 openssl req -new -key /etc/csync2_ssl_key.pem -out /etc/csync2_ssl_cert.csr
-openssl x509 -req -days 600 -in /etc/csync2_ssl_cert.csr -signkey /etc/csync2_ssl_key.pem -out /etc/csync2_ssl_cert.pem
+openssl x509 -req -days 600 -in /etc/csync2_ssl_cert.csr -signkey /etc/csync2_ssl_key.pem \
+-out /etc/csync2_ssl_cert.pem
     ```
 
 6. Add IP and hostnames in the `hosts` file. In the hosts file example below `host-1` is called `idp1.gluu.org` and `host-2` is called `idp2.gluu.org`
