@@ -150,15 +150,15 @@ operation.
 5. Copy the private key to `host-2` and put it into the same file there
 
 6. Generate certificate/key pair that will be used to establish SSL protection layer for incoming connections by running next commands on `host-1` (location of the files and their names are hardcoded into executable). Don't fill any fields, just hit "Enter" accepting default values:
-```
+    ```
 openssl genrsa -out /etc/csync2_ssl_key.pem 1024
 openssl req -new -key /etc/csync2_ssl_key.pem -out /etc/csync2_ssl_cert.csr
 openssl x509 -req -days 600 -in /etc/csync2_ssl_cert.csr -signkey /etc/csync2_ssl_key.pem \
 -out /etc/csync2_ssl_cert.pem
-```
+    ```
 
 7. Add IP and hostnames in the `hosts` file. In the hosts file example below `host-1` is called `idp1.gluu.org` and `host-2` is called `idp2.gluu.org`
-```
+    ```
 127.0.0.1       localhost
 ::1             ip6-localhost ip6-loopback
 ff02::1         ip6-allnodes
