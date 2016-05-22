@@ -149,7 +149,7 @@ operation.
 
 5. Copy the private key to `host-2` and put it into the same file there
 
-6. Generate certificate/key pair that will be used to establish SSL protection layer for incoming connections by running next commands (location of the files and their names are hardcoded into executable) on `host-1`. Don't fill any fields, just hit "Enter" accepting default values:
+6. Generate certificate/key pair that will be used to establish SSL protection layer for incoming connections by running next commands on `host-1` (location of the files and their names are hardcoded into executable). Don't fill any fields, just hit "Enter" accepting default values:
     ```
 openssl genrsa -out /etc/csync2_ssl_key.pem 1024
 openssl req -new -key /etc/csync2_ssl_key.pem -out /etc/csync2_ssl_cert.csr
@@ -255,7 +255,7 @@ group cluster_group
 
 4. (If you haven't done it yet) Copy the private key you generated on `host-1` previously to `host-2` and put it into `/etc/csync2/csync2.key` file 
 
-5. Generate certificate/key pair that will be used to establish SSL protection layer for incoming connections by running next commands (location of the files and their names are hardcoded into executable) on `host-2`. Don't fill any fields, just hit "Enter" accepting default values:
+5. Generate certificate/key pair that will be used to establish SSL protection layer for incoming connections by running next commands on `host-2` (location of the files and their names are hardcoded into executable). Don't fill any fields, just hit "Enter" accepting default values:
     ```
 openssl genrsa -out /etc/csync2_ssl_key.pem 1024
 openssl req -new -key /etc/csync2_ssl_key.pem -out /etc/csync2_ssl_cert.csr
