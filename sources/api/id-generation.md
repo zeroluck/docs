@@ -1,9 +1,8 @@
 # ID Generation API Document
-
+This document outlines the API for ID Generation for Gluu Server.
 ## Path
-The API path is set at `/id`.
-
-#### Overview
+`/id`
+### Overview
 
 The API convention is set as _id_ followed by _prefix_ and _type_ or `/id/{prefix}/{type}/`.
 Please se the following table to specify what type you are generating. The `prefix` is used in the 
@@ -135,8 +134,6 @@ Generates ID for given prefix and type.
 
 ###### Response
 [String[Response]](#String[Response])
-
-
 ###### Errors
 <table border="1">
     <tr>
@@ -145,7 +142,6 @@ Generates ID for given prefix and type.
     </tr>
 </table>
 - - -
-
 ##### generateTextInum
 **GET** `/id/{prefix}/{type}/`
 

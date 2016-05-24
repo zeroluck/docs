@@ -149,15 +149,17 @@ operation.
 
 5. Copy the private key to `host-2` and put it into the same file there
 
-6. Generate certificate/key pair that will be used to establish SSL protection layer for incoming connections by running next commands on `host-1` (location of the files and their names are hardcoded into executable). Don't fill any fields, just hit "Enter" accepting default values:
+6. Generate certificate/key pair that will be used to establish SSL protection layer for incoming connections by running next commands on <code>host-1</code> (location of the files and their names are hardcoded into executable). Don't fill any fields, just hit `Enter` accepting default values
+
 ```
 openssl genrsa -out /etc/csync2_ssl_key.pem 1024
 openssl req -new -key /etc/csync2_ssl_key.pem -out /etc/csync2_ssl_cert.csr
-openssl x509 -req -days 600 -in /etc/csync2_ssl_cert.csr -signkey /etc/csync2_ssl_key.pem \
--out /etc/csync2_ssl_cert.pem
+openssl x509 -req -days 600 -in /etc/csync2_ssl_cert.csr -signkey /etc/csync 2_ssl_key.pem \ -out /etc/csync2_ssl_cert.pem
 ```
 
-7. Add IP and hostnames in the `hosts` file. In the hosts file example below `host-1` is called `idp1.gluu.org` and `host-2` is called `idp2.gluu.org`
+<ol start ="7">
+<li> Add IP and hostnames in the <code>hosts</code> file. In the hosts file example below <code>host-1</code> is called <code>idp1.gluu.org</code> and <code>host-2</code> is called <code>idp2.gluu.org</code></li>
+</ol>
 ```
 127.0.0.1       localhost
 ::1             ip6-localhost ip6-loopback
@@ -166,8 +168,9 @@ ff02::2         ip6-allrouters
 192.168.6.1     idp1.gluu.org
 192.168.6.2     idp2.gluu.org  
 ```
-
-8. Modify `csync2` in the `/etc/xinetd.d/` folder
+<ol start ="8">
+<li> Modify <code>csync2</code> in the <code>/etc/xinetd.d/</code> folder</li>
+</ol>
 ```
 # default: off
 # description: csync2
@@ -188,14 +191,18 @@ service csync2
 }
 ```
 
-9. Run the following commands
+<ol start ="9">
+<li> Run the following commands</li>
+</ol>
 ```
 service xinetd restart
 chkconfig xinetd on
 ```
 **Note:** The status can be checked by running `chkconfig xinetd –list` and `iptables -L -nv | grep 30865`. For confirmation, telnet 30865 port from the VMs.
 
-10. Configure `csync2.cfg` to reflect the configuration below (Please note that csync2 doesn't allow to use symlinks in this file; you'll may need to correct full paths to certain directories as they may change in future Gluu's CE packages):
+<ol start="10">
+<li> Configure <code>csync2.cfg</code> to reflect the configuration below (Please note that csync2 doesn't allow to use symlinks in this file; you'll may need to correct full paths to certain directories as they may change in future Gluu's CE packages)</li>
+</ol>
 ```
 #nossl * *;
 group cluster_group
@@ -236,12 +243,17 @@ group cluster_group
         auto younger;
 } 
 ```
+<ol start ="11">
+<li> Start <code>csync2</code> by running <code>csync2 -cvvv -N idp2.gluu.org</code></li>
+</ol>
 
-11. Start `csync2` by running `csync2 -cvvv -N idp2.gluu.org`
+<ol start ="12"> 
+<li>Run `mkdir -p /var/backups/csync2`</li>
+</ol>
 
-12. Run `mkdir -p /var/backups/csync2`
-
-13. Add cronjob to automate csync2 run. The cronjob example is given below:
+<ol start ="13">
+<li> Add cronjob to automate csync2 run. The cronjob example is given below:</li>
+</ol>
 ```
 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59 * * * *    /usr/sbin/csync2 -N idp1.gluu.org -xv 2>/var/log/csync2.log 
 ```
@@ -264,8 +276,9 @@ openssl x509 -req -days 600 -in /etc/csync2_ssl_cert.csr -signkey /etc/csync2_ss
 -out /etc/csync2_ssl_cert.pem
 ```
 
-6. Add IP and hostnames in the `hosts` file. In the hosts file example below `host-1` is called `idp1.gluu.org` and `host-2` is called `idp2.gluu.org`
-
+<ol start ="6">
+<li>Add IP and hostnames in the <code>hosts</code> file. In the hosts file example below <code>host-1</code> is called <code>idp1.gluu.org</code> and <code>host-2</code> is called <code>idp2.gluu.org</code></li>
+</ol>
 ```
 127.0.0.1       localhost
 ::1             ip6-localhost ip6-loopback
@@ -275,7 +288,9 @@ ff02::2         ip6-allrouters
 192.168.6.2     idp2.gluu.org
 ```
 
-7. Modify `csync2` in the `/etc/xinetd.d/` folder
+<ol start ="7">
+<li> Modify <code>csync2</code> in the <code>/etc/xinetd.d/</code> folder</li>
+</ol>
 ```
 # default: off
 # description: csync2
@@ -296,14 +311,18 @@ service csync2
 }
 ```
 
-8. Run the following commands
+<ol start ="8">
+<li> Run the following commands</li>
+</ol>
 ```
 service xinetd restart
 chkconfig xinetd on
 ```
 **Note:** The status can be checked by running `chkconfig xinetd –list` and `iptables -L -nv | grep 30865`. For confirmation, telnet 30865 port from the VMs.
 
-9. Configure `csync2.cfg` to reflect the configuration below (Please note that csync2 doesn't allow to use symlinks in this file; you'll may need to correct full paths to certain directories as they may change in future Gluu's CE packages):
+<ol start ="9">
+<li> Configure `csync2.cfg` to reflect the configuration below (Please note that csync2 doesn't allow to use symlinks in this file; you'll may need to correct full paths to certain directories as they may change in future Gluu's CE packages):</li>
+</ol>
 ```
 #nossl * *;
 group cluster_group
@@ -345,11 +364,14 @@ group cluster_group
 } 
 ```
 
-10. Start `csync2` by running `csync2 -cvvv -N idp2.gluu.org`
+<ol start ="10">
+<li> Start <code>csync2</code> by running <code>csync2 -cvvv -N idp2.gluu.org</code></li>
+</ol>
 
-11. Run `mkdir -p /var/backups/csync2`
+<ol start ="11"><li> Run <code>mkdir -p /var/backups/csync2</code></li></ol>
 
-12. Add cronjob to automate csync2 run. The cronjob example is given below:
+<ol start ="12">
+<li> Add cronjob to automate csync2 run. The cronjob example is given below:</li></ol>
 ```
 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59 * * * *    /usr/sbin/csync2 -N idp2.gluu.org -xv 2>/var/log/csync2.log 
 ```
