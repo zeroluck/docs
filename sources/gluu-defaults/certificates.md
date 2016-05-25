@@ -21,8 +21,11 @@ certificate do not worry about the file extension `.csr` and `.key.orig`.
 If you are using the Gluu Server CE binaries or latest Gluu Servers, you
 need to manually update certificates and keys from the file
 `/etc/certs/`. Please note that your private key cannot be password
-protected, and the public key should be base64 X.509. For example,
-follow these steps in order to update the Apache SSL cert:
+protected, and the public key should be base64 X.509. It's recommended to
+backup your full `/etc/certs` directory and `cacerts` file before
+proceeding, as well as to remove previous versions of certificates
+you are about to update from the `cacerts` storage.
+For example, follow these steps in order to update the Apache SSL cert:
 
 - save both the latest SSL httpd key and certificate in the file 
   `/etc/certs`.
