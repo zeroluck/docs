@@ -29,7 +29,7 @@ Click on the desired operating system for deployment guide.
 |[RHEL 7](./rhel7.md)		|**7**				|	64 Bit|
 	
 ## Memory allocated for Tomcat's heap.
-You must allocate at least 3GB of RAM for Tomcat's heap to spin up a test instance of Gluu CE 2.4.3. For production setups we strongly recommend to allocate at least 4-6GB of RAM for that purpose.
+You must allocate at least 3GB of RAM for Tomcat's heap to spin up a test instance of Gluu CE 2.4.3 (and later). For production setups we strongly recommend to allocate at least 4-6GB of RAM for that purpose.
 
 You'll be asked to provide amount of RAM allocated during `setup.py` script's phase of installation. You also will be able to change this property after installation has completed, by editing `/opt/tomcat/conf/gluuTomcatWrapper.conf` file inside of the container and setting `wrapper.java.initmemory` and `wrapper.java.maxmemory` properties there to desired values.
 
