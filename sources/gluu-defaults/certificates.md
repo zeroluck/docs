@@ -25,6 +25,7 @@ protected, and the public key should be base64 X.509. It's recommended to
 backup your full `/etc/certs` directory and `cacerts` file before
 proceeding, as well as to remove previous versions of certificates
 you are about to update from the `cacerts` storage.
+
 For example, follow these steps in order to update the Apache SSL cert:
 
 - save both the latest SSL httpd key and certificate in the file 
