@@ -16,19 +16,17 @@ It also usually has symbolic link insalled for it, which is the same for both fa
 ## Default JVM Keystore
 
 Java programs making an SSL connection to an external server may use the default JVM truststore, /usr/java/latest/lib/security/cacerts, to establish trust for certificates they are presented with. During installation, setup.py generates self-signed certificates for all components and adds them to the cacerts truststore.
-Apache Web Server Certificate Update Process
+
+## Apache Web Server Certificate Update Process
 
 This is a common task. Before you launch your production Gluu Server, you may want to install a certificate from a well known certification authority like Verisign or Godaddy. Also, Web SSL certificates usually expire each year. To import it into Gluu CE:
 
-    Log into your instance:
-
-    # service gluu-server24 login
-
+1. Log into your instance: `# service gluu-server24 login`
     (if you use Gluu CE older than 2.4 you should update to current version)
-    Create a file containing the full set of all intermediary CA certificates and root certificates for the commercial CA which issued your Web SSL certificate. You can name the file whatever you want, but place it under /etc/certs. The file should contain the intermediate certificate(s), followed by the root CA'a certificate For more info see the SSLCertificateChainFile directive
-    Put your new commercial certificate in PEM format in one file, and the private key you used to generate the CSR for this certificate in the other file under /etc/certs/; make sure your private key isn't password protected.
-    Verify that user under which your Apache process runs has read file system permission to all three files: certificate chain, server ssl certificate, key.
-    Update SSLCertificateFile, SSLCertificateKeyFile and SSLCertificateChainFile directives in Gluu's Apcache configuration file so they point to the files you've added; in Ubuntu you can find the configuration in /etc/apache2/sites-enabled/https_gluu.conf. For Centos and RedHat, it is located in /etc/httpd/conf.d/https_gluu.conf.
+2. Create a file containing the full set of all intermediary CA certificates and root certificates for the commercial CA which issued your Web SSL certificate. You can name the file whatever you want, but place it under /etc/certs. The file should contain the intermediate certificate(s), followed by the root CA'a certificate For more info see the SSLCertificateChainFile directive
+3. Put your new commercial certificate in PEM format in one file, and the private key you used to generate the CSR for this certificate in the other file under /etc/certs/; make sure your private key isn't password protected.
+4. Verify that user under which your Apache process runs has read file system permission to all three files: certificate chain, server ssl certificate, key.
+5. Update SSLCertificateFile, SSLCertificateKeyFile and SSLCertificateChainFile directives in Gluu's Apcache configuration file so they point to the files you've added; in Ubuntu you can find the configuration in /etc/apache2/sites-enabled/https_gluu.conf. For Centos and RedHat, it is located in /etc/httpd/conf.d/https_gluu.conf.
 
 Now its time to update the default keystore of your JVM:
 
