@@ -1,6 +1,6 @@
 [TOC]
 
-# Full manual update procedures for updating certificates of a live Gluu CE instance.
+# Full procedures for manually updating certificates of a live Gluu CE instance.
 
 This page describes how to manually update SSL/TLS certificates used by different components of Gluu CE instance. Ubuntu-based container's environment will be used for all command examples, if not told otherwise explicitly.
 
@@ -10,8 +10,7 @@ Backup all your current certificates, keys and java key storages that may be aff
 
 1. Log into your instance: `# service gluu-server24 login`
 (if you use Gluu CE older than 2.4 you should update to current version)
-2. Backup everything under `/etc/certs/` directory, then also backup your container's default java key storage (`cacerts` file); it can be located under `/etc/ssl/certs/java/` for Ubuntu- and Debian-based container, and under `/etc/pki/java/` for CentOS- and RHEL-based containers.
-It also usually has symbolic link insalled for it, which is the same for both families: `/usr/java/latest/lib/security/cacerts`
+2. Backup everything under `/etc/certs/` directory, then also backup your container's default java key storage (`cacerts` file); it can be located under `/etc/ssl/certs/java/` for Ubuntu- and Debian-based container, and under `/etc/pki/java/` for CentOS- and RHEL-based containers. It also usually has symbolic link insalled for it, which is the same for both families: `/usr/java/latest/lib/security/cacerts`
 
 ## Default JVM Keystore
 
@@ -23,7 +22,7 @@ This is a common task. Before you launch your production Gluu Server, you may wa
 
 1. Log into your instance: `# service gluu-server24 login`
     (if you use Gluu CE older than 2.4.x you should update to current version)
-2. Create a file containing full set of all intermediary CA certificates and root certificates for the commercial CA which issued your Web SSL certificate. You can name the file whatever you want, but place it under `/etc/certs`. The file should contain intermediate certificate(s), followed by the root CA'a certificate. For more info see doc page about the [SSLCertificateChainFile directive](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html#sslcertificatechainfile)
+2. Create a file containing full set of all intermediary CA certificates and root certificates for the commercial CA which issued your Web SSL certificate. You can name the file whatever you want, but place it under `/etc/certs`. The file should contain intermediate certificate(s), followed by the root CA'a certificate. ![image]() For more info see doc page about the [SSLCertificateChainFile directive](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html#sslcertificatechainfile)
 3. Put your new commercial certificate in PEM format in one file, and the private key you used to generate the CSR for this certificate in the other file under `/etc/certs/`; make sure your private key isn't password protected.
 4. Verify that user under which your Apache process runs has read permissions to all three files: certificate chain, server ssl certificate, key.
 5. Update `SSLCertificateFile`, `SSLCertificateKeyFil` and `SSLCertificateChainFile` directives in Gluu's Apcache configuration file so they point to the files you've added; in Ubuntu you can find the configuration in `/etc/apache2/sites-enabled/https_gluu.conf`. For Centos and RedHat, it is located in `/etc/httpd/conf.d/https_gluu.conf`.
@@ -41,7 +40,7 @@ Now its time to update the default keystore of your JVM:
 
 You have next options:
 
-1. Checking how certificate chain is visualized and its healthiness is evaluated by your browser. For example, correctly configured certificate chain may look like this in Firefox:
+1. Checking how certificate chain is visualized and its healthiness is evaluated by your browser. For example, correctly configured certificate chain may look like this in Firefox: ![image]()
 2. You could use one of online validation tools, like the Qualys® SSL Labs' SSL Server Test
 3. Using console tools, like connecting to the SSL/TLS enabled port your Gluu's Apache listens on (443 by default) with `# openssl s_client -showcerts -connect <host>:<port>`. It will display the whole certificate chain sent by the web server together with secure overlay's parameters which were negotiated during SSL/TLS handshake.
 
