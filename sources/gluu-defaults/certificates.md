@@ -35,6 +35,7 @@ For example, follow these steps in order to update the Apache SSL cert:
   - Import this DER into java keystore (cacerts), command: `keytool -importcert -file httpd.der -keystore cacerts -alias <hostname_of_your_Gluu_Server>`
 - restart LDAP server, apache2/httpd and tomcat.
 
+Please see the [Certificate Further Reading](../further-reading/cert-full-update-procedures.md) for more information.
 ### Installing Intermediate Certificates
 
 To install intermediate certificates follow these steps:
