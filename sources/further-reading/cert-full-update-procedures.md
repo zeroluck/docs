@@ -2,13 +2,13 @@
 
 # Full procedures for manually updating certificates of a live Gluu CE instance.
 
-This page describes how to manually update SSL/TLS certificates used by different components of Gluu CE instance. Ubuntu-based container's environment will be used for all command examples, if not told otherwise explicitly.
+This page describes how to manually update SSL/TLS certificates used by different components of Gluu CE instance. Ubuntu-based container's environment will be used for all command examples, if not stated otherwise explicitly. Commands may differ slightly for other distro families.
 
 ## Before you start changing anything
 
 Backup all your current certificates, keys and java key storages that may be affected:
 
-1. Log into your instance: `# service gluu-server24 login`
+1. Log into your instance: `# service gluu-server-2.4.3 login`
 (if you use Gluu CE older than 2.4 you should update to current version)
 2. Backup everything under `/etc/certs/` directory, then also backup your container's default java key storage (`cacerts` file); it can be located under `/etc/ssl/certs/java/` for Ubuntu- and Debian-based container, and under `/etc/pki/java/` for CentOS- and RHEL-based containers. It also usually has symbolic link insalled for it, which is the same for both families: `/usr/java/latest/lib/security/cacerts`
 
@@ -20,7 +20,7 @@ Java programs making SSL connections to an external server may use the default J
 
 This is a common task. Before you launch your production Gluu Server, you may want to install a certificate from a well known certification authority like Verisign or Godaddy. Also, Web SSL certificates usually expire each year. To import it into Gluu CE:
 
-1. Log into your instance: `# service gluu-server24 login`
+1. Log into your instance: `# service gluu-server-2.4.3 login`
     (if you use Gluu CE older than 2.4.x you should update to current version)
 2. Create a file containing full set of all intermediary CA certificates and root certificates for the commercial CA which issued your Web SSL certificate. You can name the file whatever you want, but place it under `/etc/certs`. The file should contain intermediate certificate(s), followed by the root CA'a certificate. ![image]() For more info see doc page about the [SSLCertificateChainFile directive](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html#sslcertificatechainfile)
 3. Put your new commercial certificate in PEM format in one file, and the private key you used to generate the CSR for this certificate in the other file under `/etc/certs/`; make sure your private key isn't password protected.
@@ -48,7 +48,7 @@ You have next options:
 
 Shibboleth has it's own java keystore protected by a password that is unique to each instance. Due to this just copying previous Shibboleth keystore file is not the easiest way to proceed, as you would need to find all possible places in configuration files from which it's being referenced and update all settings in them mentioning that password. It's better to recreate this keystore using key pair imported from your previous instance and password which the new instance uses, with the same console commands `setup.py` script employs. To properly install your previous Shibboleth certificate:
 
-1. Log into the your new instance: `# service gluu-server24 login` (if you use Gluu CE older than 2.4.x you should update to current version)
+1. Log into the your new instance: `# service gluu-server-2.4.3` (if you use Gluu CE older than 2.4.x you should update to current version)
 2. Copy your Shibboleth's secret key (in non-encrypted form) and certificate in PEM format into `/etc/certs` directory, overwriting corresponding files there. In Gluu CE 2.4.x these files are named `shibIDP.key` and `shibIDP.crt`, respectively.
 3. Acquire Shibboleth's keystore's password this instance uses. One option is to get it from the `setup.properties.last` file: `# cat /install/community-edition-setup/setup.properties.last | grep -i 'shibJksPass'`
 4. Merge together certificate and key files into PKCS12 archive: `# openssl pkcs12 -export -inkey /etc/certs/shibIDP.key -in /etc/certs/shibIDP.crt -out /etc/certs/shibIDP.pkcs12 -passout pass:YOUR_SHIB_KEYSTORE_PASS -name your-instance-hostname`
