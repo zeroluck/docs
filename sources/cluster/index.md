@@ -379,5 +379,4 @@ group cluster_group
 ## Certificate Management
 
 The certificates do not vary in the manual cluster configuration. The certificates should be updated manually 
-in each host, when required. The [Certificate Page](../gluu-defaults/certificates.md) contains the details about available certificates and 
-how to change them.
+in each host, when required. The [Certificate Page](../gluu-defaults/certificates.md) contains the details about available certificates and how to change them. Please note that in case of CE cluster you **must not** sync OpenDJ's certificates (`/etc/certs/opendj.crt`) between nodes, they must stay unique for each of them.
