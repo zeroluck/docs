@@ -379,6 +379,6 @@ group cluster_group
 ## Certificate Management
 
 The certificates do not vary in the manual cluster configuration. The certificates should be updated manually 
-in each host, when required. Move to `/etc/certs/` on the 1st node (inside the container). Copy all keys, certs and key storages conforming to these masks: `httpd.*`, `asimba.*`, `asimbaIDP.*` and `shibIDP.*` to the same directory on the 2nd node (overwriting files that exist there; you may opt to backup all files in this dir of the 2nd node first, just in case). Please note that in case of CE cluster you **must not** sync OpenDJ's certificates (`/etc/certs/opendj.crt`) between nodes, they must stay unique for each of them!
+in each host, when required. Move to `/etc/certs/` on the 1st node (inside the container). Copy all keys, certs and key storages conforming to these masks: `httpd.*`, `asimba.*`, `asimbaIDP.*` and `shibIDP.*` to the same directory on the 2nd node (overwriting files that exist there; you may opt to backup them first, just in case). Please note that in case of CE cluster you **must not** sync OpenDJ's certificates (`/etc/certs/opendj.crt`) between nodes, they must stay unique for each of them!
 
 After that's done you still will need to update default system storage (`cacerts`) at the 2nd node with these newly copied certificates. The [Certificate Page](../gluu-defaults/certificates.md) contains the details about available certificates and how to change them.
