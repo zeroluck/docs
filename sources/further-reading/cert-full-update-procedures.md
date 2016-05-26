@@ -62,8 +62,9 @@ Shibboleth has it's own java keystore protected by a password that is unique to 
 3. Acquire Shibboleth's keystore's password this instance uses. One option is to get it from the `setup.properties.last` file: `# cat /install/community-edition-setup/setup.properties.last | grep -i 'shibJksPass'`
 4. Merge together certificate and key files into PKCS12 archive: `# openssl pkcs12 -export -inkey /etc/certs/shibIDP.key -in /etc/certs/shibIDP.crt -out /etc/certs/shibIDP.pkcs12 \
 -passout pass:YOUR_SHIB_KEYSTORE_PASS -name your-instance-hostname`
-5. Transform your PKCS12 archive into new instance's Shibboleth's java keystore file (this command will overwrite your privous keystore in `/etc/certs`): `# keytool -importkeystore -srckeystore /etc/certs/shibIDP.pkcs12 -srcstorepass YOUR_SHIB_KEYSTORE_PASS -srcstoretype PKCS12 \
--destkeystore /etc/certs/shibIDP.jks -deststoretype JKS -deststorepass YOUR_SHIB_KEYSTORE_PASS -keyalg RSA -noprompt`
+5. Transform your PKCS12 archive into new instance's Shibboleth's java keystore file (this command will overwrite your privous keystore in `/etc/certs`): `# keytool -importkeystore -srckeystore /etc/certs/shibIDP.pkcs12 -srcstorepass YOUR_SHIB_KEYSTORE_PASS \
+-srcstoretype PKCS12 -destkeystore /etc/certs/shibIDP.jks -deststoretype JKS -deststorepass YOUR_SHIB_KEYSTORE_PASS \
+-keyalg RSA -noprompt`
 6. Verify that user “tomcat” has read access to all 4 files mentioned (shibIDP.key, shibIDP.crt, shibIDP.pkcs12 and shibIDP.jks)
 7. Create a copy of your Shibboleth certificate encoded in DER format: `# openssl x509 -in /etc/certs/shibIDP.crt -outform der -out /etc/certs/shibIDP.der`
 8. Find out the exact alias name of your current Shibboleth's certificate in the `cacerts` file: `# keytool -list -v -keystore /usr/java/latest/lib/security/cacerts -storepass changeit | grep -i '_shibidp'`. It should have an alias of sort “your-instance-hostname_shibidp”
