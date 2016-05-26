@@ -216,7 +216,7 @@ etc.
 SHA-256 algorithm (algorithm value RS256). Additionally, oxAuth also
 supports other algorithms that are listed below.
 
-_Available Signature Algorithms:_ HS256, HS384, HS512, RS256, RS384, RS512, ES256, ES384, ES512.
+_Available Signature Algorithms:_ none, HS256, HS384, HS512, RS256, RS384, RS512, ES256, ES384, ES512.
 
 _Encryption, Key Encryption Algorithms:_ RSA1_5, RSA-OAEP, A128KW, A256KW.
 
