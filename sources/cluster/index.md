@@ -154,7 +154,8 @@ operation.
 ```
 openssl genrsa -out /etc/csync2_ssl_key.pem 1024
 openssl req -new -key /etc/csync2_ssl_key.pem -out /etc/csync2_ssl_cert.csr
-openssl x509 -req -days 600 -in /etc/csync2_ssl_cert.csr -signkey /etc/csync 2_ssl_key.pem \ -out /etc/csync2_ssl_cert.pem
+openssl x509 -req -days 600 -in /etc/csync2_ssl_cert.csr -signkey /etc/csync 2_ssl_key.pem \
+-out /etc/csync2_ssl_cert.pem
 ```
 
 <ol start ="7">
