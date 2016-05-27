@@ -30,6 +30,7 @@ pages:
 
 - Cluster Configuration:
     - 'Clustering with CE': 'cluster/index.md'
+
 - Gluu Server GUI:
     - 'Configuration': 'oxtrust/configuration.md'
     - 'OxTrust JSON Configuration': 'gluu-defaults/oxtrust-properties.md'
@@ -45,7 +46,6 @@ pages:
     - 'Register Users': 'cache-refresh/register.md'
     - 'Reset User Password': 'cache-refresh/reset-password.md'
     - 'SCIM 2.0 Add/Delete User': 'cache-refresh/scim.md'
-    - 'Lock User on Failed Attempt': 'cache-refresh/lock-user.md'
 - Authentication Mangement: 
     - 'DUO': 'multi-factor/duo.md'
     - 'U2F': 'multi-factor/u2f.md'
@@ -58,6 +58,10 @@ pages:
     - 'Troubleshooting': 'faq/troubleshooting.md'
 - How To's:
     - 'Automate Custom Schema': 'how-to/automate-schema.md'
+    - 'SCIM UMA': 'integrate/scimuma-howto.md'
+    - 'Lock User on Failed Attempt': 'cache-refresh/lock-user.md'
+    - 'UMA Configuration': 'how-to/uma.md'
+
 - Customize Gluu Server: 
     - 'Design Customization': 'customize/design.md'
     - 'Behaviour Customization': 'customize/script.md'
@@ -80,7 +84,6 @@ pages:
     - 'OpenID Connect RP in Ubuntu': 'integrate/ubuntu-installation.md'
     - 'OpenID Connect RP in CentOS': 'integrate/centos-installation.md'
     - 'OpenID Connect Liferay Plugin': 'integrate/oxray.md'
-    - 'SCIM UMA How-to': 'integrate/scimuma-howto.md'
     - 'OXD Server': 'integrate/oxd.md'
 - Integration Guides:
     - 'Google SSO': 'integrate/google-saml.md'
