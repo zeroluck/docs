@@ -22,6 +22,9 @@ Registers new dynamic client in oxAuth.
 |contacts|e-mail addresses of people responsible for this Client.|
 |client_name|Name of the Client to be presented to the End-User.|
 |logo_uri|URL that references a logo for the Client application. If present, the server displays this image to the End-User during approval. The value of this field must point to a valid image file.|
+|client_uri|URL of the home page of the Client. The value of this field must point to a valid Web page. If present, the server displays this URL to the End-User in a followable fashion.|
+|policy_uri|URL that the Relying Party Client provides to the End-User to read about the how the profile data will be used. The value of this field must point to a valid web page. The OpenID Provider displays this URL to the End-User if it is given.|
+|tos_uri|URL that the Relying Party Client provides to the End-User to read about the Relying Party's terms of service. The value of this field must point to a valid web page. The OpenID Provider displays this URL to the End-User if it is given.|
 
 #### Response
 Client Identificator or INUM, a client shared secret and the account expiration date in a [JSON[Response]]
