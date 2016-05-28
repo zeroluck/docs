@@ -31,19 +31,12 @@ Now its time to update the default keystore of your JVM:
 
 1. Create a copy of your commercial certificate encoded in DER format: `# openssl x509 -in pem-formatted-cert.crt -outform der -out der-formatted-cert.der`
 2. Find out the exact alias name of your current (self-signed) Apache certificate in the cacerts file: `# keytool -list -v -keystore /usr/java/latest/lib/security/cacerts -storepass changeit | grep -i '_httpd'`
-3. Remove your old certificate from the store: <code># keytool -delete -alias your-instance-hostname_httpd -keystore /usr/java/latest/lib/security/cacerts \
--storepass changeit</code>
-4. Import the new one with the same alias:
-```
-# keytool -import -alias your-instance-hostname_httpd --trustcacerts -file /etc/certs/der-formatted-cert.der \
--keystore /usr/java/latest/lib/security/cacerts -storepass changeit
-```
-<ol start ="5">
-<li> Restart Tomcat service: <code># /etc/init.d/tomcat restart</code></li>
-</ol>
-<ol start ="6">
-<li> Restart Apache service: <code># /etc/init.d/apache2 restart</code></li>
-</ol>
+3. Remove your old certificate from the store: `# keytool -delete -alias your-instance-hostname_httpd -keystore /usr/java/latest/lib/security/cacerts \
+-storepass changeit`
+4. Import the new one with the same alias: `# keytool -import -alias your-instance-hostname_httpd --trustcacerts -file /etc/certs/der-formatted-cert.der \
+-keystore /usr/java/latest/lib/security/cacerts -storepass changeit`
+5. Restart Tomcat service: `# /etc/init.d/tomcat restart`
+6. Restart Apache service: `# /etc/init.d/apache2 restart`
 
 ### How to test
 
