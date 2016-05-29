@@ -30,7 +30,7 @@ This is a common task. Before you launch your production Gluu Server, you may wa
 Now its time to update the default keystore of your JVM:
 
 1. Create a copy of your commercial certificate encoded in DER format: `# openssl x509 -in pem-formatted-cert.crt -outform der -out der-formatted-cert.der`
-2. Find out the exact alias name of your current (self-signed) Apache certificate in the cacerts file: `# keytool -list -v -keystore /usr/java/latest/lib/security/cacerts -storepass changeit | grep -i '_httpd'`
+2. Find out the exact alias name of your current (self-signed) Apache certificate in the cacerts file: `# keytool -list -v -keystore /usr/java/latest/lib/security/cacerts -storepass changeit | grep -i '_httpd'` It should have an alias of sort “your-instance-hostname_httpd”
 3. Remove your old certificate from the store: `# keytool -delete -alias your-instance-hostname_httpd -keystore /usr/java/latest/lib/security/cacerts \
 -storepass changeit`
 4. Import the new one with the same alias: `# keytool -import -alias your-instance-hostname_httpd --trustcacerts -file /etc/certs/der-formatted-cert.der \
@@ -102,27 +102,12 @@ OpenDJ has its own password-protected java keystore where it stores his key pair
     2. Find out the exact alias name of your current OpenDJ certificate: `# keytool -list -v -keystore /opt/opendj/config/keystore -storepass YOUR_OPENDJ_JKS_PIN` It should have alias “server-cert” and there should be no other entries in the keystore, but it may change in the future.
     3. Fetch the certificate from the store: `# keytool -export -alias alias_you_discovered -file /etc/certs/opendj-exported-cert.der -keystore /opt/opendj/config/keystore -storepass opendj_jks_pin` Now you are ready to import it into default java keystore
 
-3. Find out the exact alias name of your current OpenDJ's certificate in the cacerts file:
-
-# keytool -list -v -keystore /usr/java/latest/lib/security/cacerts -storepass changeit | grep -i '_opendj'
-
-It should have an alias of sort “your-instance-hostname_opendj”
-Remove your old certificate from the store:
-
-# keytool -delete -alias your-instance-hostname_opendj -keystore /usr/java/latest/lib/security/cacerts -storepass changeit
-
-Import the new one with the same alias:
-
-# keytool -import -alias your-instance-hostname_opendj --trustcacerts -file /etc/certs/opendj-exported-cert.der -keystore /usr/java/latest/lib/security/cacerts -storepass changeit
-
-Restart Tomcat service
-
-# /etc/init.d/tomcat restart
-
-Restart Apache service
-
-# /etc/init.d/apache2 restart
+3. Find out the exact alias name of your current OpenDJ's certificate in the cacerts file: `# keytool -list -v -keystore /usr/java/latest/lib/security/cacerts -storepass changeit | grep -i '_opendj'` It should have an alias of sort “your-instance-hostname_opendj”
+4. Remove your old certificate from the store: `# keytool -delete -alias your-instance-hostname_opendj -keystore /usr/java/latest/lib/security/cacerts -storepass changeit`
+5. Import the new one with the same alias: `# keytool -import -alias your-instance-hostname_opendj --trustcacerts -file /etc/certs/opendj-exported-cert.der -keystore /usr/java/latest/lib/security/cacerts -storepass changeit`
+6. Restart Tomcat service: `# /etc/init.d/tomcat restart`
+7. Restart Apache service: `# /etc/init.d/apache2 restart`
 
 ### How to test
 
-You can verify that the certificate in cacerts file is the same as in the OpenDJ's keystore using the same “keytool -list” commands as before. Failure when establishing SSL/TLS connection with OpenDJ will result in errors appearing in /opt/idp/logs/idp-process.log and /opt/tomcat/logs/wrapper.log during Tomcat's startup.
+You can verify that the certificate in cacerts file is the same as in the OpenDJ's keystore using the same “keytool -list” commands as before. Failure when establishing SSL/TLS connection with OpenDJ will result in errors appearing in `/opt/idp/logs/idp-process.log` and `/opt/tomcat/logs/wrapper.log` during Tomcat's startup.
