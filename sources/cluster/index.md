@@ -143,21 +143,17 @@ operation.
 
 ### Csync2 installation
 
-Please follow steps provided in next articles to install csync2 on both nodes: [Ubuntu 14.x](./csync-installation.md), [CentOS 6.x](./csync-installation.md), [CentOS 7.x](./csync-installation.md).
+Please follow steps provided in next articles to install csync2 on both nodes: [Ubuntu 14.x](./csync-installation.md#ubuntu-14x), [CentOS 6.x](./csync-installation.md#centos-6x), [CentOS 7.x](./csync-installation.md#centos-7x).
 
 ### Csync2 Configuration for host-1
 
 1. Log into Gluu-Server container
 
-2. Install epel-release-latest by running `rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm`
+2. Generate `csync2` private key by running `csync2 -k csync2.key` and put it into `/etc/csync2/csync2.key` file
 
-3. Install `csync2` package by running `yum install csync2`
+3. Copy the private key to `host-2` and put it into the same file there
 
-4. Generate `csync2` private key by running `csync2 -k csync2.key` and put it into `/etc/csync2/csync2.key` file
-
-5. Copy the private key to `host-2` and put it into the same file there
-
-6. Generate certificate/key pair that will be used to establish SSL protection layer for incoming connections by running next commands on <code>host-1</code> (location of the files and their names are hardcoded into executable). Don't fill any fields, just hit `Enter` accepting default values:
+4. Generate certificate/key pair that will be used to establish SSL protection layer for incoming connections by running next commands on <code>host-1</code> (location of the files and their names are hardcoded into executable). Don't fill any fields, just hit `Enter` accepting default values:
 
 ```
 openssl genrsa -out /etc/csync2_ssl_key.pem 1024
@@ -167,7 +163,7 @@ openssl x509 -req -days 600 -in /etc/csync2_ssl_cert.csr -signkey /etc/csync 2_s
 ```
 In case you've compiled csync from sources you may opt to just run `# make cert` while in the sources' directory, it will do everything for you.
 
-<ol start ="7">
+<ol start ="5">
 <li> Add IP and hostnames in the <code>hosts</code> file. In the hosts file example below <code>host-1</code> is called <code>idp1.gluu.org</code> and <code>host-2</code> is called <code>idp2.gluu.org</code></li>
 </ol>
 ```
@@ -178,7 +174,7 @@ ff02::2         ip6-allrouters
 192.168.6.1     idp1.gluu.org
 192.168.6.2     idp2.gluu.org  
 ```
-<ol start ="8">
+<ol start ="6">
 <li> Modify <code>csync2</code> in the <code>/etc/xinetd.d/</code> folder (some packages may reqire you to install it first; run <code># yum install xinetd</code>, then <code># chkconfig xinetd on</code>):</li>
 </ol>
 ```
@@ -201,7 +197,7 @@ service csync2
 }
 ```
 
-<ol start ="9">
+<ol start ="7">
 <li> Run the following commands</li>
 </ol>
 ```
@@ -210,7 +206,7 @@ chkconfig xinetd on
 ```
 **Note:** The status can be checked by running `chkconfig xinetd –list` and `iptables -L -nv | grep 30865`. For confirmation, telnet 30865 port from the VMs.
 
-<ol start="10">
+<ol start="8">
 <li> Configure <code>csync2.cfg</code> to reflect the configuration below (Please note that csync2 doesn't allow to use symlinks in this file; you'll may need to correct full paths to certain directories as they may change in future Gluu's CE packages)</li>
 </ol>
 ```
@@ -253,15 +249,15 @@ group cluster_group
         auto younger;
 } 
 ```
-<ol start ="11">
+<ol start ="9">
 <li> Start <code>csync2</code> by running <code>csync2 -cvvv -N idp2.gluu.org</code></li>
 </ol>
 
-<ol start ="12"> 
+<ol start ="10"> 
 <li>Run `mkdir -p /var/backups/csync2`</li>
 </ol>
 
-<ol start ="13">
+<ol start ="11">
 <li> Add cronjob to automate csync2 run. The cronjob example is given below:</li>
 </ol>
 ```
@@ -272,13 +268,9 @@ group cluster_group
 
 1. Log into Gluu-Server container
 
-2. Install epel-release-latest by running `rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm`
+2. (If you haven't done it yet) Copy the private key you generated on `host-1` previously to `host-2` and put it into `/etc/csync2/csync2.key` file 
 
-3. Install `csync2` package by running `yum install csync2`
-
-4. (If you haven't done it yet) Copy the private key you generated on `host-1` previously to `host-2` and put it into `/etc/csync2/csync2.key` file 
-
-5. Generate certificate/key pair that will be used to establish SSL protection layer for incoming connections by running next commands on `host-2` (location of the files and their names are hardcoded into executable). Don't fill any fields, just hit "Enter" accepting default values:
+3. Generate certificate/key pair that will be used to establish SSL protection layer for incoming connections by running next commands on `host-2` (location of the files and their names are hardcoded into executable). Don't fill any fields, just hit "Enter" accepting default values:
 ```
 openssl genrsa -out /etc/csync2_ssl_key.pem 1024
 openssl req -new -key /etc/csync2_ssl_key.pem -out /etc/csync2_ssl_cert.csr
@@ -287,7 +279,7 @@ openssl x509 -req -days 600 -in /etc/csync2_ssl_cert.csr -signkey /etc/csync2_ss
 ```
 In case you've compiled csync from sources you may opt to just run `# make cert` while in the sources' directory, it will do everything for you.
 
-<ol start ="6">
+<ol start ="4">
 <li>Add IP and hostnames in the <code>hosts</code> file. In the hosts file example below <code>host-1</code> is called <code>idp1.gluu.org</code> and <code>host-2</code> is called <code>idp2.gluu.org</code></li>
 </ol>
 ```
@@ -299,7 +291,7 @@ ff02::2         ip6-allrouters
 192.168.6.2     idp2.gluu.org
 ```
 
-<ol start ="7">
+<ol start ="5">
 <li> Modify <code>csync2</code> in the <code>/etc/xinetd.d/</code> folder (some packages may reqire you to install it first; run <code># yum install xinetd</code>, then <code># chkconfig xinetd on</code>):</li>
 </ol>
 ```
@@ -322,7 +314,7 @@ service csync2
 }
 ```
 
-<ol start ="8">
+<ol start ="6">
 <li> Run the following commands</li>
 </ol>
 ```
@@ -331,7 +323,7 @@ chkconfig xinetd on
 ```
 **Note:** The status can be checked by running `chkconfig xinetd –list` and `iptables -L -nv | grep 30865`. For confirmation, telnet 30865 port from the VMs.
 
-<ol start ="9">
+<ol start ="7">
 <li> Configure `csync2.cfg` to reflect the configuration below (Please note that csync2 doesn't allow to use symlinks in this file; you'll may need to correct full paths to certain directories as they may change in future Gluu's CE packages):</li>
 </ol>
 ```
@@ -375,13 +367,13 @@ group cluster_group
 } 
 ```
 
-<ol start ="10">
+<ol start ="8">
 <li> Start <code>csync2</code> by running <code>csync2 -cvvv -N idp2.gluu.org</code></li>
 </ol>
 
-<ol start ="11"><li> Run <code>mkdir -p /var/backups/csync2</code></li></ol>
+<ol start ="9"><li> Run <code>mkdir -p /var/backups/csync2</code></li></ol>
 
-<ol start ="12">
+<ol start ="10">
 <li> Add cronjob to automate csync2 run. The cronjob example is given below:</li></ol>
 ```
 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59 * * * *    /usr/sbin/csync2 -N idp2.gluu.org -xv 2>/var/log/csync2.log 
