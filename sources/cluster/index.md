@@ -387,3 +387,23 @@ The certificates do not vary in the manual cluster configuration. The certificat
 in each host, when required. Move to `/etc/certs/` on the 1st node (inside the container). Copy all keys, certs and key storages conforming to these masks: `httpd.*`, `asimba.*`, `asimbaIDP.*` and `shibIDP.*` to the same directory on the 2nd node (overwriting files that exist there; you may opt to backup them first, just in case). Please note that in case of CE cluster you **must not** sync OpenDJ's certificates (`/etc/certs/opendj.crt`) between nodes, they must stay unique for each of them!
 
 After that's done you still will need to update default system storage (`cacerts` file) at the 2nd node with these newly copied certificates. The [Certificate Page](../gluu-defaults/certificates.md) contains the details about available certificates and how to change them.
+
+## Actions in case setup.properties.last method of install didn't work for you
+
+In this case jks keystores you'll be moving to the 2nd node will be protected by passwords hardcoded into different configuration files on the 1st node, which are different from the similar passwords hardcoded into the same files on the 2nd node. Thus you MUST ensure that the 1st node will be the one that will initialize the 2nd node during first csync's run (i.e., that it will win any conflicts due to changes in files that csync may detect during its very first run), as otherwise different components won't be able to decrypt these keystores and will fail.
+
+To achieve this you should run initial sync manualy after completing configuring it, but before you install cron jobs:
+
+1. Comment out `auto younger;` string in `csync2.cfg` on both nodes to disable autoresolution of conflicts
+
+2. Run `# csync2 -crvvv -N idp1.gluu.org` on the 1st node
+
+3. Run `# csync2 -crvvv -N idp2.gluu.org` on the 2nd node
+
+4. Previous commands did initial scan and filled metadata database. Now run `# csync2 -xrvvv -N idp1.gluu.org` on the 1st node. That will try to sync files with the 2nd node, and most likely will fail to replicate all files due to some conflicts.
+
+5. You should be now in a state of conflict, as certain files in synced dirs differ between nodes and tool can't decide which to prefer. Run this `# csync2 -frvvv -N idp1.gluu.org /` on the 1st node to make its files that still in dirty state the ones that will win any conflict next time
+
+6. Run `# csync2 -xrvvv -N idp1.gluu.org` on the 1st node to complete your initial sync. Now all your 2nd node's directories covered by csync should be identical to the 1st node's.
+
+7. Uncomment `auto younger;` string and proceed to installing cron jobs
