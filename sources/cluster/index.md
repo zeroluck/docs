@@ -141,6 +141,8 @@ operation.
 
 `(!)` Be advised that backup feature is broken in some of earlier versions of csync2 you may get installed from your distribution's repo. In that case you will need either to disable it by commenting out `backup-*` clauses in tool's configuration file, or to build csync2 of version 2.0+ from sources and use key `-l` in your xinetd.d's config (like `server_args     = -i -l -N idp1.gluu.org`) on both nodes
 
+`(!)` Be sure to verify all pathes to all binaries in configuration files, as they may differ for different linux distros
+
 1. Log into Gluu-Server container
 
 2. Install epel-release-latest by running `rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm`
@@ -265,6 +267,8 @@ group cluster_group
 ### csync Configuration for host-2
 
 `(!)` Be advised that backup feature is broken in some of earlier versions of csync2 you may get installed from your distribution's repo. In that case you will need either to disable it by commenting out `backup-*` clauses in tool's configuration file, or to build csync2 of version 2.0+ from sources and use key `-l` in your xinetd.d's config (like `server_args     = -i -l -N idp2.gluu.org`) on both nodes
+
+`(!)` Be sure to verify all pathes to all binaries in configuration files, as they may differ for different linux distros
 
 1. Log into Gluu-Server container
 
