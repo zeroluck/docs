@@ -20,7 +20,7 @@ The requirements for Clusters vary only in the RAM requirement. Clusters require
 
 * Install Gluu CE following the [Deployment Page](../deployment/index.md) in `host-1`
 
-* Change the IP address in the `setup.properties.last` from `host-1` and install Gluu CE in `host-2`. Please be sure to read [this part]() in case you failed to setup the 2nd node using `setup.properties.last` file from the 1st one for some reason, and resorted to installing it from scratch, that will call for additional steps.
+* Change the IP address in the `setup.properties.last` from `host-1` and install Gluu CE in `host-2`. Please be sure to read [this part](./index.md#optional-actions-in-case-setuppropertieslast-method-of-install-didnt-work-for-you) in case you failed to setup the 2nd node using `setup.properties.last` file from the 1st one for some reason, and resorted to installing it from scratch, that will call for additional steps.
 
 ## LDAP Replication
 
