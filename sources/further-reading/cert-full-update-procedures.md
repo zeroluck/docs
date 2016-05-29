@@ -81,8 +81,9 @@ This procedure is quite similar to updating Shibboleth's certificate:
 3. Acquire Shibboleth keystore's password this instance uses. One option is to get it from the `setup.properties.last` file: `# cat /install/community-edition-setup/setup.properties.last | grep -i 'asimbaJksPass'`
 4. Merge together certificate and key files into PKCS12 archive: `# openssl pkcs12 -export -inkey /etc/certs/asimba.key -in /etc/certs/asimba.crt -out /etc/certs/asimba.pkcs12 \
 -passout pass:YOUR_ASIMBA_KEYSTORE_PASS -name your-instance-hostname`
-5. Transform your PKCS12 archive into new instance's Asimba's java keystore file: `# keytool -importkeystore -srckeystore /etc/certs/asimba.pkcs12 \
--srcstorepass YOUR_ASIMBA_KEYSTORE_PASS -srcstoretype PKCS12 -destkeystore /etc/certs/asimbaIDP.jks -deststoretype JKS -deststorepass YOUR_ASIMBA_KEYSTORE_PASS -keyalg RSA -noprompt`
+5. Transform your PKCS12 archive into new instance's Asimba's java keystore file: `# keytool -importkeystore -srckeystore /etc/certs/asimba.pkcs12 -srcstorepass YOUR_ASIMBA_KEYSTORE_PASS \
+-srcstoretype PKCS12 -destkeystore /etc/certs/asimbaIDP.jks -deststoretype JKS -deststorepass YOUR_ASIMBA_KEYSTORE_PASS -keyalg RSA \
+-noprompt`
 6. Verify that user “tomcat” has read access to all 4 files mentioned (asimba.key, asimba.crt, asimba.pkcs12 and asimbaIDP.jks)
 7. Create a copy of your Shibboleth certificate encoded in DER format: `# openssl x509 -in /etc/certs/asimba.crt -outform der -out /etc/certs/asimba.der`
 8. Find out the exact alias name of your current Shibboleth's certificate in the cacerts file: `# keytool -list -v -keystore /usr/java/latest/lib/security/cacerts -storepass changeit | grep -i '_asimba'`
@@ -105,11 +106,14 @@ OpenDJ has its own password-protected java keystore where it stores his key pair
     1. Acquire password for your keystore: `# cat /opt/opendj/config/keystore.pin`
     2. Find out the exact alias name of your current OpenDJ certificate: `# keytool -list -v -keystore /opt/opendj/config/keystore -storepass YOUR_OPENDJ_JKS_PIN` It should have alias “server-cert” and there should be no other entries in the keystore, but it may change in the future.
     3. Fetch the certificate from the store: `# keytool -export -alias alias_you_discovered -file /etc/certs/opendj-exported-cert.der \
-    -keystore /opt/opendj/config/keystore -storepass opendj_jks_pin`Now you are ready to import it into default java keystore
+    -keystore /opt/opendj/config/keystore -storepass opendj_jks_pin` Now you are ready to import it into default java keystore
 
-3. Find out the exact alias name of your current OpenDJ's certificate in the cacerts file: `# keytool -list -v -keystore /usr/java/latest/lib/security/cacerts -storepass changeit | grep -i '_opendj'` It should have an alias of sort “your-instance-hostname_opendj”
-4. Remove your old certificate from the store: `# keytool -delete -alias your-instance-hostname_opendj -keystore /usr/java/latest/lib/security/cacerts -storepass changeit`
-5. Import the new one with the same alias: `# keytool -import -alias your-instance-hostname_opendj --trustcacerts -file /etc/certs/opendj-exported-cert.der -keystore /usr/java/latest/lib/security/cacerts -storepass changeit`
+3. Find out the exact alias name of your current OpenDJ's certificate in the cacerts file: `# keytool -list -v -keystore /usr/java/latest/lib/security/cacerts -storepass changeit | \
+grep -i '_opendj'` It should have an alias of sort “your-instance-hostname_opendj”
+4. Remove your old certificate from the store: `# keytool -delete -alias your-instance-hostname_opendj -keystore /usr/java/latest/lib/security/cacerts \
+-storepass changeit`
+5. Import the new one with the same alias: `# keytool -import -alias your-instance-hostname_opendj --trustcacerts -file /etc/certs/opendj-exported-cert.der \
+-keystore /usr/java/latest/lib/security/cacerts -storepass changeit`
 6. Restart Tomcat service: `# /etc/init.d/tomcat restart`
 7. Restart Apache service: `# /etc/init.d/apache2 restart`
 
