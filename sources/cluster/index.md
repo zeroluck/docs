@@ -151,7 +151,7 @@ operation.
 
 5. Copy the private key to `host-2` and put it into the same file there
 
-6. Generate certificate/key pair that will be used to establish SSL protection layer for incoming connections by running next commands on <code>host-1</code> (location of the files and their names are hardcoded into executable). Don't fill any fields, just hit `Enter` accepting default values
+6. Generate certificate/key pair that will be used to establish SSL protection layer for incoming connections by running next commands on <code>host-1</code> (location of the files and their names are hardcoded into executable). Don't fill any fields, just hit `Enter` accepting default values:
 
 ```
 openssl genrsa -out /etc/csync2_ssl_key.pem 1024
@@ -159,6 +159,7 @@ openssl req -new -key /etc/csync2_ssl_key.pem -out /etc/csync2_ssl_cert.csr
 openssl x509 -req -days 600 -in /etc/csync2_ssl_cert.csr -signkey /etc/csync 2_ssl_key.pem \
 -out /etc/csync2_ssl_cert.pem
 ```
+In case you've compiled csync from sources you may opt to just run `# make cert` while in the sources' directory, it will do everything for you.
 
 <ol start ="7">
 <li> Add IP and hostnames in the <code>hosts</code> file. In the hosts file example below <code>host-1</code> is called <code>idp1.gluu.org</code> and <code>host-2</code> is called <code>idp2.gluu.org</code></li>
@@ -280,6 +281,7 @@ openssl req -new -key /etc/csync2_ssl_key.pem -out /etc/csync2_ssl_cert.csr
 openssl x509 -req -days 600 -in /etc/csync2_ssl_cert.csr -signkey /etc/csync2_ssl_key.pem \
 -out /etc/csync2_ssl_cert.pem
 ```
+In case you've compiled csync from sources you may opt to just run `# make cert` while in the sources' directory, it will do everything for you.
 
 <ol start ="6">
 <li>Add IP and hostnames in the <code>hosts</code> file. In the hosts file example below <code>host-1</code> is called <code>idp1.gluu.org</code> and <code>host-2</code> is called <code>idp2.gluu.org</code></li>
