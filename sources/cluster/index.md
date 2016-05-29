@@ -143,7 +143,7 @@ operation.
 
 ### Csync2 installation
 
-Please follow steps provided in next articles to install csync2 on both nodes: [Ubuntu 14.x](./csync-installation.md#ubuntu-14x), [CentOS 6.x](./csync-installation.md#centos-6x), [CentOS 7.x](./csync-installation.md#centos-7x).
+Please follow steps provided in next articles to install csync2 on both nodes: [CentOS 6.x](./csync-installation.md#centos-6x), [CentOS 7.x](./csync-installation.md#centos-7x), [Ubuntu 14.x](./csync-installation.md#ubuntu-14x).
 
 ### Csync2 Configuration for host-1
 
