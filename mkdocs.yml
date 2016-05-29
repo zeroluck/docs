@@ -30,6 +30,7 @@ pages:
 
 - Cluster Configuration:
     - 'Clustering with CE': 'cluster/index.md'
+    - 'Clustering with CE: Installing csync2': 'cluster/csync-installation.md'
 
 - Gluu Server GUI:
     - 'Configuration': 'oxtrust/configuration.md'
