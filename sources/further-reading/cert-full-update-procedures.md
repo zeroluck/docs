@@ -50,7 +50,7 @@ You have next options:
 
 Shibboleth has it's own java keystore protected by a password that is unique to each instance. Due to this just copying previous Shibboleth keystore file is not the easiest way to proceed, as you would need to find all possible places in configuration files from which it's being referenced and update all settings in them mentioning that password. It's better to recreate this keystore using key pair imported from your previous instance and password which the new instance uses, with the same console commands `setup.py` script employs. To properly install your previous Shibboleth certificate:
 
-1. Log into the your new instance: `# service gluu-server-2.4.3` (if you use Gluu CE older than 2.4.x you should update to current version)
+1. Log into the your new instance: `# service gluu-server-2.4.3 login` (if you use Gluu CE older than 2.4.x you should update to current version)
 2. Copy your Shibboleth's secret key (in non-encrypted form) and certificate in PEM format into `/etc/certs` directory, overwriting corresponding files there. In Gluu CE 2.4.x these files are named `shibIDP.key` and `shibIDP.crt`, respectively.
 3. Acquire Shibboleth's keystore's password this instance uses. One option is to get it from the `setup.properties.last` file: `# cat /install/community-edition-setup/setup.properties.last | grep -i 'shibJksPass'`
 4. Merge together certificate and key files into PKCS12 archive: `# openssl pkcs12 -export -inkey /etc/certs/shibIDP.key -in /etc/certs/shibIDP.crt -out /etc/certs/shibIDP.pkcs12 \
@@ -76,7 +76,7 @@ After Tomcat's restart Shibboleth's configuration generated from a set of Veloci
 
 This procedure is quite similar to updating Shibboleth's certificate: 
 
-1. Log into your instance: `# service gluu-server24 login` (if you use Gluu CE older than 2.4 you should update to current version)
+1. Log into your instance: `# service gluu-server-2.4.3 login` (if you use Gluu CE older than 2.4 you should update to current version)
 2. Copy your Asimba's secret key (in non-encrypted form) and certificate in PEM format into `/etc/certs` directory, overwriting corresponding files there. In Gluu CE 2.4.x these files are named `asimba.key` and `asimba.crt`, respectively.
 3. Acquire Shibboleth keystore's password this instance uses. One option is to get it from the `setup.properties.last` file: `# cat /install/community-edition-setup/setup.properties.last | grep -i 'asimbaJksPass'`
 4. Merge together certificate and key files into PKCS12 archive: `# openssl pkcs12 -export -inkey /etc/certs/asimba.key -in /etc/certs/asimba.crt -out /etc/certs/asimba.pkcs12 -passout pass:YOUR_ASIMBA_KEYSTORE_PASS -name your-instance-hostname`
@@ -92,34 +92,17 @@ It should have an alias of sort “your-instance-hostname_asimba”
 
 ## Updating OpenDJ's certificate in the default java keystore
 
- As was mentioned before, if some component of Gluu CE package needs to connect to OpenDJ via LDAPS, it must be able to verify the authenticity and credibility of certificate presented by it by referencing java default keystore. Sometimes you may need to import cacerts file from your previous instance, overwriting corresponding file of the new container. After that it will contain your OpenDJ's certificate from the previous instance which won't match the certificate used by OpenDJ in this one.
+As was mentioned before, if some component of Gluu CE package needs to connect to OpenDJ via LDAPS, it must be able to verify the authenticity and credibility of certificate presented by it by referencing java default keystore. Sometimes you may need to import cacerts file from your previous instance, overwriting corresponding file of the new container. After that it will contain your OpenDJ's certificate from the previous instance which won't match the certificate used by OpenDJ in this one.
 
-OpenDJ has its own password-protected java keystore where it stores his key pair together with certificate. It can be found at this path: /opt/opendj/config/keystore. Your options are either to recreate this keystore using the key pair and certificate from your previous instance (not recommended; you should refer to OpenDJ's documentation for requirements to this keystore's composition if you choose to do so), or remove the certificate of previous OpenDJ's instance from default keystore, and add the current certificate to it. To achieve the later: 
+OpenDJ has its own password-protected java keystore where it stores his key pair together with certificate. It can be found at this path: `/opt/opendj/config/keystore`. Your options are either to recreate this keystore using the key pair and certificate from your previous instance (not recommended; you should refer to OpenDJ's documentation for requirements to this keystore's composition if you choose to do so), or remove the certificate of previous OpenDJ's instance from default keystore, and add the current certificate to it. To achieve the later: 
 
- Log into your instance:
+1. Log into your instance: `# service gluu-server-2.4.3 login` (if you use Gluu CE older than 2.4 you should update to current version)
+2. If you didn't preserve original certificates from the `/etc/certs` directory of the new container (you should do that) and OpenDJ certificate which is also placed there by setup scripts (it should be named “opendj.crt”) got overwritten by the certificate transferred from the previous one, you still can export it from the OpenDJ's own keystore with command like that:
+    1. Acquire password for your keystore: `# cat /opt/opendj/config/keystore.pin`
+    2. Find out the exact alias name of your current OpenDJ certificate: `# keytool -list -v -keystore /opt/opendj/config/keystore -storepass YOUR_OPENDJ_JKS_PIN` It should have alias “server-cert” and there should be no other entries in the keystore, but it may change in the future.
+    3. Fetch the certificate from the store: `# keytool -export -alias alias_you_discovered -file /etc/certs/opendj-exported-cert.der -keystore /opt/opendj/config/keystore -storepass opendj_jks_pin` Now you are ready to import it into default java keystore
 
-# service gluu-server24 login
-
-(if you use Gluu CE older than 2.4 you should update to current version)
-If you didn't preserve original certificates from the /etc/certs directory of the new container (you should do that) and OpenDJ certificate which is also placed there by setup scripts (it should be named “opendj.crt”) got overwritten by the certificate transferred from the previous one, you still can export it from the OpenDJ's own keystore with command like that:
-
-
-    Acquire password for your keystore:
-
-    # cat /opt/opendj/config/keystore.pin
-
-    Find out the exact alias name of your current OpenDJ certificate:
-
-    # keytool -list -v -keystore /opt/opendj/config/keystore -storepass YOUR_OPENDJ_JKS_PIN
-
-    It should have alias “server-cert” and there should be no other entries in the keystore, but it may change in the future.
-    Fetch the certificate from the store:
-
-    # keytool -export -alias alias_you_discovered -file /etc/certs/opendj-exported-cert.der -keystore /opt/opendj/config/keystore -storepass opendj_jks_pin
-
-    Now you are ready to import it into default java keystore
-
- Find out the exact alias name of your current OpenDJ's certificate in the cacerts file:
+3. Find out the exact alias name of your current OpenDJ's certificate in the cacerts file:
 
 # keytool -list -v -keystore /usr/java/latest/lib/security/cacerts -storepass changeit | grep -i '_opendj'
 
