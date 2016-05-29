@@ -173,7 +173,7 @@ ff02::2         ip6-allrouters
 192.168.6.2     idp2.gluu.org  
 ```
 <ol start ="8">
-<li> Modify <code>csync2</code> in the <code>/etc/xinetd.d/</code> folder</li>
+<li> Modify <code>csync2</code> in the <code>/etc/xinetd.d/</code> folder (some packages may reqire you to install it first; run <code># yum install xinetd</code>, then <code># chkconfig xinetd on</code>):</li>
 </ol>
 ```
 # default: off
@@ -296,7 +296,7 @@ ff02::2         ip6-allrouters
 ```
 
 <ol start ="7">
-<li> Modify <code>csync2</code> in the <code>/etc/xinetd.d/</code> folder</li>
+<li> Modify <code>csync2</code> in the <code>/etc/xinetd.d/</code> folder (some packages may reqire you to install it first; run <code># yum install xinetd</code>, then <code># chkconfig xinetd on</code>):</li>
 </ol>
 ```
 # default: off
