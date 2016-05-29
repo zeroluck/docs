@@ -72,56 +72,25 @@ Shibboleth has it's own java keystore protected by a password that is unique to 
 
 After Tomcat's restart Shibboleth's configuration generated from a set of Velocity templates should be updated to include your changes to it. One way to test they have been applied is to check the current certificate the module includes in its SAML metadata that is shown at url like [https://your-instance-hostname/idp/shibboleth](https://your-instance-hostname/idp/shibboleth), or can be found in the file `/opt/idp/metadata/YOUR-ORG-INUM-idp-metadata.xml` - it should show the same certificate you tried to import following steps above. If it does not, try to wait until Tomcat has fully started and restart it one more time. Please also pay attention to any error messages appearing in `/opt/idp/logs/idp-process.log` during Tomcat's startup.
 
-Updating certificate used by Asimba module (asimba.war)
+## Updating certificate used by Asimba module (asimba.war)
 
 This procedure is quite similar to updating Shibboleth's certificate: 
 
-og into your instance:
-
-# service gluu-server24 login
-
-(if you use Gluu CE older than 2.4 you should update to current version)
-Copy your Asimba's secret key (in non-encrypted form) and certificate in PEM format into /etc/certs directory, overwriting the corresponding files there. In Gluu CE 2.4.x these files are named asimba.key and asimba.crt, respectively.
-Acquire the Shibboleth keystore's password this instance uses. One option is to get it from the setup.properties.last file:
-
-# cat /install/community-edition-setup/setup.properties.last | grep -i 'asimbaJksPass'
-
-Merge together certificate and key files into PKCS12 archive:
-
-# openssl pkcs12 -export -inkey /etc/certs/asimba.key -in /etc/certs/asimba.crt -out /etc/certs/asimba.pkcs12 -passout pass:YOUR_ASIMBA_KEYSTORE_PASS -name your-instance-hostname
-
-Transform your PKCS12 archive into new instance's Asimba's java keystore file:
-
-# keytool -importkeystore -srckeystore /etc/certs/asimba.pkcs12 -srcstorepass YOUR_ASIMBA_KEYSTORE_PASS -srcstoretype PKCS12 -destkeystore /etc/certs/asimbaIDP.jks -deststoretype JKS -deststorepass YOUR_ASIMBA_KEYSTORE_PASS -keyalg RSA -noprompt
-
-Verify that user “tomcat” has read access to all 4 files mentioned (asimba.key, asimba.crt, asimba.pkcs12 and asimbaIDP.jks)
-Create a copy of your Shibboleth certificate encoded in DER format:
-
-# openssl x509 -in /etc/certs/asimba.crt -outform der -out /etc/certs/asimba.der
-
-Find out the exact alias name of your current Shibboleth's certificate in the cacerts file:
-
-# keytool -list -v -keystore /usr/java/latest/lib/security/cacerts -storepass changeit | grep -i '_asimba'
-
+1. Log into your instance: `# service gluu-server24 login` (if you use Gluu CE older than 2.4 you should update to current version)
+2. Copy your Asimba's secret key (in non-encrypted form) and certificate in PEM format into `/etc/certs` directory, overwriting corresponding files there. In Gluu CE 2.4.x these files are named `asimba.key` and `asimba.crt`, respectively.
+3. Acquire Shibboleth keystore's password this instance uses. One option is to get it from the `setup.properties.last` file: `# cat /install/community-edition-setup/setup.properties.last | grep -i 'asimbaJksPass'`
+4. Merge together certificate and key files into PKCS12 archive: `# openssl pkcs12 -export -inkey /etc/certs/asimba.key -in /etc/certs/asimba.crt -out /etc/certs/asimba.pkcs12 -passout pass:YOUR_ASIMBA_KEYSTORE_PASS -name your-instance-hostname`
+5. Transform your PKCS12 archive into new instance's Asimba's java keystore file: `# keytool -importkeystore -srckeystore /etc/certs/asimba.pkcs12 -srcstorepass YOUR_ASIMBA_KEYSTORE_PASS -srcstoretype PKCS12 -destkeystore /etc/certs/asimbaIDP.jks -deststoretype JKS -deststorepass YOUR_ASIMBA_KEYSTORE_PASS -keyalg RSA -noprompt`
+6. Verify that user “tomcat” has read access to all 4 files mentioned (asimba.key, asimba.crt, asimba.pkcs12 and asimbaIDP.jks)
+7. Create a copy of your Shibboleth certificate encoded in DER format: `# openssl x509 -in /etc/certs/asimba.crt -outform der -out /etc/certs/asimba.der`
+8. Find out the exact alias name of your current Shibboleth's certificate in the cacerts file: `# keytool -list -v -keystore /usr/java/latest/lib/security/cacerts -storepass changeit | grep -i '_asimba'`
 It should have an alias of sort “your-instance-hostname_asimba”
-Remove your old certificate from the store:
+9. Remove your old certificate from the store: `# keytool -delete -alias your-instance-hostname_asimba -keystore /usr/java/latest/lib/security/cacerts -storepass changeit`
+10. Import the new one with the same alias: `# keytool -import -alias your-instance-hostname_asimba --trustcacerts -file /etc/certs/asimba.der -keystore /usr/java/latest/lib/security/cacerts -storepass changeit`
+11. Restart Tomcat service: `# /etc/init.d/tomcat restart`
+12. Restart Apache service: `# /etc/init.d/apache2 restart`
 
-# keytool -delete -alias your-instance-hostname_asimba -keystore /usr/java/latest/lib/security/cacerts -storepass changeit
-
-Import the new one with the same alias:
-
-# keytool -import -alias your-instance-hostname_asimba --trustcacerts -file /etc/certs/asimba.der -keystore /usr/java/latest/lib/security/cacerts -storepass changeit
-
-Restart Tomcat service
-
-# /etc/init.d/tomcat restart
-
-Restart Apache service
-
-# /etc/init.d/apache2 restart
-
-
-Updating OpenDJ's certificate in the default java keystore
+## Updating OpenDJ's certificate in the default java keystore
 
  As was mentioned before, if some component of Gluu CE package needs to connect to OpenDJ via LDAPS, it must be able to verify the authenticity and credibility of certificate presented by it by referencing java default keystore. Sometimes you may need to import cacerts file from your previous instance, overwriting corresponding file of the new container. After that it will contain your OpenDJ's certificate from the previous instance which won't match the certificate used by OpenDJ in this one.
 
@@ -171,6 +140,6 @@ Restart Apache service
 
 # /etc/init.d/apache2 restart
 
-How to test
+### How to test
 
 You can verify that the certificate in cacerts file is the same as in the OpenDJ's keystore using the same “keytool -list” commands as before. Failure when establishing SSL/TLS connection with OpenDJ will result in errors appearing in /opt/idp/logs/idp-process.log and /opt/tomcat/logs/wrapper.log during Tomcat's startup.
