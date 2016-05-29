@@ -104,7 +104,8 @@ OpenDJ has its own password-protected java keystore where it stores his key pair
 2. If you didn't preserve original certificates from the `/etc/certs` directory of the new container (you should do that) and OpenDJ certificate which is also placed there by setup scripts (it should be named “opendj.crt”) got overwritten by the certificate transferred from the previous one, you still can export it from the OpenDJ's own keystore with command like that:
     1. Acquire password for your keystore: `# cat /opt/opendj/config/keystore.pin`
     2. Find out the exact alias name of your current OpenDJ certificate: `# keytool -list -v -keystore /opt/opendj/config/keystore -storepass YOUR_OPENDJ_JKS_PIN` It should have alias “server-cert” and there should be no other entries in the keystore, but it may change in the future.
-    3. Fetch the certificate from the store: `# keytool -export -alias alias_you_discovered -file /etc/certs/opendj-exported-cert.der -keystore /opt/opendj/config/keystore -storepass opendj_jks_pin` Now you are ready to import it into default java keystore
+    3. Fetch the certificate from the store: `# keytool -export -alias alias_you_discovered -file /etc/certs/opendj-exported-cert.der \
+    -keystore /opt/opendj/config/keystore -storepass opendj_jks_pin`Now you are ready to import it into default java keystore
 
 3. Find out the exact alias name of your current OpenDJ's certificate in the cacerts file: `# keytool -list -v -keystore /usr/java/latest/lib/security/cacerts -storepass changeit | grep -i '_opendj'` It should have an alias of sort “your-instance-hostname_opendj”
 4. Remove your old certificate from the store: `# keytool -delete -alias your-instance-hostname_opendj -keystore /usr/java/latest/lib/security/cacerts -storepass changeit`
