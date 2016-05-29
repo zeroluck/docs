@@ -82,8 +82,8 @@ This procedure is quite similar to updating Shibboleth's certificate:
 4. Merge together certificate and key files into PKCS12 archive: `# openssl pkcs12 -export -inkey /etc/certs/asimba.key -in /etc/certs/asimba.crt -out /etc/certs/asimba.pkcs12 \
 -passout pass:YOUR_ASIMBA_KEYSTORE_PASS -name your-instance-hostname`
 5. Transform your PKCS12 archive into new instance's Asimba's java keystore file: `# keytool -importkeystore -srckeystore /etc/certs/asimba.pkcs12 -srcstorepass YOUR_ASIMBA_KEYSTORE_PASS \
--srcstoretype PKCS12 -destkeystore /etc/certs/asimbaIDP.jks -deststoretype JKS -deststorepass YOUR_ASIMBA_KEYSTORE_PASS -keyalg RSA \
--noprompt`
+-srcstoretype PKCS12 -destkeystore /etc/certs/asimbaIDP.jks -deststoretype JKS -deststorepass YOUR_ASIMBA_KEYSTORE_PASS \
+-keyalg RSA -noprompt`
 6. Verify that user “tomcat” has read access to all 4 files mentioned (asimba.key, asimba.crt, asimba.pkcs12 and asimbaIDP.jks)
 7. Create a copy of your Shibboleth certificate encoded in DER format: `# openssl x509 -in /etc/certs/asimba.crt -outform der -out /etc/certs/asimba.der`
 8. Find out the exact alias name of your current Shibboleth's certificate in the cacerts file: `# keytool -list -v -keystore /usr/java/latest/lib/security/cacerts -storepass changeit | grep -i '_asimba'`
