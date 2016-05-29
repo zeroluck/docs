@@ -1,18 +1,69 @@
 [TOC]
 
-# Manual Cluster
-## Design
-The following diagram outlines the design of the cluster.
-![image](https://cloud.githubusercontent.com/assets/7156097/13850591/9a553fde-ec28-11e5-8fa7-675f96743a10.png)
-## Requirements
-
-For complete deployment requirements and instructions, please see the [Deployment Page](../deployment/index.md).
-The requirements for Clusters vary only in the RAM requirement. Clusters require at least 8GB RAM for smooth performance. The requirements below are specific for Cluster Installation VMs.
+# How to install csync2 in different Gluu CE containers
 
 
-|	Number of VMs	|CPU Units	|	RAM	|Root Partion	|	Port Requirements	|
-|-----------------------|---------------|---------------|---------------|-------------------------------|
-|	2		|	2 CPU ea.	|	8 GB	|	40 GB	|	4444 and 8989		|
+## CentOS 6.x
+
+1. Log into Gluu-Server container
+
+2. Install epel-release-latest by running `rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm`
+
+3. Install `csync2` package by running `yum install csync2`
+
+
+## CentOS 7.x
+
+1. Log into Gluu-Server container
+
+Enable epel-release repo:
+
+# yum install epel-release
+
+Install compiler and dev environment:
+
+# yum group install "Development Tools"
+
+Install csync2's dependencies:
+
+    # yum install librsync-devel
+
+    # yum install gnutls-devel
+
+    # yum install sqlite-devel
+
+# mkdir building_csync && cd building_csync/
+
+Get the latest source package:
+
+# wget http://oss.linbit.com/csync2/csync2-2.0.tar.gz
+
+# tar -xz -f ./csync2-2.0.tar.gz && cd csync2-2.0/
+
+Build & install, while directing it to use /usr/local/etc/csync2/ dir for storing configuration (for convenience):
+
+# ./configure --sysconfdir /usr/local/etc/csync2/ && make && make install
+
+
+
+## Ubuntu 14.x
+
+1. Log into Gluu-Server container
+
+1. apt-get update
+2. apt-get install libgnutls-dev
+3. apt-get install pkg-config
+4. apt-get install libsqlite-dev
+5. apt-get install libsqlite3-dev
+6. apt-get install librsync-dev
+7. ./configure --sysconfdir /etc/csync2/ --prefix /usr/ -- && make && make install
+
+
+
+
+
+
+
 
 **Note:** For convenience, the VMs are identified as `host-1` and `host-2`
 
