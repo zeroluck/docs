@@ -14,48 +14,46 @@
 
 ## CentOS 7.x
 
+On the moment of writing csync2 can't be found in public repositories. The only option is to compile from sources.
+
 1. Log into Gluu-Server container
 
-Enable epel-release repo:
+2. Enable epel-release repo: `# yum install epel-release`
 
-# yum install epel-release
+3. Install compiler and development environment: `# yum group install "Development Tools"`
 
-Install compiler and dev environment:
+4. Install csync2's dependencies:
 
-# yum group install "Development Tools"
+    1. `# yum install librsync-devel`
 
-Install csync2's dependencies:
+    2. `# yum install gnutls-devel`
 
-    # yum install librsync-devel
+    3. `# yum install sqlite-devel`
 
-    # yum install gnutls-devel
+5. `# mkdir building_csync && cd building_csync/`
 
-    # yum install sqlite-devel
+6. Download the latest version of the tool from [here](http://oss.linbit.com/csync2/): `# wget http://oss.linbit.com/csync2/csync2-2.0.tar.gz`
 
-# mkdir building_csync && cd building_csync/
+7. Unpack: `# tar -xz -f ./csync2-2.0.tar.gz && cd csync2-2.0/`
 
-Get the latest source package:
-
-# wget http://oss.linbit.com/csync2/csync2-2.0.tar.gz
-
-# tar -xz -f ./csync2-2.0.tar.gz && cd csync2-2.0/
-
-Build & install, while directing it to use /usr/local/etc/csync2/ dir for storing configuration (for convenience):
-
-# ./configure --sysconfdir /usr/local/etc/csync2/ && make && make install
-
-
+8. Build & install, while directing it to use `/usr/local/etc/csync2/` dir for storing configuration (for convenience): `# ./configure --sysconfdir /usr/local/etc/csync2/ && make && make install`. Don't forget to update paths to csync's binaries and configuration files later on, as they are different from the ones used in examples in the main article!
 
 ## Ubuntu 14.x
 
 1. Log into Gluu-Server container
 
 1. apt-get update
+
 2. apt-get install libgnutls-dev
+
 3. apt-get install pkg-config
+
 4. apt-get install libsqlite-dev
+
 5. apt-get install libsqlite3-dev
+
 6. apt-get install librsync-dev
+
 7. ./configure --sysconfdir /etc/csync2/ --prefix /usr/ -- && make && make install
 
 
