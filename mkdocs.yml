@@ -61,7 +61,7 @@ pages:
     - 'Automate Custom Schema': 'how-to/automate-schema.md'
     - 'SCIM UMA': 'integrate/scimuma-howto.md'
     - 'Lock User on Failed Attempt': 'cache-refresh/lock-user.md'
-    - 'UMA Configuration': 'how-to/uma.md'
+    - 'UMA Demo Configuration': 'how-to/uma-demo.md'
 
 - Customize Gluu Server: 
     - 'Design Customization': 'customize/design.md'

@@ -1,6 +1,6 @@
 [TOC]
-# Configure UMA
-This section will guide you through to configuring UMA. The values will change accrding you your setup.
+# Configure UMA Demo
+This section will guide you through to configuring UMA demo in Gluu Server. The values will change accrding you your setup.
 There are three things that needs to be ensured while configuring UMA:
 
 1. Configurations are loaded from `<TOMCAT_HOME>/conf` directory
