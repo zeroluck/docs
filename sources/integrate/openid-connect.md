@@ -152,7 +152,7 @@ Organization Policy by the Gluu Server administrator.
 
 * _JWE enc Algorithm for encrypting the ID Token:_ See [Algorithms section](#algorithm) for options
 
-* _JWS alg Algorithm for signing the UserInfo Responses:_ See [Algorithms section](#algorithm) for options
+* _JWS alg Algorithm for signing the UserInfo Responses:_ If this is specified, the response will be JWT serialized, and signed using JWS. The default, if omitted, is for the UserInfo Response to return the Claims as a UTF-8 encoded JSON object using the application/json content-type. See [Algorithms section](#algorithm) for options
 
 * _JWS alg Algorithm for encrypting the UserInfo Responses:_ See [Algorithms section](#algorithm) for options
 
