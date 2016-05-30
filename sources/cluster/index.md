@@ -131,7 +131,7 @@ operation.
 
 `(!)` Be advised that backup feature is broken in some of earlier versions of csync2 you may get installed from your distribution's repo. In that case you will need either to disable it by commenting out `backup-*` clauses in tool's configuration file, or to build csync2 of version 2.0+ from sources and use key `-l` in your xinetd.d's config (like `server_args     = -i -l -N idp1.gluu.org`) on both nodes
 
-`(!)` Be sure to verify all pathes to all binaries in configuration files, as they may differ for different linux distros
+`(!)` Be sure to verify all pathes in configuration files' examples before using in your production instance, as they may differ for different linux distros
 
 `csync2` is used for file system syncing between `host-1` and `host-2`. The following locations are synced in between the two VMs.
 
@@ -143,7 +143,7 @@ operation.
 
 ### Csync2 installation
 
-Please follow steps provided in next articles to install csync2 on both nodes: [CentOS 6.x](./csync-installation.md#centos-6x), [CentOS 7.x](./csync-installation.md#centos-7x), [Ubuntu 14.x](./csync-installation.md#ubuntu-14x).
+Please follow steps provided in next articles to install csync2 on both nodes: [CentOS 6.x](./csync-installation.md#centos-6x), [CentOS 7.x](./csync-installation.md#centos-7x), [Ubuntu 14.x (from repo)](./csync-installation.md#ubuntu-14x-from-repo), [Ubuntu 14.x (compiling from sources)](./csync-installation.md#ubuntu-14x-compiling-from-sources).
 
 ### Csync2 Configuration for host-1
 
@@ -400,7 +400,7 @@ To achieve this you should run initial sync manualy after completing configuring
 
 4. Previous commands did initial scan and filled metadata database. Now run `# csync2 -xrvvv -N idp1.gluu.org` on the 1st node. That will try to sync files with the 2nd node, and most likely will fail to replicate all files due to some conflicts.
 
-5. You should be now in a state of conflict, as certain files in synced dirs differ between nodes and tool can't decide which to prefer. Run this `# csync2 -frvvv -N idp1.gluu.org /` on the 1st node to make its files that still in dirty state the ones that will win any conflict next time
+5. You should be now in a state of conflict, as certain files in directories to be synced differ between nodes and tool can't decide which to prefer. Run this `# csync2 -frvvv -N idp1.gluu.org /` on the 1st node to mark its files that still in dirty state as the ones that will win any conflict next time.
 
 6. Run `# csync2 -xrvvv -N idp1.gluu.org` on the 1st node to complete your initial sync. Now all your 2nd node's directories covered by csync should be identical to the 1st node's.
 
