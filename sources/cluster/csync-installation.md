@@ -42,9 +42,9 @@ On the moment of writing csync2 can't be found in public repositories. The only 
 
 1. Log into Gluu-Server container
 
-1. Run `apt-get update`
+2. Run `apt-get update`
 
-2. Install csync2's dependencies:
+3. Install csync2's dependencies:
 
     1. `# apt-get install pkg-config`
     
@@ -54,16 +54,16 @@ On the moment of writing csync2 can't be found in public repositories. The only 
 
     4. `# apt-get install librsync-dev`
 
-3. Download the latest version of the tool from [here](http://oss.linbit.com/csync2/): `# wget http://oss.linbit.com/csync2/csync2-2.0.tar.gz`
+4. Download the latest version of the tool from [here](http://oss.linbit.com/csync2/): `# wget http://oss.linbit.com/csync2/csync2-2.0.tar.gz`
 
-4. Unpack: `# tar -xz -f ./csync2-2.0.tar.gz && cd csync2-2.0/`
+5. Unpack: `# tar -xz -f ./csync2-2.0.tar.gz && cd csync2-2.0/`
 
-5. Build & install, while directing it to use `/etc/csync2/` directory for storing configuration and `/usr/sbin` directory for executables (for convenience): `./configure --sysconfdir /etc/csync2/ --prefix /usr/ && make && make install`
+6. Build & install, while directing it to use `/etc/csync2/` directory for storing configuration and `/usr/sbin` directory for executables (for convenience): `./configure --sysconfdir /etc/csync2/ --prefix /usr/ && make && make install`
 
 ## Ubuntu 14.x (from repo)
 
 1. Log into Gluu-Server container
 
-1. Run `apt-get update`
+2. Run `apt-get update`
 
-2. Run `apt-get install csync2`
+3. Run `apt-get install csync2`
