@@ -144,7 +144,7 @@ operation.
 
 Please follow steps provided in next articles to install csync2 on both nodes: [CentOS 6.x](./csync-installation.md#centos-6x), [CentOS 7.x](./csync-installation.md#centos-7x), [Ubuntu 14.x (from repo)](./csync-installation.md#ubuntu-14x-from-repo), [Ubuntu 14.x (compiling from sources)](./csync-installation.md#ubuntu-14x-compiling-from-sources).
 
-### Csync2 Configuration for host-1
+### Csync2 configuration for host-1
 
 1. Log into Gluu-Server container
 
@@ -263,7 +263,7 @@ group cluster_group
 1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59 * * * *    /usr/sbin/csync2 -N idp1.gluu.org -xv 2>/var/log/csync2.log 
 ```
 
-### csync Configuration for host-2
+### Csync2 configuration for host-2
 
 1. Log into Gluu-Server container
 
