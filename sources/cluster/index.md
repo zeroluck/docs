@@ -130,7 +130,6 @@ operation.
 ## File System Replication
 
 `(!)` Be advised that backup feature is broken in some of earlier versions of csync2 you may get installed from your distribution's repo. In that case you will need either to disable it by commenting out `backup-*` clauses in tool's configuration file, or to build csync2 of version 2.0+ from sources and use key `-l` in your xinetd.d's config (like `server_args     = -i -l -N idp1.gluu.org`) on both nodes
-
 `(!)` Be sure to verify all pathes (for executables, keys ets) in configuration files' examples before using them in your production instance, as they may differ for different linux distros
 
 `csync2` is used for file system syncing between `host-1` and `host-2`. The following locations are synced in between the two VMs.
