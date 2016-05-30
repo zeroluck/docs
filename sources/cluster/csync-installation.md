@@ -38,7 +38,7 @@ On the moment of writing csync2 can't be found in public repositories. The only 
 
 8. Build & install, while directing it to use `/usr/local/etc/csync2/` directory for storing configuration (for convenience): `# ./configure --sysconfdir /usr/local/etc/csync2/ && make && make install`. Don't forget to update paths to csync's binaries and configuration files later on, as they are different from the ones used in examples in the main article!
 
-## Ubuntu 14.x
+## Ubuntu 14.x (compiling from sources)
 
 1. Log into Gluu-Server container
 
@@ -60,3 +60,10 @@ On the moment of writing csync2 can't be found in public repositories. The only 
 
 5. Build & install, while directing it to use `/etc/csync2/` directory for storing configuration and `/usr/sbin` directory for executables (for convenience): `./configure --sysconfdir /etc/csync2/ --prefix /usr/ && make && make install`
 
+## Ubuntu 14.x (from repo)
+
+1. Log into Gluu-Server container
+
+1. Run `apt-get update`
+
+2. Run `apt-get install csync2`
