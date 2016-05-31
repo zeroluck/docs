@@ -14,12 +14,12 @@ and [this template](https://github.com/GluuFederation/community-edition-setup/bl
 is used. 
 
 **Note:** The JWKS for RS and RP clients are put into the `./output/scim.ldif` file ready for SCIM configuration.
-The `setup.properties.file` contains the RS and RP `JWKS.jason` in Base64 format.
+The `setup.properties.file` contains the RS and RP `JWKS.json` in Base64 format.
 
 * Use the following cmmand to extract OpenID SCIM RS and RP Client ID
 ` cat setup.properties.last | grep "scim_rs_client_id\|scim_rp_client_id"`
 
-* Extract the JWKS from `setup.properties.last` and put it into `./output/scim-rp-openid-keys.jason` file.
+* The UMA SCIM client requires JWKS, so the setup script extracts the JWKS from `setup.properties.last` and puts it into the `./output/scim-rp-openid-keys.json` file.
 
 # Configuration
 
@@ -36,7 +36,7 @@ in the [oxtrust-config.json](https://github.com/GluuFederation/community-edition
   "umaScope":"https://%(hostname)s/oxauth/seam/resource/restv1/uma/scopes/scim_access"
 ```
 
-* Update the `umaClientID` with the `keyID` from `scim-rp-openid-keys.jason` file; if it is not updated, the first key from 
+* Update the `umaClientID` with the `keyID` from `scim-rp-openid-keys.json` file; if it is not updated, the first key from 
 the file is used.
 
 # Testing SCIM UMA
@@ -82,7 +82,7 @@ public class TestScimClient {
 		final String umaMetaDataUrl = "https://c67.gluu.info/.well-known/uma-configuration";
 		final String umaAatClientId = "@!A410.188A.95DD.EA5A!0001!3A1E.BAA5!0008!5870.A795";
  
-		final String umaAatClientJwks = FileUtils.readFileToString(new File("D:\\Development\\test_data\\scim\\scim-rp-openid-keys.json"));;
+		final String umaAatClientJwks = FileUtils.readFileToString(new File("D:\\Development\\test_data\\scim\\scim-rp-openid-keys.json"));
 		final String umaAatClientKeyId = "6a0fb7eb-a197-412b-a0a0-794999ac0b31";
  
 		testScim1Uma(domain, umaMetaDataUrl, umaAatClientId, umaAatClientJwks, umaAatClientKeyId);

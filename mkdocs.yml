@@ -24,11 +24,14 @@ pages:
     - 'RHEL 7': 'deployment/rhel7.md'
     - 'Setup Script Options': 'deployment/setup_py.md'
     - 'Microsoft Azure Guide': 'deployment/azure.md'
+    - 'Linode VM Guide': 'deployment/linode.md'
 - Upgrade Gluu CE:
     - 'Upgrade from 2.4.x': 'deployment/upgrading.md'
 
 - Cluster Configuration:
     - 'Clustering with CE': 'cluster/index.md'
+    - 'Clustering with CE: Installing csync2': 'cluster/csync-installation.md'
+
 - Gluu Server GUI:
     - 'Configuration': 'oxtrust/configuration.md'
     - 'OxTrust JSON Configuration': 'gluu-defaults/oxtrust-properties.md'
@@ -55,8 +58,11 @@ pages:
 - FAQ:
     - 'Troubleshooting': 'faq/troubleshooting.md'
 - How To's:
-    - 'Lock User Account': 'how-to/lock-user.md'
     - 'Automate Custom Schema': 'how-to/automate-schema.md'
+    - 'SCIM UMA': 'integrate/scimuma-howto.md'
+    - 'Lock User on Failed Attempt': 'cache-refresh/lock-user.md'
+    - 'UMA Demo Configuration': 'how-to/uma-demo.md'
+
 - Customize Gluu Server: 
     - 'Design Customization': 'customize/design.md'
     - 'Behaviour Customization': 'customize/script.md'
@@ -79,7 +85,6 @@ pages:
     - 'OpenID Connect RP in Ubuntu': 'integrate/ubuntu-installation.md'
     - 'OpenID Connect RP in CentOS': 'integrate/centos-installation.md'
     - 'OpenID Connect Liferay Plugin': 'integrate/oxray.md'
-    - 'SCIM UMA How-to': 'integrate/scimuma-howto.md'
     - 'OXD Server': 'integrate/oxd.md'
 - Integration Guides:
     - 'Google SSO': 'integrate/google-saml.md'
@@ -92,6 +97,7 @@ pages:
 - Gluu Defaults:
     - 'Configurations': 'gluu-defaults/config.md'
     - 'Certificates': 'gluu-defaults/certificates.md'
+    - 'Certificates: Further Reading': 'further-reading/cert-full-update-procedures.md'
     - 'LDAP': 'gluu-defaults/ldap.md'
     - 'Logout': 'gluu-defaults/logout.md'
     - 'Schema': 'gluu-defaults/schema.md'
@@ -104,6 +110,7 @@ pages:
     - 'OpenID Connect UserInfo Endpoint': 'api/oic-userinfo.md'
     - 'OpenID Connect Client Registration Endpoint': 'api/oic-register-client.md'
     - 'OpenID Connect End Session Endpoint': 'api/oic-end-session.md'
+    - 'OpenID Connect Client Info Endpoint': 'api/oic-clientinfo.md'
     - 'UMA Discovery Endpoint': 'api/uma-discovery.md'
     - 'UMA Authorization Endpoint': 'api/uma-authorization-endpoint.md'
     - 'UMA Resource Registration Endpoint': 'api/uma-resource-registration.md'
@@ -113,3 +120,5 @@ pages:
     - 'Custom ID Generation API': 'api/id-generation.md'
     - 'SCIM 1.1': 'api/scim-1.1.md'
     - 'SCIM 2.0': 'api/scim-2.0.md'
+    - 'Federation Endpoints': 'api/federation.md'
+

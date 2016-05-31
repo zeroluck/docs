@@ -152,7 +152,7 @@ Organization Policy by the Gluu Server administrator.
 
 * _JWE enc Algorithm for encrypting the ID Token:_ See [Algorithms section](#algorithm) for options
 
-* _JWS alg Algorithm for signing the UserInfo Responses:_ See [Algorithms section](#algorithm) for options
+* _JWS alg Algorithm for signing the UserInfo Responses:_ If this is specified, the response will be JWT serialized, and signed using JWS. The default, if omitted, is for the UserInfo Response to return the Claims as a UTF-8 encoded JSON object using the application/json content-type. See [Algorithms section](#algorithm) for options
 
 * _JWS alg Algorithm for encrypting the UserInfo Responses:_ See [Algorithms section](#algorithm) for options
 
@@ -216,7 +216,7 @@ etc.
 SHA-256 algorithm (algorithm value RS256). Additionally, oxAuth also
 supports other algorithms that are listed below.
 
-_Available Signature Algorithms:_ HS256, HS384, HS512, RS256, RS384, RS512, ES256, ES384, ES512.
+_Available Signature Algorithms:_ none, HS256, HS384, HS512, RS256, RS384, RS512, ES256, ES384, ES512.
 
 _Encryption, Key Encryption Algorithms:_ RSA1_5, RSA-OAEP, A128KW, A256KW.
 

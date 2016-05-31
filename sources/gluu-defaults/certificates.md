@@ -21,16 +21,22 @@ certificate do not worry about the file extension `.csr` and `.key.orig`.
 If you are using the Gluu Server CE binaries or latest Gluu Servers, you
 need to manually update certificates and keys from the file
 `/etc/certs/`. Please note that your private key cannot be password
-protected, and the public key should be base64 X.509. For example,
-follow these steps in order to update the Apache SSL cert:
+protected, and the public key should be base64 X.509. It's recommended to
+backup your full `/etc/certs` directory and `cacerts` file before
+proceeding, as well as to remove previous versions of certificates
+you are about to update from the `cacerts` storage.
+
+For example, follow these steps in order to update the Apache SSL cert:
 
 - save both the latest SSL httpd key and certificate in the file 
   `/etc/certs`.
 - rename them to `httpd.key` and `httpd.crt`, respectively.
 - import 'httpd.der' into java keystore
   - Convertion to DER, command: `openssl x509 -outform der -in httpd.crt -out httpd.der`
-  - Import this DER into java keystore (cacerts), command: `keytool -importcert -file httpd.der -keystore cacerts -alias <hostname_of_your_Gluu_Server>`
+  - Import this DER into java keystore (cacerts), command: `keytool -importcert -file httpd.der -keystore cacerts -alias <hostname_of_your_Gluu_Server>_httpd`
 - restart LDAP server, apache2/httpd and tomcat.
+
+You may find more info on certificates Gluu CE uses, as well as detailed steps to update them, in [this article](../further-reading/cert-full-update-procedures.md)
 
 ### Installing Intermediate Certificates
 
