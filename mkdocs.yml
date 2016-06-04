@@ -88,6 +88,7 @@ pages:
     - 'OXD Server': 'integrate/oxd.md'
 - Integration Guides:
     - 'Google SSO': 'integrate/google-saml.md'
+    - 'Office 365 SSO': 'integrate/office365.md'
     - 'Hobsons Education Solution SSO': 'integrate/hobsons-saml.md'
     - 'Salesforce SSO': 'integrate/salesforce-sso.md'
     - 'TestShib2 SSO': 'integrate/test-shib2.md'
