@@ -10,7 +10,7 @@ The authentication flow for this test is as follows
 |--------------|-----------|
 |https://sp.gluu.org|This is a shibboleth SP connected to _https://upgrade.gluu.org_|
 |https://upgrade.gluu.org| This is a Gluu Server 2.4.3 SAML IdP with Asimba|
-|https://test.gluu.org|This is a Gluu Server 2.4.3 SAML IdP|
+|https://test.gluu.org|This is a second Gluu Server 2.4.3 SAML IdP connected to _https://upgrade.gluu.org_ |
 
 **Note:** Ideally all SPs and IdPs should be connected to Asimba server. In this case we are following that rule as well.
 
@@ -27,9 +27,10 @@ Two code snippets are given below <br/>
 ```
 <MetadataProvider type="XML" validate="true" file="/etc/shibboleth/asimba_metadata.xml"/>
 ```
+**Note:** Deployer need to download Asimba server's metadata inside SP and provide the absolute path in `MetadataProvider` section
 
 ## https://upgrade.gluu.org setup
-* Install Gluu Server 2.4.3 with Asimba following the [Deployment Guide](../deployment/index.md)
+* Install Gluu Server 2.4.3 with Asimba following the [Deployment Guide](../deployment/index.md) and select 'Asimba' durning installation. 
 
 ### Add IdP
 * Add `https://upgrade.gluu.org`, as self IdP, and `https://test.gluu.org`, as remote IdP, inside Asimba
@@ -39,11 +40,13 @@ the authentication servers. Follow this template to add `https://test.gluu.org` 
 
 **Note:** The certificates below can be found in the `/etc/certs/` folder in the Gluu Server CE environment
 
-* Import the SAML Certificate inside the `asimbaIDP.jksi`
+* Convert `shibIDP.crt` to `shibIDP.der`
+   - code: ```openssl x509 -outform der -in shibIDP.crt -out shibIDP.der```
 
-* Convert `shibIDP.crt` to `shibIDP.der` and import the `.der` file into `asimbaIDP.jks`
+* Import abvoe DER into the `asimbaIDP.jks`
+   - code: ```keytool -importcert -file shibIDP.der -keystore asimbaIDP.jks -alias <entityID_of_ID>```
 
-* Restart Tomcat Server
+* Restart Tomcat Service
 
 ### Add SP
 * Navigate to SP Requestors from the left hand menu <br/>
