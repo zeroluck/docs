@@ -20,7 +20,7 @@ The requirements for Clusters vary only in the RAM requirement. Clusters require
 
 * Install Gluu CE following the [Deployment Page](../deployment/index.md) in `host-1`
 
-* <sub>*`(!)`Please note: you must do this step right after initial installation, but before you'll run setup.py script on 2nd node`(!)`*</sub> Copy `setup.properties.last` that will be generated in `/install/community-edition-setup/` right after `setup.py`'s completion on `host-1`, change IP address in it to the one of `host-2` and put it into the same directory of `host-2` while renaming the file to `setup.properties`, then run `setup.py` the usual way. Please be sure to read [this part](./index.md#optional-actions-in-case-setuppropertieslast-method-of-install-didnt-work-for-you) in case you failed to setup the 2nd node using `setup.properties.last` file from the 1st one for some reason, and resorted to installing it from scratch, that will call for additional steps.
+* <sub>*`(!)`Please note: you must do this step right after initial installation on the 2nd node, but before you'll run setup.py script there`(!)`*</sub> Copy `setup.properties.last` that will be generated in `/install/community-edition-setup/` right after `setup.py`'s completion on `host-1`, change IP address in it to the one of `host-2` and put it into the same directory of `host-2` while renaming the file to `setup.properties`, then run `setup.py` the usual way. Please be sure to read [this part](./index.md#optional-actions-in-case-setuppropertieslast-method-of-install-didnt-work-for-you) in case you failed to setup the 2nd node using `setup.properties.last` file from the 1st one for some reason, and resorted to installing it from scratch, that will call for additional steps.
 
 ## LDAP Replication
 
