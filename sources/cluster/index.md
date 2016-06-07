@@ -385,7 +385,7 @@ in each host, when required. Move to `/etc/certs/` on the 1st node (inside the c
 
 After that's done you still will need to update default system storage (`cacerts` file) at the 2nd node with these newly copied certificates. The [Certificate Page](../gluu-defaults/certificates.md) contains the details about available certificates and how to change them.
 
-## [Optional] Actions in case setup.properties.last method of install didn't work for you
+## [Optional] Actions in case setup.properties.last method of installation didn't work for you
 
 In this case jks keystores you'll be moving to the 2nd node will be protected by passwords hardcoded into different configuration files on the 1st node, which are different from the similar passwords hardcoded into the same files on the 2nd node.
 
