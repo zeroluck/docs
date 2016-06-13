@@ -90,6 +90,7 @@ pages:
     - 'Office 365 SSO': 'integrate/office365.md'
     - 'Hobsons Education Solution SSO': 'integrate/hobsons-saml.md'
     - 'Salesforce SSO': 'integrate/salesforce-sso.md'
+    - 'Dropbox SSO': 'integrate/dropbox.md'
     - 'TestShib2 SSO': 'integrate/test-shib2.md'
     - 'Asimba & Gluu CE': 'integrate/asimba.md'
 - Fine Tuning and Benchmarking:

@@ -9,6 +9,7 @@ Additional attributes can be added from the Gluu Server GUI, oxTrust, by
 clicking the **Add Attribute** button. Then, the following screen will
 appear:
 
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_menu_attribute.png)
 ![Add Attribute Screen](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_attribute_add.png)
 
 * _Name:_ This field defines the name of the custom attribute which must
