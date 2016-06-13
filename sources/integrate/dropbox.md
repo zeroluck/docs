@@ -42,14 +42,12 @@ The custom `nameid` needs to be defined in the `attribute-resolver` template fil
 ### Trust Relationship
 Please see [this doc](../integrate/outbound-saml.md) to create trust relationship and fill up the form with the following info
 
-1. Display Name: Dropbox
-2. Description: External SP / File method
-3. Metadata Type: File
-4. SP Metadata File: Upload the 'dropbox_metadata.xml' which you just created
-5. Configure Specific RelyiningParty: Yes
-
-![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/rp_configuration)
-
+*  Display Name: Dropbox
+*  Description: External SP / File method
+*  Metadata Type: File
+*  SP Metadata File: Upload the 'dropbox_metadata.xml' which you just created
+*  Configure Specific RelyiningParty: Yes
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/rp_configuration.png)
 ```
 signResponses: conditional
 signAssertions: never
@@ -57,25 +55,28 @@ signRequests: conditional
 encryptAssertions: never
 encryptNameIds: never
 ```
-6. Released attribute: emailnid
+*  Released attribute: emailnid
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/dropboxtr.png)
 
 ### Configure Gluu Server as IdP in Dropbox
 
-1. Log into Dropbox
-2. Click on `Admin Console`
-3. Click `Authentication`
-4. Click on the checkbox labeled `Enable single-sign-on`
-5. Optional/Required according to necessity
+*  Log into Dropbox
+*  Click on `Admin Console`
+*  Click `Authentication`
+*  Click on the checkbox labeled `Enable single-sign-on`
+*  Optional/Required according to necessity
 
-    1. Sign in URL
-```
+    - Sign in URL
+    ```
  https://<hostname_of_Gluu_server>/idp/profile/SAML2/Redirect/SSO 
+    ```
+
+    - X.509 certificate 
+```
+    Get `shibIDP.crt` from Gluu Server `chroot` environment under `/etc/certs/` folder and upload it
 ```
 
-    2. X.509 certificate: Get `shibIDP.crt` from Gluu Server `chroot` environment under `/etc/certs/` folder and upload it.
-
-6. Save configuration
+*  Save configuration
 
 ### Test SSO
 * Please go to https://www.dropbox.com and click on the `Sign In` button
