@@ -42,12 +42,22 @@ The custom `nameid` needs to be defined in the `attribute-resolver` template fil
 ### Trust Relationship
 Please see [this doc](../integrate/outbound-saml.md) to create trust relationship and fill up the form with the following info
 
+The metadata for Dropbox is necessary to create trust relationship. Please use the following snippet so create the `dropbox_metadata.xml`.
+
+```
+ <EntityDescriptor entityID="Dropbox" xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
+    <SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+        <NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</NameIDFormat>
+        <AssertionConsumerService index="1" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://www.dropbox.com/saml_login" />
+    </SPSSODescriptor>
+</EntityDescriptor> 
+```
+
 *  Display Name: Dropbox
 *  Description: External SP / File method
 *  Metadata Type: File
 *  SP Metadata File: Upload the 'dropbox_metadata.xml' which you just created
 *  Configure Specific RelyiningParty: Yes
-![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/rp_configuration.png)
 ```
 signResponses: conditional
 signAssertions: never
@@ -55,6 +65,8 @@ signRequests: conditional
 encryptAssertions: never
 encryptNameIds: never
 ```
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/rp_configuration.png)
+
 *  Released attribute: emailnid
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/dropboxtr.png)
 
@@ -75,6 +87,7 @@ encryptNameIds: never
 ```
     Get `shibIDP.crt` from Gluu Server `chroot` environment under `/etc/certs/` folder and upload it
 ```
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/dbadmin.png)
 
 *  Save configuration
 
