@@ -1,5 +1,5 @@
 # Dropbox SSO with Gluu Server
-This documents a step-by-step guide to setting up Dropbox SSO in Gluu Server.
+This document is a step-by-step guide to setting up Dropbox SSO in Gluu Server.
 This SSO requires settuing a custom `nameid` called `emailnid`.
 
 ### Custom NameID
@@ -95,7 +95,7 @@ encryptNameIds: never
 * Please go to https://www.dropbox.com and click on the `Sign In` button
 
 * If the account is configured for SSO, then a screen similar to the screenshot below will appear after entering the email address.
-!image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/dblogin.png)
+![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/dblogin.png)
 
 * Click `Continue` and the website will redirect to Gluu Server for authentication.
 
