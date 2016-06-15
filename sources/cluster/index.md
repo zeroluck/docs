@@ -127,7 +127,7 @@ See /tmp/opendj-replication-808135637744675184.log for a detailed log of this
 operation.
 ```
 
-<sub>*`(!)` OpenDJ may become picky about certificates used for SSL connections during replication in certain linux distros. Be sure you've cross certificates of each OpenDJ instance to default java of each node; another option is to use the same OpenDJ certificate/key pair for both nodes*</sub>   
+<sub>*`(!)` OpenDJ may become picky about certificates used for SSL connections during replication in certain linux distros. Make sure you've added certificates of each OpenDJ instance to default java key storage of each node; another option is to use the same OpenDJ certificate/key pair for both nodes*</sub>   
 
 ## File System Replication
 
