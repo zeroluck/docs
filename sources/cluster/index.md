@@ -127,6 +127,8 @@ See /tmp/opendj-replication-808135637744675184.log for a detailed log of this
 operation.
 ```
 
+<sub>*`(!)` OpenDJ may become picky about certificates used for SSL connections during replication in certain linux distros. Be sure you've cross certificates of each OpenDJ instance to default java of each node; another option is to use the same OpenDJ certificate/key pair for both nodes*</sub>   
+
 ## File System Replication
 
 <sub>*`(!)` Be advised that backup feature is broken in some of earlier versions of csync2 you may get installed from your distribution's repo. In that case you will need either to disable it by commenting out `backup-*` clauses in tool's configuration file, or to build csync2 of version 2.0+ from sources and use key `-l` in your xinetd.d's config (like `server_args     = -i -l -N idp1.gluu.org`) on both nodes.*</sub>   
@@ -381,7 +383,7 @@ group cluster_group
 ## Certificate Management
 
 The certificates do not vary in the manual cluster configuration. The certificates should be updated manually 
-in each host, when required. Move to `/etc/certs/` on the 1st node (inside the container). Copy all keys, certs and key storages conforming to these masks: `httpd.*`, `asimba.*`, `asimbaIDP.*` and `shibIDP.*` to the same directory on the 2nd node (overwriting files that exist there; you may opt to backup them first, just in case). Please note that in case of CE cluster you **must not** sync OpenDJ's certificates (`/etc/certs/opendj.crt`) between nodes, they must stay unique for each of them!
+in each host, when required. Move to `/etc/certs/` on the 1st node (inside the container). Copy all keys, certs and key storages conforming to these masks: `httpd.*`, `asimba.*`, `asimbaIDP.*` and `shibIDP.*` to the same directory on the 2nd node (overwriting files that exist there; you may opt to backup them first, just in case).
 
 After that's done you still will need to update default system storage (`cacerts` file) at the 2nd node with these newly copied certificates. The [Certificate Page](../gluu-defaults/certificates.md) contains the details about available certificates and how to change them.
 
