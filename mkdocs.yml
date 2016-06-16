@@ -55,6 +55,7 @@ pages:
     - 'Google Authentication': 'customize/social-login-google.md'
 
 - FAQ:
+    - 'General': 'faq/general.md'
     - 'Troubleshooting': 'faq/troubleshooting.md'
 - How To's:
     - 'Automate Custom Schema': 'how-to/automate-schema.md'
