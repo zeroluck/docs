@@ -57,11 +57,11 @@ pages:
 - FAQ:
     - 'General': 'faq/general.md'
     - 'Troubleshooting': 'faq/troubleshooting.md'
-- How To's:
+- How To:
     - 'Automate Custom Schema': 'how-to/automate-schema.md'
-    - 'SCIM UMA': 'integrate/scimuma-howto.md'
+    - 'Protect SCIM endpoints with UMA': 'integrate/scimuma-howto.md'
     - 'Lock User on Failed Attempt': 'cache-refresh/lock-user.md'
-    - 'UMA Demo Configuration': 'how-to/uma-demo.md'
+    - 'Configure UMA': 'how-to/uma-demo.md'
 
 - Customize Gluu Server: 
     - 'Design Customization': 'customize/design.md'
