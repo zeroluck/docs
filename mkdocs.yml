@@ -47,6 +47,7 @@ pages:
     - 'Reset User Password': 'cache-refresh/reset-password.md'
     - 'SCIM 2.0 Add/Delete User': 'cache-refresh/scim.md'
 - Authentication: 
+    - 'Intro': 'multi-factor/intro.md' 
     - 'DUO': 'multi-factor/duo.md'
     - 'U2F': 'multi-factor/u2f.md'
     - 'oxPush2': 'multi-factor/oxpush2.md'
