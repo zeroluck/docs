@@ -1,9 +1,9 @@
 # Authentication in the Gluu Server
 
-The Gluu Server was designed to be very flexible in handling unique requirements for authentication. By default, the Gluu Server utilizes LDAP (either the local LDAP included in all Gluu Server deployments, or an existing backend LDAP that is connected via our [Cache Refresh](../cache-refresh/index.md) process) for basic username/password authentication. 
+Using the  Gluu Server, you can define the business logic for complex multi-step authentication workflows, providing SSO for people using smart cards, tokens, mobile or biometric authentication mechanisms. You don't have to chose one multi-factor authentication technology. You can have multiple authentication mechanisms active at the same time--Web or mobile clients can request a certain authentication type by using standard OpenID Connect request parameters.
 
-The Gluu Server's authentication cabilities can be extended through the use of [custom jython interception scripts](../customize/script.md/) to call any third party authentication mechanism's APIs. For example, the Gluu Server ships with a script that calls APIs for our free two-factor authentication mobile application, [Super Gluu](https://super.gluu.org).  
+A number of multi-factor authentication scripts are shipped in the Gluu Server by default, including support for U2F tokens, Gluu's free mobile two factor application [Super Gluu](https://super.gluu.org), certificate authentication, and Duo Security. 
 
-Using custom interception scripts, you can implement sophisticated logic that takes into consideration metadata such as the time of day, location, device, IP address, etc. of the authentication before approving or denying the request. 
+Gluu leverages its interception script infrastructure for multi-factor authentication--[custom jython interception scripts](../customize/script.md/) can call third party authentication services via API's or vendor libraries. Sophisticated authentication logic can implement adaptive authentication. For example, you can add extra authentication steps based on contextual information, such as fraud scores, location, or browser profiling. You can also customize the look and feel of a web authentication: html, css, images and javascript can be externalized and managed by your organization. 
 
-
+Another feature of Gluu Server authentication is that you can define "Levels", enabling you to define the relative strength of several authentication workflows.
