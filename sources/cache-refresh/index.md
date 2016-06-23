@@ -1,4 +1,6 @@
 [TOC]
+# Overview
+Cache Refresh is the process of connecting an existing backend LDAP server, like Microsoft Active Directory, with the Gluu Server's local LDAP server. Synching people and attributes from a backend server into the Gluu Server speeds up authentication transactions. It is possible to perform attribute transformations, changing the name of attributes, or even using an interception script to change the values. Transformations are stored in the Gluu LDAP service. 
 
 # Things To Remember
 The Gluu Server supports two LDAP modes: (1) authentication and (2)
