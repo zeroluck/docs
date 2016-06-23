@@ -37,7 +37,7 @@ The custom `nameid` needs to be defined in the `attribute-resolver` template fil
  <resolver:PrincipalConnector xsi:type="pc:Transient" id="saml2Transient" nameIDFormat="urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress" /> 
 ```
 
-* Restart Tomcat Server
+* Restart Tomcat service
 
 ### Trust Relationship
 Please see [this doc](../integrate/outbound-saml.md) to create trust relationship and fill up the form with the following info
