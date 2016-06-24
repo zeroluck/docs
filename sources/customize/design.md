@@ -73,4 +73,18 @@ this snippet:
     </div>
 </s:fragment>
 ```
+A new tomcat wrapper variable is added to avoid hard coding or changing application configurations. 
+```
+wrapper.java.additional.20=-Dgluu.external.resource.base=/var/gluu/webapps
+```
 
+## Tomcat Restart Policy
+Tomcat Server does not need restart generally when custom pages are added in Gluu Server. However in the following cases, please restart Tomcat.
+
+1. Default Page overriden with custom page as JSF may cache path to original version
+
+2. Removal of page to replace context with empty page to invalidate it
+
+3. New environment variable is introduces
+
+**Note:** There is a 10 second delay on page modification reload

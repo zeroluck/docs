@@ -383,6 +383,7 @@ resourceRegistrar.register(values);
 - [UMA Requesting Party Sample implementation](https://github.com/GluuFederation/oxUmaDemo/tree/master/RP)
 - [UMA Resource Server Sample implementation](https://github.com/GluuFederation/oxUmaDemo/tree/master/RS)
 - [UMA Demo Video](http://www.gluu.co/uma-demo-video)
+- [UMA Demo Local Configuration (How to)](https://gluu.org/docs/how-to/uma-demo/)
 - [UMA Requesting Party Sample Live](https://kantara.gluu.org/rp/rp.html)
 - [UMA Resource Server Sample Live](https://kantara.gluu.org/rs/rs.html)
 - [Gluu Server](http://gluu.org)

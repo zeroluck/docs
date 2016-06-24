@@ -39,15 +39,9 @@ This section will guide you through the steps to configure apache to use the SSL
 
 1. Open the `default-ssl.conf` file<br/>`sudo vim /etc/apache2/sites-available/default-ssl.conf`
 
-2. Edit the file to edit the following fields to look like the examples below
+2. Update the certificate locations with the newly created certificates `/etc/apache2/ssl/apache.key` and `/etc/apache2/ssl/apache.crt`
 
-  * ServerName 
-  * ServerAlias 
-  * DocumentRoot
-  * SSlCertificateFile
-  * SSLCertificateKeyFile
-
-3. Activate the SSl Virtual Host and restart Apache Server
+3. Activate the SSl Virtual Host, if you are running `auth_oidc` and `Gluu Server` in the same machine, and restart Apache Server
 ```
 sudo a2ensite default-ssl.conf
 sudo service apache2 restart
@@ -80,19 +74,6 @@ If the package is not available, please check this [Github Page](https://github.
 
 **Note:** This module depends on `libhiredis0.10, libpcre3, & libjansson4` package. If the dependencies are not met, please install them manually using the `apt-get` command.
 
-### Load auth_openidc Module
-
-The module can be enabled using the follwing command:
-
-`sudo a2enmod auth_openidc`
-
-
-The Apache Web Server must be restarted to load this module. Pleae run the following command to restart the Apache Server:
-
-`sudo service apache2 restart`
-
-**Note:** Restart the server after configuring the module, else the server will not restart and it will throw errors. To check for errors, please chek the `errors.log` file in `/var/log/apache/` folder.
-
 # Configuration
 This is the configuration guide for the Apache Module `mod_auth_aidc`.
 
@@ -121,9 +102,14 @@ The example configuration uses `dynamic.gluu.org` as the server name and `ce.glu
 The following example shows the configuration for dynamic client registration. 
 
 ### Preparing auth_openidc Module
-Please add the following lines in the `auth_openidc` configuration file.
+The OpenID Connect module requires a folder to store the metadata, therefore create a metadata folder and change permission using the following commands.
 
-Add the following lines in `/etc/apache2/mods-available/auth_openidc.conf`
+```
+# mkdir /var/cache/apache2/metadata
+# chown -R www-data:www-data /var/cache/apache2/metadata
+```
+
+Please add the following lines in the `auth_openidc.conf` configuration file under `/etc/apache2/mods-available/` folder.
 
 ```
 OIDCMetadataDir /var/cache/apache2/mod_auth_openidc/metadata
@@ -133,10 +119,19 @@ OIDCCryptoPassphrase secret
 OIDCSSLValidateServer Off
 ```
 
-The default `metadata` folder is used in this example but it can be changed to any other convenient location as well.
-Run the following command to enable the module:
+### Load auth_openidc Module
+
+The module can be enabled using the follwing command:
 
 `sudo a2enmod auth_openidc`
+
+
+The Apache Web Server must be restarted to load this module. Pleae run the following command to restart the Apache Server:
+
+`sudo service apache2 restart`
+
+**Note:** Restart the server after configuring the module, else the server will not restart and it will throw errors. To check for errors, please chek the `errors.log` file in `/var/log/apache/` folder.
+
 
 ### Preparing Protected Resource
 
@@ -179,7 +174,7 @@ Create the apache configuration file named `dynamic.conf` in the `/etc/apache2/s
 </VirtualHost>
 ```
 
-**Note:** The default certificate location for the SSL module is used in this example. Please change the locaiton if you use your own certificate.
+**Note:** The example uses a custom port, but if the Apache server is stand-alone in the server, the default `443` port can be used. 
 
 ### Enable Site
 The `dynamic` site is enabled using the `a2ensite` command. Run the commands below to enable the site and restart Apache Server:

@@ -29,9 +29,8 @@ pages:
     - 'Upgrade from 2.4.x': 'deployment/upgrading.md'
 
 - Cluster Configuration:
+    - 'Requirements: csync2 Installation': 'cluster/csync-installation.md'
     - 'Clustering with CE': 'cluster/index.md'
-    - 'Clustering with CE: Installing csync2': 'cluster/csync-installation.md'
-
 - Gluu Server GUI:
     - 'Configuration': 'oxtrust/configuration.md'
     - 'OxTrust JSON Configuration': 'gluu-defaults/oxtrust-properties.md'
@@ -47,7 +46,8 @@ pages:
     - 'Register Users': 'cache-refresh/register.md'
     - 'Reset User Password': 'cache-refresh/reset-password.md'
     - 'SCIM 2.0 Add/Delete User': 'cache-refresh/scim.md'
-- Authentication Mangement: 
+- Authentication: 
+    - 'Intro': 'multi-factor/intro.md' 
     - 'DUO': 'multi-factor/duo.md'
     - 'U2F': 'multi-factor/u2f.md'
     - 'oxPush2': 'multi-factor/oxpush2.md'
@@ -56,12 +56,13 @@ pages:
     - 'Google Authentication': 'customize/social-login-google.md'
 
 - FAQ:
+    - 'General': 'faq/general.md'
     - 'Troubleshooting': 'faq/troubleshooting.md'
-- How To's:
+- How To:
     - 'Automate Custom Schema': 'how-to/automate-schema.md'
-    - 'SCIM UMA': 'integrate/scimuma-howto.md'
+    - 'Protect SCIM endpoints with UMA': 'integrate/scimuma-howto.md'
     - 'Lock User on Failed Attempt': 'cache-refresh/lock-user.md'
-    - 'UMA Demo Configuration': 'how-to/uma-demo.md'
+    - 'Configure UMA': 'how-to/uma-demo.md'
 
 - Customize Gluu Server: 
     - 'Design Customization': 'customize/design.md'
@@ -88,13 +89,16 @@ pages:
     - 'OXD Server': 'integrate/oxd.md'
 - Integration Guides:
     - 'Google SSO': 'integrate/google-saml.md'
+    - 'Office 365 SSO': 'integrate/office365.md'
     - 'Hobsons Education Solution SSO': 'integrate/hobsons-saml.md'
     - 'Salesforce SSO': 'integrate/salesforce-sso.md'
+    - 'Dropbox SSO': 'integrate/dropbox.md'
     - 'TestShib2 SSO': 'integrate/test-shib2.md'
     - 'Asimba & Gluu CE': 'integrate/asimba.md'
 - Fine Tuning and Benchmarking:
     - 'Tuning LDAP, Tomcat': 'fine-tuning/index.md'
 - Gluu Defaults:
+    - 'Gluu Policy': 'gluu-defaults/policy.md'
     - 'Configurations': 'gluu-defaults/config.md'
     - 'Certificates': 'gluu-defaults/certificates.md'
     - 'Certificates: Further Reading': 'further-reading/cert-full-update-procedures.md'
