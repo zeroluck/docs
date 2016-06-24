@@ -14,7 +14,7 @@ The menu on the left can be used to navigate the docs. However for convenience t
 |	Ubuntu			|**[14.04](./deployment/ubuntu.md) <br/> [16.04](./deployment/ubuntu-xenial.md)**|
 |	CentOS			|**[6.x](./deployment/centos.md) <br/> [7.2](./deployment/centos7.md)**|
 |	RHEL			|**[6.x](./deployment/rhel.md) <br/> [7](./deployment/rhel7.md)**|
-|	Debian			|**[8.x](./deployment/debian-jessi.md)**|
+|	Debian			|**[8.x](./deployment/debian.md)**|
 
 ### Upgrading from a previous release
 * [**Upgrade to latest release**](./deployment/upgrading.md)
