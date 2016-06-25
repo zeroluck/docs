@@ -85,8 +85,8 @@ public class TestScimClient {
 		final String umaMetaDataUrl = "https://c67.gluu.info/.well-known/uma-configuration";
 		final String umaAatClientId = "@!A410.188A.95DD.EA5A!0001!3A1E.BAA5!0008!5870.A795";
  
-		final String umaAatClientJksPath = FileUtils.readFileToString(new File("D:\\Development\\test_data\\scim\\scim-rp.jks"));
-		final String umaAatClientJksPassword = "";
+		final String umaAatClientJksPath = "D:\\Development\\test_data\\scim\\scim-rp.jks";
+		final String umaAatClientJksPassword = "secret";
 		final String umaAatClientKeyId = "";
  
 		testScim1Uma(domain, umaMetaDataUrl, umaAatClientId, umaAatClientJksPath, umaAatClientJksPassword, umaAatClientKeyId);
