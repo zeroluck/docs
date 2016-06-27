@@ -42,10 +42,10 @@ pages:
     - 'Personal': 'oxtrust/personal.md'
 - User Managment: 
     - 'Sync LDAP/AD': 'cache-refresh/index.md'
-    - 'Import XLS File': 'cache-refresh/xlsfile.md'
+    - 'Import XLS File': 'user-management/xlsfile.md'
     - 'Register Users': 'cache-refresh/register.md'
     - 'Reset User Password': 'cache-refresh/reset-password.md'
-    - 'SCIM 2.0 Add/Delete User': 'cache-refresh/scim.md'
+    - 'SCIM 2.0 Add/Delete User': 'user-management/scim.md'
 - Authentication: 
     - 'Intro': 'multi-factor/intro.md' 
     - 'DUO': 'multi-factor/duo.md'
@@ -61,7 +61,7 @@ pages:
 - How To:
     - 'Automate Custom Schema': 'how-to/automate-schema.md'
     - 'Protect SCIM endpoints with UMA': 'integrate/scimuma-howto.md'
-    - 'Lock User on Failed Attempt': 'cache-refresh/lock-user.md'
+    - 'Lock User on Failed Attempt': 'user-management/lock-user.md'
     - 'Configure UMA': 'how-to/uma-demo.md'
 
 - Customize Gluu Server: 
