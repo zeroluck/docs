@@ -24,6 +24,7 @@ The `setup.properties.file` contains the RS and RP `JWKS.json` in Base64 format.
 # Configuration
 
 * Enable SCIM from Organization Configuration
+
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_config_system.png)
 
 * oxTrust SCIM UMA configuration is automacially updated while running the `setup.py` and the correct values are setup 
@@ -42,7 +43,26 @@ in the [oxtrust-config.json](https://github.com/GluuFederation/community-edition
 the file is used.
 
 # Testing SCIM UMA
-The following is a sample code that can be run to test the configured SCIM UMA Gluu CE.
+The following is a sample code that can be run to test the configured SCIM UMA Gluu CE. It uses [SCIM-Client](https://github.com/GluuFederation/SCIM-Client), a Java library also developed by Gluu intended for client applications.
+
+* If you are using Maven, below is how to add SCIM-Client to your project:
+```
+<repositories>
+  <repository>
+    <id>gluu</id>
+    <name>Gluu repository</name>
+    <url>http://ox.gluu.org/maven</url>
+  </repository>
+</repositories>
+...
+<dependency>
+  <groupId>gluu.scim.client</groupId>
+  <artifactId>SCIM-Client</artifactId>
+  <version>${scim.client.version}</version>
+</dependency>
+```
+
+* Add your domain's SSL certificate to the JRE's `cacerts` certificate key store where your client application will run. There are lots of articles around the Web on how to do this.
 
 * Replace `scim_rp_client_id` and `scim_rp_client_jwks_key_id` and run the code.
 
