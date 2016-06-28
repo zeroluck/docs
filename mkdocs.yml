@@ -22,6 +22,7 @@ pages:
     - 'CentOS 7.2': 'deployment/centos7.md'
     - 'RHEL 6.x': 'deployment/rhel.md'
     - 'RHEL 7': 'deployment/rhel7.md'
+    - 'Debian': 'deployment/debian.md'
     - 'Setup Script Options': 'deployment/setup_py.md'
     - 'Microsoft Azure Guide': 'deployment/azure.md'
     - 'Linode VM Guide': 'deployment/linode.md'

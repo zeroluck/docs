@@ -31,7 +31,7 @@ The following pages explain the oxTrust GUI
 |SAML|[Outbound](./integrate/outbound-saml.md)<br/> [Inbound](./integrate/inbound-saml.md)|
 |**[OpenID Connect](./integrate/openid-connect.md)**|n/a|
 |**[UMA](./integrate/uma.md)**|n/a|
-|**[Users](./oxtrust/users.md)**|[Import People](./cache-refresh/xlsfile.md)|
+|**[Users](./oxtrust/users.md)**|[Import People](./user-management/xlsfile.md)|
 |**[Personal](./oxtrust/personal.md)**|n/a|
 
 ## Integrate Gluu Server
