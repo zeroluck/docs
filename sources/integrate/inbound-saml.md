@@ -43,7 +43,7 @@
 
 # Inbound SAML in Gluu Server
 
-The main use case for Asimba is to enable websites to use a single IdP
+To achieve inbound SAML, the Gluu Server uses an open source product called Asimba. The main use case for Asimba is to enable websites to use a single IdP
 for single sign-on (SSO) even when the organization may have a number of
 IdPs that are trusted. For more information, please review the [Asimba
 website](http://www.asimba.org/site/).
