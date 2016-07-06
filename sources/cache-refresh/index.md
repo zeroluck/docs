@@ -4,10 +4,10 @@ Cache Refresh is the process of connecting an existing backend LDAP server, like
 
 # Video Tutorial
 For a guided video overview of configuring Cache Refresh, please watch the following three videos:
-- [Part 1: What is 'Cache Refresh' and How Does it Work?](https://youtu.be/VnyCTUCRkic)
-- [Part 2: Configuring Cache Refresh in the Gluu Server](https://youtu.be/c64l_xmBbvw)
-- [Part 3: Managing Authentication After You've Setup Cache Refresh](https://youtu.be/fyAEwJuwqn4)
-
+- [Part 1: What is 'Cache Refresh' and How Does it Work?](https://youtu.be/VnyCTUCRkic)     
+- [Part 2: Configuring Cache Refresh in the Gluu Server](https://youtu.be/c64l_xmBbvw)    
+- [Part 3: Managing Authentication After You've Setup Cache Refresh](https://youtu.be/fyAEwJuwqn4)    
+       
 # Things To Remember
 The Gluu Server supports two LDAP modes: (1) authentication and (2)
 identity mapping. Only sometimes it is the same LDAP server. To
