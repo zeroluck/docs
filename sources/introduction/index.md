@@ -39,14 +39,10 @@ The third party components have separate licenses.
 
 |	Component	|	License	|
 |-----------------------|---------------|
-|	Shibboleth	|	[Apache2](http://www.apache.org/licenses/LICENSE-2.0)|
+|	Shibboleth  |	[Apache2](http://www.apache.org/licenses/LICENSE-2.0)|
 |	OpenDJ		|	[CDDL-1.0](http://opensource.org/licenses/CDDL-1.0)|
-|	OpenLDAP	|	[OpenLDAP Public License](http://www.openldap.org/software/release/license.html)|
-|	389DS		|	[389 Directory Server License](http://www.port389.org/docs/389ds/FAQ/licensing.html)|
 |	Asimba		|	[GNU APGL 3.0](http://www.gnu.org/licenses/agpl-3.0.html)|
 |	Jagger		|	[MIT License](http://opensource.org/licenses/MIT)|
 
-Note: Gluu maintains a fork of OpenDJ in [our Github](https://github.com/GluuFederation/gluu-opendj3).
-
-If you use ForgeRock binary packages, you have to accept their license. However the source code is CDDL license, so as long as you are building from source (which is what Gluu does), you're clear to put the bits into production without purchasing a commercial license from ForgeRock.
+Note: Gluu maintains a fork of OpenDJ 3 in [our Github](https://github.com/GluuFederation/gluu-opendj3).
 
