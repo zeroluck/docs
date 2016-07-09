@@ -29,17 +29,27 @@ The IdP can be added from the Gluu Admin Panel (oxTrust) and navigating to SAML 
 
 * Fill up the form with the information below:
     
-* ID: The entityID of the remote ID/ADFS 
+    * ID: The entityID of the remote ID/ADFS 
 
-        - Example: `https:<hostname_of_gluu_server>/idp/shibboleth` - Friendly Name: Anything you want - Metadata URL: Keep it blank, we will upload metadata - Metadata Timeout: Keep it as it is. - Metadata File: Download metadata of remote IDP/ADFS and upload that XML file. - Example: `wget -c https:<hostname_of_gluu_server>/idp/shibboleth`
+        - Example: `https:<hostname_of_gluu_server>/idp/shibboleth`  
 
-    * Trust Certificate File: Grab the SAML cert from remote IDP/ADFS and upload that x509 crt.
+    * Friendly Name: Anything you want 
 
-        - Example: You will get the SAML cert from Gluu Server's metadata link or available inside /etc/certs/shibIDP.crt
+    * Metadata URL: Keep it blank, we will upload metadata
 
-   * NameIDFormat: SAML2 URI if remote IDP is a Gluu Server.
+    * Metadata Timeout: Keep it as it is. 
 
-        - Example: `urn:oasis:names:tc:SAML:2.0:nameid-format:transient`
+    * Metadata File: Download metadata of remote IDP/ADFS and upload that XML file. 
+    
+        - Example: The metadata for Gluu IdP can be downloaded using `wget -c https:<hostname_of_gluu_server>/idp/shibboleth`
+
+    * Trust Certificate File: Grab the SAML cert from remote IDP/ADFS and upload that x509 crt
+
+        - Example: You will get the SAML cert from Gluu Server's metadata link or available inside `/etc/certs/shibIDP.crt`
+
+    * NameIDFormat: SAML2 URI if remote IDP is a Gluu Server
+
+        - Example: `urn:oasis:names:tc:SAML:2.0:nameid-format:transient'
 
 * Restart tomcat service: 'service tomcat restart' from Gluu Server container
 
@@ -81,11 +91,9 @@ This feature will allow you 'automatically' select specific IDP for specific SP.
 * Log into oxTrust interface
 
 * Navigate to SAML --> Selectors
-
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/add-selector_menu.png)
 
 * Click on the 'Add Selector' button
-
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/add-selector_button.png)
 
     * Select SP Requestor: Select your desired SP from drop down menu
