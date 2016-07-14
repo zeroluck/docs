@@ -16,7 +16,7 @@ is used.
 **Note:** The JWKS for RS and RP clients are put into the `./output/scim.ldif` file ready for SCIM configuration.
 The `setup.properties.file` contains the RS and RP `JWKS.json` in Base64 format.
 
-* Use the following cmmand to extract OpenID SCIM RS and RP Client ID
+* Use the following command to extract OpenID SCIM RS and RP Client ID
 ` cat setup.properties.last | grep "scim_rs_client_id\|scim_rp_client_id"`
 
 * The UMA SCIM client requires JWKS, so the setup script extracts the JWKS from `setup.properties.last` and puts it into the `./output/scim-rp.jks` file.
@@ -27,7 +27,7 @@ The `setup.properties.file` contains the RS and RP `JWKS.json` in Base64 format.
 
 ![image](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_config_system.png)
 
-* oxTrust SCIM UMA configuration is automacially updated while running the `setup.py` and the correct values are setup 
+* oxTrust SCIM UMA configuration is automatically updated while running the `setup.py` and the correct values are setup 
 in the [oxtrust-config.json](https://github.com/GluuFederation/community-edition-setup/blob/master/templates/oxtrust-config.json#L122) file.
 ```
   "umaIssuer":"https://%(hostname)s",
@@ -39,8 +39,7 @@ in the [oxtrust-config.json](https://github.com/GluuFederation/community-edition
   "umaClientKeyStorePassword":"%(scim_rs_client_jks_pass_encoded)s",
 ```
 
-* Update the `umaClientKeyId` with the `alias` from `scim-rp.jks` file; if it is not updated, the first key from 
-the file is used.
+* `umaClientKeyId` can be updated with the `alias` from `scim-rp.jks` file; if it is not updated, the first key from the file is used automatically.
 
 # Testing SCIM UMA
 The following is a sample code that can be run to test the configured SCIM UMA Gluu CE. It uses [SCIM-Client](https://github.com/GluuFederation/SCIM-Client), a Java library also developed by Gluu intended for client applications.
@@ -74,19 +73,18 @@ import gluu.scim.client.ScimClient;
 import gluu.scim.client.ScimResponse;
 import gluu.scim2.client.Scim2Client;
  
-import java.io.File;
 import java.io.IOException;
  
 import javax.ws.rs.core.MediaType;
 import javax.xml.bind.JAXBException;
  
-import org.apache.commons.io.FileUtils;
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
  
 public class TestScimClient {
  
 	private static void testScim1Uma(String domain, String umaMetaDataUrl, String umaAatClientId, String umaAatClientJksPath, String umaAatClientJksPassword, String umaAatClientKeyId) throws IOException, JsonGenerationException, JsonMappingException, JAXBException {
+	
         final ScimClient scimClient = ScimClient.umaInstance(domain, umaMetaDataUrl, umaAatClientId, umaAatClientJksPath, umaAatClientJksPassword, umaAatClientKeyId);
  
         ScimResponse response = scimClient.personSearch("uid", "admin", MediaType.APPLICATION_JSON);
@@ -94,6 +92,7 @@ public class TestScimClient {
 	}
  
 	private static void testScim2Uma(String domain, String umaMetaDataUrl, String umaAatClientId, String umaAatClientJksPath, String umaAatClientJksPassword, String umaAatClientKeyId) throws IOException, JsonGenerationException, JsonMappingException, JAXBException {
+	
         final Scim2Client scim2Client = Scim2Client.umaInstance(domain, umaMetaDataUrl, umaAatClientId, umaAatClientJksPath, umaAatClientJksPassword, umaAatClientKeyId);
  
         ScimResponse response = scim2Client.personSearch("uid", "admin", MediaType.APPLICATION_JSON);
@@ -101,6 +100,7 @@ public class TestScimClient {
 	}
  
 	public static void main(String[] args) throws IOException, JAXBException {
+	
 		final String domain = "https://c67.gluu.info/identity/seam/resource/restv1";
 		final String umaMetaDataUrl = "https://c67.gluu.info/.well-known/uma-configuration";
 		final String umaAatClientId = "@!A410.188A.95DD.EA5A!0001!3A1E.BAA5!0008!5870.A795";
@@ -110,7 +110,7 @@ public class TestScimClient {
 		final String umaAatClientKeyId = "";
  
 		testScim1Uma(domain, umaMetaDataUrl, umaAatClientId, umaAatClientJksPath, umaAatClientJksPassword, umaAatClientKeyId);
-    	testScim2Uma(domain, umaMetaDataUrl, umaAatClientId, umaAatClientJksPath, umaAatClientJksPassword, umaAatClientKeyId);
+		testScim2Uma(domain, umaMetaDataUrl, umaAatClientId, umaAatClientJksPath, umaAatClientJksPassword, umaAatClientKeyId);
     }
 }
 
