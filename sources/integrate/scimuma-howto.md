@@ -27,7 +27,7 @@ The `setup.properties.file` contains the RS and RP JWKS in Base64 format.
 
 * Enable SCIM from Organization Configuration
 
-![image](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_config_system.png)
+![image](/sources/img/2.4/enable-scim.png)
 
 * oxTrust SCIM UMA configuration is automatically updated while running the `setup.py` and the correct values are setup 
 in the [oxtrust-config.json](https://github.com/GluuFederation/community-edition-setup/blob/master/templates/oxtrust-config.json#L122) file.
