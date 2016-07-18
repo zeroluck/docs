@@ -24,7 +24,9 @@ environment to configure the Gluu Server. These are the single steps:
 ```
 # /sbin/gluu-serverd-2.4.3 start
 
-# /sbin/gluu-serverd-2.4.3login
+# /sbin/gluu-serverd-2.4.3 enable
+
+# /sbin/gluu-serverd-2.4.3 login
 
 # cd /install/community-edition-setup/
 
