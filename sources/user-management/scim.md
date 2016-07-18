@@ -15,70 +15,93 @@ There are two methods to add users:
 |givenName| The first name of the end-user|
 |familyName| The last name of the end-user|
 |displayName| The formatted first name followed by last name|
-|password| The intended password for the user that is added|
 |_groups_| Optional parameter if the user is added to any specific group|
 
 ### JSON String
-The user is added using a JSON object string using the required parameters. However it is possible to add more parameters 
-while adding the user. The following is an example of a JSON string used to add user in Gluu Server.
+The user is added using a JSON object string using the required parameters; however it is possible to add more parameters. The following is an example of a JSON string used to add a user.
 
 ```
-Scim2Client client = Scim2Client.umaInstance(domain, umaMetaDataUrl, umaAatClientId, umaAatClientJwksPath, umaAatClientJwksPassword, umaAatClientKeyId);
-ScimResponse response = client.createPersonString(createJson, MediaType.APPLICATION_JSON);
-scim2.person.create_json = {"schemas":["urn:ietf:params:scim:schemas:core:2.0:User"],"externalId":"scimclient","userName":"${userjson.add.username}","name":{"givenName":"json","familyName":"json","middleName":"N/A","honorificPrefix":"N/A","honorificSuffix":"N/A"},"displayName":"json json","nickName":"json","profileUrl":"http://www.gluu.org/","emails":[{"value":"json@gluu.org","type":"work","primary":"true"},{"value":"json2@gluu.org","type":"home","primary":"false"}],"addresses":[{"type":"work","streetAddress":"621 East 6th Street Suite 200","locality":"Austin","region":"TX","postalCode":"78701","country":"US","formatted":"621 East 6th Street Suite 200  Austin , TX 78701 US","primary":"true"}],"phoneNumbers":[{"value":"646-345-2346","type":"work"}],"ims":[{"value":"nynytest_user","type":"Skype"}],"userType":"CEO","title":"CEO","preferredLanguage":"en-us","locale":"en_US","active":"true","password":"secret","groups":[{"display":"Gluu Test Group","value":"${group1Inum}"}],"roles":[{"value":"Owner"}],"entitlements":[{"value":"full access"}],"x509Certificates":[{"value":"MIIDQzCCAqygAwIBAgICEAAwDQYJKoZIhvcNAQEFBQAwTjELMAkGA1UEBhMCVVMxEzARBgNVBAgMCkNhbGlmb3JuaWExFDASBgNVBAoMC2V4YW1wbGUuY29tMRQwEgYDVQQDDAtleGFtcGxlLmNvbTAeFw0xMTEwMjIwNjI0MzFaFw0xMjEwMDQwNjI0MzFa MH8xCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRQwEgYDVQQKDAtleGFtcGxlLmNvbTEhMB8GA1UEAwwYTXMuIEJhcmJhcmEgSiBKZW5zZW4gSUlJMSIwIAYJKoZIhvcNAQkBFhNiamVuc2VuQGV4YW1wbGUuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7Kr+Dcds/JQ5GwejJFcBIP682X3xpjis56AK02bc1FLgzdLI8auoR+cC9/Vrh5t66HkQIOdA4unHh0AaZ4xL5PhVbXIPMB5vAPKpzz5iPSi8xO8SL7I7SDhcBVJhqVqr3HgllEG6UClDdHO7nkLuwXq8HcISKkbT5WFTVfFZzidPl8HZ7DhXkZIRtJwBweq4bvm3hM1Os7UQH05ZS6cVDgweKNwdLLrT51ikSQG3DYrl+ft781UQRIqxgwqCfXEuDiinPh0kkvIi5jivVu1Z9QiwlYEdRbLJ4zJQBmDrSGTMYn4lRc2HgHO4DqB/bnMVorHB0CC6AV1QoFK4GPe1LwIDAQABo3sweTAJBgNVHRMEAjAAMCwGCWCGSAGG+EIBDQQfFh1PcGVuU1NMIEdlbmVyYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQU8pD0U0vsZIsaA16lL8En8bx0F/gwHwYDVR0jBBgwFoAUdGeKitcaF7gnzsNwDx708kqaVt0wDQYJKoZIhvcNAQEFBQADgYEAA81SsFnOdYJtNg5Tcq+/ByEDrBgnusx0jloUhByPMEVkoMZ3J7j1ZgI8rAbOkNngX8+pKfTiDz1RC4+dx8oU6Za+4NJXUjlL5CvV6BEYb1+QAEJwitTVvxB/A67g42/vzgAtoRUeDov1+GFiBZ+GNF/cAYKcMtGcrs2i97ZkJMo="}],"meta":{"created":"2010-01-23T04:56:22Z","lastModified":"2011-05-13T04:42:34Z","version":"aversion","location":"http://localhost:8080/identity/seam/resource/restv1/Users/8c4b6c26-efaf-4840-bddf-c0146a8eb2a9"}}
+        Scim2Client client = Scim2Client.umaInstance(domain, umaMetaDataUrl, umaAatClientId, umaAatClientJksPath, umaAatClientJksPassword, umaAatClientKeyId);
+        String createJson = {"schemas":["urn:ietf:params:scim:schemas:core:2.0:User"],"externalId":"12345","userName":"newUser","name":{"givenName":"json","familyName":"json","middleName":"N/A","honorificPrefix":"","honorificSuffix":""},"displayName":"json json","nickName":"json","profileUrl":"http://www.gluu.org/","emails":[{"value":"json@gluu.org","type":"work","primary":"true"},{"value":"json2@gluu.org","type":"home","primary":"false"}],"addresses":[{"type":"work","streetAddress":"621 East 6th Street Suite 200","locality":"Austin","region":"TX","postalCode":"78701","country":"US","formatted":"621 East 6th Street Suite 200  Austin , TX 78701 US","primary":"true"}],"phoneNumbers":[{"value":"646-345-2346","type":"work"}],"ims":[{"value":"nynytest_user","type":"Skype"}],"userType":"CEO","title":"CEO","preferredLanguage":"en-us","locale":"en_US","active":"true","password":"secret","groups":[{"display":"Gluu Test Group","value":"@!9B22.5F33.7D8D.B890!0001!880B.F95A!0003!60B7"}],"roles":[{"value":"Owner"}],"entitlements":[{"value":"full access"}],"x509Certificates":[{"value":"cert-12345"}]}
+        ScimResponse response = client.createPersonString(createJson, MediaType.APPLICATION_JSON);
 ```
 ### User Object
-The user is added using a JSON user object using the same required parameters. However it is possible to add more parameters 
-while preparing the JSON Object. The following snippet of code shows an example of user parameters added to SCIM Test Client.
+The following code snippet uses the User object.
 
 ```
-	ScimResponse response = client.createPerson(personToAdd, MediaType.APPLICATION_JSON);
-        personToAdd.setUserName(username);
-        personToAdd.setPassword("test");
-        personToAdd.setDisplayName("Scim2DisplayName2");
+        User user = new User();
 
+        Name name = new Name();
+        name.setGivenName("Given Name");
+        name.setMiddleName("Middle Name");
+        name.setFamilyName("Family Name");
+        user.setName(name);
+
+        user.setActive(true);
+
+        user.setUserName("newUser_" +  + new Date().getTime());
+        user.setPassword("secret");
+        user.setDisplayName("Display Name");
+        user.setNickName("Nickname");
+        user.setProfileUrl("");
+        user.setLocale("en");
+        user.setPreferredLanguage("US_en");
+
+        List<Email> emails = new ArrayList<Email>();
         Email email = new Email();
-        email.setValue("scim@gluu.org");
-        email.setType(org.gluu.oxtrust.model.scim2.Email.Type.WORK);
         email.setPrimary(true);
-        personToAdd.getEmails().add(email);
+        email.setValue("a@b.com");
+        email.setDisplay("a@b.com");
+        email.setType(Email.Type.WORK);
+        email.setReference("");
+        emails.add(email);
+        user.setEmails(emails);
 
-        PhoneNumber phone = new PhoneNumber();
-        phone.setType(org.gluu.oxtrust.model.scim2.PhoneNumber.Type.WORK);
-        phone.setValue("654-6509-263");
-        personToAdd.getPhoneNumbers().add(phone);
+        List<PhoneNumber> phoneNumbers = new ArrayList<PhoneNumber>();
+        PhoneNumber phoneNumber = new PhoneNumber();
+        phoneNumber.setPrimary(true);
+        phoneNumber.setValue("123-456-7890");
+        phoneNumber.setDisplay("123-456-7890");
+        phoneNumber.setType(PhoneNumber.Type.WORK);
+        phoneNumber.setReference("");
+        phoneNumbers.add(phoneNumber);
+        user.setPhoneNumbers(phoneNumbers);
 
-        org.gluu.oxtrust.model.scim2.Address address = new org.gluu.oxtrust.model.scim2.Address();
-        address.setCountry("US");
-        address.setStreetAddress("random street");
-        address.setLocality("Austin");
-        address.setPostalCode("65672");
-        address.setRegion("TX");
+        List<Address> addresses = new ArrayList<Address>();
+        Address address = new Address();
         address.setPrimary(true);
-        address.setType(org.gluu.oxtrust.model.scim2.Address.Type.WORK);
-        address.setFormatted(address.getStreetAddress() + " " + address.getLocality() + " " + address.getPostalCode() + " " + address.getRegion() + " "
-                + address.getCountry());
-        personToAdd.getAddresses().add(address);
+        address.setValue("test");
+        address.setDisplay("My Address");
+        address.setType(Address.Type.WORK);
+        address.setReference("");
+        address.setStreetAddress("My Street");
+        address.setLocality("My Locality");
+        address.setPostalCode("12345");
+        address.setRegion("My Region");
+        address.setCountry("My Country");
+        address.setFormatted("My Formatted Address");
+        addresses.add(address);
+        user.setAddresses(addresses);
 
-        personToAdd.setPreferredLanguage("US_en");
+        ScimResponse response = client.createUser(user, new String[]{});
+        System.out.println("response body = " + response.getResponseBodyString());
 
-        org.gluu.oxtrust.model.scim2.Name name = new  org.gluu.oxtrust.model.scim2.Name();
-        name.setFamilyName("SCIM");
-        name.setGivenName("SCIM");
-        personToAdd.setName(name);
+        assertEquals(response.getStatusCode(), 201, "Could not add user, status != 201");
+
+        User userCreated = Util.toUser(response, client.getUserExtensionSchema());
+        String id = userCreated.getId();
 ```
 
 ## Delete User
-The user is deleted using a JSON object string passing the required parameter.
-The following snippet is from SCIM test client showing the code to delete the user with UID.
+To delete a user only the id/userName is needed.
 
 ```
-ScimResponse response = client.deletePerson(this.uid);
-		System.out.println("deletePersonTest response json: " + response.getResponseBodyString());
+        ScimResponse response = client.deletePerson(id);
+        assertEquals(response.getStatusCode(), 200, "User could not be deleted, status != 200");
 ```
 
 ### Required Parameter
 
 |Parameter|Description|
 |---------|-----------|
-|uid	  |The `userName` attribute is passed as UID while deleting the user|
+|id	  |The `userName` of the user to be deleted|
