@@ -4,7 +4,7 @@ When it comes to troubleshooting issues in the Gluu Server, from service hiccups
 
 The Gluu Server's logs can be found in the following locations:
 
-#### [System logs](/##system-logs) 
+#### [System logs](/#system-logs) 
 - For Ubuntu: `var/log`
 - For rpm based systems: `/var/log/messages/
 
