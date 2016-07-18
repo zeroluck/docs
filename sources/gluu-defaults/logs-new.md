@@ -67,7 +67,6 @@ Remember the initial `GET` request will hit the Apache server first, and then be
 ### oxAuth logs
 
 1. `oxauth.log`      
-
 This log is gathering most of the authentication related information. Generally this is the first log to review for any authentication-related troubleshooting, like authentication failure or missing clients etc. Here's an example showing a successful user authentication:
 
         2016-07-16 15:43:28,232 INFO  [org.xdi.oxauth.auth.Authenticator] Authentication success for Client: '@!EFCB.890F.FB6C.2603!0001!0A49.F454!0008!F047.7275'
@@ -76,7 +75,6 @@ This log is gathering most of the authentication related information. Generally 
         2016-07-16 15:43:28,249 DEBUG [org.xdi.oxauth.service.UserService] Getting user information from LDAP: userId = zico 
 
 2. `oxauth_script.log`     
-
 Most of the custom script's initialization and few more information are loaded here in this script. In the sample log below we can see 'Super Gluu' MFA has been loaded in the Gluu Server:
 
         2016-07-16 19:06:32,705 INFO  [org.xdi.service.PythonService] (pool-2-thread-2) oxPush2. Initialization
@@ -86,7 +84,6 @@ Most of the custom script's initialization and few more information are loaded h
 ### oxTrust logs
 
 1. `oxtrust.log`     
-
 This log gathers logs related to Gluu Server Admin panel (called oxTrust). For example, what is the clientID of an oxTrust session? Or, what scopes are being used, etc. In the example below, you can see an admin user has successfuly logged into the `test.gluu.org` Gluu Server admin panel, has the proper authorizationCode, a redirectURI, and the user's role:
 
         2016-07-16 16:41:55,690 INFO  [org.gluu.oxtrust.action.Authenticator] authorizationCode : 555a7586-6ca2-4b39-ab39-2ac78ec81524
@@ -108,11 +105,9 @@ This log gathers logs related to Gluu Server Admin panel (called oxTrust). For e
         2016-07-16 16:41:56,125 DEBUG [org.gluu.oxtrust.action.Authenticator] Configuring application after user 'admin' login 
 
 2. `oxtrust_script.log`     
-
 This log collects information on oxTrust related scripts and their operations. For example, if an organization uses a custom attribute which populates values for every user, then the Gluu Server Administrator needs to use a custom script for their 'Cache Refresh' process. This log will receive information when the custom script runs.
 
 3. `oxtrust_cache_refresh.log`    
-
 Cache Refresh related information is available here, such as Status, Primary failure etc. In the sample snippet below we are seeing the status of users that have been synced into Gluu Server, number of failures, and total number of updated users.
 
         2016-07-16 17:18:17,691 DEBUG [gluu.oxtrust.ldap.cache.service.CacheRefreshTimer] (pool-1-thread-9) Updated person '@!EFCB.890F.FB6C.2603!0001!0A49.F454!0000!40EB.AB8E'
@@ -127,7 +122,6 @@ Cache Refresh related information is available here, such as Status, Primary fai
 ### Wrapper logs
 
 1. `catalina.log`    
-
 A standard servlet contianer log. For example: 
 
         Jul 16, 2016 7:06:26 PM com.sun.faces.renderkit.html_basic.HtmlBasicRenderer getForComponent
@@ -144,7 +138,6 @@ A standard servlet contianer log. For example:
         WARNING: Unable to find component with ID j_idt244 in view. 
 
 2. `localhost.log`     
-
 Standard logs on web applications. For example: 
 
         Jul 16, 2016 3:33:31 PM org.apache.catalina.core.ApplicationContext log
@@ -161,7 +154,6 @@ Standard logs on web applications. For example:
         INFO: Initializing Spring FrameworkServlet 'cas' 
 
 3. `wrapper.log`     
-
 This log is the godfather of all Gluu Server logs, accounting for roughly 95% of log information. As you can see in the example snippet below, this log is showing that one CAS module loaded, one user is trying to authenticate, there's a search happening for this user in LDAP, etc.:
 
         INFO   | jvm 1    | 2016/07/16 19:17:48 | 2016-07-16 19:17:48,855 INFO [org.jasig.cas.services.DefaultServicesManagerImpl] - <Reloading registered services.>
@@ -289,13 +281,11 @@ Any Asimba SAML proxy transactions are logged in `wrapper.log`. In the below exa
 ## SAML logs
 
 1. `idp-access.log`     
-
 Each time the IDP is accessed a log entry is made detailing whether or not information sent back. These messages include request time, remote host making the rreuqest, server host name and port, and the request path. This log is written in the machine parsable format:
 
-`20160717T162519Z|192.168.201.1|test.gluu.org:443|/profile/SAML2/Redirect/SSO|`
+        20160717T162519Z|192.168.201.1|test.gluu.org:443|/profile/SAML2/Redirect/SSO|
 
 2. `idp-process.log`    
-
 This is one of the most important logs for SAML transactions in the Gluu Server. It includes the Issuer's information, released attributes, certificate information etc. Here's an example: 
 
          <?xml version="1.0" encoding="UTF-8"?>
@@ -319,13 +309,10 @@ This is one of the most important logs for SAML transactions in the Gluu Server.
 ## LDAP logs
 
 1. `access.log`     
-
 `access.log` is in active mode all the time. The `access.log` messages provide information about the types of LDAP operations processed by the Gluu Server.
 
 2. `audit.log`    
-
 All changes / modifications of LDAP server are being logged here in audit log.
 
 3. `errors.log`    
-
 LDAP server startup and shutdown related information are available in `errors.log`.
