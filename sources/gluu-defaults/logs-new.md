@@ -2,15 +2,18 @@
 
 When it comes to troubleshooting issues in the Gluu Server, from service hiccups to outages, logs are the best place to start. 
 
+Gluu Server administrator can investiage logs from oxTrust [View Logs] (https://gluu.org/docs/oxtrust/configuration/#view-log-file) feature or directly with SSH access to the Gluu-Server container. 
+
+
 The Gluu Server's logs can be found in the following locations:
 
 #### System logs 
-- For Ubuntu: `var/log`
-- For rpm based systems: `/var/log/messages/`
+- For Ubuntu: `/var/log/syslog`
+- For RPM based systems: `/var/log/messages`
 
 #### Web Server logs
 - For Debian: `/var/log/apache2/`
-- For rpm: `/var/log/httpd/`
+- For RPM based systems: `/var/log/httpd/`
 
 #### Core Gluu Server logs
 - `opt/tomcat/logs/`
@@ -24,7 +27,7 @@ The Gluu Server's logs can be found in the following locations:
 #### Miscellaneous logs
 - `/var/logs/`
 
-#### Sometimes it's required to escalate the log levels. 
+#### To escalate the log levels
 - OpenID Connect or any core logging: `log4j.xml`, which is located in `/opt/tomcat/webapps/oxauth/WEB-INF/classes/`
 - SAML logging: `logging.xml`, which is located in `/opt/idp.conf/`
 
@@ -34,7 +37,7 @@ Sometimes it worthy to check system logs like `/var/log/messages`. These logs co
 
 ## Web Server logs
 
-Apache httpd / apache2 logs are available in `/var/log/httpd` or `/var/log/apache2` for Ubutu.
+Apache httpd / apache2 logs are available in `/var/log/httpd` or `/var/log/apache2` for Ubuntu.
 
 1. `access_log`: This log contains information about requests coming into the Gluu Server, success status or requests, execution time for any request etc.     
 
@@ -49,7 +52,7 @@ Apache httpd / apache2 logs are available in `/var/log/httpd` or `/var/log/apach
         test.gluu.org:443 192.168.201.1 - - [17/Jul/2016:18:25:56 +0000] "GET /identity/login?cid=4 HTTP/1.1" 302 474 "https://test.gluu.org/identity/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36"
         test.gluu.org:443 192.168.201.1 - - [17/Jul/2016:18:25:56 +0000] "GET /oxauth/authorize?scope=openid+profile+email+user_name&response_type=code+id_token&nonce=nonce&redirect_uri=https%3A%2F%2Ftest.gluu.org%2Fidentity%2Fauthentication%2Fauthcode&client_id=%40%21EFCB.890F.FB6C.2603%210001%210A49.F454%210008%21F047.7275 HTTP/1.1" 302 450 "https://test.gluu.org/identity/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36" 
 
-4. There are a few other logs like `ssl_access_log` , `ssl_error_log` , and `ssl_request_log` which are collecting information on port 443 specifically.      
+4. There are few other logs like `ssl_access_log` , `ssl_error_log` , and `ssl_request_log` which are collecting information on port 443 specifically.      
 
 Remember the initial `GET` request will hit the Apache server first, and then be proxied via the AJP port 8009 to tomcat. If you see traffic on the web server, but not on tomcat, this is a good place to check to see if something is wrong. For example, you might want to check if the firewall is blocking port 8009 if you see somthing like this:
 
@@ -75,7 +78,7 @@ This log is gathering most of the authentication related information. Generally 
         2016-07-16 15:43:28,249 DEBUG [org.xdi.oxauth.service.UserService] Getting user information from LDAP: userId = zico 
 
 2. `oxauth_script.log`     
-Most of the custom script's initialization and few more information are loaded here in this script. In the sample log below we can see 'Super Gluu' MFA has been loaded in the Gluu Server:
+Most of the custom script's initialization and few more information are loaded here in this script. In the sample log below we can see 'Super Gluu' 2FA has been loaded in the Gluu Server:
 
         2016-07-16 19:06:32,705 INFO  [org.xdi.service.PythonService] (pool-2-thread-2) oxPush2. Initialization
         2016-07-16 19:06:32,713 INFO  [org.xdi.service.PythonService] (pool-2-thread-2) oxPush2. Initialize notification services
@@ -84,7 +87,7 @@ Most of the custom script's initialization and few more information are loaded h
 ### oxTrust logs
 
 1. `oxtrust.log`     
-This log gathers logs related to Gluu Server Admin panel (called oxTrust). For example, what is the clientID of an oxTrust session? Or, what scopes are being used, etc. In the example below, you can see an admin user has successfuly logged into the `test.gluu.org` Gluu Server admin panel, has the proper authorizationCode, a redirectURI, and the user's role:
+This log gather logs related to Gluu Server Admin panel (called oxTrust). For example, what is the clientID of an oxTrust session? Or, what scopes are being used, etc. In the example below, you can see an admin user has successfuly logged into the `test.gluu.org` Gluu Server admin panel, has the proper authorizationCode, a redirectURI, and the user's role:
 
         2016-07-16 16:41:55,690 INFO  [org.gluu.oxtrust.action.Authenticator] authorizationCode : 555a7586-6ca2-4b39-ab39-2ac78ec81524
         2016-07-16 16:41:55,690 INFO  [org.gluu.oxtrust.action.Authenticator]  scopes : user_name email openid profile
@@ -215,7 +218,7 @@ If oxCAS is enabled in the Gluu Server then this log will have information about
 
 1. `wrapper.log`     
 
-Any Asimba SAML proxy transactions are logged in `wrapper.log`. In the below example snippet we see the requestor (from where the SSO request is coming), we see the SAML proxy server's information (`test.gluu.org`), and we see the authentication server (`nest.gluu.org`) which is performing the authentication, releasing attributes, etc. 
+Any Asimba SAML proxy transactions are logged in `wrapper.log`. In the below example we see the requestor (from where the SSO request is coming), we see the SAML proxy server's information (`test.gluu.org`), and the authentication server (`nest.gluu.org`) which is performing the authentication, releasing attributes, etc. 
 
         INFO   | jvm 1    | 2016/07/17 15:40:33 | (ASIMBAWA) [2016-07-17 15:40:33] [DEBUG] WebBrowserSSO <?xml version="1.0" encoding="UTF-8"?>
         INFO   | jvm 1    | 2016/07/17 15:40:33 | <samlp:AuthnRequest
@@ -229,7 +232,11 @@ Any Asimba SAML proxy transactions are logged in `wrapper.log`. In the below exa
         INFO   | jvm 1    | 2016/07/17 15:40:33 |     <samlp:NameIDPolicy AllowCreate="1"/>
         INFO   | jvm 1    | 2016/07/17 15:40:33 | </samlp:AuthnRequest>
         INFO   | jvm 1    | 2016/07/17 15:40:33 |
-        INFO   | jvm 1    | 2016/07/17 15:40:33 | (ASIMBAWA) [2016-07-17 15:40:33] [DEBUG] WebBrowserSSO Put on map? urlpath.context=web ......................INFO   | jvm 1    | 2016/07/17 15:40:37 | (ASIMBAWA) [2016-07-17 15:40:37] [DEBUG] WebBrowserSSOProfile Request recieved: https://test.gluu.org/asimba/sso/web
+        INFO   | jvm 1    | 2016/07/17 15:40:33 | (ASIMBAWA) [2016-07-17 15:40:33] [DEBUG] WebBrowserSSO Put on map? urlpath.context=web 
+        ......................
+        ......................
+        ......................
+        INFO   | jvm 1    | 2016/07/17 15:40:37 | (ASIMBAWA) [2016-07-17 15:40:37] [DEBUG] WebBrowserSSOProfile Request recieved: https://test.gluu.org/asimba/sso/web
         INFO   | jvm 1    | 2016/07/17 15:40:37 | (ASIMBAWA) [2016-07-17 15:40:37] [DEBUG] SAML2IDP Creating new MetadataProvider from configured source for SAML2 IDP 'https://nest.gluu.org/idp/shibboleth'
         INFO   | jvm 1    | 2016/07/17 15:40:37 | (ASIMBAWA) [2016-07-17 15:40:37] [INFO] NamedFilesystemMetadataProvider Created for file with name /opt/tomcat/webapps/asimba/WEB-INF/sample-data/idp/2185528996791210207.xml
         INFO   | jvm 1    | 2016/07/17 15:40:37 | (ASIMBAWA) [2016-07-17 15:40:37] [INFO] AbstractReloadingMetadataProvider New metadata succesfully loaded for '/opt/tomcat/webapps/asimba/WEB-INF/sample-data/idp/2185528996791210207.xml'
@@ -298,7 +305,11 @@ This is one of the most important logs for SAML transactions in the Gluu Server.
                 Format="urn:oasis:names:tc:SAML:2.0:nameid-format:entity" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion">https://test.gluu.org/idp/shibboleth</saml2:Issuer>
             <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                 <ds:SignedInfo>
-        ...................eLiXH2CuvJrwkHhcSQSyKAs4WPXbLE5hhzEd9GGRmiovGmdZJvDU5zRX74m80GcL0d+mf6WzLRZBVmcPcs/2Dk1+J2Sw67W0DF0vgpoDvhgKHMdkKI8ExZ38cVHo1xJqpQvUq0StjGPgdRBWUJoMe4BVRD8sM7BDbjFoY5H3TJxzYbnjsxwDZaqIZQt+4=</xenc:CipherValue>
+        ...................
+        ...................
+        ...................
+        eLiXH2CuvJrwkHhcSQSyKAs4WPXbLE5hhzEd9GGRmiovGmdZJvDU5zRX74m80GcL0d+mf6WzLRZBVmcPcs/2Dk1+J2Sw67W0DF0vgpoDvhgKHMdkKI8Ex
+        Z38cVHo1xJqpQvUq0StjGPgdRBWUJoMe4BVRD8sM7BDbjFoY5H3TJxzYbnjsxwDZaqIZQt+4=</xenc:CipherValue>
                     </xenc:CipherData>
                 </xenc:EncryptedData>
             </saml2:EncryptedAssertion>
