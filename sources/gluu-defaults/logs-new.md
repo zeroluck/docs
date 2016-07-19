@@ -6,7 +6,7 @@ The Gluu Server's logs can be found in the following locations:
 
 #### System logs 
 - For Ubuntu: `var/log`
-- For rpm based systems: `/var/log/messages/
+- For rpm based systems: `/var/log/messages/`
 
 #### Web Server logs
 - For Debian: `/var/log/apache2/`
