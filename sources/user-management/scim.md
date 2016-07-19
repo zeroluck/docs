@@ -104,4 +104,4 @@ To delete a user only the id/userName is needed.
 
 |Parameter|Description|
 |---------|-----------|
-|id	  |The `userName` of the user to be deleted|
+|id	  |The LDAP `inum` of the user to be deleted|
