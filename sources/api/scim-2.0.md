@@ -202,6 +202,8 @@ You can see the detailed SCIM 2.0 specification documents here:
 
 #### Request
 
+**_Content-Type:_** `application/scim+json`, `application/json`
+
 ##### Parameters
 
 <table border="1">
@@ -594,7 +596,7 @@ You can see the detailed SCIM 2.0 specification documents here:
     <tr>
         <th>body</th>
         <td>body</td>
-        <td>no</td>
+        <td>yes</td>
         <td>Group</td>
         <td> - </td>
         <td><a href="#/definitions/Group">Group</a></td>
@@ -737,7 +739,7 @@ You can see the detailed SCIM 2.0 specification documents here:
     <tr>
         <th>body</th>
         <td>body</td>
-        <td>no</td>
+        <td>yes</td>
         <td>Group</td>
         <td> - </td>
         <td><a href="#/definitions/Group">Group</a></td>
@@ -762,8 +764,6 @@ You can see the detailed SCIM 2.0 specification documents here:
 * OAuth2 Access Token (Test Mode)
 
 #### Request
-
-**_Content-Type:_** `application/scim+json`, `application/json`
 
 ##### Parameters
 
