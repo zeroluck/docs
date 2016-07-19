@@ -1,4 +1,8 @@
 [TOC]
+
+# Logs
+When it comes to troubleshooting issues in the Gluu Server--from service hiccups to outages--your [server logs](../gluu-defaults/logs.md) are the best place to start.
+
 # Connectivity Issues?
 ## DNS names not resolving!
 It is possible that even after configuring everything there is a `DNS` resolve error in Gluu Server.
