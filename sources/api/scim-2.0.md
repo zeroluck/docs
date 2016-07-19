@@ -25,7 +25,7 @@ You can see the detailed SCIM 2.0 specification documents here:
 
 ### GET
 
-<a id="listUsers">Search Users</a>
+<a id="searchUsers">Search Users</a>
 
 Returns a list of users (https://tools.ietf.org/html/rfc7644#section-3.4.2.2).
 
@@ -36,7 +36,7 @@ Returns a list of users (https://tools.ietf.org/html/rfc7644#section-3.4.2.2).
 
 #### Request
 
-**Content-Type: ** application/scim+json, application/json
+**Content-Type:** `application/scim+json`, `application/json`
 
 ##### Parameters
 
@@ -117,7 +117,7 @@ Returns a list of users (https://tools.ietf.org/html/rfc7644#section-3.4.2.2).
 
 #### Response
 
-**Content-Type: ** application/scim+json, application/json
+**Content-Type:** `application/scim+json`, `application/json`
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
@@ -136,7 +136,7 @@ Creates a user (https://tools.ietf.org/html/rfc7644#section-3.3).
 
 #### Request
 
-**Content-Type: ** application/scim+json, application/json
+**Content-Type:** `application/scim+json`, `application/json`
 
 ##### Parameters
 
@@ -185,7 +185,7 @@ Creates a user (https://tools.ietf.org/html/rfc7644#section-3.3).
 
 #### Response
 
-**Content-Type: ** application/scim+json, application/json
+**Content-Type:** `application/scim+json`, `application/json`
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
@@ -253,7 +253,7 @@ Returns a user by id as path parameter (https://tools.ietf.org/html/rfc7644#sect
 
 #### Response
 
-**Content-Type: ** application/scim+json, application/scim
+**Content-Type:** `application/scim+json`, `application/scim`
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
@@ -272,7 +272,7 @@ Updates a user (https://tools.ietf.org/html/rfc7644#section-3.5.1).
 
 #### Request
 
-**Content-Type: ** application/scim+json, application/json
+**Content-Type:** `application/scim+json`, `application/json`
 
 ##### Parameters
 
@@ -329,7 +329,7 @@ Updates a user (https://tools.ietf.org/html/rfc7644#section-3.5.1).
 
 #### Response
 
-**Content-Type: ** application/scim+json, application/json
+**Content-Type:** `application/scim+json`, `application/json`
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
@@ -387,7 +387,7 @@ Deletes a user (https://tools.ietf.org/html/rfc7644#section-3.6).
 
 #### Response
 
-**Content-Type: ** application/scim+json, application/json
+**Content-Type:** `application/scim+json`, `application/json`
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
@@ -408,7 +408,7 @@ Returns a list of users (https://tools.ietf.org/html/rfc7644#section-3.4).
 
 #### Request
 
-**Content-Type: ** application/scim+json, application/json
+**Content-Type:** `application/scim+json`, `application/json`
 
 ##### Parameters
 
@@ -438,7 +438,7 @@ Returns a list of users (https://tools.ietf.org/html/rfc7644#section-3.4).
         <td>string</td>
     </tr>
     <tr>
-        <th>Body</th>
+        <th>body</th>
         <td>body</td>
         <td>yes</td>
         <td></td>
@@ -449,7 +449,7 @@ Returns a list of users (https://tools.ietf.org/html/rfc7644#section-3.4).
 
 #### Response
 
-**Content-Type: ** application/scim+json, application/json
+**Content-Type:** `application/scim+json`, `application/json`
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
@@ -459,20 +459,22 @@ Returns a list of users (https://tools.ietf.org/html/rfc7644#section-3.4).
 
 ## Group Endpoint
 
-## /v2/Groups
+### `<domain root>/identity/seam/resource/restv1/scim/v2/Groups`
 
 ### GET
 
-<a id="listGroups">List Users</a>
+<a id="searchGroups">Search Groups</a>
 
-Returns a list of Groups
-(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4).
+Returns a list of groups (https://tools.ietf.org/html/rfc7644#section-3.4.2.2).
 
 #### Security
 
-* Authorization
+* UMA (default)
+* OAuth2 Access Token (Test Mode)
 
 #### Request
+
+**Content-Type:** `application/scim+json`, `application/json`
 
 ##### Parameters
 
@@ -521,7 +523,7 @@ Returns a list of Groups
 
 #### Response
 
-**Content-Type: ** application/json, application/xml
+**Content-Type:** `application/scim+json`, `application/json`
 
 
 | Status Code | Reason      | Response Model |
@@ -541,7 +543,7 @@ Create Group
 
 #### Request
 
-**Content-Type: ** application/json, application/xml
+**Content-Type:** `application/scim+json`, `application/json`
 
 ##### Parameters
 
@@ -574,7 +576,7 @@ Create Group
 
 #### Response
 
-**Content-Type: ** application/json, application/xml
+**Content-Type:** `application/scim+json`, `application/json`
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
@@ -626,7 +628,7 @@ Returns a Group on the basis of the provided id as path parameter
 
 #### Response
 
-**Content-Type: ** application/json, application/xml
+**Content-Type:** `application/scim+json`, `application/json`
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
@@ -645,7 +647,7 @@ Update Group
 
 #### Request
 
-**Content-Type: ** application/json, application/xml
+**Content-Type:** `application/scim+json`, `application/json`
 
 ##### Parameters
 
@@ -686,7 +688,7 @@ Update Group
 
 #### Response
 
-**Content-Type: ** application/json, application/xml
+**Content-Type:** `application/scim+json`, `application/json`
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
@@ -736,7 +738,7 @@ Delete Group
 
 #### Response
 
-**Content-Type: ** application/json, application/xml
+**Content-Type:** `application/scim+json`, `application/json`
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
@@ -760,7 +762,7 @@ SCIM Bulk Operation (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-
 
 #### Request
 
-**Content-Type: ** application/json, application/xml
+**Content-Type:** `application/json`, `application/xml`
 
 ##### Parameters
 
@@ -793,7 +795,7 @@ SCIM Bulk Operation (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-
 
 #### Response
 
-**Content-Type: ** application/json, application/xml
+**Content-Type:** `application/json`, `application/xml`
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
