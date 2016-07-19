@@ -744,6 +744,14 @@ You can see the detailed SCIM 2.0 specification documents here:
         <td> - </td>
         <td><a href="#/definitions/Group">Group</a></td>
     </tr>
+    <tr>
+        <th>attributes</th>
+        <td>query</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string array</td>
+    </tr>
 </table>
 
 #### Response
