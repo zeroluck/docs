@@ -357,6 +357,349 @@ Returns a list of users
 |-------------|-------------|----------------|
 | 200    | successful operation | <a href="#/definitions/ListResponse">ListResponse</a>|
 
+- - -
+
+## Group Endpoint
+
+## /v2/Groups
+
+### GET
+
+<a id="listGroups">List Users</a>
+
+Returns a list of Groups
+(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4).
+
+#### Security
+
+* Authorization
+
+#### Request
+
+##### Parameters
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Located in</th>
+        <th>Required</th>
+        <th>Description</th>
+        <th>Default</th>
+        <th>Schema</th>
+    </tr>
+    <tr>
+        <th>Authorization</th>
+        <td>header</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>filter</th>
+        <td>query</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>sortBy</th>
+        <td>query</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>sortOrder</th>
+        <td>query</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+</table>
+
+#### Response
+
+**Content-Type: ** application/json, application/xml
+
+
+| Status Code | Reason      | Response Model |
+|-------------|-------------|----------------|
+| 200    | successful operation | <a href="#/definitions/ListResponse">ListResponse</a>|
+
+### POST
+
+<a id="createGroup">Create Group</a>
+
+Create Group
+(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3).
+
+#### Security
+
+* Authorization
+
+#### Request
+
+**Content-Type: ** application/json, application/xml
+
+##### Parameters
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Located in</th>
+        <th>Required</th>
+        <th>Description</th>
+        <th>Default</th>
+        <th>Schema</th>
+    </tr>
+    <tr>
+        <th>Authorization</th>
+        <td>header</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>body</th>
+        <td>body</td>
+        <td>no</td>
+        <td>Group</td>
+        <td> - </td>
+        <td><a href="#/definitions/Group">Group</a></td>
+    </tr>
+</table>
+
+#### Response
+
+**Content-Type: ** application/json, application/xml
+
+| Status Code | Reason      | Response Model |
+|-------------|-------------|----------------|
+| 200    | successful operation | <a href="#/definitions/Group">Group</a>|
+
+## /v2/Groups/{id}
+
+### GET
+
+<a id="getGroupById">Find Group by id</a>
+
+Returns a Group on the basis of the provided id as path parameter
+(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.1).
+
+#### Security
+
+* Authorization
+
+#### Request
+
+##### Parameters
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Located in</th>
+        <th>Required</th>
+        <th>Description</th>
+        <th>Default</th>
+        <th>Schema</th>
+    </tr>
+    <tr>
+        <th>Authorization</th>
+        <td>header</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>id</th>
+        <td>path</td>
+        <td>yes</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+</table>
+
+#### Response
+
+**Content-Type: ** application/json, application/xml
+
+| Status Code | Reason      | Response Model |
+|-------------|-------------|----------------|
+| 200    | successful operation | <a href="#/definitions/Group">Group</a>|
+
+### PUT
+
+<a id="updateGroup">Update Group</a>
+
+Update Group
+(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3).
+
+#### Security
+
+* Authorization
+
+#### Request
+
+**Content-Type: ** application/json, application/xml
+
+##### Parameters
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Located in</th>
+        <th>Required</th>
+        <th>Description</th>
+        <th>Default</th>
+        <th>Schema</th>
+    </tr>
+    <tr>
+        <th>Authorization</th>
+        <td>header</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>id</th>
+        <td>path</td>
+        <td>yes</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>body</th>
+        <td>body</td>
+        <td>no</td>
+        <td>Group</td>
+        <td> - </td>
+        <td><a href="#/definitions/Group">Group</a></td>
+    </tr>
+</table>
+
+#### Response
+
+**Content-Type: ** application/json, application/xml
+
+| Status Code | Reason      | Response Model |
+|-------------|-------------|----------------|
+| 200    | successful operation | <a href="#/definitions/Group">Group</a>|
+
+### DELETE
+
+<a id="deleteGroup">Delete Group</a>
+
+Delete Group
+(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3).
+
+#### Security
+
+* Authorization
+
+#### Request
+
+##### Parameters
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Located in</th>
+        <th>Required</th>
+        <th>Description</th>
+        <th>Default</th>
+        <th>Schema</th>
+    </tr>
+    <tr>
+        <th>Authorization</th>
+        <td>header</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+    <tr>
+        <th>id</th>
+        <td>path</td>
+        <td>yes</td>
+        <td></td>
+        <td> - </td>
+        <td>string </td>
+    </tr>
+</table>
+
+#### Response
+
+**Content-Type: ** application/json, application/xml
+
+| Status Code | Reason      | Response Model |
+|-------------|-------------|----------------|
+| default    | successful operation |  - |
+
+- - -
+
+## Bulk Operation Endpoint
+
+## /v2/Bulk
+
+### POST
+
+<a id="bulkOperation">Bulk Operation</a>
+
+SCIM Bulk Operation (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.7)
+
+#### Security
+
+* Authorization
+
+#### Request
+
+**Content-Type: ** application/json, application/xml
+
+##### Parameters
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Located in</th>
+        <th>Required</th>
+        <th>Description</th>
+        <th>Default</th>
+        <th>Schema</th>
+    </tr>
+    <tr>
+        <th>Authorization</th>
+        <td>header</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string</td>
+    </tr>
+    <tr>
+        <th>body</th>
+        <td>body</td>
+        <td>no</td>
+        <td>BulkRequest</td>
+        <td> - </td>
+        <td><a href="#/definitions/BulkRequest">BulkRequest</a></td>
+    </tr>
+</table>
+
+#### Response
+
+**Content-Type: ** application/json, application/xml
+
+| Status Code | Reason      | Response Model |
+|-------------|-------------|----------------|
+| 200    | successful operation | <a href="#/definitions/BulkResponse">BulkResponse</a>|
 
 - - -
 
@@ -1509,347 +1852,3 @@ Returns a list of users
         <td>Mike</td>
     </tr>
 </table>
-
-- - -
-
-## Group Endpoint
-
-## /v2/Groups
-
-### GET
-
-<a id="listGroups">List Users</a>
-
-Returns a list of Groups
-(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4).
-
-#### Security
-
-* Authorization
-
-#### Request
-
-##### Parameters
-
-<table border="1">
-    <tr>
-        <th>Name</th>
-        <th>Located in</th>
-        <th>Required</th>
-        <th>Description</th>
-        <th>Default</th>
-        <th>Schema</th>
-    </tr>
-    <tr>
-        <th>Authorization</th>
-        <td>header</td>
-        <td>no</td>
-        <td></td>
-        <td> - </td>
-        <td>string </td>
-    </tr>
-    <tr>
-        <th>filter</th>
-        <td>query</td>
-        <td>no</td>
-        <td></td>
-        <td> - </td>
-        <td>string </td>
-    </tr>
-    <tr>
-        <th>sortBy</th>
-        <td>query</td>
-        <td>no</td>
-        <td></td>
-        <td> - </td>
-        <td>string </td>
-    </tr>
-    <tr>
-        <th>sortOrder</th>
-        <td>query</td>
-        <td>no</td>
-        <td></td>
-        <td> - </td>
-        <td>string </td>
-    </tr>
-</table>
-
-#### Response
-
-**Content-Type: ** application/json, application/xml
-
-
-| Status Code | Reason      | Response Model |
-|-------------|-------------|----------------|
-| 200    | successful operation | <a href="#/definitions/ListResponse">ListResponse</a>|
-
-### POST
-
-<a id="createGroup">Create Group</a>
-
-Create Group
-(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3).
-
-#### Security
-
-* Authorization
-
-#### Request
-
-**Content-Type: ** application/json, application/xml
-
-##### Parameters
-
-<table border="1">
-    <tr>
-        <th>Name</th>
-        <th>Located in</th>
-        <th>Required</th>
-        <th>Description</th>
-        <th>Default</th>
-        <th>Schema</th>
-    </tr>
-    <tr>
-        <th>Authorization</th>
-        <td>header</td>
-        <td>no</td>
-        <td></td>
-        <td> - </td>
-        <td>string </td>
-    </tr>
-    <tr>
-        <th>body</th>
-        <td>body</td>
-        <td>no</td>
-        <td>Group</td>
-        <td> - </td>
-        <td><a href="#/definitions/Group">Group</a></td>
-    </tr>
-</table>
-
-#### Response
-
-**Content-Type: ** application/json, application/xml
-
-| Status Code | Reason      | Response Model |
-|-------------|-------------|----------------|
-| 200    | successful operation | <a href="#/definitions/Group">Group</a>|
-
-## /v2/Groups/{id}
-
-### GET
-
-<a id="getGroupById">Find Group by id</a>
-
-Returns a Group on the basis of the provided id as path parameter
-(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.1).
-
-#### Security
-
-* Authorization
-
-#### Request
-
-##### Parameters
-
-<table border="1">
-    <tr>
-        <th>Name</th>
-        <th>Located in</th>
-        <th>Required</th>
-        <th>Description</th>
-        <th>Default</th>
-        <th>Schema</th>
-    </tr>
-    <tr>
-        <th>Authorization</th>
-        <td>header</td>
-        <td>no</td>
-        <td></td>
-        <td> - </td>
-        <td>string </td>
-    </tr>
-    <tr>
-        <th>id</th>
-        <td>path</td>
-        <td>yes</td>
-        <td></td>
-        <td> - </td>
-        <td>string </td>
-    </tr>
-</table>
-
-#### Response
-
-**Content-Type: ** application/json, application/xml
-
-| Status Code | Reason      | Response Model |
-|-------------|-------------|----------------|
-| 200    | successful operation | <a href="#/definitions/Group">Group</a>|
-
-### PUT
-
-<a id="updateGroup">Update Group</a>
-
-Update Group
-(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3).
-
-#### Security
-
-* Authorization
-
-#### Request
-
-**Content-Type: ** application/json, application/xml
-
-##### Parameters
-
-<table border="1">
-    <tr>
-        <th>Name</th>
-        <th>Located in</th>
-        <th>Required</th>
-        <th>Description</th>
-        <th>Default</th>
-        <th>Schema</th>
-    </tr>
-    <tr>
-        <th>Authorization</th>
-        <td>header</td>
-        <td>no</td>
-        <td></td>
-        <td> - </td>
-        <td>string </td>
-    </tr>
-    <tr>
-        <th>id</th>
-        <td>path</td>
-        <td>yes</td>
-        <td></td>
-        <td> - </td>
-        <td>string </td>
-    </tr>
-    <tr>
-        <th>body</th>
-        <td>body</td>
-        <td>no</td>
-        <td>Group</td>
-        <td> - </td>
-        <td><a href="#/definitions/Group">Group</a></td>
-    </tr>
-</table>
-
-#### Response
-
-**Content-Type: ** application/json, application/xml
-
-| Status Code | Reason      | Response Model |
-|-------------|-------------|----------------|
-| 200    | successful operation | <a href="#/definitions/Group">Group</a>|
-
-### DELETE
-
-<a id="deleteGroup">Delete Group</a>
-
-Delete Group
-(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3).
-
-#### Security
-
-* Authorization
-
-#### Request
-
-##### Parameters
-
-<table border="1">
-    <tr>
-        <th>Name</th>
-        <th>Located in</th>
-        <th>Required</th>
-        <th>Description</th>
-        <th>Default</th>
-        <th>Schema</th>
-    </tr>
-    <tr>
-        <th>Authorization</th>
-        <td>header</td>
-        <td>no</td>
-        <td></td>
-        <td> - </td>
-        <td>string </td>
-    </tr>
-    <tr>
-        <th>id</th>
-        <td>path</td>
-        <td>yes</td>
-        <td></td>
-        <td> - </td>
-        <td>string </td>
-    </tr>
-</table>
-
-#### Response
-
-**Content-Type: ** application/json, application/xml
-
-| Status Code | Reason      | Response Model |
-|-------------|-------------|----------------|
-| default    | successful operation |  - |
-
-- - -
-
-## Bulk Operation Endpoint
-
-## /v2/Bulk
-
-### POST
-
-<a id="bulkOperation">Bulk Operation</a>
-
-SCIM Bulk Operation (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.7)
-
-#### Security
-
-* Authorization
-
-#### Request
-
-**Content-Type: ** application/json, application/xml
-
-##### Parameters
-
-<table border="1">
-    <tr>
-        <th>Name</th>
-        <th>Located in</th>
-        <th>Required</th>
-        <th>Description</th>
-        <th>Default</th>
-        <th>Schema</th>
-    </tr>
-    <tr>
-        <th>Authorization</th>
-        <td>header</td>
-        <td>no</td>
-        <td></td>
-        <td> - </td>
-        <td>string</td>
-    </tr>
-    <tr>
-        <th>body</th>
-        <td>body</td>
-        <td>no</td>
-        <td>BulkRequest</td>
-        <td> - </td>
-        <td><a href="#/definitions/BulkRequest">BulkRequest</a></td>
-    </tr>
-</table>
-
-#### Response
-
-**Content-Type: ** application/json, application/xml
-
-| Status Code | Reason      | Response Model |
-|-------------|-------------|----------------|
-| 200    | successful operation | <a href="#/definitions/BulkResponse">BulkResponse</a>|
