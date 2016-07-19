@@ -439,8 +439,8 @@ Returns a list of users (https://tools.ietf.org/html/rfc7644#section-3.4).
     </tr>
     <tr>
         <th>Body</th>
-        <td>Body</td>
-        <td>Yes</td>
+        <td>body</td>
+        <td>yes</td>
         <td></td>
         <td> - </td>
         <td><a href="#/definitions/ScimPersonSearch">ScimPersonSearch</td>
