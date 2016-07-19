@@ -21,13 +21,12 @@ You can see the detailed SCIM 2.0 specification documents here:
 
 ## User Endpoint
 
-### `<domain root>/identity/seam/resource/restv1/scim/v2/Users`
+#### URL
+    <domain root>/identity/seam/resource/restv1/scim/v2/Users
 
 ### GET
 
-<a id="searchUsers">Search Users</a>
-
-Returns a list of users (https://tools.ietf.org/html/rfc7644#section-3.4.2.2).
+<a id="searchUsers">[Search Users](https://tools.ietf.org/html/rfc7644#section-3.4.2.2)</a> - searches users based on filter criteria
 
 #### Security
 
@@ -125,9 +124,7 @@ Returns a list of users (https://tools.ietf.org/html/rfc7644#section-3.4.2.2).
 
 ### POST
 
-<a id="createUser">Create User</a>
-
-Creates a user (https://tools.ietf.org/html/rfc7644#section-3.3).
+<a id="createUser">[Create User](https://tools.ietf.org/html/rfc7644#section-3.3)</a> - creates a user
 
 #### Security
 
@@ -191,13 +188,12 @@ Creates a user (https://tools.ietf.org/html/rfc7644#section-3.3).
 |-------------|-------------|----------------|
 | 201    | successful operation | <a href="#/definitions/User">User</a>|
 
-### `<domain root>/identity/seam/resource/restv1/scim/v2/Users/{id}`
+#### URL
+    <domain root>/identity/seam/resource/restv1/scim/v2/Users/{id}
 
 ### GET
 
-<a id="getUserById">Find user by id</a>
-
-Returns a user by id as path parameter (https://tools.ietf.org/html/rfc7644#section-3.4.1).
+<a id="getUserById">[Find User By ID](https://tools.ietf.org/html/rfc7644#section-3.4.1)</a> - returns a user by id as path parameter
 
 #### Security
 
@@ -261,9 +257,7 @@ Returns a user by id as path parameter (https://tools.ietf.org/html/rfc7644#sect
 
 ### PUT
 
-<a id="updateUser">Update User</a>
-
-Updates a user (https://tools.ietf.org/html/rfc7644#section-3.5.1).
+<a id="updateUser">[Update User](https://tools.ietf.org/html/rfc7644#section-3.5.1)</a> - updates a user
 
 #### Security
 
@@ -337,9 +331,7 @@ Updates a user (https://tools.ietf.org/html/rfc7644#section-3.5.1).
 
 ### DELETE
 
-<a id="deleteUser">Delete User</a>
-
-Deletes a user (https://tools.ietf.org/html/rfc7644#section-3.6).
+<a id="deleteUser">[Delete User](https://tools.ietf.org/html/rfc7644#section-3.6)</a> - deletes a user
 
 #### Security
 
@@ -393,13 +385,12 @@ Deletes a user (https://tools.ietf.org/html/rfc7644#section-3.6).
 |-------------|-------------|----------------|
 | default     | successful operation |  -    |
 
-### `<domain root>/identity/seam/resource/restv1/scim/v2/Users/Search`
+#### URL
+    <domain root>/identity/seam/resource/restv1/scim/v2/Users/Search
 
 ### POST
 
-<a id="listUsers">Search Users</a>
-
-Returns a list of users (https://tools.ietf.org/html/rfc7644#section-3.4).
+<a id="searchUsersPost">[Search Users](https://tools.ietf.org/html/rfc7644#section-3.4) (**_Deprecated_**)</a> - searches users by HTTP POST
 
 #### Security
 
@@ -459,13 +450,12 @@ Returns a list of users (https://tools.ietf.org/html/rfc7644#section-3.4).
 
 ## Group Endpoint
 
-### `<domain root>/identity/seam/resource/restv1/scim/v2/Groups`
+#### URL
+    <domain root>/identity/seam/resource/restv1/scim/v2/Groups
 
 ### GET
 
-<a id="searchGroups">Search Groups</a>
-
-Returns a list of groups (https://tools.ietf.org/html/rfc7644#section-3.4.2.2).
+<a id="searchGroups">[Search Groups](https://tools.ietf.org/html/rfc7644#section-3.4.2.2)</a> - searches groups based on filter criteria
 
 #### Security
 
@@ -557,16 +547,13 @@ Returns a list of groups (https://tools.ietf.org/html/rfc7644#section-3.4.2.2).
 
 **_Content-Type:_** `application/scim+json`, `application/json`
 
-
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
 | 200    | successful operation | <a href="#/definitions/ListResponse">ListResponse</a>|
 
 ### POST
 
-<a id="createGroup">Create Group</a>
-
-Create a group (https://tools.ietf.org/html/rfc7644#section-3.3).
+<a id="createGroup">[Create Group](https://tools.ietf.org/html/rfc7644#section-3.3)</a> - creates a group
 
 #### Security
 
@@ -612,6 +599,14 @@ Create a group (https://tools.ietf.org/html/rfc7644#section-3.3).
         <td> - </td>
         <td><a href="#/definitions/Group">Group</a></td>
     </tr>
+    <tr>
+        <th>attributes</th>
+        <td>query</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string array</td>
+    </tr>
 </table>
 
 #### Response
@@ -622,20 +617,21 @@ Create a group (https://tools.ietf.org/html/rfc7644#section-3.3).
 |-------------|-------------|----------------|
 | 201    | successful operation | <a href="#/definitions/Group">Group</a>|
 
-## /v2/Groups/{id}
+#### URL
+    <domain root>/identity/seam/resource/restv1/scim/v2/Groups/{id}
 
 ### GET
 
-<a id="getGroupById">Find Group by id</a>
-
-Returns a Group on the basis of the provided id as path parameter
-(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.1).
+<a id="getGroupById">[Find Group By ID](https://tools.ietf.org/html/rfc7644#section-3.4.2.1)</a> - returns a group by id as path parameter
 
 #### Security
 
-* Authorization
+* UMA (default)
+* OAuth2 Access Token (Test Mode)
 
 #### Request
+
+**_Content-Type:_** `application/scim+json`, `application/json`
 
 ##### Parameters
 
@@ -651,18 +647,34 @@ Returns a Group on the basis of the provided id as path parameter
     <tr>
         <th>Authorization</th>
         <td>header</td>
-        <td>no</td>
+        <td>yes (default)</td>
         <td></td>
         <td> - </td>
-        <td>string </td>
+        <td>string</td>
+    </tr>
+    <tr>
+        <th>access_token</th>
+        <td>query</td>
+        <td>yes (if "Test Mode" is enabled)</td>
+        <td></td>
+        <td> - </td>
+        <td>string</td>
     </tr>
     <tr>
         <th>id</th>
         <td>path</td>
         <td>yes</td>
+        <td>LDAP 'inum' of group</td>
+        <td> - </td>
+        <td>string</td>
+    </tr>
+    <tr>
+        <th>attributes</th>
+        <td>query</td>
+        <td>no</td>
         <td></td>
         <td> - </td>
-        <td>string </td>
+        <td>string array</td>
     </tr>
 </table>
 
@@ -676,14 +688,12 @@ Returns a Group on the basis of the provided id as path parameter
 
 ### PUT
 
-<a id="updateGroup">Update Group</a>
-
-Update Group
-(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3).
+<a id="updateGroup">[Update Group](https://tools.ietf.org/html/rfc7644#section-3.5.1)</a> - updates a group
 
 #### Security
 
-* Authorization
+* UMA (default)
+* OAuth2 Access Token (Test Mode)
 
 #### Request
 
@@ -703,18 +713,26 @@ Update Group
     <tr>
         <th>Authorization</th>
         <td>header</td>
-        <td>no</td>
+        <td>yes (default)</td>
         <td></td>
         <td> - </td>
-        <td>string </td>
+        <td>string</td>
+    </tr>
+    <tr>
+        <th>access_token</th>
+        <td>query</td>
+        <td>yes (if "Test Mode" is enabled)</td>
+        <td></td>
+        <td> - </td>
+        <td>string</td>
     </tr>
     <tr>
         <th>id</th>
         <td>path</td>
         <td>yes</td>
-        <td></td>
+        <td>LDAP 'inum' of group</td>
         <td> - </td>
-        <td>string </td>
+        <td>string</td>
     </tr>
     <tr>
         <th>body</th>
@@ -736,16 +754,16 @@ Update Group
 
 ### DELETE
 
-<a id="deleteGroup">Delete Group</a>
-
-Delete Group
-(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3).
+<a id="deleteGroup">[Delete Group](https://tools.ietf.org/html/rfc7644#section-3.6)</a> - deletes a group
 
 #### Security
 
-* Authorization
+* UMA (default)
+* OAuth2 Access Token (Test Mode)
 
 #### Request
+
+**_Content-Type:_** `application/scim+json`, `application/json`
 
 ##### Parameters
 
@@ -761,16 +779,24 @@ Delete Group
     <tr>
         <th>Authorization</th>
         <td>header</td>
-        <td>no</td>
+        <td>yes (default)</td>
         <td></td>
         <td> - </td>
-        <td>string </td>
+        <td>string</td>
+    </tr>
+    <tr>
+        <th>access_token</th>
+        <td>query</td>
+        <td>yes (if "Test Mode" is enabled)</td>
+        <td></td>
+        <td> - </td>
+        <td>string</td>
     </tr>
     <tr>
         <th>id</th>
         <td>path</td>
         <td>yes</td>
-        <td></td>
+        <td>LDAP 'inum' of the group</td>
         <td> - </td>
         <td>string </td>
     </tr>
@@ -788,21 +814,21 @@ Delete Group
 
 ## Bulk Operation Endpoint
 
-## /v2/Bulk
+#### URL
+    <domain root>/identity/seam/resource/restv1/scim/v2/Bulk
 
 ### POST
 
-<a id="bulkOperation">Bulk Operation</a>
-
-SCIM Bulk Operation (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.7)
+<a id="bulkOperation">[Bulk Operations](https://tools.ietf.org/html/rfc7644#section-3.7)</a> - bulk operations
 
 #### Security
 
-* Authorization
+* UMA (default)
+* OAuth2 Access Token (Test Mode)
 
 #### Request
 
-**_Content-Type:_** `application/json`, `application/xml`
+**_Content-Type:_** `application/scim+json`, `application/json`
 
 ##### Parameters
 
@@ -818,7 +844,15 @@ SCIM Bulk Operation (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-
     <tr>
         <th>Authorization</th>
         <td>header</td>
-        <td>no</td>
+        <td>yes (default)</td>
+        <td></td>
+        <td> - </td>
+        <td>string</td>
+    </tr>
+    <tr>
+        <th>access_token</th>
+        <td>query</td>
+        <td>yes (if "Test Mode" is enabled)</td>
         <td></td>
         <td> - </td>
         <td>string</td>
@@ -826,7 +860,7 @@ SCIM Bulk Operation (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-
     <tr>
         <th>body</th>
         <td>body</td>
-        <td>no</td>
+        <td>yes</td>
         <td>BulkRequest</td>
         <td> - </td>
         <td><a href="#/definitions/BulkRequest">BulkRequest</a></td>
@@ -835,7 +869,7 @@ SCIM Bulk Operation (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-
 
 #### Response
 
-**_Content-Type:_** `application/json`, `application/xml`
+**_Content-Type:_** `application/scim+json`, `application/json`
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
