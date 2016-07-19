@@ -25,16 +25,18 @@ You can see the detailed SCIM 2.0 specification documents here:
 
 ### GET
 
-<a id="listUsers">List Users</a>
+<a id="listUsers">Search Users</a>
 
-Returns a list of users
-(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4).
+Returns a list of users (https://tools.ietf.org/html/rfc7644#section-3.4.2.2).
 
 #### Security
 
-* Authorization
+* UMA (default)
+* OAuth2 Access Token (Test Mode)
 
 #### Request
+
+**Content-Type: ** application/scim+json, application/json
 
 ##### Parameters
 
@@ -50,10 +52,18 @@ Returns a list of users
     <tr>
         <th>Authorization</th>
         <td>header</td>
-        <td>no</td>
+        <td>yes (default)</td>
         <td></td>
         <td> - </td>
-        <td>string </td>
+        <td>string</td>
+    </tr>
+    <tr>
+        <th>access_token</th>
+        <td>query</td>
+        <td>yes (if "Test Mode" is enabled)</td>
+        <td></td>
+        <td> - </td>
+        <td>string</td>
     </tr>
     <tr>
         <th>filter</th>
@@ -61,7 +71,23 @@ Returns a list of users
         <td>no</td>
         <td></td>
         <td> - </td>
-        <td>string </td>
+        <td>string</td>
+    </tr>
+    <tr>
+        <th>startIndex</th>
+        <td>query</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string</td>
+    </tr>
+    <tr>
+        <th>count</th>
+        <td>query</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string</td>
     </tr>
     <tr>
         <th>sortBy</th>
@@ -69,7 +95,7 @@ Returns a list of users
         <td>no</td>
         <td></td>
         <td> - </td>
-        <td>string </td>
+        <td>string</td>
     </tr>
     <tr>
         <th>sortOrder</th>
@@ -77,13 +103,21 @@ Returns a list of users
         <td>no</td>
         <td></td>
         <td> - </td>
-        <td>string </td>
+        <td>string</td>
+    </tr>
+    <tr>
+        <th>attributes</th>
+        <td>query</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string array</td>
     </tr>
 </table>
 
 #### Response
 
-**Content-Type: ** application/json, application/xml
+**Content-Type: ** application/scim+json, application/json
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
@@ -93,16 +127,16 @@ Returns a list of users
 
 <a id="createUser">Create User</a>
 
-Create a user
-(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3).
+Creates a user (https://tools.ietf.org/html/rfc7644#section-3.3).
 
 #### Security
 
-* Authorization
+* UMA (default)
+* OAuth2 Access Token (Test Mode)
 
 #### Request
 
-**Content-Type: ** application/json, application/xml
+**Content-Type: ** application/scim+json, application/json
 
 ##### Parameters
 
@@ -118,41 +152,57 @@ Create a user
     <tr>
         <th>Authorization</th>
         <td>header</td>
-        <td>no</td>
+        <td>yes (default)</td>
         <td></td>
         <td> - </td>
-        <td>string </td>
+        <td>string</td>
+    </tr>
+    <tr>
+        <th>access_token</th>
+        <td>query</td>
+        <td>yes (if "Test Mode" is enabled)</td>
+        <td></td>
+        <td> - </td>
+        <td>string</td>
     </tr>
     <tr>
         <th>body</th>
         <td>body</td>
-        <td>no</td>
+        <td>yes</td>
         <td>User</td>
         <td> - </td>
         <td><a href="#/definitions/User">User</a></td>
+    </tr>
+    <tr>
+        <th>attributes</th>
+        <td>query</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string array</td>
     </tr>
 </table>
 
 #### Response
 
-**Content-Type: ** application/json, application/xml
+**Content-Type: ** application/scim+json, application/json
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
-| 200    | successful operation | <a href="#/definitions/User">User</a>|
+| 201    | successful operation | <a href="#/definitions/User">User</a>|
 
-## /v2/Users/{uid}
+### `<domain root>/identity/seam/resource/restv1/scim/v2/Users/{id}`
 
 ### GET
 
-<a id="getUserByUid">Find user by id</a>
+<a id="getUserById">Find user by id</a>
 
-Returns a user on the basis of provided uid as path parameter
-(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.1).
+Returns a user by id as path parameter (https://tools.ietf.org/html/rfc7644#section-3.4.1).
 
 #### Security
 
-* Authorization
+* UMA (default)
+* OAuth2 Access Token (Test Mode)
 
 #### Request
 
@@ -170,24 +220,40 @@ Returns a user on the basis of provided uid as path parameter
     <tr>
         <th>Authorization</th>
         <td>header</td>
+        <td>yes (default)</td>
+        <td></td>
+        <td> - </td>
+        <td>string</td>
+    </tr>
+    <tr>
+        <th>access_token</th>
+        <td>query</td>
+        <td>yes (if "Test Mode" is enabled)</td>
+        <td></td>
+        <td> - </td>
+        <td>string</td>
+    </tr>
+    <tr>
+        <th>id</th>
+        <td>path</td>
+        <td>yes</td>
+        <td>LDAP 'inum' of user</td>
+        <td> - </td>
+        <td>string</td>
+    </tr>
+    <tr>
+        <th>attributes</th>
+        <td>query</td>
         <td>no</td>
         <td></td>
         <td> - </td>
-        <td>string </td>
-    </tr>
-    <tr>
-        <th>uid</th>
-        <td>path</td>
-        <td>yes</td>
-        <td></td>
-        <td> - </td>
-        <td>string </td>
+        <td>string array</td>
     </tr>
 </table>
 
 #### Response
 
-**Content-Type: ** application/json, application/xml
+**Content-Type: ** application/scim+json, application/scim
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
@@ -197,16 +263,16 @@ Returns a user on the basis of provided uid as path parameter
 
 <a id="updateUser">Update User</a>
 
-Update a u ser
-(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3).
+Updates a user (https://tools.ietf.org/html/rfc7644#section-3.5.1).
 
 #### Security
 
-* Authorization
+* UMA (default)
+* OAuth2 Access Token (Test Mode)
 
 #### Request
 
-**Content-Type: ** application/json, application/xml
+**Content-Type: ** application/scim+json, application/json
 
 ##### Parameters
 
@@ -222,32 +288,48 @@ Update a u ser
     <tr>
         <th>Authorization</th>
         <td>header</td>
-        <td>no</td>
+        <td>yes (default)</td>
         <td></td>
         <td> - </td>
-        <td>string </td>
+        <td>string</td>
     </tr>
     <tr>
-        <th>uid</th>
-        <td>path</td>
-        <td>yes</td>
+        <th>access_token</th>
+        <td>query</td>
+        <td>yes (if "Test Mode" is enabled)</td>
         <td></td>
         <td> - </td>
-        <td>string </td>
+        <td>string</td>
+    </tr>
+    <tr>
+        <th>id</th>
+        <td>path</td>
+        <td>yes</td>
+        <td>LDAP 'inum' of user</td>
+        <td> - </td>
+        <td>string</td>
     </tr>
     <tr>
         <th>body</th>
         <td>body</td>
-        <td>no</td>
+        <td>yes</td>
         <td>User</td>
         <td> - </td>
         <td><a href="#/definitions/User">User</a></td>
+    </tr>
+    <tr>
+        <th>attributes</th>
+        <td>query</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string array</td>
     </tr>
 </table>
 
 #### Response
 
-**Content-Type: ** application/json, application/xml
+**Content-Type: ** application/scim+json, application/json
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
@@ -257,12 +339,12 @@ Update a u ser
 
 <a id="deleteUser">Delete User</a>
 
-Delete a user
-(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3).
+Deletes a user (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3).
 
 #### Security
 
-* Authorization
+* UMA (default)
+* OAuth2 Access Token (Test Mode)
 
 #### Request
 
@@ -280,45 +362,53 @@ Delete a user
     <tr>
         <th>Authorization</th>
         <td>header</td>
-        <td>no</td>
+        <td>yes (default)</td>
         <td></td>
         <td> - </td>
-        <td>string </td>
+        <td>string</td>
     </tr>
     <tr>
-        <th>uid</th>
-        <td>path</td>
-        <td>yes</td>
+        <th>access_token</th>
+        <td>query</td>
+        <td>yes (if "Test Mode" is enabled)</td>
         <td></td>
         <td> - </td>
-        <td>string </td>
+        <td>string</td>
+    </tr>
+    <tr>
+        <th>id</th>
+        <td>path</td>
+        <td>yes</td>
+        <td>LDAP 'inum' of user</td>
+        <td> - </td>
+        <td>string</td>
     </tr>
 </table>
 
 #### Response
 
-**Content-Type: ** application/json, application/xml
+**Content-Type: ** application/scim+json, application/json
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
 | default     | successful operation |  -    |
 
-
-
-## /v2/Users/SearchPersons
+### `<domain root>/identity/seam/resource/restv1/scim/v2/Users/Search`
 
 ### POST
 
-<a id="listUsers">List Users</a>
+<a id="listUsers">Search Users</a>
 
-Returns a list of users
-(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4).
+Returns a list of users (https://tools.ietf.org/html/rfc7644#section-3.4).
 
 #### Security
 
-* Authorization
+* UMA (default)
+* OAuth2 Access Token (Test Mode)
 
 #### Request
+
+**Content-Type: ** application/scim+json, application/json
 
 ##### Parameters
 
@@ -334,10 +424,18 @@ Returns a list of users
     <tr>
         <th>Authorization</th>
         <td>header</td>
-        <td>no</td>
+        <td>yes (default)</td>
         <td></td>
         <td> - </td>
-        <td>string </td>
+        <td>string</td>
+    </tr>
+    <tr>
+        <th>access_token</th>
+        <td>query</td>
+        <td>yes (if "Test Mode" is enabled)</td>
+        <td></td>
+        <td> - </td>
+        <td>string</td>
     </tr>
     <tr>
         <th>Body</th>
@@ -345,13 +443,13 @@ Returns a list of users
         <td>Yes</td>
         <td></td>
         <td> - </td>
-        <td><a href="#/definitions/ScimPersonSearch"> ScimPersonSearch </td>
+        <td><a href="#/definitions/ScimPersonSearch">ScimPersonSearch</td>
     </tr>
 </table>
 
 #### Response
 
-**Content-Type: ** application/json, application/xml
+**Content-Type: ** application/scim+json, application/json
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
