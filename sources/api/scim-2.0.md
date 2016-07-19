@@ -21,7 +21,7 @@ You can see the detailed SCIM 2.0 specification documents here:
 
 ## User Endpoint
 
-## /v2/Users
+### `<domain root>/identity/seam/resource/restv1/scim/v2/Users`
 
 ### GET
 
