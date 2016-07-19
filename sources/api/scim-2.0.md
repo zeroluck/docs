@@ -5,6 +5,7 @@
 You can see the detailed SCIM 2.0 specification documents here:
 
 [System for Cross-domain Identity Management: Core Schema](https://tools.ietf.org/html/rfc7643)
+
 [System for Cross-domain Identity Management: Protocol](https://tools.ietf.org/html/rfc7644)
 
 ### SCIM 2.0 Endpoints
