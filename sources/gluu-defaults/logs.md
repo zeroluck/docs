@@ -2,10 +2,9 @@
 
 When it comes to troubleshooting issues in the Gluu Server--from service hiccups to outages--logs are the best place to start. 
 
-Gluu Server administrator can investiage logs from oxTrust [View Logs](../oxtrust/configuration.md/#view-log-file) feature or directly with SSH access to the Gluu-Server container. 
+The Gluu Server administrator can investigate logs from the oxTrust [View Logs](../oxtrust/configuration.md/#view-log-file) feature or directly with SSH access to the Gluu-Server container. 
 
-
-The Gluu Server's logs can be found in the following locations:
+Gluu Server logs can be found in the following locations:
 
 #### System logs 
 - For Ubuntu: `/var/log/syslog`
