@@ -490,10 +490,18 @@ Returns a list of groups (https://tools.ietf.org/html/rfc7644#section-3.4.2.2).
     <tr>
         <th>Authorization</th>
         <td>header</td>
-        <td>no</td>
+        <td>yes (default)</td>
         <td></td>
         <td> - </td>
-        <td>string </td>
+        <td>string</td>
+    </tr>
+    <tr>
+        <th>access_token</th>
+        <td>query</td>
+        <td>yes (if "Test Mode" is enabled)</td>
+        <td></td>
+        <td> - </td>
+        <td>string</td>
     </tr>
     <tr>
         <th>filter</th>
@@ -501,7 +509,23 @@ Returns a list of groups (https://tools.ietf.org/html/rfc7644#section-3.4.2.2).
         <td>no</td>
         <td></td>
         <td> - </td>
-        <td>string </td>
+        <td>string</td>
+    </tr>
+    <tr>
+        <th>startIndex</th>
+        <td>query</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string</td>
+    </tr>
+    <tr>
+        <th>count</th>
+        <td>query</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string</td>
     </tr>
     <tr>
         <th>sortBy</th>
@@ -509,7 +533,7 @@ Returns a list of groups (https://tools.ietf.org/html/rfc7644#section-3.4.2.2).
         <td>no</td>
         <td></td>
         <td> - </td>
-        <td>string </td>
+        <td>string</td>
     </tr>
     <tr>
         <th>sortOrder</th>
@@ -517,7 +541,15 @@ Returns a list of groups (https://tools.ietf.org/html/rfc7644#section-3.4.2.2).
         <td>no</td>
         <td></td>
         <td> - </td>
-        <td>string </td>
+        <td>string</td>
+    </tr>
+    <tr>
+        <th>attributes</th>
+        <td>query</td>
+        <td>no</td>
+        <td></td>
+        <td> - </td>
+        <td>string array</td>
     </tr>
 </table>
 
@@ -534,12 +566,12 @@ Returns a list of groups (https://tools.ietf.org/html/rfc7644#section-3.4.2.2).
 
 <a id="createGroup">Create Group</a>
 
-Create Group
-(https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3).
+Create a group (https://tools.ietf.org/html/rfc7644#section-3.3).
 
 #### Security
 
-* Authorization
+* UMA (default)
+* OAuth2 Access Token (Test Mode)
 
 #### Request
 
@@ -559,10 +591,18 @@ Create Group
     <tr>
         <th>Authorization</th>
         <td>header</td>
-        <td>no</td>
+        <td>yes (default)</td>
         <td></td>
         <td> - </td>
-        <td>string </td>
+        <td>string</td>
+    </tr>
+    <tr>
+        <th>access_token</th>
+        <td>query</td>
+        <td>yes (if "Test Mode" is enabled)</td>
+        <td></td>
+        <td> - </td>
+        <td>string</td>
     </tr>
     <tr>
         <th>body</th>
@@ -580,7 +620,7 @@ Create Group
 
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
-| 200    | successful operation | <a href="#/definitions/Group">Group</a>|
+| 201    | successful operation | <a href="#/definitions/Group">Group</a>|
 
 ## /v2/Groups/{id}
 
