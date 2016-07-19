@@ -339,7 +339,7 @@ Updates a user (https://tools.ietf.org/html/rfc7644#section-3.5.1).
 
 <a id="deleteUser">Delete User</a>
 
-Deletes a user (https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.3).
+Deletes a user (https://tools.ietf.org/html/rfc7644#section-3.6).
 
 #### Security
 
