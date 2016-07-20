@@ -93,7 +93,7 @@ The following code snippet uses the User object.
 ```
 
 ## Delete User
-To delete a user only the id/userName is needed.
+To delete a user only the id (the LDAP `inum`) is needed.
 
 ```
         ScimResponse response = client.deletePerson(id);
