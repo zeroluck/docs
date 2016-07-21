@@ -12,7 +12,7 @@ Now you will want to update your IDP login page to display `Email Address` as th
 
 ![Screenshot](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/oxTrustConfiguration/Configuration/Authentication/Email_Address.png)
 
-## Matinenace
+## How do I perform matinenace on my Gluu Server?
 
 Sometimes it's required to push system updates (not an OS upgrade) in your Gluu Server VM. Here are a few steps to get you started:
    - Backup your whole VM.
