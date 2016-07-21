@@ -63,7 +63,11 @@ The following is a sample code that can be run to test the configured SCIM UMA G
 </dependency>
 ```
 
+* Starting with Release v2.4.2, an SCIM-Client must be used on a matching Gluu CE. For example, if you are running CE v2.4.4, you must also use SCIM-Client v2.4.4.
+
 * Add your domain's SSL certificate to the JRE's `cacerts` certificate key store where your client application will run. There are lots of articles around the Web on how to do this.
+
+* If you have re-installed Gluu CE, please note that the UMA parameters / JWKS files are also regenerated. You must then rebuild your  client code with `target` or `tmp` folders possibly cleared beforehand to avoid conflicts.
 
 * Replace the UMA parameters and run the code.
 
