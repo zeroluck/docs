@@ -28,7 +28,7 @@ Gluu Server logs can be found in the following locations:
 
 #### To escalate the log levels
 - OpenID Connect or any core logging: `log4j.xml`, which is located in `/opt/tomcat/webapps/oxauth/WEB-INF/classes/`
-- SAML logging: `logging.xml`, which is located in `/opt/idp.conf/`
+- SAML logging: `logging.xml`, which is located in `/opt/idp/conf/`
 
 ## System Logs
 
